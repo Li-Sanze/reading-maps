@@ -1,0 +1,281 @@
+{
+  "schema_version": "read-book.historical-pressure-test.v1",
+  "artifact_kind": "progressive-historical-deep-dive",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "module": {
+    "id": "operation-ichi-go",
+    "title": "一号作战：为什么‘相持期’仍会出现日军大攻势？",
+    "status": "generated",
+    "parent_module": "../protracted-war/reading.html#history-check",
+    "parent_book_html": "../../reading.html#modules",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "日本在总体战争中转入战略劣势，仍能在中国战场集中尚具优势的地面力量发动大攻势；一号作战要求读者把战役结果与总体战争态势分开，也要求三阶段模型预先声明尺度和指标。",
+    "model_boundary": "本模块是《论持久战》的后见历史压力测试，不是作者原有章节；两张图是证据结构图，不是精确军事地图。"
+  },
+  "reading_contract": {
+    "core_minutes": 38,
+    "route": [
+      {"minutes": 5, "goal": "分清 1938 年模型、1944 年事件与表面矛盾"},
+      {"minutes": 8, "goal": "读目标、三段推进和直接结果"},
+      {"minutes": 10, "goal": "并置中国战役尺度与日本总体战争尺度"},
+      {"minutes": 8, "goal": "回读两段作者限定语"},
+      {"minutes": 7, "goal": "完成支持、挑战、修正三层审计并决定是否继续"}
+    ],
+    "completion_definition": [
+      "能说出一号作战压制盟军在华航空基地、贯通陆上交通线这两个主要目标。",
+      "能解释日军在华作战取得重大成果与日本总体战略劣势为何能够同时成立。",
+      "能指出一号作战既支持三阶段的曲折性，也挑战‘敌战略保守’的无尺度机械读法。",
+      "能说明使用阶段标签前应预先声明观察主体、空间尺度、时间跨度与可核指标。"
+    ]
+  },
+  "source_book": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "scope": "第一至第五卷范围内第二卷《论持久战》",
+    "epub_path": "OEBPS/Text/Section0309.xhtml",
+    "locator_method": "沿用父模块的 1 起始纯文本块定位；Apple Books 优先搜索篇名或短摘录。",
+    "scope_limit": "不纳入第六、七卷或个人编辑材料；不把 1944 年后见之明倒灌给 1938 年作者。"
+  },
+  "historical_question": {
+    "surface_paradox": "如果战争已经进入相持，为什么 1944 年日军仍能在中国发动覆盖多省的大规模攻势并取得显著成果？",
+    "answer": "相持是对特定主体、空间、时间和指标下力量关系的判断，不等于所有前线静止。1944 年日本地面军仍能在中国集中优势，但其海运、海空力量和总体战争条件继续恶化。",
+    "falsifiability_limit": "如果进攻、退却、胜利和失败都能在不声明尺度的情况下被事后解释为相持，阶段标签就失去分析价值。"
+  },
+  "historical_structure": {
+    "goals": [
+      {
+        "goal": "压制盟军在华航空基地",
+        "evidence": ["ext-army-china-defensive", "ext-frus-chennault"]
+      },
+      {
+        "goal": "建立朝鲜方向经华中、华南通往法属印度支那的陆上交通线，降低对受袭海运的依赖",
+        "evidence": ["ext-army-china-defensive", "ext-frus-quebec"]
+      }
+    ],
+    "phases": [
+      {
+        "label": "KOGO",
+        "time": "1944-04-19 起，主要为 4—5 月",
+        "space": "河南与平汉铁路北段",
+        "minimum_result": "河南防线迅速受挫，日军打开继续南进的入口。",
+        "evidence": ["ext-army-china-defensive"]
+      },
+      {
+        "label": "TOGO 1",
+        "time": "1944 年 5—8 月",
+        "space": "湖南，长沙—衡阳方向",
+        "minimum_result": "日军持续南进；中国军队与美国第十四航空队造成迟滞，但未阻断推进。",
+        "evidence": ["ext-army-china-defensive"]
+      },
+      {
+        "label": "TOGO 2 / 3",
+        "time": "1944 年 7 月至年底，部分行动延至 1945 年初",
+        "space": "广西，桂林—柳州—南宁方向",
+        "minimum_result": "多处前进机场被夺取或放弃，华中与华南交通线进一步连结。",
+        "evidence": ["ext-army-china-defensive", "ext-army-asiatic-pacific"]
+      }
+    ],
+    "naming_boundary": "‘一号作战’是日军整套行动计划；中国方面称为豫湘桂战役。两种命名的观察角度并不完全相同。",
+    "naming_evidence": ["ext-china-archives"]
+  },
+  "claims": [
+    {
+      "id": "igo01-operational-success",
+      "type": "historical_minimum",
+      "statement": "一号作战是日军在中国战场取得重大成果的大规模攻势，国民政府军遭受严重失败，多处铁路、城市与航空基地失守。",
+      "external_sources": ["ext-army-china-defensive", "ext-cambridge-aftermath"],
+      "confidence": "high"
+    },
+    {
+      "id": "igo02-global-deterioration",
+      "type": "historical_minimum",
+      "statement": "一号作战进行时，日本海运、海空力量和总体战争态势仍在恶化；盟军从马里亚纳推进又改变了中国前进机场的全球战略权重。",
+      "external_sources": ["ext-frus-quebec", "ext-army-asiatic-pacific"],
+      "confidence": "high"
+    },
+    {
+      "id": "igo03-economic-damage",
+      "type": "historical_analysis",
+      "statement": "战役进一步切断自由中国的粮食与交通供应，并加剧通货膨胀、财政和政治信心危机。",
+      "external_sources": ["ext-frus-chennault", "ext-cambridge-aftermath"],
+      "confidence": "high"
+    },
+    {
+      "id": "igo04-scale-synthesis",
+      "type": "report_synthesis",
+      "statement": "在华作战层的日军进攻成功与日本总体战争层的战略防御可以同时成立，因为观察对象、空间、时间和指标不同。",
+      "supports": ["igo01-operational-success", "igo02-global-deterioration"],
+      "confidence": "high"
+    },
+    {
+      "id": "igo05-model-support",
+      "type": "critical_audit",
+      "statement": "一号作战支持《论持久战》关于长期趋势包含曲折、局部反向运动并需由事实校正的限定。",
+      "source_excerpt_ids": ["src-stage-correction", "src-plan-update"],
+      "external_sources": ["ext-army-china-defensive"],
+      "confidence": "medium_high"
+    },
+    {
+      "id": "igo06-model-challenge",
+      "type": "critical_audit",
+      "statement": "若把相持阶段或‘敌战略保守’理解为中国全战区不再出现大规模战略进攻，一号作战构成明显反例。",
+      "external_sources": ["ext-army-china-defensive", "ext-frus-quebec"],
+      "confidence": "high"
+    },
+    {
+      "id": "igo07-method-revision",
+      "type": "critical_audit",
+      "statement": "后续使用阶段模型时，应预先声明观察主体、空间尺度、时间跨度和可核指标，不能在结果出现后随意切换尺度以保护模型。",
+      "supports": ["igo04-scale-synthesis", "igo05-model-support", "igo06-model-challenge"],
+      "confidence": "high"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-stage-correction",
+      "title": "阶段轮廓必须被事实校正",
+      "blocks": "63",
+      "excerpt": "三个阶段的具体情况不能预断，但依目前条件来看，战争趋势中的某些大端是可以指出的。客观现实的行程将是异常丰富和曲折变化的，谁也不能造出一本中日战争的‘流年’来；然而给战争趋势描画一个轮廓，却为战略指导所必需。所以，尽管描画的东西不能尽合将来的事实，而将为事实所校正。",
+      "plain_guide": "原文给模型留下修订口，但没有自动解决后人如何选择尺度。",
+      "cannot_infer": "任何与轮廓不合的事件都可被称为曲折，从而永远不触发模型修正。"
+    },
+    {
+      "id": "src-plan-update",
+      "title": "战略计划只在一定阶段适用",
+      "blocks": "124",
+      "excerpt": "战略计划，是基于战争双方总的情况而来的，有更大的固定的程度，但也只在一定的战略阶段内适用，战争向着新的阶段推移，战略计划便须改变。",
+      "plain_guide": "战略判断较稳定，但不是永久标签；条件变化时应更新。",
+      "cannot_infer": "只要把新事实重新命名，原先阶段判断就无需接受检验。"
+    },
+    {
+      "id": "src-scale-action",
+      "title": "全局持久与局部速决",
+      "blocks": "107",
+      "excerpt": "在第一和第二阶段即敌之进攻和保守阶段中，应该是战略防御中的战役和战斗的进攻战，战略持久中的战役和战斗的速决战，战略内线中的战役和战斗的外线作战。",
+      "plain_guide": "原文主动区分战略与战役战斗尺度；本模块进一步要求这种尺度在分析历史前先声明。",
+      "cannot_infer": "尺度不同就能消除所有反例。"
+    }
+  ],
+  "diagram_contracts": [
+    {
+      "anchor": "reading.html#timeline",
+      "title": "一号作战的目标、推进和结果边界",
+      "diagram_type": "timeline",
+      "semantic_boundary": "不表达精确兵力部署、伤亡数字或逐日战线。"
+    },
+    {
+      "anchor": "reading.html#scales",
+      "title": "中国战役尺度与日本总体战争尺度",
+      "diagram_type": "comparison",
+      "semantic_boundary": "尺度区分不是事后解围；下方明确保留支持、挑战与可证伪要求。"
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "ext-army-china-defensive",
+      "title": "China Defensive",
+      "publisher": "U.S. Army Center of Military History",
+      "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/C%20Img/campaigns-wwii/pdf/12.pdf",
+      "use": "核一号作战目标、15 个师团、4 月 19 日启动、分段推进与战区危机。",
+      "perspective_limit": "美国陆军官方战史，主要从盟军战区和美中军事合作观察。"
+    },
+    {
+      "id": "ext-frus-chennault",
+      "title": "Major General Claire L. Chennault to President Roosevelt, April 19, 1944",
+      "publisher": "Office of the Historian, U.S. Department of State",
+      "url": "https://history.state.gov/historicaldocuments/frus1944v06/d53",
+      "use": "核同时代美方对铁路、长沙、前进机场与物价政治风险的预判。",
+      "perspective_limit": "当事方同时代判断，不是事后全知叙述。"
+    },
+    {
+      "id": "ext-frus-quebec",
+      "title": "Estimate of the Enemy Situation, Pacific–Far East, September 9, 1944",
+      "publisher": "Office of the Historian, U.S. Department of State",
+      "url": "https://history.state.gov/historicaldocuments/frus1944Quebec/d167",
+      "use": "核日本总体战略防御与中国战场仍在进攻并存的盟军判断。",
+      "perspective_limit": "盟军情报估计，反映当时信息与政策位置。"
+    },
+    {
+      "id": "ext-cambridge-aftermath",
+      "title": "Ichigo and Its Aftermath",
+      "author": "Parks M. Coble",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/collapse-of-nationalist-china/ichigo-and-its-aftermath/64DEEB47C94E5053771BFC7D73DA92F3",
+      "use": "核一号作战对自由中国粮食、通货膨胀、财政与政治信心的后果。",
+      "perspective_limit": "页面可读部分是章节摘要；本模块不声称读取了受限全文。"
+    },
+    {
+      "id": "ext-army-asiatic-pacific",
+      "title": "World War II — Asiatic-Pacific Theater",
+      "publisher": "U.S. Army Center of Military History",
+      "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/World-War-II/World-War-II-Asiatic-Pacific-Theater/",
+      "use": "核马里亚纳基地改变盟军轰炸路径及日本总体战争态势。",
+      "perspective_limit": "美国陆军战区综述，不替代中国、日本或专题学术研究。"
+    },
+    {
+      "id": "ext-china-archives",
+      "title": "浴血奋战——档案里的中国抗战",
+      "publisher": "国家档案局",
+      "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm",
+      "use": "核中国方面把日军‘一号作战’称为豫湘桂战役，并补中国档案视角。",
+      "perspective_limit": "国家档案专题叙事；用于名称和同时代档案线索，不替代完整战役研究。"
+    }
+  ],
+  "critical_audit": {
+    "minimum_verdicts": [
+      "一号作战在华作战层取得重大成果，不能被日本最终战败抹去。",
+      "它没有逆转日本在总体战争中的劣势，不能被写成日本总体战略成功。",
+      "它支持三阶段模型关于曲折和事实校正的自限，也挑战无尺度的‘敌战略保守’标签。",
+      "本模块不展开国共双方全部作用，不把一个问题扩写成抗战功劳总账。"
+    ],
+    "source_perspective": "美国官方战史、美国外交文献和 Cambridge 学术摘要视角不同；只交叉采用最低事实，保留责任、表现和长期政治后果的争议。",
+    "human_cost": "军事成果同时造成粮食、交通、物价、财政和民众生活的严重代价；图形不得把战争美化为纯粹的箭头游戏。"
+  },
+  "generation_audit": {
+    "semantic_review": {
+      "status": "passed",
+      "checks": [
+        "7 条论点的外部来源、原文摘录与综合依赖均闭合到实际存在的 6 项外部资料和 3 段 EPUB 原文。",
+        "三段原文定位短句逐字存在于 SHA-256 为 ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26 的 EPUB。",
+        "页面同时保留在华作战成功、日本总体败势、模型支持与模型挑战，没有把尺度切换当作自动免疫。",
+        "不做国共功劳总账，不声称精确战线、未核验伤亡或单一因果；‘一号作战 / 豫湘桂战役’名称边界增加国家档案局来源。",
+        "独立复审删除了证据不足的‘战线拉长’，改为来源可以直接支持的‘多处铁路与机场失守’。"
+      ]
+    },
+    "ui_review": {
+      "status": "passed",
+      "skill": "ui-ux-pro-max",
+      "checks": [
+        "采用内容优先、低装饰、与父模块一致的暖纸阅读界面；没有采用检索建议中与现有体系冲突的夸张大字和粉色 CTA。",
+        "Playwright 实测 390px 与 1440px 页面 scrollWidth 分别等于视口宽度，无页面级横向溢出；手机只在两张长图内部提供可控横向细读。",
+        "桌面端两张 SVG 已改为完整缩放展示，无需横向滚动；移动端保留 1060px 图布并给出明确滑动提示。",
+        "正文为 16px/1.72（移动端）与 17px/1.72（桌面端），标题层级连续；页内导航和返回入口实际高度均为 44px。",
+        "键盘首个焦点为跳转正文，其次为返回父模块；两张 SVG 均有 title、desc 和可聚焦滚动容器。",
+        "主要文字配色最低实测对比度 4.91:1；支持 visible focus、prefers-reduced-motion 和打印样式。"
+      ]
+    },
+    "svg_review": {
+      "status": "passed",
+      "skill": "fireworks-tech-graph",
+      "checks": [
+        "两张 SVG 的 XML、marker 引用、箭头碰撞、语义几何和构图检查通过。",
+        "Chrome 成功栅格化两张图，并完成原尺寸视觉检查；未见节点重叠、文字越界、箭头穿框或图例遮挡。",
+        "进程图把目标、三段推进、已实现与未改变分开；双尺度图把支持、挑战、修正和最低可证伪要求并列。",
+        "visual_review: passed"
+      ],
+      "tooling_note": "Fireworks 聚合校验器因本机没有 CairoSVG/rsvg-convert 而无法执行内置渲染一步；XML、geometry、composition 子检查通过，渲染与视觉门由本机 Chrome/Playwright 完成。"
+    }
+  },
+  "validation": {
+    "json_parse": "passed",
+    "unique_html_ids": "passed",
+    "source_excerpt_exactness": "passed",
+    "external_links_present": "passed",
+    "svg_xml": "passed",
+    "svg_geometry": "passed",
+    "desktop_render": "passed",
+    "mobile_render": "passed",
+    "no_external_runtime_dependency": "passed"
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "schema_version": "read-book.deep-dive.v1",
+  "artifact_kind": "progressive-deep-dive",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "module": {
+    "id": "practice-and-contradiction",
+    "title": "实践论 × 矛盾论",
+    "subtitle": "认识怎样形成，行动重点怎样选择",
+    "status": "generated",
+    "parent_title": "毛泽东选集（第一至第五卷）",
+    "parent_html": "../../reading.html#modules",
+    "parent_json": "../../reading.json",
+    "one_sentence_model": "报告把两篇文章综合为一个可修正的循环：从实践取得材料，把感性认识整理为理性认识，再按对象、阶段、多重矛盾、主要矛盾和主要方面形成行动，最后让结果返回下一轮认识。",
+    "model_boundary": "这是报告综合，不是作者在某一段中给出的统一流程图；三个现代审计问题也不是原文术语。"
+  },
+  "source": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "scope": "第一卷《实践论》《矛盾论》",
+    "articles": [
+      {
+        "title": "实践论",
+        "date_label": "一九三七年七月",
+        "epub_path": "OEBPS/Text/Section0215.xhtml",
+        "text_blocks": 42,
+        "characters_with_notes": 10906
+      },
+      {
+        "title": "矛盾论",
+        "date_label": "一九三七年八月",
+        "epub_path": "OEBPS/Text/Section0216.xhtml",
+        "text_blocks": 159,
+        "characters_with_notes": 26766
+      }
+    ],
+    "locator_method": "将 XHTML 中按文档顺序出现的非空标题、段落和注释转为纯文本块，使用 1 起始序号；Apple Books 中优先搜索篇名、分节名或短摘录。",
+    "scope_limit": "未纳入第六、七卷；不把个人编辑材料作为版本证据。"
+  },
+  "version_boundary": {
+    "epub_form": "本模块分析的是当前 EPUB 中《毛泽东选集》所载修订文本，不声称复原 1937 年讲稿或初刊原貌。",
+    "internal_evidence": [
+      "《实践论》的书内注释记录作者后来认为对太平天国、义和团等运动的概括不妥并准备修改，显示文本观点存在自我修订边界。",
+      "《矛盾论》的书内说明明确提到收入《毛泽东选集》时曾作补充、删节和修改。"
+    ],
+    "scholarly_dispute": "有关两文 1937 年原稿、讲稿与 1950 年代定本之间的关系，学界存在争议；模块只把争议标出，不替读者作无证据的定论。",
+    "external_source_id": "ext-text-history"
+  },
+  "reading_contract": {
+    "core_minutes": 60,
+    "optional_source_return_minutes": "60–80",
+    "route": [
+      {"level": 0, "minutes": 5, "goal": "读一句话模型和综合结构图"},
+      {"level": 1, "minutes": 10, "goal": "分清两篇各自解决什么问题及关键概念"},
+      {"level": 2, "minutes": 25, "goal": "阅读六段连续原文节选，并区分原文与报告导读"},
+      {"level": 3, "minutes": 20, "goal": "完成批判审计，决定回原文的段落与下一步深挖主题"},
+      {"level": 4, "minutes": "60–80", "goal": "按路线回到两篇原文细读；这是可选层，不计入 60 分钟核心模块"}
+    ],
+    "completion_definition": [
+      "能分别说出《实践论》和《矛盾论》的中心任务，不把两篇混成一句口号。",
+      "能解释感性与理性、普遍性与特殊性、主要矛盾与主要方面、同一性与斗争性的区别。",
+      "能指出至少三种常见误读，并说明为什么‘实践成功’不自动证明理论为真。",
+      "能把任一结论回到具体篇名、分节或纯文本块，并选择是否继续读全文。"
+    ]
+  },
+  "article_models": [
+    {
+      "article": "实践论",
+      "central_question": "认识从哪里来、怎样深化、怎样检验和继续发展？",
+      "argument_steps": [
+        "社会实践是认识的来源，实践形式不只包括生产，也包括政治、科学、艺术等活动。",
+        "认识先表现为感觉和印象，再经过整理、判断和推理上升为理性认识。",
+        "理性认识依赖感性材料，但认识不能停在感性阶段。",
+        "理论要回到实践；结果会验证、修正或发展原有认识。",
+        "认识循环不是一次结束，而是实践、认识、再实践、再认识。"
+      ],
+      "locators": [
+        {"blocks": "5–8", "supports": "实践的形式、认识来源与真理标准"},
+        {"blocks": "10–12", "supports": "感性、理性与直接、间接经验"},
+        {"blocks": "18–23", "supports": "认识的两个阶段及理论回到实践"},
+        {"blocks": "24–29", "supports": "历史条件、修正与循环发展"}
+      ]
+    },
+    {
+      "article": "矛盾论",
+      "central_question": "面对一个具体过程，怎样分析差异、张力、主次、条件与变化？",
+      "sections": [
+        {"name": "一 两种宇宙观", "start_block": 5, "focus": "内因、外因与发展的解释框架"},
+        {"name": "二 矛盾的普遍性", "start_block": 12, "focus": "矛盾存在于过程始终"},
+        {"name": "三 矛盾的特殊性", "start_block": 35, "focus": "不同对象和阶段必须具体分析"},
+        {"name": "四 主要的矛盾和主要的矛盾方面", "start_block": 61, "focus": "多重矛盾中的主次与转化"},
+        {"name": "五 矛盾诸方面的同一性和斗争性", "start_block": 82, "focus": "相互依存、条件性转化与斗争"},
+        {"name": "六 对抗在矛盾中的地位", "start_block": 110, "focus": "对抗只是斗争的一种形式"},
+        {"name": "七 结论", "start_block": 119, "focus": "反对主观性、片面性和表面性"}
+      ],
+      "key_locators": [
+        {"blocks": "39–40", "supports": "特殊到一般、再以一般指导特殊"},
+        {"blocks": "47–52", "supports": "阶段特殊性与具体分析"},
+        {"blocks": "66–72", "supports": "主要矛盾、主要方面及其转化"},
+        {"blocks": "89–105", "supports": "同一性、转化条件与斗争性"},
+        {"blocks": "111–120", "supports": "对抗的有限地位与结论"}
+      ]
+    }
+  ],
+  "integrated_model": {
+    "type": "report_synthesis",
+    "sequence": [
+      "实践与材料",
+      "感性认识",
+      "理性认识",
+      "对象与阶段",
+      "多重矛盾",
+      "主要矛盾",
+      "主要方面与条件",
+      "行动方案",
+      "结果与意外",
+      "修正理论并重划主次"
+    ],
+    "audit_gates": [
+      "材料不是纯观察：记录、概念与立场影响看见什么。",
+      "成功不自动等于真理：同一结果可能有多个原因。",
+      "‘主要’是待证假说：必须保留竞争模型和反证条件。"
+    ],
+    "diagram": "reading.html#model"
+  },
+  "concepts": [
+    {
+      "term": "实践",
+      "author_position": "认识的来源、目的和检验环节；范围包含生产、政治、科学、艺术等社会活动。",
+      "do_not_reduce_to": "想到就做、只凭个人经历，或结果好就证明理论绝对正确。"
+    },
+    {
+      "term": "感性认识 / 理性认识",
+      "author_position": "前者接触现象与外部联系，后者通过概念、判断和推理把握本质与内部联系；二者相接而非互相取消。",
+      "do_not_reduce_to": "直觉一定低级、理论可以脱离材料，或经验会自动长成理论。"
+    },
+    {
+      "term": "矛盾的普遍性 / 特殊性",
+      "author_position": "矛盾贯穿过程，但每种过程及其各阶段都有具体性质；一般认识必须回到具体对象。",
+      "do_not_reduce_to": "任何问题都能套同一组对立词。"
+    },
+    {
+      "term": "主要矛盾 / 主要方面",
+      "author_position": "前者是在多重矛盾中起领导、决定作用的关系；后者是同一矛盾内部暂居支配地位的一方，二者都可能随条件转化。",
+      "do_not_reduce_to": "最显眼的问题、最坏的人，或永远固定的主次。"
+    },
+    {
+      "term": "同一性 / 斗争性 / 对抗",
+      "author_position": "矛盾双方在条件下相互依存并可能转化；斗争贯穿其中，但对抗只是斗争的一种形式。",
+      "do_not_reduce_to": "形式逻辑中的 P 与非 P，或所有分歧最终都应走向敌对冲突。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "p01-practice-source-test",
+      "type": "author_position",
+      "statement": "认识依赖社会实践，理论还要回到实践接受检验和发展。",
+      "locators": [{"article": "实践论", "blocks": "5–8, 22–23"}],
+      "confidence": "high"
+    },
+    {
+      "id": "p02-sensory-rational",
+      "type": "author_position",
+      "statement": "感性和理性是认识过程中相联接的两个阶段，理性依赖感性而认识又不能停在感性。",
+      "locators": [{"article": "实践论", "blocks": "10–12, 18–21"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c01-concrete-analysis",
+      "type": "author_position",
+      "statement": "认识矛盾必须分析具体对象和阶段的特殊性，反对把公式抽象地套在一切过程上。",
+      "locators": [{"article": "矛盾论", "blocks": "35–52"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c02-principal",
+      "type": "author_position",
+      "statement": "复杂过程中的矛盾不能平均看待；主要矛盾和主要方面的地位也会随条件改变。",
+      "locators": [{"article": "矛盾论", "blocks": "61–72"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c03-antagonism",
+      "type": "author_position",
+      "statement": "对抗是矛盾斗争的一种形式，而不是所有矛盾的必然形式。",
+      "locators": [{"article": "矛盾论", "blocks": "110–118"}],
+      "confidence": "high"
+    },
+    {
+      "id": "s01-integrated-loop",
+      "type": "report_synthesis",
+      "statement": "两篇可组合成从材料、认识、具体矛盾分析、行动到反馈修正的循环。",
+      "supports": ["p01-practice-source-test", "p02-sensory-rational", "c01-concrete-analysis", "c02-principal"],
+      "confidence": "medium_high"
+    },
+    {
+      "id": "a01-practice-limit",
+      "type": "critical_audit",
+      "statement": "实践结果能约束和修正理论，但不能仅凭一次成功唯一确定理论为真，因为结果可能由多种假设、条件和原因共同产生。",
+      "external_sources": ["ext-underdetermination"],
+      "confidence": "high"
+    },
+    {
+      "id": "a02-observation-limit",
+      "type": "critical_audit",
+      "statement": "材料与观察并非完全中性；已有理论、模型、测量和选择会影响观察内容。",
+      "external_sources": ["ext-theory-observation"],
+      "confidence": "high"
+    },
+    {
+      "id": "a03-principal-limit",
+      "type": "critical_audit",
+      "statement": "‘主要矛盾’适合作为聚焦行动的假说，但若缺少边界、指标、替代解释和反证条件，就可能退化为事后贴标签。",
+      "confidence": "medium_high"
+    }
+  ],
+  "excerpts": [
+    {"article": "实践论", "quote": "真理的标准只能是社会的实践。", "search_text": "真理的标准只能是社会的实践", "blocks": "8"},
+    {"article": "实践论", "quote": "感觉只解决现象问题，理论才解决本质问题。", "search_text": "感觉只解决现象问题，理论才解决本质问题", "blocks": "11"},
+    {"article": "实践论", "quote": "实践、认识、再实践、再认识。", "search_text": "实践、认识、再实践、再认识", "blocks": "29"},
+    {"article": "矛盾论", "quote": "对于具体的事物作具体的分析。", "search_text": "对于具体的事物作具体的分析", "blocks": "52"},
+    {"article": "矛盾论", "quote": "不能把过程中所有的矛盾平均看待。", "search_text": "不能把过程中所有的矛盾平均看待", "blocks": "71"},
+    {"article": "矛盾论", "quote": "对抗是矛盾斗争的一种形式，而不是矛盾斗争的一切形式。", "search_text": "对抗是矛盾斗争的一种形式，而不是矛盾斗争的一切形式", "blocks": "111"}
+  ],
+  "original_reading_selections": [
+    {
+      "order": 1,
+      "article": "实践论",
+      "title": "实践怎样检验认识",
+      "epub_path": "OEBPS/Text/Section0215.xhtml",
+      "blocks": "8",
+      "sentence_range": "1–3",
+      "continuity": "single_block_contiguous",
+      "excerpt": "马克思主义者认为，只有人们的社会实践，才是人们对于外界认识的真理性的标准。实际的情形是这样的，只有在社会实践过程中（物质生产过程中，阶级斗争过程中，科学实验过程中），人们达到了思想中所预想的结果时，人们的认识才被证实了。人们要想得到工作的胜利即得到预想的结果，一定要使自己的思想合于客观外界的规律性，如果不合，就会在实践中失败。",
+      "question_answered": "认识凭什么接受检验。",
+      "plain_guide": "理论要对行动结果负责，不能只凭主观确信。",
+      "cannot_infer": "一次达到预期结果，就足以排除其他原因并永久证明理论。"
+    },
+    {
+      "order": 2,
+      "article": "实践论",
+      "title": "感性材料怎样上升",
+      "epub_path": "OEBPS/Text/Section0215.xhtml",
+      "blocks": "18",
+      "sentence_range": "full_block",
+      "continuity": "single_block_contiguous",
+      "excerpt": "由此看来，认识的过程，第一步，是开始接触外界事情，属于感觉的阶段。第二步，是综合感觉的材料加以整理和改造，属于概念、判断和推理的阶段。只有感觉的材料十分丰富（不是零碎不全）和合于实际（不是错觉），才能根据这样的材料造出正确的概念和论理来。",
+      "question_answered": "感性认识和理性认识怎样衔接。",
+      "plain_guide": "材料要足够、可靠，还要经过整理和推理，才可能形成概念。",
+      "cannot_infer": "只要积累很多经验，经验就会自动变成正确理论。"
+    },
+    {
+      "order": 3,
+      "article": "实践论",
+      "title": "认识为什么必须继续",
+      "epub_path": "OEBPS/Text/Section0215.xhtml",
+      "blocks": "29",
+      "sentence_range": "1–3",
+      "continuity": "single_block_contiguous",
+      "excerpt": "通过实践而发现真理，又通过实践而证实真理和发展真理。从感性认识而能动地发展到理性认识，又从理性认识而能动地指导革命实践，改造主观世界和客观世界。实践、认识、再实践、再认识，这种形式，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。",
+      "question_answered": "一次认识和行动为什么不是终点。",
+      "plain_guide": "行动产生新材料，原来的认识也要随结果和条件继续变化。",
+      "cannot_infer": "只要重复‘实践—认识’的形式，无论材料和方法如何，都必然进步。"
+    },
+    {
+      "order": 4,
+      "article": "矛盾论",
+      "title": "一般认识怎样返回具体",
+      "epub_path": "OEBPS/Text/Section0216.xhtml",
+      "blocks": "40",
+      "sentence_range": "1–3",
+      "continuity": "single_block_contiguous",
+      "excerpt": "就人类认识运动的秩序说来，总是由认识个别的和特殊的事物，逐步地扩大到认识一般的事物。人们总是首先认识了许多不同事物的特殊的本质，然后才有可能更进一步地进行概括工作，认识诸种事物的共同的本质。当着人们已经认识了这种共同的本质以后，就以这种共同的认识为指导，继续地向着尚未研究过的或者尚未深入地研究过的各种具体的事物进行研究，找出其特殊的本质，这样才可以补充、丰富和发展这种共同的本质的认识，而使这种共同的本质的认识不致变成枯槁的和僵死的东西。",
+      "question_answered": "一般规律和具体对象怎样往返。",
+      "plain_guide": "概括来自具体材料，也必须用新的具体研究继续修正。",
+      "cannot_infer": "掌握一个一般公式，就可以跳过对新对象的调查。"
+    },
+    {
+      "order": 5,
+      "article": "矛盾论",
+      "title": "两种主要不能混用",
+      "epub_path": "OEBPS/Text/Section0216.xhtml",
+      "blocks": "71",
+      "sentence_range": "1–7",
+      "continuity": "single_block_contiguous",
+      "excerpt": "不能把过程中所有的矛盾平均看待，必须把它们区别为主要的和次要的两类，着重于捉住主要的矛盾，已如上述。但是在各种矛盾之中，不论是主要的或次要的，矛盾着的两个方面，又是否可以平均看待呢？也是不可以的。无论什么矛盾，矛盾的诸方面，其发展是不平衡的。有时候似乎势均力敌，然而这只是暂时的和相对的情形，基本的形态则是不平衡。矛盾着的两方面中，必有一方面是主要的，他方面是次要的。其主要的方面，即所谓矛盾起主导作用的方面。",
+      "question_answered": "多个矛盾之间与一个矛盾内部怎样分别讨论主次。",
+      "plain_guide": "主要矛盾比较多个矛盾之间的主次，主要方面分析同一矛盾内部，层级不同。",
+      "cannot_infer": "最显眼的问题就是主要矛盾，或暂居主导的一方永远不会变化。"
+    },
+    {
+      "order": 6,
+      "article": "矛盾论",
+      "title": "对抗不是统一答案",
+      "epub_path": "OEBPS/Text/Section0216.xhtml",
+      "blocks": "115",
+      "sentence_range": "full_block",
+      "continuity": "single_block_contiguous",
+      "excerpt": "但是我们必须具体地研究各种矛盾斗争的情况，不应当将上面所说的公式不适当地套在一切事物的身上。矛盾和斗争是普遍的、绝对的，但是解决矛盾的方法，即斗争的形式，则因矛盾的性质不同而不相同。有些矛盾具有公开的对抗性，有些矛盾则不是这样。根据事物的具体发展，有些矛盾是由原来还非对抗性的，而发展成为对抗性的；也有些矛盾则由原来是对抗性的，而发展成为非对抗性的。",
+      "question_answered": "矛盾普遍存在，是否意味着处理方式都相同。",
+      "plain_guide": "矛盾的性质和发展条件不同，斗争形式也不同，并且可能转化。",
+      "cannot_infer": "所有分歧都应敌我化，或任何冲突形式都能脱离条件直接移植。"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "把理论来源、行动目的和纠错机制连起来，反对脱离现实的抽象知识。",
+      "坚持对象和阶段的特殊性，要求先分析条件再使用一般概念。",
+      "主要矛盾与主要方面提供了从复杂问题中聚焦行动的语言。",
+      "明确对抗不是所有矛盾的形式，为区分冲突类型留下空间。"
+    ],
+    "limits": [
+      "观察受概念、测量和选择影响；‘来自实践’不能消除材料本身的偏差。",
+      "证据可能同时容纳多种解释，失败结果也不会自动指出究竟是哪条理论或辅助条件出错。",
+      "用‘主要矛盾’聚焦会牺牲部分复杂性；若只允许一个主次模型，容易压低多因、网络和渐变关系。",
+      "强调内因在开放系统中可能低估外部互动、制度约束和跨系统反馈。",
+      "两文服务于具体政治、阶级和革命任务，不能直接当作价值中立、对所有领域都充分的方法论。",
+      "文本形成与修订史有争议，当前定本不应被无条件等同于 1937 年原貌。"
+    ],
+    "use_safely": [
+      "先写对象、阶段、观察口径和利益相关者，再谈主次。",
+      "把‘主要矛盾’写成可被证伪的假说，并保留至少一个竞争模型。",
+      "行动前写预测、反证条件、时间尺度和可能副作用；行动后把结果与机制分开。",
+      "凡涉及人物、历史或公共决策，补读同时代材料、现代研究和不同立场。"
+    ]
+  },
+  "source_return_route": [
+    {"order": 1, "minutes": "12–15", "article": "实践论", "blocks": "5–12", "search": "人的认识，主要地依赖于物质的生产活动", "purpose": "核认识来源、实践范围与感性/理性两阶段。"},
+    {"order": 2, "minutes": "10–12", "article": "实践论", "blocks": "18–29", "search": "实践、认识、再实践、再认识", "purpose": "核理论回到实践、修正和循环发展。"},
+    {"order": 3, "minutes": "12–15", "article": "矛盾论", "section": "三 矛盾的特殊性", "blocks": "35–52", "purpose": "核具体分析与阶段特殊性。"},
+    {"order": 4, "minutes": "15–20", "article": "矛盾论", "section": "四 主要的矛盾和主要的矛盾方面", "blocks": "61–80", "purpose": "核主次的定义、条件和转化。"},
+    {"order": 5, "minutes": "10–15", "article": "矛盾论", "section": "六 对抗在矛盾中的地位", "blocks": "110–120", "purpose": "核斗争与对抗不能简单等同。"}
+  ],
+  "external_sources": [
+    {
+      "id": "ext-text-history",
+      "title": "Nick Knight, Mao Zedong's ‘On Contradiction’ and ‘On Practice’: Pre-liberation Texts",
+      "publisher": "The China Quarterly, Cambridge University Press",
+      "url": "https://www.cambridge.org/core/journals/china-quarterly/article/abs/mao-zedongs-on-contradiction-and-on-practice-preliberation-texts/07B011DAFD1D7C2801BB341D31E2588B",
+      "supports": "两文早期文本、定本修订程度与写作时间争议的学术入口"
+    },
+    {
+      "id": "ext-theory-observation",
+      "title": "Theory and Observation in Science",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/science-theory-observation/",
+      "supports": "观察、数据与理论/模型相互缠绕的认识论边界"
+    },
+    {
+      "id": "ext-underdetermination",
+      "title": "Underdetermination of Scientific Theory",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/scientific-underdetermination/",
+      "supports": "证据可能适配多种解释，失败预测不能单独定位哪项假设出错"
+    },
+    {
+      "id": "ext-formal-contradiction",
+      "title": "Contradiction",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/contradiction/",
+      "supports": "形式逻辑矛盾的概念边界，用于避免与辩证矛盾混同"
+    },
+    {
+      "id": "ext-conjuncture",
+      "title": "Mao's Dialectical Materialism (On Contradiction) and the Historical Conjuncture",
+      "publisher": "CLCWeb: Comparative Literature and Culture, Purdue University",
+      "url": "https://docs.lib.purdue.edu/clcweb/vol20/iss3/3/",
+      "supports": "把《矛盾论》放回革命历史情势，并提示其当代移植边界的一种外部论述"
+    }
+  ],
+  "generation_audit": {
+    "content_fidelity": {
+      "status": "passed_after_minimal_fix",
+      "checks": [
+        "两篇 XHTML 均直接从源 EPUB 回查：《实践论》42 个纯文本块、10906 字符；《矛盾论》159 个纯文本块、26766 字符。",
+        "6 条短摘录和 6 段原文精读逐字命中对应原篇；精读段分别来自文本块 8、18、29、40、71、115。",
+        "6 段精读共 1012 个原文字符，全部在单一文本块内连续截取，没有把不相邻句子拼接为作者原话。",
+        "作者观点、报告综合、批判审计、外部概念边界和版本争议在 HTML 与 JSON 中分别标型。",
+        "每段精读的原文、报告导读和不能推出的结论分开呈现；导读没有进入引号或原文数据字段。",
+        "综合结构图明确声明为报告重组，不冒充作者在单一段落中给出的模型。"
+      ]
+    },
+    "reading_feasibility": {
+      "status": "passed_after_minimal_fix",
+      "checks": [
+        "核心页面默认可见正文约 3664 个汉字，证据全部展开约 4113 个汉字；其中原文精读约 1012 个字符，60 分钟预算与实际阅读密度匹配。",
+        "已删除 254 个汉字的案例推演和与概念卡重复的六句防误读，新增内容用于直接接触原文而非继续叠加报告摘要。",
+        "五段原文回读共约 19901 个字符；初稿的 45–75 分钟偏紧，已修正为可选 60–80 分钟。",
+        "核心模块与原文回读明确分层，用户可在 60 分钟后停止、回全文或只深挖一个概念。"
+      ]
+    },
+    "ui_readability": {
+      "status": "passed_after_visual_and_static_review",
+      "checks": [
+        "1440px 桌面长页、450px 手机长页和 320px 小屏长页已实际渲染并目视检查；原文卡片、导读、定位和后续章节均无重叠或正文截断。",
+        "原文精读在桌面采用两列、手机采用单列；每卡只使用现有标签、引文和边界样式，没有引入新交互或外部组件。",
+        "页面内部链接均有唯一目标，2 个本地文件链接存在；无脚本、无外部样式或运行时依赖。",
+        "正文核心颜色对比度最低 5.28:1；导航和可交互入口最小高度不低于 44px。",
+        "结构图在手机上单独横向滚动并给出提示；证据默认折叠，支持可见焦点、减少动态效果和打印。"
+      ]
+    },
+    "visual_review": {"status": "passed", "checks": ["XML structure", "marker references", "arrow collisions", "semantic geometry", "composition quality", "Chrome rasterization", "1440px, 450px and 320px current-page visual inspection"], "tooling_note": "本机缺少 CairoSVG/rsvg-convert，Fireworks 渲染适配器未运行；Chrome 已成功渲染 SVG 和当前长页。"}
+  },
+  "next_deep_dive_options": [
+    "实践为何不能直接证明真理",
+    "主要矛盾如何避免沦为事后贴标签",
+    "同一性、斗争性与对抗的概念边界",
+    "逐段精读《实践论》",
+    "逐段精读《矛盾论》"
+  ]
+}

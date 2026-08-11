@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《毛泽东选集》第一至第五卷紧凑阅读地图：约 45 分钟建立结构，配合五篇必读原文和一篇可选扩展，在约 2.5–3 小时内决定是否深读。">
+  <title>《毛泽东选集》第一至第五卷｜阅读地图</title>
+  <style>
+    :root {
+      --paper: #f4f1ea;
+      --surface: #fffdf8;
+      --ink: #1e2421;
+      --muted: #5d6762;
+      --line: #d9d2c6;
+      --accent: #7c382c;
+      --accent-dark: #5c291f;
+      --accent-soft: #f4e8e3;
+      --blue: #225f8b;
+      --blue-soft: #e9f3fa;
+      --purple: #6849a5;
+      --purple-soft: #f1ecfb;
+      --orange: #94501d;
+      --orange-soft: #fff0e3;
+      --gray-soft: #edf0ef;
+      --green: #176652;
+      --green-soft: #e4f1ec;
+      --radius: 18px;
+      --shadow: 0 7px 22px rgba(38, 33, 26, 0.055);
+      --content: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(124, 56, 44, 0.08), transparent 25rem),
+        var(--paper);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent-dark); text-underline-offset: 0.2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible, .model-scroll:focus-visible {
+      outline: 3px solid #e69b36;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      min-height: 44px;
+      padding: 10px 15px;
+      color: white;
+      background: var(--accent-dark);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-family: ui-serif, Georgia, "Songti SC", serif;
+      font-size: clamp(2.25rem, 7vw, 4.8rem);
+      letter-spacing: -0.045em;
+    }
+    h2 { margin: 0; font-size: clamp(1.55rem, 4vw, 2.12rem); }
+    h3 { margin: 0 0 8px; font-size: 1.04rem; }
+    p { margin: 0 0 1em; }
+
+    .hero {
+      padding: 54px 20px 34px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner, .page, .footer-inner {
+      width: min(100%, var(--content));
+      margin-inline: auto;
+    }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .site-back:hover { color: var(--accent); }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 15px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.24rem);
+    }
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      padding: 7px 12px;
+      color: var(--accent-dark);
+      background: rgba(255, 253, 248, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 760;
+    }
+    .verdict {
+      display: grid;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, #51271f, #804033);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #f2c9bd; font-weight: 780; }
+    .verdict strong { font-size: 1.42rem; }
+    .verdict p { max-width: 820px; margin: 0; color: #f8eae5; }
+
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 234, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--accent); }
+
+    .page { padding: 34px 20px 72px; }
+    section { margin-bottom: 50px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: 0.77rem;
+      font-weight: 820;
+    }
+    .grid-2, .theme-grid, .route-grid, .audit-grid, .module-grid { display: grid; gap: 12px; }
+    .card, .theme-card, .route-card, .audit-box, .module, details {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(38, 33, 26, 0.035);
+    }
+    .card, .theme-card, .route-card, .audit-box, .module { padding: 18px; }
+    .card p:last-child, .theme-card p:last-child, .route-card p:last-child, .audit-box p:last-child, .module p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--orange); background: var(--orange-soft); }
+    .external { color: #56636a; background: var(--gray-soft); }
+    .scope { color: var(--green); background: var(--green-soft); }
+    .locator { display: block; margin-top: 8px; color: var(--muted); font-size: 0.75rem; }
+
+    .boundary {
+      padding-left: 14px;
+      border-left: 4px solid var(--green);
+    }
+    .boundary strong { color: #0d5645; }
+    .warning {
+      padding-left: 14px;
+      border-left: 4px solid var(--orange);
+    }
+
+    .model-figure {
+      margin: 0;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .model-scroll {
+      overflow-x: auto;
+      padding: 12px;
+      scrollbar-color: #b8c8c1 transparent;
+    }
+    .model-canvas { min-width: 1060px; }
+    .model-canvas svg { display: block; width: 100%; height: auto; }
+    figcaption {
+      padding: 13px 17px 16px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.79rem;
+    }
+
+    .theme-card { display: grid; grid-template-columns: 40px 1fr; gap: 12px; }
+    .theme-number {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      color: white;
+      background: var(--accent);
+      border-radius: 11px;
+      font-weight: 850;
+    }
+    .theme-card p { color: var(--muted); }
+
+    .session {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .session-step {
+      padding: 14px;
+      background: var(--accent-soft);
+      border: 1px solid #e5cfc7;
+      border-radius: 14px;
+    }
+    .session-step strong { display: block; color: var(--accent-dark); }
+    .session-step span { color: var(--muted); font-size: 0.84rem; }
+    .route-card { display: grid; grid-template-columns: 34px 1fr; gap: 11px; }
+    .route-order {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      border-radius: 50%;
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+    .route-card h3 { margin-bottom: 3px; }
+    .route-card p { color: var(--muted); font-size: 0.91rem; }
+    .route-meta { color: var(--accent); font-size: 0.76rem; font-weight: 780; }
+
+    .audit-box ul, .module ul { margin: 7px 0 0; padding-left: 1.2em; }
+    .audit-box li, .module li { margin-bottom: 0.5em; }
+    .good { border-top: 4px solid var(--green); }
+    .limit { border-top: 4px solid var(--orange); }
+    .questions { border-top: 4px solid var(--blue); }
+
+    .decision-grid { display: grid; gap: 10px; }
+    .decision-row {
+      display: grid;
+      grid-template-columns: 126px 1fr;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .decision-row strong { color: var(--accent-dark); }
+
+    .module { position: relative; }
+    .module small { color: var(--muted); }
+    .not-made {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin-top: 8px;
+      padding: 2px 8px;
+      color: var(--muted);
+      background: var(--gray-soft);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 820;
+    }
+    .made {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-top: 10px;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--green);
+      border-radius: 11px;
+      font-size: 0.78rem;
+      font-weight: 820;
+      text-decoration: none;
+    }
+    .made:hover { background: #0f5544; }
+
+    details { margin-bottom: 10px; overflow: clip; }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    blockquote {
+      margin: 13px 0;
+      padding: 12px 14px;
+      color: #343b37;
+      background: #faf6ee;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+    }
+    blockquote p { margin-bottom: 0.3em; }
+    .source-list { margin: 12px 0 0; padding-left: 1.2em; }
+    .source-list li { margin-bottom: 0.7em; }
+
+    footer { padding: 24px 20px 34px; color: var(--muted); border-top: 1px solid var(--line); }
+    footer p { margin: 0.3em 0; font-size: 0.79rem; }
+
+    @media (min-width: 700px) {
+      .grid-2, .audit-grid { grid-template-columns: repeat(2, 1fr); }
+      .theme-grid { grid-template-columns: repeat(5, 1fr); }
+      .route-grid { grid-template-columns: repeat(2, 1fr); }
+      .module-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 699px) {
+      .hero { padding-top: 40px; }
+      .page { padding-inline: 16px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .session { grid-template-columns: 1fr; }
+      .decision-row { grid-template-columns: 1fr; gap: 4px; }
+      .theme-grid { grid-template-columns: 1fr; }
+      section { margin-bottom: 42px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      .section-nav, .skip-link { display: none; }
+      .hero, .page, footer { padding-inline: 0; }
+      section { break-inside: avoid; margin-bottom: 28px; }
+      .card, .theme-card, .route-card, .audit-box, .module, details, .model-figure { box-shadow: none; }
+      details > * { display: block !important; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { min-width: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="site-back" href="../../index.html">← 返回书架</a>
+      <p class="eyebrow">第一至第五卷 · 快速阅读地图</p>
+      <h1>毛泽东选集</h1>
+      <p class="lead">用约 45 分钟看清五卷的时期、问题与方法，再用五篇必读原文和一篇可选扩展判断：值得全读、主题深读、单篇深挖，还是先停在这里。</p>
+      <div class="facts" aria-label="阅读范围与时间">
+        <span class="fact">5 卷</span>
+        <span class="fact">229 篇</span>
+        <span class="fact">1925–1957</span>
+        <span class="fact">主地图约 45 分钟</span>
+        <span class="fact">完整首轮约 2.5–3 小时</span>
+      </div>
+      <div class="verdict">
+        <small>首轮建议</small>
+        <strong>主题式选读，不线性通读五卷</strong>
+        <p>先建立全书结构，接着在 Apple Books 搜索五篇必读原文；时间充裕再加一篇可选扩展。若某一主题或文章真正吸引你，先进入页面后部已有的深挖地图；没有对应项时再按需生成。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav">
+    <nav aria-label="页面目录">
+      <a href="#boundary">版本边界</a>
+      <a href="#map">全书地图</a>
+      <a href="#themes">五条主线</a>
+      <a href="#route">原文路径</a>
+      <a href="#audit">批判审计</a>
+      <a href="#decision">深读决策</a>
+      <a href="#modules">深挖地图</a>
+      <a href="#evidence">证据</a>
+    </nav>
+  </div>
+
+  <main class="page" id="main">
+    <section id="boundary">
+      <div class="section-head">
+        <div>
+          <h2>先锁定版本边界</h2>
+          <p>本页读的到底是哪一本、哪些内容可信。</p>
+        </div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="card boundary">
+          <span class="origin scope">范围事实</span>
+          <h3>只含第一至第五卷</h3>
+          <p>共 229 篇、约 116 万正文字符。第六、七卷及“静火”编辑前言、附加材料全部排除，不进入模型、引文或推荐。</p>
+        </article>
+        <article class="card warning">
+          <span class="origin audit">版本审计</span>
+          <h3>五卷不是同一编辑边界</h3>
+          <p>前四卷目录结构对应 1991 年第二版的 159 篇；第五卷为 1977 年出版的身后编辑选本。当前 EPUB 没有出版社、ISBN，不能冒充已校勘纸本。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="section-head">
+        <div>
+          <h2>全书模型：五卷怎样连起来</h2>
+          <p>先看时期与问题重心，再沿与卷次对齐的五条主题线纵向阅读。</p>
+        </div>
+        <span class="time">8 分钟</span>
+      </div>
+      <figure class="model-figure" data-claim-id="s01-five-stage-model">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的五卷结构图">
+          <div class="model-canvas">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 620" width="1120" height="620" role="img" aria-labelledby="main-map-title main-map-desc" data-quality-profile="standard">
+              <title id="main-map-title">《毛泽东选集》第一至第五卷时间轴与跨卷主题索引</title>
+              <desc id="main-map-desc">上方按时间排列第一至第五卷，标出各卷时期、问题重心和一个原文锚点。下方五条主题线与卷次共用列坐标，表示本阅读地图建议从哪些卷追踪现实调查、矛盾与力量、战略与统一战线、组织与群众工作、国家构想与治理。线段不表示思想强度、历史必然或各卷内容彼此相同。</desc>
+              <style>
+                text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                .title { font-size: 20px; font-weight: 760; fill: #17211d; }
+                .sub { font-size: 11.5px; fill: #66716b; }
+                .vol { font-size: 16px; font-weight: 780; fill: #17211d; }
+                .years { font-size: 11.5px; font-weight: 720; fill: #225f8b; }
+                .keywords { font-size: 11.5px; fill: #4c5751; }
+                .anchor { font-size: 10.5px; font-weight: 650; fill: #4c5751; }
+                .lane { font-size: 13px; font-weight: 780; fill: #4c5751; }
+                .theme { font-size: 12.5px; font-weight: 740; fill: #374151; }
+                .range { font-size: 10px; font-weight: 700; fill: #66716b; }
+                .note { font-size: 10.5px; fill: #66716b; }
+              </style>
+              <defs>
+                <marker id="volume-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+              </defs>
+              <rect width="1120" height="620" rx="18" fill="#fffdf8"/>
+              <text class="title" x="40" y="36">五卷总弧线：从认识现实与革命方法，走向战争、建国与治理</text>
+              <text class="sub" x="40" y="59">第一至第五卷 · 229 篇 · 1925—1957｜第六、七卷及“静火”编辑内容不纳入</text>
+            
+              <text class="lane" x="40" y="94">按卷建立时间与问题坐标</text>
+              <path id="edge-main-v1-v2" data-graph-role="edge" data-edge-id="main-v1-v2" data-source="main-v1" data-target="main-v2" data-edge-kind="chronology" data-flow="primary" data-bends="0" d="M 360 172 H 380" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#volume-arrow)"/>
+              <path id="edge-main-v2-v3" data-graph-role="edge" data-edge-id="main-v2-v3" data-source="main-v2" data-target="main-v3" data-edge-kind="chronology" data-flow="primary" data-bends="0" d="M 540 172 H 560" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#volume-arrow)"/>
+              <path id="edge-main-v3-v4" data-graph-role="edge" data-edge-id="main-v3-v4" data-source="main-v3" data-target="main-v4" data-edge-kind="chronology" data-flow="primary" data-bends="0" d="M 720 172 H 740" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#volume-arrow)"/>
+              <path id="edge-main-v4-v5" data-graph-role="edge" data-edge-id="main-v4-v5" data-source="main-v4" data-target="main-v5" data-edge-kind="chronology" data-flow="primary" data-bends="0" d="M 900 172 H 920" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#volume-arrow)"/>
+            
+              <g id="main-v1" data-node-id="main-v1" data-graph-role="node" data-semantic-role="volume" data-graph-bounds="200,108,360,238">
+                <rect x="200" y="108" width="160" height="130" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+                <text class="vol" x="218" y="136">第一卷</text><text class="years" x="218" y="158">1925—1937</text>
+                <text class="keywords" x="218" y="183">调查 · 阶级分析</text><text class="keywords" x="218" y="202">革命道路 · 认识论</text>
+                <text class="anchor" x="218" y="224">18 篇｜锚点《实践论》</text>
+              </g>
+              <g id="main-v2" data-node-id="main-v2" data-graph-role="node" data-semantic-role="volume" data-graph-bounds="380,108,540,238">
+                <rect x="380" y="108" width="160" height="130" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+                <text class="vol" x="398" y="136">第二卷</text><text class="years" x="398" y="158">1937—1941</text>
+                <text class="keywords" x="398" y="183">持久战 · 统一战线</text><text class="keywords" x="398" y="202">新民主主义</text>
+                <text class="anchor" x="398" y="224">40 篇｜锚点《论持久战》</text>
+              </g>
+              <g id="main-v3" data-node-id="main-v3" data-graph-role="node" data-semantic-role="volume" data-graph-bounds="560,108,720,238">
+                <rect x="560" y="108" width="160" height="130" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+                <text class="vol" x="578" y="136">第三卷</text><text class="years" x="578" y="158">1941—1945</text>
+                <text class="keywords" x="578" y="183">学习 · 整风 · 领导</text><text class="keywords" x="578" y="202">群众工作 · 联合政府</text>
+                <text class="anchor" x="578" y="220">31 篇｜锚点《关于领导</text><text class="anchor" x="578" y="233">方法的若干问题》</text>
+              </g>
+              <g id="main-v4" data-node-id="main-v4" data-graph-role="node" data-semantic-role="volume" data-graph-bounds="740,108,900,238">
+                <rect x="740" y="108" width="160" height="130" rx="10" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
+                <text class="vol" x="758" y="136">第四卷</text><text class="years" x="758" y="158">1945—1949</text>
+                <text class="keywords" x="758" y="183">战略决战 · 建国</text><text class="keywords" x="758" y="202">人民民主专政</text>
+                <text class="anchor" x="758" y="220">70 篇｜锚点《论人民</text><text class="anchor" x="758" y="233">民主专政》</text>
+              </g>
+              <g id="main-v5" data-node-id="main-v5" data-graph-role="node" data-semantic-role="volume" data-graph-bounds="920,108,1080,238">
+                <rect x="920" y="108" width="160" height="130" rx="10" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.5"/>
+                <text class="vol" x="938" y="136">第五卷</text><text class="years" x="938" y="158">1949—1957</text>
+                <text class="keywords" x="938" y="183">改造 · 建设</text><text class="keywords" x="938" y="202">十大关系 · 内部矛盾</text>
+                <text class="anchor" x="938" y="224">70 篇｜锚点《论十大关系》</text>
+              </g>
+            
+              <text class="lane" x="40" y="282">沿主题跨卷追踪</text>
+              <text class="note" x="1080" y="282" text-anchor="end">线段 = 本页建议追踪范围；圆点 = 对应卷次，不表示强度</text>
+              <line x1="280" y1="300" x2="280" y2="550" stroke="#e1ddd4" stroke-width="1"/>
+              <line x1="460" y1="300" x2="460" y2="550" stroke="#e1ddd4" stroke-width="1"/>
+              <line x1="640" y1="300" x2="640" y2="550" stroke="#e1ddd4" stroke-width="1"/>
+              <line x1="820" y1="300" x2="820" y2="550" stroke="#e1ddd4" stroke-width="1"/>
+              <line x1="1000" y1="300" x2="1000" y2="550" stroke="#e1ddd4" stroke-width="1"/>
+              <text class="range" x="280" y="314" text-anchor="middle">卷一</text><text class="range" x="460" y="314" text-anchor="middle">卷二</text><text class="range" x="640" y="314" text-anchor="middle">卷三</text><text class="range" x="820" y="314" text-anchor="middle">卷四</text><text class="range" x="1000" y="314" text-anchor="middle">卷五</text>
+            
+              <text class="theme" x="40" y="352">现实调查与实践</text>
+              <rect x="280" y="338" width="720" height="18" rx="9" fill="#dbeafe"/>
+              <circle cx="280" cy="347" r="6" fill="#2563eb"/><circle cx="460" cy="347" r="5" fill="#fffdf8" stroke="#2563eb" stroke-width="2"/><circle cx="640" cy="347" r="5" fill="#fffdf8" stroke="#2563eb" stroke-width="2"/><circle cx="820" cy="347" r="5" fill="#fffdf8" stroke="#2563eb" stroke-width="2"/><circle cx="1000" cy="347" r="5" fill="#fffdf8" stroke="#2563eb" stroke-width="2"/>
+            
+              <text class="theme" x="40" y="398">矛盾与社会力量</text>
+              <rect x="280" y="384" width="720" height="18" rx="9" fill="#dcfce7"/>
+              <circle cx="280" cy="393" r="6" fill="#16a34a"/><circle cx="460" cy="393" r="5" fill="#fffdf8" stroke="#16a34a" stroke-width="2"/><circle cx="640" cy="393" r="5" fill="#fffdf8" stroke="#16a34a" stroke-width="2"/><circle cx="820" cy="393" r="5" fill="#fffdf8" stroke="#16a34a" stroke-width="2"/><circle cx="1000" cy="393" r="6" fill="#16a34a"/>
+            
+              <text class="theme" x="40" y="444">战略与统一战线</text>
+              <rect x="280" y="430" width="540" height="18" rx="9" fill="#ffedd5"/>
+              <circle cx="280" cy="439" r="5" fill="#fffdf8" stroke="#ea580c" stroke-width="2"/><circle cx="460" cy="439" r="6" fill="#ea580c"/><circle cx="640" cy="439" r="5" fill="#fffdf8" stroke="#ea580c" stroke-width="2"/><circle cx="820" cy="439" r="6" fill="#ea580c"/>
+            
+              <text class="theme" x="40" y="490">组织与群众工作</text>
+              <rect x="460" y="476" width="540" height="18" rx="9" fill="#ede9fe"/>
+              <circle cx="460" cy="485" r="5" fill="#fffdf8" stroke="#9333ea" stroke-width="2"/><circle cx="640" cy="485" r="6" fill="#9333ea"/><circle cx="820" cy="485" r="5" fill="#fffdf8" stroke="#9333ea" stroke-width="2"/><circle cx="1000" cy="485" r="5" fill="#fffdf8" stroke="#9333ea" stroke-width="2"/>
+            
+              <text class="theme" x="40" y="536">国家构想与治理</text>
+              <rect x="460" y="522" width="540" height="18" rx="9" fill="#ccfbf1"/>
+              <circle cx="460" cy="531" r="5" fill="#fffdf8" stroke="#0f766e" stroke-width="2"/><circle cx="640" cy="531" r="5" fill="#fffdf8" stroke="#0f766e" stroke-width="2"/><circle cx="820" cy="531" r="6" fill="#0f766e"/><circle cx="1000" cy="531" r="6" fill="#0f766e"/>
+            
+              <rect x="40" y="572" width="1040" height="28" rx="7" fill="#f3f1eb" stroke="#d9d2c6"/>
+              <text class="note" x="56" y="591">报告综合：实心点只标本页选取的突出锚点；空心点表示可继续追踪。主题会变形、转义和受历史结果校验，图不替代原文。</text>
+            </svg>
+          </div>
+        </div>
+        <figcaption><span class="origin synthesis">报告综合</span> 五卷与主题线现在共用同一列坐标：实心点是本页选取的突出锚点，空心点表示可继续跨卷追踪；都不表示思想强度或历史必然。手机上可左右滑动查看。</figcaption>
+      </figure>
+    </section>
+
+    <section id="themes">
+      <div class="section-head">
+        <div>
+          <h2>带走这五条主线</h2>
+          <p>不是把 229 篇压成五句口号，而是给后续查原文的索引。</p>
+        </div>
+        <span class="time">10 分钟</span>
+      </div>
+      <div class="theme-grid">
+        <article class="theme-card" data-claim-id="c02-investigation">
+          <span class="theme-number">1</span><div><span class="origin author">作者主张</span><h3>调查与实践</h3><p>从具体情况出发，让认识回到实践中检验。</p></div>
+        </article>
+        <article class="theme-card" data-claim-id="c04-contradiction">
+          <span class="theme-number">2</span><div><span class="origin author">作者主张</span><h3>矛盾与力量</h3><p>区分矛盾性质、主次和参与力量，拒绝一概而论。</p></div>
+        </article>
+        <article class="theme-card" data-claim-id="c05-protracted">
+          <span class="theme-number">3</span><div><span class="origin author">作者主张</span><h3>阶段与战略</h3><p>把目标、条件、阶段和联盟范围一起纳入判断。</p></div>
+        </article>
+        <article class="theme-card" data-claim-id="c08-leadership">
+          <span class="theme-number">4</span><div><span class="origin author">作者主张</span><h3>组织与反馈</h3><p>集中群众经验，再回到群众中检验和修正。</p></div>
+        </article>
+        <article class="theme-card" data-claim-id="s02-revolution-governance">
+          <span class="theme-number">5</span><div><span class="origin synthesis">报告综合</span><h3>建国与治理</h3><p>重心从革命、战争逐步转向制度、建设和关系协调。</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="route">
+      <div class="section-head">
+        <div>
+          <h2>2.5–3 小时首轮怎么读</h2>
+          <p>主地图负责筛选；五篇必读原文负责校正理解，另有一篇可选扩展。</p>
+        </div>
+        <span class="time">90–120 分钟原文</span>
+      </div>
+      <div class="session" aria-label="首轮阅读时间分配">
+        <div class="session-step"><strong>① 45 分钟</strong><span>读完本页主地图</span></div>
+        <div class="session-step"><strong>② 90–120 分钟</strong><span>读五篇必读；有余力再加可选篇</span></div>
+        <div class="session-step"><strong>③ 20 分钟</strong><span>做批判审计与深读决策</span></div>
+      </div>
+      <div class="route-grid">
+        <article class="route-card" data-claim-id="c02-investigation"><span class="route-order">01</span><div><span class="route-meta">第一卷 · 约 4800 字</span><h3>反对本本主义</h3><p>观察调查、经验与书本知识如何排序。</p></div></article>
+        <article class="route-card" data-claim-id="c03-practice"><span class="route-order">02</span><div><span class="route-meta">第一卷 · 约 1.1 万字</span><h3>实践论</h3><p>理解认识如何从实践产生，并回到实践检验。</p></div></article>
+        <article class="route-card" data-claim-id="c08-leadership"><span class="route-order">03</span><div><span class="route-meta">第三卷 · 约 3500 字</span><h3>关于领导方法的若干问题</h3><p>看一般与个别、领导与群众怎样形成反馈循环。</p></div></article>
+        <article class="route-card" data-claim-id="c09-correction"><span class="route-order">04</span><div><span class="route-meta">第三卷 · 约 1100 字</span><h3>为人民服务</h3><p>用短文观察组织目的、批评与纠错的表达。</p></div></article>
+        <article class="route-card" data-claim-id="c11-relations"><span class="route-order">05</span><div><span class="route-meta">第五卷 · 约 1.26 万字</span><h3>论十大关系</h3><p>看建设时期如何处理多组关系并调动积极因素。</p></div></article>
+        <article class="route-card" data-claim-id="c01-forces"><span class="route-order">＋</span><div><span class="route-meta">可选扩展 · 第一卷 · 约 6500 字</span><h3>中国社会各阶级的分析</h3><p>完成五篇必读后仍有余力，再观察问题如何从敌友与社会力量切入。</p></div></article>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="section-head">
+        <div>
+          <h2>批判审计：学什么，警惕什么</h2>
+          <p>先准确理解文本，再核前提、遗漏和历史结果。</p>
+        </div>
+        <span class="time">12 分钟</span>
+      </div>
+      <div class="audit-grid">
+        <article class="audit-box good">
+          <span class="origin audit">可借鉴</span>
+          <h3>四种仍有训练价值的纪律</h3>
+          <ul>
+            <li>先调查具体条件，再作判断。</li>
+            <li>区分矛盾性质、主次和阶段。</li>
+            <li>让战略回应力量、时间和约束。</li>
+            <li>通过反馈、批评与实践修正认识。</li>
+          </ul>
+        </article>
+        <article class="audit-box limit">
+          <span class="origin audit">必须保留的限制</span>
+          <h3>选集不能等同于完整历史</h3>
+          <ul>
+            <li>政治文献有明确立场、对象和动员目的。</li>
+            <li>敌我与阶级分类要核依据、遗漏和代价。</li>
+            <li>战争与组织策略不能直接移植到日常管理。</li>
+            <li>作者主张、编辑选择和后来结果必须分开。</li>
+          </ul>
+        </article>
+        <article class="audit-box questions">
+          <span class="origin external">外部核查</span>
+          <h3>每篇都可用的四问</h3>
+          <ul>
+            <li>当时要解决什么问题，已知限制是什么？</li>
+            <li>关键分类和因果判断依据哪些材料？</li>
+            <li>这是原则、阶段策略、动员表达还是经验总结？</li>
+            <li>后来的结果支持、修正还是反驳了什么？</li>
+          </ul>
+        </article>
+        <article class="audit-box warning">
+          <span class="origin audit">阅读提醒</span>
+          <h3>不要用今天的口号替代当时语境</h3>
+          <p>先按篇名、日期和问题理解文本，再引入同时代材料、历史研究和不同立场。这样既不扭曲作者，也不把作者观点当作未经检验的事实。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="section-head">
+        <div>
+          <h2>读完首轮，做一个明确决定</h2>
+          <p>没有“必须读完全书”；选择要服务于你的真实问题。</p>
+        </div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="decision-grid">
+        <div class="decision-row"><strong>全读五卷</strong><span>适合系统研究思想演变、革命史或早期治理，并愿意同步读史料、研究和反方材料。</span></div>
+        <div class="decision-row"><strong>按主题深读</strong><span>适合沿“调查”“矛盾”“战略”“组织”或“治理”追踪跨卷变化。</span></div>
+        <div class="decision-row"><strong>单篇深挖</strong><span>适合某篇与当前问题直接相关，需要逐段拆论证、核引文、补语境和历史结果。</span></div>
+        <div class="decision-row"><strong>先停在地图</strong><span>适合只需知道五卷结构；前提是你能说明版本边界、五条主线和至少三项局限。</span></div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="section-head">
+        <div>
+          <h2>已生成的深挖地图</h2>
+          <p>六个模块都来自已经发生的阅读兴趣，不是首轮必读；没有对应项时再按需生成。</p>
+        </div>
+        <span class="time">6 个 · 核心 38–65 分钟</span>
+      </div>
+      <div class="module-grid">
+        <article class="module"><h3>实践论 × 矛盾论</h3><small>认识怎样形成、重点怎样选择，以及实践、主次和对抗的误用边界</small><br><a class="made" href="modules/practice-and-contradiction/reading.html">进入深挖 · 核心约 60 分钟</a></article>
+        <article class="module"><h3>论持久战</h3><small>条件比较、三阶段、尺度转换、政治动员与历史因果边界</small><br><a class="made" href="modules/protracted-war/reading.html">进入深挖 · 核心约 60 分钟</a></article>
+        <article class="module"><span class="origin external">二级深挖 · 承接《论持久战》</span><h3>一号作战：历史压力测试</h3><small>为什么“相持期”仍会出现日军大攻势；区分在华作战结果与日本总体战争态势</small><br><a class="made" href="modules/operation-ichi-go/reading.html">进入深挖 · 核心约 38 分钟</a></article>
+        <article class="module"><h3>新民主主义与国家构想</h3><small>从阶段纲领、联合政府到人民民主专政；区分连续、变化与制度结果</small><br><a class="made" href="modules/new-democracy-and-state/reading.html">进入深挖 · 核心约 58 分钟</a></article>
+        <article class="module"><h3>星星之火，可以燎原</h3><small>弱小力量为什么可能增长；根据地机制、两种误判、自我修正与历史压力测试</small><br><a class="made" href="modules/single-spark/reading.html">进入深挖 · 核心约 48 分钟</a></article>
+        <article class="module"><h3>论十大关系 × 正确处理人民内部矛盾</h3><small>资源、利益与权力关系；矛盾分类、处理方法和 1957 年历史压力测试</small><br><a class="made" href="modules/governance-relations/reading.html">进入深挖 · 核心约 65 分钟</a></article>
+      </div>
+      <p class="muted" style="margin-top: 12px;">没有对应项时，也允许直接指定第一至第五卷内任意一篇，例如“深挖《反对党八股》”。新模块生成后才会增加入口，并保留卷次、篇名、原文定位和版本边界。</p>
+    </section>
+
+    <section id="evidence">
+      <div class="section-head">
+        <div>
+          <h2>证据与回原文入口</h2>
+          <p>默认折叠；当你要核引文、定位或版本依据时再展开。</p>
+        </div>
+        <span class="time">按需</span>
+      </div>
+
+      <details>
+        <summary>五条短摘录与 EPUB 定位</summary>
+        <div class="detail-body">
+          <blockquote><p>“没有调查，没有发言权。”</p><span class="locator">第一卷《反对本本主义》｜OEBPS/Text/Section0205.xhtml</span></blockquote>
+          <blockquote><p>“只有人们的社会实践，才是人们对于外界认识的真理性的标准。”</p><span class="locator">第一卷《实践论》｜OEBPS/Text/Section0215.xhtml</span></blockquote>
+          <blockquote><p>“从群众中来，到群众中去。”</p><span class="locator">第三卷《关于领导方法的若干问题》｜OEBPS/Text/Section0413.xhtml</span></blockquote>
+          <blockquote><p>“如果有缺点，就不怕别人批评指出。”</p><span class="locator">第三卷《为人民服务》｜OEBPS/Text/Section0420.xhtml</span></blockquote>
+          <blockquote><p>“把国内外一切积极因素调动起来，为社会主义事业服务。”</p><span class="locator">第五卷《论十大关系》｜OEBPS/Text/Section0651.xhtml</span></blockquote>
+          <p class="muted">摘录只承担原意锚定，不代替上下文。请在 Apple Books 搜索准确篇名并阅读前后段落。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>版本与外部背景来源</summary>
+        <div class="detail-body">
+          <ul class="source-list">
+            <li><a href="https://www.dswxyjy.org.cn/n1/2019/0228/c423964-30916612.html">中央党史和文献研究院：《毛泽东选集》第二版出版说明</a> — 第一至四卷选编与修订背景。</li>
+            <li><a href="https://cpc.people.com.cn/BIG5/64162/64165/78561/79700/5526889.html">中国共产党新闻网：《毛泽东选集》第五卷出版</a> — 1977 年出版与收文时段。</li>
+            <li><a href="https://www.dswxyjy.org.cn/GB/427196/423771/428219/index.html">中央党史和文献研究院：毛泽东著作目录</a> — 题名与官方目录核对入口。</li>
+            <li><a href="https://afe.easia.columbia.edu/tps/1950_cn.htm">Columbia University Asia for Educators: China, 1950–2000</a> — 将政策主张放回更广泛历史结果的外部入口。</li>
+          </ul>
+          <p class="muted">官方出版资料可说明编辑与版本背景，不自动证明每项历史解释；历史结果应继续交叉核查。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>来源身份、覆盖率与机器可核查数据</summary>
+        <div class="detail-body">
+          <p><strong>源文件：</strong>毛泽东选集.epub</p>
+          <p><strong>SHA-256：</strong><code>ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26</code></p>
+          <p><strong>范围：</strong>第一至第五卷 229 篇，约 1,160,875 正文字符；范围内 229/229 文件唯一，未见空篇、正文重复、下载广告或“静火”标识。</p>
+          <p><strong>覆盖边界：</strong>结构审计覆盖全部 229 篇；语义模型依据目录、时期结构与代表性核心文章建立，不声称逐段概括全部正文。所有直接摘录均逐字回查。</p>
+          <p><strong>结构数据：</strong>428 个归档条目、416 个 XHTML 文件、410 个目录条目。详细卷次统计、论点定位、摘录与模块契约见同目录 <a href="reading.json">reading.json</a>。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>用途：先看懂结构，再决定是否深读；不是作者观点替身，也不是完整历史叙事。</p>
+      <p>生成日期：2026-08-10 · 范围：第一至第五卷 · 第六、七卷永久排除</p>
+    </div>
+  </footer>
+</body>
+</html>

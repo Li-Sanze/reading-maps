@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《星星之火，可以燎原》渐进深挖：约 48 分钟理解弱小力量增长判断、根据地机制、两种误判、自我修正与历史压力测试。">
+  <title>星星之火，可以燎原｜渐进深挖</title>
+  <style>
+    :root {
+      --paper:#f4f1ea; --surface:#fffdf8; --ink:#1d2421; --muted:#5c6661; --line:#d9d2c6;
+      --accent:#7c382c; --accent-dark:#59271e; --accent-soft:#f5e9e4;
+      --blue:#225f8b; --blue-soft:#eaf4fb; --purple:#6745a5; --purple-soft:#f1ecfb;
+      --orange:#8b4a1b; --orange-soft:#fff0e3; --green:#176652; --green-soft:#e5f2ed;
+      --gray-soft:#edf0ef; --red:#8a2f2f; --red-soft:#fceeee; --radius:18px;
+      --content:1080px; --shadow:0 6px 20px rgba(38,33,26,.05);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:radial-gradient(circle at 92% 0%,rgba(124,56,44,.09),transparent 28rem),radial-gradient(circle at 4% 18%,rgba(34,95,139,.07),transparent 24rem),var(--paper);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.7;text-rendering:optimizeLegibility}
+    a{color:var(--accent-dark);text-underline-offset:.2em} a:hover{text-decoration-thickness:2px}
+    a:focus-visible,summary:focus-visible,.model-scroll:focus-visible{outline:3px solid #e69b36;outline-offset:3px;border-radius:8px}
+    .skip-link{position:fixed;z-index:30;top:10px;left:10px;transform:translateY(-160%);min-height:44px;padding:10px 15px;color:#fff;background:var(--accent-dark);border-radius:10px}.skip-link:focus{transform:none}
+    h1,h2,h3{line-height:1.26;text-wrap:balance} h1{margin:0;font-family:ui-serif,Georgia,"Songti SC",serif;font-size:clamp(2.55rem,8vw,5rem);letter-spacing:-.045em} h2{margin:0;font-size:clamp(1.5rem,4vw,2.08rem)} h3{margin:0 0 8px;font-size:1.04rem}
+    p{margin:0 0 1em} ul,ol{margin-top:.5em;padding-left:1.2em} li{margin-bottom:.45em}
+    .hero{padding:48px 20px 34px;border-bottom:1px solid var(--line)}.hero-inner,.page,.footer-inner{width:min(100%,var(--content));margin-inline:auto}
+    .back{display:inline-flex;min-height:44px;align-items:center;margin-bottom:20px;color:var(--muted);font-size:.84rem;font-weight:760;text-decoration:none}.back:hover{color:var(--accent)}
+    .eyebrow{margin:0 0 10px;color:var(--accent);font-size:.78rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.lead{max-width:800px;margin:15px 0 0;color:var(--muted);font-size:clamp(1.05rem,2.2vw,1.25rem)}
+    .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.fact{display:inline-flex;flex:0 0 auto;max-width:100%;min-height:40px;align-items:center;padding:7px 12px;color:var(--accent-dark);background:rgba(255,253,248,.9);border:1px solid var(--line);border-radius:999px;font-size:.82rem;font-weight:760}
+    .thesis{display:grid;gap:7px;margin-top:24px;padding:22px;color:#fff;background:linear-gradient(135deg,#3f2925,#77513c);border-radius:var(--radius);box-shadow:var(--shadow)}.thesis small{color:#f3d9ce;font-weight:790}.thesis strong{max-width:950px;font-size:clamp(1.1rem,2.7vw,1.43rem)}.thesis p{margin:0;color:#f7e9e2;font-size:.91rem}
+    .section-nav{position:sticky;z-index:10;top:0;background:rgba(244,241,234,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.section-nav nav{display:flex;width:min(100%,var(--content));min-height:52px;margin-inline:auto;padding-inline:12px;overflow-x:auto;scrollbar-width:none}.section-nav nav::-webkit-scrollbar{display:none}.section-nav a{display:inline-flex;flex:0 0 auto;min-height:48px;align-items:center;padding:8px 10px;color:var(--muted);font-size:.82rem;font-weight:760;text-decoration:none}.section-nav a:hover{color:var(--accent)}
+    .page{padding:34px 20px 72px}section{margin-bottom:50px;scroll-margin-top:72px}.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}.section-head p{margin:5px 0 0;color:var(--muted)}.time{flex:0 0 auto;padding:5px 10px;color:var(--accent-dark);background:var(--accent-soft);border-radius:999px;font-size:.77rem;font-weight:820}
+    .grid-2,.grid-3,.route,.audit-grid,.excerpt-grid,.history-grid{display:grid;gap:12px}.card,.route-card,.audit-card,.reading-card,.decision,details,.model-figure{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card,.route-card,.audit-card,.reading-card,.decision{padding:18px}.card p:last-child,.audit-card p:last-child,.reading-card p:last-child{margin-bottom:0}
+    .muted{color:var(--muted)}.origin{display:inline-flex;min-height:26px;align-items:center;margin:0 0 9px;padding:2px 8px;border-radius:999px;font-size:.7rem;font-weight:850;letter-spacing:.03em}.author{color:var(--blue);background:var(--blue-soft)}.synthesis{color:var(--purple);background:var(--purple-soft)}.audit{color:var(--orange);background:var(--orange-soft)}.external{color:#56636a;background:var(--gray-soft)}.scope{color:var(--green);background:var(--green-soft)}
+    .route{counter-reset:route}.route-card{position:relative;padding-left:58px}.route-card::before{counter-increment:route;content:counter(route);position:absolute;top:17px;left:18px;display:grid;width:27px;height:27px;place-items:center;color:#fff;background:var(--accent);border-radius:50%;font-size:.78rem;font-weight:850}.route-card small{color:var(--muted)}
+    .model-figure{margin:0;padding:12px;overflow:hidden}.model-scroll{overflow-x:auto;overscroll-behavior-inline:contain}.model-canvas{min-width:1060px}.model-canvas svg{display:block;width:100%;height:auto}figcaption{padding:10px 8px 2px;color:var(--muted);font-size:.78rem}.mobile-hint{display:none;margin:8px 0 0;color:var(--muted);font-size:.76rem}
+    .audit-card.good{border-top:4px solid var(--green)}.audit-card.limit{border-top:4px solid var(--orange)}.audit-card.gate{border-top:4px solid var(--red)}
+    blockquote{margin:13px 0;padding:12px 14px;background:#faf6ee;border-left:4px solid var(--accent);border-radius:0 10px 10px 0}.reading-card blockquote{font-family:ui-serif,Georgia,"Songti SC",serif;font-size:.98rem;line-height:1.82}.reading-card .guide{margin-bottom:.55em}.reading-card .cannot{margin-top:10px;padding-top:10px;color:var(--red);border-top:1px dashed #e5c2c2;font-size:.87rem}.locator{display:block;margin-top:7px;color:var(--muted);font-size:.76rem}
+    details{margin-bottom:10px;overflow:clip}summary{display:flex;min-height:50px;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;cursor:pointer;font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--accent);font-size:1.25rem}details[open] summary::after{content:"−"}.detail-body{padding:0 16px 16px;border-top:1px solid var(--line)}.detail-body>:first-child{margin-top:14px}.source-list{margin:0;padding-left:1.2em}
+    .decision{border-left:5px solid var(--green)}.decision-grid{display:grid;gap:8px;margin-top:12px}.decision-row{display:grid;grid-template-columns:155px 1fr;gap:12px;padding-top:10px;border-top:1px solid var(--line)}.decision-row strong{color:var(--accent-dark)}
+    footer{padding:24px 20px 34px;color:var(--muted);border-top:1px solid var(--line)}footer p{margin:.3em 0;font-size:.79rem}code{overflow-wrap:anywhere;font-size:.83em}
+    @media(min-width:760px){.grid-2,.audit-grid,.history-grid{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.route{grid-template-columns:repeat(5,1fr)}.excerpt-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:759px){.hero{padding-top:32px}.page{padding-inline:16px}.section-head{display:block}.time{display:inline-flex;margin-top:10px}.mobile-hint{display:block}.decision-row{grid-template-columns:1fr;gap:4px}section{margin-bottom:42px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    @media print{body{background:#fff;font-size:11pt}.section-nav,.skip-link,.mobile-hint{display:none}.hero,.page,footer{padding-inline:0}section{break-inside:avoid;margin-bottom:28px}.card,.route-card,.audit-card,.reading-card,.decision,details,.model-figure{box-shadow:none}details>*{display:block!important}.model-scroll{overflow:visible}.model-canvas{min-width:0}a{color:inherit;text-decoration:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="back" href="../../reading.html#modules">← 返回《毛泽东选集》主阅读地图</a>
+      <p class="eyebrow">Progressive deep dive · 按需深挖 04</p>
+      <h1>星星之火，可以燎原</h1>
+      <p class="lead">不要只记一句名言。用约 48 分钟看清作者为什么判断弱小力量可能增长、哪些行动把可能变成能力，以及这个判断怎样接受时间和历史检验。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第一卷 · 独立文章</span><span class="fact">1930 年 1 月 5 日</span><span class="fact">核心 48 分钟</span><span class="fact">原文回读 30–45 分钟</span><span class="fact">当前选集文本有改题删改边界</span>
+      </div>
+      <div class="thesis">
+        <small>一句话模型 · 报告综合</small>
+        <strong>结构矛盾提供窗口，根据地、群众、土地、政权与武装建设形成能力，分散和集中维持生存与扩展；但“可能—必然—很快”不是同一强度的判断。</strong>
+        <p>边界：这是一篇革命战争与政权建设文本，不是个人成长、创业增长或“只要坚持就会成功”的通用比喻。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav"><nav aria-label="页内目录">
+    <a href="#route">路线</a><a href="#context">写作现场</a><a href="#mechanism">增长机制</a><a href="#judgment">判断纪律</a><a href="#original">原文选段</a><a href="#history">历史检验</a><a href="#audit">批判审计</a><a href="#source">回原文</a><a href="#decision">下一步</a>
+  </nav></div>
+
+  <main id="main" class="page">
+    <section id="route">
+      <div class="section-head"><div><h2>先走核心 48 分钟</h2><p>先复原问题和机制，再读原文，最后看后来历史同时支持和挑战了什么。</p></div><span class="time">约 48 分钟</span></div>
+      <div class="route">
+        <article class="route-card"><h3>认写作现场</h3><small>5 分钟</small><p>它原是回应红军前途疑问的书信。</p></article>
+        <article class="route-card"><h3>看增长机制</h3><small>10 分钟</small><p>分开结构条件、组织建设与能力反馈。</p></article>
+        <article class="route-card"><h3>看判断纪律</h3><small>8 分钟</small><p>同时防盲动和悲观，区分方向与时限。</p></article>
+        <article class="route-card"><h3>读五段原文</h3><small>15 分钟</small><p>核可能、必然、很快和战术限定。</p></article>
+        <article class="route-card"><h3>做历史审计</h3><small>10 分钟</small><p>看扩大、失败与外部条件共同出现。</p></article>
+      </div>
+    </section>
+
+    <section id="context">
+      <div class="section-head"><div><h2>写作现场：不是给所有人的励志演讲</h2><p>先回答“谁在争论什么”，才知道文章为什么这样写。</p></div><span class="time">5 分钟</span></div>
+      <div class="grid-3">
+        <article class="card"><span class="origin scope">版本事实</span><h3>原来是一封信</h3><p>书内注释说明，文章原是答复林彪关于红军前途的信。1948 年准备公开刊行时同意不提林彪姓名；收入选集时改题，并删改了指名批评处。</p></article>
+        <article class="card"><span class="origin author">作者问题</span><h3>保存力量还是建设政权</h3><p>争论不是抽象的“乐观还是悲观”，而是只做流动游击，还是建设根据地、土地制度、群众组织、地方政权与成体系武装。</p></article>
+        <article class="card"><span class="origin synthesis">报告综合</span><h3>与现有模块怎样连接</h3><p>它在时间上早于《实践论》《矛盾论》和《论持久战》，可看作一次具体战略判断实践；但不能说后两组文章只是它的必然展开。</p></article>
+      </div>
+    </section>
+
+    <section id="mechanism">
+      <div class="section-head"><div><h2>增长机制：条件不会自动变成胜利</h2><p>文章的核心不是“小”，而是弱小力量怎样通过组织建设形成可持续能力；底部风险栏列出原文论证不能独自解决的变量。</p></div><span class="time">10 分钟</span></div>
+      <figure class="model-figure">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的弱小力量增长机制图"><div class="model-canvas">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" role="img" aria-labelledby="spark-mech-title spark-mech-desc" data-quality-profile="standard">
+            <title id="spark-mech-title">《星星之火，可以燎原》的条件、建设与能力反馈</title>
+            <desc id="spark-mech-desc">从统治结构分裂、农村社会矛盾和区域条件，经过根据地与政权、土地与群众组织、地方武装与红军建设，形成群众基础、组织生存和局部扩展能力。能力结果会反馈到下一轮建设。风险栏提示敌方学习、内部错误、民众代价和外部战争会改变结果。</desc>
+            <style>text{font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif}.t{font-size:21px;font-weight:760;fill:#17211d}.s{font-size:12px;fill:#68716c}.lane{font-size:12px;font-weight:800;letter-spacing:.08em;fill:#5b6560}.nt{font-size:15px;font-weight:760;fill:#17211d}.ns{font-size:11.5px;fill:#4f5b55}.el{font-size:11px;font-weight:720;fill:#225f8b}.risk{font-size:11.5px;fill:#7c382c}</style>
+            <defs><marker id="spark-arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#256b87"/></marker><marker id="spark-arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6c4aa1"/></marker></defs>
+            <rect width="1280" height="760" rx="20" fill="#fffdf8"/>
+            <text class="t" x="40" y="38">弱小力量增长：结构窗口 → 组织建设 → 能力反馈</text><text class="s" x="40" y="61">报告结构化复原｜主箭头表示文章论证，不表示只要满足一项就必然成功</text>
+            <rect x="40" y="90" width="280" height="500" rx="18" fill="#eef6fb" stroke="#b8d6e5" data-graph-role="container"/><text class="lane" x="64" y="120">01 结构窗口</text>
+            <g id="spark-cond-1" data-graph-role="node" data-semantic-role="condition" data-graph-bounds="64,145,296,245"><rect x="64" y="145" width="232" height="100" rx="12" fill="#fff" stroke="#bdd6e2"/><text class="nt" x="82" y="175">统治结构分裂</text><text class="ns" x="82" y="198">军阀混战与地区不平衡</text><text class="ns" x="82" y="218">削弱统一压制能力</text></g>
+            <g id="spark-cond-2" data-graph-role="node" data-semantic-role="condition" data-graph-bounds="64,270,296,370"><rect x="64" y="270" width="232" height="100" rx="12" fill="#fff" stroke="#bdd6e2"/><text class="nt" x="82" y="300">农村社会矛盾</text><text class="ns" x="82" y="323">土地、赋税与生计压力</text><text class="ns" x="82" y="343">提供动员问题，不等于支持</text></g>
+            <g id="spark-cond-3" data-graph-role="node" data-semantic-role="condition" data-graph-bounds="64,395,296,495"><rect x="64" y="395" width="232" height="100" rx="12" fill="#fff" stroke="#bdd6e2"/><text class="nt" x="82" y="425">区域具体条件</text><text class="ns" x="82" y="448">敌军、地方基础与地理不同</text><text class="ns" x="82" y="468">决定哪里可建、如何行动</text></g>
+
+            <rect x="360" y="90" width="360" height="500" rx="18" fill="#f3effa" stroke="#d3c5ea" data-graph-role="container"/><text class="lane" x="384" y="120">02 组织与行动</text>
+            <g id="spark-build-1" data-graph-role="node" data-semantic-role="process" data-graph-bounds="384,145,696,245"><rect x="384" y="145" width="312" height="100" rx="12" fill="#fff" stroke="#d2c4e6"/><text class="nt" x="404" y="175">根据地与政治权力</text><text class="ns" x="404" y="198">从流动影响转向持续治理</text><text class="ns" x="404" y="218">形成组织、资源与信任载体</text></g>
+            <g id="spark-build-2" data-graph-role="node" data-semantic-role="process" data-graph-bounds="384,270,696,370"><rect x="384" y="270" width="312" height="100" rx="12" fill="#fff" stroke="#d2c4e6"/><text class="nt" x="404" y="300">土地与群众组织</text><text class="ns" x="404" y="323">把社会问题转化为参与基础</text><text class="ns" x="404" y="343">但支持程度必须由实际检验</text></g>
+            <g id="spark-build-3" data-graph-role="node" data-semantic-role="process" data-graph-bounds="384,395,696,495"><rect x="384" y="395" width="312" height="100" rx="12" fill="#fff" stroke="#d2c4e6"/><text class="nt" x="404" y="425">武装建设与战术切换</text><text class="ns" x="404" y="448">分兵发动群众，集中应付敌人</text><text class="ns" x="404" y="468">环境差时更要求集中与领导</text></g>
+
+            <rect x="760" y="90" width="280" height="500" rx="18" fill="#eaf5ef" stroke="#b9ddcc" data-graph-role="container"/><text class="lane" x="784" y="120">03 形成的能力</text>
+            <g id="spark-cap-1" data-graph-role="node" data-semantic-role="outcome" data-graph-bounds="784,145,1016,245"><rect x="784" y="145" width="232" height="100" rx="12" fill="#fff" stroke="#b9d9ca"/><text class="nt" x="802" y="175">群众与资源基础</text><text class="ns" x="802" y="198">人员、信息、供给与政治影响</text><text class="ns" x="802" y="218">来自关系，不只来自宣传</text></g>
+            <g id="spark-cap-2" data-graph-role="node" data-semantic-role="outcome" data-graph-bounds="784,270,1016,370"><rect x="784" y="270" width="232" height="100" rx="12" fill="#fff" stroke="#b9d9ca"/><text class="nt" x="802" y="300">组织生存能力</text><text class="ns" x="802" y="323">能承受围困、恢复和调整</text><text class="ns" x="802" y="343">失败仍可能打断这一过程</text></g>
+            <g id="spark-cap-3" data-graph-role="node" data-semantic-role="outcome" data-graph-bounds="784,395,1016,495"><rect x="784" y="395" width="232" height="100" rx="12" fill="#fff" stroke="#b9d9ca"/><text class="nt" x="802" y="425">局部扩展能力</text><text class="ns" x="802" y="448">由小区域向相邻区域推进</text><text class="ns" x="802" y="468">原文称“波浪式”发展</text></g>
+
+            <g id="spark-claim" data-graph-role="node" data-semantic-role="claim" data-graph-bounds="1080,210,1240,430"><rect x="1080" y="210" width="160" height="220" rx="16" fill="#fff0e7" stroke="#e6bd9f" stroke-width="1.5"/><text class="lane" x="1102" y="242">方向性结论</text><text class="nt" x="1102" y="280">小块力量</text><text class="nt" x="1102" y="305">可能扩大</text><path d="M1102 330H1218" stroke="#d1a284"/><text class="ns" x="1102" y="356">作者进一步说</text><text class="ns" x="1102" y="378">“必然”且“很快”</text><text class="ns" x="1102" y="400">这需要单独审计</text></g>
+
+            <path id="spark-e1" data-graph-role="edge" data-source="spark-cond-2" data-target="spark-build-2" d="M320 320H360" stroke="#256b87" stroke-width="2" fill="none" marker-end="url(#spark-arrow-blue)"/><text class="el" x="328" y="309">提供窗口</text>
+            <path id="spark-e2" data-graph-role="edge" data-source="spark-build-2" data-target="spark-cap-2" d="M720 320H760" stroke="#256b87" stroke-width="2" fill="none" marker-end="url(#spark-arrow-blue)"/><text class="el" x="724" y="309">形成能力</text>
+            <path id="spark-e3" data-graph-role="edge" data-source="spark-cap-2" data-target="spark-claim" d="M1040 320H1080" stroke="#256b87" stroke-width="2" fill="none" marker-end="url(#spark-arrow-blue)"/><text class="el" x="1044" y="309">支持判断</text>
+            <path id="spark-feedback" data-graph-role="edge" data-semantic-role="feedback" data-source="spark-cap-3" data-target="spark-build-3" d="M900 495V548H540V501" stroke="#6c4aa1" stroke-width="2" fill="none" stroke-dasharray="7 5" marker-end="url(#spark-arrow-purple)"/><text x="650" y="540" font-size="11" font-weight="720" fill="#6c4aa1">能力结果返回下一轮组织与行动</text>
+
+            <g id="spark-risks" data-graph-role="container" data-semantic-role="risk" data-graph-bounds="40,625,1240,720"><rect x="40" y="625" width="1200" height="95" rx="16" fill="#fff5ef" stroke="#e8c7b3" stroke-dasharray="6 4"/><text class="lane" x="64" y="654" fill="#7c382c">不能从图中消失的变量</text><text class="risk" x="64" y="683">敌方学习与围剿强度</text><text class="risk" x="315" y="683">组织内部路线与执行错误</text><text class="risk" x="590" y="683">群众支持、强制与现实代价</text><text class="risk" x="900" y="683">日本侵华等外部战争变化</text><text class="s" x="64" y="706">这些变量解释了为什么“结构窗口 + 组织建设”仍不是自动成功公式。</text></g>
+          </svg>
+        </div></div>
+        <p class="mobile-hint">手机端可在图内横向滑动；页面本身保持单列。</p>
+        <figcaption>实线表示文章中的主论证；紫色虚线表示能力反馈。底部风险不是原文的一组公式，而是后见审计必须补回的条件。</figcaption>
+      </figure>
+    </section>
+
+    <section id="judgment">
+      <div class="section-head"><div><h2>判断纪律：既不能冒进，也不能把眼前失败无限放大</h2><p>第二张图只处理判断方法，不重复增长机制。</p></div><span class="time">8 分钟</span></div>
+      <figure class="model-figure">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的两种误判与自我修正图"><div class="model-canvas">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 650" width="1280" height="650" role="img" aria-labelledby="spark-judge-title spark-judge-desc" data-quality-profile="standard">
+            <title id="spark-judge-title">两种误判、证据判断与方向时限修正</title>
+            <desc id="spark-judge-desc">左侧是高估己方低估敌方导致盲动，右侧是低估己方只见敌强导致悲观。二者都应回到主体力量、敌方力量、结构条件、区域环境和时间尺度。判断输出区分方向和时限，作者保留方向判断但承认一年争取江西的时限错误。</desc>
+            <style>text{font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif}.t{font-size:21px;font-weight:760;fill:#17211d}.s{font-size:12px;fill:#68716c}.k{font-size:12px;font-weight:800;letter-spacing:.08em}.nt{font-size:16px;font-weight:760;fill:#17211d}.ns{font-size:12px;fill:#4f5b55}.big{font-size:18px;font-weight:800}.edge{font-size:11px;font-weight:720}</style>
+            <defs><marker id="judge-arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#256b87"/></marker><marker id="judge-arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a45522"/></marker></defs>
+            <rect width="1280" height="650" rx="20" fill="#fffdf8"/><text class="t" x="40" y="38">不要在乐观与悲观之间摆动：把估量拆成可检查的维度</text><text class="s" x="40" y="61">文章内部的判断纪律与自我修正｜不是概率模型</text>
+            <g id="judge-left" data-graph-role="node" data-semantic-role="error" data-graph-bounds="50,125,320,350"><rect x="50" y="125" width="270" height="225" rx="18" fill="#fff0e8" stroke="#e6b99d"/><text class="k" x="76" y="158" fill="#8b4a1b">误判 A</text><text class="big" x="76" y="194" fill="#7c382c">高估己方，低估敌方</text><text class="ns" x="76" y="230">只看到有利趋势</text><text class="ns" x="76" y="254">忽略敌军实力与坏环境</text><path d="M76 278H294" stroke="#e2c5b3"/><text class="nt" x="76" y="310">结果：盲动主义</text><text class="ns" x="76" y="333">冒险行动，消耗真实能力</text></g>
+            <g id="judge-center" data-graph-role="node" data-semantic-role="method" data-graph-bounds="410,95,870,390"><rect x="410" y="95" width="460" height="295" rx="20" fill="#eef6fb" stroke="#b6d5e4" stroke-width="1.5"/><text class="k" x="440" y="130" fill="#225f8b">回到证据与尺度</text><text class="nt" x="440" y="169">同时检查五项，不由单一现象代替全局</text><g fill="#fff" stroke="#c5dbe6"><rect x="440" y="195" width="180" height="58" rx="10"/><rect x="650" y="195" width="180" height="58" rx="10"/><rect x="440" y="270" width="180" height="58" rx="10"/><rect x="650" y="270" width="180" height="58" rx="10"/></g><text class="ns" x="458" y="229">己方组织与实际力量</text><text class="ns" x="668" y="229">敌方力量与反应能力</text><text class="ns" x="458" y="304">社会矛盾与发展方向</text><text class="ns" x="668" y="296">区域环境、行动任务</text><text class="ns" x="668" y="315">和观察时间</text><text class="s" x="440" y="360">“看实质”必须落到可观察条件，否则仍可能只是立场断言。</text></g>
+            <g id="judge-right" data-graph-role="node" data-semantic-role="error" data-graph-bounds="960,125,1230,350"><rect x="960" y="125" width="270" height="225" rx="18" fill="#f3effa" stroke="#d2c2e7"/><text class="k" x="986" y="158" fill="#6745a5">误判 B</text><text class="big" x="986" y="194" fill="#5a398e">低估己方，只见敌强</text><text class="ns" x="986" y="230">把局部败仗和围困</text><text class="ns" x="986" y="254">一般化为全局没有前途</text><path d="M986 278H1204" stroke="#d9ccec"/><text class="nt" x="986" y="310">结果：悲观退缩</text><text class="ns" x="986" y="333">放弃建设长期能力</text></g>
+            <path id="judge-e1" data-graph-role="edge" data-source="judge-left" data-target="judge-center" d="M320 238H410" stroke="#a45522" stroke-width="2" fill="none" marker-end="url(#judge-arrow-orange)"/><text class="edge" x="336" y="226" fill="#8b4a1b">纠偏</text><path id="judge-e2" data-graph-role="edge" data-source="judge-right" data-target="judge-center" d="M960 238H870" stroke="#6c4aa1" stroke-width="2" fill="none" marker-end="url(#judge-arrow-blue)"/><text class="edge" x="906" y="226" fill="#6745a5">纠偏</text>
+            <g id="judge-direction" data-graph-role="node" data-semantic-role="output" data-graph-bounds="230,455,605,590"><rect x="230" y="455" width="375" height="135" rx="16" fill="#eaf5ef" stroke="#b9d9ca"/><text class="k" x="256" y="486" fill="#176652">方向判断</text><text class="nt" x="256" y="520">保留：弱小力量可能扩大</text><text class="ns" x="256" y="548">必须绑定结构条件、组织行动与反馈证据</text><text class="ns" x="256" y="570">新事实出现时仍要修正</text></g>
+            <g id="judge-time" data-graph-role="node" data-semantic-role="output" data-graph-bounds="675,455,1050,590"><rect x="675" y="455" width="375" height="135" rx="16" fill="#fff5ef" stroke="#e8c7b3"/><text class="k" x="701" y="486" fill="#8b4a1b">时限判断</text><text class="nt" x="701" y="520">修正：“一年争取江西”不对</text><text class="ns" x="701" y="548">“不是算命”拒绝机械日期</text><text class="ns" x="701" y="570">但“很快”仍应允许后见检验</text></g>
+            <path id="judge-e3" data-graph-role="edge" data-source="judge-center" data-target="judge-direction" d="M570 390V430H418V455" stroke="#256b87" stroke-width="2" fill="none" marker-end="url(#judge-arrow-blue)"/><path id="judge-e4" data-graph-role="edge" data-source="judge-center" data-target="judge-time" d="M710 390V430H862V455" stroke="#a45522" stroke-width="2" fill="none" marker-end="url(#judge-arrow-orange)"/>
+          </svg>
+        </div></div>
+        <p class="mobile-hint">手机端可在图内横向滑动；两侧误判与中部证据区应一起阅读。</p>
+        <figcaption>价值不在于选择“乐观”，而在于把己方、敌方、结构、区域和时间同时纳入判断，并把方向和期限分开接受修正。</figcaption>
+      </figure>
+    </section>
+
+    <section id="original">
+      <div class="section-head"><div><h2>五段原文：从名言回到限定语</h2><p>摘录只承担论证锚定；蓝色是作者原文，红色边界说明不能推出什么。页面内省略处用省略号明示，JSON 保留用于校验的连续原文。</p></div><span class="time">15 分钟</span></div>
+      <div class="excerpt-grid">
+        <article class="reading-card"><span class="origin author">作者原文</span><h3>两种相反的误判</h3><blockquote>犯着革命急性病的同志们不切当地看大了革命的主观力量，而看小了反革命力量……另一方面，如果把革命的主观力量看小了，把反革命力量看大了，这也是一种不切当的估量。</blockquote><p class="guide">不是单向鼓励乐观，而是同时校正两侧误差。</p><p class="cannot"><strong>不能推出：</strong>反对悲观就应该冒险进攻。</p><span class="locator">正文 p 3｜搜索“犯着革命急性病”</span></article>
+        <article class="reading-card"><span class="origin author">作者原文</span><h3>可能、必然与很快</h3><blockquote>“星星之火，可以燎原。”这就是说，现在虽只有一点小小的力量，但是它的发展会是很快的。它在中国的环境里不仅是具备了发展的可能性，简直是具备了发展的必然性。</blockquote><p class="guide">这不是弱判断：作者从可能推进到必然和很快，所以必须检查条件。</p><p class="cannot"><strong>不能推出：</strong>任何微小事物只要坚持都会壮大。</p><span class="locator">正文 p 5｜搜索“简直是具备了发展的必然性”</span></article>
+        <article class="reading-card"><span class="origin author">作者原文</span><h3>分散与集中</h3><blockquote>“分兵以发动群众，集中以应付敌人。”……这种战术正如打网，要随时打开，又要随时收拢。打开以争取群众，收拢以应付敌人。</blockquote><p class="guide">增长包含群众工作和军事生存之间的切换，不是一直扩张。</p><p class="cannot"><strong>不能推出：</strong>分散或集中存在脱离环境的固定比例。</p><span class="locator">正文 p 13｜搜索“这种战术正如打网”</span></article>
+        <article class="reading-card"><span class="origin author">作者原文</span><h3>具体时限的自我修正</h3><blockquote>上面争取江西的话，不对的是规定一年为期。那个建议的缺点就是不该规定为一年，因此，影响到革命高潮快要到来的所谓“快要”，也不免伴上了一些急躁性。</blockquote><p class="guide">方向判断与时间表被主动拆开，这是文章里最重要的可修正位置。</p><p class="cannot"><strong>不能推出：</strong>撤回一年期限就自动证明“很快”可靠。</p><span class="locator">正文 p 18｜搜索“不对的是规定一年为期”</span></article>
+        <article class="reading-card"><span class="origin author">作者原文</span><h3>不是算命，也不能空泛</h3><blockquote>马克思主义者不是算命先生，未来的发展和变化，只应该也只能说出个大的方向，不应该也不可能机械地规定时日。但我所说的中国革命高潮快要到来，决不是……完全没有行动意义的、可望而不可即的一种空的东西。</blockquote><p class="guide">拒绝精确预言，同时坚持判断必须指导行动；这形成了证据责任。</p><p class="cannot"><strong>不能推出：</strong>只要不写日期，任何预测都不可证伪。</p><span class="locator">正文 p 19｜搜索“马克思主义者不是算命先生”</span></article>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="section-head"><div><h2>最低历史压力测试：既不是证成，也不是一句反例</h2><p>只选能检验本篇机制的三个节点，不扩写完整革命史。</p></div><span class="time">10 分钟</span></div>
+      <div class="history-grid">
+        <article class="audit-card good"><span class="origin external">外部史实</span><h3>1931：根据地确实扩大</h3><p>美国国会图书馆国别研究记载，1931 年中华苏维埃共和国在江西成立，毛泽东任中央政府主席。它支持“根据地与政权建设能形成更大组织规模”这一部分判断。</p></article>
+        <article class="audit-card limit"><span class="origin external">外部史实</span><h3>1934–1935：增长不是不可逆</h3><p>第五次围剿迫使中央红军撤离江西并开始长征。早期扩大没有消除敌方学习、火力与后勤优势、内部路线分歧和根据地脆弱性。</p></article>
+        <article class="audit-card good"><span class="origin external">后见综合</span><h3>延安阶段：后来增长是多因结果</h3><p>国会图书馆综述把延安时期扩展归因于内外多种条件，并特别指出日本侵华的重要影响；农村政策也随抗战统一战线发生调整。</p></article>
+        <article class="audit-card gate"><span class="origin audit">审计结论</span><h3>支持机制，不等于证明必然</h3><p>历史支持“根据地—群众—组织—武装”机制具有解释力，也证明具体路径会失败、迁移和改造；最终胜利不能倒推 1930 年所有预测准确。</p></article>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="section-head"><div><h2>批判审计：把这篇文章读得既忠实又不神化</h2><p>作者观点、报告综合和后见历史分别标明。</p></div><span class="time">已并入核心路线</span></div>
+      <div class="audit-grid">
+        <article class="audit-card good"><span class="origin audit">成立之处</span><h3>名言后面确有机制</h3><p>文章把社会结构、群众问题、根据地、政权、土地、武装和战术连在一起，远比“相信未来”具体。</p></article>
+        <article class="audit-card limit"><span class="origin audit">推理跃迁</span><h3>从条件到必然仍有缺口</h3><p>社会矛盾不会自动转化为对特定组织的支持；群众关系、治理结果、强制、敌方应对和外部战争都可能改变方向。</p></article>
+        <article class="audit-card limit"><span class="origin audit">语言边界</span><h3>“实质”不能成为免检标签</h3><p>如果“表面反例”总能被说成不重要，而“实质”又没有可观察指标，那么判断会失去修正压力。作者的一年期限自纠恰好提供了反方向示范。</p></article>
+        <article class="audit-card gate"><span class="origin audit">伦理边界</span><h3>不能改写成增长飞轮</h3><p>根据地、土地革命、军事扩张和围剿包含暴力、征集、强制与民众代价。图只是论证结构，不是对现实代价的美化。</p></article>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="section-head"><div><h2>证据与回原文入口</h2><p>默认折叠；需要核位置、版本或外部历史时再展开。</p></div><span class="time">按需</span></div>
+      <details><summary>原文定位与版本说明</summary><div class="detail-body"><p><strong>第一卷｜第二次国内革命战争时期｜《星星之火，可以燎原》</strong></p><p><code>OEBPS/Text/Section0204.xhtml</code>。Apple Books 搜索篇名；若要核版本，搜索文末“这是毛泽东给林彪的一封信”。正文 p 序号只用于本 EPUB，不等于纸本页码。</p><p class="muted">当前 EPUB 的 SHA-256：<code>ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26</code>。</p></div></details>
+      <details><summary>外部历史来源与视角限制</summary><div class="detail-body"><ul class="source-list">
+        <li><a href="https://tile.loc.gov/storage-services/master/frd/frdcstdy/ch/chinacountrystud00word/chinacountrystud00word.pdf">U.S. Library of Congress: China: A Country Study</a> — 江西苏区、长征和延安增长的外部综述；不是中方档案。</li>
+        <li><a href="https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/71/82/47/2020718247/2020718247.pdf">Afterlives of Chinese Communism</a> — 农村群众、土地政策和人民战争概念史；属于后见研究。</li>
+        <li><a href="https://www.cambridge.org/core/journals/china-quarterly/article/abs/mao-lin-biao-and-the-fifth-encirclement-campaign/8F7B0C06F0C4A49A1C3CB73051AF1C04">The China Quarterly: Mao, Lin Biao and the Fifth Encirclement Campaign</a> — 第五次围剿及战略理论压力测试入口；本页只使用公开摘要。</li>
+      </ul></div></details>
+    </section>
+
+    <section id="decision">
+      <div class="section-head"><div><h2>下一层怎么读</h2><p>不增加测试题；只根据兴趣选择回到原文或沿问题继续。</p></div><span class="time">可选</span></div>
+      <div class="decision"><p><strong>推荐先回原文全文。</strong>文章正文含注释约 8300 字，完整回读比继续生成更多解释更有价值。</p><div class="decision-grid">
+        <div class="decision-row"><strong>想核道路来源</strong><span>再读《中国的红色政权为什么能够存在？》《井冈山的斗争》，只补背景，不把三篇混成一篇。</span></div>
+        <div class="decision-row"><strong>想核思想连接</strong><span>回到《实践论 × 矛盾论》，比较“看实质、分析矛盾”如何被后来系统表达。</span></div>
+        <div class="decision-row"><strong>想核战略扩展</strong><span>回到《论持久战》，比较局部根据地增长与全国抗战阶段模型的尺度差异。</span></div>
+      </div></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><p>生成日期：2026-08-10 · 渐进阅读模块 04</p><p>范围：第一至第五卷；第六、七卷及“静火”个人编辑材料不进入本模块。</p><p>本页帮助理解、核证与回到原文，不替代原著或完整历史研究。</p></div></footer>
+</body>
+</html>

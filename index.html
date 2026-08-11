@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="渐进式读书地图：先看全书结构，按问题深挖，最后回到原文。">
+  <title>渐进式读书地图</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f4ed;
+      --surface: #fffdf8;
+      --ink: #243431;
+      --muted: #61706c;
+      --line: #d8ded9;
+      --accent: #345f55;
+      --accent-soft: #e5eee9;
+      --shadow: 0 18px 50px rgba(36, 52, 49, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid #8aa89d;
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: white;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .shell {
+      width: min(100% - 32px, 1040px);
+      margin-inline: auto;
+    }
+
+    header { padding: 64px 0 48px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.55fr);
+      align-items: center;
+      gap: clamp(36px, 7vw, 84px);
+    }
+
+    .hero-grid > * { min-width: 0; }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 760;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      overflow-wrap: anywhere;
+    }
+
+    .cover {
+      width: min(100%, 330px);
+      margin: 0;
+      justify-self: end;
+      transform: rotate(1.2deg);
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(68, 72, 62, 0.16);
+      border-radius: 3px;
+      box-shadow: 0 24px 70px rgba(60, 53, 39, 0.16);
+    }
+
+    main { padding-bottom: 72px; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); }
+
+    .section-note { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .books {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .book {
+      display: flex;
+      min-height: 330px;
+      flex-direction: column;
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .meta {
+      margin: 0 0 28px;
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 720;
+    }
+
+    .book h3 { margin: 0; font-size: clamp(1.45rem, 3vw, 2.15rem); line-height: 1.25; }
+
+    .book p { margin: 16px 0 0; color: var(--muted); }
+
+    .book-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 10px 17px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 760;
+      text-decoration: none;
+    }
+
+    .book-link:hover { background: #d8e7df; }
+
+    .method {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 56px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
+
+    .step { padding-right: 20px; }
+    .step strong { display: block; margin-bottom: 8px; font-size: 1.05rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0 0 8px; }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 720px) {
+      header { padding-top: 56px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .cover { width: min(100%, 260px); max-width: calc(100vw - 64px); margin-inline: auto; justify-self: center; transform: rotate(0.8deg); }
+      .section-head { display: block; }
+      .section-note { margin-top: 8px; }
+      .books, .method { grid-template-columns: 1fr; }
+      .book { min-height: 290px; }
+      .step { padding: 0 0 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      .cover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="shell">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Reading Maps</p>
+        <h1>渐进式读书地图</h1>
+        <p class="lead">先看全书结构，按问题深挖，最后回到原文。这里不是原书替代品，而是我在实际阅读中持续修正的导航。</p>
+      </div>
+      <figure class="cover">
+        <img src="assets/reading-maps-cover.jpg" width="719" height="1200" fetchpriority="high" decoding="async" alt="一条蓝色折纸同时形成打开的书页和往返路线">
+      </figure>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section aria-labelledby="books-title">
+      <div class="section-head">
+        <h2 id="books-title">当前书架</h2>
+        <p class="section-note">先发布两本，新的地图随真实阅读增加。</p>
+      </div>
+
+      <div class="books">
+        <article class="book">
+          <p class="meta">阅读方法 · 主地图约 40 分钟</p>
+          <h3>如何阅读一本书</h3>
+          <p>用四层阅读和四个主动问题，决定一本书值得略读、分析阅读、主题阅读，还是及时停止。</p>
+          <a class="book-link" href="books/how-to-read-a-book/reading.html">打开主地图 →</a>
+        </article>
+
+        <article class="book">
+          <p class="meta">思想与历史 · 主地图约 45 分钟</p>
+          <h3>毛泽东选集</h3>
+          <p>沿时期、问题和方法理解第一至第五卷，再进入已生成的主题或单篇深挖，最后回到原卷原篇。</p>
+          <a class="book-link" href="books/mao-selected-works/reading.html">打开主地图与深挖 →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="method" aria-label="阅读方法">
+      <div class="step"><strong>01 · 建立结构</strong><p>先判断全书讨论什么、怎样展开，以及版本和材料边界。</p></div>
+      <div class="step"><strong>02 · 按问题深挖</strong><p>只有真实疑问出现时，才进入主题、篇章或外部背景。</p></div>
+      <div class="step"><strong>03 · 回到原文</strong><p>地图用于定位和校正，不代替作者的完整论证与语境。</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <p>AI 协助整理，人工审阅并在实际阅读中修正。不提供原书文件或下载链接。</p>
+      <p><a href="https://github.com/Li-Sanze/reading-maps">GitHub</a> · 网站代码采用 MIT，原创阅读地图采用 CC BY 4.0；书中引文归原权利人。</p>
+    </div>
+  </footer>
+</body>
+</html>

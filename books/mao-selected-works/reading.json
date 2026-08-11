@@ -1,0 +1,557 @@
+{
+  "schema_version": "read-book.dogfood.v1",
+  "artifact_kind": "rapid-reading-map",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "source": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "bytes": 2918518,
+    "format": "EPUB",
+    "metadata": {
+      "title": "毛泽东选集",
+      "creator": "毛泽东",
+      "language": "zh-CN",
+      "modified": "2016-05-31",
+      "identifier": "urn:uuid:65f72ef6-1b0e-4d14-95f4-9f5a31fc40ef"
+    },
+    "metadata_limitations": [
+      "EPUB 包装层未提供出版社、ISBN、印次或纸本版次，报告不补造这些信息。",
+      "第一至四卷目录结构与 1991 年第二版的 159 篇结构相符，但本次未与权威纸本逐字校勘。",
+      "第五卷是 1977 年出版的身后编辑选本，需与第一至四卷的作者审定边界分开理解。"
+    ],
+    "archive_validation": {
+      "zip_entries": 428,
+      "xhtml_files": 416,
+      "toc_entries": 410,
+      "epub_open": "passed"
+    }
+  },
+  "scope": {
+    "included": "第一至第五卷正文",
+    "excluded": [
+      {
+        "scope": "第六、七卷全部内容",
+        "reason": "书内明确标示为‘静火’个人编辑，不进入本次全书模型、引文或推荐路径。"
+      },
+      {
+        "scope": "‘静火’编辑前言与附加材料",
+        "reason": "与用户确认的权威边界一致，永久排除。"
+      }
+    ],
+    "article_count": 229,
+    "article_characters": 1160875,
+    "date_range": "1925–1957",
+    "pollution_scan": {
+      "unique_article_files": "229/229",
+      "duplicate_full_texts": 0,
+      "empty_or_tiny_articles": 0,
+      "promotional_or_download_link_hits": 0,
+      "excluded_editor_label_hits_in_scope": 0
+    },
+    "coverage_notes": [
+      "结构审计覆盖第一至第五卷全部 229 篇的题名、文件唯一性、空篇与污染特征。",
+      "语义模型依据目录、时期结构与代表性核心文章建立，不声称逐段概括全部 116 万字符。",
+      "所有直接摘录逐字回查 EPUB；报告综合与批判判断均单独标型。"
+    ]
+  },
+  "book": {
+    "title_zh": "毛泽东选集（第一至第五卷）",
+    "author": "毛泽东",
+    "classification": "按历史时期编排的政治、军事、哲学与治理文献选集",
+    "one_sentence_model": "报告将五卷综合为一条可核查的问题链：调查现实，识别矛盾与力量，形成阶段战略，组织群众与政治联盟，再转入建国和治理中的关系调整。",
+    "model_status": "报告综合，不是作者在单一篇章中提出的线性公式，也不意味着各时期观点没有变化。"
+  },
+  "volumes": [
+    {
+      "volume": 1,
+      "years": "1925–1937",
+      "articles": 18,
+      "characters": 215421,
+      "focus": ["调查与阶级分析", "革命道路", "实践与认识"],
+      "anchor_articles": ["中国社会各阶级的分析", "反对本本主义", "实践论", "矛盾论"]
+    },
+    {
+      "volume": 2,
+      "years": "1937–1941",
+      "articles": 40,
+      "characters": 269309,
+      "focus": ["抗日战争战略", "统一战线", "新民主主义"],
+      "anchor_articles": ["论持久战", "新民主主义论"]
+    },
+    {
+      "volume": 3,
+      "years": "1941–1945",
+      "articles": 31,
+      "characters": 163504,
+      "focus": ["学习与整风", "领导方法", "群众工作", "联合政府"],
+      "anchor_articles": ["反对党八股", "关于领导方法的若干问题", "为人民服务", "论联合政府"]
+    },
+    {
+      "volume": 4,
+      "years": "1945–1949",
+      "articles": 70,
+      "characters": 235125,
+      "focus": ["战争与谈判", "战略决战", "建国构想"],
+      "anchor_articles": ["目前形势和我们的任务", "论人民民主专政"]
+    },
+    {
+      "volume": 5,
+      "years": "1949–1957",
+      "articles": 70,
+      "characters": 277516,
+      "focus": ["政权巩固与改造", "经济建设", "关系协调", "人民内部矛盾"],
+      "anchor_articles": ["论十大关系", "关于正确处理人民内部矛盾的问题"]
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "ext-edition-1991",
+      "title": "中央党史和文献研究院：《毛泽东选集》第二版出版说明",
+      "url": "https://www.dswxyjy.org.cn/n1/2019/0228/c423964-30916612.html",
+      "supports": ["第一至四卷的选编、修订与 1991 年第二版背景"]
+    },
+    {
+      "id": "ext-volume-five",
+      "title": "中国共产党新闻网：《毛泽东选集》第五卷出版",
+      "url": "https://cpc.people.com.cn/BIG5/64162/64165/78561/79700/5526889.html",
+      "supports": ["第五卷于 1977 年出版", "选文主要覆盖中华人民共和国成立后的最初八年"]
+    },
+    {
+      "id": "ext-catalog",
+      "title": "中央党史和文献研究院：毛泽东著作目录",
+      "url": "https://www.dswxyjy.org.cn/GB/427196/423771/428219/index.html",
+      "supports": ["官方著作目录背景与题名核对入口"]
+    },
+    {
+      "id": "ext-context",
+      "title": "Columbia University Asia for Educators: China, 1950–2000",
+      "url": "https://afe.easia.columbia.edu/tps/1950_cn.htm",
+      "supports": ["将第五卷的政策主张与更广泛历史结果分开核查的外部入口"]
+    }
+  ],
+  "reading_contract": {
+    "target_main_minutes": 45,
+    "full_session_budget_minutes": 165,
+    "window": "1–2 天的业余时间，总计约 2.5–3 小时；先建立结构，再回到六篇原文，最后做判断。",
+    "units": [
+      {
+        "id": "map",
+        "minutes": 45,
+        "goal": "看懂五卷时期、五条主题线、作者主张与报告综合的边界"
+      },
+      {
+        "id": "anchors",
+        "minutes": "90–120",
+        "goal": "在 Apple Books 中阅读五篇必读原文；时间充裕再加一篇可选扩展"
+      },
+      {
+        "id": "audit",
+        "minutes": 20,
+        "goal": "核对局限，决定全读、主题深读、单篇深挖或停止"
+      }
+    ],
+    "progressive_depth": [
+      {"level": 0, "artifact": "首屏结论", "minutes": "2–3"},
+      {"level": 1, "artifact": "reading.html 主地图", "minutes": "约 45"},
+      {"level": 2, "artifact": "五篇必读原文 + 一篇可选扩展", "minutes": "90–120"},
+      {"level": 3, "artifact": "进入已生成的主题或单篇深挖；没有对应项时再按需生成", "minutes": "38–65"},
+      {"level": 4, "artifact": "回到原卷、原篇与外部史料细读", "minutes": "不限"}
+    ],
+    "completion_definition": [
+      "能说出五卷的时期重心和五条跨卷主题线。",
+      "能区分作者原文主张、报告综合、批判审计与外部历史背景。",
+      "能从任一关键结论回到 EPUB 的卷次、文章题名和内部文件。",
+      "能决定下一步是全读、主题深读、单篇深挖或暂时停止，并说明理由。"
+    ]
+  },
+  "core_route": [
+    {
+      "order": 1,
+      "priority": "required",
+      "volume": 1,
+      "title": "反对本本主义",
+      "epub_path": "OEBPS/Text/Section0205.xhtml",
+      "characters": 4773,
+      "why": "看调查、经验与书本知识如何排序。"
+    },
+    {
+      "order": 2,
+      "priority": "required",
+      "volume": 1,
+      "title": "实践论",
+      "epub_path": "OEBPS/Text/Section0215.xhtml",
+      "characters": 10904,
+      "why": "看认识如何从实践产生，并回到实践检验。"
+    },
+    {
+      "order": 3,
+      "priority": "required",
+      "volume": 3,
+      "title": "关于领导方法的若干问题",
+      "epub_path": "OEBPS/Text/Section0413.xhtml",
+      "characters": 3467,
+      "why": "看一般与个别、领导与群众如何形成反馈循环。"
+    },
+    {
+      "order": 4,
+      "priority": "required",
+      "volume": 3,
+      "title": "为人民服务",
+      "epub_path": "OEBPS/Text/Section0420.xhtml",
+      "characters": 1121,
+      "why": "以短文观察组织目的、批评与纠错的表达。"
+    },
+    {
+      "order": 5,
+      "priority": "required",
+      "volume": 5,
+      "title": "论十大关系",
+      "epub_path": "OEBPS/Text/Section0651.xhtml",
+      "characters": 12611,
+      "why": "看重心转入建设后，如何处理多组关系与调动积极因素。"
+    },
+    {
+      "order": 6,
+      "priority": "optional_extension",
+      "volume": 1,
+      "title": "中国社会各阶级的分析",
+      "epub_path": "OEBPS/Text/Section0101.xhtml",
+      "characters": 6529,
+      "why": "完成五篇必读后仍有余力，再看问题如何从‘敌友与社会力量’切入。"
+    }
+  ],
+  "themes": [
+    {
+      "id": "theme-research",
+      "title": "现实调查与实践",
+      "summary": "知识与决策要从具体调查和社会实践出发，并在实践中修正。",
+      "claims": ["c02-investigation", "c03-practice"]
+    },
+    {
+      "id": "theme-contradiction",
+      "title": "矛盾与社会力量",
+      "summary": "先区分社会力量和矛盾性质，再寻找主要矛盾与具体条件。",
+      "claims": ["c01-forces", "c04-contradiction"]
+    },
+    {
+      "id": "theme-strategy",
+      "title": "阶段战略与统一战线",
+      "summary": "目标、阶段、力量对比和联盟范围一起决定战略，而不是靠单一口号。",
+      "claims": ["c05-protracted", "c06-new-democracy"]
+    },
+    {
+      "id": "theme-organization",
+      "title": "组织与群众工作",
+      "summary": "把群众经验集中为意见，再回到群众中检验，并通过批评纠错。",
+      "claims": ["c08-leadership", "c09-correction"]
+    },
+    {
+      "id": "theme-governance",
+      "title": "国家构想与治理",
+      "summary": "第四、五卷逐步从夺取政权转向国家制度、建设关系与不同性质矛盾的处理。",
+      "claims": ["c10-state", "c11-relations", "c12-internal"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01-forces",
+      "type": "author_position",
+      "statement": "革命首先要分辨敌友与可联合的社会力量。",
+      "locators": [{"volume": 1, "article": "中国社会各阶级的分析", "epub_path": "OEBPS/Text/Section0101.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c02-investigation",
+      "type": "author_position",
+      "statement": "没有现实和历史调查，就不应对具体问题轻率发言。",
+      "locators": [{"volume": 1, "article": "反对本本主义", "epub_path": "OEBPS/Text/Section0205.xhtml", "anchor": "一 没有调查，没有发言权"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c03-practice",
+      "type": "author_position",
+      "statement": "认识依赖社会实践，真理性也要由社会实践检验。",
+      "locators": [{"volume": 1, "article": "实践论", "epub_path": "OEBPS/Text/Section0215.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c04-contradiction",
+      "type": "author_position",
+      "statement": "分析矛盾既要承认其普遍性，也要研究特殊性、主要矛盾与主要方面。",
+      "locators": [{"volume": 1, "article": "矛盾论", "epub_path": "OEBPS/Text/Section0216.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c05-protracted",
+      "type": "author_position",
+      "statement": "抗日战争既不是必然速胜，也不是必然亡国，而是在力量、空间和动员条件下展开的持久战。",
+      "locators": [{"volume": 2, "article": "论持久战", "epub_path": "OEBPS/Text/Section0309.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c06-new-democracy",
+      "type": "author_position",
+      "statement": "新民主主义被表述为特定历史阶段的政治、经济与文化纲领。",
+      "locators": [{"volume": 2, "article": "新民主主义论", "epub_path": "OEBPS/Text/Section0326.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c07-writing",
+      "type": "author_position",
+      "statement": "反对脱离内容、对象与实际问题的程式化文风。",
+      "locators": [{"volume": 3, "article": "反对党八股", "epub_path": "OEBPS/Text/Section0407.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c08-leadership",
+      "type": "author_position",
+      "statement": "领导工作要结合一般与个别，并在‘从群众中来、到群众中去’的循环中形成和检验意见。",
+      "locators": [{"volume": 3, "article": "关于领导方法的若干问题", "epub_path": "OEBPS/Text/Section0413.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c09-correction",
+      "type": "author_position",
+      "statement": "只要批评有利于人民，就应接受并改正缺点。",
+      "locators": [{"volume": 3, "article": "为人民服务", "epub_path": "OEBPS/Text/Section0420.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c10-state",
+      "type": "author_position",
+      "statement": "建国前夕的国家构想以人民民主专政为核心，并明确区分人民与反动力量。",
+      "locators": [{"volume": 4, "article": "论人民民主专政", "epub_path": "OEBPS/Text/Section0565.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c11-relations",
+      "type": "author_position",
+      "statement": "社会主义建设需要处理多组相互制约的关系，目标是调动国内外积极因素。",
+      "locators": [{"volume": 5, "article": "论十大关系", "epub_path": "OEBPS/Text/Section0651.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "c12-internal",
+      "type": "author_position",
+      "statement": "敌我矛盾和人民内部矛盾性质不同，应采用不同处理方法。",
+      "locators": [{"volume": 5, "article": "关于正确处理人民内部矛盾的问题", "epub_path": "OEBPS/Text/Section0658.xhtml"}],
+      "confidence": "high"
+    },
+    {
+      "id": "s01-five-stage-model",
+      "type": "model_synthesis",
+      "statement": "五卷可综合为‘调查现实—识别力量与矛盾—形成阶段战略—组织群众与联盟—建国与治理’的问题链。",
+      "derived_from": ["c01-forces", "c02-investigation", "c03-practice", "c04-contradiction", "c05-protracted", "c08-leadership", "c10-state", "c11-relations", "c12-internal"],
+      "caveat": "这是阅读导航，不是历史必然论，也不能抹平文章之间和时期之间的变化。",
+      "visual_encoding": {
+        "anchor": "reading.html#map",
+        "column_alignment": "五卷卡片与下方五条主题线共用卷次列坐标。",
+        "line_segment": "表示本页建议跨卷追踪的范围，不表示思想强度或各卷内容相同。",
+        "solid_dot": "本页选取的突出锚点。",
+        "hollow_dot": "可继续追踪的卷次。"
+      }
+    },
+    {
+      "id": "s02-revolution-governance",
+      "type": "model_synthesis",
+      "statement": "五卷重心从革命动员和战争战略逐步转向建国、改造与治理关系，但调查、矛盾和组织方法仍跨卷延续。",
+      "derived_from": ["c02-investigation", "c04-contradiction", "c05-protracted", "c08-leadership", "c10-state", "c11-relations"]
+    }
+  ],
+  "excerpts": [
+    {
+      "quote": "没有调查，没有发言权。",
+      "volume": 1,
+      "article": "反对本本主义",
+      "epub_path": "OEBPS/Text/Section0205.xhtml",
+      "supports": "c02-investigation"
+    },
+    {
+      "quote": "只有人们的社会实践，才是人们对于外界认识的真理性的标准。",
+      "volume": 1,
+      "article": "实践论",
+      "epub_path": "OEBPS/Text/Section0215.xhtml",
+      "supports": "c03-practice"
+    },
+    {
+      "quote": "从群众中来，到群众中去。",
+      "volume": 3,
+      "article": "关于领导方法的若干问题",
+      "epub_path": "OEBPS/Text/Section0413.xhtml",
+      "supports": "c08-leadership"
+    },
+    {
+      "quote": "如果有缺点，就不怕别人批评指出。",
+      "volume": 3,
+      "article": "为人民服务",
+      "epub_path": "OEBPS/Text/Section0420.xhtml",
+      "supports": "c09-correction"
+    },
+    {
+      "quote": "把国内外一切积极因素调动起来，为社会主义事业服务。",
+      "volume": 5,
+      "article": "论十大关系",
+      "epub_path": "OEBPS/Text/Section0651.xhtml",
+      "supports": "c11-relations"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "持续要求从具体调查和条件出发，而不是从抽象公式直接推出结论。",
+      "把矛盾性质、力量对比、阶段与组织方法放进同一个决策框架。",
+      "不少文章是针对明确现实问题的论证，便于检验其前提、对象和时效。",
+      "从革命到治理的重心变化，为比较同一方法在不同任务中的使用提供材料。"
+    ],
+    "limits": [
+      "选集是政治文献的编辑集合，不是中立、完整的中国现代史；未选文本、反方材料和实际后果需要另查。",
+      "敌我、阶级和主要矛盾等分类具有强烈政治功能，分析时要追问分类依据、遗漏对象与可能代价。",
+      "策略性文章高度依赖当时战争、组织与信息条件，不能不加转换地移植到日常管理或个人生活。",
+      "第五卷的身后编辑性质与前三十余年的历史后果，都要求把作者主张、编辑选择和实际结果分开。"
+    ],
+    "verification_questions": [
+      "作者在解决什么具体问题，面对哪些已知限制？",
+      "关键分类和因果判断依据什么材料，哪些证据没有出现？",
+      "这段话是原则、阶段性策略、宣传动员，还是对既成经验的总结？",
+      "后来发生的结果支持、修正还是反驳了其中哪些判断？"
+    ]
+  },
+  "modules": [
+    {
+      "id": "practice-and-contradiction",
+      "title": "实践论 × 矛盾论",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/practice-and-contradiction/reading.html",
+      "data": "modules/practice-and-contradiction/reading.json",
+      "core_minutes": 60,
+      "optional_source_return_minutes": "60–80",
+      "scope": ["实践论", "矛盾论"],
+      "generated_date": "2026-08-10"
+    },
+    {
+      "id": "protracted-war",
+      "title": "论持久战",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/protracted-war/reading.html",
+      "data": "modules/protracted-war/reading.json",
+      "core_minutes": 60,
+      "optional_source_return_minutes": "100–135",
+      "estimated_full_article_minutes": "180–270",
+      "scope": ["论持久战"],
+      "generated_date": "2026-08-10"
+    },
+    {
+      "id": "operation-ichi-go",
+      "title": "一号作战：历史压力测试",
+      "status": "generated",
+      "artifact_kind": "progressive-historical-deep-dive",
+      "href": "modules/operation-ichi-go/reading.html",
+      "data": "modules/operation-ichi-go/reading.json",
+      "core_minutes": 38,
+      "parent_module": "protracted-war",
+      "scope": ["论持久战", "一号作战", "1944 年中国战场"],
+      "generated_date": "2026-08-10"
+    },
+    {
+      "id": "new-democracy-and-state",
+      "title": "新民主主义与国家构想",
+      "status": "generated",
+      "artifact_kind": "progressive-thematic-deep-dive",
+      "href": "modules/new-democracy-and-state/reading.html",
+      "data": "modules/new-democracy-and-state/reading.json",
+      "core_minutes": 58,
+      "optional_source_return_minutes": "120–180",
+      "scope": ["新民主主义论", "论联合政府", "论人民民主专政"],
+      "generated_date": "2026-08-10"
+    },
+    {
+      "id": "single-spark",
+      "title": "星星之火，可以燎原",
+      "status": "generated",
+      "artifact_kind": "progressive-article-deep-dive",
+      "href": "modules/single-spark/reading.html",
+      "data": "modules/single-spark/reading.json",
+      "core_minutes": 48,
+      "optional_source_return_minutes": "30–45",
+      "scope": ["星星之火，可以燎原"],
+      "generated_date": "2026-08-10"
+    },
+    {
+      "id": "governance-relations",
+      "title": "《论十大关系》 × 《关于正确处理人民内部矛盾的问题》",
+      "status": "generated",
+      "artifact_kind": "progressive-thematic-deep-dive",
+      "href": "modules/governance-relations/reading.html",
+      "data": "modules/governance-relations/reading.json",
+      "core_minutes": 65,
+      "optional_source_return_minutes": "90–140",
+      "scope": ["论十大关系", "关于正确处理人民内部矛盾的问题"],
+      "generated_date": "2026-08-10"
+    }
+  ],
+  "module_policy": {
+    "generation": "on_demand_only",
+    "root": "modules/",
+    "targets": ["theme", "article"],
+    "artifact_layout": "modules/<module-slug>/reading.html + reading.json",
+    "main_page_linking": "模块生成后才在主 reading.html 增加入口；目录随实际模块渐进增长。",
+    "arbitrary_article_support": "允许对第一至第五卷内任意题名明确的文章生成单篇深挖，不限于候选列表。",
+    "not_original_chapter_note": "深挖模块是围绕读者问题生成的阅读产物，不是原书新增章节；必须保留原文定位与版本边界。",
+    "candidates": [
+      {"id": "practice-and-contradiction", "title": "实践论 × 矛盾论", "status": "generated", "href": "modules/practice-and-contradiction/reading.html"},
+      {"id": "protracted-war", "title": "论持久战", "status": "generated", "href": "modules/protracted-war/reading.html"},
+      {"id": "operation-ichi-go", "title": "一号作战：历史压力测试", "status": "generated", "href": "modules/operation-ichi-go/reading.html", "parent_module": "protracted-war"},
+      {"id": "new-democracy-and-state", "title": "新民主主义与国家构想", "status": "generated", "href": "modules/new-democracy-and-state/reading.html"},
+      {"id": "single-spark", "title": "星星之火，可以燎原", "status": "generated", "href": "modules/single-spark/reading.html"},
+      {"id": "governance-relations", "title": "论十大关系 × 正确处理人民内部矛盾", "status": "generated", "href": "modules/governance-relations/reading.html"}
+    ]
+  },
+  "generation_audit": {
+    "content_fidelity": {
+      "status": "passed",
+      "checks": [
+        "第一至第五卷 229 篇结构范围已冻结，第六、七卷及‘静火’材料排除。",
+        "12 条作者主张的卷次、篇名与 EPUB 内部路径全部匹配。",
+        "5 条直接摘录逐字命中对应原篇。",
+        "作者主张、报告综合、批判审计与外部背景在 HTML 和 JSON 中分别标型。"
+      ]
+    },
+    "reading_feasibility": {
+      "status": "passed_after_minimal_fix",
+      "finding": "初稿把约 3.94 万字的六篇都列为必读，时间偏乐观；已将约 6500 字的《中国社会各阶级的分析》改为可选扩展。",
+      "required_original_characters": 32876,
+      "optional_extension_characters": 6529,
+      "required_original_estimate_minutes": "90–120",
+      "full_first_pass_estimate_minutes": "155–185"
+    },
+    "ui_readability": {
+      "status": "passed_after_minimal_fix",
+      "viewports_reviewed": ["1440px desktop map section", "450px mobile map section"],
+      "checks": [
+        "首屏结论、版本边界、全书图、主题、原文路径、审计和决策保持单一阅读顺序。",
+        "主页面不新增第二张架构图；原 SVG 局部重写为五卷卡片与五条主题线共用卷次列，消除原版主题点位与卷次不对齐的歧义。",
+        "证据默认折叠；手机仅结构图内部允许横向滚动，并有文字提示。",
+        "关键正文颜色对比度最低 5.77:1；导航与折叠标题目标高度不低于 48px。",
+        "页面含跳转链接、可见焦点、减少动态效果、打印样式和无脚本降级；主 SVG 滚动容器已补可见焦点框。"
+      ]
+    },
+    "visual_review": {
+      "status": "passed",
+      "diagram_checks": ["XML", "marker references", "arrow collisions", "semantic geometry", "composition quality"],
+      "render_check": "重写后的 1120×620 SVG 经 Chrome 栅格化，并在 1440px 桌面与 450px 手机同样式页面中目视复核。",
+      "tooling_note": "Fireworks validator host lacks CairoSVG/rsvg-convert, so its renderer adapter was unavailable; this is not an SVG rendering failure."
+    }
+  },
+  "verdict": {
+    "recommendation": "先主题式选读，不建议第一次线性通读五卷",
+    "summary": "先读主地图和五篇必读原文，时间充裕再加一篇可选扩展；之后进入已有深挖地图，没有对应项时再按需生成，并回到相应原篇与外部史料。",
+    "decision": {
+      "full_read_if": "你要系统研究思想演变、革命史或中华人民共和国早期治理，并愿意同时阅读史料、研究与反方材料。",
+      "selective_read_if": "你主要想掌握调查、矛盾、战略、组织和治理五条方法线，或研究某一历史阶段。",
+      "article_deep_dive_if": "某篇文章与你当前问题直接相关，需要逐段拆论证、核引文和补历史结果。",
+      "stop_after_map_if": "你只需要理解五卷大体结构，并已能说明版本边界与主要局限。"
+    }
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "schema_version": "read-book.deep-dive.v1",
+  "artifact_kind": "progressive-deep-dive",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "module": {
+    "id": "protracted-war",
+    "title": "论持久战",
+    "subtitle": "怎样从不利开局，推导长期方向与条件转换",
+    "status": "generated",
+    "parent_title": "毛泽东选集（第一至第五卷）",
+    "parent_html": "../../reading.html#modules",
+    "parent_json": "../../reading.json",
+    "one_sentence_model": "作者从中日双方相互矛盾且会变化的条件出发，反驳亡国论和速胜论，用战略防御、战略相持、战略反攻三个阶段组织长期方向，再以尺度转换、主动灵活计划、政治动员和军民关系推动力量对比变化。",
+    "model_boundary": "这是报告对全文论证的结构化复原，不是作者给出的单张流程图；三道现代审计门也不是原文术语。"
+  },
+  "child_modules": [
+    {
+      "id": "operation-ichi-go",
+      "title": "一号作战：为什么‘相持期’仍会出现日军大攻势？",
+      "status": "generated",
+      "artifact_kind": "progressive-historical-deep-dive",
+      "href": "../operation-ichi-go/reading.html",
+      "data": "../operation-ichi-go/reading.json",
+      "core_minutes": 38
+    }
+  ],
+  "source": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "scope": "第二卷《论持久战》",
+    "article": {
+      "title": "论持久战",
+      "date_label": "一九三八年五月",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "text_blocks_with_notes": 206,
+      "body_blocks_through_conclusion": 162,
+      "characters_with_notes": 51191,
+      "body_characters_excluding_title_date_notes": 47674,
+      "section_headings": 21
+    },
+    "locator_method": "将 XHTML 中按文档顺序出现的非空标题、段落和注释转为纯文本块，使用 1 起始序号；Apple Books 中优先搜索篇名、分节名或短摘录。",
+    "scope_limit": "未纳入第六、七卷；不把个人编辑材料作为版本证据。"
+  },
+  "version_boundary": {
+    "epub_form": "本模块分析的是当前 EPUB 中《毛泽东选集》第二卷所载文本，不声称复原现场讲演、速记稿或初刊原貌。",
+    "internal_evidence": [
+      "书内篇下注释称，这是毛泽东 1938 年 5 月 26 日至 6 月 3 日在延安抗日战争研究会的讲演（文本块 164）。",
+      "正文结尾称内容是对抗战十个月经验的概论，并请研究、指正和补充（文本块 162）。"
+    ],
+    "metadata_limit": "当前 EPUB 未提供可用于核验纸书版次、出版社和 ISBN 的完整元数据；因此定位以文件哈希、EPUB 路径、分节与纯文本块为准。"
+  },
+  "reading_contract": {
+    "core_minutes": 60,
+    "optional_selected_source_minutes": "100–135",
+    "estimated_full_article_minutes": "180–270",
+    "route": [
+      {"level": 0, "minutes": 5, "goal": "读一句话模型和条件—阶段—执行结构图"},
+      {"level": 1, "minutes": 10, "goal": "分清问题、前提、推理、阶段与执行，不把全文缩成三阶段口号"},
+      {"level": 2, "minutes": 25, "goal": "读六段连续原文，并区分作者原话、报告导读与不能推出"},
+      {"level": 3, "minutes": 17, "goal": "用两张证据图核阶段对应、投降因果、伦理边界与移植风险"},
+      {"level": 4, "minutes": 3, "goal": "决定停在本层、按问题回读选段或细读全文"}
+    ],
+    "completion_definition": [
+      "能说明作者为什么认为既不能速胜、也不必亡国，并说出结论依赖哪些条件。",
+      "能解释三个阶段的功能，同时指出它们是会被事实校正的战略轮廓，不是固定日历。",
+      "能分清战略持久与战役战斗速决，以及运动战、游击战、阵地战在不同阶段的地位。",
+      "能指出历史结局支持了哪些方向性判断、没有单独证明哪些因果主张。",
+      "能把关键判断回到具体分节、文本块或可搜索短句，并选择是否继续细读。"
+    ]
+  },
+  "article_model": {
+    "central_question": "面对军力、经济和组织较强的日本，中国为什么不能速胜却仍可能避免亡国，并怎样把长期战争导向胜利？",
+    "argument_moves": [
+      {
+        "move": "提出问题并排除两个极端",
+        "summary": "亡国论只看敌强我弱，速胜论则夸大中国有利条件；两者都被作者批为片面和主观。",
+        "locators": [{"blocks": "4–28, 51–55"}]
+      },
+      {
+        "move": "比较全部基本条件",
+        "summary": "作者把日本的强与其资源限度、侵略性质、国际压力相联系，把中国的弱与纵深、正义性、组织动员和国际援助相联系。",
+        "locators": [{"blocks": "29–34, 57–61"}]
+      },
+      {
+        "move": "把长期趋势划成三个阶段",
+        "summary": "战略防御、战略相持、战略反攻构成指导轮廓；作者同时声明具体情况不能预断，轮廓要由事实校正。",
+        "locators": [{"blocks": "62–78"}]
+      },
+      {
+        "move": "把一般方向翻译成作战方法",
+        "summary": "战略上的防御、持久、内线，与战役战斗上的进攻、速决、外线结合；运动战、游击战、阵地战的地位随阶段改变。",
+        "locators": [{"blocks": "101–112, 127–142"}]
+      },
+      {
+        "move": "说明改变条件的组织基础",
+        "summary": "主动性、灵活性、计划性、政治动员、军队与人民的关系，承担把潜在条件转为现实力量的任务。",
+        "locators": [{"blocks": "89–100, 113–126, 151–159"}]
+      }
+    ],
+    "diagram": "reading.html#model"
+  },
+  "phases": [
+    {
+      "stage": 1,
+      "name": "战略防御",
+      "relation": "敌战略进攻，我战略防御",
+      "primary_form": "运动战",
+      "supporting_forms": ["游击战", "阵地战"],
+      "function": "保存力量、消耗敌人、争取时间，并积累经验、组织和援助。",
+      "locators": [{"blocks": "63–64, 69–70"}]
+    },
+    {
+      "stage": 2,
+      "name": "战略相持",
+      "relation": "敌保守占领，我准备反攻",
+      "primary_form": "游击战",
+      "supporting_forms": ["运动战", "阵地战"],
+      "function": "全文所谓转变枢纽；在最困难时期动员、建设、消耗并改变力量对比。",
+      "locators": [{"blocks": "65, 71–75"}]
+    },
+    {
+      "stage": 3,
+      "name": "战略反攻",
+      "relation": "我战略反攻，敌战略退却",
+      "primary_form": "运动战",
+      "supporting_forms": ["阵地战地位上升", "游击战继续配合"],
+      "function": "在自身力量增长、国际力量和敌内变化共同作用下收复失地。",
+      "locators": [{"blocks": "66, 76–78"}]
+    }
+  ],
+  "concepts": [
+    {
+      "term": "持久战",
+      "author_position": "不是被动拖延，而是利用空间、时间、动员和国际条件，使敌我力量关系发生有利变化。",
+      "do_not_reduce_to": "只要等待得够久就会胜利。"
+    },
+    {
+      "term": "三个阶段",
+      "author_position": "为战略指导描画的趋势轮廓；具体情况不能预断，要被事实校正。",
+      "do_not_reduce_to": "每个地区按同一日期整齐进入下一阶段。"
+    },
+    {
+      "term": "战略持久 / 战役战斗速决",
+      "author_position": "全局接受长期性，局部则选择有利条件集中力量，争取快速解决。",
+      "do_not_reduce_to": "所有行动都慢，或为了速决进行无把握的战略决战。"
+    },
+    {
+      "term": "主动性 / 灵活性 / 计划性",
+      "author_position": "以客观条件为基础争取行动自由，按时机、地点和力量调整方法；计划有相对稳定性，也随阶段和情况改变。",
+      "do_not_reduce_to": "主观意志能取消物质差距，或灵活等于无原则地改变。"
+    },
+    {
+      "term": "运动战 / 游击战 / 阵地战",
+      "author_position": "三者不是永久等级；运动战总体主要，游击战在相持阶段升为主要，阵地战到反攻阶段地位提高。",
+      "do_not_reduce_to": "全文只主张游击战，或一种形式可以覆盖全部阶段。"
+    },
+    {
+      "term": "政治动员 / 兵民关系",
+      "author_position": "要持续说明战争目的、步骤和政策，并把它同士兵和人民生活相联系；作者同时强调尊重士兵、人民和俘虏人格。",
+      "do_not_reduce_to": "口号宣传、一次性号召，或以目的正当化强迫和不受约束的动员。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "pw01-conditional-comparison",
+      "type": "author_position",
+      "statement": "持久战结论来自敌我全部因素的相互关系，不来自单独的军力强弱、国土大小或国际援助。",
+      "locators": [{"blocks": "32–34, 57–61"}],
+      "confidence": "high"
+    },
+    {
+      "id": "pw02-three-stage-outline",
+      "type": "author_position",
+      "statement": "作者用战略防御、战略相持、战略反攻描画战争趋势，同时要求未来事实校正这一轮廓。",
+      "locators": [{"blocks": "63–66"}],
+      "confidence": "high"
+    },
+    {
+      "id": "pw03-scale-contrast",
+      "type": "author_position",
+      "statement": "战略层面的防御、持久和内线，要同战役战斗层面的进攻、速决和外线相结合。",
+      "locators": [{"blocks": "107–112, 126"}],
+      "confidence": "high"
+    },
+    {
+      "id": "pw04-mobilization",
+      "type": "author_position",
+      "statement": "政治动员和军民关系被作者视为把潜在资源转化为持续战争能力的基本条件。",
+      "locators": [{"blocks": "99–100, 153–159"}],
+      "confidence": "high"
+    },
+    {
+      "id": "pw05-model-synthesis",
+      "type": "report_synthesis",
+      "statement": "全文可复原为条件比较、阶段轮廓、跨尺度执行、行动反馈和重新判断的循环。",
+      "supports": ["pw01-conditional-comparison", "pw02-three-stage-outline", "pw03-scale-contrast", "pw04-mobilization"],
+      "confidence": "medium_high"
+    },
+    {
+      "id": "pw06-historical-direction",
+      "type": "critical_audit",
+      "statement": "战争长期化、日本未能迅速迫使中国投降以及更广泛国际力量进入战争，支持了若干方向性判断；武汉撤退后的长期化和 1944 年一号作战同时说明三个阶段没有在各战场整齐、单向实现。",
+      "external_sources": ["ext-cambridge-campaigns", "ext-state-wuhan", "ext-army-protracted", "ext-museum-stalemate"],
+      "confidence": "high"
+    },
+    {
+      "id": "pw07-causal-limit",
+      "type": "critical_audit",
+      "statement": "日本 1945 年投降发生在中国长期抗战、美国主导的海空战争与封锁等累积压力之上，苏联参战和两次原子弹轰炸又在 8 月进入最高层决策；相对权重有争论，最终结果不能单独验证全文每个因果判断。",
+      "external_sources": ["ext-navy-surrender", "ext-navy-vj-timeline", "ext-navy-survey"],
+      "confidence": "high"
+    },
+    {
+      "id": "pw08-transfer-limit",
+      "type": "critical_audit",
+      "statement": "这是一篇服务于全面战争与政治动员的战略文本；把敌我、消耗、欺骗或动员直接移植到组织、商业和日常关系，需要另作伦理与有效性论证。",
+      "confidence": "high"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "order": 1,
+      "title": "结论为什么不能只看一个因素",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "blocks": "57",
+      "sentence_range": "8–13",
+      "continuity": "single_block_contiguous",
+      "excerpt": "多助寡助是重要因素，但是附随因素，依敌我本身的基本因素如何而定其作用的大小。因此，我们说抗日战争是持久战，是从全部敌我因素的相互关系产生的结论。敌强我弱，我有灭亡的危险。但敌尚有其他缺点，我尚有其他优点。敌之优点可因我之努力而使之削弱，其缺点亦可因我之努力而使之扩大。我方反是，我之优点可因我之努力而加强，缺点则因我之努力而克服。",
+      "question_answered": "为什么不能从敌强我弱直接推出亡国，也不能从少数有利条件直接推出速胜。",
+      "plain_guide": "作者做的是条件组合和动态比较，而不是只抓一个优势或劣势。",
+      "cannot_infer": "有正义或援助就必然胜利；原文把这些放进条件关系，且强调要通过行动形成。"
+    },
+    {
+      "order": 2,
+      "title": "三个阶段为什么只是轮廓",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "blocks": "63",
+      "sentence_range": "1–7",
+      "continuity": "single_block_contiguous",
+      "excerpt": "中日战争既然是持久战，最后胜利又将是属于中国的，那末，就可以合理地设想，这种持久战，将具体地表现于三个阶段之中。第一个阶段，是敌之战略进攻、我之战略防御的时期。第二个阶段，是敌之战略保守、我之准备反攻的时期。第三个阶段，是我之战略反攻、敌之战略退却的时期。三个阶段的具体情况不能预断，但依目前条件来看，战争趋势中的某些大端是可以指出的。客观现实的行程将是异常丰富和曲折变化的，谁也不能造出一本中日战争的“流年”来；然而给战争趋势描画一个轮廓，却为战略指导所必需。所以，尽管描画的东西不能尽合将来的事实，而将为事实所校正，但是为着坚定地有目的地进行持久战的战略指导起见，描画轮廓的事仍然是需要的。",
+      "question_answered": "为什么需要阶段模型，又为什么不能把它读成时间表。",
+      "plain_guide": "模型负责给方向，不负责预言每个地区何时切换；事实可以修正模型。",
+      "cannot_infer": "战争会按三幕整齐推进，或阶段重叠和倒退就是理论失败。"
+    },
+    {
+      "order": 3,
+      "title": "长期战略怎样容纳局部速决",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "blocks": "107",
+      "sentence_range": "2–7",
+      "continuity": "single_block_contiguous",
+      "excerpt": "我们已说过了，抗日的战略方针是持久战，是的，这是完全对的。但这是一般的方针，还不是具体的方针。怎样具体地进行持久战呢？这就是我们现在要讨论的问题。我们的答复是：在第一和第二阶段即敌之进攻和保守阶段中，应该是战略防御中的战役和战斗的进攻战，战略持久中的战役和战斗的速决战，战略内线中的战役和战斗的外线作战。在第三阶段中，应该是战略的反攻战。",
+      "question_answered": "持久战在行动层面怎样避免变成纯等待。",
+      "plain_guide": "全局承认长期与防御，局部仍寻找有利条件主动、快速地解决战斗。",
+      "cannot_infer": "任何局部速胜都会自动积累成全局胜利，或应进行无把握的战略决战。"
+    },
+    {
+      "order": 4,
+      "title": "计划怎样面对不确定性",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "blocks": "124",
+      "sentence_range": "9–13",
+      "continuity": "single_block_contiguous",
+      "excerpt": "但由于战争只有程度颇低和时间颇暂的确实性，战争的计划性就很难完全和固定，它随战争的运动（或流动，或推移）而运动，且依战争范围的大小而有程度的不同。战术计划，例如小兵团和小部队的攻击或防御计划，常须一日数变。战役计划，即大兵团的行动计划，大体能终战役之局，但在该战役内，部分的改变是常有的，全部的改变也间或有之。战略计划，是基于战争双方总的情况而来的，有更大的固定的程度，但也只在一定的战略阶段内适用，战争向着新的阶段推移，战略计划便须改变。战术、战役和战略计划之各依其范围和情况而确定而改变，是战争指挥的重要关节，也即是战争灵活性的具体的实施，也即是实际的运用之妙。",
+      "question_answered": "不确定性之下，为什么仍要计划，以及计划为什么要分尺度更新。",
+      "plain_guide": "越靠近现场，调整越频繁；越高层的方向越稳定，但也只在特定阶段有效。",
+      "cannot_infer": "灵活等于不要计划，或战略一旦制定就不能改变。"
+    },
+    {
+      "order": 5,
+      "title": "政治动员到底包含什么",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "blocks": "100",
+      "sentence_range": "1–7",
+      "continuity": "single_block_contiguous",
+      "excerpt": "什么是政治动员呢？首先是把战争的政治目的告诉军队和人民。必须使每个士兵每个人民都明白为什么要打仗，打仗和他们有什么关系。抗日战争的政治目的是“驱逐日本帝国主义，建立自由平等的新中国”，必须把这个目的告诉一切军民人等，方能造成抗日的热潮，使几万万人齐心一致，贡献一切给战争。其次，单单说明目的还不够，还要说明达到此目的的步骤和政策，就是说，要有一个政治纲领。现在已经有了《抗日救国十大纲领》〔22〕，又有了一个《抗战建国纲领》〔23〕，应把它们普及于军队和人民，并动员所有的军队和人民实行起来。没有一个明确的具体的政治纲领，是不能动员全军全民抗日到底的。",
+      "question_answered": "动员为什么不只是喊口号。",
+      "plain_guide": "作者要求同时说明目的、个人关系、步骤和政策；后文还强调动员必须持续并联系实际生活。",
+      "cannot_infer": "目标被宣布为正当，动员方式和代价就不再需要伦理约束。"
+    },
+    {
+      "order": 6,
+      "title": "军民关系的根本态度",
+      "epub_path": "OEBPS/Text/Section0309.xhtml",
+      "blocks": "156",
+      "sentence_range": "1–5",
+      "continuity": "single_block_contiguous",
+      "excerpt": "很多人对于官兵关系、军民关系弄不好，以为是方法不对，我总告诉他们是根本态度（或根本宗旨）问题，这态度就是尊重士兵和尊重人民。从这态度出发，于是有各种的政策、方法、方式。离了这态度，政策、方法、方式也一定是错的，官兵之间、军民之间的关系便决然弄不好。军队政治工作的三大原则：第一是官兵一致，第二是军民一致，第三是瓦解敌军。这些原则要实行有效，都须从尊重士兵、尊重人民和尊重已经放下武器的敌军俘虏的人格这种根本态度出发。",
+      "question_answered": "群众基础靠技术还是靠关系和态度。",
+      "plain_guide": "原文把尊重士兵、人民和俘虏人格放在方法之前，说明组织能力也有关系基础。",
+      "cannot_infer": "只要声称代表人民，就已经取得人民同意，或军事目的可以取消人格边界。"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "把极端结论拆回可检查的条件组合，避免把一时强弱直线外推。",
+      "主动区分战略与战役战斗的尺度，解释长期目标为什么不等于每次行动都拖延。",
+      "把阶段轮廓与事实校正放在一起，文本本身给模型保留了修订口。",
+      "把组织、政治目的、政策说明和军民关系纳入战略，而非只讨论武器。"
+    ],
+    "historical_check": {
+      "visuals": [
+        {"anchor": "reading.html#history-check", "title": "三阶段模型与实际进程", "question": "方向是否对应，以及实际历史是否整齐复刻三个阶段。"},
+        {"anchor": "reading.html#history-check", "title": "1945 年日本投降多因素路径", "question": "长期压力、8 月冲击和日本最高层决策怎样共同进入结果。"}
+      ],
+      "minimum_verdicts": [
+        "阶段一的方向对应较强；阶段二大体对应但各战场与各主体不同步，1944 年一号作战还显示战线会倒退。",
+        "第三阶段的胜利方向成立，但实际收束由中国战场、美国主导的太平洋战争、苏联参战等共同形成，不能写成单一主体独立完成预定第三幕。",
+        "日本投降的相对因果权重有长期史学争论；报告不分配精确权重，也不以结局倒推全文全部获证。"
+      ],
+      "causal_weight_policy": "只区分长期条件、直接冲击、决策机制与正式结果；不指定唯一决定性因素。"
+    },
+    "misuse_gates": [
+      "阶段是待校正的模型，不是预言日历；先找转换指标和反例。",
+      "把预测、处方、动员修辞和后来结果分开核验。",
+      "离开战争语境时，先重审目的、权利、欺骗、强制、代价与不可逆伤害。",
+      "不要用‘持久’合理化没有反馈的拖延，也不要用‘速决’合理化孤注一掷。"
+    ]
+  },
+  "source_return_routes": [
+    {"minutes": "18–25", "sections": "问题的根据；亡国论和速胜论；为什么是持久战", "blocks": "32–34, 51–61", "goal": "核两种极端以及敌我条件比较如何成立。", "search": "为什么是持久战？"},
+    {"minutes": "15–20", "sections": "持久战的三个阶段", "blocks": "62–66", "goal": "核三个阶段、相持阶段的枢纽作用和作者自己的模型边界。", "search": "三个阶段的具体情况不能预断"},
+    {"minutes": "10–12", "sections": "战争和政治；抗日的政治动员", "blocks": "94–100", "goal": "核政治目的、纲领、传播方式和持续动员。", "search": "什么是政治动员呢"},
+    {"minutes": "25–35", "sections": "防御中的进攻；主动性、灵活性、计划性", "blocks": "106–107, 113–126", "goal": "核尺度转换、行动自由与计划更新。", "search": "主动性，灵活性，计划性"},
+    {"minutes": "18–25", "sections": "运动战、游击战、阵地战；决战问题", "blocks": "127–132, 145–150", "goal": "核三种形式的阶段地位和有利决战/战略豪赌的区别。", "search": "一切无把握的战役和战斗应避免决战"},
+    {"minutes": "8–12", "sections": "兵民是胜利之本；结论", "blocks": "151–162", "goal": "核军民关系、动员条件和作者如何概括全文。", "search": "尊重士兵和尊重人民"}
+  ],
+  "external_sources": [
+    {
+      "id": "ext-cambridge-campaigns",
+      "title": "Campaigns in China, 1937–1945",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-the-second-world-war/campaigns-in-china-19371945/132227290BE59E8B96BD0910B9037D45",
+      "use": "核日军前期推进仍未迫使中国投降，以及 1944 年一号作战显示阶段并非单向、整齐推进。"
+    },
+    {
+      "id": "ext-state-wuhan",
+      "title": "The Consul General at Hankow to the Secretary of State, October 25, 1938",
+      "publisher": "U.S. Department of State, Foreign Relations of the United States",
+      "url": "https://history.state.gov/historicaldocuments/frus1938v03/d330",
+      "use": "同时代外交记录：核武汉撤退、保存力量与长期抵抗方针；不把单份记录或单一日期当全国统一阶段分界。"
+    },
+    {
+      "id": "ext-army-protracted",
+      "title": "An Army Rooted in Large-Scale Combat Operations, Part 1",
+      "publisher": "U.S. Army University Press",
+      "url": "https://www.armyupress.army.mil/Journals/Military-Review/Online-Exclusive/2026-OLE/LSCO-Part-1/",
+      "use": "外部军事史视角：概括三阶段，并指出共产党力量、国民党军队与西方盟军在实际战争阶段中的角色并不等同于模型的整齐推进。"
+    },
+    {
+      "id": "ext-museum-stalemate",
+      "title": "The Road to Pearl Harbor: The Short Fuse",
+      "publisher": "The National WWII Museum",
+      "url": "https://www.nationalww2museum.org/war/articles/road-to-pearl-harbor-short-fuse",
+      "use": "用于核日本速胜设想如何转为长期僵持，以及中国国民党军队、共产党力量和国际环境。"
+    },
+    {
+      "id": "ext-navy-surrender",
+      "title": "H-053-2: The Surrender of Japan",
+      "publisher": "U.S. Naval History and Heritage Command",
+      "url": "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-053/h-053-2.html",
+      "use": "用于说明日本投降时原子弹、苏联参战和更广泛战局的共同冲击，以及学界长期因果争论。"
+    },
+    {
+      "id": "ext-navy-vj-timeline",
+      "title": "Japan's Surrender and Aftermath",
+      "publisher": "U.S. Naval History and Heritage Command",
+      "url": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1945/victory-in-pacific.html",
+      "use": "核 1945 年 8 月 6 日广岛、8 月 8 至 9 日苏联参战与进攻满洲、8 月 9 日长崎、8 月 10 日决定、8 月 15 日广播和 9 月 2 日正式签署的时间顺序。"
+    },
+    {
+      "id": "ext-navy-survey",
+      "title": "Japan's Struggle to End the War",
+      "publisher": "U.S. Strategic Bombing Survey / Naval History and Heritage Command",
+      "url": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/j/japans-struggle-end-war-1946.html",
+      "use": "作为战后调查的一种因果判断，强调日本失败由多种因素累计形成；它本身也不是无争议的终局。"
+    }
+  ],
+  "generation_audit": {
+    "content_fidelity": {
+      "status": "passed_after_minimal_fix",
+      "checks": [
+        "源 EPUB SHA-256 与记录一致；《论持久战》路径、206 个文本块、51191 个含注释字符和 47674 个正文字符均从源文件复核。",
+        "6 段原文精读共 1398 个字符，全部为对应单一文本块内的连续子串，并逐字同时命中 EPUB 与 HTML。",
+        "作者观点、报告综合、批判审计和外部历史资料在 HTML 与 JSON 中分别标型；导读没有进入原文引号。",
+        "结构图明确标为报告复原，三个阶段的模型自限同时引用文本块 63；没有把图冒充作者原图。",
+        "历史检验把阶段方向、实际事件、多主体路径与 1945 年投降决策分开；武汉撤退、一号作战及 8 月时间线均绑定外部来源。",
+        "两张历史图只区分长期压力、直接冲击、决策机制和结果，不分配唯一或精确因果权重，也不以 1945 年结局证明全文全部因果。",
+        "独立复核发现分节标题应为 21 个，初稿的 20 已按 EPUB 修正。"
+      ]
+    },
+    "reading_feasibility": {
+      "status": "passed_after_minimal_fix",
+      "checks": [
+        "核心页面默认可见正文约 5292 个字符，不含折叠证据、SVG 和样式；历史摘要卡已改为两张证据图，非 SVG 正文只比上一版增加约 199 个字符。",
+        "其中六段原文约 1398 个字符；原有 12 分钟批判审计拆为 4 分钟边界卡与 8 分钟历史图，核心 60 分钟预算不变。",
+        "核心阅读固定为结构图、论证链、六段原文和批判审计；全文史料与机器证据默认折叠。",
+        "初稿的原文回读范围约 41593 个字符，75–105 分钟偏紧；已收窄为约 22967 个关键字符，并改为 100–135 分钟。",
+        "完整约 47674 个正文字符另列 180–270 分钟，不把完整细读伪装成短时回读。"
+      ]
+    },
+    "ui_readability": {
+      "status": "passed_after_visual_and_static_review",
+      "checks": [
+        "1440px 桌面与 450px 手机视图已实际渲染；历史检验段保持单一纵向顺序，两张图之间没有重复说明卡。",
+        "原结构图、1360×720 历史比较图和 1360×760 投降因果图均已实际栅格化并目视复核；节点、箭头和标签清晰，小屏只在图内横向滚动。",
+        "手机首屏发现长标签可被 flex 压缩，已最小修正为不收缩且最大宽度 100%，避免文本越出胶囊。",
+        "82 个 HTML / SVG id 唯一，页内锚点、本地链接和 aria-labelledby 引用全部存在；页面无脚本、外部样式或运行时依赖。",
+        "小号来源文字对比度由 4.33:1 修正到 5.27:1；交互入口最小高度不低于 44px，并支持可见焦点、减少动态效果和打印。",
+        "320px 规则经静态核查：正文单列、导航独立横向滚动、长标签可换行、SVG 只在自身容器滚动。"
+      ]
+    },
+    "visual_review": {
+      "status": "passed",
+      "checks": [
+        "XML structure",
+        "marker references",
+        "arrow collisions",
+        "semantic geometry",
+        "composition quality",
+        "Chrome rasterization for all three inline SVGs",
+        "1440px desktop and 450px mobile history-section inspection",
+        "320px responsive static audit"
+      ],
+      "tooling_note": "Fireworks 的 XML、标记、碰撞、语义几何和构图检查均通过；本机缺少 CairoSVG/rsvg-convert，内置渲染适配器未运行，改由 Chrome 成功栅格化三张 SVG。页面级审计使用同一 CSS 与真实段落生成本地审计视图。"
+    }
+  },
+  "validation": {
+    "source_integrity": "passed",
+    "excerpt_exactness": "passed",
+    "locator_integrity": "passed",
+    "claim_traceability": "passed",
+    "historical_causality_boundary": "passed",
+    "historical_timeline_traceability": "passed",
+    "causal_weight_boundary": "passed",
+    "html_anchor_integrity": "passed",
+    "link_integrity": "passed",
+    "svg_geometry": "passed",
+    "responsive_ui": "passed",
+    "visual_review": "passed"
+  }
+}

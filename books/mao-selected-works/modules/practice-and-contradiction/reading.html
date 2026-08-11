@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《实践论》与《矛盾论》渐进深挖：约 60 分钟理解认识循环、具体矛盾分析、概念边界和现代审计，再决定是否用 60–80 分钟回到原文细读。">
+  <title>实践论 × 矛盾论｜渐进深挖</title>
+  <style>
+    :root {
+      --paper: #f4f1ea;
+      --surface: #fffdf8;
+      --ink: #1d2421;
+      --muted: #5c6661;
+      --line: #d9d2c6;
+      --accent: #7c382c;
+      --accent-dark: #59271e;
+      --accent-soft: #f5e9e4;
+      --blue: #225f8b;
+      --blue-soft: #eaf4fb;
+      --purple: #6745a5;
+      --purple-soft: #f1ecfb;
+      --orange: #8b4a1b;
+      --orange-soft: #fff0e3;
+      --green: #176652;
+      --green-soft: #e5f2ed;
+      --gray-soft: #edf0ef;
+      --red: #8a2f2f;
+      --red-soft: #fceeee;
+      --radius: 18px;
+      --content: 1080px;
+      --shadow: 0 6px 20px rgba(38, 33, 26, 0.05);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(34, 95, 139, 0.09), transparent 28rem),
+        radial-gradient(circle at 5% 16%, rgba(234, 88, 12, 0.065), transparent 24rem),
+        var(--paper);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent-dark); text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #e69b36;
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+    .skip-link {
+      position: fixed;
+      z-index: 30;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      min-height: 44px;
+      padding: 10px 15px;
+      color: white;
+      background: var(--accent-dark);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    h1, h2, h3 { line-height: 1.26; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-family: ui-serif, Georgia, "Songti SC", serif;
+      font-size: clamp(2.35rem, 7vw, 4.9rem);
+      letter-spacing: -.045em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.08rem); }
+    h3 { margin: 0 0 8px; font-size: 1.04rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin-top: .5em; padding-left: 1.2em; }
+    li { margin-bottom: .45em; }
+    .hero {
+      padding: 48px 20px 34px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner, .page, .footer-inner {
+      width: min(100%, var(--content));
+      margin-inline: auto;
+    }
+    .back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .back:hover { color: var(--accent); }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 15px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      padding: 7px 12px;
+      color: var(--accent-dark);
+      background: rgba(255, 253, 248, .9);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 760;
+    }
+    .thesis {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, #233f58, #276a76);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .thesis small { color: #bfe3e8; font-weight: 790; }
+    .thesis strong { max-width: 940px; font-size: clamp(1.1rem, 2.7vw, 1.43rem); }
+    .thesis p { margin: 0; color: #e3f0f0; font-size: .91rem; }
+    .section-nav {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(244, 241, 234, .95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--accent); }
+    .page { padding: 34px 20px 72px; }
+    section { margin-bottom: 50px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: .77rem;
+      font-weight: 820;
+    }
+    .grid-2, .grid-3, .route, .concepts, .audit-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .card, .route-card, .concept, .audit-card, details, .model-figure, .decision {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card, .route-card, .concept, .audit-card, .decision { padding: 18px; }
+    .card p:last-child, .concept p:last-child, .audit-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .03em;
+    }
+    .author { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--orange); background: var(--orange-soft); }
+    .external { color: #56636a; background: var(--gray-soft); }
+    .scope { color: var(--green); background: var(--green-soft); }
+    .route { counter-reset: route; }
+    .route-card { position: relative; padding-left: 58px; }
+    .route-card::before {
+      counter-increment: route;
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 18px;
+      display: grid;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      color: white;
+      background: var(--accent);
+      border-radius: 50%;
+      font-size: .78rem;
+      font-weight: 850;
+    }
+    .route-card small { color: var(--muted); }
+    .model-figure { margin: 0; padding: 12px; overflow: hidden; }
+    .model-scroll { overflow-x: auto; overscroll-behavior-inline: contain; }
+    .model-canvas { min-width: 1060px; }
+    .model-canvas svg { display: block; width: 100%; height: auto; }
+    figcaption { padding: 10px 8px 2px; color: var(--muted); font-size: .78rem; }
+    .mobile-hint { display: none; margin: 8px 0 0; color: var(--muted); font-size: .76rem; }
+    .split-title { color: var(--accent-dark); }
+    .argument { margin: 0; padding-left: 1.2em; }
+    .argument li::marker { color: var(--accent); font-weight: 800; }
+    .concept strong { display: block; margin-bottom: 4px; color: var(--accent-dark); }
+    .concept .avoid { margin-top: 10px; padding-top: 10px; color: var(--red); border-top: 1px dashed #e5c2c2; font-size: .86rem; }
+    .audit-card.good { border-top: 4px solid var(--green); }
+    .audit-card.limit { border-top: 4px solid var(--orange); }
+    .audit-card.gate { border-top: 4px solid var(--red); }
+    .source-list { margin: 0; padding-left: 1.2em; }
+    .locator { display: block; margin-top: 7px; color: var(--muted); font-size: .76rem; }
+    blockquote {
+      margin: 13px 0;
+      padding: 12px 14px;
+      background: #faf6ee;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+    }
+    blockquote p { margin: 0 0 .2em; }
+    .reading-card blockquote {
+      font-family: ui-serif, Georgia, "Songti SC", serif;
+      font-size: .98rem;
+      line-height: 1.82;
+    }
+    .reading-card .guide { margin-bottom: .55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: var(--red);
+      border-top: 1px dashed #e5c2c2;
+      font-size: .87rem;
+    }
+    .decision { border-left: 5px solid var(--green); }
+    .decision-grid { display: grid; gap: 8px; margin-top: 12px; }
+    .decision-row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .decision-row strong { color: var(--accent-dark); }
+    details { margin-bottom: 10px; overflow: clip; }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+    .status-note {
+      padding: 13px 15px;
+      color: #5b421e;
+      background: #fff6df;
+      border: 1px solid #ecd5a5;
+      border-radius: 12px;
+    }
+    footer { padding: 24px 20px 34px; color: var(--muted); border-top: 1px solid var(--line); }
+    footer p { margin: .3em 0; font-size: .79rem; }
+    code { overflow-wrap: anywhere; font-size: .83em; }
+    @media (min-width: 760px) {
+      .grid-2, .audit-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .route { grid-template-columns: repeat(4, 1fr); }
+      .concepts, .excerpt-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 759px) {
+      .hero { padding-top: 32px; }
+      .page { padding-inline: 16px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .mobile-hint { display: block; }
+      .decision-row { grid-template-columns: 1fr; gap: 4px; }
+      section { margin-bottom: 42px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      .section-nav, .skip-link, .mobile-hint { display: none; }
+      .hero, .page, footer { padding-inline: 0; }
+      section { break-inside: avoid; margin-bottom: 28px; }
+      .card, .route-card, .concept, .audit-card, details, .model-figure, .decision { box-shadow: none; }
+      details > * { display: block !important; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { min-width: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="back" href="../../reading.html#modules">← 返回《毛泽东选集》主阅读地图</a>
+      <p class="eyebrow">Progressive deep dive · 按需深挖 01</p>
+      <h1>实践论 × 矛盾论</h1>
+      <p class="lead">先分清两篇各自解决的问题，再把它们组合成一套可检验、会修正的分析循环。核心阅读约 60 分钟；只有你决定继续，才回原文细读。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第一卷 · 两篇</span>
+        <span class="fact">核心 60 分钟</span>
+        <span class="fact">原文回读 60–80 分钟（可选）</span>
+        <span class="fact">作者观点 / 报告综合 / 批判审计分标</span>
+      </div>
+      <div class="thesis">
+        <small>一句话模型 · 报告综合</small>
+        <strong>从实践取得材料，把感性认识整理为理性认识；再按对象、阶段、主次和条件形成行动，让结果返回下一轮认识。</strong>
+        <p>边界：这不是作者在某一段中给出的统一流程图；三道现代审计门也不是原文术语。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav">
+    <nav aria-label="页内目录">
+      <a href="#route">路线</a>
+      <a href="#model">综合图</a>
+      <a href="#articles">两篇各讲什么</a>
+      <a href="#original">原文选段</a>
+      <a href="#concepts">概念</a>
+      <a href="#audit">批判审计</a>
+      <a href="#source">回原文</a>
+      <a href="#decision">下一步</a>
+    </nav>
+  </div>
+
+  <main id="main" class="page">
+    <section id="route">
+      <div class="section-head">
+        <div><h2>先走核心 60 分钟</h2><p>每层都可以停；不要一上来把两篇全文和研究资料全部吞下。</p></div>
+        <span class="time">总计约 60 分钟</span>
+      </div>
+      <div class="route">
+        <article class="route-card"><h3>看全图</h3><small>5 分钟</small><p>先记住“认识循环 + 具体分析 + 反馈修正”。</p></article>
+        <article class="route-card"><h3>分清两篇</h3><small>10 分钟</small><p>不要把认识论和矛盾分析混成一套口号。</p></article>
+        <article class="route-card"><h3>读六段原文</h3><small>25 分钟</small><p>先接触作者的论证语言，再看报告导读。</p></article>
+        <article class="route-card"><h3>审计并决定</h3><small>20 分钟</small><p>检查误用边界，选择是否回到两篇全文。</p></article>
+      </div>
+    </section>
+
+    <section id="model">
+      <div class="section-head">
+        <div><h2>两篇怎样接成一个循环</h2><p>蓝线回答认识怎样形成，橙线回答怎样把复杂对象分析到可行动，紫线把结果送回下一轮。</p></div>
+        <span class="time">5 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的综合结构图">
+          <div class="model-canvas">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 650" width="1280" height="650" role="img" aria-labelledby="title desc" data-quality-profile="standard">
+              <title id="title">《实践论》与《矛盾论》的综合问题解决模型</title>
+              <desc id="desc">从社会实践取得材料，由感性认识上升到理性认识，再用矛盾的特殊性、主要矛盾、主要方面和条件分析形成行动方案；行动结果返回下一轮认识。下方三个审计问题提醒材料、因果和主次判断都需要复核。</desc>
+              <style>
+                text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                .title { font-size: 18px; font-weight: 700; fill: #111827; }
+                .subtitle { font-size: 12px; fill: #6b7280; }
+                .lane { font-size: 13px; font-weight: 700; fill: #374151; }
+                .node-title { font-size: 15px; font-weight: 700; fill: #111827; }
+                .node-sub { font-size: 11px; fill: #4b5563; }
+                .edge-label { font-size: 11px; font-weight: 700; }
+                .audit-title { font-size: 13px; font-weight: 700; fill: #7f1d1d; }
+                .audit-sub { font-size: 11px; fill: #4b5563; }
+                .legend { font-size: 11px; fill: #6b7280; }
+              </style>
+              <defs>
+                <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+                <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ea580c"/></marker>
+                <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/></marker>
+              </defs>
+            
+              <rect width="1280" height="650" rx="18" fill="#fffdf8"/>
+              <text class="title" x="40" y="31">两篇合起来：认识怎样形成，行动重点怎样选择</text>
+              <text class="subtitle" x="40" y="53">报告综合模型 · 不是作者在单一段落中给出的流程图</text>
+            
+              <path id="edge-result-practice" data-graph-role="edge" data-edge-id="result-practice" data-source="result" data-target="practice" data-edge-kind="feedback" data-flow="feedback" data-bends="2" d="M 1200 120 V 88 H 115 V 120" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+              <text class="edge-label" x="657" y="79" text-anchor="middle" fill="#7e22ce">结果、意外与新条件 → 修正理论并重划主次</text>
+            
+              <text class="lane" x="40" y="105">《实践论》：认识循环</text>
+              <path id="edge-practice-sensory" data-graph-role="edge" data-edge-id="practice-sensory" data-source="practice" data-target="sensory" data-edge-kind="flow" data-flow="primary" data-bends="0" d="M 190 165 H 230" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-sensory-rational" data-graph-role="edge" data-edge-id="sensory-rational" data-source="sensory" data-target="rational" data-edge-kind="flow" data-flow="primary" data-bends="0" d="M 380 165 H 420" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-action-result" data-graph-role="edge" data-edge-id="action-result" data-source="action" data-target="result" data-edge-kind="flow" data-flow="primary" data-bends="0" d="M 1120 165 H 1160" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+            
+              <rect id="practice" data-node-id="practice" data-graph-role="node" data-semantic-role="process" data-graph-bounds="40,120,190,210" x="40" y="120" width="150" height="90" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+              <text class="node-title" x="115" y="151" text-anchor="middle">实践与材料</text>
+              <text class="node-sub" x="115" y="175" text-anchor="middle">生产 · 政治 · 科学 · 艺术</text>
+              <text class="node-sub" x="115" y="193" text-anchor="middle">直接经验 + 间接经验</text>
+            
+              <rect id="sensory" data-node-id="sensory" data-graph-role="node" data-semantic-role="process" data-graph-bounds="230,120,380,210" x="230" y="120" width="150" height="90" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+              <text class="node-title" x="305" y="151" text-anchor="middle">感性认识</text>
+              <text class="node-sub" x="305" y="175" text-anchor="middle">现象 · 片面</text>
+              <text class="node-sub" x="305" y="193" text-anchor="middle">外部联系</text>
+            
+              <rect id="rational" data-node-id="rational" data-graph-role="node" data-semantic-role="process" data-graph-bounds="420,120,570,210" x="420" y="120" width="150" height="90" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+              <text class="node-title" x="495" y="151" text-anchor="middle">理性认识</text>
+              <text class="node-sub" x="495" y="175" text-anchor="middle">概念 · 判断 · 推理</text>
+              <text class="node-sub" x="495" y="193" text-anchor="middle">寻找本质与内部联系</text>
+            
+              <rect id="action" data-node-id="action" data-graph-role="node" data-semantic-role="process" data-graph-bounds="980,120,1120,210" x="980" y="120" width="140" height="90" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+              <text class="node-title" x="1050" y="151" text-anchor="middle">行动方案</text>
+              <text class="node-sub" x="1050" y="175" text-anchor="middle">把理论送回实践</text>
+              <text class="node-sub" x="1050" y="193" text-anchor="middle">同时预设修正条件</text>
+            
+              <rect id="result" data-node-id="result" data-graph-role="node" data-semantic-role="result" data-graph-bounds="1160,120,1240,210" x="1160" y="120" width="80" height="90" rx="8" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
+              <text class="node-title" x="1200" y="151" text-anchor="middle">结果</text>
+              <text class="node-sub" x="1200" y="175" text-anchor="middle">符合</text>
+              <text class="node-sub" x="1200" y="193" text-anchor="middle">失败 / 意外</text>
+            
+              <text class="lane" x="40" y="273">《矛盾论》：把理性认识变成具体分析</text>
+              <path id="edge-rational-boundary" data-graph-role="edge" data-edge-id="rational-boundary" data-source="rational" data-target="boundary" data-edge-kind="transform" data-flow="analysis" data-bends="0" d="M 495 210 V 300" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+              <path id="edge-boundary-multiple" data-graph-role="edge" data-edge-id="boundary-multiple" data-source="boundary" data-target="multiple" data-edge-kind="flow" data-flow="analysis" data-bends="0" d="M 570 345 H 600" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+              <path id="edge-multiple-principal" data-graph-role="edge" data-edge-id="multiple-principal" data-source="multiple" data-target="principal" data-edge-kind="flow" data-flow="analysis" data-bends="0" d="M 750 345 H 780" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+              <path id="edge-principal-aspect" data-graph-role="edge" data-edge-id="principal-aspect" data-source="principal" data-target="aspect" data-edge-kind="flow" data-flow="analysis" data-bends="0" d="M 930 345 H 960" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+              <path id="edge-aspect-action" data-graph-role="edge" data-edge-id="aspect-action" data-source="aspect" data-target="action" data-edge-kind="transform" data-flow="analysis" data-bends="0" d="M 1050 300 V 210" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+            
+              <rect id="boundary" data-node-id="boundary" data-graph-role="node" data-semantic-role="analysis" data-graph-bounds="420,300,570,390" x="420" y="300" width="150" height="90" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+              <text class="node-title" x="495" y="331" text-anchor="middle">对象与阶段</text>
+              <text class="node-sub" x="495" y="355" text-anchor="middle">先定边界、时间与条件</text>
+              <text class="node-sub" x="495" y="373" text-anchor="middle">拒绝抽象套公式</text>
+            
+              <rect id="multiple" data-node-id="multiple" data-graph-role="node" data-semantic-role="analysis" data-graph-bounds="600,300,750,390" x="600" y="300" width="150" height="90" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+              <text class="node-title" x="675" y="331" text-anchor="middle">多重矛盾</text>
+              <text class="node-sub" x="675" y="355" text-anchor="middle">列出关系、张力与变化</text>
+              <text class="node-sub" x="675" y="373" text-anchor="middle">不强迫所有问题成一对</text>
+            
+              <rect id="principal" data-node-id="principal" data-graph-role="node" data-semantic-role="analysis" data-graph-bounds="780,300,930,390" x="780" y="300" width="150" height="90" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+              <text class="node-title" x="855" y="331" text-anchor="middle">主要矛盾</text>
+              <text class="node-sub" x="855" y="355" text-anchor="middle">当前最能牵动其他问题</text>
+              <text class="node-sub" x="855" y="373" text-anchor="middle">必须保留替代解释</text>
+            
+              <rect id="aspect" data-node-id="aspect" data-graph-role="node" data-semantic-role="analysis" data-graph-bounds="960,300,1140,390" x="960" y="300" width="180" height="90" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+              <text class="node-title" x="1050" y="331" text-anchor="middle">主要方面与条件</text>
+              <text class="node-sub" x="1050" y="355" text-anchor="middle">谁暂居支配地位？何时转化？</text>
+              <text class="node-sub" x="1050" y="373" text-anchor="middle">对抗只是可能形式之一</text>
+            
+              <rect data-graph-role="decoration" data-owner="audit-material" x="40" y="440" width="370" height="96" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+              <text class="audit-title" x="60" y="471">审计 1 · 材料不是“纯观察”</text>
+              <text class="audit-sub" x="60" y="496">记录方式、已有概念和立场会影响看见什么。</text>
+              <text class="audit-sub" x="60" y="516">把“观察 / 推断 / 价值判断”分栏。</text>
+            
+              <rect data-graph-role="decoration" data-owner="audit-cause" x="455" y="440" width="370" height="96" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+              <text class="audit-title" x="475" y="471">审计 2 · 成功不自动等于真理</text>
+              <text class="audit-sub" x="475" y="496">同一结果可能来自多个原因，短期有效也可能长期失效。</text>
+              <text class="audit-sub" x="475" y="516">事先写下预测、反证条件与时间尺度。</text>
+            
+              <rect data-graph-role="decoration" data-owner="audit-principal" x="870" y="440" width="370" height="96" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+              <text class="audit-title" x="890" y="471">审计 3 · “主要”是待证假说</text>
+              <text class="audit-sub" x="890" y="496">谁划边界、依据什么、遗漏谁，会改变主次判断。</text>
+              <text class="audit-sub" x="890" y="516">至少保留一个竞争模型并比较解释力。</text>
+            
+              <g transform="translate(40 590)">
+                <line x1="0" y1="8" x2="34" y2="8" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/><text class="legend" x="43" y="12">认识形成与行动</text>
+                <line x1="175" y1="8" x2="209" y2="8" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/><text class="legend" x="218" y="12">具体矛盾分析</text>
+                <line x1="350" y1="8" x2="384" y2="8" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/><text class="legend" x="393" y="12">反馈与修正</text>
+                <text class="legend" x="1200" y="12" text-anchor="end">外部审计问题由报告补入，不是原文术语</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <p class="mobile-hint">手机上可左右滑动查看完整结构图。</p>
+        <figcaption>结构依据两文论证重新编排；红色审计卡由报告补入。图只负责呈现关系，结论仍须回到原文和证据。</figcaption>
+      </figure>
+    </section>
+
+    <section id="articles">
+      <div class="section-head">
+        <div><h2>两篇各自解决什么</h2><p>先保留差异，再建立联系。</p></div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <span class="origin author">作者观点 · 实践论</span>
+          <h3 class="split-title">认识从哪里来，怎样深化与检验？</h3>
+          <ol class="argument">
+            <li>社会实践提供认识材料，形式不限于个人体验。</li>
+            <li>感觉和印象经过整理、判断与推理，上升为理性认识。</li>
+            <li>理性依赖感性，但认识不能停在感性阶段。</li>
+            <li>理论回到实践，结果又促使认识修正和发展。</li>
+          </ol>
+          <span class="locator">原文定位：Section0215.xhtml｜文本块 5–29</span>
+        </article>
+        <article class="card">
+          <span class="origin author">作者观点 · 矛盾论</span>
+          <h3 class="split-title">一个具体过程怎样分析到可行动？</h3>
+          <ol class="argument">
+            <li>矛盾普遍存在，但不同对象和阶段有各自特殊性。</li>
+            <li>复杂过程中多种矛盾不能平均看待。</li>
+            <li>主要矛盾与主要方面会随条件改变。</li>
+            <li>相互依存、斗争、转化须讲条件；对抗只是可能形式之一。</li>
+          </ol>
+          <span class="locator">原文定位：Section0216.xhtml｜七节，文本块 5–120</span>
+        </article>
+      </div>
+      <div class="status-note" style="margin-top:12px;"><strong>连接处：</strong>《实践论》把材料变成认识并要求回到实践；《矛盾论》提供一种把理性认识做具体、分阶段、辨主次的分析语言。这个连接是报告综合，不是两篇可以互相替代。</div>
+    </section>
+
+    <section id="original">
+      <div class="section-head">
+        <div><h2>六段原文精读</h2><p>以下均从同一个 EPUB 段落内连续截取，不拼接不相邻句子；“正在回答、通俗理解、不能推出”均为报告导读，不是作者原话。</p></div>
+        <span class="time">25 分钟</span>
+      </div>
+      <div class="excerpt-grid">
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 实践论</span>
+          <h3>1 · 实践怎样检验认识</h3>
+          <blockquote><p>马克思主义者认为，只有人们的社会实践，才是人们对于外界认识的真理性的标准。实际的情形是这样的，只有在社会实践过程中（物质生产过程中，阶级斗争过程中，科学实验过程中），人们达到了思想中所预想的结果时，人们的认识才被证实了。人们要想得到工作的胜利即得到预想的结果，一定要使自己的思想合于客观外界的规律性，如果不合，就会在实践中失败。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>认识凭什么接受检验。</p>
+          <p class="guide"><strong>通俗理解：</strong>理论要对行动结果负责，不能只凭主观确信。</p>
+          <p class="cannot"><strong>不能推出：</strong>一次达到预期结果，就足以排除其他原因并永久证明理论。</p>
+          <span class="locator">《实践论》｜Section0215.xhtml｜文本块 8，连续句 1–3</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 实践论</span>
+          <h3>2 · 感性材料怎样上升</h3>
+          <blockquote><p>由此看来，认识的过程，第一步，是开始接触外界事情，属于感觉的阶段。第二步，是综合感觉的材料加以整理和改造，属于概念、判断和推理的阶段。只有感觉的材料十分丰富（不是零碎不全）和合于实际（不是错觉），才能根据这样的材料造出正确的概念和论理来。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>感性认识和理性认识怎样衔接。</p>
+          <p class="guide"><strong>通俗理解：</strong>材料要足够、可靠，还要经过整理和推理，才可能形成概念。</p>
+          <p class="cannot"><strong>不能推出：</strong>只要积累很多经验，经验就会自动变成正确理论。</p>
+          <span class="locator">《实践论》｜Section0215.xhtml｜文本块 18，全段</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 实践论</span>
+          <h3>3 · 认识为什么必须继续</h3>
+          <blockquote><p>通过实践而发现真理，又通过实践而证实真理和发展真理。从感性认识而能动地发展到理性认识，又从理性认识而能动地指导革命实践，改造主观世界和客观世界。实践、认识、再实践、再认识，这种形式，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>一次认识和行动为什么不是终点。</p>
+          <p class="guide"><strong>通俗理解：</strong>行动产生新材料，原来的认识也要随结果和条件继续变化。</p>
+          <p class="cannot"><strong>不能推出：</strong>只要重复“实践—认识”的形式，无论材料和方法如何，都必然进步。</p>
+          <span class="locator">《实践论》｜Section0215.xhtml｜文本块 29，连续句 1–3</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 矛盾论</span>
+          <h3>4 · 一般认识怎样返回具体</h3>
+          <blockquote><p>就人类认识运动的秩序说来，总是由认识个别的和特殊的事物，逐步地扩大到认识一般的事物。人们总是首先认识了许多不同事物的特殊的本质，然后才有可能更进一步地进行概括工作，认识诸种事物的共同的本质。当着人们已经认识了这种共同的本质以后，就以这种共同的认识为指导，继续地向着尚未研究过的或者尚未深入地研究过的各种具体的事物进行研究，找出其特殊的本质，这样才可以补充、丰富和发展这种共同的本质的认识，而使这种共同的本质的认识不致变成枯槁的和僵死的东西。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>一般规律和具体对象怎样往返。</p>
+          <p class="guide"><strong>通俗理解：</strong>概括来自具体材料，也必须用新的具体研究继续修正。</p>
+          <p class="cannot"><strong>不能推出：</strong>掌握一个一般公式，就可以跳过对新对象的调查。</p>
+          <span class="locator">《矛盾论》｜Section0216.xhtml｜文本块 40，连续句 1–3</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 矛盾论</span>
+          <h3>5 · 两种“主要”不能混用</h3>
+          <blockquote><p>不能把过程中所有的矛盾平均看待，必须把它们区别为主要的和次要的两类，着重于捉住主要的矛盾，已如上述。但是在各种矛盾之中，不论是主要的或次要的，矛盾着的两个方面，又是否可以平均看待呢？也是不可以的。无论什么矛盾，矛盾的诸方面，其发展是不平衡的。有时候似乎势均力敌，然而这只是暂时的和相对的情形，基本的形态则是不平衡。矛盾着的两方面中，必有一方面是主要的，他方面是次要的。其主要的方面，即所谓矛盾起主导作用的方面。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>多个矛盾之间与一个矛盾内部怎样分别讨论主次。</p>
+          <p class="guide"><strong>通俗理解：</strong>“主要矛盾”比较多个矛盾之间的主次，“主要方面”分析同一矛盾内部，层级不同。</p>
+          <p class="cannot"><strong>不能推出：</strong>最显眼的问题就是主要矛盾，或暂居主导的一方永远不会变化。</p>
+          <span class="locator">《矛盾论》｜Section0216.xhtml｜文本块 71，连续句 1–7</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 矛盾论</span>
+          <h3>6 · 对抗不是统一答案</h3>
+          <blockquote><p>但是我们必须具体地研究各种矛盾斗争的情况，不应当将上面所说的公式不适当地套在一切事物的身上。矛盾和斗争是普遍的、绝对的，但是解决矛盾的方法，即斗争的形式，则因矛盾的性质不同而不相同。有些矛盾具有公开的对抗性，有些矛盾则不是这样。根据事物的具体发展，有些矛盾是由原来还非对抗性的，而发展成为对抗性的；也有些矛盾则由原来是对抗性的，而发展成为非对抗性的。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>矛盾普遍存在，是否意味着处理方式都相同。</p>
+          <p class="guide"><strong>通俗理解：</strong>矛盾的性质和发展条件不同，斗争形式也不同，并且可能转化。</p>
+          <p class="cannot"><strong>不能推出：</strong>所有分歧都应敌我化，或任何冲突形式都能脱离条件直接移植。</p>
+          <span class="locator">《矛盾论》｜Section0216.xhtml｜文本块 115，全段</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="concepts">
+      <div class="section-head">
+        <div><h2>五组概念，连同误读边界一起记</h2><p>概念的价值在区分；越像口号，越要追问对象、阶段和条件。</p></div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="concepts">
+        <article class="concept"><span class="origin author">作者观点</span><strong>实践</strong><p>认识的来源、目的和检验环节；包含生产、政治、科学、艺术等社会活动。</p><p class="avoid">不要缩成：想到就做、只信个人经历、结果好就永远正确。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>感性认识 / 理性认识</strong><p>前者接触现象与外部联系，后者用概念、判断和推理把握本质与内部联系。</p><p class="avoid">不要缩成：经验会自动长成理论，或理论可以脱离材料。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>普遍性 / 特殊性</strong><p>矛盾贯穿过程，但每种过程和每个阶段都有具体性质；一般认识要返回具体对象。</p><p class="avoid">不要缩成：给所有问题套同一组对立词。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>主要矛盾 / 主要方面</strong><p>前者是多重矛盾中起领导作用的关系；后者是同一矛盾内部暂居支配地位的一方。</p><p class="avoid">不要缩成：最大麻烦、最坏的人，或永远固定的主次。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>同一性 / 斗争性 / 对抗</strong><p>双方在条件下相互依存并可能转化；斗争贯穿其中，但对抗只是斗争的一种形式。</p><p class="avoid">不要缩成：所有分歧最终都要敌对冲突。</p></article>
+        <article class="concept"><span class="origin external">概念边界</span><strong>辩证矛盾 ≠ 形式逻辑矛盾</strong><p>前者常指过程内的相反倾向或关系；后者讨论同一命题在同一意义下同时为真与为假。</p><p class="avoid">不要用“矛盾无处不在”替明显的论证不一致开脱。</p></article>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="section-head">
+        <div><h2>批判审计：方法可用，不能免检</h2><p>先承认贡献，再检查它在现代知识和决策场景中的边界。</p></div>
+        <span class="time">12 分钟</span>
+      </div>
+      <div class="audit-grid">
+        <article class="audit-card good">
+          <span class="origin audit">方法优势</span>
+          <h3>它逼你回到现实和变化</h3>
+          <ul>
+            <li>把知识来源、行动目的与纠错机制接起来。</li>
+            <li>要求具体分析对象和阶段，反对抽象套公式。</li>
+            <li>用主次和条件帮助复杂问题聚焦。</li>
+            <li>明确对抗不是所有矛盾的形式。</li>
+          </ul>
+        </article>
+        <article class="audit-card limit">
+          <span class="origin audit">认识论边界</span>
+          <h3>实践不是一台自动验真机</h3>
+          <ul>
+            <li>观察受已有概念、测量和选择影响。</li>
+            <li>同一结果可能由多种原因共同产生。</li>
+            <li>一次成功可能短期有效、长期失效。</li>
+            <li>失败也不自动指出是哪条假设错了。</li>
+          </ul>
+        </article>
+        <article class="audit-card gate">
+          <span class="origin audit">决策边界</span>
+          <h3>“主要”应是待证假说</h3>
+          <ul>
+            <li>先写清对象、阶段、指标和利益相关者。</li>
+            <li>至少保留一个竞争模型。</li>
+            <li>事先写预测、反证条件和时间尺度。</li>
+            <li>行动后把“结果发生”与“机制正确”分开。</li>
+          </ul>
+        </article>
+        <article class="audit-card limit">
+          <span class="origin audit">适用边界</span>
+          <h3>不是价值中立的万能方法</h3>
+          <ul>
+            <li>两文服务于具体政治、阶级和革命任务。</li>
+            <li>二分模型可能压扁网络、多因和渐变关系。</li>
+            <li>强调内因时要补查开放系统中的外部互动。</li>
+            <li>公共决策还要另审目的、权利、代价与不可逆伤害。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="section-head">
+        <div><h2>决定继续时，按问题回原文</h2><p>不要求线性通读；五段路线约 60–80 分钟，可拆成两次。</p></div>
+        <span class="time">可选 60–80 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="card"><span class="origin scope">实践论 · 12–15 分钟</span><h3>认识来源与两个阶段</h3><p>读文本块 5–12，核实践范围、认识来源、感性与理性的关系。</p><span class="locator">Apple Books 搜索：“人的认识，主要地依赖于物质的生产活动”</span></article>
+        <article class="card"><span class="origin scope">实践论 · 10–12 分钟</span><h3>回到实践与循环</h3><p>读文本块 18–29，核理论为什么要回到实践，以及结果怎样要求修正。</p><span class="locator">搜索：“实践、认识、再实践、再认识”</span></article>
+        <article class="card"><span class="origin scope">矛盾论 · 12–15 分钟</span><h3>特殊性与具体分析</h3><p>读第三节，核不同对象、阶段和研究领域为什么不能套同一公式。</p><span class="locator">搜索分节：“三 矛盾的特殊性”</span></article>
+        <article class="card"><span class="origin scope">矛盾论 · 15–20 分钟</span><h3>主要矛盾与主要方面</h3><p>读第四节文本块 61–80，核两种“主要”的区别、条件与转化。</p><span class="locator">搜索分节：“四 主要的矛盾和主要的矛盾方面”</span></article>
+        <article class="card"><span class="origin scope">矛盾论 · 10–15 分钟</span><h3>斗争与对抗的边界</h3><p>读第六、七节，核为什么不能把一切矛盾处理成敌对冲突。</p><span class="locator">搜索分节：“六 对抗在矛盾中的地位”</span></article>
+        <article class="card"><span class="origin external">版本提醒</span><h3>读的是当前选集修订文本</h3><p>书内说明和外部研究都提示定本经历补充、删节或修改；不要把当前 EPUB 无条件等同于 1937 年原貌。</p><span class="locator">具体依据在下方“版本与外部资料”中展开。</span></article>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="section-head">
+        <div><h2>现在决定下一层，不提前生成</h2><p>只有一个问题真正吸引你时，再长出一个更深模块。</p></div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="decision">
+        <strong>能解释全图 + 说出三条边界，就已经完成本层。</strong>
+        <div class="decision-grid">
+          <div class="decision-row"><strong>回两篇全文</strong><span>如果你想核论证语气、例子、转折和上下文。</span></div>
+          <div class="decision-row"><strong>只深挖认识论</strong><span>继续问：实践为何不能直接证明真理？</span></div>
+          <div class="decision-row"><strong>只深挖主次分析</strong><span>继续问：主要矛盾如何避免成为事后贴标签？</span></div>
+          <div class="decision-row"><strong>停在这里</strong><span>如果你只需建立概念地图，并能在实际问题中加上审计门。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="section-head">
+        <div><h2>证据、摘录与版本边界</h2><p>默认折叠；核引文或继续研究时再展开。</p></div>
+        <span class="time">按需</span>
+      </div>
+      <details>
+        <summary>六条短摘录与定位</summary>
+        <div class="detail-body">
+          <blockquote><p>“真理的标准只能是社会的实践。”</p><span class="locator">《实践论》｜Section0215.xhtml｜文本块 8</span></blockquote>
+          <blockquote><p>“感觉只解决现象问题，理论才解决本质问题。”</p><span class="locator">《实践论》｜文本块 11</span></blockquote>
+          <blockquote><p>“实践、认识、再实践、再认识。”</p><span class="locator">《实践论》｜文本块 29</span></blockquote>
+          <blockquote><p>“对于具体的事物作具体的分析。”</p><span class="locator">《矛盾论》｜文本块 52</span></blockquote>
+          <blockquote><p>“不能把过程中所有的矛盾平均看待。”</p><span class="locator">《矛盾论》｜文本块 71</span></blockquote>
+          <blockquote><p>“对抗是矛盾斗争的一种形式，而不是矛盾斗争的一切形式。”</p><span class="locator">《矛盾论》｜文本块 111</span></blockquote>
+          <p class="muted">短摘录只承担原意锚定，不代替上下文。纯文本块为本报告的机器定位；在 Apple Books 中以篇名、分节名和短句搜索。</p>
+        </div>
+      </details>
+      <details>
+        <summary>版本与外部批判资料</summary>
+        <div class="detail-body">
+          <ul class="source-list">
+            <li><a href="https://www.cambridge.org/core/journals/china-quarterly/article/abs/mao-zedongs-on-contradiction-and-on-practice-preliberation-texts/07B011DAFD1D7C2801BB341D31E2588B">Nick Knight, The China Quarterly：两文早期文本与定本关系</a> — 用于标出文本形成和修订程度的学术争议，不替读者下定论。</li>
+            <li><a href="https://plato.stanford.edu/entries/science-theory-observation/">Stanford Encyclopedia of Philosophy：Theory and Observation in Science</a> — 用于审计观察、数据与理论/模型相互缠绕的问题。</li>
+            <li><a href="https://plato.stanford.edu/entries/scientific-underdetermination/">Stanford Encyclopedia of Philosophy：Underdetermination of Scientific Theory</a> — 用于审计一组证据可能容纳多种解释。</li>
+            <li><a href="https://plato.stanford.edu/entries/contradiction/">Stanford Encyclopedia of Philosophy：Contradiction</a> — 用于区分形式逻辑矛盾与本文的辩证矛盾语言。</li>
+            <li><a href="https://docs.lib.purdue.edu/clcweb/vol20/iss3/3/">CLCWeb / Purdue：Mao's Dialectical Materialism and the Historical Conjuncture</a> — 一种把《矛盾论》放回革命历史情势并讨论当代移植边界的外部论述。</li>
+          </ul>
+          <p class="muted">这些资料负责补边界，不负责替代原文。外部作者的判断也应继续审计。</p>
+        </div>
+      </details>
+      <details>
+        <summary>来源身份、范围与机器数据</summary>
+        <div class="detail-body">
+          <p><strong>源文件：</strong>毛泽东选集.epub</p>
+          <p><strong>SHA-256：</strong><code>ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26</code></p>
+          <p><strong>文章：</strong>《实践论》OEBPS/Text/Section0215.xhtml；《矛盾论》OEBPS/Text/Section0216.xhtml。</p>
+          <p><strong>范围：</strong>只分析第一卷所载两篇修订文本；不纳入第六、七卷或个人编辑材料，也不声称复原 1937 年原稿。</p>
+          <p><strong>定位法：</strong>按 XHTML 文档顺序抽取非空标题、段落和注释，生成 1 起始纯文本块。详细论点、摘录、外部来源和审计数据见同目录 <a href="reading.json">reading.json</a>。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>渐进深挖模块 01 · 生成于 2026-08-10</p>
+      <p>作者观点、报告综合、批判审计和外部资料已分标。页面不替代原文，也不把实践结果当作自动验真。</p>
+    </div>
+  </footer>
+</body>
+</html>

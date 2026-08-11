@@ -1,0 +1,263 @@
+{
+  "schema_version": "read-book.progressive-deep-dive.v1",
+  "artifact_kind": "progressive-article-deep-dive",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "module": {
+    "id": "single-spark",
+    "title": "星星之火，可以燎原",
+    "subtitle": "弱小力量为什么可能增长，判断依据可靠吗？",
+    "status": "generated",
+    "parent_book_html": "../../reading.html#modules",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "文章不是用名言替代论证，而是把统治结构的分裂、农村矛盾、根据地建设、群众组织、土地革命、武装力量和灵活战术连成增长判断；同时反对盲动与悲观，并承认具体时限可能判断过急。",
+    "model_boundary": "这是对 1930 年书信论证的结构化复原，不是通用成长公式；后来的革命胜利也不能倒推每项因果和时间判断都必然正确。"
+  },
+  "reading_contract": {
+    "core_minutes": 48,
+    "route": [
+      {"minutes": 5, "goal": "确认它原是写给林彪的书信以及选集改题边界"},
+      {"minutes": 10, "goal": "看增长机制图，分清外部条件、组织行动和反馈"},
+      {"minutes": 8, "goal": "看两种误判与自我修正图，区分方向和时限"},
+      {"minutes": 15, "goal": "读五段原文，核‘可能、必然、很快’和战术限定"},
+      {"minutes": 10, "goal": "用 1931、1934–1935 与延安阶段做最低历史压力测试"}
+    ],
+    "completion_definition": [
+      "能说明文章回应的是红军前途、流动游击还是建设根据地与政权的具体争论。",
+      "能复述增长判断中的结构条件、组织机制和军事行动，而不是只记一句比喻。",
+      "能解释作者为什么同时反对盲动主义与悲观退缩。",
+      "能指出作者承认‘一年争取江西’规定过急，以及后来历史既支持根据地增长也显示失败与多重外因。"
+    ],
+    "optional_source_return_minutes": "30–45",
+    "estimated_full_article_minutes": "45–70"
+  },
+  "source_book": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "volume": 1,
+    "period_section": "第二次国内革命战争时期",
+    "article": "星星之火，可以燎原",
+    "date": "1930-01-05",
+    "epub_path": "OEBPS/Text/Section0204.xhtml",
+    "characters_with_notes": 8377,
+    "locator_method": "EPUB 内部路径 + 1 起始正文 p 序号；Apple Books 优先搜索篇名与摘录短句。",
+    "edition_boundary": "书内注释明确说明：原文是答复林彪的信，1948 年公开刊行前同意不提林彪姓名，收入选集时改题并删改指名批评处。模块不把当前选集文本冒充未改原信。",
+    "scope_limit": "《中国的红色政权为什么能够存在？》《井冈山的斗争》只提供必要背景，不扩写成三篇合集；不纳入第六、七卷。"
+  },
+  "argument_structure": {
+    "question": "一支弱小、受围困的革命力量，为什么不应只做流动游击，而要建设根据地和政权？",
+    "conditions": [
+      "作者判断当时中国统治结构分裂，存在长期军阀混战和地区不平衡。",
+      "农村土地与赋税矛盾为群众动员提供社会基础。",
+      "部分区域敌方力量、地方治理与地理条件相对有利。"
+    ],
+    "mechanisms": [
+      "建设相对稳定的根据地和政治权力，而非仅扩大流动影响。",
+      "把土地革命、群众组织、地方武装与正规红军建设结合。",
+      "在发动群众时分散，在应付敌人时集中，并依环境决定是否分兵。"
+    ],
+    "claimed_outcome": "局部力量形成可持续的政治、组织和军事能力，并通过波浪式扩展促进更大范围的革命高潮。",
+    "missing_or_uncertain": [
+      "结构矛盾并不自动产生对特定组织的支持。",
+      "敌方学习、围剿强度、组织内部错误和国际战争变化都会改变结果。",
+      "方向判断不能直接推出‘很快’或精确完成期限。"
+    ]
+  },
+  "claims": [
+    {
+      "id": "spark01-provenance",
+      "type": "edition_fact",
+      "statement": "当前文章是由答复林彪的书信改题、删改后收入选集的版本。",
+      "source": "EPUB article note",
+      "confidence": "high"
+    },
+    {
+      "id": "spark02-two-errors",
+      "type": "author_position",
+      "statement": "作者把高估己方、低估敌方的盲动与低估己方、只见强敌的悲观视为对称误判。",
+      "source_excerpt_ids": ["src-spark-errors"],
+      "confidence": "high"
+    },
+    {
+      "id": "spark03-growth-claim",
+      "type": "author_position",
+      "statement": "‘星火燎原’在原文中是对特定中国社会结构、矛盾发展和组织行动的方向判断，不是脱离条件的普遍规律。",
+      "source_excerpt_ids": ["src-spark-claim", "src-spark-tactics"],
+      "confidence": "high"
+    },
+    {
+      "id": "spark04-tactics",
+      "type": "author_position",
+      "statement": "文章主张把分兵发动群众与集中应付敌人结合，分散和集中都受环境、领导与任务限制。",
+      "source_excerpt_ids": ["src-spark-tactics"],
+      "confidence": "high"
+    },
+    {
+      "id": "spark05-time-limit",
+      "type": "author_self_correction",
+      "statement": "作者明确承认规定一年争取江西不对，并说明只能判断大的方向，不能机械规定时日。",
+      "source_excerpt_ids": ["src-spark-correction", "src-spark-forecast"],
+      "confidence": "high"
+    },
+    {
+      "id": "spark06-partial-support",
+      "type": "historical_minimum",
+      "statement": "1931 年江西建立中华苏维埃共和国，说明根据地和政权建设确实形成了比 1930 年更大的政治军事规模。",
+      "external_sources": ["ext-loc-country-study"],
+      "confidence": "high"
+    },
+    {
+      "id": "spark07-pressure-test",
+      "type": "historical_minimum",
+      "statement": "1934 年第五次围剿迫使中央红军撤离江西并开始长征，说明根据地增长并非不可逆，也不能由早期扩张推出必然连续成功。",
+      "external_sources": ["ext-loc-country-study", "ext-cambridge-fifth-campaign"],
+      "confidence": "high"
+    },
+    {
+      "id": "spark08-multicausal-outcome",
+      "type": "critical_audit",
+      "statement": "后来在延安的发展来自组织自身、农村政策、抗日战争和其他内外条件的组合；最终胜利不能只归因于 1930 年文中的单一机制。",
+      "external_sources": ["ext-loc-country-study", "ext-afterlives"],
+      "confidence": "medium_high"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-spark-errors",
+      "epub_path": "OEBPS/Text/Section0204.xhtml",
+      "paragraph": 3,
+      "title": "两种相反的误判",
+      "excerpt": "犯着革命急性病的同志们不切当地看大了革命的主观力量，而看小了反革命力量。这种估量，多半是从主观主义出发。其结果，无疑地是要走上盲动主义的道路。另一方面，如果把革命的主观力量看小了，把反革命力量看大了，这也是一种不切当的估量，又必然要产生另一方面的坏结果。",
+      "plain_guide": "这篇文章不是单向鼓励乐观，而是要求同时校正两侧误差。",
+      "cannot_infer": "只要反对悲观，就应该采取冒险进攻。"
+    },
+    {
+      "id": "src-spark-claim",
+      "epub_path": "OEBPS/Text/Section0204.xhtml",
+      "paragraph": 5,
+      "title": "名言后面有强判断",
+      "excerpt": "这里用得着中国的一句老话：“星星之火，可以燎原。”这就是说，现在虽只有一点小小的力量，但是它的发展会是很快的。它在中国的环境里不仅是具备了发展的可能性，简直是具备了发展的必然性，这在五卅运动〔4〕及其以后的大革命运动已经得了充分的证明。我们看事情必须要看它的实质，而把它的现象只看作入门的向导，一进了门就要抓住它的实质，这才是可靠的科学的分析方法。",
+      "plain_guide": "作者从可能推进到必然和很快；正因为判断很强，才更需要检查条件与时间。",
+      "cannot_infer": "任何微小事物只要坚持都会自然壮大。"
+    },
+    {
+      "id": "src-spark-tactics",
+      "epub_path": "OEBPS/Text/Section0204.xhtml",
+      "paragraph": 13,
+      "title": "分散与集中服务不同任务",
+      "excerpt": "‘分兵以发动群众，集中以应付敌人。’‘敌进我退，敌驻我扰，敌疲我打，敌退我追。’‘固定区域的割据〔13〕，用波浪式的推进政策。强敌跟追，用盘旋式的打圈子政策。’‘很短的时间，很好的方法，发动很大的群众。’这种战术正如打网，要随时打开，又要随时收拢。打开以争取群众，收拢以应付敌人。",
+      "plain_guide": "‘增长’包含群众工作、根据地与军事生存之间的切换，不是只有扩张。",
+      "cannot_infer": "分散或集中有一个脱离环境、永远正确的固定比例。"
+    },
+    {
+      "id": "src-spark-correction",
+      "epub_path": "OEBPS/Text/Section0204.xhtml",
+      "paragraph": 18,
+      "title": "作者承认具体时限过急",
+      "excerpt": "那个建议的缺点就是不该规定为一年，因此，影响到革命高潮快要到来的所谓“快要”，也不免伴上了一些急躁性。",
+      "plain_guide": "文章内部已经区分方向判断与时间表，并留下可修正的位置。",
+      "cannot_infer": "撤回一年期限就自动证明‘很快’这一判断可靠。"
+    },
+    {
+      "id": "src-spark-forecast",
+      "epub_path": "OEBPS/Text/Section0204.xhtml",
+      "paragraph": 19,
+      "title": "不是算命，但仍要形成行动判断",
+      "excerpt": "马克思主义者不是算命先生，未来的发展和变化，只应该也只能说出个大的方向，不应该也不可能机械地规定时日。但我所说的中国革命高潮快要到来，决不是如有些人所谓“有到来之可能”那样完全没有行动意义的、可望而不可即的一种空的东西。",
+      "plain_guide": "作者拒绝精确预言，同时又坚持方向判断必须足以指导行动；两者之间存在需要证据承担的张力。",
+      "cannot_infer": "只要不写日期，任何模糊预测都不可证伪。"
+    }
+  ],
+  "diagram_contracts": [
+    {
+      "anchor": "reading.html#mechanism",
+      "title": "弱小力量增长机制：条件、建设、反馈与风险",
+      "diagram_type": "causal concept map",
+      "semantic_boundary": "实线表示文章中的论证或行动连接；虚线表示依赖与风险，不表示必然因果或精确历史过程。"
+    },
+    {
+      "anchor": "reading.html#judgment",
+      "title": "两种误判与方向—时限修正",
+      "diagram_type": "balanced decision model",
+      "semantic_boundary": "图复原文章的判断纪律与自我修正，不把政治结论包装成通用统计模型。"
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "ext-loc-country-study",
+      "title": "China: A Country Study",
+      "publisher": "U.S. Library of Congress, Federal Research Division",
+      "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/ch/chinacountrystud00word/chinacountrystud00word.pdf",
+      "use": "核 1931 年江西苏区国家组织、1934–1935 年长征及延安时期增长的多重条件。",
+      "perspective_limit": "美国政府委托的国别研究，提供外部综合叙述，不替代中方档案或专题研究。"
+    },
+    {
+      "id": "ext-afterlives",
+      "title": "Afterlives of Chinese Communism: People’s War or Peasant’s War?",
+      "publisher": "ANU Press / U.S. Library of Congress digital copy",
+      "url": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/71/82/47/2020718247/2020718247.pdf",
+      "use": "核农村群众、土地政策、政治与军事策略结合，以及政策随抗战条件变化而调整。",
+      "perspective_limit": "后见概念史文章；不能作为 1930 年作者意图的直接证据。"
+    },
+    {
+      "id": "ext-cambridge-fifth-campaign",
+      "title": "Mao, Lin Biao and the Fifth Encirclement Campaign",
+      "author": "Chi-hsi Hu",
+      "publisher": "The China Quarterly / Cambridge University Press",
+      "url": "https://www.cambridge.org/core/journals/china-quarterly/article/abs/mao-lin-biao-and-the-fifth-encirclement-campaign/8F7B0C06F0C4A49A1C3CB73051AF1C04",
+      "use": "提供第五次围剿作为战略理论压力测试的学术入口。",
+      "perspective_limit": "页面可读部分是摘要与参考文献，本模块不声称读取受限全文。"
+    }
+  ],
+  "critical_audit": {
+    "minimum_verdicts": [
+      "文章确实提出了从弱小到扩大的条件化机制，不是空洞口号。",
+      "从结构矛盾推到特定组织必然、快速胜出，中间仍依赖群众支持、组织能力、敌方反应和外部事件。",
+      "1931 年江西苏区扩大支持了根据地建设的部分判断；1934 年被迫撤离又否定了不可逆的线性增长想象。",
+      "最终胜利不能反向证明 1930 年所有预测都准确，也不能把战争与政权竞争改写成个人成长鸡汤。"
+    ],
+    "human_cost": "根据地、土地革命、军事扩张和围剿都涉及强制、暴力、征集与民众代价；图示不得把它们处理成无代价的增长飞轮。",
+    "version_boundary": "选集标题和正文已经经过公开刊行时的删改；页面只引用当前 EPUB，并把改题事实明确显示。"
+  },
+  "generation_audit": {
+    "semantic_review": {
+      "status": "pass",
+      "checks": [
+        "EPUB SHA-256、第一卷篇名、写作日期、内部路径和改题删改注释已核对。",
+        "5 段 JSON 摘录在去除行内注号后均可于指定段落连续逐字定位。",
+        "已分开作者的可能、必然与很快三种强度，不用后来胜利反证每一项时间和因果判断。",
+        "1931 年扩大、1934–1935 年撤离与延安阶段多因结果同时进入压力测试。",
+        "二次语义审计修正了拼接式摘录，并保留战争、强制与民众代价边界。"
+      ]
+    },
+    "ui_review": {
+      "status": "pass",
+      "skill": "ui-ux-pro-max",
+      "checks": [
+        "Chrome 1440×1100 桌面视口已渲染审计，首屏先限定‘非励志鸡汤’的使用边界。",
+        "Playwright 390×844 真移动视口下 document scrollWidth 等于 390，页面无水平溢出。",
+        "两张大图各自在可聚焦的水平滚动容器中，手机可逐列滑动，不破坏页面单列阅读。",
+        "48 分钟路线把写作现场、机制、判断、原文与历史审计分层；证据详情默认折叠。"
+      ]
+    },
+    "svg_review": {
+      "status": "pass",
+      "skill": "fireworks-tech-graph",
+      "checks": [
+        "2 张 SVG 分别承担增长机制与判断纪律，功能不重复。",
+        "两图的 XML、marker、箭头碰撞、语义几何和构图预算检查全部通过。",
+        "1280 宽完整渲染已视觉审计；反馈箭头碰撞在审计中发现并修正。",
+        "图一显式保留敌方学习、组织错误、民众代价与外部战争；图二分开方向判断与时限修正。"
+      ]
+    }
+  },
+  "validation": {
+    "json_parse": "pass",
+    "source_excerpt_exactness": "pass_5_of_5",
+    "external_links_present": "pass_3_links",
+    "html_anchor_integrity": "pass_no_missing_or_duplicate_ids",
+    "svg_geometry": "pass_xml_markers_collisions_geometry_composition",
+    "desktop_render": "pass_chrome_1440x1100",
+    "mobile_render": "pass_playwright_390x844_no_document_overflow"
+  }
+}

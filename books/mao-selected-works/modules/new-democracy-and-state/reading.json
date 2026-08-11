@@ -1,0 +1,307 @@
+{
+  "schema_version": "read-book.progressive-deep-dive.v1",
+  "artifact_kind": "progressive-thematic-deep-dive",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "module": {
+    "id": "new-democracy-and-state",
+    "title": "新民主主义与国家构想",
+    "subtitle": "从阶段纲领、联合政府到人民民主专政",
+    "status": "generated",
+    "parent_book_html": "../../reading.html#modules",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "三篇文章都把国家构想放在革命阶段和阶级联盟中理解，但问题场景从抗战时期的阶段纲领，转向战后联合政府主张，再转向建国前夕由共产党领导的人民民主专政；连续性与变化必须同时保留。",
+    "model_boundary": "本模块把三篇跨卷文本并置，不把它们压成作者一次写成的路线图，也不把后来制度结果倒灌为早期文章的既定终点。"
+  },
+  "reading_contract": {
+    "core_minutes": 58,
+    "route": [
+      {"minutes": 5, "goal": "先分清 1940、1945、1949 三个写作现场"},
+      {"minutes": 10, "goal": "看一张时间—概念演变图，识别连续与变化"},
+      {"minutes": 18, "goal": "读七段原文，核国家形式、联盟、经济与权力边界"},
+      {"minutes": 15, "goal": "把 1949《共同纲领》和 1954 年宪法作为后见制度证据"},
+      {"minutes": 10, "goal": "完成批判审计并选择回读篇章"}
+    ],
+    "completion_definition": [
+      "能说明新民主主义在 1940 年文本中是阶段性政治、经济、文化纲领，不是社会主义的同义词。",
+      "能区分 1945 年联合政府主张与 1949 年人民民主专政的政治问题、联盟对象和权力边界。",
+      "能指出三篇文本都保留工人阶级与共产党领导这一连续性，同时国家形式和现实任务发生变化。",
+      "能把原文主张、1949 年制度文本、1954 年制度变化和后见学术分期分开。"
+    ],
+    "optional_source_return_minutes": "120–180",
+    "estimated_full_articles_minutes": "300–440"
+  },
+  "source_book": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "scope": "第一至第五卷范围内的三篇文章",
+    "articles": [
+      {"volume": 2, "title": "新民主主义论", "date": "1940-01", "epub_path": "OEBPS/Text/Section0326.xhtml", "characters_with_notes": 32892},
+      {"volume": 3, "title": "论联合政府", "date": "1945-04-24", "epub_path": "OEBPS/Text/Section0426.xhtml", "characters_with_notes": 45437},
+      {"volume": 4, "title": "论人民民主专政", "date": "1949-06-30", "epub_path": "OEBPS/Text/Section0565.xhtml", "characters_with_notes": 9741}
+    ],
+    "locator_method": "EPUB 内部路径 + 1 起始正文 p 序号；Apple Books 优先搜索篇名与摘录短句。",
+    "edition_boundary": "当前 EPUB 包装层没有出版社、ISBN 或印次；《新民主主义论》的选集文本不等同于 1940 年首刊原貌，模块只对当前 EPUB 负责，并提示学术版本文献认为正式选集版本存在修订。",
+    "scope_limit": "不纳入第六、七卷及‘静火’个人编辑材料。"
+  },
+  "historical_frames": [
+    {
+      "year": 1940,
+      "article": "新民主主义论",
+      "question": "抗战与革命的现阶段要建立什么政治、经济和文化秩序？",
+      "minimum_position": "以无产阶级领导的各革命阶级联合专政和民主集中制为政治形式，并保留受限制的私人资本主义经济。"
+    },
+    {
+      "year": 1945,
+      "article": "论联合政府",
+      "question": "抗战将胜而国内分裂时，怎样结束国民党一党专政并组织战后政府？",
+      "minimum_position": "先由各党派和无党派代表协议成立临时联合政府，再经选举和国民大会形成正式联合政府。"
+    },
+    {
+      "year": 1949,
+      "article": "论人民民主专政",
+      "question": "革命取得基本胜利、国家即将成立时，谁属于人民，国家机器对谁实行民主或专政？",
+      "minimum_position": "以工人阶级和共产党领导、工农联盟为基础，对人民内部实行民主，对被划为反动派者实行专政，并把新民主主义指向社会主义。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "nds01-stage-program",
+      "type": "author_position",
+      "statement": "《新民主主义论》把民主主义革命与社会主义革命区分为性质不同的两个阶段，并把现阶段表述为新民主主义。",
+      "source_excerpt_ids": ["src-nds-stage"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds02-state-form",
+      "type": "author_position",
+      "statement": "1940 年文本以各革命阶级联合专政说明国体，以民主集中制说明政体；联合并不取消无产阶级领导。",
+      "source_excerpt_ids": ["src-nds-state"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds03-mixed-economy",
+      "type": "author_position",
+      "statement": "新民主主义经济同时主张关键大企业国有与受限制的私人资本主义发展，理由是当时经济落后且处于过渡阶段。",
+      "source_excerpt_ids": ["src-nds-economy"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds04-coalition-proposal",
+      "type": "author_position",
+      "statement": "《论联合政府》提出临时联合政府与经选举形成正式联合政府的两步主张，直接针对抗战末期的一党专政、内战风险与国家重建。",
+      "source_excerpt_ids": ["src-nds-coalition", "src-nds-two-steps"],
+      "external_sources": ["ext-frus-1944", "ext-frus-1945"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds05-people-boundary",
+      "type": "author_position",
+      "statement": "《论人民民主专政》明确把‘人民’定义为若干阶级在工人阶级和共产党领导下的联盟，并把民主与专政分配给不同政治类别。",
+      "source_excerpt_ids": ["src-nds-people"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds06-continuity-change",
+      "type": "report_synthesis",
+      "statement": "三篇文本的跨篇连续性可见于阶级联盟和共产党领导；1940 年与 1945 年文本还共享人民代表机关与民主集中制的国家组织构想。变化在于现实敌人、联盟任务、政府组织方案和由新民主主义转向社会主义的明确程度。",
+      "supports": ["nds01-stage-program", "nds02-state-form", "nds04-coalition-proposal", "nds05-people-boundary"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds07-institutionalization",
+      "type": "historical_minimum",
+      "statement": "1949 年《共同纲领》以新民主主义即人民民主主义为建国政治基础并发挥临时宪法作用；1954 年宪法和第一届全国人大又确立了以全国人民代表大会为核心的国家政权体系。",
+      "external_sources": ["ext-common-program", "ext-npc-1954"],
+      "confidence": "high"
+    },
+    {
+      "id": "nds08-periodization",
+      "type": "historical_analysis",
+      "statement": "学术研究常把 1949–1952 视为新民主主义建国阶段，并把 1953–1957 单列为向国家社会主义转型；这是后见分期，不是三篇文章自己给出的精确时间表。",
+      "external_sources": ["ext-cambridge-social-history"],
+      "confidence": "medium_high"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-nds-stage",
+      "article": "新民主主义论",
+      "epub_path": "OEBPS/Text/Section0326.xhtml",
+      "paragraph": 12,
+      "title": "阶段不是同义词",
+      "excerpt": "中国革命的历史进程，必须分为两步，其第一步是民主主义的革命，其第二步是社会主义的革命，这是性质不同的两个革命过程。而所谓民主主义，现在已不是旧范畴的民主主义，已不是旧民主主义，而是新范畴的民主主义，而是新民主主义。",
+      "plain_guide": "作者先规定阶段，再讨论这一阶段的国家形式；不能把新民主主义直接等同于社会主义。",
+      "cannot_infer": "第一阶段会自动、按固定日期进入第二阶段。"
+    },
+    {
+      "id": "src-nds-state",
+      "article": "新民主主义论",
+      "epub_path": "OEBPS/Text/Section0326.xhtml",
+      "paragraph": 54,
+      "title": "国体与政体的公式",
+      "excerpt": "国体——各革命阶级联合专政。政体——民主集中制。这就是新民主主义的政治，这就是新民主主义的共和国，这就是抗日统一战线的共和国，这就是三大政策的新三民主义的共和国，这就是名副其实的中华民国。",
+      "plain_guide": "联合说明参与阶级，民主集中制说明组织形式；领导权问题仍需结合前后文。",
+      "cannot_infer": "‘联合’必然等于各党派在权力上的完全对等。"
+    },
+    {
+      "id": "src-nds-economy",
+      "article": "新民主主义论",
+      "epub_path": "OEBPS/Text/Section0326.xhtml",
+      "paragraph": 57,
+      "title": "不是立即消灭一切私人资本",
+      "excerpt": "在无产阶级领导下的新民主主义共和国的国营经济是社会主义的性质，是整个国民经济的领导力量，但这个共和国并不没收其他资本主义的私有财产，并不禁止“不能操纵国民生计”的资本主义生产的发展，这是因为中国经济还十分落后的缘故。",
+      "plain_guide": "阶段纲领同时包含国营经济领导与受限制的私人经济。",
+      "cannot_infer": "作者主张无限制的自由资本主义，或主张当时立即完成全面国有化。"
+    },
+    {
+      "id": "src-nds-coalition",
+      "article": "论联合政府",
+      "epub_path": "OEBPS/Text/Section0426.xhtml",
+      "paragraph": 2,
+      "title": "联合政府解决什么问题",
+      "excerpt": "中国急需把各党各派和无党无派的代表人物团结在一起，成立民主的临时的联合政府，以便实行民主的改革，克服目前的危机，动员和统一全中国的抗日力量，有力地和同盟国配合作战，打败日本侵略者，使中国人民从日本侵略者手中解放出来。然后，需要在广泛的民主基础之上，召开国民代表大会，成立包括更广大范围的各党各派和无党无派代表人物在内的同样是联合性质的民主的正式的政府，领导解放后的全国人民，将中国建设成为一个独立、自由、民主、统一和富强的新国家。",
+      "plain_guide": "这是抗战末期面向战争、内政危机和战后重建的具体主张。",
+      "cannot_infer": "这段话足以证明各方已接受方案，或能够消除军队、地盘和权力竞争。"
+    },
+    {
+      "id": "src-nds-two-steps",
+      "article": "论联合政府",
+      "epub_path": "OEBPS/Text/Section0426.xhtml",
+      "paragraph": 116,
+      "title": "临时政府与正式政府",
+      "excerpt": "我们共产党人提出结束国民党一党专政的两个步骤：第一个步骤，目前时期，经过各党各派和无党无派代表人物的协议，成立临时的联合政府；第二个步骤，将来时期，经过自由的无拘束的选举，召开国民大会，成立正式的联合政府。",
+      "plain_guide": "原文把政治协商、临时政府、选举和正式政府写成有先后的制度过程。",
+      "cannot_infer": "这一过程后来原样实现。"
+    },
+    {
+      "id": "src-nds-people",
+      "article": "论人民民主专政",
+      "epub_path": "OEBPS/Text/Section0565.xhtml",
+      "paragraph": 19,
+      "title": "民主与专政的对象边界",
+      "excerpt": "人民是什么？在中国，在现阶段，是工人阶级，农民阶级，城市小资产阶级和民族资产阶级。这些阶级在工人阶级和共产党的领导之下，团结起来，组成自己的国家，选举自己的政府，向着帝国主义的走狗即地主阶级和官僚资产阶级以及代表这些阶级的国民党反动派及其帮凶们实行专政，实行独裁，压迫这些人，只许他们规规矩矩，不许他们乱说乱动。如要乱说乱动，立即取缔，予以制裁。对于人民内部，则实行民主制度，人民有言论集会结社等项的自由权。选举权，只给人民，不给反动派。这两方面，对人民内部的民主方面和对反动派的专政方面，互相结合起来，就是人民民主专政。",
+      "plain_guide": "‘人民’是带有阶段和政治分类的概念，民主权利不是在文本中无条件普遍化。",
+      "cannot_infer": "‘人民’等同于不分政治类别的全体公民。"
+    },
+    {
+      "id": "src-nds-transition",
+      "article": "论人民民主专政",
+      "epub_path": "OEBPS/Text/Section0565.xhtml",
+      "paragraph": 32,
+      "title": "联盟基础与转向",
+      "excerpt": "人民民主专政的基础是工人阶级、农民阶级和城市小资产阶级的联盟，而主要是工人和农民的联盟，因为这两个阶级占了中国人口的百分之八十到九十。推翻帝国主义和国民党反动派，主要是这两个阶级的力量。由新民主主义到社会主义，主要依靠这两个阶级的联盟。",
+      "plain_guide": "1949 年文本仍保留联盟，但更明确指出工农联盟的基础位置和社会主义方向。",
+      "cannot_infer": "民族资产阶级已经在 1949 年文本中被完全排除；同篇仍说明其现阶段的重要性。"
+    }
+  ],
+  "diagram_contracts": [
+    {
+      "anchor": "reading.html#model",
+      "title": "三篇文本的问题、联盟、国家形式与方向",
+      "diagram_type": "chronological comparison",
+      "semantic_boundary": "横向只表示时间顺序和概念变化；不表示 1940 年方案必然、无分岔地导向 1949 或 1954 年制度。"
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "ext-common-program",
+      "title": "中国人民政治协商会议共同纲领",
+      "publisher": "中国人民政治协商会议全国委员会（转载新华社文本）",
+      "url": "https://www.cppcc.gov.cn/2011/12/16/ARTI1513309181327976.shtml",
+      "use": "核 1949 年建国政治基础、人民民主统一战线、阶级联盟和经济政策的制度文本。",
+      "perspective_limit": "正式制度文本说明当时规范性安排，不自动证明实施效果。"
+    },
+    {
+      "id": "ext-npc-1954",
+      "title": "中华人民共和国宪法制定和发展完善历程",
+      "publisher": "中国人大网",
+      "url": "https://www.npc.gov.cn/npc/c12434/dzlfxzgcl70nlflc/202108/t20210824_313204.html",
+      "use": "核《共同纲领》的临时宪法作用及 1954 年宪法与国家政权组织变化。",
+      "perspective_limit": "中国官方制度史叙述；用于制度节点，不单独承担争议性历史评价。"
+    },
+    {
+      "id": "ext-frus-1944",
+      "title": "Revised Draft by the Chinese Communist Party Representative, 1944",
+      "publisher": "U.S. Department of State, Office of the Historian",
+      "url": "https://history.state.gov/historicaldocuments/frus1944v06/d492",
+      "use": "核 1944 年中共代表提出联合政府、党派合法性与基本自由的同时代谈判文本。",
+      "perspective_limit": "美国外交档案中的文件版本与编排，不能替代中方全部原始档案。"
+    },
+    {
+      "id": "ext-frus-1945",
+      "title": "Digest of Yenan Radio Broadcast: On the Coalition Government, 1945",
+      "publisher": "U.S. Department of State, Office of the Historian",
+      "url": "https://history.state.gov/historicaldocuments/frus1945v07/d247",
+      "use": "核联合政府报告在当时公开传播中的临时政府、选举和正式政府主张。",
+      "perspective_limit": "美方监听摘要，不替代当前 EPUB 的中文原文。"
+    },
+    {
+      "id": "ext-cambridge-social-history",
+      "title": "New Democracy and the Making of New China (1949–1952)",
+      "author": "Felix Wemheuer",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/social-history-of-maoist-china/new-democracy-and-the-making-of-new-china-19491952/744BFE2E51B905BC662725904922882C",
+      "use": "提供新民主主义建国阶段与 1953–1957 国家社会主义转型的学术分期入口。",
+      "perspective_limit": "页面可读部分是章节摘要和目录，本模块不声称读取受限全文。"
+    },
+    {
+      "id": "ext-cambridge-mao-version",
+      "title": "Mao, Revolution, and Memory（公开节选）",
+      "publisher": "Cambridge University Press",
+      "url": "https://assets.cambridge.org/97805218/84624/excerpt/9780521884624_excerpt.pdf",
+      "use": "提示《新民主主义论》正式选集版本与首刊版本之间存在修订这一版本问题。",
+      "perspective_limit": "只用于版本提醒；本模块未逐条校勘修订差异。"
+    }
+  ],
+  "critical_audit": {
+    "minimum_verdicts": [
+      "1940 年的新民主主义是阶段纲领，不是社会主义或自由主义民主的简单同义词。",
+      "1945 年联合政府方案是真实、具体的政治主张，但文本本身不能证明各方会履约，也不能消除军事实力与权力竞争。",
+      "1949 年文本对‘人民’与‘反动派’作政治分类，并公开肯定国家机器的强制性；不能只摘‘民主’而省略专政边界。",
+      "1949《共同纲领》和 1954 年宪法既显示早期概念的制度化，也显示组织形式继续变化；不是简单兑现或背弃的二选一叙事。"
+    ],
+    "historiography_boundary": "模块以当前 EPUB 复原作者观点，以制度文本核后续规范变化，以同时代外交档案和学术分期提供外部视角；三类证据不能互相冒充。",
+    "language_boundary": "‘民主’‘人民’‘专政’‘联合’均按各篇原文中的历史政治含义解释，不直接套用今天的日常含义。"
+  },
+  "generation_audit": {
+    "semantic_review": {
+      "status": "pass",
+      "checks": [
+        "EPUB SHA-256、三篇内部路径与正文 p 序号已核对。",
+        "7 段 JSON 摘录在去除行内注号后均可于指定段落连续逐字定位。",
+        "作者主张、报告综合、后见制度史与版本提醒已分层标注。",
+        "二次语义审计将‘三篇共享民主集中制’收窄为联盟与领导的连续性，避免跨文本过度概括。",
+        "制度节点、同时代观察与学术分期使用不同来源并明示各自边界。"
+      ]
+    },
+    "ui_review": {
+      "status": "pass",
+      "skill": "ui-ux-pro-max",
+      "checks": [
+        "Chrome 1440×1100 桌面视口已渲染审计，首屏先给时长、一句话模型与路线。",
+        "Playwright 390×844 真移动视口下 document scrollWidth 等于 390，页面无水平溢出。",
+        "大图的水平滚动被限定在可聚焦容器，含 aria-label、手机滑动提示与缩减动效策略。",
+        "主文保持 16px、1.7 行高和单列移动阅读；证据详情默认折叠，避免主路线过长。"
+      ]
+    },
+    "svg_review": {
+      "status": "pass",
+      "skill": "fireworks-tech-graph",
+      "checks": [
+        "仅保留 1 张承担跨篇比较的必要 SVG，未为凑数生成第二张图。",
+        "XML、marker、箭头碰撞、语义几何和构图预算检查全部通过。",
+        "1360×790 完整渲染已视觉审计；实线作者文本与虚线后见制度证据边界清晰。"
+      ]
+    }
+  },
+  "validation": {
+    "json_parse": "pass",
+    "source_excerpt_exactness": "pass_7_of_7",
+    "external_links_present": "pass_6_links",
+    "html_anchor_integrity": "pass_no_missing_or_duplicate_ids",
+    "svg_geometry": "pass_xml_markers_collisions_geometry_composition",
+    "desktop_render": "pass_chrome_1440x1100",
+    "mobile_render": "pass_playwright_390x844_no_document_overflow"
+  }
+}

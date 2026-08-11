@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一号作战渐进深挖：用约 38 分钟理解为什么相持阶段仍会出现日军大攻势，并区分中国战场的战役结果与日本总体战争态势。">
+  <title>一号作战｜《论持久战》历史压力测试</title>
+  <style>
+    :root {
+      --paper: #f3efe7;
+      --surface: #fffdf8;
+      --ink: #17211d;
+      --muted: #59645e;
+      --line: #d9d2c6;
+      --blue: #2b6f88;
+      --blue-soft: #eaf3f6;
+      --orange: #a34e23;
+      --orange-soft: #fff0e9;
+      --green: #176652;
+      --green-soft: #e9f4ef;
+      --purple: #7653a6;
+      --purple-soft: #f1eef8;
+      --shadow: 0 18px 45px rgba(45, 39, 30, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 17px;
+      line-height: 1.72;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--blue); text-underline-offset: .18em; }
+    a:hover { color: #174f66; }
+    a:focus-visible, summary:focus-visible, .model-scroll:focus-visible {
+      outline: 3px solid #b95024;
+      outline-offset: 4px;
+      border-radius: 5px;
+    }
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 50;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: none; }
+    .hero {
+      padding: 52px 24px 40px;
+      background: linear-gradient(145deg, #fffdf8 0%, #f6f0e5 58%, #e8f1f0 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner, .page, .footer-inner { width: min(1120px, 100%); margin: 0 auto; }
+    .back { display: inline-flex; min-height: 44px; align-items: center; font-weight: 720; }
+    .eyebrow {
+      margin: 26px 0 6px;
+      color: var(--orange);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.25; letter-spacing: -.025em; }
+    h1 { max-width: 900px; font-size: clamp(2.25rem, 5vw, 4.3rem); }
+    h2 { font-size: clamp(1.45rem, 2.7vw, 2.15rem); }
+    h3 { font-size: 1.05rem; }
+    .lead { max-width: 760px; margin: 16px 0 0; font-size: 1.15rem; color: #34413b; }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact, .time, .origin {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.7);
+      color: #46534d;
+      font-size: .78rem;
+      font-weight: 760;
+    }
+    .thesis {
+      max-width: 940px;
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-left: 5px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      background: rgba(255,255,255,.78);
+    }
+    .thesis small { display: block; color: var(--orange); font-weight: 800; }
+    .thesis strong { display: block; margin-top: 5px; font-size: 1.12rem; }
+    .thesis p { max-width: 800px; margin: 8px 0 0; color: var(--muted); font-size: .94rem; }
+    .section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243,239,231,.95);
+      backdrop-filter: blur(12px);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(1120px, 100%);
+      min-height: 48px;
+      margin: auto;
+      padding: 4px 20px;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .section-nav a {
+      display: inline-flex;
+      min-height: 44px;
+      padding: 8px 10px;
+      align-items: center;
+      white-space: nowrap;
+      color: #3e4b45;
+      font-size: .82rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--orange); }
+    .page { padding: 42px 24px 72px; }
+    section { margin-bottom: 58px; scroll-margin-top: 70px; }
+    .section-head {
+      display: flex;
+      margin-bottom: 18px;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .section-head p { max-width: 740px; margin: 8px 0 0; color: var(--muted); }
+    .time { flex: 0 0 auto; border-color: #c5d9d3; background: var(--green-soft); color: var(--green); }
+    .route, .grid-2, .grid-3, .decision-grid { display: grid; gap: 14px; }
+    .route { grid-template-columns: repeat(4, 1fr); }
+    .grid-2, .decision-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card, .route-card, .audit-card, .decision-row, details, .model-figure, .quote-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .card, .route-card, .audit-card, .quote-card { padding: 19px; }
+    .route-card small { color: var(--orange); font-weight: 800; }
+    .route-card p, .card p, .audit-card p { margin: 7px 0 0; color: var(--muted); }
+    .signal {
+      display: inline-flex;
+      margin-bottom: 9px;
+      color: var(--orange);
+      font-size: .76rem;
+      font-weight: 820;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .model-figure { margin: 0; padding: 14px; overflow: hidden; }
+    .model-scroll { overflow-x: auto; border-radius: 9px; background: #fffdf8; }
+    .model-canvas { min-width: 0; }
+    .model-canvas svg { display: block; width: 100%; height: auto; }
+    figcaption { margin: 12px 4px 2px; color: var(--muted); font-size: .84rem; }
+    .mobile-hint { display: none; margin: 8px 4px 0; color: var(--orange); font-size: .8rem; font-weight: 720; }
+    .quote-card { border-left: 5px solid var(--blue); }
+    .quote-card blockquote { margin: 10px 0 0; font-family: ui-serif, "Songti SC", STSong, serif; font-size: 1.02rem; line-height: 1.82; }
+    .quote-card footer { margin-top: 12px; color: var(--muted); font-size: .82rem; }
+    .origin.author { border-color: #bdd7e0; background: var(--blue-soft); color: #245d71; }
+    .origin.audit { border-color: #e5bca9; background: var(--orange-soft); color: #8f431f; }
+    .origin.scope { border-color: #d5c5e6; background: var(--purple-soft); color: #6745a5; }
+    .audit-card strong { color: var(--orange); }
+    .audit-card.good strong { color: var(--green); }
+    .audit-card.limit strong { color: var(--purple); }
+    .decision {
+      padding: 22px;
+      border: 1px solid #c3d8ce;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f7fbf8, #edf5f1);
+    }
+    .decision > strong { display: block; max-width: 780px; font-size: 1.13rem; }
+    .decision-grid { margin-top: 16px; }
+    .decision-row { display: grid; grid-template-columns: 132px 1fr; gap: 13px; padding: 15px 16px; box-shadow: none; }
+    .decision-row strong { color: var(--green); }
+    .muted { color: var(--muted); }
+    details { margin-bottom: 10px; overflow: hidden; box-shadow: none; }
+    summary { min-height: 48px; padding: 12px 16px; cursor: pointer; font-weight: 780; }
+    .detail-body { padding: 0 18px 16px; color: var(--muted); }
+    .source-list { margin: 0; padding-left: 1.25em; }
+    .source-list li { margin-bottom: .76em; }
+    code { overflow-wrap: anywhere; font-size: .82em; }
+    footer { border-top: 1px solid var(--line); background: #e8e2d7; }
+    .footer-inner { padding: 24px; color: var(--muted); font-size: .84rem; }
+    .footer-inner p { margin: 4px 0; }
+    @media (max-width: 820px) {
+      body { font-size: 16px; }
+      .hero { padding: 34px 18px 30px; }
+      .page { padding: 34px 18px 56px; }
+      .route, .grid-2, .grid-3, .decision-grid { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head .time { margin-top: 12px; }
+      .decision-row { grid-template-columns: 1fr; gap: 4px; }
+      .model-canvas { min-width: 1060px; }
+      .mobile-hint { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @media print {
+      body { background: #fff; color: #000; }
+      .section-nav, .skip-link, .mobile-hint { display: none; }
+      .hero, .page, .footer-inner { padding-inline: 0; }
+      section { break-inside: avoid; margin-bottom: 30px; }
+      .card, .route-card, .audit-card, .quote-card, details, .model-figure, .decision { box-shadow: none; }
+      details > * { display: block !important; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { min-width: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="back" href="../protracted-war/reading.html#history-check">← 返回《论持久战》历史检验</a>
+      <p class="eyebrow">Progressive deep dive · 历史压力测试 01</p>
+      <h1>一号作战：为什么“相持期”仍会出现日军大攻势？</h1>
+      <p class="lead">用一次看似反常的 1944 年大攻势，检验“三阶段”究竟是固定时间表，还是必须注明尺度、指标并接受事实修正的战略框架。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">《论持久战》延伸模块</span>
+        <span class="fact">1944 年中国战场</span>
+        <span class="fact">核心约 38 分钟</span>
+        <span class="fact">两张证据型 SVG</span>
+        <span class="fact">作者原文 / 史料 / 审计分标</span>
+      </div>
+      <div class="thesis">
+        <small>一句话结论 · 批判审计</small>
+        <strong>一号作战说明：一方在总体战争中转入战略劣势，仍可能在特定战区集中优势兵力取得大规模进攻成果；“相持”不等于前线静止，但若不先声明尺度和判据，它也可能沦为怎样都能解释的标签。</strong>
+        <p>边界：本页不做国共抗战“功劳总账”，也不把日军在华作战成功写成日本总体战略成功；军事行动、政治经济后果和全球战局分别判断。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav">
+    <nav aria-label="页内目录">
+      <a href="#route">路线</a>
+      <a href="#question">问题</a>
+      <a href="#timeline">进程图</a>
+      <a href="#scales">双尺度</a>
+      <a href="#original">回原文</a>
+      <a href="#audit">批判审计</a>
+      <a href="#decision">下一步</a>
+      <a href="#evidence">证据</a>
+    </nav>
+  </div>
+
+  <main id="main" class="page">
+    <section id="route">
+      <div class="section-head">
+        <div><h2>核心路线：38 分钟只解决一个问题</h2><p>不补一套抗战百科；读完能解释“局部大攻势”和“总体战略劣势”为何能够同时成立。</p></div>
+        <span class="time">总计约 38 分钟</span>
+      </div>
+      <div class="route">
+        <article class="route-card"><h3>先立问题</h3><small>5 分钟</small><p>分清 1938 年模型、1944 年事件和读者疑问。</p></article>
+        <article class="route-card"><h3>看进程图</h3><small>8 分钟</small><p>只抓目标、三段推进和直接结果。</p></article>
+        <article class="route-card"><h3>换两个尺度</h3><small>10 分钟</small><p>把中国战役层与日本总体战争层并置。</p></article>
+        <article class="route-card"><h3>回原文审计</h3><small>15 分钟</small><p>核限定语，再判断模型得到支持还是需要修正。</p></article>
+      </div>
+    </section>
+
+    <section id="question">
+      <div class="section-head">
+        <div><h2>先把表面矛盾拆开</h2><p>1944 年不是一个尺度上的单一故事，而是三组同时发生的事实。</p></div>
+        <span class="time">5 分钟</span>
+      </div>
+      <div class="grid-3">
+        <article class="card"><span class="signal">日本总体</span><h3>海空与运输条件恶化</h3><p>盟军向马里亚纳和菲律宾方向推进，日本航运受潜艇战挤压。1944 年 9 月的盟军评估已把日本总体态势描述为被迫转向战略防御。</p></article>
+        <article class="card"><span class="signal">中国战场</span><h3>陆军仍能集中优势</h3><p>日本把中国本土兵力扩大到约 82 万，投入 15 个师团参加一号作战；地面力量仍是其相对完整的军事工具。</p></article>
+        <article class="card"><span class="signal">直接目标</span><h3>夺机场、通铁路、减海运压力</h3><p>日军试图压制盟军在华航空基地，并建立从朝鲜方向贯通华中、华南至法属印度支那的陆上交通线。</p></article>
+      </div>
+      <p class="muted">因此真正的问题不是“日本还能不能进攻”，而是：一次覆盖多省的大规模进攻，怎样放进战争总体关系中判断？</p>
+    </section>
+
+    <section id="timeline">
+      <div class="section-head">
+        <div><h2>一号作战：目标、推进与没有做到的事</h2><p>时间线按美国陆军战史中的 KOGO、TOGO 分段复原；城市只保留判断所需节点，不模拟精确战场地图。</p></div>
+        <span class="time">8 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的一号作战目标与进程图">
+          <div class="model-canvas">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 650" width="1320" height="650" role="img" aria-labelledby="ichi-timeline-title ichi-timeline-desc" data-quality-profile="standard">
+              <title id="ichi-timeline-title">一号作战的目标、推进和结果边界</title>
+              <desc id="ichi-timeline-desc">上方列出压制盟军在华航空基地和打通南北陆路交通两个主要目标；中间按一九四四年四月到一九四五年初排列河南、湖南、广西三个推进阶段；下方区分已经取得的在华作战成果与没有实现的迫使中国投降、扭转日本总体败势。</desc>
+              <style>
+                text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                .t { font-size: 21px; font-weight: 760; fill: #17211d; }
+                .s { font-size: 12px; fill: #59645e; }
+                .lane { font-size: 13px; font-weight: 780; fill: #46534d; }
+                .nt { font-size: 15px; font-weight: 780; fill: #17211d; }
+                .ns { font-size: 12px; fill: #46534d; }
+                .date { font-size: 11px; font-weight: 820; letter-spacing: .04em; fill: #8f431f; }
+                .tag { font-size: 11px; font-weight: 760; }
+              </style>
+              <defs>
+                <marker id="timeline-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2b6f88"/></marker>
+                <marker id="timeline-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#a34e23"/></marker>
+              </defs>
+              <rect width="1320" height="650" rx="20" fill="#fffdf8"/>
+              <text class="t" x="40" y="40">一号作战不是一次单点战斗，而是一条跨越华中、华南的连续作战链</text>
+              <text class="s" x="40" y="64">来源锚点：[H1] 美国陆军《China Defensive》　[H2] 1944 年 4 月陈纳德致罗斯福电</text>
+
+              <text class="lane" x="40" y="104">1 · 作战目标</text>
+              <path id="edge-goal-a" data-graph-role="edge" data-edge-id="goal-a" data-source="goal-air" data-target="phase-henan" data-edge-kind="goal" data-flow="context" data-bends="1" d="M 360 158 V 184 H 225 V 222" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-blue)"/>
+              <path id="edge-goal-b" data-graph-role="edge" data-edge-id="goal-b" data-source="goal-rail" data-target="phase-hunan" data-edge-kind="goal" data-flow="context" data-bends="1" d="M 960 158 V 184 H 650 V 222" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-blue)"/>
+              <g id="goal-air" data-node-id="goal-air" data-graph-role="node" data-semantic-role="goal" data-graph-bounds="70,116,570,158">
+                <rect x="70" y="116" width="500" height="42" rx="9" fill="#eaf3f6" stroke="#bdd7e0" stroke-width="1.5"/>
+                <text class="nt" x="320" y="142" text-anchor="middle">压制第十四航空队与盟军在华前进机场</text>
+              </g>
+              <g id="goal-rail" data-node-id="goal-rail" data-graph-role="node" data-semantic-role="goal" data-graph-bounds="750,116,1250,158">
+                <rect x="750" y="116" width="500" height="42" rx="9" fill="#eaf3f6" stroke="#bdd7e0" stroke-width="1.5"/>
+                <text class="nt" x="1000" y="142" text-anchor="middle">打通南北铁路走廊，降低对受袭海运的依赖</text>
+              </g>
+
+              <text class="lane" x="40" y="210">2 · 推进链</text>
+              <path id="edge-phase-1-2" data-graph-role="edge" data-edge-id="phase-1-2" data-source="phase-henan" data-target="phase-hunan" data-edge-kind="chronology" data-flow="primary" data-bends="0" d="M 385 296 H 465" fill="none" stroke="#a34e23" stroke-width="2.5" marker-end="url(#timeline-orange)"/>
+              <path id="edge-phase-2-3" data-graph-role="edge" data-edge-id="phase-2-3" data-source="phase-hunan" data-target="phase-guangxi" data-edge-kind="chronology" data-flow="primary" data-bends="0" d="M 835 296 H 915" fill="none" stroke="#a34e23" stroke-width="2.5" marker-end="url(#timeline-orange)"/>
+              <g id="phase-henan" data-node-id="phase-henan" data-graph-role="node" data-semantic-role="campaign-phase" data-graph-bounds="40,222,385,370">
+                <rect x="40" y="222" width="345" height="148" rx="11" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                <text class="date" x="62" y="250">4 月 19 日起 · KOGO</text>
+                <text class="nt" x="62" y="280">河南：平汉铁路北段</text>
+                <text class="ns" x="62" y="307">从黄河以南与武汉方向夹击</text>
+                <text class="ns" x="62" y="329">洛阳等地失守，河南防线迅速受挫</text>
+                <text class="tag" x="62" y="354" fill="#8f431f">直接结果：打开华中南下入口</text>
+              </g>
+              <g id="phase-hunan" data-node-id="phase-hunan" data-graph-role="node" data-semantic-role="campaign-phase" data-graph-bounds="465,222,835,370">
+                <rect x="465" y="222" width="370" height="148" rx="11" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                <text class="date" x="487" y="250">5—8 月 · TOGO 1</text>
+                <text class="nt" x="487" y="280">湖南：长沙—衡阳</text>
+                <text class="ns" x="487" y="307">日军持续南进；中国军队与美军航空</text>
+                <text class="ns" x="487" y="329">造成迟滞，但未能阻断推进</text>
+                <text class="tag" x="487" y="354" fill="#8f431f">直接结果：城市与机场体系遭重创</text>
+              </g>
+              <g id="phase-guangxi" data-node-id="phase-guangxi" data-graph-role="node" data-semantic-role="campaign-phase" data-graph-bounds="915,222,1280,370">
+                <rect x="915" y="222" width="365" height="148" rx="11" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                <text class="date" x="937" y="250">7 月—年底，部分行动延至 1945 年初</text>
+                <text class="nt" x="937" y="280">广西：桂林—柳州—南宁方向</text>
+                <text class="ns" x="937" y="307">继续夺取、迫使放弃前进机场</text>
+                <text class="ns" x="937" y="329">并连接华中、华南交通线</text>
+                <text class="tag" x="937" y="354" fill="#8f431f">直接结果：多处铁路与机场失守</text>
+              </g>
+
+              <text class="lane" x="40" y="414">3 · 结果必须分层</text>
+              <g id="result-achieved" data-node-id="result-achieved" data-graph-role="node" data-semantic-role="result" data-graph-bounds="40,432,620,548">
+                <rect x="40" y="432" width="580" height="116" rx="11" fill="#e9f4ef" stroke="#b8d9c9" stroke-width="1.5"/>
+                <text class="nt" x="64" y="462" fill="#176652">在华作战层：取得重大成果</text>
+                <text class="ns" x="64" y="490">占领多处铁路、城市与航空基地；国民政府军遭受严重失败，</text>
+                <text class="ns" x="64" y="513">自由中国的粮食、物价、财政与政治信心进一步承压。</text>
+                <text class="ns" x="64" y="536">[H1][H4]</text>
+              </g>
+              <g id="result-not-achieved" data-node-id="result-not-achieved" data-graph-role="node" data-semantic-role="limit" data-graph-bounds="700,432,1280,548">
+                <rect x="700" y="432" width="580" height="116" rx="11" fill="#f1eef8" stroke="#d5c5e6" stroke-width="1.5"/>
+                <text class="nt" x="724" y="462" fill="#6745a5">总体战争层：没有改变这些事实</text>
+                <text class="ns" x="724" y="490">中国没有因此退出战争；马里亚纳基地取代部分中国机场价值，</text>
+                <text class="ns" x="724" y="513">日本海运、海空力量与本土防御处境仍继续恶化。</text>
+                <text class="ns" x="724" y="536">[H3][H5]</text>
+              </g>
+              <line x1="40" y1="594" x2="78" y2="594" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-blue)"/>
+              <text class="s" x="90" y="598">目标输入</text>
+              <line x1="188" y1="594" x2="226" y2="594" stroke="#a34e23" stroke-width="2.5" marker-end="url(#timeline-orange)"/>
+              <text class="s" x="238" y="598">时间推进</text>
+              <text class="s" x="1280" y="598" text-anchor="end">图示为结构化复原，不代表精确战线与兵力部署</text>
+              <rect x="40" y="616" width="1240" height="1" fill="#d9d2c6"/>
+              <text class="s" x="40" y="638">名称边界：“一号作战”是日军整套行动计划；中文叙述常与豫湘桂会战相联系，但两种命名的观察角度不完全相同。</text>
+            </svg>
+          </div>
+        </div>
+        <p class="mobile-hint">手机上可左右滑动查看完整进程图。</p>
+        <figcaption>读法：先看目标与推进，再把“已经做到”和“没有改变”分开。不能因为日本最终战败，就抹去一号作战对中国军民与国民政府造成的真实重创。</figcaption>
+      </figure>
+    </section>
+
+    <section id="scales">
+      <div class="section-head">
+        <div><h2>关键图：进攻与战略防御为什么能够同时成立</h2><p>1944 年 9 月盟军情报判断一面把日本总体战争姿态称为战略防御，一面确认日本正在中国进攻；矛盾来自尺度不同，不是文字游戏。</p></div>
+        <span class="time">10 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的一号作战双尺度审计图">
+          <div class="model-canvas">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 650" width="1280" height="650" role="img" aria-labelledby="scale-title scale-desc" data-quality-profile="standard">
+              <title id="scale-title">一号作战的中国战役尺度与日本总体战争尺度</title>
+              <desc id="scale-desc">左侧说明中国战场上日军仍能集中地面力量进攻并夺取铁路、城市和机场；右侧说明日本总体战争中的海运、海空力量和工业资源继续恶化。中部得出两者可以同时为真。下方用支持、挑战、修正三个框审计论持久战三阶段模型。</desc>
+              <style>
+                text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                .t { font-size: 21px; font-weight: 760; fill: #17211d; }
+                .s { font-size: 12px; fill: #59645e; }
+                .lane { font-size: 13px; font-weight: 780; fill: #46534d; }
+                .nt { font-size: 15px; font-weight: 780; fill: #17211d; }
+                .ns { font-size: 12px; fill: #46534d; }
+                .big { font-size: 16px; font-weight: 820; }
+              </style>
+              <defs>
+                <marker id="scale-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2b6f88"/></marker>
+                <marker id="scale-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#a34e23"/></marker>
+              </defs>
+              <rect width="1280" height="650" rx="20" fill="#fffdf8"/>
+              <text class="t" x="40" y="40">同一时间，两种判断可以同时为真</text>
+              <text class="s" x="40" y="64">先声明观察对象、空间范围、时间跨度和指标，再使用“进攻 / 防御 / 相持”</text>
+              <text class="lane" x="40" y="104">1 · 两个尺度</text>
+
+              <path id="edge-left-center" data-graph-role="edge" data-edge-id="left-center" data-source="china-scale" data-target="joint-verdict" data-edge-kind="comparison" data-flow="input" data-bends="0" d="M 480 229 H 530" fill="none" stroke="#a34e23" stroke-width="2.5" marker-end="url(#scale-orange)"/>
+              <path id="edge-right-center" data-graph-role="edge" data-edge-id="right-center" data-source="global-scale" data-target="joint-verdict" data-edge-kind="comparison" data-flow="input" data-bends="0" d="M 800 229 H 750" fill="none" stroke="#2b6f88" stroke-width="2.5" marker-end="url(#scale-blue)"/>
+              <g id="china-scale" data-node-id="china-scale" data-graph-role="node" data-semantic-role="scale" data-graph-bounds="40,120,480,338">
+                <rect x="40" y="120" width="440" height="218" rx="12" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                <text class="big" x="64" y="154" fill="#8f431f">中国战场 · 战役 / 战区尺度</text>
+                <text class="nt" x="64" y="188">观察对象</text>
+                <text class="ns" x="174" y="188">日军地面军、中国军队、铁路与机场</text>
+                <text class="nt" x="64" y="218">时间</text>
+                <text class="ns" x="174" y="218">1944 年 4 月至年底前后</text>
+                <text class="nt" x="64" y="248">指标</text>
+                <text class="ns" x="174" y="248">推进距离、据点、交通线、机场、军队损失</text>
+                <text class="nt" x="64" y="282">判断</text>
+                <text class="ns" x="174" y="282">日军发动战略性大攻势并取得重大成果</text>
+                <text class="ns" x="64" y="316">不能淡化：国民政府军与民众承受了真实失败和代价。</text>
+              </g>
+              <g id="global-scale" data-node-id="global-scale" data-graph-role="node" data-semantic-role="scale" data-graph-bounds="800,120,1240,338">
+                <rect x="800" y="120" width="440" height="218" rx="12" fill="#eaf3f6" stroke="#bdd7e0" stroke-width="1.5"/>
+                <text class="big" x="824" y="154" fill="#245d71">日本总体战争 · 全球战略尺度</text>
+                <text class="nt" x="824" y="188">观察对象</text>
+                <text class="ns" x="934" y="188">海空力量、航运、工业资源与盟军逼近</text>
+                <text class="nt" x="824" y="218">时间</text>
+                <text class="ns" x="934" y="218">1944 年及其后续战争走向</text>
+                <text class="nt" x="824" y="248">指标</text>
+                <text class="ns" x="934" y="248">制海制空、运输损失、基地与本土防御</text>
+                <text class="nt" x="824" y="282">判断</text>
+                <text class="ns" x="934" y="282">日本被迫总体转入战略防御，败势加深</text>
+                <text class="ns" x="824" y="316">不能抹平：全球败势不等于每个战区立即停止进攻。</text>
+              </g>
+              <g id="joint-verdict" data-node-id="joint-verdict" data-graph-role="node" data-semantic-role="synthesis" data-graph-bounds="530,158,750,300">
+                <rect x="530" y="158" width="220" height="142" rx="12" fill="#f1eef8" stroke="#d5c5e6" stroke-width="1.5"/>
+                <text class="big" x="640" y="195" text-anchor="middle" fill="#6745a5">同时成立</text>
+                <text class="nt" x="640" y="226" text-anchor="middle">在华进攻成功</text>
+                <text class="nt" x="640" y="252" text-anchor="middle">≠</text>
+                <text class="nt" x="640" y="278" text-anchor="middle">总体战略逆转</text>
+              </g>
+
+              <text class="lane" x="40" y="384">2 · 对《论持久战》模型的三道结论</text>
+              <g id="model-support" data-node-id="model-support" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="40,404,400,556">
+                <rect x="40" y="404" width="360" height="152" rx="11" fill="#e9f4ef" stroke="#b8d9c9" stroke-width="1.5"/>
+                <text class="big" x="62" y="438" fill="#176652">支持</text>
+                <text class="nt" x="62" y="468">长期趋势不等于直线推进</text>
+                <text class="ns" x="62" y="496">中国没有因这次重大失败退出战争；</text>
+                <text class="ns" x="62" y="520">日本的总体资源条件仍继续恶化。</text>
+                <text class="ns" x="62" y="544">阶段必须允许曲折与局部反向运动。</text>
+              </g>
+              <g id="model-challenge" data-node-id="model-challenge" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="460,404,820,556">
+                <rect x="460" y="404" width="360" height="152" rx="11" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                <text class="big" x="482" y="438" fill="#8f431f">挑战</text>
+                <text class="nt" x="482" y="468">“敌战略保守”过于粗糙</text>
+                <text class="ns" x="482" y="496">若把相持理解为中国全战区都不再遭遇</text>
+                <text class="ns" x="482" y="520">大规模战略进攻，一号作战就是明显反例。</text>
+                <text class="ns" x="482" y="544">不能事后随意换尺度来免疫模型。</text>
+              </g>
+              <g id="model-revision" data-node-id="model-revision" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="880,404,1240,556">
+                <rect x="880" y="404" width="360" height="152" rx="11" fill="#f1eef8" stroke="#d5c5e6" stroke-width="1.5"/>
+                <text class="big" x="902" y="438" fill="#6745a5">修正读法</text>
+                <text class="nt" x="902" y="468">四项必须预先声明</text>
+                <text class="ns" x="902" y="496">观察主体 · 空间尺度 · 时间跨度 · 可核指标</text>
+                <text class="ns" x="902" y="520">阶段是阶段性判断，不是永久身份；</text>
+                <text class="ns" x="902" y="544">事实若改变指标，就应允许更新判断。</text>
+              </g>
+              <rect x="40" y="590" width="1200" height="40" rx="8" fill="#f3f1eb" stroke="#d9d2c6"/>
+              <text class="s" x="640" y="615" text-anchor="middle">最低可证伪要求：如果无论进攻、退却、胜利、失败都被解释为“相持”，这个标签就失去分析价值。</text>
+            </svg>
+          </div>
+        </div>
+        <p class="mobile-hint">手机上可左右滑动查看完整双尺度图。</p>
+        <figcaption>这张图不是为模型“解围”，而是提高模型使用门槛：尺度必须事先声明，判断必须绑定可观察指标，结果不符时必须允许修正。</figcaption>
+      </figure>
+    </section>
+
+    <section id="original">
+      <div class="section-head">
+        <div><h2>回到作者原文：模型自己留下了哪些修订口</h2><p>只读两段限定语。它们能防止机械时间表，但不能替后人自动解决尺度选择问题。</p></div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="quote-card">
+          <span class="origin author">作者原文</span>
+          <h3>阶段轮廓必须被事实校正</h3>
+          <blockquote>“三个阶段的具体情况不能预断，但依目前条件来看，战争趋势中的某些大端是可以指出的。客观现实的行程将是异常丰富和曲折变化的……尽管描画的东西不能尽合将来的事实，而将为事实所校正……”</blockquote>
+          <footer>《论持久战》文本块 63｜Apple Books 搜索：“三个阶段的具体情况不能预断”</footer>
+        </article>
+        <article class="quote-card">
+          <span class="origin author">作者原文</span>
+          <h3>战略计划也只在一定阶段适用</h3>
+          <blockquote>“战略计划，是基于战争双方总的情况而来的，有更大的固定的程度，但也只在一定的战略阶段内适用，战争向着新的阶段推移，战略计划便须改变。”</blockquote>
+          <footer>《论持久战》文本块 124｜Apple Books 搜索：“战略计划便须改变”</footer>
+        </article>
+      </div>
+      <p class="muted">忠实边界：第一段支持“模型不是日历”，第二段支持“判断可以更新”；两段都没有直接规定 1944 年一号作战应该被归入哪个尺度或阶段，这一步属于后来的历史分析。</p>
+    </section>
+
+    <section id="audit">
+      <div class="section-head">
+        <div><h2>批判审计：不要让双尺度变成万能解释</h2><p>保留四条真正影响理解的结论，不追加战争通史。</p></div>
+        <span class="time">7 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="audit-card good"><span class="origin audit">历史判断</span><h3><strong>一号作战是重大在华胜利</strong></h3><p>日军实现多项直接作战目标，国民政府军在许多地区表现不佳，经济与政治后果严重。不能用“日本最后输了”倒推这次战役无足轻重。</p></article>
+        <article class="audit-card"><span class="origin audit">模型判断</span><h3><strong>它也是三阶段的压力测试</strong></h3><p>一号作战反驳“相持期前线不再有大攻势”的机械读法，也暴露“敌战略保守”若不注明尺度会过于宽泛。</p></article>
+        <article class="audit-card limit"><span class="origin scope">因果边界</span><h3><strong>战役成功没有逆转总体战争</strong></h3><p>盟军转向马里亚纳基地后，在华机场的全球战略权重发生变化；日本海运与海空力量的劣势仍在扩大。这不是说一号作战没有战略影响，而是影响不足以改写总体败势。</p></article>
+        <article class="audit-card limit"><span class="origin scope">史料边界</span><h3><strong>不同来源都带观察位置</strong></h3><p>美国陆军战史强调盟军战区问题，FRUS 是美国官员的同时代判断，Cambridge 章节强调国民政府的经济后果。它们可以交叉核最低事实，不能自动组成唯一的中国视角。</p></article>
+      </div>
+      <p class="muted">本页有意不展开国共双方在敌后、正面战场和战后政治中的全部作用。那是另一个需要独立证据框架的问题，塞进本模块会模糊当前主问题。</p>
+    </section>
+
+    <section id="decision">
+      <div class="section-head">
+        <div><h2>读完后的最低掌握标准</h2><p>能完成下面三件事，本模块就可以停在这里。</p></div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="decision">
+        <strong>用自己的话解释：为什么 1944 年日军能在中国大规模进攻，同时日本在总体战争中仍处战略劣势？</strong>
+        <div class="decision-grid">
+          <div class="decision-row"><strong>说清事实</strong><span>一号作战的两个主要目标、三段推进和直接后果。</span></div>
+          <div class="decision-row"><strong>说清尺度</strong><span>中国战役层与日本总体战争层使用了不同对象、时间与指标。</span></div>
+          <div class="decision-row"><strong>说清边界</strong><span>相持不等于静止；但若不预先声明尺度和判据，也不能怎样都算相持。</span></div>
+          <div class="decision-row"><strong>想继续时</strong><span>先回《论持久战》文本块 63、107、124；只有仍对具体战事感兴趣，再读完整战史，而不是继续扩写本页。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="section-head">
+        <div><h2>证据、版本与机器数据</h2><p>默认折叠；核时间、原文或审计结论时再展开。</p></div>
+        <span class="time">按需</span>
+      </div>
+      <details>
+        <summary>外部历史资料</summary>
+        <div class="detail-body">
+          <ul class="source-list">
+            <li><strong>[H1]</strong> <a href="https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/C%20Img/campaigns-wwii/pdf/12.pdf">U.S. Army Center of Military History：China Defensive</a> — 核日军目标、15 个师团、4 月 19 日启动、河南及南方推进，也说明中国军队和第十四航空队曾迟滞日军。</li>
+            <li><strong>[H2]</strong> <a href="https://history.state.gov/historicaldocuments/frus1944v06/d53">FRUS 1944：陈纳德 4 月 19 日致罗斯福</a> — 同时代美方对平汉铁路、长沙与前进机场所受威胁的判断；它是当事方预判，不是事后全知叙述。</li>
+            <li><strong>[H3]</strong> <a href="https://history.state.gov/historicaldocuments/frus1944Quebec/d167">FRUS 1944 Quebec：盟军敌情估计</a> — 核 1944 年 9 月“日本总体战略防御”与“中国战场仍在进攻”并存的盟军判断。</li>
+            <li><strong>[H4]</strong> <a href="https://www.cambridge.org/core/books/abs/collapse-of-nationalist-china/ichigo-and-its-aftermath/64DEEB47C94E5053771BFC7D73DA92F3">Parks M. Coble：Ichigo and Its Aftermath</a> — 核一号作战对自由中国粮食、通货膨胀、财政与政治信心的严重冲击。</li>
+            <li><strong>[H5]</strong> <a href="https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/World-War-II/World-War-II-Asiatic-Pacific-Theater/">U.S. Army：World War II — Asiatic-Pacific Theater</a> — 核马里亚纳基地改变盟军轰炸路径，以及日本在华成果未能逆转太平洋总体态势。</li>
+            <li><strong>[H6]</strong> <a href="https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm">国家档案局：档案里的中国抗战</a> — 核中国方面把日军“一号作战”称为豫湘桂战役，并补充衡阳等正面战场抵抗的中国档案视角。</li>
+          </ul>
+          <p>来源视角不同：页面只采用日期、公开目标、直接结果和战略环境等交叉可核事实；对责任、表现和长期政治后果，不伪装成没有争议。</p>
+        </div>
+      </details>
+      <details>
+        <summary>《论持久战》原文与版本边界</summary>
+        <div class="detail-body">
+          <p><strong>源文件：</strong>毛泽东选集.epub；SHA-256：<code>ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26</code>。</p>
+          <p><strong>文章：</strong>第二卷《论持久战》，EPUB 路径 <code>OEBPS/Text/Section0309.xhtml</code>。</p>
+          <p><strong>定位法：</strong>本模块沿用父模块的 1 起始纯文本块定位；Apple Books 优先搜索短句。</p>
+          <p><strong>范围：</strong>只使用第一至第五卷范围内文本；不纳入第六、七卷或个人编辑材料。作者原文只负责提供 1938 年模型及其限定语，不把 1944 年后见之明倒灌给作者。</p>
+        </div>
+      </details>
+      <details>
+        <summary>来源身份与机器数据</summary>
+        <div class="detail-body">
+          <p><strong>产物类型：</strong>《论持久战》的按需历史压力测试，不是原书章节。</p>
+          <p><strong>机器数据：</strong>论点、来源映射、时间预算与独立审计结果见同目录 <a href="reading.json">reading.json</a>。</p>
+          <p><strong>图形边界：</strong>两张 SVG 是证据结构图，不是精确军事地图；不表达未核验的兵力部署、伤亡数字或逐日战线。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>历史压力测试模块 01 · 生成于 2026-08-10</p>
+      <p>《论持久战》作者原文、外部史料、报告综合与批判审计已分标。页面不替代原文或完整战史。</p>
+    </div>
+  </footer>
+</body>
+</html>

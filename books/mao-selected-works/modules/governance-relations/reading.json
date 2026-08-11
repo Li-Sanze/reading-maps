@@ -1,0 +1,338 @@
+{
+  "schema_version": "read-book.progressive-deep-dive.v1",
+  "artifact_kind": "progressive-thematic-deep-dive",
+  "generated_date": "2026-08-10",
+  "language": "zh-CN",
+  "module": {
+    "id": "governance-relations",
+    "title": "《论十大关系》 × 《关于正确处理人民内部矛盾的问题》",
+    "subtitle": "从资源与权力关系，到矛盾分类与处理方法",
+    "status": "generated",
+    "parent_book_html": "../../reading.html#modules",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "两篇都试图在社会主义制度内识别仍然存在的矛盾并调动积极因素：前者主要调整建设中的资源、利益与权力关系，后者进一步按政治性质分类矛盾并规定不同处理方法；两者有问题意识上的连续，但不存在由第一篇自动推演到第二篇的完整理论链。",
+    "model_boundary": "这是对两篇文本的问题结构、方法和风险的并置阅读，不把 1956 到 1957 写成平滑进步路线，也不以文本主张代替政策结果。"
+  },
+  "reading_contract": {
+    "core_minutes": 65,
+    "route": [
+      {"minutes": 5, "goal": "确认两篇的写作现场、发表过程和第五卷版本边界"},
+      {"minutes": 12, "goal": "用十种关系分组图抓住资源、利益、权力与学习问题"},
+      {"minutes": 10, "goal": "用分类—方法—风险图理解两类矛盾及处理边界"},
+      {"minutes": 10, "goal": "沿 1956–1957 时间轴检查文本与政策语境的快速变化"},
+      {"minutes": 18, "goal": "读九段原文，核作者的限定语和分类依据"},
+      {"minutes": 10, "goal": "完成最低批判审计并决定回读哪一篇"}
+    ],
+    "completion_definition": [
+      "能把《论十大关系》的十个标题还原为具体建设问题，而不是只记‘调动积极因素’。",
+      "能说明两类矛盾的分类怎样导向民主或专政方法，并指出分类权和类别移动的风险。",
+      "能区分 1957 年 2 月讲话与 6 月公开文本，不把当前选集文字当逐字记录。",
+      "能用 1957 年 5–7 月同卷文本和后见历史评价，对照理想方法与实际政治变化。"
+    ],
+    "optional_source_return_minutes": "90–140",
+    "estimated_full_articles_minutes": "160–240"
+  },
+  "source_book": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "volume": 5,
+    "articles": [
+      {
+        "title": "论十大关系",
+        "date": "1956-04-25",
+        "epub_path": "OEBPS/Text/Section0651.xhtml",
+        "edition_note": "书内标为中央政治局扩大会议讲话。注释关于其历史地位的概括属于选集编辑说明，不等同于讲话正文。"
+      },
+      {
+        "title": "关于正确处理人民内部矛盾的问题",
+        "date": "1957-02-27",
+        "epub_path": "OEBPS/Text/Section0658.xhtml",
+        "edition_note": "书内注释说明，作者后来根据原始记录整理并作若干补充，1957 年 6 月 19 日在《人民日报》发表；当前文本不是 2 月 27 日讲话逐字稿。"
+      }
+    ],
+    "pressure_test_articles": [
+      {"title": "事情正在起变化", "date": "1957-05-15", "epub_path": "OEBPS/Text/Section0661.xhtml"},
+      {"title": "组织力量反击右派分子的猖狂进攻", "date": "1957-06-08", "epub_path": "OEBPS/Text/Section0663.xhtml"},
+      {"title": "打退资产阶级右派的进攻", "date": "1957-07-09", "epub_path": "OEBPS/Text/Section0665.xhtml"}
+    ],
+    "locator_method": "EPUB 内部路径 + 1 起始正文 p 序号；Apple Books 优先搜索篇名与摘录短句。",
+    "scope_limit": "只读第一至第五卷。第六、七卷及‘静火’个人编辑材料排除；本模块不扩写成完整的整风与反右运动史。"
+  },
+  "argument_structure": {
+    "shared_question": "社会主义制度建立后，建设和政治生活中的矛盾是否仍然存在，应当怎样处理？",
+    "ten_relationships": {
+      "author_policy": "调动国内外一切积极因素，为社会主义事业服务。",
+      "report_synthesis_groups": [
+        {"group": "生产与资源", "items": ["重工业和轻工业、农业", "沿海工业和内地工业", "经济建设和国防建设"]},
+        {"group": "利益与权限", "items": ["国家、生产单位和生产者个人", "中央和地方"]},
+        {"group": "政治与社会", "items": ["汉族和少数民族", "党和非党", "革命和反革命", "是非关系"]},
+        {"group": "学习与世界", "items": ["中国和外国"]}
+      ],
+      "boundary": "四组是本报告的阅读分组，不是作者的原始分类；十种关系也不是地位对等的十个变量。"
+    },
+    "internal_contradictions": {
+      "classification": ["敌我之间的矛盾", "人民内部的矛盾"],
+      "method_claim": "敌我矛盾与人民内部矛盾采用性质不同的方法；人民内部思想与是非问题应主要用讨论、批评和说服教育。",
+      "method_boundary": "文章同时保留维护秩序的行政命令、人民范围的政治定义、类别转化和六条政治标准，因此不能把它简化为无条件自由讨论。",
+      "audit_questions": ["由谁分类？", "依据怎样公开和复核？", "错误分类如何纠正？", "行政秩序与思想强制怎样区分？"]
+    }
+  },
+  "claims": [
+    {
+      "id": "gr01-shared-problem",
+      "type": "report_synthesis",
+      "statement": "两篇都反对把社会主义社会理解成没有矛盾，并试图把矛盾转化为可治理的问题。",
+      "source_excerpt_ids": ["src-ten-policy", "src-internal-two-types"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr02-not-deduction",
+      "type": "critical_audit",
+      "statement": "两篇有问题意识上的连续，但《论十大关系》的十组政策议题并不能逻辑地自动推出后一篇的敌我／人民内部二分。",
+      "source_excerpt_ids": ["src-ten-policy", "src-internal-two-types"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr03-balance-is-directed",
+      "type": "author_position",
+      "statement": "《论十大关系》中的兼顾不是取消重点，而是在重工业优先和中央统一领导等前提下调整比例与权限。",
+      "source_excerpt_ids": ["src-ten-industry", "src-ten-central-local"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr04-classification-power",
+      "type": "critical_audit",
+      "statement": "后一篇的处理方法取决于先把人、言论或行动归入哪一类；分类权本身因此成为政治权力问题。",
+      "source_excerpt_ids": ["src-internal-two-types", "src-internal-transform", "src-internal-left-error"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr05-democratic-method",
+      "type": "author_position",
+      "statement": "对被归为人民内部的思想和是非问题，文章明确反对用行政命令和强制方法，主张讨论、批评与说服教育。",
+      "source_excerpt_ids": ["src-internal-method", "src-internal-ideas"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr06-method-qualified",
+      "type": "author_position",
+      "statement": "这种民主方法不是无条件的：文章主张有领导的自由、维护秩序的行政命令，并允许某些矛盾发生类别转化。",
+      "source_excerpt_ids": ["src-internal-transform", "src-internal-method"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr07-version",
+      "type": "edition_fact",
+      "statement": "《关于正确处理人民内部矛盾的问题》当前选集文本经讲话后整理与补充，于 1957 年 6 月 19 日公开发表。",
+      "external_sources": ["ext-cpc-publication"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr08-pressure-test",
+      "type": "historical_minimum",
+      "statement": "同卷 1957 年 5–7 月文章从‘事情正在起变化’转到组织反击和打退右派，显示分类与处理语境在数月内显著收紧；时间顺序本身不构成完整因果解释。",
+      "external_sources": ["ext-cpc-rectification", "ext-frus-july"],
+      "confidence": "high"
+    },
+    {
+      "id": "gr09-later-judgment",
+      "type": "historical_minimum",
+      "statement": "中共后来的正式历史评价承认 1957 年反右派斗争发生严重扩大化，可作为分类与纠错风险的最低后见检验。",
+      "external_sources": ["ext-party-resolution"],
+      "confidence": "high"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-ten-policy",
+      "epub_path": "OEBPS/Text/Section0651.xhtml",
+      "paragraph": 3,
+      "title": "总方针与苏联经验",
+      "excerpt": "提出这十个问题，都是围绕着一个基本方针，就是要把国内外一切积极因素调动起来，为社会主义事业服务。过去为了结束帝国主义、封建主义和官僚资本主义的统治，为了人民民主革命的胜利，我们就实行了调动一切积极因素的方针。现在为了进行社会主义革命，建设社会主义国家，同样也实行这个方针。但是，我们工作中间还有些问题需要谈一谈。特别值得注意的是，最近苏联方面暴露了他们在建设社会主义过程中的一些缺点和错误，他们走过的弯路，你还想走？过去我们就是鉴于他们的经验教训，少走了一些弯路，现在当然更要引以为戒。",
+      "plain_guide": "十个问题共用一个政策目标，并带有借鉴苏联而避免照搬的意图。",
+      "cannot_infer": "提出不同安排就已经证明找到了一条成功道路。"
+    },
+    {
+      "id": "src-ten-industry",
+      "epub_path": "OEBPS/Text/Section0651.xhtml",
+      "paragraph": 6,
+      "title": "重点与兼顾同时存在",
+      "excerpt": "重工业是我国建设的重点。必须优先发展生产资料的生产，这是已经定了的。但是决不可以因此忽视生活资料尤其是粮食的生产。如果没有足够的粮食和其他生活必需品，首先就不能养活工人，还谈什么发展重工业？所以，重工业和轻工业、农业的关系，必须处理好。",
+      "plain_guide": "作者没有取消重工业优先，而是认为农业、轻工业构成其长期基础。",
+      "cannot_infer": "各种产业获得同等资源，或政策不再有优先级。"
+    },
+    {
+      "id": "src-ten-central-local",
+      "epub_path": "OEBPS/Text/Section0651.xhtml",
+      "paragraph": 30,
+      "title": "统一领导下扩大地方权力",
+      "excerpt": "中央和地方的关系也是一个矛盾。解决这个矛盾，目前要注意的是，应当在巩固中央统一领导的前提下，扩大一点地方的权力，给地方更多的独立性，让地方办更多的事情。这对我们建设强大的社会主义国家比较有利。我们的国家这样大，人口这样多，情况这样复杂，有中央和地方两个积极性，比只有一个积极性好得多。我们不能像苏联那样，把什么都集中到中央，把地方卡得死死的，一点机动权也没有。",
+      "plain_guide": "地方积极性有明确前提：中央统一领导仍然居于上位。",
+      "cannot_infer": "主张联邦制，或地方拥有不受中央约束的自治权。"
+    },
+    {
+      "id": "src-ten-parties",
+      "epub_path": "OEBPS/Text/Section0651.xhtml",
+      "paragraph": 44,
+      "title": "长期共存、互相监督",
+      "excerpt": "究竟是一个党好，还是几个党好？现在看来，恐怕是几个党好。不但过去如此，而且将来也可以如此，就是长期共存，互相监督。",
+      "plain_guide": "文章明确肯定民主党派长期存在与监督作用。",
+      "cannot_infer": "各党在权力、组织资源和政治方向上完全对等。"
+    },
+    {
+      "id": "src-internal-two-types",
+      "epub_path": "OEBPS/Text/Section0658.xhtml",
+      "paragraph": 3,
+      "title": "社会主义社会仍有两类矛盾",
+      "excerpt": "我们的国家现在是空前统一的。资产阶级民主革命和社会主义革命的胜利，以及社会主义建设的成就，迅速地改变了旧中国的面貌。祖国的更加美好的将来，正摆在我们的面前。人民所厌恶的国家分裂和混乱的局面，已经一去不复返了。我国的六亿人民正在工人阶级和共产党的领导下，团结一致地进行着伟大的社会主义建设。国家的统一，人民的团结，国内各民族的团结，这是我们的事业必定要胜利的基本保证。但是，这并不是说在我们的社会里已经没有任何的矛盾了。没有矛盾的想法是不符合客观实际的天真的想法。在我们的面前有两类社会矛盾，这就是敌我之间的矛盾和人民内部的矛盾。这是性质完全不同的两类矛盾。",
+      "plain_guide": "先承认社会主义社会仍有矛盾，再用政治性质进行二分。",
+      "cannot_infer": "任何具体争议都能无歧义、无代价地归入其中一类。"
+    },
+    {
+      "id": "src-internal-transform",
+      "epub_path": "OEBPS/Text/Section0658.xhtml",
+      "paragraph": 6,
+      "title": "类别并非永远固定",
+      "excerpt": "在我们国家里，工人阶级同民族资产阶级的矛盾属于人民内部的矛盾。工人阶级和民族资产阶级的阶级斗争一般地属于人民内部的阶级斗争，这是因为我国的民族资产阶级有两面性。在资产阶级民主革命时期，它有革命性的一面，又有妥协性的一面。在社会主义革命时期，它有剥削工人阶级取得利润的一面，又有拥护宪法、愿意接受社会主义改造的一面。民族资产阶级和帝国主义、地主阶级、官僚资产阶级不同。工人阶级和民族资产阶级之间存在着剥削和被剥削的矛盾，这本来是对抗性的矛盾。但是在我国的具体条件下，这两个阶级的对抗性的矛盾如果处理得当，可以转变为非对抗性的矛盾，可以用和平的方法解决这个矛盾。如果我们处理不当，不是对民族资产阶级采取团结、批评、教育的政策，或者民族资产阶级不接受我们的这个政策，那末工人阶级同民族资产阶级之间的矛盾就会变成敌我之间的矛盾。",
+      "plain_guide": "处理方式和政治态度都可能使矛盾改变性质。",
+      "cannot_infer": "分类只是一次性的中性技术判断。"
+    },
+    {
+      "id": "src-internal-method",
+      "epub_path": "OEBPS/Text/Section0658.xhtml",
+      "paragraph": 11,
+      "title": "思想争论与行政秩序的边界",
+      "excerpt": "我们主张有领导的自由，主张集中指导下的民主，这在任何意义上都不是说，人民内部的思想问题、是非的辨别问题，可以用强制的方法去解决。企图用行政命令的方法，用强制的方法解决思想问题，是非问题，不但没有效力，而且是有害的。我们不能用行政命令去消灭宗教，不能强制人们不信教。不能强制人们放弃唯心主义，也不能强制人们相信马克思主义。凡属于思想性质的问题，凡属于人民内部的争论问题，只能用民主的方法去解决，只能用讨论的方法、批评的方法、说服教育的方法去解决，而不能用强制的、压服的方法去解决。人民为了有效地进行生产、进行学习和有秩序地过生活，要求自己的政府、生产的领导者、文化教育机关的领导者发布各种适当的带强制性的行政命令。没有这种行政命令，社会秩序就无法维持，这是人们的常识所了解的。这同用说服教育的方法去解决人民内部的矛盾，是相辅相成的两个方面。为着维持社会秩序的目的而发布的行政命令，也要伴之以说服教育，单靠行政命令，在许多情况下就行不通。",
+      "plain_guide": "文章反对用强制解决思想问题，但没有取消政治领导和维持秩序的行政命令。",
+      "cannot_infer": "只要称为维护秩序，就能免于检验是否实质压制思想。"
+    },
+    {
+      "id": "src-internal-left-error",
+      "epub_path": "OEBPS/Text/Section0658.xhtml",
+      "paragraph": 21,
+      "title": "作者自己警告扩大化",
+      "excerpt": "肃清反革命分子的问题是敌我矛盾的斗争问题。在人民内部，有些人对于肃反问题的看法，也有一些不同。有两种人的意见，和我们的意见不相同。有右倾思想的人不分敌我，认敌为我。广大群众认为是敌人的人，他们却认为是朋友。有“左”倾思想的人则把敌我矛盾扩大化，以至把某些人民内部的矛盾也看作敌我矛盾，把某些本来不是反革命的人也看作反革命。这两种看法都是错误的，都不能正确地处理肃反问题，也不能正确地估计我们的肃反工作。",
+      "plain_guide": "分类框架内部已经承认两侧错误，尤其点出把人民内部问题敌我化的危险。",
+      "cannot_infer": "只要承认扩大化风险，实际制度就一定能及时纠错。"
+    },
+    {
+      "id": "src-internal-ideas",
+      "epub_path": "OEBPS/Text/Section0658.xhtml",
+      "paragraph": 50,
+      "title": "错误意见不应简单禁止",
+      "excerpt": "对于非马克思主义的思想，应该采取什么方针呢？对于明显的反革命分子，破坏社会主义事业的分子，事情好办，剥夺他们的言论自由就行了。对于人民内部的错误思想，情形就不相同。禁止这些思想，不允许这些思想有任何发表的机会，行不行呢？当然不行。对待人民内部的思想问题，对待精神世界的问题，用简单的方法去处理，不但不会收效，而且非常有害。不让发表错误意见，结果错误意见还是存在着。而正确的意见如果是在温室里培养出来的，如果没有见过风雨，没有取得免疫力，遇到错误意见就不能打胜仗。因此，只有采取讨论的方法，批评的方法，说理的方法，才能真正发展正确的意见，克服错误的意见，才能真正解决问题。",
+      "plain_guide": "被归入人民内部的错误意见仍应有表达和争论空间。",
+      "cannot_infer": "所有言论都被置于同一权利边界；开头的‘反革命’例外仍在。"
+    }
+  ],
+  "diagram_contracts": [
+    {
+      "anchor": "reading.html#relations",
+      "title": "十种关系的四个阅读层次",
+      "diagram_type": "grouped relationship map",
+      "semantic_boundary": "四组是报告综合，不是作者的原始目录；图显示问题域，不显示同等权重或因果。"
+    },
+    {
+      "anchor": "reading.html#method",
+      "title": "分类、处理方法与三道风险门",
+      "diagram_type": "decision and governance model",
+      "semantic_boundary": "图复原作者的政治分类与方法主张，同时显式保留分类权、类别移动和行政边界；不是中性算法。"
+    },
+    {
+      "anchor": "reading.html#timeline",
+      "title": "1956–1957：文本与政治语境的快速重排",
+      "diagram_type": "annotated timeline",
+      "semantic_boundary": "时间轴证明顺序和文本状态变化，不单独证明动机、预谋或完整因果。"
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "ext-ten-circulation",
+      "title": "《论十大关系》传播史考略",
+      "publisher": "光明日报／全国哲学社会科学工作办公室",
+      "url": "https://www.nopss.gov.cn/GB/219470/17790150.html",
+      "use": "核讲话形成背景、1956 年党内传播与 1976 年公开发表。",
+      "perspective_limit": "官方党史研究，适合核文献形成与传播，不单独证明政策效果。"
+    },
+    {
+      "id": "ext-cpc-publication",
+      "title": "毛泽东《关于正确处理人民内部矛盾的问题》的发表及其意义",
+      "publisher": "中国共产党新闻网",
+      "url": "https://cpc.people.com.cn/GB/64107/65708/65722/4444778.html",
+      "use": "核 2 月讲话、6 月 19 日经修改补充后公开发表及当时社会背景。",
+      "perspective_limit": "官方阐释性文章，价值评价与历史事实应分开使用。"
+    },
+    {
+      "id": "ext-cpc-rectification",
+      "title": "1957 年全党整风运动",
+      "publisher": "人民网理论频道",
+      "url": "https://theory.people.com.cn/n/2014/0603/c385524-25097447.html",
+      "use": "核从讲话、整风到反右语境的最低时间顺序。",
+      "perspective_limit": "官方党史综述，不替代地方档案、个人材料或完整专题史。"
+    },
+    {
+      "id": "ext-frus-july",
+      "title": "Recantation by ‘Rightists’ in Communist China",
+      "publisher": "U.S. Department of State, FRUS 1955–1957",
+      "url": "https://history.state.gov/historicaldocuments/frus1955-57v03/d274",
+      "use": "提供 1957 年 7 月同时代外部观察，核批评者受公开批判和六条标准被用于区分言行。",
+      "perspective_limit": "美国政府外交分析，有冷战立场，也不是中国内部政策档案。"
+    },
+    {
+      "id": "ext-party-resolution",
+      "title": "中共中央关于党的百年奋斗重大成就和历史经验的决议",
+      "publisher": "国家市场监督管理总局转载的中共中央正式决议",
+      "url": "https://www.samr.gov.cn/zt/ndzt/2021n/xxgcddsjjlzqhjs/sjj/art/2023/art_00289bc9542d4037afb450d9606709cf.html",
+      "use": "核中共后来的正式历史评价承认反右派斗争被严重扩大化。",
+      "perspective_limit": "党的正式历史结论；如做完整专题，仍需结合 1981 年决议全文、档案和当事人材料。"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "把社会主义建设中的矛盾从例外恢复为需要持续处理的常态。",
+      "《论十大关系》多处反对单边投入、过度集中和机械照搬，保留调整空间。",
+      "《正确处理人民内部矛盾》明确反对用强制手段解决人民内部思想问题，并警告把内部矛盾敌我化。"
+    ],
+    "limits": [
+      "很多‘关系’不是平等协商：重工业优先、中央统一领导和共产党领导仍是预设。",
+      "两类矛盾框架把关键问题前移为谁属于人民、谁属于敌人；分类错误会直接改变权利与处理方式。",
+      "文本承认错误分类和扩大化，但没有单靠自身给出独立复核、公开申诉和有效制约的完整制度机制。",
+      "1957 年 5–7 月同卷文本与后来的扩大化评价说明，原则性警告并未自动阻止实践中的快速收紧。"
+    ],
+    "version_risks": [
+      "第五卷为身后编辑出版；篇下注释和历史定位不属于作者正文。",
+      "《正确处理人民内部矛盾》公开稿经过讲话后的整理、修改和补充。",
+      "《论十大关系》1956 年主要在党内传播，1976 年才公开发表；后见知名度不能倒推当时公众影响。"
+    ]
+  },
+  "generation_audit": {
+    "content_fidelity": {
+      "status": "passed",
+      "checks": [
+        "九段原文以当前 EPUB 路径和 p 序号定位并逐字校验。",
+        "作者原文、报告综合、编辑说明、外部历史与批判审计分别标型。",
+        "1957 年时间轴只陈述顺序和文本状态，不把顺序写成单一因果。"
+      ]
+    },
+    "diagram_quality": {
+      "status": "passed",
+      "checks": [
+        "三张 SVG 分别回答问题分组、分类方法和时间压力测试，没有用重复图形填充页面。",
+        "全部通过 Fireworks XML、marker、碰撞、语义几何和构图五类校验。",
+        "作者分类、报告综合、风险门和时间轴因果边界在图内直接标明。",
+        "1440px 下三图完整显示；390px 下只在图内横向滚动，并有可见操作提示。"
+      ]
+    },
+    "ui_readability": {
+      "status": "passed_after_minimal_fix",
+      "viewports_reviewed": ["1440×1100 desktop", "390×1000 mobile"],
+      "checks": [
+        "沿用主阅读地图的暖纸张、内容优先和证据折叠风格，没有引入外部运行依赖。",
+        "初次桌面审计发现图内仍需轻微横向滚动；已让图卡在大屏适度宽出正文栏，三图可一次完整读取。",
+        "390px 真实 viewport 的根页面和 body 均为 390px，无页面级横向溢出；导航和图分别在自身容器内滚动。",
+        "正文保持 16px／1.7 行高，标题在 350px 内容宽度内换行，点击目标不低于 40–48px。",
+        "页面包含跳转链接、可见焦点、减少动态效果、打印样式和无脚本降级。"
+      ]
+    }
+  }
+}

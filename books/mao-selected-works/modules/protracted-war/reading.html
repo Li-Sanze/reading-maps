@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《论持久战》渐进深挖：约 60 分钟理解条件比较、三阶段、尺度转换、政治动员和历史检验，再决定是否回原文细读。">
+  <title>论持久战｜渐进深挖</title>
+  <style>
+    :root {
+      --paper: #f4f1ea;
+      --surface: #fffdf8;
+      --ink: #1d2421;
+      --muted: #5c6661;
+      --line: #d9d2c6;
+      --accent: #7c382c;
+      --accent-dark: #59271e;
+      --accent-soft: #f5e9e4;
+      --blue: #225f8b;
+      --blue-soft: #eaf4fb;
+      --purple: #6745a5;
+      --purple-soft: #f1ecfb;
+      --orange: #8b4a1b;
+      --orange-soft: #fff0e3;
+      --green: #176652;
+      --green-soft: #e5f2ed;
+      --gray-soft: #edf0ef;
+      --red: #8a2f2f;
+      --red-soft: #fceeee;
+      --radius: 18px;
+      --content: 1080px;
+      --shadow: 0 6px 20px rgba(38, 33, 26, 0.05);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(34, 95, 139, 0.09), transparent 28rem),
+        radial-gradient(circle at 5% 16%, rgba(234, 88, 12, 0.065), transparent 24rem),
+        var(--paper);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent-dark); text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible, .model-scroll:focus-visible {
+      outline: 3px solid #e69b36;
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+    .skip-link {
+      position: fixed; z-index: 30; top: 10px; left: 10px; transform: translateY(-160%);
+      min-height: 44px; padding: 10px 15px; color: white; background: var(--accent-dark); border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    h1, h2, h3 { line-height: 1.26; text-wrap: balance; }
+    h1 { margin: 0; font-family: ui-serif, Georgia, "Songti SC", serif; font-size: clamp(2.55rem, 8vw, 5rem); letter-spacing: -.045em; }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.08rem); }
+    h3 { margin: 0 0 8px; font-size: 1.04rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin-top: .5em; padding-left: 1.2em; }
+    li { margin-bottom: .45em; }
+    .hero { padding: 48px 20px 34px; border-bottom: 1px solid var(--line); }
+    .hero-inner, .page, .footer-inner { width: min(100%, var(--content)); margin-inline: auto; }
+    .back { display: inline-flex; min-height: 44px; align-items: center; margin-bottom: 20px; color: var(--muted); font-size: .84rem; font-weight: 760; text-decoration: none; }
+    .back:hover { color: var(--accent); }
+    .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: .78rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .lead { max-width: 780px; margin: 15px 0 0; color: var(--muted); font-size: clamp(1.05rem, 2.2vw, 1.25rem); }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .fact { display: inline-flex; flex: 0 0 auto; max-width: 100%; min-height: 40px; align-items: center; padding: 7px 12px; color: var(--accent-dark); background: rgba(255, 253, 248, .9); border: 1px solid var(--line); border-radius: 999px; font-size: .82rem; font-weight: 760; }
+    .thesis { display: grid; gap: 7px; margin-top: 24px; padding: 22px; color: white; background: linear-gradient(135deg, #253b4d, #2c6a67); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .thesis small { color: #c4e5e2; font-weight: 790; }
+    .thesis strong { max-width: 950px; font-size: clamp(1.1rem, 2.7vw, 1.43rem); }
+    .thesis p { margin: 0; color: #e4f1ef; font-size: .91rem; }
+    .section-nav { position: sticky; z-index: 10; top: 0; background: rgba(244, 241, 234, .95); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .section-nav nav { display: flex; width: min(100%, var(--content)); min-height: 52px; margin-inline: auto; padding-inline: 12px; overflow-x: auto; scrollbar-width: none; }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a { display: inline-flex; flex: 0 0 auto; min-height: 48px; align-items: center; padding: 8px 10px; color: var(--muted); font-size: .82rem; font-weight: 760; text-decoration: none; }
+    .section-nav a:hover { color: var(--accent); }
+    .page { padding: 34px 20px 72px; }
+    section { margin-bottom: 50px; scroll-margin-top: 72px; }
+    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time { flex: 0 0 auto; padding: 5px 10px; color: var(--accent-dark); background: var(--accent-soft); border-radius: 999px; font-size: .77rem; font-weight: 820; }
+    .grid-2, .grid-3, .route, .concepts, .audit-grid, .excerpt-grid, .argument-grid, .history-stack { display: grid; gap: 12px; }
+    .card, .route-card, .concept, .audit-card, details, .model-figure, .decision { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .card, .route-card, .concept, .audit-card, .decision { padding: 18px; }
+    .card p:last-child, .concept p:last-child, .audit-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin { display: inline-flex; min-height: 26px; align-items: center; margin: 0 0 9px; padding: 2px 8px; border-radius: 999px; font-size: .7rem; font-weight: 850; letter-spacing: .03em; }
+    .author { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--orange); background: var(--orange-soft); }
+    .external { color: #56636a; background: var(--gray-soft); }
+    .scope { color: var(--green); background: var(--green-soft); }
+    .route { counter-reset: route; }
+    .route-card { position: relative; padding-left: 58px; }
+    .route-card::before { counter-increment: route; content: counter(route); position: absolute; top: 17px; left: 18px; display: grid; width: 27px; height: 27px; place-items: center; color: white; background: var(--accent); border-radius: 50%; font-size: .78rem; font-weight: 850; }
+    .route-card small { color: var(--muted); }
+    .model-figure { margin: 0; padding: 12px; overflow: hidden; }
+    .model-scroll { overflow-x: auto; overscroll-behavior-inline: contain; }
+    .model-canvas { min-width: 1060px; }
+    .model-canvas svg { display: block; width: 100%; height: auto; }
+    .history-stack { gap: 18px; }
+    .history-stack .model-figure { margin: 0; }
+    figcaption { padding: 10px 8px 2px; color: var(--muted); font-size: .78rem; }
+    .mobile-hint { display: none; margin: 8px 0 0; color: var(--muted); font-size: .76rem; }
+    .move { border-top: 4px solid var(--blue); }
+    .move:nth-child(2) { border-top-color: var(--purple); }
+    .move:nth-child(3) { border-top-color: var(--orange); }
+    .move:nth-child(4) { border-top-color: var(--green); }
+    .argument { margin: 0; padding-left: 1.2em; }
+    .argument li::marker { color: var(--accent); font-weight: 800; }
+    .concept strong { display: block; margin-bottom: 4px; color: var(--accent-dark); }
+    .concept .avoid { margin-top: 10px; padding-top: 10px; color: var(--red); border-top: 1px dashed #e5c2c2; font-size: .86rem; }
+    .audit-card.good { border-top: 4px solid var(--green); }
+    .audit-card.limit { border-top: 4px solid var(--orange); }
+    .audit-card.gate { border-top: 4px solid var(--red); }
+    .source-list { margin: 0; padding-left: 1.2em; }
+    .locator { display: block; margin-top: 7px; color: var(--muted); font-size: .76rem; }
+    blockquote { margin: 13px 0; padding: 12px 14px; background: #faf6ee; border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; }
+    blockquote p { margin: 0 0 .2em; }
+    .reading-card blockquote { font-family: ui-serif, Georgia, "Songti SC", serif; font-size: .98rem; line-height: 1.82; }
+    .reading-card .guide { margin-bottom: .55em; }
+    .reading-card .cannot { margin-top: 10px; padding-top: 10px; color: var(--red); border-top: 1px dashed #e5c2c2; font-size: .87rem; }
+    .decision { border-left: 5px solid var(--green); }
+    .decision-grid { display: grid; gap: 8px; margin-top: 12px; }
+    .decision-row { display: grid; grid-template-columns: 155px 1fr; gap: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .decision-row strong { color: var(--accent-dark); }
+    details { margin-bottom: 10px; overflow: clip; }
+    summary { display: flex; min-height: 50px; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; cursor: pointer; font-weight: 800; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+    footer { padding: 24px 20px 34px; color: var(--muted); border-top: 1px solid var(--line); }
+    footer p { margin: .3em 0; font-size: .79rem; }
+    code { overflow-wrap: anywhere; font-size: .83em; }
+    @media (min-width: 760px) {
+      .grid-2, .audit-grid, .argument-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .route { grid-template-columns: repeat(4, 1fr); }
+      .concepts, .excerpt-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 759px) {
+      .hero { padding-top: 32px; }
+      .page { padding-inline: 16px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .mobile-hint { display: block; }
+      .decision-row { grid-template-columns: 1fr; gap: 4px; }
+      section { margin-bottom: 42px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      .section-nav, .skip-link, .mobile-hint { display: none; }
+      .hero, .page, footer { padding-inline: 0; }
+      section { break-inside: avoid; margin-bottom: 28px; }
+      .card, .route-card, .concept, .audit-card, details, .model-figure, .decision { box-shadow: none; }
+      details > * { display: block !important; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { min-width: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="back" href="../../reading.html#modules">← 返回《毛泽东选集》主阅读地图</a>
+      <p class="eyebrow">Progressive deep dive · 按需深挖 02</p>
+      <h1>论持久战</h1>
+      <p class="lead">先理解作者怎样从不利开局推导长期方向，再核三个阶段、行动方法和历史边界。核心约 60 分钟；回读选段或全文是下一层，不塞进本页。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第二卷 · 单篇</span>
+        <span class="fact">正文约 4.8 万字符</span>
+        <span class="fact">核心 60 分钟</span>
+        <span class="fact">选段回读 100–135 分钟（可选）</span>
+        <span class="fact">作者观点 / 报告综合 / 批判审计分标</span>
+      </div>
+      <div class="thesis">
+        <small>一句话模型 · 报告综合</small>
+        <strong>比较会变化的敌我条件，排除亡国和速胜两个极端；用三阶段组织长期方向，再以尺度转换、主动灵活计划和政治动员改变力量对比。</strong>
+        <p>边界：这是报告对全文的结构化复原，不是作者给出的单张流程图；历史结果也不能自动证明全文每个因果判断。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav">
+    <nav aria-label="页内目录">
+      <a href="#route">路线</a>
+      <a href="#model">全篇结构</a>
+      <a href="#argument">论证链</a>
+      <a href="#original">原文选段</a>
+      <a href="#concepts">概念</a>
+      <a href="#audit">批判审计</a>
+      <a href="#history-check">历史检验</a>
+      <a href="#source">回原文</a>
+      <a href="#decision">下一步</a>
+    </nav>
+  </div>
+
+  <main id="main" class="page">
+    <section id="route">
+      <div class="section-head">
+        <div><h2>先走核心 60 分钟</h2><p>目标不是记住所有军事术语，而是能复述推理、核原文，并判断是否值得细读。</p></div>
+        <span class="time">总计约 60 分钟</span>
+      </div>
+      <div class="route">
+        <article class="route-card"><h3>看全图</h3><small>5 分钟</small><p>先抓住“条件—阶段—执行—反馈”。</p></article>
+        <article class="route-card"><h3>拆论证链</h3><small>10 分钟</small><p>分清前提、推断、战略轮廓和行动方法。</p></article>
+        <article class="route-card"><h3>读六段原文</h3><small>25 分钟</small><p>接触作者的限定语，不只记“三阶段”。</p></article>
+        <article class="route-card"><h3>审计并决定</h3><small>20 分钟</small><p>核历史因果和误用边界，选择下一层。</p></article>
+      </div>
+    </section>
+
+    <section id="model">
+      <div class="section-head">
+        <div><h2>全篇结构：不是“熬”，而是改变条件</h2><p>先由全部条件推出长期性，再用阶段和跨阶段方法争取力量转变；紫色虚线表示结果返回下一轮判断。</p></div>
+        <span class="time">5 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <div class="model-scroll" tabindex="0" aria-label="可横向滚动的论持久战结构图">
+          <div class="model-canvas">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 760" width="1360" height="760" role="img" aria-labelledby="svg-title svg-desc" data-quality-profile="standard">
+              <title id="svg-title">《论持久战》的条件、阶段与执行结构</title>
+              <desc id="svg-desc">上方从日本和中国的强弱条件推导持久战；中部是战略防御、战略相持与战略反攻三个阶段；下方说明战略持久与战役速决、主动灵活计划、政治动员和条件反馈共同推动力量对比变化。最下方列出三个阅读审计边界。</desc>
+              <style>
+                text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                .title { font-size: 20px; font-weight: 750; fill: #17211d; }
+                .sub { font-size: 12px; fill: #66716b; }
+                .lane { font-size: 13px; font-weight: 750; fill: #4c5751; }
+                .node-title { font-size: 15px; font-weight: 750; fill: #17211d; }
+                .node-sub { font-size: 11px; fill: #4c5751; }
+                .phase-num { font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+                .phase-title { font-size: 17px; font-weight: 800; fill: #17211d; }
+                .phase-sub { font-size: 12px; fill: #4c5751; }
+                .edge-label { font-size: 11px; font-weight: 700; }
+                .audit-title { font-size: 12px; font-weight: 800; fill: #7f1d1d; }
+                .audit-sub { font-size: 10.5px; fill: #4c5751; }
+              </style>
+              <defs>
+                <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2b6f88"/></marker>
+                <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#a34e23"/></marker>
+                <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7653a6"/></marker>
+              </defs>
+              <rect width="1360" height="760" rx="20" fill="#fffdf8"/>
+              <text class="title" x="40" y="34">《论持久战》：从条件判断，到阶段转换，再到改变条件</text>
+              <text class="sub" x="40" y="57">报告结构化复原 · 箭头表示论证与行动关系，不表示固定日期</text>
+
+              <path id="edge-japan-conclusion" data-graph-role="edge" data-edge-id="japan-conclusion" data-source="premise-japan" data-target="conditional-conclusion" data-edge-kind="flow" data-flow="primary" data-bends="0" d="M 350 139 H 450" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-china-conclusion" data-graph-role="edge" data-edge-id="china-conclusion" data-source="premise-china" data-target="conditional-conclusion" data-edge-kind="flow" data-flow="primary" data-bends="0" d="M 910 139 H 810" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-conclusion-phase1" data-graph-role="edge" data-edge-id="conclusion-phase1" data-source="conditional-conclusion" data-target="phase-1" data-edge-kind="flow" data-flow="primary" data-bends="2" d="M 520 194 V 235 H 220 V 277" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-conclusion-phase2" data-graph-role="edge" data-edge-id="conclusion-phase2" data-source="conditional-conclusion" data-target="phase-2" data-edge-kind="flow" data-flow="primary" data-bends="0" d="M 630 194 V 277" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-conclusion-phase3" data-graph-role="edge" data-edge-id="conclusion-phase3" data-source="conditional-conclusion" data-target="phase-3" data-edge-kind="flow" data-flow="primary" data-bends="2" d="M 740 194 V 235 H 1040 V 277" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#arrow-blue)"/>
+              <path id="edge-phase1-phase2" data-graph-role="edge" data-edge-id="phase1-phase2" data-source="phase-1" data-target="phase-2" data-edge-kind="phase-transition" data-flow="primary" data-bends="0" d="M 380 357 H 460" fill="none" stroke="#a34e23" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+              <path id="edge-phase2-phase3" data-graph-role="edge" data-edge-id="phase2-phase3" data-source="phase-2" data-target="phase-3" data-edge-kind="phase-transition" data-flow="primary" data-bends="0" d="M 800 357 H 880" fill="none" stroke="#a34e23" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+              <path id="edge-rail-feedback" data-graph-role="edge" data-edge-id="rail-feedback" data-source="condition-feedback" data-target="conditional-conclusion" data-edge-kind="feedback" data-flow="feedback" data-bends="3" d="M 1190 576 H 1332 V 74 H 780 V 103" fill="none" stroke="#7653a6" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow-purple)"/>
+              <text class="edge-label" x="1085" y="68" fill="#7653a6">结果改变条件 → 重新判断力量与阶段</text>
+
+              <text class="lane" x="40" y="88">1 · 前提：不是只看强弱，而是看全部条件及其变化</text>
+              <g id="premise-japan" data-node-id="premise-japan" data-graph-role="node" data-semantic-role="premise" data-graph-bounds="40,103,350,194">
+                <rect x="40" y="103" width="310" height="91" rx="9" fill="#eaf4f7" stroke="#b8d9e2" stroke-width="1.5"/>
+                <text class="node-title" x="60" y="130">日本：强，但受约束</text>
+                <text class="node-sub" x="60" y="153">军力、经济、组织较强</text>
+                <text class="node-sub" x="60" y="172">同时有人力物力限度、侵略性质与国际压力</text>
+              </g>
+              <g id="conditional-conclusion" data-node-id="conditional-conclusion" data-graph-role="node" data-semantic-role="conclusion" data-graph-bounds="450,103,810,194">
+                <rect x="450" y="103" width="360" height="91" rx="9" fill="#f7eee7" stroke="#e6c4ad" stroke-width="1.5"/>
+                <text class="node-title" x="630" y="130" text-anchor="middle">条件结论：不能速胜，也不必亡国</text>
+                <text class="node-sub" x="630" y="153" text-anchor="middle">敌强我弱 → 战争不能快速结束</text>
+                <text class="node-sub" x="630" y="172" text-anchor="middle">条件可被行动改变 → 胜负不是静态强弱的直线外推</text>
+              </g>
+              <g id="premise-china" data-node-id="premise-china" data-graph-role="node" data-semantic-role="premise" data-graph-bounds="910,103,1320,194">
+                <rect x="910" y="103" width="410" height="91" rx="9" fill="#edf6ef" stroke="#bdd9c3" stroke-width="1.5"/>
+                <text class="node-title" x="930" y="130">中国：弱，但有纵深与增长条件</text>
+                <text class="node-sub" x="930" y="153">军力、经济、组织较弱；有大国纵深、正义性与动员潜力</text>
+                <text class="node-sub" x="930" y="172">胜利仍取决于国内联合、国际援助等条件能否形成</text>
+              </g>
+
+              <text class="lane" x="40" y="258">2 · 三个战略阶段：轮廓用于指导，现实会曲折、重叠并校正它</text>
+              <g id="phase-1" data-node-id="phase-1" data-graph-role="node" data-semantic-role="phase" data-graph-bounds="40,277,380,438">
+                <rect x="40" y="277" width="340" height="161" rx="10" fill="#f5ebe6" stroke="#e2bba8" stroke-width="1.5"/>
+                <text class="phase-num" x="62" y="306" fill="#934624">阶段一</text>
+                <text class="phase-title" x="62" y="335">战略防御</text>
+                <text class="phase-sub" x="62" y="361">敌：战略进攻　我：战略防御</text>
+                <text class="phase-sub" x="62" y="388">主要形式：运动战</text>
+                <text class="phase-sub" x="62" y="411">目标：保存力量、消耗敌人、争取时间</text>
+              </g>
+              <g id="phase-2" data-node-id="phase-2" data-graph-role="node" data-semantic-role="phase" data-graph-bounds="460,277,800,438">
+                <rect x="460" y="277" width="340" height="161" rx="10" fill="#fff4df" stroke="#ead09a" stroke-width="1.5"/>
+                <text class="phase-num" x="482" y="306" fill="#8b5b08">阶段二 · 枢纽</text>
+                <text class="phase-title" x="482" y="335">战略相持</text>
+                <text class="phase-sub" x="482" y="361">敌：保守占领　我：准备反攻</text>
+                <text class="phase-sub" x="482" y="388">主要形式：游击战，运动战辅助</text>
+                <text class="phase-sub" x="482" y="411">目标：动员、建设、消耗并改变力量对比</text>
+              </g>
+              <g id="phase-3" data-node-id="phase-3" data-graph-role="node" data-semantic-role="phase" data-graph-bounds="880,277,1220,438">
+                <rect x="880" y="277" width="340" height="161" rx="10" fill="#e9f4ef" stroke="#b8d9c9" stroke-width="1.5"/>
+                <text class="phase-num" x="902" y="306" fill="#176652">阶段三</text>
+                <text class="phase-title" x="902" y="335">战略反攻</text>
+                <text class="phase-sub" x="902" y="361">我：战略反攻　敌：战略退却</text>
+                <text class="phase-sub" x="902" y="388">主要形式：运动战；阵地战地位上升</text>
+                <text class="phase-sub" x="902" y="411">条件：自身增长 + 国际力量 + 敌内变化</text>
+              </g>
+              <text class="edge-label" x="420" y="347" text-anchor="middle" fill="#8d3f1d">进攻受限</text>
+              <text class="edge-label" x="840" y="347" text-anchor="middle" fill="#8d3f1d">力量转变</text>
+
+              <text class="lane" x="40" y="478">3 · 跨阶段执行：目的不是“熬时间”，而是主动改变胜负条件</text>
+              <g id="scale-contrast" data-node-id="scale-contrast" data-graph-role="node" data-semantic-role="method" data-graph-bounds="40,496,315,590">
+                <rect x="40" y="496" width="275" height="94" rx="9" fill="#eef5f8" stroke="#bdd7e0" stroke-width="1.5"/>
+                <text class="node-title" x="58" y="524">尺度转换</text>
+                <text class="node-sub" x="58" y="548">战略：防御 · 持久 · 内线</text>
+                <text class="node-sub" x="58" y="568">战役战斗：进攻 · 速决 · 外线</text>
+              </g>
+              <g id="active-flex-plan" data-node-id="active-flex-plan" data-graph-role="node" data-semantic-role="method" data-graph-bounds="335,496,610,590">
+                <rect x="335" y="496" width="275" height="94" rx="9" fill="#eef5f8" stroke="#bdd7e0" stroke-width="1.5"/>
+                <text class="node-title" x="353" y="524">主动 · 灵活 · 计划</text>
+                <text class="node-sub" x="353" y="548">在局部取得优势与主动</text>
+                <text class="node-sub" x="353" y="568">计划随范围、阶段与新情况调整</text>
+              </g>
+              <g id="mobilization" data-node-id="mobilization" data-graph-role="node" data-semantic-role="foundation" data-graph-bounds="630,496,905,590">
+                <rect x="630" y="496" width="275" height="94" rx="9" fill="#edf6ef" stroke="#bdd9c3" stroke-width="1.5"/>
+                <text class="node-title" x="648" y="524">政治动员与军民关系</text>
+                <text class="node-sub" x="648" y="548">说明目的、步骤与政策，并持续联系生活</text>
+                <text class="node-sub" x="648" y="568">作者强调尊重士兵、人民和俘虏人格</text>
+              </g>
+              <g id="condition-feedback" data-node-id="condition-feedback" data-graph-role="node" data-semantic-role="feedback" data-graph-bounds="925,496,1190,590">
+                <rect x="925" y="496" width="265" height="94" rx="9" fill="#f3eef8" stroke="#d5c5e6" stroke-width="1.5"/>
+                <text class="node-title" x="943" y="524">条件反馈</text>
+                <text class="node-sub" x="943" y="548">经验、组织、军力、国际援助变化</text>
+                <text class="node-sub" x="943" y="568">重新判断强弱、主动与所处阶段</text>
+              </g>
+
+              <text class="lane" x="40" y="628">4 · 三道审计门：防止把战略模型读成事后神话或万能公式</text>
+              <g id="audit-calendar" data-node-id="audit-calendar" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="40,646,420,724">
+                <rect x="40" y="646" width="380" height="78" rx="9" fill="#fff1f1" stroke="#efc5c5" stroke-width="1.5"/>
+                <text class="audit-title" x="58" y="674">阶段不是日历</text>
+                <text class="audit-sub" x="58" y="698">原文明确说具体情况不能预断，轮廓要由事实校正。</text>
+              </g>
+              <g id="audit-causality" data-node-id="audit-causality" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="440,646,840,724">
+                <rect x="440" y="646" width="400" height="78" rx="9" fill="#fff1f1" stroke="#efc5c5" stroke-width="1.5"/>
+                <text class="audit-title" x="458" y="674">结果不等于全部因果获证</text>
+                <text class="audit-sub" x="458" y="698">1945 年结局来自中国抗战及更广泛同盟国战争等共同作用。</text>
+              </g>
+              <g id="audit-transfer" data-node-id="audit-transfer" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="860,646,1320,724">
+                <rect x="860" y="646" width="460" height="78" rx="9" fill="#fff1f1" stroke="#efc5c5" stroke-width="1.5"/>
+                <text class="audit-title" x="878" y="674">离开战争语境必须重新论证</text>
+                <text class="audit-sub" x="878" y="698">“敌我、消耗、动员”等概念不能直接搬到组织、商业或日常关系。</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <p class="mobile-hint">手机上可左右滑动查看完整结构图。</p>
+        <figcaption>图中“条件反馈”和三道审计门是报告综合；三个阶段、尺度转换、主动灵活计划和动员均可回到下方原文定位。</figcaption>
+      </figure>
+    </section>
+
+    <section id="argument">
+      <div class="section-head">
+        <div><h2>把论证压成四个问题</h2><p>全文二十个分节可以先按“为什么、经过什么、怎样做、靠什么”来读。</p></div>
+        <span class="time">10 分钟</span>
+      </div>
+      <div class="argument-grid">
+        <article class="card move"><span class="origin author">作者观点</span><h3>1 · 为什么不是亡国或速胜？</h3><p>亡国论只放大敌强我弱，速胜论只放大中国的有利条件。作者要求把强弱、大小、战争性质、资源和国际关系放进同一张动态表。</p><span class="locator">“问题的根据”至“为什么是持久战？”｜文本块 29–61</span></article>
+        <article class="card move"><span class="origin author">作者观点</span><h3>2 · 长期趋势怎样组织？</h3><p>三个阶段不是时间预言，而是战略轮廓：防御保存与消耗，相持完成力量转变，反攻收复失地。</p><span class="locator">“持久战的三个阶段”｜文本块 62–78</span></article>
+        <article class="card move"><span class="origin author">作者观点</span><h3>3 · “持久”怎样变成具体行动？</h3><p>在不同尺度上组合相反要求：战略防御而局部进攻，战略持久而局部速决，战略内线而局部外线；三种作战形式随阶段换位。</p><span class="locator">文本块 106–142</span></article>
+        <article class="card move"><span class="origin author">作者观点</span><h3>4 · 潜在优势怎样变成现实力量？</h3><p>靠主动、灵活、计划、持续动员、军队建设与军民关系。作者不是把“人多地大”当成自动胜利，而是要求组织和行动使条件发生变化。</p><span class="locator">文本块 89–100、113–126、151–159</span></article>
+      </div>
+    </section>
+
+    <section id="original">
+      <div class="section-head">
+        <div><h2>先读六段连续原文</h2><p>节选保留限定语；“正在回答 / 通俗理解 / 不能推出”均为报告导读，不是作者原话。</p></div>
+        <span class="time">25 分钟</span>
+      </div>
+      <div class="excerpt-grid">
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 论持久战</span><h3>1 · 结论不能只看一个因素</h3>
+          <blockquote><p>多助寡助是重要因素，但是附随因素，依敌我本身的基本因素如何而定其作用的大小。因此，我们说抗日战争是持久战，是从全部敌我因素的相互关系产生的结论。敌强我弱，我有灭亡的危险。但敌尚有其他缺点，我尚有其他优点。敌之优点可因我之努力而使之削弱，其缺点亦可因我之努力而使之扩大。我方反是，我之优点可因我之努力而加强，缺点则因我之努力而克服。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>为什么不能从敌强我弱直接推出亡国。</p>
+          <p class="guide"><strong>通俗理解：</strong>作者做的是条件组合和动态比较，不是只抓一个优势或劣势。</p>
+          <p class="cannot"><strong>不能推出：</strong>有正义或援助就必然胜利；这些仍要放进条件关系并通过行动形成。</p>
+          <span class="locator">Section0309.xhtml｜文本块 57，连续句 8–13</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 论持久战</span><h3>2 · 三个阶段为什么只是轮廓</h3>
+          <blockquote><p>中日战争既然是持久战，最后胜利又将是属于中国的，那末，就可以合理地设想，这种持久战，将具体地表现于三个阶段之中。第一个阶段，是敌之战略进攻、我之战略防御的时期。第二个阶段，是敌之战略保守、我之准备反攻的时期。第三个阶段，是我之战略反攻、敌之战略退却的时期。三个阶段的具体情况不能预断，但依目前条件来看，战争趋势中的某些大端是可以指出的。客观现实的行程将是异常丰富和曲折变化的，谁也不能造出一本中日战争的“流年”来；然而给战争趋势描画一个轮廓，却为战略指导所必需。所以，尽管描画的东西不能尽合将来的事实，而将为事实所校正，但是为着坚定地有目的地进行持久战的战略指导起见，描画轮廓的事仍然是需要的。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>为什么需要阶段模型，又为什么不能把它读成时间表。</p>
+          <p class="guide"><strong>通俗理解：</strong>模型给方向，不预言每个地区何时切换；事实可以修正模型。</p>
+          <p class="cannot"><strong>不能推出：</strong>战争会按三幕整齐推进，或阶段重叠和倒退就必然推翻整个模型。</p>
+          <span class="locator">Section0309.xhtml｜文本块 63，全段</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 论持久战</span><h3>3 · 长期战略怎样容纳局部速决</h3>
+          <blockquote><p>我们已说过了，抗日的战略方针是持久战，是的，这是完全对的。但这是一般的方针，还不是具体的方针。怎样具体地进行持久战呢？这就是我们现在要讨论的问题。我们的答复是：在第一和第二阶段即敌之进攻和保守阶段中，应该是战略防御中的战役和战斗的进攻战，战略持久中的战役和战斗的速决战，战略内线中的战役和战斗的外线作战。在第三阶段中，应该是战略的反攻战。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>持久战怎样避免变成纯等待。</p>
+          <p class="guide"><strong>通俗理解：</strong>全局承认长期与防御，局部仍寻找有利条件主动、快速地解决战斗。</p>
+          <p class="cannot"><strong>不能推出：</strong>任何局部速胜都会自动积累成全局胜利，或应进行无把握的战略决战。</p>
+          <span class="locator">Section0309.xhtml｜文本块 107，连续句 2–7</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 论持久战</span><h3>4 · 计划怎样面对不确定性</h3>
+          <blockquote><p>但由于战争只有程度颇低和时间颇暂的确实性，战争的计划性就很难完全和固定，它随战争的运动（或流动，或推移）而运动，且依战争范围的大小而有程度的不同。战术计划，例如小兵团和小部队的攻击或防御计划，常须一日数变。战役计划，即大兵团的行动计划，大体能终战役之局，但在该战役内，部分的改变是常有的，全部的改变也间或有之。战略计划，是基于战争双方总的情况而来的，有更大的固定的程度，但也只在一定的战略阶段内适用，战争向着新的阶段推移，战略计划便须改变。战术、战役和战略计划之各依其范围和情况而确定而改变，是战争指挥的重要关节，也即是战争灵活性的具体的实施，也即是实际的运用之妙。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>为什么仍要计划，以及计划为什么要分尺度更新。</p>
+          <p class="guide"><strong>通俗理解：</strong>越靠近现场调整越频繁；高层方向较稳定，但也只在特定阶段有效。</p>
+          <p class="cannot"><strong>不能推出：</strong>灵活等于不要计划，或战略一旦制定就不能改变。</p>
+          <span class="locator">Section0309.xhtml｜文本块 124，连续句 9–13</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 论持久战</span><h3>5 · 政治动员到底包含什么</h3>
+          <blockquote><p>什么是政治动员呢？首先是把战争的政治目的告诉军队和人民。必须使每个士兵每个人民都明白为什么要打仗，打仗和他们有什么关系。抗日战争的政治目的是“驱逐日本帝国主义，建立自由平等的新中国”，必须把这个目的告诉一切军民人等，方能造成抗日的热潮，使几万万人齐心一致，贡献一切给战争。其次，单单说明目的还不够，还要说明达到此目的的步骤和政策，就是说，要有一个政治纲领。现在已经有了《抗日救国十大纲领》〔22〕，又有了一个《抗战建国纲领》〔23〕，应把它们普及于军队和人民，并动员所有的军队和人民实行起来。没有一个明确的具体的政治纲领，是不能动员全军全民抗日到底的。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>动员为什么不只是喊口号。</p>
+          <p class="guide"><strong>通俗理解：</strong>作者要求说明目的、个人关系、步骤和政策；后文还要求持续联系实际生活。</p>
+          <p class="cannot"><strong>不能推出：</strong>目标被宣布为正当，动员方式和代价就不再需要伦理约束。</p>
+          <span class="locator">Section0309.xhtml｜文本块 100，连续句 1–7</span>
+        </article>
+
+        <article class="card reading-card">
+          <span class="origin author">原文连续节选 · 论持久战</span><h3>6 · 军民关系的根本态度</h3>
+          <blockquote><p>很多人对于官兵关系、军民关系弄不好，以为是方法不对，我总告诉他们是根本态度（或根本宗旨）问题，这态度就是尊重士兵和尊重人民。从这态度出发，于是有各种的政策、方法、方式。离了这态度，政策、方法、方式也一定是错的，官兵之间、军民之间的关系便决然弄不好。军队政治工作的三大原则：第一是官兵一致，第二是军民一致，第三是瓦解敌军。这些原则要实行有效，都须从尊重士兵、尊重人民和尊重已经放下武器的敌军俘虏的人格这种根本态度出发。</p></blockquote>
+          <p class="guide"><strong>正在回答：</strong>群众基础靠技术还是靠关系和态度。</p>
+          <p class="guide"><strong>通俗理解：</strong>原文把尊重士兵、人民和俘虏人格放在方法之前。</p>
+          <p class="cannot"><strong>不能推出：</strong>只要声称代表人民，就已经取得人民同意，或军事目的可以取消人格边界。</p>
+          <span class="locator">Section0309.xhtml｜文本块 156，连续句 1–5</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="concepts">
+      <div class="section-head">
+        <div><h2>六组概念，连同误读边界一起记</h2><p>真正值得带走的是区分和条件，不是把术语变成万能隐喻。</p></div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="concepts">
+        <article class="concept"><span class="origin author">作者观点</span><strong>持久战</strong><p>利用空间、时间、组织和国际条件，使敌我力量关系发生有利变化。</p><p class="avoid">不要缩成：只要等得够久就会胜利。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>三个阶段</strong><p>战略防御、战略相持、战略反攻是趋势轮廓，具体情况要被事实校正。</p><p class="avoid">不要缩成：所有地区按同一日期整齐换挡。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>战略持久 / 局部速决</strong><p>全局接受长期性，局部在有利条件下集中力量，争取快速解决。</p><p class="avoid">不要缩成：全都慢，或为了速胜孤注一掷。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>主动 / 灵活 / 计划</strong><p>在客观条件上争取行动自由；按时机、地点和力量调整，计划也按尺度更新。</p><p class="avoid">不要缩成：意志取消物质差距，或灵活等于没有原则。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>运动战 / 游击战 / 阵地战</strong><p>三者随阶段换位：总体运动战为主，相持期游击战升为主要，反攻期阵地战地位提高。</p><p class="avoid">不要缩成：全文只主张游击战。</p></article>
+        <article class="concept"><span class="origin author">作者观点</span><strong>政治动员 / 军民关系</strong><p>持续说明目的、步骤和政策，并联系生活；组织基础还包括尊重士兵、人民和俘虏人格。</p><p class="avoid">不要缩成：一次喊话，或目的正确便无需约束手段。</p></article>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="section-head">
+        <div><h2>批判审计：先看方法，再看适用边界</h2><p>历史检验单独用图展开；这里只保留不会被图替代的三条判断。</p></div>
+        <span class="time">4 分钟</span>
+      </div>
+      <div class="audit-grid">
+        <article class="audit-card good"><span class="origin audit">方法优势</span><h3>它拒绝静态外推</h3><ul><li>把极端结论拆回可核条件。</li><li>区分战略与战役战斗尺度。</li><li>把长期方向同局部主动结合。</li><li>把政治、组织和民众纳入战略。</li></ul></article>
+        <article class="audit-card good"><span class="origin audit">文本自限</span><h3>作者自己没有把模型写成预言日历</h3><ul><li>明确说三个阶段的具体情况不能预断。</li><li>明确说轮廓会被未来事实校正。</li><li>结尾把讲演称为十个月经验的概论。</li><li>请求读者研究、指正和补充。</li></ul></article>
+        <article class="audit-card gate"><span class="origin audit">移植边界</span><h3>战争方法不是万能模板</h3><ul><li>预测符合，不自动证明全部理由正确。</li><li>敌我、欺骗、消耗和动员不能直接搬进日常关系。</li><li>离开战争语境，要重审目的、权利、强制与代价。</li><li>“持久”不能替无反馈的拖延辩护，“速决”也不能替豪赌辩护。</li></ul></article>
+      </div>
+    </section>
+
+    <section id="history-check">
+      <div class="section-head">
+        <div><h2>把模型放回 1937—1945 年</h2><p>第一张图核阶段是否整齐兑现；第二张图核 1945 年结局为什么不能写成单因果。</p></div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="history-stack">
+        <figure class="model-figure">
+          <div class="model-scroll" tabindex="0" aria-label="可横向滚动的三阶段模型与实际历史比较图">
+            <div class="model-canvas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 720" width="1360" height="720" role="img" aria-labelledby="history-timeline-title history-timeline-desc" data-quality-profile="standard">
+                <title id="history-timeline-title">《论持久战》三阶段模型与一九三七至一九四五年实际进程比较</title>
+                <desc id="history-timeline-desc">上方是作者提出的战略防御、战略相持、战略反攻三个阶段。中部按时间列出一九三七至三八年的日军推进与中国未投降、一九三八后战争长期化、一九四一年战争扩大、一九四四年日军一号作战、一九四五年多战场共同收束。下方说明阶段一方向对应较强，阶段二大体对应但并不整齐，阶段三的结果方向对应而实际主体和机制更复杂。</desc>
+                <style>
+                  text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                  .title { font-size: 21px; font-weight: 760; fill: #17211d; }
+                  .sub { font-size: 12px; fill: #66716b; }
+                  .lane { font-size: 13px; font-weight: 780; fill: #4c5751; }
+                  .node-title { font-size: 15px; font-weight: 780; fill: #17211d; }
+                  .node-sub { font-size: 12px; fill: #4c5751; }
+                  .year { font-size: 12px; font-weight: 820; letter-spacing: .04em; fill: #7c382c; }
+                  .verdict { font-size: 13px; font-weight: 800; }
+                  .verdict-sub { font-size: 11px; fill: #4c5751; }
+                    .source { font-size: 10.5px; fill: #5c6661; }
+                </style>
+                <defs>
+                  <marker id="timeline-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2b6f88"/></marker>
+                  <marker id="model-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#a34e23"/></marker>
+                </defs>
+                <rect width="1360" height="720" rx="20" fill="#fffdf8"/>
+                <text class="title" x="40" y="38">三阶段是战略轮廓；实际历史不是三幕整齐换场</text>
+                <text class="sub" x="40" y="62">比较的是方向与机制，不把某个战役日期硬判为全国统一的阶段分界</text>
+              
+                <text class="lane" x="40" y="100">作者模型 · 一九三八年提出</text>
+                <path id="edge-model-1-2" data-graph-role="edge" data-edge-id="model-1-2" data-source="model-stage-1" data-target="model-stage-2" data-edge-kind="phase-transition" data-flow="model" data-bends="0" d="M 420 160 H 470" fill="none" stroke="#a34e23" stroke-width="2.4" marker-end="url(#model-arrow)"/>
+                <path id="edge-model-2-3" data-graph-role="edge" data-edge-id="model-2-3" data-source="model-stage-2" data-target="model-stage-3" data-edge-kind="phase-transition" data-flow="model" data-bends="0" d="M 890 160 H 940" fill="none" stroke="#a34e23" stroke-width="2.4" marker-end="url(#model-arrow)"/>
+                <g id="model-stage-1" data-node-id="model-stage-1" data-graph-role="node" data-semantic-role="phase" data-graph-bounds="40,112,420,208">
+                  <rect x="40" y="112" width="380" height="96" rx="10" fill="#f5ebe6" stroke="#e2bba8" stroke-width="1.5"/>
+                  <text class="year" x="62" y="140">阶段一</text>
+                  <text class="node-title" x="62" y="166">战略防御</text>
+                  <text class="node-sub" x="62" y="188">敌战略进攻 · 我战略防御</text>
+                </g>
+                <g id="model-stage-2" data-node-id="model-stage-2" data-graph-role="node" data-semantic-role="phase" data-graph-bounds="470,112,890,208">
+                  <rect x="470" y="112" width="420" height="96" rx="10" fill="#fff4df" stroke="#ead09a" stroke-width="1.5"/>
+                  <text class="year" x="492" y="140">阶段二 · 枢纽</text>
+                  <text class="node-title" x="492" y="166">战略相持</text>
+                  <text class="node-sub" x="492" y="188">敌保守占领 · 我准备反攻</text>
+                </g>
+                <g id="model-stage-3" data-node-id="model-stage-3" data-graph-role="node" data-semantic-role="phase" data-graph-bounds="940,112,1320,208">
+                  <rect x="940" y="112" width="380" height="96" rx="10" fill="#e9f4ef" stroke="#b8d9c9" stroke-width="1.5"/>
+                  <text class="year" x="962" y="140">阶段三</text>
+                  <text class="node-title" x="962" y="166">战略反攻</text>
+                  <text class="node-sub" x="962" y="188">我战略反攻 · 敌战略退却</text>
+                </g>
+              
+                <text class="lane" x="40" y="250">实际进程 · 用事件检查是否“整齐复刻”</text>
+                <path id="edge-event-1-2" data-graph-role="edge" data-edge-id="event-1-2" data-source="event-1937" data-target="event-1938" data-edge-kind="chronology" data-flow="history" data-bends="0" d="M 288 348 H 308" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-arrow)"/>
+                <path id="edge-event-2-3" data-graph-role="edge" data-edge-id="event-2-3" data-source="event-1938" data-target="event-1941" data-edge-kind="chronology" data-flow="history" data-bends="0" d="M 548 348 H 568" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-arrow)"/>
+                <path id="edge-event-3-4" data-graph-role="edge" data-edge-id="event-3-4" data-source="event-1941" data-target="event-1944" data-edge-kind="chronology" data-flow="history" data-bends="0" d="M 808 348 H 828" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-arrow)"/>
+                <path id="edge-event-4-5" data-graph-role="edge" data-edge-id="event-4-5" data-source="event-1944" data-target="event-1945" data-edge-kind="chronology" data-flow="history" data-bends="0" d="M 1068 348 H 1088" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#timeline-arrow)"/>
+                <g id="event-1937" data-node-id="event-1937" data-graph-role="node" data-semantic-role="event" data-graph-bounds="40,270,288,426">
+                  <rect x="40" y="270" width="248" height="156" rx="10" fill="#eef5f8" stroke="#bdd7e0" stroke-width="1.5"/>
+                  <text class="year" x="58" y="299">1937—1938</text>
+                  <text class="node-title" x="58" y="326">日军连续推进</text>
+                  <text class="node-sub" x="58" y="352">上海、徐州、武汉等战役</text>
+                  <text class="node-sub" x="58" y="375">中国承受重大损失</text>
+                  <text class="node-sub" x="58" y="398">但未被迫投降</text>
+                  <text class="source" x="58" y="416">[H1] Cambridge</text>
+                </g>
+                <g id="event-1938" data-node-id="event-1938" data-graph-role="node" data-semantic-role="event" data-graph-bounds="308,270,548,426">
+                  <rect x="308" y="270" width="240" height="156" rx="10" fill="#f8f2e5" stroke="#e4cea2" stroke-width="1.5"/>
+                  <text class="year" x="326" y="299">1938 末—1941</text>
+                  <text class="node-title" x="326" y="326">战争长期化</text>
+                  <text class="node-sub" x="326" y="352">武汉撤退以保存力量</text>
+                  <text class="node-sub" x="326" y="375">占领、抵抗与局部战斗并存</text>
+                  <text class="node-sub" x="326" y="398">不是全国同日“相持”</text>
+                  <text class="source" x="326" y="416">[H2] FRUS 1938</text>
+                </g>
+                <g id="event-1941" data-node-id="event-1941" data-graph-role="node" data-semantic-role="event" data-graph-bounds="568,270,808,426">
+                  <rect x="568" y="270" width="240" height="156" rx="10" fill="#eef1f7" stroke="#c9d1e1" stroke-width="1.5"/>
+                  <text class="year" x="586" y="299">1941—1943</text>
+                  <text class="node-title" x="586" y="326">战争扩大</text>
+                  <text class="node-sub" x="586" y="352">中国战场进入同盟国</text>
+                  <text class="node-sub" x="586" y="375">对日总体战争</text>
+                  <text class="node-sub" x="586" y="398">外部力量改变条件</text>
+                  <text class="source" x="586" y="416">[H3] Army UP / WWII Museum</text>
+                </g>
+                <g id="event-1944" data-node-id="event-1944" data-graph-role="node" data-semantic-role="event" data-graph-bounds="828,270,1068,426">
+                  <rect x="828" y="270" width="240" height="156" rx="10" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                  <text class="year" x="846" y="299">1944—1945 初</text>
+                  <text class="node-title" x="846" y="326">一号作战</text>
+                  <text class="node-sub" x="846" y="352">日军再次发动大规模攻势</text>
+                  <text class="node-sub" x="846" y="375">战线出现显著倒退</text>
+                  <text class="node-sub" x="846" y="398">阶段不是单向时间表</text>
+                  <text class="source" x="846" y="416">[H1] Cambridge</text>
+                </g>
+                <g id="event-1945" data-node-id="event-1945" data-graph-role="node" data-semantic-role="event" data-graph-bounds="1088,270,1320,426">
+                  <rect x="1088" y="270" width="232" height="156" rx="10" fill="#edf6ef" stroke="#bdd9c3" stroke-width="1.5"/>
+                  <text class="year" x="1106" y="299">1945</text>
+                  <text class="node-title" x="1106" y="326">日本投降</text>
+                  <text class="node-sub" x="1106" y="352">中国战场接受日军投降</text>
+                  <text class="node-sub" x="1106" y="375">结局来自多战场共同作用</text>
+                  <text class="node-sub" x="1106" y="398">不是单一主体独立反攻</text>
+                  <text class="source" x="1106" y="416">[H3][H4] 外部检验</text>
+                </g>
+              
+                <text class="lane" x="40" y="474">比较结论</text>
+                <g id="verdict-stage-1" data-node-id="verdict-stage-1" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="40,492,420,626">
+                  <rect x="40" y="492" width="380" height="134" rx="10" fill="#eaf5ee" stroke="#b8d9c4" stroke-width="1.5"/>
+                  <text class="verdict" x="62" y="523" fill="#176652">阶段一 · 方向对应较强</text>
+                  <text class="verdict-sub" x="62" y="552">日军确有大规模战略推进，中国处于防御，</text>
+                  <text class="verdict-sub" x="62" y="575">但“未速亡”不等于早期损失较轻。</text>
+                  <text class="verdict-sub" x="62" y="604">结论：可作为方向性命中。</text>
+                </g>
+                <g id="verdict-stage-2" data-node-id="verdict-stage-2" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="470,492,890,626">
+                  <rect x="470" y="492" width="420" height="134" rx="10" fill="#fff7e7" stroke="#ead09a" stroke-width="1.5"/>
+                  <text class="verdict" x="492" y="523" fill="#8b5b08">阶段二 · 大体对应，但内部不整齐</text>
+                  <text class="verdict-sub" x="492" y="552">战争长期化与占领僵持大体出现；不同战场、</text>
+                  <text class="verdict-sub" x="492" y="575">不同主体的攻守并不同步，一号作战还造成倒退。</text>
+                  <text class="verdict-sub" x="492" y="604">结论：应把“相持”读成尺度化判断。</text>
+                </g>
+                <g id="verdict-stage-3" data-node-id="verdict-stage-3" data-graph-role="node" data-semantic-role="audit" data-graph-bounds="940,492,1320,626">
+                  <rect x="940" y="492" width="380" height="134" rx="10" fill="#f1eef8" stroke="#d5c5e6" stroke-width="1.5"/>
+                  <text class="verdict" x="962" y="523" fill="#6745a5">阶段三 · 结果方向对应，机制不同</text>
+                  <text class="verdict-sub" x="962" y="552">失地最终收复、日本最终退却；但关键收束由</text>
+                  <text class="verdict-sub" x="962" y="575">中国战场、太平洋战场和苏联参战共同形成。</text>
+                  <text class="verdict-sub" x="962" y="604">结论：不能写成单一主体完成预定第三幕。</text>
+                </g>
+              
+                <rect x="40" y="654" width="1280" height="42" rx="8" fill="#f3f1eb" stroke="#d9d2c6"/>
+                <text class="node-sub" x="58" y="680">[H1] Cambridge《Campaigns in China, 1937–1945》　[H2] 美国国务院 FRUS 1938 武汉电报　[H3] U.S. Army UP / National WWII Museum　[H4] NHHC 日本投降资料</text>
+              </svg>
+            </div>
+          </div>
+          <p class="mobile-hint">手机上可左右滑动查看完整历史比较图。</p>
+          <figcaption>读法：阶段一方向对应较强；阶段二大体对应但各战场不同步；阶段三的胜利方向成立，实际主体与机制更复杂。图中 [H1]—[H4] 见页末外部资料。</figcaption>
+        </figure>
+        <figure class="model-figure">
+          <div class="model-scroll" tabindex="0" aria-label="可横向滚动的一九四五年日本投降多因素路径图">
+            <div class="model-canvas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 760" width="1360" height="760" role="img" aria-labelledby="surrender-title surrender-desc" data-quality-profile="standard">
+                <title id="surrender-title">一九四五年日本投降的多因素决策路径</title>
+                <desc id="surrender-desc">长期层面包括中国持续抗战、美国主导的海空战争与封锁、同盟国总体战局造成的累积压力。八月的直接冲击包括广岛原子弹、苏联宣战并进攻满洲、长崎原子弹。这些因素进入日本最高层的僵局与天皇干预，随后八月十五日广播投降，九月二日签署投降书。图不为各因素分配因果权重。</desc>
+                <style>
+                  text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+                  .title { font-size: 21px; font-weight: 760; fill: #17211d; }
+                  .sub { font-size: 12px; fill: #66716b; }
+                  .lane { font-size: 13px; font-weight: 780; fill: #4c5751; }
+                  .node-title { font-size: 15px; font-weight: 780; fill: #17211d; }
+                  .node-sub { font-size: 12px; fill: #4c5751; }
+                  .date { font-size: 12px; font-weight: 820; letter-spacing: .04em; fill: #7c382c; }
+                  .edge-label { font-size: 11px; font-weight: 720; }
+                  .note { font-size: 11.5px; fill: #4c5751; }
+                </style>
+                <defs>
+                  <marker id="pressure-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2b6f88"/></marker>
+                  <marker id="shock-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#a34e23"/></marker>
+                  <marker id="decision-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#176652"/></marker>
+                </defs>
+                <rect width="1360" height="760" rx="20" fill="#fffdf8"/>
+                <text class="title" x="40" y="38">日本投降：长期压力、八月冲击与决策机制共同进入结果</text>
+                <text class="sub" x="40" y="62">这是一张因果边界图：显示因素如何进入决策，不给任何因素分配唯一或精确权重</text>
+              
+                <text class="lane" x="40" y="102">1 · 长期累积压力</text>
+                <path id="edge-pressure-1" data-graph-role="edge" data-edge-id="pressure-1" data-source="pressure-china" data-target="cumulative-crisis" data-edge-kind="long-pressure" data-flow="pressure" data-bends="1" d="M 220 208 V 234 H 470 V 250" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#pressure-arrow)"/>
+                <path id="edge-pressure-2" data-graph-role="edge" data-edge-id="pressure-2" data-source="pressure-pacific" data-target="cumulative-crisis" data-edge-kind="long-pressure" data-flow="pressure" data-bends="0" d="M 680 208 V 250" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#pressure-arrow)"/>
+                <path id="edge-pressure-3" data-graph-role="edge" data-edge-id="pressure-3" data-source="pressure-allies" data-target="cumulative-crisis" data-edge-kind="long-pressure" data-flow="pressure" data-bends="1" d="M 1140 208 V 234 H 890 V 250" fill="none" stroke="#2b6f88" stroke-width="2" marker-end="url(#pressure-arrow)"/>
+                <g id="pressure-china" data-node-id="pressure-china" data-graph-role="node" data-semantic-role="pressure" data-graph-bounds="40,118,400,208">
+                  <rect x="40" y="118" width="360" height="90" rx="10" fill="#eef5f8" stroke="#bdd7e0" stroke-width="1.5"/>
+                  <text class="node-title" x="60" y="148">中国持续抗战</text>
+                  <text class="node-sub" x="60" y="174">日本未能迫使中国投降，陆军长期被牵制</text>
+                  <text class="node-sub" x="60" y="194">长期条件，不是八月的单一直接触发</text>
+                </g>
+                <g id="pressure-pacific" data-node-id="pressure-pacific" data-graph-role="node" data-semantic-role="pressure" data-graph-bounds="500,118,860,208">
+                  <rect x="500" y="118" width="360" height="90" rx="10" fill="#eef5f8" stroke="#bdd7e0" stroke-width="1.5"/>
+                  <text class="node-title" x="520" y="148">美国主导的海空战与封锁</text>
+                  <text class="node-sub" x="520" y="174">运输、工业、城市与本土防御持续承压</text>
+                  <text class="node-sub" x="520" y="194">与岛屿战役、战略轰炸共同累积</text>
+                </g>
+                <g id="pressure-allies" data-node-id="pressure-allies" data-graph-role="node" data-semantic-role="pressure" data-graph-bounds="960,118,1320,208">
+                  <rect x="960" y="118" width="360" height="90" rx="10" fill="#eef5f8" stroke="#bdd7e0" stroke-width="1.5"/>
+                  <text class="node-title" x="980" y="148">同盟国总体战局</text>
+                  <text class="node-sub" x="980" y="174">日本的战略空间、资源与谈判选项收缩</text>
+                  <text class="node-sub" x="980" y="194">中国战场是总体战的一部分</text>
+                </g>
+                <g id="cumulative-crisis" data-node-id="cumulative-crisis" data-graph-role="node" data-semantic-role="aggregate" data-graph-bounds="270,250,1090,310">
+                  <rect x="270" y="250" width="820" height="60" rx="10" fill="#eaf1f5" stroke="#b9ced9" stroke-width="1.5"/>
+                  <text class="node-title" x="680" y="278" text-anchor="middle">到一九四五年：累积性战略危机</text>
+                  <text class="node-sub" x="680" y="298" text-anchor="middle">长期压力构成背景，但尚未自动产生最高层一致投降决定</text>
+                </g>
+              
+                <text class="lane" x="40" y="350">2 · 八月直接冲击</text>
+                <path id="edge-crisis-shock-1" data-graph-role="edge" data-edge-id="crisis-shock-1" data-source="cumulative-crisis" data-target="shock-hiroshima" data-edge-kind="shock-context" data-flow="shock" data-bends="1" d="M 470 310 V 334 H 220 V 370" fill="none" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <path id="edge-crisis-shock-2" data-graph-role="edge" data-edge-id="crisis-shock-2" data-source="cumulative-crisis" data-target="shock-soviet" data-edge-kind="shock-context" data-flow="shock" data-bends="0" d="M 680 310 V 370" fill="none" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <path id="edge-crisis-shock-3" data-graph-role="edge" data-edge-id="crisis-shock-3" data-source="cumulative-crisis" data-target="shock-nagasaki" data-edge-kind="shock-context" data-flow="shock" data-bends="1" d="M 890 310 V 334 H 1140 V 370" fill="none" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <path id="edge-shock-1-decision" data-graph-role="edge" data-edge-id="shock-1-decision" data-source="shock-hiroshima" data-target="japan-decision" data-edge-kind="decision-input" data-flow="shock" data-bends="1" d="M 220 460 V 480 H 470 V 500" fill="none" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <path id="edge-shock-2-decision" data-graph-role="edge" data-edge-id="shock-2-decision" data-source="shock-soviet" data-target="japan-decision" data-edge-kind="decision-input" data-flow="shock" data-bends="0" d="M 680 460 V 500" fill="none" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <path id="edge-shock-3-decision" data-graph-role="edge" data-edge-id="shock-3-decision" data-source="shock-nagasaki" data-target="japan-decision" data-edge-kind="decision-input" data-flow="shock" data-bends="1" d="M 1140 460 V 480 H 890 V 500" fill="none" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <g id="shock-hiroshima" data-node-id="shock-hiroshima" data-graph-role="node" data-semantic-role="shock" data-graph-bounds="40,370,400,460">
+                  <rect x="40" y="370" width="360" height="90" rx="10" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                  <text class="date" x="60" y="400">8 月 6 日</text>
+                  <text class="node-title" x="60" y="426">广岛原子弹</text>
+                  <text class="node-sub" x="60" y="448">巨大毁灭性冲击；最高层仍未立即一致投降</text>
+                </g>
+                <g id="shock-soviet" data-node-id="shock-soviet" data-graph-role="node" data-semantic-role="shock" data-graph-bounds="500,370,860,460">
+                  <rect x="500" y="370" width="360" height="90" rx="10" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                  <text class="date" x="520" y="400">8 月 8—9 日</text>
+                  <text class="node-title" x="520" y="426">苏联宣战并进攻满洲</text>
+                  <text class="node-sub" x="520" y="448">对战争与外交选项造成另一重突然冲击</text>
+                </g>
+                <g id="shock-nagasaki" data-node-id="shock-nagasaki" data-graph-role="node" data-semantic-role="shock" data-graph-bounds="960,370,1320,460">
+                  <rect x="960" y="370" width="360" height="90" rx="10" fill="#fff0e9" stroke="#e5bca9" stroke-width="1.5"/>
+                  <text class="date" x="980" y="400">8 月 9 日</text>
+                  <text class="node-title" x="980" y="426">长崎原子弹</text>
+                  <text class="node-sub" x="980" y="448">与苏联参战几乎同时进入最高层决策</text>
+                </g>
+              
+                <text class="lane" x="40" y="496">3 · 决策与结果</text>
+                <path id="edge-decision-outcome" data-graph-role="edge" data-edge-id="decision-outcome" data-source="japan-decision" data-target="surrender-outcome" data-edge-kind="decision" data-flow="decision" data-bends="0" d="M 680 590 V 620" fill="none" stroke="#176652" stroke-width="2.5" marker-end="url(#decision-arrow)"/>
+                <g id="japan-decision" data-node-id="japan-decision" data-graph-role="node" data-semantic-role="decision" data-graph-bounds="270,500,1090,590">
+                  <rect x="270" y="500" width="820" height="90" rx="10" fill="#fff7e7" stroke="#ead09a" stroke-width="1.5"/>
+                  <text class="date" x="300" y="530">8 月 9—10 日</text>
+                  <text class="node-title" x="680" y="530" text-anchor="middle">最高战争指导会议与内阁仍有僵局 → 天皇干预决策</text>
+                  <text class="node-sub" x="680" y="556" text-anchor="middle">历史争论集中在各冲击的相对权重；“进入决策”不等于“唯一导致”</text>
+                  <text class="node-sub" x="680" y="578" text-anchor="middle">[S1] NHHC《The Surrender of Japan》与 V-J 时间线</text>
+                </g>
+                <g id="surrender-outcome" data-node-id="surrender-outcome" data-graph-role="node" data-semantic-role="outcome" data-graph-bounds="270,620,1090,686">
+                  <rect x="270" y="620" width="820" height="66" rx="10" fill="#e9f4ef" stroke="#b8d9c9" stroke-width="1.5"/>
+                  <text class="node-title" x="680" y="648" text-anchor="middle">8 月 15 日广播接受投降条件　·　9 月 2 日正式签署投降书</text>
+                  <text class="node-sub" x="680" y="672" text-anchor="middle">结局确定；因果权重仍需区分长期条件、直接冲击与决策过程</text>
+                </g>
+              
+                <line x1="40" y1="718" x2="78" y2="718" stroke="#2b6f88" stroke-width="2" marker-end="url(#pressure-arrow)"/>
+                <text class="note" x="90" y="722">长期压力</text>
+                <line x1="210" y1="718" x2="248" y2="718" stroke="#a34e23" stroke-width="2" marker-end="url(#shock-arrow)"/>
+                <text class="note" x="260" y="722">八月冲击 / 决策输入</text>
+                <line x1="450" y1="718" x2="488" y2="718" stroke="#176652" stroke-width="2.5" marker-end="url(#decision-arrow)"/>
+                <text class="note" x="500" y="722">正式决定到结果</text>
+                <text class="note" x="1320" y="722" text-anchor="end">不分配单一“决定性因素”｜学界对相对权重有长期争论</text>
+              </svg>
+            </div>
+          </div>
+          <p class="mobile-hint">手机上可左右滑动查看完整因果路径图。</p>
+          <figcaption>因果边界：图只显示长期压力、八月冲击和最高层决策怎样接入结果，不给中国抗战、海空战与封锁、苏联参战或原子弹分配精确权重；其相对权重仍有史学争论。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="section-head">
+        <div><h2>决定继续时，按问题回原文</h2><p>六段关键路线约 100–135 分钟；若逐段细读约 4.8 万字符正文，建议另留 3–4.5 小时。</p></div>
+        <span class="time">可选 100–135 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="card"><span class="origin scope">18–25 分钟</span><h3>两种极端与条件比较</h3><p>读敌我基本特点、亡国论和速胜论的收束，以及“为什么是持久战”，核条件组合怎样成立。</p><span class="locator">文本块 32–34、51–61｜搜索：“为什么是持久战？”</span></article>
+        <article class="card"><span class="origin scope">15–20 分钟</span><h3>三个阶段与相持枢纽</h3><p>读三个阶段的总述和分段说明，重点核相持枢纽与模型自限。</p><span class="locator">文本块 62–66｜搜索：“三个阶段的具体情况不能预断”</span></article>
+        <article class="card"><span class="origin scope">10–12 分钟</span><h3>政治目的与持续动员</h3><p>核政治目的、纲领、传播方法以及为什么不能只动员一次。</p><span class="locator">文本块 94–100｜搜索：“什么是政治动员呢”</span></article>
+        <article class="card"><span class="origin scope">25–35 分钟</span><h3>尺度转换与计划更新</h3><p>核战略/战役战斗的反向组合，以及主动、灵活、计划之间的关系。</p><span class="locator">文本块 106–107、113–126｜搜索分节：“主动性，灵活性，计划性”</span></article>
+        <article class="card"><span class="origin scope">18–25 分钟</span><h3>三种作战形式与决战边界</h3><p>核运动战、游击战、阵地战怎样换位，以及有利决战和战略豪赌的区别。</p><span class="locator">文本块 127–132、145–150｜搜索：“一切无把握的战役和战斗应避免决战”</span></article>
+        <article class="card"><span class="origin scope">8–12 分钟</span><h3>军民关系与全文结论</h3><p>核民众、军队建设、人格尊重和作者最终列出的胜利条件。</p><span class="locator">文本块 151–162｜搜索：“尊重士兵和尊重人民”</span></article>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="section-head">
+        <div><h2>现在决定下一层，不提前生成</h2><p>能解释模型和边界，已经完成本层；只有真正感兴趣才继续长出模块。</p></div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="decision">
+        <strong>如果你能不用“三阶段”三个字，仍讲清全文逻辑，就已经读懂了骨架。</strong>
+        <div class="decision-grid">
+          <div class="decision-row"><strong>按六段回原文</strong><span>适合想核论证细节，但暂不准备通读约 4.8 万字符正文。</span></div>
+          <div class="decision-row"><strong>细读全文</strong><span>适合研究军事术语、历史例证、语气和章节之间的推进，另留 3–4.5 小时。</span></div>
+          <div class="decision-row"><strong>查一段历史</strong><span><a href="../operation-ichi-go/reading.html">一号作战压力测试已生成</a>；武汉撤退、国共双方角色或日本投降决策仍只在你明确感兴趣时按一个问题生成。</span></div>
+          <div class="decision-row"><strong>深挖战略方法</strong><span>只研究尺度转换、阶段指标、计划更新和避免战略豪赌。</span></div>
+          <div class="decision-row"><strong>停在这里</strong><span>如果你已能复述推理、指出三条边界，并知道回原文的位置。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="section-head">
+        <div><h2>证据、版本与外部资料</h2><p>默认折叠；核定位、历史因果或继续研究时再展开。</p></div>
+        <span class="time">按需</span>
+      </div>
+      <details>
+        <summary>版本边界与定位方法</summary>
+        <div class="detail-body">
+          <p><strong>篇下注释：</strong>书内称这是毛泽东 1938 年 5 月 26 日至 6 月 3 日在延安抗日战争研究会的讲演（文本块 164）。</p>
+          <p><strong>文本边界：</strong>本模块分析当前 EPUB 中《毛泽东选集》第二卷所载文本，不声称复原现场讲演、速记稿或初刊原貌。</p>
+          <p><strong>自我定位：</strong>正文结尾称内容是对抗战十个月经验的概论，并请研究、指正和补充（文本块 162）。</p>
+          <p><strong>定位法：</strong>按 XHTML 文档顺序抽取非空标题、段落和注释，生成 1 起始纯文本块；Apple Books 优先搜索篇名、分节名或短摘录。</p>
+        </div>
+      </details>
+      <details>
+        <summary>历史检验与外部资料</summary>
+        <div class="detail-body">
+          <ul class="source-list">
+            <li><strong>[H1]</strong> <a href="https://www.cambridge.org/core/books/abs/cambridge-history-of-the-second-world-war/campaigns-in-china-19371945/132227290BE59E8B96BD0910B9037D45">Cambridge：Campaigns in China, 1937–1945</a> — 核日军前期推进、中国未投降及 1944 年一号作战。</li>
+            <li><strong>[H2]</strong> <a href="https://history.state.gov/historicaldocuments/frus1938v03/d330">美国国务院 FRUS 1938：武汉撤退电报</a> — 一份同时代外交记录，核撤退、保存力量和长期抵抗方针；不把它当全国统一阶段分界。</li>
+            <li><strong>[H3a]</strong> <a href="https://www.armyupress.army.mil/Journals/Military-Review/Online-Exclusive/2026-OLE/LSCO-Part-1/">U.S. Army University Press：An Army Rooted in Large-Scale Combat Operations, Part 1</a> — 一种外部军事史解释，比较共产党、国民党与西方盟军在实际战争路径中的角色。</li>
+            <li><strong>[H3b]</strong> <a href="https://www.nationalww2museum.org/war/articles/road-to-pearl-harbor-short-fuse">The National WWII Museum：The Road to Pearl Harbor</a> — 核日本速胜设想怎样转为长期僵持，以及战争如何扩大。</li>
+            <li><strong>[H4 / S1]</strong> <a href="https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-053/h-053-2.html">NHHC：The Surrender of Japan</a> — 核苏联参战、原子弹与日本最高层决策，也明确呈现因果权重争论。</li>
+            <li><strong>[S1]</strong> <a href="https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1945/victory-in-pacific.html">NHHC：Japan's Surrender and Aftermath</a> — 核 8 月 6—15 日以及 9 月 2 日的时间顺序。</li>
+            <li><strong>[S2]</strong> <a href="https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/j/japans-struggle-end-war-1946.html">U.S. Strategic Bombing Survey：Japan's Struggle to End the War</a> — 一种战后调查判断，用于长期压力；它本身不是无争议的终局。</li>
+          </ul>
+          <p class="muted">外部资料用于补历史边界，不替代原文。军方史料、外交记录、博物馆文章和学术著作的视角不同；页面只采用交叉支持的最低限度结论，并保留因果争论。</p>
+        </div>
+      </details>
+      <details>
+        <summary>来源身份与机器数据</summary>
+        <div class="detail-body">
+          <p><strong>源文件：</strong>毛泽东选集.epub</p>
+          <p><strong>SHA-256：</strong><code>ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26</code></p>
+          <p><strong>文章：</strong>OEBPS/Text/Section0309.xhtml；正文结论前 162 个文本块，正文约 47,674 字符，含注释共 51,191 字符。</p>
+          <p><strong>范围：</strong>只分析第一至第五卷范围内第二卷所载文本；不纳入第六、七卷或个人编辑材料。</p>
+          <p><strong>机器数据：</strong>详细论点、连续摘录、外部来源、阅读时长和验证结果见同目录 <a href="reading.json">reading.json</a>。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>渐进深挖模块 02 · 生成于 2026-08-10</p>
+      <p>作者观点、报告综合、批判审计和外部资料已分标。页面不替代原文，也不把历史结果当成单因果证明。</p>
+    </div>
+  </footer>
+</body>
+</html>

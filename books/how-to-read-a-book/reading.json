@@ -1,0 +1,551 @@
+{
+  "schema_version": "read-book.dogfood.v1",
+  "artifact_kind": "rapid-reading-map",
+  "generated_date": "2026-08-09",
+  "language": "zh-CN",
+  "source": {
+    "display_name": "《如何阅读一本书》 .txt",
+    "sha256": "7931001cbcbe3b3b318305d6cda4e05974677ace7f88c1d4591b6245efb05f49",
+    "bytes": 456173,
+    "encoding": "gb18030",
+    "line_count": 8125,
+    "credible_range": {
+      "start_line": 1,
+      "end_line": 7532
+    },
+    "excluded_ranges": [
+      {
+        "start_line": 7533,
+        "end_line": 7572,
+        "reason": "连续空白，位于正文结束之后"
+      },
+      {
+        "start_line": 7573,
+        "end_line": 8125,
+        "reason": "与本书无关的短信平台广告及重复内容，判定为文本污染"
+      }
+    ],
+    "metadata_limitations": [
+      "TXT 未提供译者、中文出版社、ISBN 或版本页，报告不补造这些信息。",
+      "TXT 第 13–14 行称 1970 年新版，序言落款第 106 行为 1972 年；外部官方资料采用 1972 年修订版，差异保留为未决项。"
+    ]
+  },
+  "book": {
+    "title_zh": "如何阅读一本书",
+    "title_original": "How to Read a Book",
+    "authors": [
+      "Mortimer J. Adler",
+      "Charles Van Doren"
+    ],
+    "classification": "实用性阅读方法书",
+    "one_sentence_model": "作者把读书设计成一套主动提问、逐层加深的工作：先识字理解，再限时看清全书，继而分析其结构与论证，最后围绕问题比较多本书。",
+    "metadata_status": "部分由 TXT、部分由官方外部资料确认"
+  },
+  "external_sources": [
+    {
+      "id": "ext-publisher",
+      "title": "Simon & Schuster — How to Read a Book",
+      "url": "https://www.simonandschuster.com/books/How-to-Read-a-Book/Mortimer-J-Adler/9781476790152",
+      "supports": [
+        "1940 年初版",
+        "四层阅读框架",
+        "1972 年修订版的两位作者"
+      ]
+    },
+    {
+      "id": "ext-adler-archive",
+      "title": "University of Chicago Library — Mortimer J. Adler Papers",
+      "url": "https://www.lib.uchicago.edu/ead/rlg/ICU.SPCL.ADLERM.pdf",
+      "supports": [
+        "艾德勒的芝加哥大学与 Great Books 背景",
+        "Syntopicon 与大英百科全书工作",
+        "1972 年与 Charles Van Doren 合作修订"
+      ]
+    },
+    {
+      "id": "ext-great-books",
+      "title": "University of Chicago Library — Great Books at the University of Chicago",
+      "url": "https://www.lib.uchicago.edu/media/documents/exgi-text.pdf",
+      "supports": [
+        "20 世纪 30 年代芝加哥大学 Great Books 课程与通识教育语境"
+      ]
+    }
+  ],
+  "reading_contract": {
+    "target_main_minutes": 40,
+    "full_session_budget_minutes": 150,
+    "window": "主地图约 30–45 分钟；如生成一个深挖模块，整次阅读控制在 1–2 天、约 2–3 小时",
+    "units": [
+      {
+        "id": "book",
+        "minutes": 5,
+        "goal": "了解本书定位、背景与一句话模型"
+      },
+      {
+        "id": "map",
+        "minutes": 8,
+        "goal": "掌握四层阅读与主动四问"
+      },
+      {
+        "id": "ideas",
+        "minutes": 12,
+        "goal": "带走五个最重要的方法观点"
+      },
+      {
+        "id": "audit",
+        "minutes": 8,
+        "goal": "区分仍然有效的方法与需要现代调整的部分"
+      },
+      {
+        "id": "decision",
+        "minutes": 5,
+        "goal": "决定是否细读以及优先回读哪些章节"
+      }
+    ],
+    "progressive_depth": [
+      {"level": 0, "artifact": "首屏结论", "minutes": "2–3"},
+      {"level": 1, "artifact": "reading.html 主地图", "minutes": "30–45"},
+      {"level": 2, "artifact": "按需生成的单个深挖模块", "minutes": "45–90"},
+      {"level": 3, "artifact": "回到原文章节细读", "minutes": "不限"}
+    ],
+    "completion_definition": [
+      "能用自己的话解释四层阅读及其递进关系",
+      "能说出五个核心观点以及至少三项限制",
+      "能决定全读、选读或停止，并给出理由",
+      "遇到关键结论时能从报告回到 TXT 的具体行号"
+    ]
+  },
+  "modules": [],
+  "module_policy": {
+    "generation": "on_demand_only",
+    "root": "modules/",
+    "artifact_name": "深挖模块",
+    "not_original_chapter_note": "模块是围绕读者问题生成的阅读产物，不是作者原书章节。",
+    "candidates": [
+      {"id": "inspectional-reading", "title": "检视阅读", "status": "not_generated"},
+      {"id": "analytical-reading", "title": "分析阅读", "status": "not_generated"},
+      {"id": "syntopical-reading", "title": "主题阅读", "status": "not_generated"}
+    ]
+  },
+  "verdict": {
+    "recommendation": "选择性深读",
+    "summary": "值得掌握框架，不建议第一次就逐章线性精读。先用本书自己的检视阅读法读它，再按你的阅读任务回到第 4、5、7、10、11、12、20、21 章。",
+    "why": [
+      "四层框架、主动四问和理解后再批评，仍是稳健的阅读纪律。",
+      "全书规则密集、例证较长，且部分教育、媒介和生理断言带有 1970 年代语境。",
+      "对快速扩展知识而言，检视阅读应是主路径；分析与主题阅读应按风险和价值升级，而不是默认全开。"
+    ],
+    "decision": {
+      "full_read_if": "你要系统训练阅读方法、教授此方法，或希望逐类练习文学、历史、科学、哲学与社会科学的读法。",
+      "selective_read_if": "你要在日常工作中迅速筛书、抓结构、核论证并决定是否深读。",
+      "stop_after_map_if": "你只需要知道这套方法是什么，且暂时没有一本真实书要拿来练习。"
+    }
+  },
+  "claims": [
+    {
+      "id": "c01-active",
+      "type": "author_position",
+      "statement": "阅读是一种主动活动；读者提出的要求越多，通常收获越多。",
+      "locators": [
+        {"start_line": 146, "end_line": 157}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c02-levels",
+      "type": "author_position",
+      "statement": "基础、检视、分析、主题四层阅读是累积递进关系，较高层包含较低层。",
+      "locators": [
+        {"start_line": 410, "end_line": 414},
+        {"start_line": 418, "end_line": 498}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c03-inspection",
+      "type": "author_position",
+      "statement": "检视阅读是在有限时间内系统略读，抓住结构、书类与重点，并判断是否值得继续投入。",
+      "locators": [
+        {"start_line": 444, "end_line": 464},
+        {"start_line": 740, "end_line": 815},
+        {"start_line": 830, "end_line": 880}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c04-analysis",
+      "type": "author_position",
+      "statement": "分析阅读依次处理结构、诠释与批评：先知道全书怎样组成，再理解作者的词义、主旨与论证，最后判断是否成立。",
+      "locators": [
+        {"start_line": 1656, "end_line": 2153},
+        {"start_line": 2154, "end_line": 3074},
+        {"start_line": 3075, "end_line": 3699}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c05-four-questions",
+      "type": "author_position",
+      "statement": "主动阅读围绕四问：全书谈什么、细部怎样说、是否有道理、与我有什么关系。",
+      "locators": [
+        {"start_line": 1045, "end_line": 1084}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c06-critique-order",
+      "type": "author_position",
+      "statement": "在批评前，读者应先证明自己理解了作者；不同意时应给出知识、事实或逻辑方面的理由。",
+      "locators": [
+        {"start_line": 3188, "end_line": 3207},
+        {"start_line": 3265, "end_line": 3377},
+        {"start_line": 3497, "end_line": 3509}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c07-genres",
+      "type": "author_position",
+      "statement": "阅读规则要随书类调整：实用书要落实到行动，想象文学先体验，历史审视叙述与证据，科学看问题和证明，哲学追问问题与假设，社会科学常需多书比较。",
+      "locators": [
+        {"start_line": 4192, "end_line": 6724}
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "c08-external-aids",
+      "type": "author_position",
+      "statement": "词典、百科、导读与评论是辅助，不应在读者自己努力理解之前替代原书。",
+      "locators": [
+        {"start_line": 3761, "end_line": 3790},
+        {"start_line": 3880, "end_line": 3925}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c09-syntopical",
+      "type": "author_position",
+      "statement": "主题阅读由读者的问题主导：找相关段落、建立中立词汇、提出问题、界定议题、排列和分析讨论。",
+      "locators": [
+        {"start_line": 6878, "end_line": 7033},
+        {"start_line": 7297, "end_line": 7336}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c10-quote-safeguard",
+      "type": "author_position",
+      "statement": "主题阅读要尽量保持辩证客观；概括作者观点时，应并列作者原文，降低扭曲风险。",
+      "locators": [
+        {"start_line": 7035, "end_line": 7086},
+        {"start_line": 7331, "end_line": 7335}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c11-growth",
+      "type": "author_position",
+      "statement": "值得反复读的好书不仅提供信息，还能持续训练理解力并促进心智成长。",
+      "locators": [
+        {"start_line": 7337, "end_line": 7532}
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "s01-book-model",
+      "type": "model_synthesis",
+      "statement": "全书可以压缩为两条轴：阅读深度从检视升级到分析与主题；执行过程从结构、诠释进入评价和行动。",
+      "derived_from": [
+        "c02-levels",
+        "c04-analysis",
+        "c05-four-questions"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "s02-five-gates",
+      "type": "model_synthesis",
+      "statement": "面向 2–3 小时快速读书，可把作者的 15 条分析规则压缩为五个阅读闸门：定位、建模、对齐、核证、决策。",
+      "derived_from": [
+        "c03-inspection",
+        "c04-analysis",
+        "c05-four-questions",
+        "c06-critique-order"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "a01-edition-discrepancy",
+      "type": "critical_audit",
+      "statement": "TXT 的 1970 年新版说法与 1972 年序言及官方资料不一致，不能静默合并为一个确定年份。",
+      "locators": [
+        {"start_line": 11, "end_line": 14},
+        {"start_line": 104, "end_line": 106}
+      ],
+      "external_support": ["ext-publisher", "ext-adler-archive"],
+      "confidence": "high"
+    },
+    {
+      "id": "a02-rule-load",
+      "type": "critical_audit",
+      "statement": "15 条规则完整但认知负担高；作者也承认理想阅读很少一次完整做到。产品应按任务逐级展开，而非要求用户先记忆全部规则。",
+      "locators": [
+        {"start_line": 3653, "end_line": 3699},
+        {"start_line": 3737, "end_line": 3740}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "a03-aids-adaptation",
+      "type": "critical_audit",
+      "statement": "对现代快速筛书，背景和版本资料可以在前置阶段联网核对；但对作者思想的概括仍必须以原书为主，并把外部解释分栏标注。",
+      "derived_from": ["c08-external-aids", "c10-quote-safeguard"],
+      "confidence": "medium"
+    },
+    {
+      "id": "a04-neutrality-limit",
+      "type": "critical_audit",
+      "statement": "主题阅读的中立性是值得追求的纪律，不是可自动保证的结果；选题、词汇、问题次序都会带入读者框架。",
+      "locators": [
+        {"start_line": 7035, "end_line": 7086}
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "a05-dated-claims",
+      "type": "critical_audit",
+      "statement": "书中关于 1970 年代教育、电视媒介、速读及退休后心智衰退的概括，不应直接当作今天已验证的科学结论。",
+      "locators": [
+        {"start_line": 23, "end_line": 61},
+        {"start_line": 121, "end_line": 130},
+        {"start_line": 7511, "end_line": 7529}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "e01-context",
+      "type": "external_background",
+      "statement": "本书的方法与艾德勒参与的 Great Books、通识教育和跨经典讨论实践密切相关。",
+      "external_support": ["ext-adler-archive", "ext-great-books"],
+      "confidence": "high"
+    },
+    {
+      "id": "e02-publication",
+      "type": "external_background",
+      "statement": "官方出版社资料将本书追溯到 1940 年，并将目前广为人知的合著修订版标为 1972 年。",
+      "external_support": ["ext-publisher", "ext-adler-archive"],
+      "confidence": "high"
+    }
+  ],
+  "excerpts": [
+    {
+      "id": "x01",
+      "quote": "阅读越主动，效果越好。",
+      "start_line": 154,
+      "end_line": 157,
+      "context": "作者把阅读定义为读者主动参与的活动。",
+      "why_selected": "全书的最小公理"
+    },
+    {
+      "id": "x02",
+      "quote": "这本书跟你有什么关系？",
+      "start_line": 1067,
+      "end_line": 1069,
+      "context": "主动阅读四个基本问题中的第四问。",
+      "why_selected": "把理解转成个人判断与行动"
+    },
+    {
+      "id": "x03",
+      "quote": "摘要绝不能代替真正的阅读",
+      "start_line": 3924,
+      "end_line": 3925,
+      "context": "作者讨论导读、摘要等辅助资料的价值与边界。",
+      "why_selected": "明确快速阅读产物不能冒充原书"
+    },
+    {
+      "id": "x04",
+      "quote": "好的阅读，也就是主动的阅读",
+      "start_line": 7531,
+      "end_line": 7532,
+      "context": "全书末段回到主动阅读与心智成长。",
+      "why_selected": "首尾呼应"
+    }
+  ],
+  "conceptual_roles": {
+    "note": "本书不是叙事作品，没有需要虚构补全的角色关系；以下是方法中的概念角色。",
+    "roles": [
+      {
+        "name": "作者",
+        "function": "把知识和理解编码进书中，并通过术语、主旨和论证与读者沟通。"
+      },
+      {
+        "name": "读者",
+        "function": "主动提出问题、重构全书、核对论证并作出同意或反对的判断。"
+      },
+      {
+        "name": "书",
+        "function": "作者缺席时的沟通媒介，也是读者可以反复核证的第一手文本。"
+      },
+      {
+        "name": "辅助资料",
+        "function": "解决词义、事实、背景或争议，但不能替代读者理解原书。"
+      },
+      {
+        "name": "多位作者",
+        "function": "在主题阅读中被读者放进同一问题空间，形成补充或冲突。"
+      }
+    ]
+  },
+  "coverage": [
+    {"chapter": 1, "title": "阅读的活力与艺术", "range": "110–395", "method": "inspected_full_range"},
+    {"chapter": 2, "title": "阅读的层次", "range": "396–503", "method": "inspected_full_range"},
+    {"chapter": 3, "title": "阅读的第一个层次：基础阅读", "range": "504–709", "method": "inspected_full_range"},
+    {"chapter": 4, "title": "阅读的第二个层次：检视阅读", "range": "710–1020", "method": "inspected_full_range"},
+    {"chapter": 5, "title": "如何做一个自我要求的读者", "range": "1021–1281", "method": "inspected_full_range"},
+    {"chapter": 6, "title": "一本书的分类", "range": "1282–1655", "method": "inspected_full_range"},
+    {"chapter": 7, "title": "透视一本书", "range": "1656–2153", "method": "focused_read"},
+    {"chapter": 8, "title": "与作者找出共通的词义", "range": "2154–2564", "method": "inspected_full_range"},
+    {"chapter": 9, "title": "判断作者的主旨", "range": "2565–3074", "method": "focused_read"},
+    {"chapter": 10, "title": "公正地评断一本书", "range": "3075–3402", "method": "inspected_full_range"},
+    {"chapter": 11, "title": "赞同或反对作者", "range": "3403–3760", "method": "inspected_full_range"},
+    {"chapter": 12, "title": "辅助阅读", "range": "3761–4191", "method": "inspected_full_range"},
+    {"chapter": 13, "title": "如何阅读实用型的书", "range": "4192–4451", "method": "focused_read"},
+    {"chapter": 14, "title": "如何阅读想像文学", "range": "4452–4701", "method": "focused_read"},
+    {"chapter": 15, "title": "阅读故事、戏剧与诗的一些建议", "range": "4702–5174", "method": "focused_sampling"},
+    {"chapter": 16, "title": "如何阅读历史书", "range": "5175–5644", "method": "focused_read"},
+    {"chapter": 17, "title": "如何阅读科学与数学", "range": "5645–5956", "method": "focused_read"},
+    {"chapter": 18, "title": "如何阅读哲学书", "range": "5957–6510", "method": "focused_read"},
+    {"chapter": 19, "title": "如何阅读社会科学", "range": "6511–6724", "method": "focused_read"},
+    {"chapter": 20, "title": "阅读的第四个层次：主题阅读", "range": "6725–7336", "method": "inspected_full_range"},
+    {"chapter": 21, "title": "阅读与心智的成长", "range": "7337–7532", "method": "inspected_full_range"}
+  ],
+  "deep_read_list": [
+    {
+      "priority": 1,
+      "chapters": [4, 5],
+      "why": "把快速筛书变成可执行的检视流程，并用四问持续产出笔记。",
+      "trigger": "你准备把这套方法用于下一本书"
+    },
+    {
+      "priority": 2,
+      "chapters": [7, 10, 11],
+      "why": "练习结构化复述、理解后再批评，以及用证据表达同意或反对。",
+      "trigger": "书的结论会影响重要决策"
+    },
+    {
+      "priority": 3,
+      "chapters": [12],
+      "why": "建立联网资料、导读和评论的使用边界。",
+      "trigger": "背景陌生、版本有争议或原文难懂"
+    },
+    {
+      "priority": 4,
+      "chapters": [20],
+      "why": "把一本书扩展成围绕问题的多书知识地图。",
+      "trigger": "你要快速扩展某个主题，而不是只理解单本书"
+    },
+    {
+      "priority": 5,
+      "chapters": [13, 14, 15, 16, 17, 18, 19, 21],
+      "why": "按书类补充方法，并判断哪些书值得重读。",
+      "trigger": "遇到对应书类，或完成一轮阅读后评估长期价值"
+    }
+  ],
+  "recall": [
+    {
+      "question": "四层阅读是什么关系，而不只是四个名称？",
+      "answer_key": "累积递进；更高层包含较低层，投入由目的和书的价值决定。"
+    },
+    {
+      "question": "检视阅读结束时，至少要回答哪三类问题？",
+      "answer_key": "书在谈什么、结构/部分是什么、属于哪类书，并初步判断是否值得继续。"
+    },
+    {
+      "question": "为什么批评作者前必须先复述作者？",
+      "answer_key": "避免把误解当反驳；只有建立了对作者术语、主旨与论证的理解，批评才有对象。"
+    },
+    {
+      "question": "主题阅读为什么不是多本摘要的拼盘？",
+      "answer_key": "它由读者的问题组织，需要中立词汇、共同问题、议题分歧和按关系排列的讨论。"
+    },
+    {
+      "question": "这份报告为什么允许先联网查背景，却仍不违背作者完整性？",
+      "answer_key": "背景和版本可先核验，但作者观点以原文为主；外部资料分栏标注，关键概括附原文位置。"
+    }
+  ],
+  "visuals": [
+    {
+      "id": "visual-four-levels-compact",
+      "capability": "fireworks-tech-graph",
+      "evidence_role": "structural_recomposition",
+      "source_claim_ids": [
+        "c02-levels",
+        "c05-four-questions"
+      ],
+      "source_locators": [
+        "410–498",
+        "1045–1084"
+      ],
+      "format": "inline_svg",
+      "validation": {
+        "xml": "passed",
+        "arrow_collisions": "passed",
+        "semantic_geometry": "passed",
+        "composition": "passed",
+        "browser_render": "passed",
+        "visual_review": "passed"
+      },
+      "non_evidence_note": "内联 SVG 只重组已核对的作者框架，不作为新增证据。"
+    }
+  ],
+  "optional_capability_audit": [
+    {
+      "capability": "fireworks-tech-graph",
+      "decision": "used_for_one_core_model",
+      "boundary": "紧凑主页面只保留一张可追溯的四层阅读 SVG；其他图仅在深挖模块确有复杂关系时按需生成。"
+    },
+    {
+      "capability": "doc-to-sketch",
+      "decision": "not_used",
+      "boundary": "适合从已验证 JSON 生成复习卡或讲解页，但位图中文与证据定位风险较高，不作为报告核心。"
+    },
+    {
+      "capability": "scene-distillation-zine-v1-3",
+      "decision": "not_used",
+      "boundary": "只应在用户提供有权使用的照片时生成非证据型封面或记忆卡；不得凭书本文字想象作者肖像或场景。"
+    },
+    {
+      "capability": "ui-styling",
+      "decision": "used_for_audit",
+      "boundary": "用于移动优先、语义结构、键盘焦点、44px 触控、减弱动画和任务验收；未引入 Tailwind、组件库或 CDN。"
+    }
+  ],
+  "ui_validation": {
+    "method": "生成后使用 ui-styling 的任务与响应式检查清单独立复核",
+    "perspective": "用户在 30–45 分钟内读完主地图，并决定是否细读或生成一个深挖模块",
+    "status": "passed",
+    "tasks": [
+      {"task": "首屏理解用途、时间和结论", "status": "pass", "evidence": "首屏只保留一句用途、三个事实标签和选择性深读结论"},
+      {"task": "快速解释四层阅读和五个重点", "status": "pass", "evidence": "可横向滑动的 SVG 四层地图与五个编号重点位于主路径前半段"},
+      {"task": "区分作者观点、报告综合、外部背景和批判意见", "status": "pass", "evidence": "语义标签与 data-claim-id 保留，长说明已压缩"},
+      {"task": "从关键结论回到原文", "status": "pass", "evidence": "五个重点、主动四问和折叠摘录均提供 TXT 行号"},
+      {"task": "决定停止、细读或按需生成深挖模块", "status": "pass", "evidence": "深读顺序、停止条件与三个未生成模块方向分别呈现"}
+    ],
+    "accessibility_checks": [
+      "skip link",
+      "semantic landmarks",
+      "visible focus",
+      "minimum 44px interactive targets",
+      "mobile-first responsive layout",
+      "reduced-motion preference",
+      "print stylesheet",
+      "no page-level horizontal overflow"
+    ]
+  },
+  "unresolved": [
+    "中文 TXT 的译者、出版社、ISBN 和具体版本无法从当前输入确定。",
+    "TXT 第 13–14 行的 1970 年新版与 1972 年修订版资料存在年份差异。",
+    "第 15 章采用重点抽样，不应把报告视为该章逐段精读的替代品。",
+    "书中若干教育、媒介、生理与社会比例断言未在本次 dogfood 中逐项做现代证据综述。"
+  ]
+}
