@@ -1,44 +1,40 @@
+<div align="center">
+
 # 渐进式读书地图
+
+**不是替你读书，而是帮你更快回到原文。**
 
 先看全书结构，按问题深挖，最后回到原文。
 
-这里收录我在实际阅读中持续修正的阅读地图。地图用于定位、比较和提出问题，不替代原书。
+[**在线阅读**](https://li-sanze.github.io/reading-maps/)
 
-在线阅读：<https://li-sanze.github.io/reading-maps/>
+</div>
+
+[![渐进式读书地图首页：书籍主地图与阅读路径](assets/site-preview.png)](https://li-sanze.github.io/reading-maps/)
 
 ## 当前书架
 
-- [《如何阅读一本书》](books/how-to-read-a-book/reading.html)：主地图与证据数据。
-- [《毛泽东选集》](books/mao-selected-works/reading.html)：主地图、证据数据和按需生成的深挖模块。
+- **《如何阅读一本书》** — [打开主地图](books/如何阅读一本书/reading.html)：四层阅读、四个主动问题与阅读判断。
+- **《毛泽东选集》** — [打开主地图与深挖](books/毛泽东选集/reading.html)：时期、问题、方法与按需生成的深挖模块。
 
-## 目录
+## 地图怎么用
 
-```text
-reading-maps/
-├── index.html
-└── books/
-    ├── how-to-read-a-book/
-    │   ├── reading.html
-    │   └── reading.json
-    └── mao-selected-works/
-        ├── reading.html
-        ├── reading.json
-        └── modules/
-```
+1. **建立结构**：先判断全书讨论什么、怎样展开，以及版本和材料边界。
+2. **按问题深挖**：只有真实疑问出现时，才进入主题、篇章或外部背景。
+3. **回到原文**：地图负责定位、比较和校正，不替代作者的完整论证与语境。
 
-每本书以 `reading.html + reading.json` 为稳定产物：HTML 负责阅读，JSON 保留结构、来源定位和审计信息。深挖模块只在真实阅读问题出现后增加。
+每本书以 `reading.html + reading.json` 为稳定产物：HTML 用于阅读，JSON 保留结构、来源定位和审计信息。深挖模块只在真实阅读问题出现后增加。
 
-## 公开边界
+## 内容边界
 
-- 不收录或分发 EPUB、TXT、PDF 等原书文件。
-- 不提供原书下载链接。
-- 只保留原创结构、评论、图示、必要短引文和来源定位。
-- AI 可以协助整理，最终内容需要人工审阅，并回到原文校正。
+- 不收录或分发 EPUB、TXT、PDF 等原书文件，也不提供原书下载链接。
+- 只公开原创结构、评论、图示、必要短引文和来源定位。
+- AI 可以协助整理；发布内容需要人工审阅，并回到原文校正。
 - 版本、材料或历史解释存在不确定性时，如实保留边界。
 
 ## 本地阅读
 
-这是无构建依赖的静态网站，直接用浏览器打开 `index.html` 即可。
+网站没有构建依赖，克隆仓库后直接用浏览器打开 `index.html` 即可。
 
 ## 许可
 
