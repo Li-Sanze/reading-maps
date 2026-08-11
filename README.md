@@ -14,8 +14,8 @@
 
 ## 当前书架
 
-- **《如何阅读一本书》** — [打开主地图](books/如何阅读一本书/reading.html)：四层阅读、四个主动问题与阅读判断。
-- **《毛泽东选集》** — [打开主地图与深挖](books/毛泽东选集/reading.html)：时期、问题、方法与按需生成的深挖模块。
+- **《如何阅读一本书》** — [打开主地图](https://li-sanze.github.io/reading-maps/books/how-to-read-a-book/reading.html)：四层阅读、四个主动问题与阅读判断。
+- **《毛泽东选集》** — [打开主地图与深挖](https://li-sanze.github.io/reading-maps/books/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86/reading.html)：时期、问题、方法与按需生成的深挖模块。
 
 ## 地图怎么用
 
