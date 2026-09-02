@@ -1,0 +1,416 @@
+{
+  "schema_version": "read-book.v1",
+  "artifact_kind": "rapid-reading-map",
+  "generated_date": "2026-08-13",
+  "language": "zh-CN",
+  "source": {
+    "display_name": "乌合之众大众心理研究 (社会学经典名著).epub",
+    "format": "EPUB",
+    "sha256": "6fad778418616bd1cc0beb9ba3173f0e9b623b21a682e45638da138fbd17b116",
+    "bytes": 327090,
+    "metadata": {
+      "title": "乌合之众:大众心理研究 (社会学经典名著)",
+      "creator_in_opf": "古斯塔夫·勒宠",
+      "creator_on_copyright_page": "古斯塔夫·勒庞",
+      "translator": "戴光年",
+      "publisher": "新世界出版社",
+      "print_statement": "2010.1；2011.6 重印",
+      "language": "zh",
+      "uuid": "f51d18a1-ae2b-4b05-9fc6-d865349e0d0d"
+    },
+    "archive_validation": {
+      "zip_entries": 30,
+      "spine_documents": 21,
+      "toc_entries": 152,
+      "body_files": 14,
+      "body_characters": 131016,
+      "duplicate_body_files": 0,
+      "replacement_characters": 0,
+      "epub_open": "passed"
+    },
+    "metadata_limitations": [
+      "OPF 把作者写成‘古斯塔夫·勒宠’，版权页写作‘古斯塔夫·勒庞’；地图采用版权页与原著资料一致的姓名。",
+      "版权页显示 ISBN 978-7-5104-0755-0-1，位数异常；地图保留原样但不将其作为已核准 ISBN。",
+      "EPUB 将原著 13 章拆成 152 个目录节点，并增加大量中文小标题；这些小标题不能直接视为原著标题。",
+      "与 1895 年原著及 Project Gutenberg 英译本目录相比，本 EPUB 未收录单列的导言《群体的时代》。",
+      "正文可见少量文字校订问题，例如‘取博得’、‘所的群体’，重要引文仍需逐句回查。"
+    ]
+  },
+  "scope": {
+    "included": "三编 13 章及 EPUB 单列的结束章正文，共 14 个正文 HTML 文件。",
+    "included_files": [
+      "index_split_003.html",
+      "index_split_004.html",
+      "index_split_005.html",
+      "index_split_006.html",
+      "index_split_008.html",
+      "index_split_009.html",
+      "index_split_010.html",
+      "index_split_011.html",
+      "index_split_013.html",
+      "index_split_014.html",
+      "index_split_015.html",
+      "index_split_016.html",
+      "index_split_017.html",
+      "index_split_018.html"
+    ],
+    "excluded": [
+      {
+        "scope": "封面、版权页、书内生成目录和 Calibre 书签",
+        "reason": "仅用于版本与导航审计，不作为作者观点来源。"
+      },
+      {
+        "scope": "原著导言《群体的时代》",
+        "reason": "本 EPUB 未包含，不能用外部版本悄悄补入当前正文。"
+      }
+    ],
+    "pollution_scan": {
+      "download_or_library_ads": 0,
+      "duplicate_body_files": 0,
+      "broken_decode_characters": 0,
+      "notes": "版权页含出版社网址和邮箱，属于出版信息，不判定为正文污染。"
+    }
+  },
+  "book": {
+    "title_zh": "乌合之众：大众心理研究",
+    "title_original": "Psychologie des foules",
+    "author": "古斯塔夫·勒庞",
+    "translator": "戴光年",
+    "classification": "19 世纪群体心理学经典与社会政治论说",
+    "one_sentence_model": "勒庞把心理群体理解为一种使个人责任、判断和个性减弱的集体状态：情绪经传染和暗示被放大，意见在长期条件与直接刺激共同作用下形成，再由领袖借助断言、重复和名望导向行动。",
+    "model_status": "作者模型的压缩复述，不等于现代心理学共识。"
+  },
+  "external_sources": [
+    {
+      "id": "ext-gutenberg",
+      "type": "primary_text_comparison",
+      "title": "Project Gutenberg — The Crowd: A Study of the Popular Mind",
+      "url": "https://www.gutenberg.org/ebooks/445",
+      "supports": [
+        "原著三编 13 章及导言的结构对照",
+        "本 EPUB 缺少单列导言、增加大量小标题的版本判断"
+      ]
+    },
+    {
+      "id": "ext-bnf",
+      "type": "bibliographic_background",
+      "title": "Bibliothèque nationale de France — Psychologie des foules",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb45822266x",
+      "supports": [
+        "原著法文题名、作者与 1895 年初版背景"
+      ]
+    },
+    {
+      "id": "ext-reicher",
+      "type": "modern_critical_context",
+      "title": "Reicher (2011) — Mass action and mundane reality",
+      "url": "https://doi.org/10.1080/21582041.2011.619347",
+      "supports": [
+        "现代社会认同路径反对把群体一概视为身份丧失、无意义和非理性"
+      ]
+    },
+    {
+      "id": "ext-stott-drury",
+      "type": "modern_critical_context",
+      "title": "Stott & Drury (2017) — Contemporary understanding of riots",
+      "url": "https://doi.org/10.1177/0963662516639872",
+      "supports": [
+        "经典群体心理学的历史语境、意识形态限制及社会认同模型的修正"
+      ]
+    }
+  ],
+  "reading_contract": {
+    "target_main_minutes": 35,
+    "full_session_budget_minutes": 120,
+    "window": "主地图约 30–35 分钟；再用 65–85 分钟回读五组原文，可拆成 2–4 个业余时间单元。",
+    "units": [
+      {
+        "id": "boundary",
+        "minutes": 5,
+        "goal": "看懂中文版本边界、缺失和校订风险"
+      },
+      {
+        "id": "model",
+        "minutes": 12,
+        "goal": "掌握群体形成、传播、说服到行动的作者模型"
+      },
+      {
+        "id": "claims",
+        "minutes": 10,
+        "goal": "区分可借用的观察、作者的普遍化断言和历史偏见"
+      },
+      {
+        "id": "decision",
+        "minutes": 8,
+        "goal": "决定选读、深挖或停止，并得到回原文路线"
+      }
+    ],
+    "progressive_depth": [
+      {"level": 0, "artifact": "首屏判断", "minutes": "2–3"},
+      {"level": 1, "artifact": "reading.html 主地图", "minutes": "30–35"},
+      {"level": 2, "artifact": "五组原文锚点", "minutes": "65–85"},
+      {"level": 3, "artifact": "按真实问题生成的单个深挖模块", "minutes": "45–90"},
+      {"level": 4, "artifact": "回到完整原书与现代研究", "minutes": "不限"}
+    ],
+    "completion_definition": [
+      "能用自己的话解释勒庞的群体形成与影响链，而不是只记住‘群体无知’。",
+      "能说出三编分别回答心理机制、信念形成和群体类型应用中的什么问题。",
+      "能区分作者主张、报告综合、版本审计与现代外部批评。",
+      "能决定选择性回读、生成一个深挖模块或到此停止。"
+    ]
+  },
+  "whole_book_model": {
+    "question": "个人为什么在心理群体中改变，群体意见又怎样转为集体行动？",
+    "stages": [
+      {
+        "id": "stage-conditions",
+        "label": "共同关注与数量感",
+        "type": "author_position"
+      },
+      {
+        "id": "stage-transformation",
+        "label": "责任感、个性与判断减弱",
+        "type": "author_position"
+      },
+      {
+        "id": "stage-amplification",
+        "label": "传染、暗示与情绪放大",
+        "type": "author_position"
+      },
+      {
+        "id": "stage-belief",
+        "label": "形象、套话、重复与名望塑造信念",
+        "type": "author_position"
+      },
+      {
+        "id": "stage-action",
+        "label": "领袖组织并导向行动",
+        "type": "model_synthesis"
+      }
+    ],
+    "caveat": "这条链是报告对全书的综合，不是作者给出的实验模型，也不是所有群体事件都必然经历的定律。"
+  },
+  "claims": [
+    {
+      "id": "c01-psychological-crowd",
+      "type": "author_position",
+      "statement": "心理群体不是人数的简单相加，而是成员的思想和感情转向共同对象、个体表现发生改变的临时状态。",
+      "locators": [
+        {"epub_path": "index_split_003.html", "anchor": "filepos21102", "section": "构成群体的条件"},
+        {"epub_path": "index_split_003.html", "anchor": "filepos27993", "section": "群体共同的心理特征"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c02-three-mechanisms",
+      "type": "author_position",
+      "statement": "作者用数量带来的力量与免责感、情绪传染以及暗示解释个人在群体中的转变。",
+      "locators": [
+        {"epub_path": "index_split_003.html", "anchor": "filepos37733", "section": "第一个原因：本能"},
+        {"epub_path": "index_split_003.html", "anchor": "filepos40015", "section": "第二个原因：传染"},
+        {"epub_path": "index_split_003.html", "anchor": "filepos44681", "section": "第三个原因：暗示"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c03-images-and-extremes",
+      "type": "author_position",
+      "statement": "作者认为群体更多借助形象和联想而非严密推理，感情也更容易走向夸张、极端和确定。",
+      "locators": [
+        {"epub_path": "index_split_004.html", "anchor": "filepos99538", "section": "群体是用形象来思维的"},
+        {"epub_path": "index_split_004.html", "anchor": "filepos141781", "section": "打动群体的东西"},
+        {"epub_path": "index_split_005.html", "anchor": "filepos183315", "section": "群体的伪推理能力"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c04-moral-ambivalence",
+      "type": "author_position",
+      "statement": "作者并非只说群体会作恶；他也承认群体可能表现牺牲、勇敢和平等愿望，因此群体能够走向残暴，也能走向英雄主义。",
+      "short_quote": "假如我们改变一下道德的定义，把它定义成某些一时之间表现出来的品质，比如舍己为人、自我牺牲、不计名利、勇于献身和对平等的渴望等等，那么我们就可以说，群体常常会表现出很高的道德境界。",
+      "locators": [
+        {"epub_path": "index_split_004.html", "anchor": "filepos165295", "section": "群体的道德"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c05-remote-immediate",
+      "type": "author_position",
+      "statement": "群体意见不是由一次煽动凭空造成：传统、时间、制度和教育等长期条件先准备心理土壤，形象、词语、经验等直接因素再触发具体反应。",
+      "locators": [
+        {"epub_path": "index_split_008.html", "anchor": "filepos217717", "section": "群众运动的导火索"},
+        {"epub_path": "index_split_009.html", "anchor": "filepos254327", "section": "那些直捣人心的东西"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c06-persuasion",
+      "type": "author_position",
+      "statement": "领袖通过简洁断言、持续重复和社会传染传播观念，名望则降低群体的批判与抵抗。",
+      "locators": [
+        {"epub_path": "index_split_010.html", "anchor": "filepos303715", "section": "断言"},
+        {"epub_path": "index_split_010.html", "anchor": "filepos306406", "section": "重复"},
+        {"epub_path": "index_split_010.html", "anchor": "filepos308964", "section": "传染"},
+        {"epub_path": "index_split_010.html", "anchor": "filepos320012", "section": "名望"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c07-application",
+      "type": "author_position",
+      "statement": "第三编把前述模型应用到犯罪群体、陪审团、选民与议会，借案例说明群体类型会改变表现，但作者仍倾向用同一套心理机制解释它们。",
+      "locators": [
+        {"epub_path": "index_split_013.html", "anchor": "filepos371750", "section": "群体的分类"},
+        {"epub_path": "index_split_015.html", "anchor": "filepos402249", "section": "刑事案件的陪审团"},
+        {"epub_path": "index_split_016.html", "anchor": "filepos428497", "section": "选民群体"},
+        {"epub_path": "index_split_017.html", "anchor": "filepos460372", "section": "议会"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "s01-causal-chain",
+      "type": "model_synthesis",
+      "statement": "全书可综合成‘形成心理群体—个体判断弱化—情绪和观念放大—领袖与名望聚焦—集体行动’的解释链。",
+      "derived_from": [
+        "c01-psychological-crowd",
+        "c02-three-mechanisms",
+        "c03-images-and-extremes",
+        "c05-remote-immediate",
+        "c06-persuasion"
+      ]
+    },
+    {
+      "id": "a01-overgeneralization",
+      "type": "critical_audit",
+      "statement": "作者大量依赖历史轶事、类比和断言，并把特定事件推广为‘所有群体’的规律；这足以提出问题，不足以单独证明普遍因果。",
+      "derived_from": [
+        "c01-psychological-crowd",
+        "c02-three-mechanisms",
+        "c03-images-and-extremes",
+        "c07-application"
+      ]
+    },
+    {
+      "id": "a02-race-education-bias",
+      "type": "critical_audit",
+      "statement": "关于‘民族/种族’遗传性格、教育无效、妇女与大众能力的判断带有 19 世纪种族论和精英主义偏见，不应直接用于评价现实群体。",
+      "locators": [
+        {"epub_path": "index_split_008.html", "anchor": "filepos220263", "section": "民族"},
+        {"epub_path": "index_split_008.html", "anchor": "filepos238684", "section": "教育"},
+        {"epub_path": "index_split_004.html", "anchor": "filepos120397", "section": "妇孺言论不可轻信"}
+      ]
+    },
+    {
+      "id": "e01-social-identity",
+      "type": "external_background",
+      "statement": "现代社会认同研究认为，群体行动往往以共享身份、规范和情境为基础，不必然意味着个人身份消失或行动毫无意义。",
+      "sources": ["ext-reicher", "ext-stott-drury"]
+    }
+  ],
+  "core_route": [
+    {
+      "order": 1,
+      "title": "心理群体怎样形成",
+      "minutes": "15–18",
+      "epub_path": "index_split_003.html",
+      "anchors": ["filepos21102", "filepos27993", "filepos37733", "filepos40015", "filepos44681"],
+      "why": "读懂共同关注、责任感、传染与暗示组成的基础模型。"
+    },
+    {
+      "order": 2,
+      "title": "群体并非只有低劣一面",
+      "minutes": "8–10",
+      "epub_path": "index_split_004.html",
+      "anchors": ["filepos99538", "filepos165295"],
+      "why": "防止把全书压成‘人多必愚蠢’的口号。"
+    },
+    {
+      "order": 3,
+      "title": "长期条件与直接触发",
+      "minutes": "12–15",
+      "epub_path": "index_split_008.html",
+      "anchors": ["filepos217717"],
+      "continue_in": "index_split_009.html#filepos254327",
+      "why": "看到群体意见有历史准备过程，不只是领袖一句话造成。"
+    },
+    {
+      "order": 4,
+      "title": "断言、重复、传染与名望",
+      "minutes": "15–18",
+      "epub_path": "index_split_010.html",
+      "anchors": ["filepos303715", "filepos306406", "filepos308964", "filepos320012"],
+      "why": "理解本书最有影响力、也最容易被工具化的说服模型。"
+    },
+    {
+      "order": 5,
+      "title": "把模型应用到制度群体",
+      "minutes": "15–20",
+      "epub_paths": ["index_split_015.html", "index_split_016.html", "index_split_017.html"],
+      "anchors": ["filepos402249", "filepos428497", "filepos460372"],
+      "why": "比较陪审团、选民和议会案例，同时检验作者是否过度套用同一解释。"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "区分物理聚集与心理群体，提醒读者关注共同关注、身份和情绪传播。",
+      "把长期条件与直接触发分开，比‘群众突然失控’更有解释层次。",
+      "断言、重复、传染和名望的组合仍能启发对政治传播、广告和网络舆论的观察。",
+      "承认群体既可能残暴，也可能牺牲和英雄化，不能只摘取贬低群体的句子。"
+    ],
+    "limits": [
+      "以轶事和选择性历史案例替代系统证据，普遍化语气远强于论证力度。",
+      "将群体中的个人描述为近乎失去理性，忽略共享身份、群体规范、利益结构和互动情境。",
+      "种族遗传论、性别偏见、教育悲观和对民主制度的精英主义判断具有明显时代局限。",
+      "当前中文 EPUB 缺少原著导言，目录被大幅细分且校订不稳，不能用于严谨逐字引用或版本研究。"
+    ],
+    "usable_today": "把本书当作提出问题的经典：观察群体如何形成、情绪如何传播、权威如何运作；不要把它当作预测所有群体行为的科学定律或操纵手册。",
+    "modern_correction": "社会认同路径强调共享身份、规范与群际互动，能解释为什么群体行动往往有边界、有意义，也会随对待方式改变。"
+  },
+  "module_policy": {
+    "generation": "on_demand_only",
+    "root": "modules/",
+    "artifact_name": "深挖模块",
+    "not_original_chapter_note": "模块围绕读者问题生成，不是勒庞原书新增章节。",
+    "candidates": [
+      {
+        "id": "leadership-persuasion",
+        "title": "领袖、名望与断言—重复—传染",
+        "status": "not_generated",
+        "question": "勒庞的说服模型如何运作，哪些观察仍可用，哪些会滑向操纵术？"
+      },
+      {
+        "id": "crowd-vs-social-identity",
+        "title": "勒庞群体模型 × 现代社会认同模型",
+        "status": "not_generated",
+        "question": "从‘身份消失’到‘共享身份’，现代研究修正了什么？"
+      }
+    ]
+  },
+  "modules": [],
+  "verdict": {
+    "recommendation": "选择性深读",
+    "summary": "值得读它如何提出问题，不适合把全部断言当成今天的群体心理学。先读五组锚点，再决定是否补读全书或进入一个现代对照模块。",
+    "decision": {
+      "full_read_if": "你要研究经典群体心理学、政治传播思想史，且愿意持续核对版本与现代研究。",
+      "selective_read_if": "你要理解群体形成、情绪传播、领袖说服与名望机制；这是推荐路径。",
+      "deep_dive_if": "你对领袖说服机制或‘勒庞模型与社会认同模型’的差异产生了具体问题。",
+      "stop_after_map_if": "你只想知道这本名著的大意、局限和是否值得投入。"
+    }
+  },
+  "generation_audit": {
+    "mode": "source_level_revision",
+    "material_grade": "full_source",
+    "whole_book_identity": "这是一部 19 世纪群体心理学论说的中译本：字面上跟着‘心理群体里的个人为何改变、意见如何形成并被导向行动’展开。本 EPUB 从构成心理群体的条件起，经数量/传染/暗示、形象与极端感情、间接因素与直接刺激、领袖的断言—重复—传染与名望，落到犯罪群体、陪审团、选民和议会，并以单列结束章收在民族存亡的历史断言上。不可省主线是心理群体≠物理聚集、转变机制、信念的长期准备与直接触发、说服四术及其制度应用；它们同属一个问题，而不是互不相关的随笔。本版没有单列导言《群体的时代》，152 个中文小标题是这个 EPUB 的目录切分，不是原著章节。",
+    "continuity_check": "删除第一编的心理群体定义或第二编的说服四术，全书不再可辨认；删除第三编仍能抓住核心模型，但会失去作者如何把机制套到制度群体、以及过度普遍化的证据。三编有论证依赖，对调会损坏理解。本轮保留三编顺序与结束章作为本版收束，不把结束章升格为原著第十四章；不补所缺导言；不把中文小标题改造成原著结构；不删‘群体也可高尚’；因果链只作报告综合。现代社会认同研究保持外部背景，不写入作者观点。",
+    "source_read": true,
+    "source_boundary_checked": true,
+    "archive_validated": true,
+    "key_claims_sampled_against_source": true,
+    "external_structure_checked": true,
+    "schema_validation": "passed",
+    "content_review": "passed_key_claim_locator_and_quote_unit_audit",
+    "desktop_ui_review": "prior_visual_pass_this_round_static_overflow_and_anchor_check",
+    "mobile_ui_review": "static_layout_no_390px_runtime_this_round",
+    "notes": "2026-09-02 对照当前完整 EPUB 重算哈希与结构：材料等级为完整来源，不因限时检视降为局部来源。页面结构、三编模型、五组原文路线和深挖候选政策保持有效，只把直接摘录补成带限定语的完整句，并写入 whole_book_identity 与 continuity_check。本轮未做新的桌面/手机视口目视复核。"
+  }
+}

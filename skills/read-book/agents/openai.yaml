@@ -1,0 +1,4 @@
+interface:
+  display_name: "渐进式读书地图"
+  short_description: "生成忠实、可回原文并经批判审计的渐进式中文书籍阅读地图"
+  default_prompt: "使用 $read-book 从这本中文书生成主阅读地图，保留版本边界和原文定位。"
