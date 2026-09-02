@@ -1,0 +1,444 @@
+{
+  "schema_version": "read-book.v1",
+  "artifact_kind": "rapid-reading-map",
+  "generated_date": "2026-08-13",
+  "language": "zh-CN",
+  "source": {
+    "display_name": "月亮与六便士 = The Moon and Sixpence ([英] 毛姆 (William Somerset Maugham) 著.epub",
+    "format": "EPUB",
+    "sha256": "ea346a38982e080ea0086e7d2ad70a0611af5edb77953fd7fac9020e1b513c13",
+    "bytes": 4969003,
+    "metadata": {
+      "title": "月亮与六便士",
+      "creator": "毛姆",
+      "translator_on_title_page": "姚锦清",
+      "publisher_on_title_page": "江苏凤凰文艺出版社",
+      "language": "zh",
+      "identifier": "2651234147",
+      "opf_publication_date": "2019-03-31",
+      "edition_marketing_label": "出版 100 周年精装纪念版"
+    },
+    "archive_validation": {
+      "zip_entries": 202,
+      "spine_documents": 147,
+      "toc_entries": 62,
+      "novel_chapters": 58,
+      "body_files": 58,
+      "body_characters_after_markup_removal": 147921,
+      "replacement_characters": 0,
+      "download_or_library_ads_in_body": 0,
+      "epub_open": "passed"
+    },
+    "metadata_limitations": [
+      "OPF 只写作者‘毛姆’，译者和出版社来自书内标题页图像。",
+      "OPF 日期可用于识别电子文件版本，但不能单独证明纸书版次或印次。",
+      "当前材料没有可可靠核准的 ISBN 与印次信息，地图不补造。",
+      "书前高更画作介绍、书后年表与画传属于本版编辑材料，不等同于毛姆小说正文。"
+    ]
+  },
+  "scope": {
+    "included": "《月亮与六便士》第一至第五十八章正文，对应 OEBPS/Text/part0018.xhtml 至 part0075.xhtml。",
+    "included_files": {
+      "first": "OEBPS/Text/part0018.xhtml",
+      "last": "OEBPS/Text/part0075.xhtml",
+      "count": 58
+    },
+    "excluded": [
+      {
+        "scope": "part0002.xhtml 的中英双语摘句",
+        "reason": "编辑选句，不属于小说连续正文。"
+      },
+      {
+        "scope": "part0003.xhtml 至 part0017.xhtml 的高更画作与生平介绍",
+        "reason": "仅作版本与视觉背景；不能用它替代小说，也不能把史特利克兰当作高更传记。"
+      },
+      {
+        "scope": "part0076.xhtml 至 part0145.xhtml 的毛姆年表、画传、赠品与营销页",
+        "reason": "属于书后编辑附加材料，不进入全书模型。"
+      }
+    ],
+    "pollution_scan": {
+      "download_or_library_ads_in_body": 0,
+      "broken_decode_characters": 0,
+      "notes": "书后存在出版方营销页，已从阅读范围排除；正文未发现下载站或书库广告。"
+    }
+  },
+  "book": {
+    "title_zh": "月亮与六便士",
+    "title_original": "The Moon and Sixpence",
+    "author": "W. Somerset Maugham",
+    "author_zh": "威廉·萨默赛特·毛姆",
+    "translator": "姚锦清",
+    "classification": "心理小说与艺术家传奇的反讽叙事",
+    "one_sentence_model": "小说借一位有限、带讽刺眼光的叙述者和多名转述者，逐步拼出史特利克兰从伦敦中产生活出走、在巴黎伤害他人并在塔希提完成创作的传奇，同时不断追问艺术冲动能否抵消人的责任。",
+    "model_status": "报告对叙事结构与主题张力的综合，不是毛姆给出的道德结论。"
+  },
+  "external_sources": [
+    {
+      "id": "ext-gutenberg",
+      "type": "original_text_and_bibliographic_background",
+      "title": "Project Gutenberg — The Moon and Sixpence",
+      "url": "https://www.gutenberg.org/ebooks/222",
+      "supports": [
+        "英文原作题名、作者与 1919 年出版背景",
+        "中文 EPUB 的 58 章正文结构与英文原作对照"
+      ]
+    },
+    {
+      "id": "ext-met-ia-orana-maria",
+      "type": "public_domain_artwork",
+      "title": "The Met — Ia Orana Maria (Hail Mary)",
+      "url": "https://www.metmuseum.org/art/collection/search/438821",
+      "supports": [
+        "高更 1891 年作品的题名、年代、媒介和馆藏信息",
+        "Public Domain 与 Open Access 图像使用边界"
+      ],
+      "rights": "Public Domain / The Met Open Access",
+      "object_id": 438821
+    }
+  ],
+  "illustration_audit": {
+    "decision": "include_one_re-sourced_public_domain_artwork",
+    "selected_work": "Ia Orana Maria (Hail Mary), 1891",
+    "relation_to_edition": "本 EPUB 在 part0012.xhtml 将它列为《圣母马利亚》；页面不复制 EPUB 内嵌图，而使用 The Met 的 Public Domain 图像并压缩后内嵌。",
+    "purpose": "说明真实高更素材与小说虚构人物之间的背景联系，以及欧洲宗教母题与塔希提视觉环境的重组。",
+    "limits": "这幅画不能证明史特利克兰的具体作品样貌，也不能把小说读成高更传记。"
+  },
+  "reading_contract": {
+    "target_main_minutes": 35,
+    "full_session_budget_minutes": 170,
+    "window": "无剧透入口约 10 分钟；主动展开完整模型再读约 25 分钟；三组原文路线约 135 分钟，可拆成 2–4 个业余时间单元。",
+    "spoiler_policy": {
+      "default": "spoiler_light",
+      "full_model_requires_action": true,
+      "warning": "完整模型包含巴黎悲剧、塔希提终局和结尾处理。"
+    },
+    "units": [
+      {
+        "id": "spoiler-light",
+        "minutes": 10,
+        "goal": "先理解叙述视角、版本边界和三个阅读问题，不获知结局。"
+      },
+      {
+        "id": "whole-book-model",
+        "minutes": 15,
+        "goal": "掌握五段叙事结构、主要人物关系与信息来源。"
+      },
+      {
+        "id": "audit-and-decision",
+        "minutes": 10,
+        "goal": "区分艺术价值、人物伦理、叙述者判断和后世传奇。"
+      }
+    ],
+    "progressive_depth": [
+      {"level": 0, "artifact": "无剧透入口", "minutes": "8–10"},
+      {"level": 1, "artifact": "含剧透的全书模型", "minutes": "20–25"},
+      {"level": 2, "artifact": "三组原文路线", "minutes": "约 135"},
+      {"level": 3, "artifact": "按真实问题生成的单个深挖模块", "minutes": "45–90"},
+      {"level": 4, "artifact": "完整原书", "minutes": "约 4–6 小时，因人而异"}
+    ],
+    "completion_definition": [
+      "能说明小说为何先展示身后名声，再倒叙普通生活与出走。",
+      "能区分叙述者亲见、他人转述和后世传记，不把所有判断直接归给作者。",
+      "能解释艺术冲动、道德责任与天才传奇之间的张力。",
+      "能决定全读、走三组关键原文、申请一个深挖模块或到此停止。"
+    ]
+  },
+  "whole_book_model": {
+    "question": "一个冷酷而沉默的人，怎样在不同地点、不同讲述者手中逐渐被塑造成艺术传奇？",
+    "narrative_order": [
+      {
+        "id": "stage-afterlife-frame",
+        "chapters": "1–2",
+        "place": "后世框架",
+        "movement": "先让读者看到成名、争议和传记，再回到尚未成名的普通人。",
+        "evidence": "评论、传记与叙述者回忆"
+      },
+      {
+        "id": "stage-london",
+        "chapters": "3–16",
+        "place": "伦敦",
+        "movement": "中产家庭的平淡外壳突然破裂，出走原因从婚外情误判转向绘画冲动。",
+        "evidence": "叙述者亲见、妻子与亲属陈述"
+      },
+      {
+        "id": "stage-paris",
+        "chapters": "17–44",
+        "place": "巴黎",
+        "movement": "创作意志在贫困中增强，同时把施特洛夫与勃朗什卷入不可逆的伤害。",
+        "evidence": "叙述者亲见与施特洛夫等当事人叙述"
+      },
+      {
+        "id": "stage-tahiti",
+        "chapters": "45–57",
+        "place": "塔希提",
+        "movement": "叙述者多年后追访，依靠多名见证者拼出史特利克兰最后的生活、作品与死亡。",
+        "evidence": "尼柯尔斯、蒂娅蕾、布吕诺、库特拉斯等人的转述"
+      },
+      {
+        "id": "stage-london-coda",
+        "chapters": "58",
+        "place": "回到伦敦",
+        "movement": "叙述者把部分往事讲给家人，传奇重新进入体面日常，也显出记忆的选择性。",
+        "evidence": "叙述者选择性复述"
+      }
+    ],
+    "caveat": "人物生平是虚构叙事。地理阶段和见证链帮助读者理解作品结构，不把文学人物还原成可验证传记。"
+  },
+  "characters": [
+    {
+      "id": "narrator",
+      "name": "‘我’",
+      "role": "观察者、记录者和讽刺性过滤器",
+      "reading_note": "承认自己不知道动机，又不断评价人物；可信度不是全有或全无。"
+    },
+    {
+      "id": "strickland",
+      "name": "查尔斯·史特利克兰",
+      "role": "绘画冲动的中心，也是伦理冲突的中心",
+      "reading_note": "沉默使他容易被别人解释；天才并不自动构成免责。"
+    },
+    {
+      "id": "mrs-strickland",
+      "name": "史特利克兰太太",
+      "role": "被遗弃的妻子、独立谋生者与身后名声管理者",
+      "reading_note": "她既受伤害，也主动重建体面和叙事。"
+    },
+    {
+      "id": "dirk-stroeve",
+      "name": "德尔克·施特洛夫",
+      "role": "平庸的画家、敏锐的鉴赏者与慷慨的受害者",
+      "reading_note": "小说让可笑外表与真实感受并存。"
+    },
+    {
+      "id": "blanche-stroeve",
+      "name": "勃朗什·施特洛夫",
+      "role": "巴黎段代价最集中承受者",
+      "reading_note": "她的内心主要由男性叙述者推测，沉默本身是批判线索。"
+    },
+    {
+      "id": "ata",
+      "name": "艾塔",
+      "role": "史特利克兰最后生活的伴侣与最后承诺的执行者",
+      "reading_note": "她的行动重要，但形象仍经过欧洲叙述者与见证者过滤。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01-retrospective-frame",
+      "type": "author_text",
+      "statement": "小说从史特利克兰身后成名与传记争议写起，读者先接触传奇，再回到普通人的外壳。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0018.xhtml", "chapter": "第一章"},
+        {"epub_path": "OEBPS/Text/part0019.xhtml", "chapter": "第二章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c02-compulsion",
+      "type": "author_text",
+      "statement": "史特利克兰把离家解释为无法选择的绘画冲动，而不是另一个女人或舒适生活的改良计划。",
+      "short_quote": "我跟你说了我必须画画。这由不得我自己。一个人要是落了水，他游泳游得好不好无关紧要，反正他得从水里挣扎出来，不然就得淹死。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0029.xhtml", "chapter": "第十二章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c03-paris-cost",
+      "type": "author_text",
+      "statement": "巴黎段把史特利克兰的创作执念与施特洛夫、勃朗什承受的关系伤害并置，拒绝把艺术追求写成无成本的自我实现。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0045.xhtml", "chapter": "第二十八章"},
+        {"epub_path": "OEBPS/Text/part0054.xhtml", "chapter": "第三十七章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c04-art-revelation",
+      "type": "narrator_position",
+      "statement": "叙述者相信作品比社交面具更能暴露艺术家的内在，并在看画后承认史特利克兰的力量。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0059.xhtml", "chapter": "第四十二章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c05-narrator-limit",
+      "type": "narrator_position",
+      "statement": "叙述者公开承认，他知道一些事件，却不知道导致事件的原因；完整肖像因此始终带有空白。",
+      "short_quote": "回过头来看，我发现我写下的查尔斯·史特利克兰其人其事想必很难令人满意。我写出了我所知道的一些发生过的事情，但是仍然没有写清楚，因为我并不知道导致这些事情发生的原因。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0060.xhtml", "chapter": "第四十三章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c06-tahiti-mediation",
+      "type": "author_text",
+      "statement": "塔希提段并非史特利克兰自述，而是叙述者多年后把船长、旅店主、邻居和医生的记忆重新排序。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0062.xhtml", "chapter": "第四十五章"},
+        {"epub_path": "OEBPS/Text/part0064.xhtml", "chapter": "第四十七章"},
+        {"epub_path": "OEBPS/Text/part0070.xhtml", "chapter": "第五十三章"},
+        {"epub_path": "OEBPS/Text/part0072.xhtml", "chapter": "第五十五章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c07-destruction",
+      "type": "author_text",
+      "statement": "最后作品被主动焚毁，使艺术的完成与占有、传播和后世评价发生冲突。",
+      "short_quote": "我想史特利克兰知道这是一幅杰作。他已经得到了他所追求的东西。他的人生已经圆满了。他创造了一个世界，也看到了自己的创造是美好的。然后，他怀着骄傲和轻蔑的心情，把它毁掉了。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0074.xhtml", "chapter": "第五十七章"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "s01-art-is-not-acquittal",
+      "type": "model_synthesis",
+      "statement": "小说让艺术成就与人物残酷同时成立；承认作品力量，不等于替艺术家免除责任。",
+      "derived_from": [
+        "c03-paris-cost",
+        "c04-art-revelation",
+        "c07-destruction"
+      ]
+    },
+    {
+      "id": "a01-narrator-not-author",
+      "type": "critical_audit",
+      "statement": "叙述者关于女人、爱情和‘怪人’的概括带有时代与个人偏见，不能自动当作毛姆的直接定论。",
+      "derived_from": [
+        "c05-narrator-limit",
+        "c06-tahiti-mediation"
+      ]
+    },
+    {
+      "id": "a02-title-limit",
+      "type": "critical_audit",
+      "statement": "‘月亮与六便士’适合概括梦想与现实的张力，但题名没有在本版小说正文中被作者直接解释，不能把通俗寓意冒充唯一答案。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0018.xhtml", "chapter": "第一章", "note": "题名仅作为正文页标题出现"}
+      ]
+    },
+    {
+      "id": "e01-publication",
+      "type": "external_background",
+      "statement": "英文原作《The Moon and Sixpence》出版于 1919 年。",
+      "sources": ["ext-gutenberg"]
+    },
+    {
+      "id": "e02-artwork",
+      "type": "external_background",
+      "statement": "页面所用《Ia Orana Maria》为高更 1891 年油画，The Met 标为 Public Domain。",
+      "sources": ["ext-met-ia-orana-maria"]
+    }
+  ],
+  "core_route": [
+    {
+      "order": 1,
+      "title": "传奇框架与出走理由",
+      "minutes": "35–40",
+      "chapters": ["1–2", "6", "11–14"],
+      "epub_paths": [
+        "OEBPS/Text/part0018.xhtml",
+        "OEBPS/Text/part0019.xhtml",
+        "OEBPS/Text/part0023.xhtml",
+        "OEBPS/Text/part0028.xhtml",
+        "OEBPS/Text/part0029.xhtml",
+        "OEBPS/Text/part0030.xhtml",
+        "OEBPS/Text/part0031.xhtml"
+      ],
+      "why": "先看到身后传奇，再核对普通外壳、家庭误判和‘必须画画’的冲动。"
+    },
+    {
+      "order": 2,
+      "title": "巴黎：创作与人的代价",
+      "minutes": "50–55",
+      "chapters": ["18–23", "28–37", "42–43"],
+      "epub_paths": [
+        "OEBPS/Text/part0035.xhtml–part0040.xhtml",
+        "OEBPS/Text/part0045.xhtml–part0054.xhtml",
+        "OEBPS/Text/part0059.xhtml–part0060.xhtml"
+      ],
+      "why": "理解施特洛夫与勃朗什不是支线装饰，而是天才叙事必须承担的伦理压力。"
+    },
+    {
+      "order": 3,
+      "title": "塔希提：多人转述的终局",
+      "minutes": "40–45",
+      "chapters": ["45–58"],
+      "epub_paths": [
+        "OEBPS/Text/part0062.xhtml–part0075.xhtml"
+      ],
+      "why": "跟随见证链读完最后生活、壁画、焚毁和返回伦敦的结尾。"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "先给传奇再回到常人，迫使读者检查名声怎样改变道德判断。",
+      "叙述者明确承认知识边界，使人物的不可解释性成为结构，而不是漏写动机。",
+      "巴黎段把艺术追求与具体人的受伤并置，没有把出走简化成励志职业转换。",
+      "史特利克兰、施特洛夫等人物都同时包含可笑、可憎、可怜和可敬之处。"
+    ],
+    "limits": [
+      "勃朗什与艾塔的内心大多经过男性讲述者推测，读者不能把这些推测当作她们完整的声音。",
+      "塔希提被欧洲旅行者写成神秘、原始和可容纳怪人的空间，带有殖民时代的异域凝视，不能当作民族志事实。",
+      "史特利克兰借用了高更生平材料，但人物、事件与作品均为小说构造；一一对应会扭曲作品。",
+      "叙述者的机智概括很有感染力，却经常越过证据边界；精彩句子仍需判断是谁在说、凭什么说。"
+    ],
+    "usable_today": "把它读成对‘天才传奇怎样成立’的追问，而不是鼓励抛弃责任的成功学，也不是简单宣布艺术高于一切。",
+    "spoiler_free_warning": "如果尚未读原书，先停在页面的无剧透区；完整模型会揭示巴黎悲剧与塔希提结局。"
+  },
+  "module_policy": {
+    "generation": "on_demand_only",
+    "root": "modules/",
+    "artifact_name": "深挖模块",
+    "not_original_chapter_note": "模块围绕读者问题生成，不是毛姆原书新增章节。",
+    "candidates": [
+      {
+        "id": "narrator-and-legend",
+        "title": "谁在讲述天才：叙述者、见证者与传奇制造",
+        "status": "not_generated",
+        "question": "叙述者知道什么、不知道什么，又怎样靠讽刺和选择塑造史特利克兰？"
+      },
+      {
+        "id": "strickland-and-gauguin",
+        "title": "史特利克兰 × 高更：素材、改写与传记边界",
+        "status": "not_generated",
+        "question": "毛姆借用了哪些高更材料，哪些部分必须留在小说虚构层？"
+      }
+    ]
+  },
+  "modules": [],
+  "verdict": {
+    "recommendation": "建议全读",
+    "summary": "这本小说的价值不只在情节结论，还在叙述者的讽刺、留白和不断变动的判断。先读无剧透入口；有兴趣就全读，时间紧再走三组关键原文路线。",
+    "decision": {
+      "full_read_if": "你在意叙述语气、人物矛盾和艺术与责任如何同时成立；这是推荐选择。",
+      "selective_read_if": "你只有约两小时，愿意接受叙事连续性和语言趣味的损失。",
+      "deep_dive_if": "你对叙述者可信度，或史特利克兰与高更的边界产生了明确问题。",
+      "stop_after_map_if": "你只想知道它不是一本‘勇敢追梦’的励志小说，并判断是否值得投入。"
+    }
+  },
+  "generation_audit": {
+    "mode": "source_level_revision",
+    "material_grade": "full_source",
+    "whole_book_identity": "这是一部有限视角的心理小说：字面上跟着叙述者和多名转述者，追问查尔斯·史特利克兰怎样被讲成艺术传奇，以及绘画冲动能否抵消对人的责任。叙述从身后成名与传记争议起，倒叙伦敦中产出走，进入巴黎的创作与伤害，再靠他人记忆拼出塔希提最后生活与作品焚毁，最后回到伦敦家庭的选择性复述。不可省主线是亲见/转述/传奇分层、出走强迫、巴黎代价、终局的间接性；它们同属‘传奇怎样制成’，不能把人物读成高更传记。正文只纳入第一至第五十八章；书前画作介绍和书后年表、画传、营销页不进入小说模型。",
+    "continuity_check": "去掉叙述者限制或巴黎对人的代价，会变成励志出走故事；去掉塔希提转述链，终局会变成全知传记。若改成高更生平时间线，会抹掉‘先传奇后常人’的叙述设计。本轮保留五段叙述顺序与分层剧透；不把书前画作、年表、画传并入小说模型；不把史特利克兰等同高更；保留一幅 Public Domain 高更作品并继续标明它不是虚构人物的画作。不预生成深挖模块。",
+    "source_read": true,
+    "source_boundary_checked": true,
+    "archive_validated": true,
+    "key_claims_sampled_against_source": true,
+    "illustration_rights_checked": true,
+    "fireworks_svg_validation": "passed_xml_collision_geometry_composition",
+    "fireworks_visual_review": "prior_pass_unchanged_this_round",
+    "schema_validation": "passed",
+    "content_review": "passed_after_quote_unit_and_speaker_correction",
+    "language_review": "passed",
+    "desktop_ui_review": "prior_visual_pass_this_round_static_overflow_and_anchor_check",
+    "mobile_ui_review": "prior_390px_pass_this_round_static_only",
+    "notes": "2026-09-02 对照当前完整 EPUB 重算哈希与结构：材料等级为完整来源。58 章正文、分层剧透、高更/史特利克兰边界和 Public Domain 插图说明保持有效。本轮把三处直接摘录补成完整话语单位，并把焚画判断改回叙述者发言。本轮未做新的桌面/手机视口目视复核。"
+  }
+}

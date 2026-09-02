@@ -2,9 +2,9 @@
 
 # 渐进式读书地图
 
-**不是替你读书，而是帮你更快回到原文。**
+**用 AI 帮你更快回到原文，而不是替你读书。**
 
-先看全书结构，按问题深挖，最后回到原文。
+先建立全书结构，再按真实问题深挖。
 
 [**在线阅读**](https://li-sanze.github.io/reading-maps/)
 
@@ -16,6 +16,8 @@
 
 - **《如何阅读一本书》** — [打开主地图](https://li-sanze.github.io/reading-maps/books/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/reading.html)：四层阅读、四个主动问题与阅读判断。
 - **《毛泽东选集》** — [打开主地图与深挖](https://li-sanze.github.io/reading-maps/books/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86/reading.html)：时期、问题、方法与按需生成的深挖模块。
+- **《乌合之众》** — [打开主地图](https://li-sanze.github.io/reading-maps/books/%E4%B9%8C%E5%90%88%E4%B9%8B%E4%BC%97/reading.html)：群体形成、信念传播、领袖说服与现代批判校正。
+- **《月亮与六便士》** — [打开分层剧透地图](https://li-sanze.github.io/reading-maps/books/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/reading.html)：分层剧透、五段叙事、叙述证据与艺术/责任审计。
 
 ## 地图怎么用
 
@@ -24,6 +26,10 @@
 3. **回到原文**：地图负责定位、比较和校正，不替代作者的完整论证与语境。
 
 每本书以 `reading.html + reading.json` 为稳定产物：HTML 用于阅读，JSON 保留结构、来源定位和审计信息。深挖模块只在真实阅读问题出现后增加。
+
+## 生成与审计
+
+仓库内置 [`read-book`](skills/read-book/SKILL.md) Skill，支持从中文 TXT、Markdown 和 EPUB 建立全书主地图、按真实问题深挖，以及最小修订现有地图。
 
 ## 内容边界
 
