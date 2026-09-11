@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《阿加莎·克里斯蒂侦探小说大全集（全85册）》无剧透阅读地图：核清合订本构成、85与80的差异，以及按系列和形态回原文的入口。">
+  <title>《阿加莎·克里斯蒂侦探小说大全集（全85册）》阅读地图</title>
+  <style>
+    :root {
+      --paper: #f4f0e7;
+      --surface: #fffdf8;
+      --ink: #1f2b2a;
+      --muted: #626e6b;
+      --line: #d8d4ca;
+      --teal: #285c58;
+      --teal-deep: #17413f;
+      --teal-soft: #e2efec;
+      --amber: #8a571d;
+      --amber-soft: #f8ecd9;
+      --blue: #315f78;
+      --blue-soft: #e8f0f4;
+      --purple: #67528b;
+      --purple-soft: #efebf7;
+      --red: #8a4037;
+      --red-soft: #f5e5df;
+      --content: 1080px;
+      --text: 740px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(43, 51, 48, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(40, 92, 88, 0.1), transparent 26rem),
+        var(--paper);
+      font-family: ui-serif, "Songti SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--teal-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible, .table-scroll:focus-visible {
+      outline: 3px solid #d99b3b;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(2.1rem, 7vw, 4.2rem);
+      letter-spacing: -0.04em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.1rem); }
+    h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    p { margin: 0 0 1em; }
+    code {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      overflow-wrap: anywhere;
+    }
+    .skip-link {
+      position: fixed; z-index: 20; top: 10px; left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px; color: white; background: var(--teal-deep); border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+    .prose { max-width: var(--text); }
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex; min-height: 44px; align-items: center;
+      margin-bottom: 16px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem; font-weight: 760; text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px; color: var(--teal);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.77rem; font-weight: 850; letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px; margin: 16px 0 0; color: var(--muted);
+      font-size: clamp(1.05rem, 2.3vw, 1.26rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex; min-height: 40px; align-items: center;
+      padding: 7px 12px; color: var(--teal-deep);
+      background: rgba(255, 253, 248, 0.88);
+      border: 1px solid var(--line); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 750;
+    }
+    .verdict {
+      display: grid; gap: 7px; max-width: 880px; margin-top: 24px; padding: 22px;
+      color: white; background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .verdict small {
+      color: #c9e4df; font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800;
+    }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { margin: 0; color: #f0faf8; }
+    .section-nav {
+      position: sticky; z-index: 8; top: 0;
+      background: rgba(244, 240, 231, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex; width: min(100%, var(--content)); min-height: 52px;
+      margin-inline: auto; padding-inline: 10px;
+      overflow-x: auto; scrollbar-width: thin;
+    }
+    .section-nav a {
+      display: inline-flex; flex: 0 0 auto; min-height: 48px; align-items: center;
+      padding: 8px 10px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 760; text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--teal-deep); }
+    .nav-hint {
+      display: none;
+      margin: 0;
+      padding: 4px 20px 0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+    }
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 14px; margin-bottom: 18px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto; padding: 5px 10px; color: var(--teal-deep);
+      background: var(--teal-soft); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem; font-weight: 800;
+    }
+    .grid-2, .audit-grid, .decision-grid {
+      display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .card, .audit-box, .decision, .source-box {
+      min-width: 0; padding: 19px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(43, 51, 48, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child { margin-bottom: 0; }
+    #modules h3 a { display: inline-flex; min-height: 44px; align-items: center; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex; min-height: 26px; align-items: center;
+      margin: 0 0 9px; padding: 2px 8px; border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.68rem; font-weight: 850; letter-spacing: 0.03em;
+    }
+    .paratext { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--amber); background: var(--amber-soft); }
+    .worktext { color: var(--teal-deep); background: var(--teal-soft); }
+    .locator {
+      display: block; margin-top: 8px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.74rem;
+      overflow-wrap: anywhere;
+    }
+    blockquote {
+      margin: 12px 0 1em; padding: 14px 16px; background: #fffbef;
+      border-left: 3px solid var(--amber); border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; }
+    .route, .source-list { margin: 0; padding: 0; list-style: none; }
+    .route { display: grid; gap: 10px; counter-reset: route; }
+    .route li {
+      position: relative; min-height: 88px; padding: 16px 16px 16px 58px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route); position: absolute; top: 17px; left: 17px;
+      display: grid; width: 28px; height: 28px; place-items: center;
+      color: white; background: var(--teal); border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; font-weight: 900;
+    }
+    .catalog-group {
+      margin: 0 0 10px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    }
+    .catalog-group > summary {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; min-height: 48px; padding: 12px 16px; cursor: pointer;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 760;
+      list-style: none;
+    }
+    .catalog-group > summary::-webkit-details-marker { display: none; }
+    .catalog-group > summary span {
+      color: var(--muted); font-size: 0.8rem; font-weight: 650;
+    }
+    .table-scroll {
+      max-width: 100%; overflow-x: auto; padding: 0 12px 12px;
+      scrollbar-color: #c3b9ac transparent;
+    }
+    table {
+      width: 100%; min-width: 720px; border-collapse: collapse;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.86rem;
+    }
+    th, td {
+      padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 750; }
+    .table-hint {
+      margin: 0; padding: 0 16px 14px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.76rem;
+    }
+    .audit-box ul { margin: 0; padding-left: 1.1em; }
+    footer {
+      padding: 28px 0 40px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.92rem;
+    }
+    footer p { margin: 0 0 7px; }
+    @media (max-width: 660px) {
+      .nav-hint { display: block; }
+      body { font-size: 16px; }
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 42px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 9px; }
+      .grid-2, .audit-grid, .decision-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      .section-nav, .site-back, .nav-hint { display: none; }
+      body { background: white; overflow-x: visible; }
+      .shell { width: 100%; }
+      .catalog-group { break-inside: avoid; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; width: 100%; }
+      th, td { font-size: 0.72rem; padding: 5px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../index.html">← 返回书架</a>
+      <p class="eyebrow">Reading Map · 默认无剧透</p>
+      <h1>阿加莎·克里斯蒂侦探小说大全集（全85册）</h1>
+      <p class="lead">这是一部中文合订本的定向图，不是 85 篇剧情简介，也不是必读榜。它先核清书里到底装了什么，再帮你决定从哪一卷回到原文。</p>
+      <div class="facts">
+        <span class="fact">新星出版社合订 EPUB</span>
+        <span class="fact">顶层 91 项 = 卷首 6 + 作品 85</span>
+        <span class="fact">年表只列 80 项</span>
+        <span class="fact">约 30–45 分钟</span>
+        <span class="fact">按需已生成 3 个深挖</span>
+      </div>
+      <div class="verdict">
+        <small>先记住这一句</small>
+        <strong>85 是合订本条目，不是 85 个同质故事。</strong>
+        <p>有长篇，有合集，有苏菲·汉娜的波洛续写，有查尔斯·奥斯本小说化的三部戏剧，还有一部自传。卷首年表不收录这 5 项例外。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <p class="nav-hint">章节导航可左右滑动。</p>
+    <nav class="shell" aria-label="本页章节">
+      <a href="#what">是什么</a>
+      <a href="#diff">85与80</a>
+      <a href="#doors">入口</a>
+      <a href="#kinds">形态</a>
+      <a href="#start">从哪里读</a>
+      <a href="#labels">标型</a>
+      <a href="#catalog">85项目录</a>
+      <a href="#route">回原文</a>
+      <a href="#audit">审计</a>
+      <a href="#decision">下一步</a>
+      <a href="#modules">深挖</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="what">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这份合订本是什么，不是什么</h2>
+            <p>先看容器，再看书名墙上的熟悉字样。</p>
+          </div>
+          <span class="time">约 5 分钟</span>
+        </div>
+        <div class="prose">
+          <p>OPF 标题是《阿加莎·克里斯蒂侦探小说大全集（全85册）》，创作者栏写阿加莎·克里斯蒂，出版社写新星出版社。电子文件日期同时出现 2019-08-07 和 2020-02-28。这两项只能说明这个 EPUB 的封装时间，不能冒充整套统一纸书版次。标识符是 <code>3354773094</code>，不能自行改写成 ISBN。</p>
+          <p>全书顶层目录是扁平的：91 个节点，通常只给作品级起点。真正决定一卷里有几个故事的，是各卷自己的目录。把“85 个顶层条目”写成“85 个故事”，会把合集、续写和自传一起算错。</p>
+          <p>各卷译者不同，出版日期多在 2013–2019 年，ISBN 也按卷变化。本图保留书内中文译名，不凭英文记忆改名。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="diff">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>年表 80 项，目录 85 项</h2>
+            <p>多出的 5 项不能吞进“阿加莎侦探作品年表”。</p>
+          </div>
+          <span class="time">约 6 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin paratext">出版副文本</span>卷首《阿加莎·克里斯蒂侦探作品年表》分组列出 80 项：波洛系列 38，马普尔小姐系列 14，其他系列及非系列 28。每条带英文名、年份和中文书名。</p>
+          <span class="locator">OEBPS/Text/part0003.xhtml</span>
+          <div class="grid-2" style="margin: 18px 0;">
+            <article class="card">
+              <span class="origin worktext">版权页</span>
+              <h3>苏菲·汉娜续写</h3>
+              <p>《字母袖扣谋杀案》版权页作者为【英】苏菲·汉娜。卷内致谢以续写波洛的口吻说话。它在合订本里，但不在 80 项年表里。</p>
+              <span class="locator">OEBPS/Text/part1101.xhtml；致谢 part1103.xhtml</span>
+            </article>
+            <article class="card">
+              <span class="origin audit">来源内冲突</span>
+              <h3>三部戏剧的小说化文本</h3>
+              <p>《黑咖啡》《蜘蛛网》《意外来客》版权页只写阿加莎。同书《蜘蛛网》卷末，查尔斯·奥斯本写他把这三部戏剧改编成小说。《意外来客》附言也指向奥斯本的评述。原始剧作、小说化、中文版署名必须分开记。</p>
+              <span class="locator">OEBPS/Text/part2178.xhtml</span>
+            </article>
+            <article class="card">
+              <span class="origin worktext">版权页</span>
+              <h3>自传</h3>
+              <p>《阿加莎·克里斯蒂自传》不是侦探故事。版权页在 part2391。卷内目录之后另有马修·普里查德序言（part2393）和哈珀柯林斯英国版出版前言（part2394）。</p>
+              <span class="locator">OEBPS/Text/part2391.xhtml</span>
+            </article>
+            <article class="card">
+              <span class="origin paratext">出版/家属副文本</span>
+              <h3>卷首四篇不是小说</h3>
+              <p>作者简介、作品年表、出版前言、致中国读者属于出版方、编者或家属。致中国读者由马修·普理查德署名，其中的书单是他的推荐，不是作者自评，也不是客观排名。</p>
+              <span class="locator">OEBPS/Text/part0002.xhtml 至 part0005.xhtml</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="doors">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>可以按哪些维度进去</h2>
+            <p>这些是导航轴，不是唯一必读路线。</p>
+          </div>
+          <span class="time">约 6 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>系列人物</h3><p class="muted">波洛、马普尔、汤米与塔彭丝，以及帕克·派恩、奎因先生。有些合集是混合篇目，不能整卷贴一个人物标签。</p></article>
+          <article class="card"><h3>创作时期</h3><p class="muted">年表给出各卷英文出版年。合订本并未按这个年份严格排序，年份只用来对照，不用来编一条成长史。</p></article>
+          <article class="card"><h3>文本形态</h3><p class="muted">长篇、短篇或中篇合集、戏剧小说化、续写、自传。分析模板不能共用。</p></article>
+          <article class="card"><h3>谜题与叙述</h3><p class="muted">封闭空间、连续案件、多重证词、叙述位置，都可以作为选题。本图只指出“这类问题存在”，不提前给答案。</p></article>
+          <article class="card"><h3>社会空间</h3><p class="muted">乡村、庄园、旅馆、火车与轮船、发掘工地、战时城市。作品文本、报告解读和外部历史必须分开。</p></article>
+          <article class="card"><h3>长度与剧透风险</h3><p class="muted">长篇与合集的阅读单位不同。越是依赖叙述位置的作品，越应先读原文，再考虑深挖。本图默认不进入解答区。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kinds">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>怎样区分这些文本</h2>
+            <p>先看形态，再决定以后能不能套同一套深挖结构。</p>
+          </div>
+          <span class="time">约 6 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin synthesis">报告综合</span>波洛与马普尔的归属，首先依据卷首年表；汤米与塔彭丝、帕克·派恩、奎因先生只在卷内正文或篇目能立住时单列。戏剧小说化里，《黑咖啡》出场人物含波洛；《蜘蛛网》和《意外来客》出场人物没有波洛、马普尔或汤米与塔彭丝。</p>
+          <p>合集的标志是卷内目录出现多个可独立成篇的标题。有的合集用“第X章”给每个故事编号，例如《死亡草》《犯罪团伙》《赫尔克里·波洛的丰功伟绩》。章节数不等于故事数：《犯罪团伙》17 章里有三组上下篇，按正文计为 14 个独立故事。</p>
+          <p>《三只瞎老鼠》中文版特别说明写明：本卷是混合篇目，其中两篇帕克·派恩故事已收于《惊险的浪漫》，因版权方要求再次收入。重叠篇目两边都保留，不删一边来充整齐。</p>
+          <span class="locator">OEBPS/Text/part2073.xhtml</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>不同读者从哪里开始</h2>
+            <p>入口是建议，不是榜单。书名本身不在这里展开。</p>
+          </div>
+          <span class="time">约 6 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>新读者</h3>
+            <p>若要看波洛怎样进入这套中文译本，年表第一项是《斯泰尔斯庄园奇案》。若要看马普尔的乡村观察，年表第一项是《寓所谜案》。若更想先读一部不依附固定侦探的长篇，年表“其他”里的《无人生还》是独立入口。读这些书时，先跟着各卷目录走，不要先找解答。</p>
+          </article>
+          <article class="card">
+            <h3>已经熟悉若干书名的人</h3>
+            <p>可以用下面的目录核对：你记得的中文译名是否就是本版用名，这一卷是长篇还是合集，版权页译者是谁。合集不要当成一个故事读完再下判断。</p>
+          </article>
+          <article class="card">
+            <h3>想看叙述与信息控制</h3>
+            <p>先选一卷，记下“读者在哪一章第一次得到某条信息”，再决定要不要深挖。本图不指出哪一卷依赖叙述位置，以免把选题本身变成剧透。</p>
+          </article>
+          <article class="card">
+            <h3>想看社会空间与时代痕迹</h3>
+            <p>可从乡村宅邸、旅馆、交通工具、发掘营地或战时背景的卷次进入。先摘作品里的地点、职业和规矩，再决定要不要引入外部历史。外部材料只能标成外部背景。</p>
+          </article>
+        </div>
+        <div class="prose" style="margin-top:18px;">
+          <p><span class="origin paratext">家属副文本</span>马修·普理查德在《致中国读者》里特别提到《东方快车谋杀案》《谋杀启事》和《长夜》。这是他的阅读印象，可以当作书内副文本，不能写成客观三甲。</p>
+          <blockquote>
+            <p>我认为阿加莎·克里斯蒂的作品有两个非常重要的特征。首先它们是非常易于理解的。……第二个特征是这些故事给我们展开了一幅英国的精彩画卷，特别是阿加莎·克里斯蒂那个年代的英国乡村。</p>
+          </blockquote>
+          <span class="locator">致中国读者 · OEBPS/Text/part0005.xhtml</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="labels">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>哪些话来自哪里</h2>
+            <p>标签是纪律，不是装饰。</p>
+          </div>
+          <span class="time">约 3 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card"><span class="origin worktext">作品文本</span><p>小说、自传正文、出场人物表、卷内目录标题。</p></article>
+          <article class="card"><span class="origin paratext">出版副文本</span><p>版权页、作者简介、出版前言、作品年表、致中国读者、各卷序跋中的编者或家属文字。</p></article>
+          <article class="card"><span class="origin synthesis">报告综合</span><p>本图对合订本构成、入口和阅读顺序的归纳。</p></article>
+          <article class="card"><span class="origin audit">批判审计</span><p>对署名冲突、章节冒充故事、宣传口吻和未核范围的校正。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>85 个作品级条目</h2>
+            <p>按系列分组折叠。已生成的入口深挖列在文末，不写进这张表。</p>
+          </div>
+          <span class="time">查阅用</span>
+        </div>
+        <p class="prose muted">独立篇数只填合集。长篇的“第X章”不是故事数。身份栏的“来源内冲突”指版权页与卷内其他署名不一致，或两卷 ISBN 撞号。</p>
+        <details class="catalog-group"><summary>波洛系列（年表归入）<span>38 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w01"><td>w01</td><td>斯泰尔斯庄园奇案</td><td>The Mysterious Affair at Styles</td><td>1920</td><td>郑卫明</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w02"><td>w02</td><td>高尔夫球场命案</td><td>Murder on the Links</td><td>1923</td><td>张乐敏</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w03"><td>w03</td><td>首相绑架案</td><td>Poirot Investigates</td><td>1924</td><td>王占一</td><td>短篇/中篇合集</td><td>11</td><td>已核</td></tr><tr id="w04"><td>w04</td><td>罗杰疑案</td><td>The Murder of Roger Ackroyd</td><td>1926</td><td>常禾</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w05"><td>w05</td><td>四魔头</td><td>The Big Four</td><td>1927</td><td>吕灵芝</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w06"><td>w06</td><td>蓝色列车之谜</td><td>The Mystery of the Blue Train</td><td>1928</td><td>舒金佳</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w07"><td>w07</td><td>悬崖山庄奇案</td><td>Peril at End House</td><td>1932</td><td>程云琦</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w08"><td>w08</td><td>人性记录</td><td>Lord Edgware Dies</td><td>1933</td><td>简华凌</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w09"><td>w09</td><td>东方快车谋杀案</td><td>Murder on the Orient Express</td><td>1934</td><td>郑桥</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w10"><td>w10</td><td>云中命案</td><td>Death in the Clouds</td><td>1935</td><td>于婉青</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w11"><td>w11</td><td>三幕悲剧</td><td>Three-Act Tragedy</td><td>1935</td><td>范祥镇</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w12"><td>w12</td><td>底牌</td><td>Cards on the Table</td><td>1936</td><td>辛可加</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w13"><td>w13</td><td>古墓之谜</td><td>Murder in Mesopotamia</td><td>1936</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w14"><td>w14</td><td>ABC谋杀案</td><td>The ABC Murders</td><td>1936</td><td>赵文伟</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w15"><td>w15</td><td>尼罗河上的惨案</td><td>Death on the Nile</td><td>1937</td><td>张乐敏</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w16"><td>w16</td><td>沉默的证人</td><td>Dumb Witness</td><td>1937</td><td>苏国梁</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w17"><td>w17</td><td>幽巷谋杀案</td><td>Murder in the Mews</td><td>1937</td><td>林媛</td><td>短篇/中篇合集</td><td>4</td><td>已核</td></tr><tr id="w18"><td>w18</td><td>死亡约会</td><td>Appointment with Death</td><td>1938</td><td>朱琳</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w19"><td>w19</td><td>波洛圣诞探案记</td><td>Hercule Poirot&#x27;s Christmas</td><td>1938</td><td>孙蓓雯</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w20"><td>w20</td><td>牙医谋杀案</td><td>One, Two, Buckle My Shoe</td><td>1940</td><td>赵飞</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w21"><td>w21</td><td>H庄园的午餐</td><td>Sad Cypress</td><td>1940</td><td>黄夏青</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w22"><td>w22</td><td>阳光下的罪恶</td><td>Evil Under the Sun</td><td>1941</td><td>于婉青</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w23"><td>w23</td><td>五只小猪</td><td>Five Little Pigs</td><td>1943</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w24"><td>w24</td><td>空幻之屋</td><td>The Hollow</td><td>1946</td><td>陈世颐</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w25"><td>w25</td><td>赫尔克里·波洛的丰功伟绩</td><td>The Labours of Hercules</td><td>1947</td><td>六翼天使</td><td>短篇/中篇合集</td><td>12</td><td>已核</td></tr><tr id="w26"><td>w26</td><td>顺水推舟</td><td>Taken at the Flood</td><td>1948</td><td>周力</td><td>长篇</td><td>—</td><td>来源内冲突</td></tr><tr id="w27"><td>w27</td><td>清洁女工之死</td><td>Mrs. McGinty&#x27;s Dead</td><td>1952</td><td>黄夏青</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w28"><td>w28</td><td>葬礼之后</td><td>After the Funeral</td><td>1953</td><td>苏国梁</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w29"><td>w29</td><td>山核桃大街谋杀案</td><td>Hickory Dickory Dock</td><td>1955</td><td>王占一</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w30"><td>w30</td><td>弄假成真</td><td>Dead Man&#x27;s Folly</td><td>1956</td><td>杨俊峰</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w31"><td>w31</td><td>鸽群中的猫</td><td>Cat Among the Pigeons</td><td>1959</td><td>简华凌</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w32"><td>w32</td><td>雪地上的女尸</td><td>The Adventure of the Christmas Pudding</td><td>1960</td><td>林安颖</td><td>短篇/中篇合集</td><td>5</td><td>已核</td></tr><tr id="w33"><td>w33</td><td>怪钟疑案</td><td>The Clocks</td><td>1963</td><td>董亚丽</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w34"><td>w34</td><td>第三个女郎</td><td>Third Girl</td><td>1966</td><td>王璐</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w35"><td>w35</td><td>万圣节前夜的谋杀</td><td>Hallowe&#x27;en Party</td><td>1969</td><td>王若非，陈喆</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w36"><td>w36</td><td>大象的证词</td><td>Elephants Can Remember</td><td>1972</td><td>李冰伊</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w37"><td>w37</td><td>蒙面女人</td><td>Poirot&#x27;s Early Stories</td><td>1974</td><td>于婉青</td><td>短篇/中篇合集</td><td>18</td><td>已核</td></tr><tr id="w38"><td>w38</td><td>帷幕</td><td>Curtain-Poirot&#x27;s Last Case</td><td>1975</td><td>李杨</td><td>长篇</td><td>—</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>马普尔小姐系列（年表归入）<span>14 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w40"><td>w40</td><td>寓所谜案</td><td>The Murder at the Vicarage</td><td>1930</td><td>赵文伟</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w41"><td>w41</td><td>死亡草</td><td>The Thirteen Problems</td><td>1932</td><td>六翼天使</td><td>短篇/中篇合集</td><td>13</td><td>已核</td></tr><tr id="w42"><td>w42</td><td>藏书室女尸之谜</td><td>The Body in the Library</td><td>1942</td><td>王乐然</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w43"><td>w43</td><td>魔手</td><td>The Moving Finger</td><td>1943</td><td>程星星</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w44"><td>w44</td><td>谋杀启事</td><td>A Murder Is Announced</td><td>1950</td><td>周莎</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w45"><td>w45</td><td>借镜杀人</td><td>They Do It with Mirrors</td><td>1952</td><td>陈杰</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w46"><td>w46</td><td>黑麦奇案</td><td>A Pocket Full of Rye</td><td>1953</td><td>辛可加</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w47"><td>w47</td><td>命案目睹记</td><td>4.50 from Paddington</td><td>1957</td><td>戴竟</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w48"><td>w48</td><td>破镜谋杀案</td><td>The Mirror Crack&#x27;d from Side to side</td><td>1962</td><td>张文婷</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w49"><td>w49</td><td>加勒比海之谜</td><td>A Caribbean Mystery</td><td>1964</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w50"><td>w50</td><td>伯特伦旅馆</td><td>At Bertram&#x27;s Hotel</td><td>1965</td><td>舒金佳</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w51"><td>w51</td><td>复仇女神</td><td>Nemesis</td><td>1971</td><td>郑卫明</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w52"><td>w52</td><td>沉睡谋杀案</td><td>Sleeping Murder</td><td>1976</td><td>周凯</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w53"><td>w53</td><td>马普尔小姐最后的案件</td><td>Miss Marple&#x27;s Final Cases</td><td>1979</td><td>潘智丹</td><td>短篇/中篇合集</td><td>9</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>汤米与塔彭丝<span>5 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w54"><td>w54</td><td>暗藏杀机</td><td>The Secret Adversary</td><td>1922</td><td>黄夏青</td><td>长篇</td><td>—</td><td>来源内冲突</td></tr><tr id="w57"><td>w57</td><td>犯罪团伙</td><td>Partners in Crime</td><td>1929</td><td>林培菊</td><td>短篇/中篇合集</td><td>14</td><td>已核</td></tr><tr id="w68"><td>w68</td><td>桑苏西来客</td><td>N or M?</td><td>1941</td><td>张乐敏</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w81"><td>w81</td><td>煦阳岭的疑云</td><td>By the Pricking of My Thumbs</td><td>1968</td><td>党敏博</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w83"><td>w83</td><td>命运之门</td><td>Postern of Fate</td><td>1973</td><td>陈杰</td><td>长篇</td><td>—</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>帕克·派恩<span>1 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w62"><td>w62</td><td>惊险的浪漫</td><td>Parker Pyne Investigates</td><td>1934</td><td>林元</td><td>短篇/中篇合集</td><td>14</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>奎因先生<span>1 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w59"><td>w59</td><td>神秘的奎因先生</td><td>The Mysterious Mr. Quin</td><td>1930</td><td>党敏博</td><td>短篇/中篇合集</td><td>12</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>其他系列及非系列（年表未再拆）<span>21 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w55"><td>w55</td><td>褐衣男子</td><td>The Man in the Brown Suit</td><td>1924</td><td>赵飞</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w56"><td>w56</td><td>烟囱别墅之谜</td><td>The Secret of Chimneys</td><td>1925</td><td>高喻鑫</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w58"><td>w58</td><td>七面钟之谜</td><td>The Seven Dials Mystery</td><td>1929</td><td>程云琦 徐曙蕾</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w60"><td>w60</td><td>斯塔福特疑案</td><td>The Sittaford Mystery</td><td>1931</td><td>梁尔</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w61"><td>w61</td><td>控方证人</td><td>The Witness for the Prosecution</td><td>1933</td><td>王璐</td><td>短篇/中篇合集</td><td>12</td><td>已核</td></tr><tr id="w63"><td>w63</td><td>金色的机遇</td><td>The Listerdale Mystery</td><td>1934</td><td>梁尔</td><td>短篇/中篇合集</td><td>12</td><td>已核</td></tr><tr id="w64"><td>w64</td><td>悬崖上的谋杀</td><td>Why Didn&#x27;t They Ask Evans?</td><td>1934</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w66"><td>w66</td><td>无人生还</td><td>And Then There Were None</td><td>1939</td><td>夏阳</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w67"><td>w67</td><td>逆我者亡</td><td>Murder Is Easy</td><td>1939</td><td>聂婷</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w69"><td>w69</td><td>零点</td><td>Towards Zero</td><td>1944</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w70"><td>w70</td><td>死亡终局</td><td>Death Comes as the End</td><td>1945</td><td>未标</td><td>长篇</td><td>—</td><td>未决</td></tr><tr id="w71"><td>w71</td><td>闪光的氰化物</td><td>Sparkling Cyanide</td><td>1945</td><td>赵文伟</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w72"><td>w72</td><td>怪屋</td><td>Crooked House</td><td>1949</td><td>陈杰</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w73"><td>w73</td><td>三只瞎老鼠</td><td>Three Blind Mice and Other Stories</td><td>1950</td><td>王占一 张叶青</td><td>短篇/中篇合集</td><td>9</td><td>已核</td></tr><tr id="w74"><td>w74</td><td>他们来到巴格达</td><td>They Came to Baghdad</td><td>1951</td><td>陆烨华</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w75"><td>w75</td><td>地狱之旅</td><td>Destination Unknown</td><td>1954</td><td>王璐</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w77"><td>w77</td><td>奉命谋杀</td><td>Ordeal by Innocence</td><td>1958</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w79"><td>w79</td><td>灰马酒店</td><td>The Pale Horse</td><td>1961</td><td>周力</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w80"><td>w80</td><td>长夜</td><td>Endless Night</td><td>1967</td><td>陆烨华</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w82"><td>w82</td><td>天涯过客</td><td>Passenger to Frankfurt</td><td>1970</td><td>谢媛媛</td><td>长篇</td><td>—</td><td>已核</td></tr><tr id="w84"><td>w84</td><td>灯火阑珊</td><td>While the Light Lasts</td><td>1997</td><td>王霖</td><td>短篇/中篇合集</td><td>9</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>不在年表：波洛续写<span>1 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w39"><td>w39</td><td>字母袖扣谋杀案</td><td>—</td><td>—</td><td>李树娟</td><td>续写</td><td>—</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>不在年表：戏剧小说化<span>3 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w65"><td>w65</td><td>黑咖啡</td><td>—</td><td>—</td><td>苏迪青</td><td>戏剧小说化</td><td>—</td><td>来源内冲突</td></tr><tr id="w76"><td>w76</td><td>蜘蛛网</td><td>—</td><td>—</td><td>吕兵</td><td>戏剧小说化</td><td>—</td><td>来源内冲突</td></tr><tr id="w78"><td>w78</td><td>意外来客</td><td>—</td><td>—</td><td>邹文慧</td><td>戏剧小说化</td><td>—</td><td>来源内冲突</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+<details class="catalog-group"><summary>不在年表：自传<span>1 项</span></summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>编号</th><th>中文书名</th><th>年表英文名</th><th>年表年份</th><th>译者</th><th>形态</th><th>独立篇数</th><th>身份</th></tr></thead><tbody><tr id="w85"><td>w85</td><td>阿加莎·克里斯蒂自传</td><td>—</td><td>—</td><td>王霖</td><td>自传</td><td>—</td><td>已核</td></tr></tbody></table></div><p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。</p></details>
+      </div>
+    </section>
+
+    <section id="route">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>第一轮回原文</h2>
+            <p>地图到此为止。原文从你选定的一卷目录读起。</p>
+          </div>
+          <span class="time">原文路线</span>
+        </div>
+        <ol class="route">
+          <li><strong>核一份版权页和一卷目录 · 15 分钟</strong><span>任选一卷，看译者、日期、ISBN，并分清这一卷是长篇还是合集。</span></li>
+          <li><strong>对照年表与顶层目录 · 20 分钟</strong><span>打开 part0003 与合订本目录，确认你要读的书是否在 80 项里，是不是那 5 个例外之一。</span></li>
+          <li><strong>只读开篇，不读解答 · 40–90 分钟</strong><span>长篇读前两章或序幕；合集只读一篇完整故事。感到想翻结局时停下。</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>合订本方便检索，也放大了署名和形态的错觉。</p>
+          </div>
+          <span class="time">约 4 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box">
+            <h3>成立之处</h3>
+            <ul>
+              <li>用目录、年表和版权页就能说明 85 与 80 的差别，不必先进入谜底。</li>
+              <li>把续写、戏剧小说化和自传单列，比统一写成“阿加莎侦探小说”更接近书内证据。</li>
+              <li>合集按卷内篇目而不是文件数或章节数来数，减少后续深挖切错故事。</li>
+            </ul>
+          </article>
+          <article class="audit-box">
+            <h3>需要保留的限制</h3>
+            <ul>
+              <li>未逐页精读 2409 个正文文件；人物系列在“其他”类里仍可能未标全。</li>
+              <li>《马普尔小姐最后的案件》里有两篇正文未见马普尔，卷级仍按书名和年表归入马普尔。</li>
+              <li>没有平行英文本对照时，不纠正译名，也不讨论译本语气优劣。</li>
+              <li>出版前言和作者简介使用宣传句式，其中的销量、排名和“女王”称呼不转成事实主张。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>读到这里，停在选择之前</h2>
+            <p>已按点名生成 3 个深挖。其余仍不预生成。</p>
+          </div>
+          <span class="time">约 3 分钟</span>
+        </div>
+        <div class="decision-grid">
+          <article class="decision"><h3>选一卷读原文</h3><p>这是默认下一步。地图已经把边界和形态标好。</p></article>
+          <article class="decision"><h3>未点名的先不生成</h3><p>其余候选仍停在候选池，不自动写成模块。</p></article>
+          <article class="decision"><h3>再指定一部或一篇</h3><p>只有再次点名后，才按单部或单篇增加模块。</p></article>
+          <article class="decision"><h3>到此停止</h3><p>若你只是要确认这不是 85 部同质原创长篇，这里已经够用。</p></article>
+        </div>
+        <div class="prose" style="margin-top:18px;">
+          <p>完整解答、凶手身份、关键反转必须留在以后模块里由读者主动展开的区域。主地图的标题、导航和说明不进入那些内容。广为人知也不能当成读者已经知道结局。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>已生成的深挖</h2>
+            <p>按点名生成。卡片不进入解答。</p>
+          </div>
+          <span class="time">3 个</span>
+        </div>
+        <div class="grid-2">
+        <article class="card">
+          <p><span class="origin worktext">作品文本</span>w01《斯泰尔斯庄园奇案》</p>
+          <h3><a href="modules/the-mysterious-affair-at-styles--how-poirot-enters/reading.html">波洛怎样第一次走进这套译本</a></h3>
+          <p class="muted">核清事后点名、茶会不提名、村里现身和被请去调查。本页不进入整案解答。</p>
+        </article>
+        <article class="card">
+          <p><span class="origin worktext">作品文本</span>w04《罗杰疑案》</p>
+          <h3><a href="modules/the-murder-of-roger-ackroyd--what-the-narrator-shows/reading.html">读者当时能从谢泼德医生那里知道多少</a></h3>
+          <p class="muted">核清乡村医生怎么写、当时读者能看见什么。后文收束只在模块里由你展开。</p>
+        </article>
+        <article class="card">
+          <p><span class="origin worktext">作品文本</span>w41《死亡草》</p>
+          <h3><a href="modules/the-thirteen-problems--club-form/reading.html">《死亡草》是十三场讲述，还是一部长篇</a></h3>
+          <p class="muted">核清两场讲述和一篇换形态。本页不写各篇谜底。</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>来源与核验</h2>
+            <p>可发布产物只保留内部路径，不写原书绝对位置。</p>
+          </div>
+          <span class="time">可回查</span>
+        </div>
+        <div class="source-box">
+          <ul class="source-list">
+            <li>本地 EPUB 结构：SHA-256 已核，ZIP 2623 条，OPF manifest 2620，spine XHTML 2409，顶层目录 91。</li>
+            <li>作品边界、版权页和卷内目录见 <a href="reading.json">reading.json</a> 的 <code>works</code> 字段。</li>
+            <li>原书仍受版权保护，不提供连续长摘录，也不替代任何一卷原文。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向、核证和引导回原文，不替读者读完作品，也不把侦探小说做成谜底百科。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../index.html">返回书架</a></p>
+    </div>
+  </footer>
+</body>
+</html>

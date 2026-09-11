@@ -1,0 +1,214 @@
+{
+  "schema_version": "read-book.progressive-deep-dive.v1",
+  "artifact_kind": "progressive-article-deep-dive",
+  "generated_date": "2026-09-11",
+  "language": "zh-CN",
+  "spoiler_policy": {
+    "default": "spoiler_free",
+    "level": "low",
+    "scope": "停在波洛被请去调查、开始听黑斯廷斯讲述；不进入整案解答与卷末解释",
+    "page_description_and_nav": "no_solutions_no_culprits_no_identity_reversals"
+  },
+  "module": {
+    "id": "the-mysterious-affair-at-styles--how-poirot-enters",
+    "title": "波洛怎样第一次走进这套译本",
+    "subtitle": "事后点名、茶会不提名、村里现身、再被请去调查",
+    "status": "generated",
+    "work_id": "w01",
+    "parent_module_id": null,
+    "parent_book_html": "../../reading.html#decision",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "波洛不是第一章走进庄园的人；他先被事后叙述称为朋友，再在茶会上被提起却不提名，然后在村里被认出，最后由黑斯廷斯请去调查。",
+    "model_boundary": "这是入口复原，不是全案公平性检验，也不能把茶会上的“方法”扩成全套波洛模板。"
+  },
+  "reading_contract": {
+    "core_minutes": 52,
+    "target_minutes": "45-60",
+    "progressive_depth": [
+      "先核本卷版权页、献词与目录边界",
+      "再分开事后点名、茶会不提名、村里见面、被请去调查",
+      "回读四章入口后停止，不进入解答"
+    ],
+    "completion_definition": [
+      "能说明第一章开篇的“人尽皆知”是事后叙述姿态，不是读者已知结局",
+      "能指出波洛本人第一次出现在第二章村子，而不是第一章庄园茶会",
+      "知道本页停在第四章敲门探头，整案解答需另立模块"
+    ],
+    "optional_source_return_minutes": "20-30"
+  },
+  "source_work": {
+    "work_id": "w01",
+    "title_zh": "斯泰尔斯庄园奇案",
+    "original_title": "The Mysterious Affair at Styles",
+    "credited_author": "【英】阿加莎·克里斯蒂",
+    "translator": "郑卫明",
+    "volume_publisher": "新星出版社",
+    "volume_pub_date": "2013-03-01",
+    "isbn": "978-7-5133-1122-9",
+    "series": "poirot",
+    "form": "novel",
+    "copyright_xhtml": "OEBPS/Text/part0007.xhtml",
+    "volume_toc_xhtml": "OEBPS/Text/part0008.xhtml",
+    "dedication_xhtml": "OEBPS/Text/part0009.xhtml",
+    "start_xhtml": "OEBPS/Text/part0006.xhtml",
+    "end_xhtml_inclusive": "OEBPS/Text/part0022.xhtml",
+    "module_scope_xhtml": [
+      "OEBPS/Text/part0007.xhtml",
+      "OEBPS/Text/part0008.xhtml",
+      "OEBPS/Text/part0009.xhtml",
+      "OEBPS/Text/part0010.xhtml",
+      "OEBPS/Text/part0011.xhtml",
+      "OEBPS/Text/part0012.xhtml",
+      "OEBPS/Text/part0013.xhtml"
+    ],
+    "excluded_from_this_module": [
+      "第五章及以后的调查推进",
+      "第十三章《波洛的解释》",
+      "整案解答与卷末解释"
+    ]
+  },
+  "argument_structure": {
+    "question": "在这套中文合订本的第一卷里，波洛怎样第一次走进译本与现场？",
+    "conditions": [
+      "叙述者动笔时，把故事世界里的案件写成已渐渐落下帷幕。",
+      "第一章的庄园场面发生在案件之前，波洛本人不在场。",
+      "波洛作为比利时逃亡者住在村里，与庄园主人的接待有关。"
+    ],
+    "mechanisms": [
+      "事后叙述提前称波洛为朋友。",
+      "茶会上黑斯廷斯回答玛丽·卡文迪什时，只转述未点名的侦探。",
+      "邮局门口相认后，黑斯廷斯再请求把他带进调查。"
+    ],
+    "claimed_outcome": "读者先得到事后回看的叙述框架，再看见人，最后才看见他开始办案。",
+    "missing_or_uncertain": [
+      "入口场景不能推出凶手或公平性结论。",
+      "卷首年表 1920 不能单独当作英文本出版史的核证。",
+      "黑斯廷斯转述的“方法”不是作者给全套书的方法论。"
+    ]
+  },
+  "claims": [
+    {
+      "id": "c01-copyright",
+      "type": "出版副文本",
+      "text": "本卷版权页记书名《斯泰尔斯庄园奇案》，译者郑卫明，新星出版社，2013-03-01，ISBN 978-7-5133-1122-9。",
+      "locator": "OEBPS/Text/part0007.xhtml"
+    },
+    {
+      "id": "c01-dedication",
+      "type": "出版副文本",
+      "text": "献词页只有“献给我的母亲”，不属于情节证据。",
+      "locator": "OEBPS/Text/part0009.xhtml"
+    },
+    {
+      "id": "c01-retrospective-frame",
+      "type": "作品文本",
+      "text": "第一章开篇把“斯泰尔斯庄园案”写成已渐渐落下帷幕、且“人尽皆知”的事件，并称波洛为叙述者的朋友。",
+      "locator": "OEBPS/Text/part0010.xhtml"
+    },
+    {
+      "id": "c01-unnamed-at-tea",
+      "type": "作品文本",
+      "text": "茶会上黑斯廷斯只说曾在比利时遇见一位著名侦探、不可思议的小个子，当时未点名波洛。",
+      "locator": "OEBPS/Text/part0010.xhtml"
+    },
+    {
+      "id": "c01-village-meeting",
+      "type": "作品文本",
+      "text": "第二章黑斯廷斯在邮局门口与波洛相认；波洛称能来此地，是因为英格尔索普太太接待了七个从祖国逃亡的比利时人。",
+      "locator": "OEBPS/Text/part0011.xhtml"
+    },
+    {
+      "id": "c01-invited-to-investigate",
+      "type": "作品文本",
+      "text": "第三章末黑斯廷斯向约翰提出去请这位住在村里的侦探；第四章他敲门后，波洛从窗户探头。",
+      "locator": "OEBPS/Text/part0012.xhtml；OEBPS/Text/part0013.xhtml"
+    },
+    {
+      "id": "c01-three-step-entry",
+      "type": "报告综合",
+      "text": "波洛进入这套译本的第一卷，可分成事后点名、茶会不提名、村里现身、被请去调查四步；不能写成他第一章就在庄园现场。",
+      "locator": "OEBPS/Text/part0010.xhtml–part0013.xhtml"
+    },
+    {
+      "id": "c01-not-series-manual",
+      "type": "批判审计",
+      "text": "开篇“人尽皆知”是叙述姿态；茶会上的“方法”是黑斯廷斯转述。两者都不能升级为读者已知结局，或全套波洛操作手册。",
+      "locator": "OEBPS/Text/part0010.xhtml"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-c01-frame",
+      "epub_path": "OEBPS/Text/part0010.xhtml",
+      "title": "事后框架",
+      "excerpt": "轰动一时、引起大众强烈兴趣的“斯泰尔斯庄园案”已渐渐落下帷幕，尽管如此，此案人尽皆知，我的朋友波洛和那家人都要求我把整个故事写出来。",
+      "plain_guide": "动笔时叙述者把案件写成已渐渐落下帷幕；读者此时并不因此知道结局。",
+      "cannot_infer": "中文读者打开第一章就等于已经知道凶手。"
+    },
+    {
+      "id": "src-c01-tea",
+      "epub_path": "OEBPS/Text/part0010.xhtml",
+      "title": "未点名的比利时侦探",
+      "excerpt": "有一次，我在比利时遇见一个人，一个著名的侦探，他深深地触动了我。他是个不可思议的小个子，经常说要想做好侦探工作，不外乎方法问题。",
+      "plain_guide": "这是黑斯廷斯回答玛丽·卡文迪什，现场没有波洛。",
+      "cannot_infer": "这句话是作者给全部波洛小说的方法论。"
+    },
+    {
+      "id": "src-c01-howard",
+      "epub_path": "OEBPS/Text/part0010.xhtml",
+      "title": "霍华德的嘱咐",
+      "excerpt": "关键是，黑斯廷斯先生，盯紧那个魔鬼——她的丈夫！",
+      "plain_guide": "这是人物指控，说明庄园里已有敌意。",
+      "cannot_infer": "这句话已经给出案件事实。"
+    },
+    {
+      "id": "src-c01-name",
+      "epub_path": "OEBPS/Text/part0011.xhtml",
+      "title": "村里喊出名字",
+      "excerpt": "“波洛！”我也喊了起来。",
+      "plain_guide": "第一次见面在村子，不在庄园客厅。",
+      "cannot_infer": "波洛此时已经开始调查庄园案件。"
+    },
+    {
+      "id": "src-c01-refugees",
+      "epub_path": "OEBPS/Text/part0011.xhtml",
+      "title": "他为什么在这个村子",
+      "excerpt": "她友好而殷勤接待了我们这七个从祖国逃亡的乡巴佬儿。",
+      "plain_guide": "波洛能来，与英格尔索普太太接待比利时逃亡者有关。",
+      "cannot_infer": "接待逃亡者可以推出后文任何案情。"
+    },
+    {
+      "id": "src-c01-ask",
+      "epub_path": "OEBPS/Text/part0012.xhtml",
+      "title": "请求去请侦探",
+      "excerpt": "你还记得我跟你说过我的朋友波洛吧？这个比利时人就在这儿。他是一位最有名的侦探。",
+      "plain_guide": "调查权来自黑斯廷斯向约翰提出请求。",
+      "cannot_infer": "波洛自己闯进了庄园并接管案件。"
+    },
+    {
+      "id": "src-c01-window",
+      "epub_path": "OEBPS/Text/part0013.xhtml",
+      "title": "敲门之后",
+      "excerpt": "头上的一扇窗户小心翼翼地打开了，波洛探出了头。",
+      "plain_guide": "本页在他开始听讲述处停止。",
+      "cannot_infer": "从探头这一动作可以知道后文解释。"
+    }
+  ],
+  "critical_audit": {
+    "holds": [
+      "事后叙述、茶会不提名、村里相认、再被请去调查，都能在指定章节对上。",
+      "版权页和献词可以与正文分开处理。",
+      "黑斯廷斯的“朋友波洛”是事后写手已经确定的关系，不是到庄园当天的现场判断。"
+    ],
+    "limits": [
+      "本页不检验后文公平性，也不覆盖第十三章。",
+      "卷首年表年份不能替代英文本出版史核证。",
+      "没有平行英文本时，不评价译名或语气优劣。"
+    ]
+  },
+  "generation_audit": {
+    "material_grade": "full_source",
+    "material_grade_note": "已核本卷版权页、目录、献词与第一至第四章相关段落；不表示已精读第十三章或整卷解答。",
+    "continuity_check": "删去茶会未点名或村里相认任一步，入口会塌成“第一章就有波洛”或“他突然出现在现场”；后文解答删去不影响本页问题。"
+  }
+}

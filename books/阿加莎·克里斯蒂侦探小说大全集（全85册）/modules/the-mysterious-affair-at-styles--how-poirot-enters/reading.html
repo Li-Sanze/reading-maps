@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《斯泰尔斯庄园奇案》入口深挖：核清这套中文合订本里，波洛如何被事后叙述点名、在村里现身，以及何时被请去调查。本页不进入整案解答。">
+  <title>波洛怎样第一次走进这套译本</title>
+  <style>
+    :root {
+      --paper: #f4f0e7;
+      --surface: #fffdf8;
+      --ink: #1f2b2a;
+      --muted: #626e6b;
+      --line: #d8d4ca;
+      --teal: #285c58;
+      --teal-deep: #17413f;
+      --teal-soft: #e2efec;
+      --amber: #8a571d;
+      --amber-soft: #f8ecd9;
+      --blue: #315f78;
+      --blue-soft: #e8f0f4;
+      --purple: #67528b;
+      --purple-soft: #efebf7;
+      --red: #8a4037;
+      --red-soft: #f5e5df;
+      --content: 1080px;
+      --text: 740px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(43, 51, 48, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(40, 92, 88, 0.1), transparent 26rem),
+        var(--paper);
+      font-family: ui-serif, "Songti SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--teal-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d99b3b;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(2rem, 6.4vw, 3.4rem);
+      letter-spacing: -0.04em;
+    }
+    h2 { margin: 0; font-size: clamp(1.45rem, 3.8vw, 2rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    code {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      overflow-wrap: anywhere;
+    }
+    .skip-link {
+      position: fixed; z-index: 20; top: 10px; left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px; color: white; background: var(--teal-deep); border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+    .prose { max-width: var(--text); }
+    .hero { padding: 48px 0 30px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex; min-height: 44px; align-items: center;
+      margin-bottom: 16px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem; font-weight: 760; text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px; color: var(--teal);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.77rem; font-weight: 850; letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px; margin: 16px 0 0; color: var(--muted);
+      font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .fact {
+      display: inline-flex; min-height: 40px; align-items: center;
+      padding: 7px 12px; color: var(--teal-deep);
+      background: rgba(255, 253, 248, 0.88);
+      border: 1px solid var(--line); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 750;
+    }
+    .verdict {
+      display: grid; gap: 7px; max-width: 880px; margin-top: 22px; padding: 20px;
+      color: white; background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .verdict small {
+      color: #c9e4df; font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800;
+    }
+    .verdict strong { font-size: 1.18rem; }
+    .verdict p { margin: 0; color: #f0faf8; }
+    .section-nav {
+      position: sticky; z-index: 8; top: 0;
+      background: rgba(244, 240, 231, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex; width: min(100%, var(--content)); min-height: 52px;
+      margin-inline: auto; padding-inline: 10px;
+      overflow-x: auto; scrollbar-width: thin;
+    }
+    .section-nav a {
+      display: inline-flex; flex: 0 0 auto; min-height: 48px; align-items: center;
+      padding: 8px 10px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 760; text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--teal-deep); }
+    .nav-hint {
+      display: none;
+      margin: 0;
+      padding: 4px 20px 0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+    }
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 50px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 14px; margin-bottom: 18px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto; padding: 5px 10px; color: var(--teal-deep);
+      background: var(--teal-soft); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem; font-weight: 800;
+    }
+    .grid-2, .audit-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0; padding: 18px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(43, 51, 48, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex; min-height: 26px; align-items: center;
+      margin: 0 0 9px; padding: 2px 8px; border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.68rem; font-weight: 850; letter-spacing: 0.03em;
+    }
+    .paratext { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--amber); background: var(--amber-soft); }
+    .worktext { color: var(--teal-deep); background: var(--teal-soft); }
+    .locator {
+      display: block; margin-top: 8px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.74rem;
+      overflow-wrap: anywhere;
+    }
+    blockquote {
+      margin: 12px 0 1em; padding: 14px 16px; background: #fffbef;
+      border-left: 3px solid var(--amber); border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; }
+    .route, .source-list { margin: 0; padding: 0; list-style: none; }
+    .route { display: grid; gap: 10px; counter-reset: route; }
+    .route li {
+      position: relative; min-height: 88px; padding: 16px 16px 16px 58px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route); position: absolute; top: 17px; left: 17px;
+      display: grid; width: 28px; height: 28px; place-items: center;
+      color: white; background: var(--teal); border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; font-weight: 900;
+    }
+    .steps { margin: 0; padding-left: 1.2em; }
+    .steps li { margin-bottom: 0.7em; }
+    .cannot {
+      margin-top: 10px; padding-top: 10px; color: var(--red);
+      border-top: 1px dashed #e5c2c2; font-size: 0.9rem;
+    }
+    .stop-box {
+      margin: 0 0 10px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    }
+    .stop-box > summary {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; min-height: 48px; padding: 12px 16px; cursor: pointer;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 760;
+      list-style: none;
+    }
+    .stop-box > summary::-webkit-details-marker { display: none; }
+    .stop-box .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .stop-box .detail-body > :first-child { margin-top: 14px; }
+    .audit-box ul { margin: 0; padding-left: 1.1em; }
+    footer {
+      padding: 28px 0 40px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.92rem;
+    }
+    footer p { margin: 0 0 7px; }
+    @media (max-width: 660px) {
+      .nav-hint { display: block; }
+      body { font-size: 16px; }
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 9px; }
+      .grid-2, .audit-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      .section-nav, .site-back, .nav-hint { display: none; }
+      body { background: white; overflow-x: visible; }
+      .shell { width: 100%; }
+      details > * { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html#decision">← 返回合订本总地图</a>
+      <p class="eyebrow">Deep dive · 默认无剧透</p>
+      <h1>波洛怎样第一次走进这套译本</h1>
+      <p class="lead">问题只问入口：在这套中文合订本的第一卷里，读者何时听到波洛这个名字，何时看见他本人，何时他被请去调查。本页在他开始办案处停下。</p>
+      <div class="facts">
+        <span class="fact">w01《斯泰尔斯庄园奇案》</span>
+        <span class="fact">译者郑卫明</span>
+        <span class="fact">ISBN 978-7-5133-1122-9</span>
+        <span class="fact">约 45–60 分钟</span>
+        <span class="fact">不进整案解答</span>
+      </div>
+      <div class="verdict">
+        <small>先记住这一句 · 报告综合</small>
+        <strong>波洛不是第一章走进庄园的人。他先被事后叙述点名，再在茶会上被提起却不提名，然后在村里撞见，最后被请去调查。</strong>
+        <p>开篇称“人尽皆知”，是写完案件之后的叙述姿态，不是读者此时已经知道结局。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <p class="nav-hint">章节导航可左右滑动。</p>
+    <nav class="shell" aria-label="本页章节">
+      <a href="#question">问题</a>
+      <a href="#version">版本</a>
+      <a href="#steps">进场</a>
+      <a href="#house">庄园</a>
+      <a href="#quotes">原文</a>
+      <a href="#synthesis">综合</a>
+      <a href="#audit">批判</a>
+      <a href="#source">回原文</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="question">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这个问题管到哪里</h2>
+            <p>入口模块，不是全案公平性页。</p>
+          </div>
+          <span class="time">约 5 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin synthesis">报告综合</span>总地图把本卷标为波洛年表中的长篇，深挖状态此前是未生成。本页只回答：波洛怎样第一次走进<strong>这套中文译本</strong>。它不进入卷末解答，也不把后文方法扩成全套波洛模板。</p>
+          <p>整案解答若以后要做，应另立模块，不要把本页续写成谜底页。</p>
+          <details class="stop-box">
+            <summary>本页在哪里停下</summary>
+            <div class="detail-body">
+              <p>目录第四章题为《波洛的调查》。核到黑斯廷斯敲门、波洛探头、答应听他讲完，即可停。不要继续进入后文调查材料或卷末解释。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="version">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>先核这是哪一版</h2>
+            <p>版权页和献词都不是故事正文。</p>
+          </div>
+          <span class="time">约 4 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <p><span class="origin paratext">出版副文本</span>本卷版权页：书名《斯泰尔斯庄园奇案》，作者【英】阿加莎·克里斯蒂，译者郑卫明，新星出版社，2013-03-01，ISBN 978-7-5133-1122-9。</p>
+            <span class="locator">OEBPS/Text/part0007.xhtml</span>
+          </article>
+          <article class="card">
+            <p><span class="origin paratext">出版副文本</span>献词页只有一句：“献给我的母亲”。它属于副文本，不能当成情节证据，也不能用来解释后文任何人物关系。</p>
+            <span class="locator">OEBPS/Text/part0009.xhtml</span>
+          </article>
+        </div>
+        <div class="prose" style="margin-top:16px;">
+          <p>卷内目录从《前往斯泰尔斯》到《波洛的解释》，共十三章。起点文件 <code>part0006</code> 是卷首插图页，无正文；可读文字从版权页、目录、献词和第一章开始。卷首年表把本卷列为波洛系列、年份 1920；那是合订本副文本的编排，不能单独证明英文本出版史。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>波洛进入现场的四步</h2>
+            <p>先复原叙述位置，再谈人物。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <div class="prose">
+          <ol class="steps">
+            <li><strong>事后点名，人未到场。</strong>第一章第一句已经把“斯泰尔斯庄园案”写成渐渐落下帷幕、且“人尽皆知”的事件，并称波洛为“我的朋友”。此时故事时间里，黑斯廷斯还在从前线返乡，波洛本人没有出现。</li>
+            <li><strong>茶会上提起侦探，不提名。</strong>玛丽·卡文迪什问他以后想做什么。黑斯廷斯答自己想当侦探，并提起从前在比利时遇见的“著名的侦探”“不可思议的小个子”。霍华德小姐随后才接口谈侦探小说。当时在座的人听不到“波洛”这个名字。</li>
+            <li><strong>村里撞见，喊出名字。</strong>第二章，黑斯廷斯在邮局门口撞上这个小个子，双方喊出名字。波洛说自己能来，是因为英格尔索普太太接待了七个从比利时逃亡来的人。</li>
+            <li><strong>再被请去调查。</strong>第三章末，黑斯廷斯向约翰提出去找这位住在村里的侦探。第四章他敲门，波洛从窗户探头。</li>
+          </ol>
+          <p>把这四步收成一句：读者先得到一个事后回看的叙述框架，再在庄园人事里等待，然后在村子里看见波洛，最后才看他被带进调查。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="house">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>第一章里的庄园，还不是案发现场</h2>
+            <p>黑斯廷斯先看见一张战时乡绅家庭的关系网。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin worktext">作品文本</span>黑斯廷斯因病从前线回来，约翰·卡文迪什邀他到埃塞克斯的斯泰尔斯。汽油要省着用，约翰还要参加志愿兵训练和农田劳动。庄园主人是约翰的继母埃米莉，新近再婚，丈夫是阿尔弗雷德·英格尔索普。同住的还有约翰的妻子玛丽、弟弟劳伦斯、管家伊芙琳·霍华德（艾维），以及寄住的辛西亚·默多克——她在七英里外的塔明斯特红十字医院工作。</p>
+          <p>霍华德与阿尔弗雷德争吵后离开，临走嘱黑斯廷斯“盯紧那个魔鬼——她的丈夫”。这是人物指控，不是已核事实。第一章没有波洛本人。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>关键短引，只核入口</h2>
+            <p>引文逐字来自本卷；连续长摘录不在这里。</p>
+          </div>
+          <span class="time">约 15 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>事后框架已经把波洛写成朋友。</p>
+            <blockquote>
+              <p>轰动一时、引起大众强烈兴趣的“斯泰尔斯庄园案”已渐渐落下帷幕，尽管如此，此案人尽皆知，我的朋友波洛和那家人都要求我把整个故事写出来。</p>
+            </blockquote>
+            <p class="muted">叙述者动笔时，把案件写成已渐渐落下帷幕。读者此时并不因此知道结局。</p>
+            <span class="locator">第一章《前往斯泰尔斯》· OEBPS/Text/part0010.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>茶会上的比利时侦探还没有名字。</p>
+            <blockquote>
+              <p>有一次，我在比利时遇见一个人，一个著名的侦探，他深深地触动了我。他是个不可思议的小个子，经常说要想做好侦探工作，不外乎方法问题。</p>
+            </blockquote>
+            <p class="muted">这是黑斯廷斯回答玛丽·卡文迪什，不是波洛当场讲方法，也不能写成全书方法纲领。</p>
+            <span class="locator">第一章《前往斯泰尔斯》· OEBPS/Text/part0010.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>离开前的嘱咐，只说明庄园里已有敌意。</p>
+            <blockquote>
+              <p>关键是，黑斯廷斯先生，盯紧那个魔鬼——她的丈夫！</p>
+            </blockquote>
+            <p class="muted">说话的是霍华德。黑斯廷斯当时认为她太多虑。模块不把这句话升级成案情结论。</p>
+            <span class="locator">第一章《前往斯泰尔斯》· OEBPS/Text/part0010.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>第一次见面发生在村子，不在庄园客厅。</p>
+            <blockquote>
+              <p>“波洛！”我也喊了起来。</p>
+            </blockquote>
+            <p>波洛随后说明来由：“她友好而殷勤接待了我们这七个从祖国逃亡的乡巴佬儿。”</p>
+            <span class="locator">第二章《七月十六至十七日》· OEBPS/Text/part0011.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>调查权不是波洛自己闯进去的。</p>
+            <blockquote>
+              <p>你还记得我跟你说过我的朋友波洛吧？这个比利时人就在这儿。他是一位最有名的侦探。</p>
+            </blockquote>
+            <p class="muted">黑斯廷斯向约翰提出去请他。目录把下一章标成《波洛的调查》。</p>
+            <span class="locator">第三章《悲惨的夜晚》· OEBPS/Text/part0012.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>进入现场从敲门开始。</p>
+            <blockquote>
+              <p>头上的一扇窗户小心翼翼地打开了，波洛探出了头。</p>
+            </blockquote>
+            <p class="muted">黑斯廷斯希望他帮忙。波洛让他进屋，等自己穿衣时再讲一遍。本页到此停止。</p>
+            <span class="locator">第四章《波洛的调查》· OEBPS/Text/part0013.xhtml</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="synthesis">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>能综合什么，推不出什么</h2>
+            <p>先对齐原文，再划边界。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <p><span class="origin synthesis">报告综合</span>在这套合订本的阅读顺序里，本卷是卷首材料之后的第一部作品。波洛的中文译本“第一次出现”，因此同时有两层意思：合订本目录上的第一卷，以及本卷叙事里从点名到被请去调查的四步。两层不要混成一句“波洛从第一章就在场”。</p>
+          </article>
+          <article class="card">
+            <p class="cannot"><strong>不能推出：</strong>开篇“人尽皆知”等于读者已知凶手；茶会上的“方法”等于波洛全书方法论；霍华德的警告等于案件事实；本页已经把长篇读完。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>先复述成立的结构，再检查常见滑移。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box">
+            <h3>站得住的</h3>
+            <ul>
+              <li>事后叙述、茶会不提名、村里撞见、再被请去调查，这四步都能在指定章节逐字对上。</li>
+              <li>版权页与献词可以和正文分开：前者管译本身份，后者不进入情节。</li>
+              <li>黑斯廷斯既是在场证人，也是事后写手。他开口称波洛为朋友，是写的时候已经决定的关系，不是七月五日刚到庄园时的现场判断。</li>
+            </ul>
+          </article>
+          <article class="audit-box">
+            <h3>需要挡住的滑移</h3>
+            <ul>
+              <li>把“人尽皆知”读成出版宣传或对中文读者的剧透许可，会把叙述姿态当成事实。</li>
+              <li>把黑斯廷斯转述的“不外乎方法问题”写成作者给全套波洛的操作手册，批判的是他没写过的主张。</li>
+              <li>本卷是长篇，不是合集。入口清楚，不等于已经检验后文公平性，也不等于波洛后文每次都这样进场。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>回到原文，然后停止</h2>
+            <p>模块不是原书新的一章。</p>
+          </div>
+          <span class="time">约 20–30 分钟回读</span>
+        </div>
+        <ol class="route">
+          <li>
+            <h3>版权页与献词</h3>
+            <p>先核译者、日期、ISBN，再看“献给我的母亲”为什么不属于故事。</p>
+            <span class="locator">OEBPS/Text/part0007.xhtml；part0009.xhtml</span>
+          </li>
+          <li>
+            <h3>第一章开篇与茶会</h3>
+            <p>对读“我的朋友波洛”和未点名的比利时侦探，确认第一章没有波洛本人。</p>
+            <span class="locator">OEBPS/Text/part0010.xhtml</span>
+          </li>
+          <li>
+            <h3>第二章邮局门口</h3>
+            <p>核第一次见面、外貌和七个逃亡者的来由。回家路上的旧案战绩可以略过。</p>
+            <span class="locator">OEBPS/Text/part0011.xhtml</span>
+          </li>
+          <li>
+            <h3>第四章开头即停</h3>
+            <p>核敲门与探头。若要继续读原书，从这里自己往下；不要用本页代替后文。</p>
+            <span class="locator">OEBPS/Text/part0013.xhtml</span>
+          </li>
+        </ol>
+        <div class="decision" style="margin-top:16px;">
+          <h3>下一步</h3>
+          <p>默认：自己读本卷后文。指定全案深挖之前，不要把入口页扩成解答页。合订本里后面的波洛长篇，也不要套用这一次的进场方式。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向、核证和引导回原文，不替读者读完作品，也不把侦探小说做成谜底百科。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../reading.html">返回总地图</a></p>
+    </div>
+  </footer>
+</body>
+</html>

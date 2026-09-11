@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《罗杰疑案》叙述深挖：核清乡村医生怎么写、当时读者能看见什么。后文收束与叙述身份只在读者主动展开的区域。">
+  <title>读者当时能从谢泼德医生那里知道多少</title>
+  <style>
+    :root {
+      --paper: #f4f0e7;
+      --surface: #fffdf8;
+      --ink: #1f2b2a;
+      --muted: #626e6b;
+      --line: #d8d4ca;
+      --teal: #285c58;
+      --teal-deep: #17413f;
+      --teal-soft: #e2efec;
+      --amber: #8a571d;
+      --amber-soft: #f8ecd9;
+      --blue: #315f78;
+      --blue-soft: #e8f0f4;
+      --purple: #67528b;
+      --purple-soft: #efebf7;
+      --red: #8a4037;
+      --red-soft: #f5e5df;
+      --content: 1080px;
+      --text: 740px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(43, 51, 48, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(40, 92, 88, 0.1), transparent 26rem),
+        var(--paper);
+      font-family: ui-serif, "Songti SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--teal-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d99b3b;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(1.85rem, 6vw, 3.2rem);
+      letter-spacing: -0.04em;
+    }
+    h2 { margin: 0; font-size: clamp(1.45rem, 3.8vw, 2rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    code {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      overflow-wrap: anywhere;
+    }
+    .skip-link {
+      position: fixed; z-index: 20; top: 10px; left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px; color: white; background: var(--teal-deep); border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+    .prose { max-width: var(--text); }
+    .hero { padding: 48px 0 30px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex; min-height: 44px; align-items: center;
+      margin-bottom: 16px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem; font-weight: 760; text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px; color: var(--teal);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.77rem; font-weight: 850; letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px; margin: 16px 0 0; color: var(--muted);
+      font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .fact {
+      display: inline-flex; min-height: 40px; align-items: center;
+      padding: 7px 12px; color: var(--teal-deep);
+      background: rgba(255, 253, 248, 0.88);
+      border: 1px solid var(--line); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 750;
+    }
+    .verdict {
+      display: grid; gap: 7px; max-width: 880px; margin-top: 22px; padding: 20px;
+      color: white; background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .verdict small {
+      color: #c9e4df; font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800;
+    }
+    .verdict strong { font-size: 1.18rem; }
+    .verdict p { margin: 0; color: #f0faf8; }
+    .section-nav {
+      position: sticky; z-index: 8; top: 0;
+      background: rgba(244, 240, 231, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex; width: min(100%, var(--content)); min-height: 52px;
+      margin-inline: auto; padding-inline: 10px;
+      overflow-x: auto; scrollbar-width: thin;
+    }
+    .section-nav a {
+      display: inline-flex; flex: 0 0 auto; min-height: 48px; align-items: center;
+      padding: 8px 10px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 760; text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--teal-deep); }
+    .nav-hint {
+      display: none;
+      margin: 0;
+      padding: 4px 20px 0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+    }
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 50px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 14px; margin-bottom: 18px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto; padding: 5px 10px; color: var(--teal-deep);
+      background: var(--teal-soft); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem; font-weight: 800;
+    }
+    .grid-2, .audit-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .reading-card {
+      min-width: 0; padding: 18px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(43, 51, 48, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex; min-height: 26px; align-items: center;
+      margin: 0 0 9px; padding: 2px 8px; border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.68rem; font-weight: 850; letter-spacing: 0.03em;
+    }
+    .paratext { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--amber); background: var(--amber-soft); }
+    .worktext { color: var(--teal-deep); background: var(--teal-soft); }
+    .locator {
+      display: block; margin-top: 8px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.74rem;
+      overflow-wrap: anywhere;
+    }
+    blockquote {
+      margin: 12px 0 1em; padding: 14px 16px; background: #fffbef;
+      border-left: 3px solid var(--amber); border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; }
+    .route { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: route; }
+    .route li {
+      position: relative; min-height: 88px; padding: 16px 16px 16px 58px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route); position: absolute; top: 17px; left: 17px;
+      display: grid; width: 28px; height: 28px; place-items: center;
+      color: white; background: var(--teal); border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; font-weight: 900;
+    }
+    .cannot {
+      margin-top: 10px; padding-top: 10px; color: var(--red);
+      border-top: 1px dashed #e5c2c2; font-size: 0.9rem;
+    }
+    .stop-box, .spoiler-box {
+      margin: 0 0 12px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    }
+    .spoiler-box { border-color: #d8b4ae; }
+    .stop-box > summary, .spoiler-box > summary {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; min-height: 48px; padding: 12px 16px; cursor: pointer;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 760;
+      list-style: none;
+    }
+    .stop-box > summary::-webkit-details-marker,
+    .spoiler-box > summary::-webkit-details-marker { display: none; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+    .warn {
+      padding: 10px 12px; color: var(--red); background: var(--red-soft);
+      border-radius: 10px; font-size: 0.92rem;
+    }
+    .audit-box ul { margin: 0; padding-left: 1.1em; }
+    footer {
+      padding: 28px 0 40px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.92rem;
+    }
+    footer p { margin: 0 0 7px; }
+    @media (max-width: 660px) {
+      .nav-hint { display: block; }
+      body { font-size: 16px; }
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 9px; }
+      .grid-2, .audit-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      .section-nav, .site-back, .nav-hint { display: none; }
+      body { background: white; overflow-x: visible; }
+      .shell { width: 100%; }
+      .spoiler-box:not([open]) .detail-body { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html#modules">← 返回合订本总地图</a>
+      <p class="eyebrow">Deep dive · 默认无剧透</p>
+      <h1>读者当时能从谢泼德医生那里知道多少</h1>
+      <p class="lead">先看这位乡村医生怎么写、当时读者能看见什么。后文收束与叙述身份只在你主动展开的区域。书名本身不算额外剧透；广为人知也不能当成你已经读完。</p>
+      <div class="facts">
+        <span class="fact">w04《罗杰疑案》</span>
+        <span class="fact">译者常禾</span>
+        <span class="fact">ISBN 9787513311236</span>
+        <span class="fact">约 50–70 分钟</span>
+        <span class="fact">高剧透区默认收起</span>
+      </div>
+      <div class="verdict">
+        <small>先记住这一句 · 报告综合</small>
+        <strong>读者跟着谢泼德的眼睛走，不等于当时已经得到他知道的全部事情。</strong>
+        <p>他习惯对姐姐留一手。本页默认区只复原这个位置，不替后文收束。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <p class="nav-hint">章节导航可左右滑动。</p>
+    <nav class="shell" aria-label="本页章节">
+      <a href="#question">问题</a>
+      <a href="#version">版本</a>
+      <a href="#narrator">叙述者</a>
+      <a href="#visible">当时可见</a>
+      <a href="#quotes">原文</a>
+      <a href="#audit">批判</a>
+      <a href="#source">回原文</a>
+      <a href="#spoilers">展开区</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="question">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这个问题管到哪里</h2>
+            <p>问叙述位置，不把书名里的案件写成解答。</p>
+          </div>
+          <span class="time">约 5 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin synthesis">报告综合</span>总地图把本卷标为波洛年表中的长篇。本页只问：乡村医生作为叙述者，<strong>当时</strong>读者能知道多少。公平性只能用当时已写出的句子来核，不能用后来的名声倒推。</p>
+          <p>默认可见区停在：他是谁、他怎样对姐姐说话、他何时开始写手稿、波洛怎样读这份手稿。后文收束另放在折叠区。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="version">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>先核这是哪一版</h2>
+            <p>版权页和献词都不是谢泼德写的故事。</p>
+          </div>
+          <span class="time">约 4 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <p><span class="origin paratext">出版副文本</span>本卷版权页：书名《罗杰疑案》，作者【英】阿加莎·克里斯蒂，译者常禾，新星出版社，2013-03-01，ISBN 9787513311236。</p>
+            <span class="locator">OEBPS/Text/part0081.xhtml</span>
+          </article>
+          <article class="card">
+            <p><span class="origin paratext">出版副文本</span>献词页三行分开写：献给喜欢传统侦探故事的潘吉；这里有谋杀，有侦查过程；而且嫌疑依次落在每个人头上。这是书前副文本，不是正文里的医生在说话。默认区不拿它倒推后文。</p>
+            <span class="locator">OEBPS/Text/part0083.xhtml</span>
+          </article>
+        </div>
+        <div class="prose" style="margin-top:16px;">
+          <p>起点文件 <code>part0080</code> 是卷首插图页，无正文。卷内目录共二十七章。本页导航不复述目录末几章的标题。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="narrator">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>谁在写，写给谁看</h2>
+            <p>先复原叙述者的公开身份。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin worktext">作品文本</span>叙述者是谢泼德医生，和姐姐卡洛琳同住。第一章他出诊后回来，故意在玄关磨蹭，因为卡洛琳会把消息传遍全村。他对姐姐留一手，写成职业习惯，不是偶尔一次。第二章起，村子名叫金斯艾伯特。</p>
+          <p>第三章出现隔壁邻居“波罗特先生”，村里只知道他爱种西葫芦。第七章弗洛拉才当众说出他是隐居的私人侦探赫尔克里·波洛。第三章页下注释里提前出现“波洛”二字，属于页下副文本，不能当成第三章正文已经点名。</p>
+          <p>到第二十三章，谢泼德才写出：自己读过黑斯廷斯的书，也把调查写成手稿，分了章节，准备将来付印，并把已写成的部分交给波洛。这不是开篇就公开的写手位置。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="visible">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>当时读者能看见什么</h2>
+            <p>只数已经写在纸上的话。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <div class="prose">
+          <p>第一次顺着章节往下读的人，能确定这些：</p>
+          <ul>
+            <li>弗拉尔斯太太在开篇死去；卡洛琳有一套猜测，谢泼德当众反驳，私下承认其中一部分。</li>
+            <li>谢泼德去芬利庄园赴宴，后来被电话叫回；他是破门进入书房的人之一。</li>
+            <li>他给出时间：晚班邮件进来、他离开书房、教堂钟响、到家、上楼时电话响。后来波洛问过大门走到窗子要多久，他答最多不超过五分钟。</li>
+            <li>波洛说，卷入案件的每个人都有所隐瞒，并当面对他说“我想你也有所保留”。</li>
+            <li>波洛读完手稿，称赞他写得精确，又说他很少写自己起了什么作用。</li>
+          </ul>
+          <p>当时读者还不能确定的，本页默认区不补。感觉某句“奇怪”并不等于已经读到后文收束。</p>
+          <p class="cannot"><strong>不能推出：</strong>对姐姐留一手等于已经交代关键身份；献词许诺“传统侦探故事”等于后文一定按这个许诺收场；波洛说人人有所隐瞒，等于当时已经点名。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>当时可见的短引</h2>
+            <p>这些句子第一次读就会碰到。本页不解释它们后面还能读出什么。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>开篇就把自己写成事后回看的人。</p>
+            <blockquote>
+              <p>虽然当时我不可能预见到接下来几周的风波——我绝对不会那么做——但直觉却告诉我接下来的日子会麻烦重重。</p>
+            </blockquote>
+            <span class="locator">第一章《谢泼德医生的早餐》· OEBPS/Text/part0084.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>留一手先是对姐姐的习惯。</p>
+            <blockquote>
+              <p>出于一名医生的职业操守，我自然务求谨慎，所以久而久之就养成了一个习惯：任何消息都对姐姐留一手。</p>
+            </blockquote>
+            <span class="locator">第一章《谢泼德医生的早餐》· OEBPS/Text/part0084.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>波洛把隐瞒说成案子的共同点。</p>
+            <blockquote>
+              <p>卷入案件的每个人都有所隐瞒。</p>
+            </blockquote>
+            <p>谢泼德笑问“那我呢？”波洛答：“我想你也有所保留。”</p>
+            <span class="locator">第七章《邻居的职业》· OEBPS/Text/part0090.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>手稿被读成精确，也被读成克制。</p>
+            <blockquote>
+              <p>你将案情的来龙去脉如实记录下来，不过很少提及你自己在其中发挥的作用。</p>
+            </blockquote>
+            <span class="locator">第二十三章《嫌疑人齐聚一堂》· OEBPS/Text/part0106.xhtml</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>先复述叙述位置，再挡滑移。后文对错另见展开区。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box">
+            <h3>站得住的</h3>
+            <ul>
+              <li>这是第一人称手稿，不是全知旁白。读者看见的范围，首先受谢泼德愿意写下的句子限制。</li>
+              <li>他对卡洛琳留一手，是正文自己承认的习惯，可以和后文是否还有别的空白分开看。</li>
+              <li>献词是作者/出版副文本，不能直接当成谢泼德的自我声明。</li>
+            </ul>
+          </article>
+          <article class="audit-box">
+            <h3>需要挡住的滑移</h3>
+            <ul>
+              <li>不能因为这卷“大家都知道”就默认读者已经读过后文。本页默认区按第一次往下读来写。</li>
+              <li>不能把谢泼德的句子写成克里斯蒂本人在论证。他是书里的写手。</li>
+              <li>不能把“人人有所隐瞒”扩成所有侦探小说的规律，它是波洛在这一卷里说的话。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>回到原文</h2>
+            <p>第一次读，请先自己往下翻。</p>
+          </div>
+          <span class="time">回读自定</span>
+        </div>
+        <ol class="route">
+          <li>
+            <h3>版权页与献词</h3>
+            <p>核译者、ISBN，再把献词留在副文本里。</p>
+            <span class="locator">OEBPS/Text/part0081.xhtml；part0083.xhtml</span>
+          </li>
+          <li>
+            <h3>第一章早餐</h3>
+            <p>核医生、姐姐、留一手，以及开篇的事后口吻。</p>
+            <span class="locator">OEBPS/Text/part0084.xhtml</span>
+          </li>
+          <li>
+            <h3>第三、七章邻居</h3>
+            <p>核“波罗特”怎样变成波洛，以及“有所保留”那句对话。</p>
+            <span class="locator">OEBPS/Text/part0086.xhtml；part0090.xhtml</span>
+          </li>
+          <li>
+            <h3>若还没读完本卷</h3>
+            <p>到这里停止本页。下面的折叠区会进入后文收束，打开就无法当第一次读。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="spoilers">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>展开区</h2>
+            <p>默认收起。打印也不会自动打开。</p>
+          </div>
+          <span class="time">自选</span>
+        </div>
+        <details class="spoiler-box">
+          <summary>展开后进入：当时句子写了什么、没写什么</summary>
+          <div class="detail-body">
+            <p class="warn">以下核当时已经写出的句子，以及它们后面紧跟着写了什么。后文另指在下一块。</p>
+            <p><span class="origin worktext">作品文本</span>书房里的十分钟，写在第四章：</p>
+            <blockquote>
+              <p>信是八点四十分送进来的。而当我八点五十分离开他的时候，那封信仍然没读完。我的手搭在门把上，彷徨不定，回头望了望，寻思着是否还有什么事情没处理。</p>
+            </blockquote>
+            <span class="locator">第四章《芬利庄园的晚宴》· OEBPS/Text/part0087.xhtml</span>
+            <p>出门后的另一段时间，写在同章末：他八点五十分离开，跨出庄园大门时教堂敲九点。第八章波洛问陌生人从大门走到窗子要多久，谢泼德答：</p>
+            <blockquote>
+              <p>最多不超过五分钟。如果他走车道右边那条小径，直接绕过来，只需两三分钟而已。</p>
+            </blockquote>
+            <span class="locator">第八章《拉格伦警督胸有成竹》· OEBPS/Text/part0091.xhtml</span>
+            <p>这是两段不同的时间。书房里的十分钟当时只是已写出的时长；能拿来对的，是“五十分离开 / 九点出大门 / 大门到房子最多五分钟”。</p>
+            <p>第五章帕克去打电话之后，他写的不只是半句：</p>
+            <blockquote>
+              <p>我做了点非做不可的小事。我小心翼翼地不去挪动尸体的位置，也丝毫没碰那柄短剑。</p>
+            </blockquote>
+            <span class="locator">第五章《谋杀》· OEBPS/Text/part0088.xhtml</span>
+            <p>当时页上有紧随其后的动作句。后文另指“小事”还做了当时没写的事，并没有收回这两句。</p>
+          </div>
+        </details>
+        <details class="spoiler-box">
+          <summary>展开后进入：后文怎样收束这份手稿</summary>
+          <div class="detail-body">
+            <p class="warn">以下进入波洛的点名、谢泼德的承认，以及他打算怎样结束。不要在未读完原书时打开。</p>
+            <p><span class="origin worktext">作品文本</span>波洛把当时已出现的条件收束到一个人：当天能取走拉尔夫鞋子的人、知道口述录音机的人、带着黑皮包的人、发现尸体后能单独留在书房的人。“事实上此人就是——谢泼德医生！”</p>
+            <span class="locator">第二十五章《全部真相》· OEBPS/Text/part0108.xhtml</span>
+            <p>波洛另指出门后那一段：八点五十分离开大宅、九点整出大门，五分钟路程却花了十分钟。他排练的是离开之后绕到窗外印鞋印、从里面锁门再奔向大门，不是书房里八点四十到五十那十分钟。电话在书里始终是“这通电话”：第七章已查到十点十五分从金斯艾伯特车站公用电话亭打到谢泼德家；波洛起初以为他编造了来电，后来证实车站确实有人按嘱托打过。电报写“可是电话无人接听”；波洛接着说，卡洛琳亲眼看他拎起话筒，“但实际上讲话的只有一个人——就是你自己”。这是同一通的两面，不是家里另打的一通。波洛并建议他写完手稿，“不要像之前那样将自己撇得一干二净”。</p>
+            <span class="locator">第二十六章《云开雾散》· OEBPS/Text/part0109.xhtml</span>
+            <p>末章里，谢泼德承认手稿本想写成“波洛失败的案例”。他把第四章那句再引一遍，并自己点破：</p>
+            <blockquote>
+              <p>看见没有，全是实话。但如果我在第一句话后面加上一个省略号呢？有人怀疑过那十分钟空白时间里发生了什么吗？</p>
+            </blockquote>
+            <p>“非做不可的小事”被他写成：把口述录音机藏进包里，把椅子推回原处。他希望卡洛琳不知道，“摆在我面前的只有一条路”。最后一句回到种西葫芦的邻居。</p>
+            <span class="locator">第二十七章《自白书》· OEBPS/Text/part0110.xhtml</span>
+            <p><span class="origin audit">批判审计</span>公平性争的是：当时读者是否拥有足够句子，去做出和波洛一样的收束。点名之前已经写出的，包括：椅子被挪过、手稿很少写“我”、八点五十分离开、九点出大门、大门到房子最多五分钟，以及车站在十点十五分打来过电话。书房里八点四十到五十是另一段时长，末章才把它叫作空白。口述录音机被拿走、以及“讲话的只有他自己”，要到后文才说破。所以“句子为真”和“当时已经可解”不是同一件事。本卷不能拿来证明所有第一人称侦探小说都这样写。</p>
+            <p>献词里的“传统侦探故事”和“嫌疑依次落在每个人头上”，读完后可以看成反讽；那是事后阅读，不是献词页当时已经说明的意思。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向、核证和引导回原文，不替读者读完作品，也不把侦探小说做成谜底百科。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../reading.html">返回总地图</a></p>
+    </div>
+  </footer>
+</body>
+</html>
