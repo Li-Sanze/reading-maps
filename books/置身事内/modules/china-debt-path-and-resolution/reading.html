@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》深挖：2008–2018 年中国债务为何积累，又为什么不能只靠金融手段化解？只读第六章第三、四节和结语。">
+  <title>2008–2018 年的债务路径｜置身事内深挖</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.05rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0.4em 0 1em; padding-left: 1.2em; }
+    li { margin-bottom: 0.4em; }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { max-width: 860px; margin: 0; color: #eef6f0; }
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .source-box p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+    .model-figure {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+    .reading-card .guide { margin-bottom: 0.55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: #7a3030;
+      border-top: 1px dashed #e5c2c2;
+      font-size: 0.87rem;
+    }
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    details {
+      margin-bottom: 10px;
+      overflow: clip;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--moss); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .audit-box, .decision, .source-box, .reading-card, .model-figure, .route li, details { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      details > * { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html">← 返回《置身事内》主阅读地图</a>
+      <p class="eyebrow">Deep dive · 按需深挖 · 约 70 分钟</p>
+      <h1>2008–2018 年的债务路径</h1>
+      <p class="lead">2008–2018 年中国债务为何积累，又为什么不能只靠金融手段化解？主地图只留下危机、刺激和结构根源。这三节要看十年怎么走，以及货币手段停在哪里。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第六章第三、四节与结语</span>
+        <span class="fact">只读 part0043–part0045</span>
+        <span class="fact">核心约 70 分钟</span>
+        <span class="fact">回原文 50–70 分钟</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="一句话模型">
+        <small>一句话模型 · 报告综合</small>
+        <strong>危机是直接起因；金融手段治标，模式是根源。</strong>
+        <p>全球金融危机和随后的欧债危机逼出刺激与几轮放松，债务比 GDP 涨得更快。化解要还旧账并改滋生债务的环境，但货币政策治标不治本。这不是城投操作说明，也不是 2026 年的化债方案。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <nav aria-label="页面目录">
+      <a href="#route">路线</a>
+      <a href="#scope">范围</a>
+      <a href="#path">十年路径</a>
+      <a href="#firms">企业与银行</a>
+      <a href="#resolve">为何不只靠金融</a>
+      <a href="#excerpts">短引</a>
+      <a href="#cannot">不能推出</a>
+      <a href="#critical">批判</a>
+      <a href="#source">回原文</a>
+      <a href="#decision">下一步</a>
+    </nav>
+  </div>
+  <main id="main" class="shell">
+    <section id="route" aria-labelledby="route-title">
+      <div class="section-head">
+        <div>
+          <h2 id="route-title">先走核心 70 分钟</h2>
+          <p>先分开直接起因和根源，再看年份。城投怎样同时像政府，已经在另一节。</p>
+        </div>
+        <span class="time">约 70 分钟</span>
+      </div>
+      <ol class="route">
+        <li>
+          <strong>认范围</strong>
+          <span>5 分钟 · 确认只读这三节，不把刺激写成直接起因。</span>
+        </li>
+        <li>
+          <strong>看十年怎么走</strong>
+          <span>18 分钟 · 2008、2012、2015、2018 几轮放松与收紧。</span>
+        </li>
+        <li>
+          <strong>看企业债和银行</strong>
+          <span>15 分钟 · 平台只回指；国企数据有限度；房企和影子银行。</span>
+        </li>
+        <li>
+          <strong>看偿还与遏制</strong>
+          <span>17 分钟 · 货币手段的限度，以及财政分配何以是根源。</span>
+        </li>
+        <li>
+          <strong>核短引并停下</strong>
+          <span>15 分钟 · 决定是否回读 <code>part0043–part0045</code>。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="scope" aria-labelledby="scope-title">
+      <div class="section-head">
+        <div>
+          <h2 id="scope-title">这个问题落在哪几节</h2>
+          <p>模块不是原书新增章节。第一章到第三章的城投操作不在这里重做。</p>
+        </div>
+        <span class="time">5 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="source-box">
+          <span class="origin author">纳入</span>
+          <h3>第六章第三、四节和结语</h3>
+          <p class="muted">第三节写中国债务的成因、风险和后果，重点是企业债和银行。第四节把化解分成偿还已有债务和遏制新增债务。结语把直接起因和结构根源并在一起。</p>
+          <span class="locator">OEBPS/Text/part0043.xhtml · part0044.xhtml · part0045.xhtml</span>
+        </article>
+        <article class="source-box">
+          <span class="origin audit">排除</span>
+          <h3>不读进邻节，不重做城投</h3>
+          <p class="muted">第六章开篇的情侣故事、第一节一般原理、第二节欧美教训，不进入本页中国路径主张。平台怎样同时像政府和像企业，见已生成的 <a href="../chengtou-boundary/reading.html">城投政企边界</a>；作者在本节写“第三章已详细讨论过这类债务，不再赘述”。</p>
+          <span class="locator">不打开 part0040–part0042 作主张；城投操作回 part0022</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="path" aria-labelledby="path-title">
+      <div class="section-head">
+        <div>
+          <h2 id="path-title">先看危机，再看几轮放松</h2>
+          <p>上排实线是作者写的时间顺序。下排只分直接起因和根源。虚线框是化解限度，不是第三层起因。</p>
+        </div>
+        <span class="time">18 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <p class="model-hint">手机端可在图内横向滚动；页面本身不会跟着横移。</p>
+        <div class="model-scroll">
+          <svg class="model-canvas" viewBox="0 0 900 348" role="img" aria-labelledby="path-svg-title path-svg-desc">
+            <title id="path-svg-title">2008–2018 年债务路径与两层原因</title>
+            <desc id="path-svg-desc">作者按年份写：2008 年金融危机后推出四万亿并放松平台和信贷；2011 年欧债危机后再放松，城投债和信托扩张；2015 年后再宽松，理财和棚改货币化接上；2018 年资管新规收紧。两层原因是：直接起因为两次外部危机；根源为发展模式和财政资源分配。货币金融手段被作者标成治标，不是第三层起因，也不是 2026 方案。</desc>
+            <defs>
+              <marker id="arrow-seq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f5d4c"/></marker>
+            </defs>
+            <g font-family="ui-sans-serif, system-ui, 'PingFang SC', sans-serif">
+              <text x="24" y="26" font-size="13" font-weight="800" fill="#3f5d4c">作者写的时间顺序</text>
+              <line x1="500" y1="14" x2="518" y2="14" stroke="#3f5d4c" stroke-width="3"/>
+              <text x="524" y="18" font-size="11" fill="#5e6b64">实线＝叙述展开或两层原因</text>
+              <line x1="500" y1="32" x2="518" y2="32" stroke="#8a5724" stroke-width="2" stroke-dasharray="4 3"/>
+              <text x="524" y="36" font-size="11" fill="#5e6b64">虚线框＝化解限度，不是起因</text>
+
+              <rect x="20" y="52" width="196" height="78" rx="14" fill="#e4eee7" stroke="#3f5d4c"/>
+              <text x="118" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#2a4035">2008–2009</text>
+              <text x="118" y="98" text-anchor="middle" font-size="13" fill="#24352f">金融危机 · 四万亿</text>
+              <text x="118" y="116" text-anchor="middle" font-size="12" fill="#5e6b64">放松平台与信贷</text>
+              <line x1="216" y1="91" x2="246" y2="91" stroke="#3f5d4c" stroke-width="2" marker-end="url(#arrow-seq)"/>
+
+              <rect x="248" y="52" width="196" height="78" rx="14" fill="#fffdf8" stroke="#cfc7ba"/>
+              <text x="346" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#2a4035">2011–2012</text>
+              <text x="346" y="98" text-anchor="middle" font-size="13" fill="#24352f">欧债后再放松</text>
+              <text x="346" y="116" text-anchor="middle" font-size="12" fill="#5e6b64">城投债 · 信托扩张</text>
+              <line x1="444" y1="91" x2="474" y2="91" stroke="#3f5d4c" stroke-width="2" marker-end="url(#arrow-seq)"/>
+
+              <rect x="476" y="52" width="196" height="78" rx="14" fill="#fffdf8" stroke="#cfc7ba"/>
+              <text x="574" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#2a4035">2015–2016</text>
+              <text x="574" y="98" text-anchor="middle" font-size="13" fill="#24352f">再宽松 · 棚改货币化</text>
+              <text x="574" y="116" text-anchor="middle" font-size="12" fill="#5e6b64">理财接上信托</text>
+              <line x1="672" y1="91" x2="702" y2="91" stroke="#3f5d4c" stroke-width="2" marker-end="url(#arrow-seq)"/>
+
+              <rect x="704" y="52" width="176" height="78" rx="14" fill="#e7f0f4" stroke="#35586a"/>
+              <text x="792" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#35586a">2018</text>
+              <text x="792" y="98" text-anchor="middle" font-size="13" fill="#24352f">资管新规</text>
+              <text x="792" y="116" text-anchor="middle" font-size="12" fill="#5e6b64">总量占 GDP 258%</text>
+
+              <text x="24" y="162" font-size="13" font-weight="800" fill="#3f5d4c">两层原因 · 作者收束</text>
+
+              <rect x="20" y="176" width="420" height="92" rx="14" fill="#fffdf8" stroke="#3f5d4c"/>
+              <text x="230" y="202" text-anchor="middle" font-size="14" font-weight="800" fill="#3f5d4c">直接起因</text>
+              <text x="230" y="226" text-anchor="middle" font-size="13" fill="#24352f">2008 年全球金融危机，和几年后的欧债危机</text>
+              <text x="230" y="248" text-anchor="middle" font-size="12" fill="#5e6b64">刺激是应对，也加剧债务，但不是直接起因</text>
+
+              <rect x="460" y="176" width="420" height="92" rx="14" fill="#e4eee7" stroke="#3f5d4c"/>
+              <text x="670" y="202" text-anchor="middle" font-size="14" font-weight="800" fill="#2a4035">根源</text>
+              <text x="670" y="226" text-anchor="middle" font-size="13" fill="#24352f">发展模式和结构；财政和资源分配机制</text>
+              <text x="670" y="248" text-anchor="middle" font-size="12" fill="#5e6b64">本质不是金融投机；降债务伴随结构改革</text>
+
+              <rect x="20" y="284" width="860" height="48" rx="14" fill="#fffbef" stroke="#8a5724" stroke-dasharray="5 4"/>
+              <text x="450" y="304" text-anchor="middle" font-size="13" font-weight="800" fill="#8a5724">化解限度，不是第三层起因</text>
+              <text x="450" y="322" text-anchor="middle" font-size="12" fill="#24352f">降息、量化宽松、印钱可以减轻负担，但货币政策治标不治本；不是 2026 年方案</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>上排是第三节的年份叙述。下排只放作者的两层原因；虚线框是第四节的货币限度，不要读成第三层起因。</figcaption>
+      </figure>
+      <div class="grid-2">
+        <article class="card">
+          <span class="origin quote">作者原话</span>
+          <h3>势头始于 2008 年</h3>
+          <blockquote>
+            <p>我国债务迅速上涨的势头始于2008年。</p>
+          </blockquote>
+          <p class="muted">出口被金融危机打击后，中央出台财政刺激，并放宽金融管制和对地方投融资的限制。资金进入基建和房地产；融资平台、房企、贷款买房的居民债务都迅速上升。其他企业（尤其是国有企业）也在宽松环境里举债扩张，但投资回报率下降，积累了低效产能。债务比 GDP 更快。</p>
+          <span class="locator">part0043 块 2</span>
+        </article>
+        <article class="card">
+          <span class="origin author">作者主张</span>
+          <h3>内债为主，不是典型外债危机</h3>
+          <p class="muted">作者写：外债水平很低，债务基本是人民币内债，不太可能出现希腊或阿根廷那类外债危机。2019 年末外债占 GDP 14%，外汇储备是短期外债的 2.6 倍；外债里也有 35% 以人民币计价。</p>
+          <span class="locator">part0043 块 3</span>
+        </article>
+      </div>
+      <div class="grid-2" style="margin-top:12px">
+        <article class="card">
+          <span class="origin author">2008–2012</span>
+          <h3>四万亿，然后欧债后再松</h3>
+          <p class="muted">2008–2009 年“4万亿”：中央 1.18 万亿元（含汶川重建拨款），地方 2.82 万亿元；同时放松融资平台限制并降准降息。2010–2011 年过热后收紧。2011 年年中欧债危机爆发后，2012 年再放松，城投债净融资额比上年翻了一番还多，信托类影子银行扩张，基建投资再涨。</p>
+          <span class="locator">part0043 块 8–9</span>
+        </article>
+        <article class="card">
+          <span class="origin author">2015–2018</span>
+          <h3>再宽松，然后拧总闸</h3>
+          <p class="muted">2015 年股灾、产能过剩和资本流出后，再次降准降息，地方债置换，棚改货币化，理财接替信托。2016 年首次提出“房住不炒”，去产能见效。2018 年资管新规严控影子银行，民企融资困境暴露；下半年中美贸易战。2018 年末债务总量占 GDP 258%：居民 54%，政府 51%，非金融企业 154%。</p>
+          <span class="locator">part0043 块 10–12</span>
+        </article>
+      </div>
+      <p class="muted">这几轮解释“怎样加上去”。负担为什么持续变重，作者放到第四节：出口和投资驱动的体系里，2008 年后净出口拉力减弱，国内投资更重要；后来这套机制已拉不动 GDP。</p>
+    </section>
+
+    <section id="firms" aria-labelledby="firms-title">
+      <div class="section-head">
+        <div>
+          <h2 id="firms-title">本章重点是企业债和银行</h2>
+          <p>政府和居民债务，作者标成第三章、第五章已写。平台操作不在这里重做。</p>
+        </div>
+        <span class="time">15 分钟</span>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="origin author">企业债之一</span>
+          <h3>融资平台：此处不赘</h3>
+          <p class="muted">平台债约占 GDP 40%，资金主要投向基础设施，项目回报率很低（平均约 1%）。作者写：第三章已详细讨论，不再赘述。要看公司外壳和一级开发，回城投模块。</p>
+          <span class="locator">part0043 块 17</span>
+        </article>
+        <article class="card">
+          <span class="origin author">企业债之二</span>
+          <h3>国企扩张，数据有限度</h3>
+          <p class="muted">2008 年后国企资产和负债相对 GDP 上升更快，利润占比却下降，作者用来说明多占资金没有变成同比例收入。他马上限定：这些年鉴数据有诸多不明之处。工业领域的工企数据更清楚，并没有明显“国进民退”。国企利润率较低；差距在“4万亿”之后扩大，作者写主要原因不在国企，而是私企利润率先飙升再回落。可能的一个原因，是部分有资源的私企去炒地、炒房子。</p>
+          <span class="locator">part0043 块 18–19</span>
+        </article>
+        <article class="card">
+          <span class="origin author">企业债之三</span>
+          <h3>房企：高负债、靠预售</h3>
+          <p class="muted">开发要大量买地，建设周期长，资产负债率接近 80%。2018 年房企总债务占 GDP 的比重达到了 75%，大量来自影子银行；预售和个人按揭占 2018 年实际到位资金的将近一半。作者写到 2020 年风险开始显现，并提到泰禾违约、恒大内部文件和“三道红线”。这是书里停住的时点，不是 2021 年以后的后记。</p>
+          <span class="locator">part0043 块 21–22</span>
+        </article>
+      </div>
+      <article class="card" style="margin-top:12px">
+        <span class="origin author">银行风险</span>
+        <h3>银根连着地根，影子是银行的影子</h3>
+        <p class="muted">“4万亿”不仅是财政刺激，也是金融刺激；信贷占 GDP 从 2008 年约 1.2 升到 2016 年 2.14。银行偏爱住房和土地抵押。融资平台可抵押的土地、进城买房的人和隐性担保，会从需求端扩大信贷。影子银行是类似银行、却不在表内的信贷；中国的模式多由银行主导，作者称为“银行的影子”。2018 年资管新规拧紧总闸，也挤压了没有土地抵押和政府背书的中小民企。</p>
+        <span class="locator">part0043 块 26–31</span>
+      </article>
+    </section>
+
+    <section id="resolve" aria-labelledby="resolve-title">
+      <div class="section-head">
+        <div>
+          <h2 id="resolve-title">化解分成还旧账和改环境</h2>
+          <p>第四节先讲偿还已有债务，再讲遏制新增并改滋生债务的环境。货币讨论用来说明限度，不是药方。</p>
+        </div>
+        <span class="time">17 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <span class="origin quote">作者原话</span>
+          <h3>还旧账，并改滋生债务的环境</h3>
+          <blockquote>
+            <p>任何国家的债务问题，解决方案都可以分成两个部分：一是偿还已有债务；二是遏制新增债务，改革滋生债务的政治、经济环境。</p>
+          </blockquote>
+          <p class="muted">对债务人，偿债是提高收入、压缩支出或变卖资产；还不上就违约，最大债主是银行。大家一起压缩支出，收入可能下降得比债务还快；抛售资产会压低抵押物价格。</p>
+          <span class="locator">part0044 块 2、4–5</span>
+        </article>
+        <article class="card">
+          <span class="origin author">作者主张</span>
+          <h3>货币政策治标不治本</h3>
+          <blockquote>
+            <p>货币政策治标不治本，无法从根本上解决债务负担背后的经济增速放缓问题，因为这是结构性的问题，是地方政府推动经济发展的模式问题。</p>
+          </blockquote>
+          <p class="muted">前面他讨论了降息、量化宽松和赤字货币化，以及国民党法币和美国 QE 的对照。收束是：中国当时较谨慎，不愿再推高房价；货币解决不了模式问题。这些外伸只用来看限度。</p>
+          <span class="locator">part0044 块 7–13</span>
+        </article>
+      </div>
+      <div class="grid-2" style="margin-top:12px">
+        <article class="card">
+          <span class="origin author">作者主张</span>
+          <h3>当年的因，有当年的道理</h3>
+          <p class="muted">遏制新增债务的原则包括限制房价、土地财政和土地金融、政府担保和国企过度借贷。但作者说，直接起因是 2008 年全球金融危机；若刺激不够，后果难料。有人认为“4万亿”用力过猛，他写历史不能假设。政府担保在发展早期可能必要；经济成熟后继续过度干预，会导向低效企业和过剩产能。</p>
+          <span class="locator">part0044 块 15–17</span>
+        </article>
+        <article class="card">
+          <span class="origin author">作者主张</span>
+          <h3>本质不是金融投机</h3>
+          <blockquote>
+            <p>我国债务风险的本质不是金融投机的风险，而是财政和资源分配机制的风险。</p>
+          </blockquote>
+          <p class="muted">2008 年后净出口拉力减弱，国内投资更重要；基建和房地产由掌握土地和银行的政府驱动，风险最终仍是政府风险。这十年负担上升，是因为这套机制已无法持续拉动 GDP。资本市场改革进展慢，因为他用“谁决策谁担风险”来解释：投资仍多由政府影响时，风险便集中在政府和银行。</p>
+          <span class="locator">part0044 块 18–22</span>
+        </article>
+      </div>
+      <details>
+        <summary>结语怎样把两句话并在一起</summary>
+        <div class="detail-body">
+          <p class="muted">结语先写：债务问题不是简单的货币和金融问题，根源在发展模式和结构，降债务伴随结构性改革。紧接着写：直接起因却是 2008 年全球金融危机和几年后的欧债危机。“4万亿”稳定了中外经济，也加剧了债务负担和产能过剩。产能过剩的第一角——效率下降、僵尸企业、土地金融推升房价和银行风险——是第三章到本章已经展开的。国际失衡和产业升级，作者交给下一章。本页不把后两角答完。</p>
+          <span class="locator">part0045 块 2–6</span>
+        </div>
+      </details>
+    </section>
+
+    <section id="excerpts" aria-labelledby="excerpts-title">
+      <div class="section-head">
+        <div>
+          <h2 id="excerpts-title">核五段短引</h2>
+          <p>两句起因、一句治标、两句根源。不要合成“刺激就是原因”。</p>
+        </div>
+        <span class="time">10 分钟</span>
+      </div>
+      <div class="excerpt-grid">
+        <article class="reading-card">
+          <span class="origin quote">短引 1</span>
+          <p class="guide muted">先卡住时间起点，再看后面的年份。</p>
+          <blockquote><p>我国债务迅速上涨的势头始于2008年。</p></blockquote>
+          <p class="cannot">不能从这句推出 2008 年以前完全没有地方债，也不能推出刺激本身就是直接起因。</p>
+          <span class="locator">part0043 块 2 · 搜：我国债务迅速上涨的势头始于2008年</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 2</span>
+          <p class="guide muted">直接起因在结语，不在“4万亿”四个字。</p>
+          <blockquote><p>然而导致目前债务问题的直接起因，却是2008年的全球金融危机和几年后的欧债危机。</p></blockquote>
+          <p class="cannot">不能漏掉欧债危机，只把金融危机或刺激写成唯一起因。</p>
+          <span class="locator">part0045 块 2 · 搜：导致目前债务问题的直接起因</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 3</span>
+          <p class="guide muted">这一句回答“为什么不能只靠金融手段”。</p>
+          <blockquote><p>债务问题不是简单的货币和金融问题，其根源在于我国经济发展的模式和结构，所以在降债务的过程中伴随着一系列深层次的结构性改革。</p></blockquote>
+          <p class="cannot">不能把“结构性改革”读成作者已经开出的 2026 年政策清单。</p>
+          <span class="locator">part0045 块 2 · 搜：债务问题不是简单的货币和金融问题</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 4</span>
+          <p class="guide muted">货币手段被作者自己标成治标。</p>
+          <blockquote><p>货币政策治标不治本，无法从根本上解决债务负担背后的经济增速放缓问题，因为这是结构性的问题，是地方政府推动经济发展的模式问题。</p></blockquote>
+          <p class="cannot">不能把前面的量化宽松或赤字货币化讨论，当成作者建议中国照做。</p>
+          <span class="locator">part0044 块 13 · 搜：货币政策治标不治本</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 5</span>
+          <p class="guide muted">第二问的收束：不是金融投机。</p>
+          <blockquote><p>我国债务风险的本质不是金融投机的风险，而是财政和资源分配机制的风险。</p></blockquote>
+          <p class="cannot">不能把这句读成作者已经开出资本市场或财政改革的 2026 年清单。</p>
+          <span class="locator">part0044 块 22 · 搜：本质不是金融投机的风险</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="cannot" aria-labelledby="cannot-title">
+      <div class="section-head">
+        <div>
+          <h2 id="cannot-title">本页综合，以及推不出去的东西</h2>
+          <p>综合是阅读顺序，不是作者列出的公式。</p>
+        </div>
+        <span class="time">8 分钟</span>
+      </div>
+      <article class="card" style="margin-bottom:12px">
+        <span class="origin synthesis">报告综合</span>
+        <h3>先走十年，再拆两层原因</h3>
+        <p class="muted">一条够用的线索是：2008 年和欧债危机逼出几轮刺激与影子银行，企业债和银行把风险连到土地和政府信用；化解要还旧账并限制继续借，但降息、印钱或只管金融监管，到不了作者说的模式和财政分配。平台怎样同时像政府，不在本页重做。</p>
+      </article>
+      <div class="grid-2">
+        <article class="audit-box limit">
+          <span class="origin audit">不能推出</span>
+          <ul>
+            <li>“4万亿”或放松信贷就是直接起因。</li>
+            <li>作者已经判定刺激必然错误；他写历史不能假设。</li>
+            <li>国企扩张等于已经证实的全面“国进民退”。</li>
+            <li>本页可以代替城投政企边界那一节。</li>
+            <li>降息、量化宽松或赤字货币化是 2026 年方案。</li>
+            <li>2020 年的房企风险和三道红线，等于 2021 年以后的结局。</li>
+            <li>国际失衡和产业升级已经在这三节讲完。</li>
+          </ul>
+        </article>
+        <article class="audit-box strength">
+          <span class="origin author">这三节能站住的</span>
+          <ul>
+            <li>上涨势头始于 2008 年，并在欧债危机后再加速。</li>
+            <li>2018 年末企业债远高于居民和政府。</li>
+            <li>本章重点是企业债和银行；平台和居民债被标成别处已写。</li>
+            <li>影子银行在中国多半是银行的影子。</li>
+            <li>化解分还旧账和改环境；货币手段治标。</li>
+            <li>本质被写成财政和资源分配，不是金融投机。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="critical" aria-labelledby="critical-title">
+      <div class="section-head">
+        <div>
+          <h2 id="critical-title">批判审计</h2>
+          <p>先复述作者分开的两层原因，再标出数据和外伸的限度。</p>
+        </div>
+        <span class="time">7 分钟</span>
+      </div>
+      <div class="audit-grid">
+        <article class="audit-box strength">
+          <span class="origin audit">站得住</span>
+          <h3>起因和根源被写成两句话</h3>
+          <p class="muted">结语没有让刺激吞掉危机，也没有让结构口号取消十年路径。读者可以同时记住：外部冲击是直接起因，模式是根源。</p>
+        </article>
+        <article class="audit-box limit">
+          <span class="origin audit">数据有作者自己的限定</span>
+          <h3>国企年鉴不是已经闭合的证据</h3>
+          <p class="muted">作者写这些数据及相关研究尚有不明之处，工业领域没有明显“国进民退”。本页跟着这个限定走。</p>
+        </article>
+        <article class="audit-box limit">
+          <span class="origin audit">外伸不是药方</span>
+          <h3>QE、MMT、法币只用来看限度</h3>
+          <p class="muted">这些段落停在“货币治标、历史经验很差、中国当时较谨慎”。把它们读成作者主张中国应该或不应在 2026 年做什么，是后见。</p>
+        </article>
+        <article class="audit-box">
+          <span class="origin external">外部背景</span>
+          <h3>2021 年以后不补进主张</h3>
+          <p class="muted">2023 精装纪念版未打开。房企和平台在 2021 年以后的结果，只用来提醒不要后见。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="source" aria-labelledby="source-title">
+      <div class="section-head">
+        <div>
+          <h2 id="source-title">回原文路线</h2>
+          <p>地图不能代替这三节。数字和限定语都在 EPUB 内部路径里。</p>
+        </div>
+        <span class="time">可选 50–70 分钟</span>
+      </div>
+      <ol class="route">
+        <li>
+          <strong>开篇与十年路径</strong>
+          <span>约 12 分钟 · part0043 块 1–12 · 始于 2008 年，以及几轮放松。</span>
+          <code>OEBPS/Text/part0043.xhtml</code>
+        </li>
+        <li>
+          <strong>企业债与银行</strong>
+          <span>约 15 分钟 · part0043 块 15–31 · 三块企业债的限度，银根连着地根。</span>
+          <code>OEBPS/Text/part0043.xhtml</code>
+        </li>
+        <li>
+          <strong>偿还、货币限度与遏制</strong>
+          <span>约 15 分钟 · part0044 块 1–22 · 还旧账和改环境；读到“不是金融投机”。</span>
+          <code>OEBPS/Text/part0044.xhtml</code>
+        </li>
+        <li>
+          <strong>结语两句话</strong>
+          <span>约 10 分钟 · part0045 块 2–6 · 直接起因和结构根源并读；后两角交给下一章。</span>
+          <code>OEBPS/Text/part0045.xhtml</code>
+        </li>
+      </ol>
+    </section>
+
+    <section id="decision" aria-labelledby="decision-title">
+      <div class="section-head">
+        <div>
+          <h2 id="decision-title">读完这一问之后</h2>
+          <p>能分开危机、应对和模式，这一问就可以停。城投公司怎样同时像政府，是另一节。</p>
+        </div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="decision-grid">
+        <article class="decision recommended">
+          <strong>推荐：回读这三节</strong>
+          <p>按四段路线把年份、企业债限度和结语两句话读一遍。若问题已经变成当下该怎样化债，本页答不了。</p>
+        </article>
+        <article class="decision">
+          <strong>现在停止</strong>
+          <p>若你已经能说出直接起因是两次危机、货币手段治标、根源是发展模式和财政分配，主地图加本页就够用。</p>
+        </article>
+        <article class="decision">
+          <strong>回城投那一节</strong>
+          <p>若你还是分不清平台为什么必须是公司、一级开发为什么常留给它，去已经生成的 <a href="../chengtou-boundary/reading.html">城投政企边界</a>，不要在本页重做。</p>
+        </article>
+        <article class="decision">
+          <strong>不要在本页继续的</strong>
+          <p>不要把国际失衡和产业升级当成这三节的答案，也不要把 QE 或赤字货币化读成作者的政策建议。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>来源：用户提供的 2021 年上海人民出版社 EPUB。原书保持私有。本仓库只保存原创结构、评论、必要短引和定位。</p>
+      <p>内容已标为作者原话、作者主张、报告综合、批判审计和外部背景。模块用来回第六章第三、四节和结语，不代替阅读，也不回答 2026 年该怎样化债。</p>
+    </div>
+  </footer>
+</body>
+</html>

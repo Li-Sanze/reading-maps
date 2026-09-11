@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》深挖：京东方和光伏这两个案例，能否证明产业政策有效？不把产业基金写成有效性证据。">
+  <title>两个案例能否证明产业政策有效｜置身事内深挖</title>
+<style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.05rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0.4em 0 1em; padding-left: 1.2em; }
+    li { margin-bottom: 0.4em; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { max-width: 860px; margin: 0; color: #eef6f0; }
+
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .source-box p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+    .model-figure {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+    .reading-card .guide { margin-bottom: 0.55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: #7a3030;
+      border-top: 1px dashed #e5c2c2;
+      font-size: 0.87rem;
+    }
+
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    details {
+      margin-bottom: 10px;
+      overflow: clip;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--moss); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    .table-scroll { max-width: 100%; overflow-x: auto; padding-bottom: 8px; scrollbar-color: #c3b9ac transparent; }
+    table { width: 100%; min-width: 640px; border-collapse: collapse; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 750; }
+    .table-hint { margin: 8px 0 0; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.76rem; }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .audit-box, .decision, .source-box, .reading-card, .model-figure, .route li, details { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; }
+      details > * { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html">← 返回《置身事内》主阅读地图</a>
+      <p class="eyebrow">Deep dive · 按需深挖 · 约 75 分钟</p>
+      <h1>两个案例能否证明产业政策有效</h1>
+      <p class="lead">2020 年大陆面板企业全球占有率接近四成，京东方是其中规模最大的；光伏从「失败活靶子」变成全球产能八成。作者用这两节反对空喊有效或无效。本页对表，不把第三节产业基金写成第三条证据。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第四章开篇、第一二节、结语</span>
+        <span class="fact">part0027–0029 · part0031</span>
+        <span class="fact">核心约 75 分钟</span>
+        <span class="fact">回原文 50–70 分钟</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="一句话模型">
+        <small>一句话模型 · 报告综合</small>
+        <strong>两节能挡住口号，不能证明产业政策总有效。</strong>
+        <p>作者先说：离开行业细节，争论没有尽头。京东方一节写的是国内市场够大时，政府股权和城投增发怎样先补上资本金；作者把「打破技术和设厂封锁」写在北京 8.5 代线奠基之后。光伏一节写的是补贴和企业成功没有必然因果；没有补贴这个行业起不来，有补贴也不保证活下来。收束是：没有放之四海的答案。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <nav class="shell" aria-label="本页章节">
+      <a href="#question">问题</a>
+      <a href="#compare">对照</a>
+      <a href="#boe">京东方</a>
+      <a href="#solar">光伏</a>
+      <a href="#quotes">原文</a>
+      <a href="#audit">批判</a>
+      <a href="#source">回原文</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="question">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这个问题管到哪里</h2>
+            <p>证据边界，不是产业政策总评，也不是基金操作。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <p><span class="origin synthesis">报告综合</span>主地图已经写过：案例用来展示约束和多面性，作者反对脱离场景的产业政策口号。本页只问：第四章前两节能不能拿来证明「产业政策有效」。</p>
+        <p><span class="origin author">作者主张</span>现实没有黑白分明的市场和政府分界。钢铁是一回事，芯片是另一回事。产业政策有成功有失败，市场决策也有成功有失败；用一种成功去质疑另一种失败，争论没有尽头。所以本章重点是具体案例，先看事实和经过，再评判结果。</p>
+        <p><span class="origin author">作者主张</span>章导语把第三节政府产业投资基金写成第三种工具：新的招商方式和以市场化方式使用财政资金的探索。</p>
+        <p><span class="origin synthesis">报告综合</span>本页只点到这一句。基金怎么募、怎么投、名股实债，留给未写的后页，不当成本页的有效性证据。</p>
+        <p class="muted">城投外壳和土地金融见<a href="../chengtou-boundary/reading.html">城投政企边界</a>。土地财政与抵押换词见<a href="../land-fiscal-vs-financial/reading.html">土地财政和土地金融</a>。结语末段接到下篇的见地不见人、房价和债务，不在本页展开。</p>
+      </div>
+    </section>
+    <section id="compare">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>先对表，再决定能不能当证据</h2>
+            <p>两节不是同一条成功故事的上下集。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <div class="table-scroll" tabindex="0">
+          <table>
+            <thead>
+              <tr><th>看什么</th><th>液晶面板 / 京东方</th><th>光伏</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>当时的市场</td>
+                <td>电视、手机等终端的全球最大消费市场在国内。作者写：外溢性强，本国企业即便只是拉低国际要价，也可以考虑进入。</td>
+                <td>早期「三头在外」：市场、技术设备、原材料都在海外。2010 年国内销量只占 6%。2011 年出口 57% 去欧洲、15% 去美国。</td>
+              </tr>
+              <tr>
+                <td>政府主要做了什么</td>
+                <td>北京银团贷款和借款转股；成都、合肥城投定向增发；国开行牵头贷款；也用土地使用权收益、委托贷款和贴息。</td>
+                <td>早期是土地、税收优惠、贴息和地方政府当「天使」。需求端先靠德国等地标杆电价，2011 年后中央才分阶段做国内标杆电价。</td>
+              </tr>
+              <tr>
+                <td>作者写到的结果</td>
+                <td>2020 年大陆企业全球占有率接近四成，居第一。京东方前六大股东是京、肥、渝国资，合计 23.8%。面板跌价也带低了国产电视和手机。</td>
+                <td>2012 年前后大量倒闭，曾是失败活靶子。洗牌后国内企业产能占全球八成；2010–2019 年组件价格降 85%，全球装机升 16 倍。</td>
+              </tr>
+              <tr>
+                <td>作者自己的限度</td>
+                <td>新企业门槛极高，必遭在位者打压；招商竞争也会引来没有实力的企业，作者点到产能过剩担忧。</td>
+                <td>补贴与成功没有必然因果。没有补贴行业起不来；保护若变寻租，欧美同样失败。要害是保持竞争和退出。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-hint">表可在框内左右滑动。页本身不横向溢出。表是对照，不是定律。</p>
+      </div>
+    </section>
+    <section id="boe">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>京东方一节实际写了什么</h2>
+            <p>国内市场、股权补资本金、国际封锁，不是「投资必成」。</p>
+          </div>
+          <span class="time">约 16 分钟</span>
+        </div>
+        <p><span class="origin author">作者主张</span>2008 年戴尔 27 寸液晶显示器卖 7 599 元；2020 年只要 949 元，还更清晰。70 寸高清电视从接近 40 万元落到 3 000 多元。硬件成本近八成来自面板。2008 年大陆占有率可以忽略；2012 年进口面板 500 亿美元；2020 年大陆企业接近全球四成，居第一。</p>
+        <p>京东方前身是北京电子管厂。亦庄 5 代线本想靠香港上市融资，计划失败后，北京市政府和国开行协调 9 家银行贷了 7.4 亿美元，市政府借款 28 亿元后来转成股份。这条线投在波峰、产在波谷，2005–2006 年亏损 33 亿元。银团展期卡在出资最少的一家小银行。此后产线改成：先向所在地政府筹够资本金，再贷款。</p>
+        <p>成都 4.5 代线向两家城投定向增发 18 亿元，赶上智能手机。深圳「聚龙计划」和昆山上广电两次被夏普搅局。2008 年合肥地方财政收入只有 161 亿元，却要建投资 175 亿元的 6 代线，承诺出资 60 亿元，必要时兜底 90 亿元。这次增发 120 亿元里，两家城投只出了 30 亿元，其余 90 亿元来自 8 家社会机构。作者把合肥写成我国第一条高世代线，也写成安徽省当时最大的单体工业投资。</p>
+        <p>2009 年中央把「新型显示器件」列入支持范围。北京 8.5 代线奠基后，境外厂商才加快与大陆签约；这些合资并未立刻获批，京东方赢得一些时间。2014 年最大一笔增发 449 亿元，前三位是北京、重庆、合肥的政府平台。</p>
+        <p>经济启示里，作者没有写成「政府应该进入任何行业」。他写：国际市场上的行政扭曲，往往只有行政力量才能破解；关不关，还要看国内市场规模。小国补贴等于补外国消费者。我国电视和手机的全球最大消费市场在国内，外溢性强，可以考虑扶持本国企业进入。韩国 1970 年代重工业是对照，不是第三条中国证据。</p>
+        <p>地方竞争一节承认：合肥算的是带动投资和产值的细账，不是产线本身的财务回报。产业集群一旦形成很难打破，早期落在哪座城却有偶然。作者也写：扶持引来一些没有实力的小企业，引发产能过剩担忧；光伏被他点成门槛更低、更容易重复建设的例子。那是过渡，不是把光伏写成京东方的复制。</p>
+        <span class="locator">第一节　京东方与政府投资 · OEBPS/Text/part0028.xhtml</span>
+      </div>
+    </section>
+    <section id="solar">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>光伏一节实际写了什么</h2>
+            <p>活靶子和名片是同一条洗牌，不是前后两个结论。</p>
+          </div>
+          <span class="time">约 16 分钟</span>
+        </div>
+        <p><span class="origin author">作者主张</span>2012 年前后大量光伏企业倒闭，光伏在很长时间里是产业政策和补贴失败的活靶子。洗牌之后，国内企业产能占全球八成，关键环节多居主导。2010–2019 年组件价格下降 85%，全球装机上升 16 倍；国内成为全球最大市场，装机占全球三分之一。</p>
+        <p>2001 年施正荣在无锡政府支持下创办尚德，三家政府平台和五家地方国企共占 75%。上市前外资买回国资股份，它被写成中国首家在纽交所上市的「民营企业」。赛维在新余扶持下成立。与面板不同，这一时期产品主要出口欧美；2010 年国内市场只占销量 6%。海外需求本身也靠德国等地的标杆电价。</p>
+        <p>金融危机和欧债危机后欧洲削补贴，美欧从 2011 年底开始「反倾销、反补贴」。作者写：中国专门针对光伏的补贴当时总量有限，多数是土地优惠和贴息这类常规招商。需求锐减后，市场才转向国内。2011 年中央分阶段做标杆电价；2018 年「531 新政」大幅降补贴、缩指标，冲击不亚于「双反」。2019 年开始竞价，成本逼近煤电。</p>
+        <p>启示段把有效性边界写死：政府支持和补贴与企业成功不存在必然因果关系。欧美日起步早、补贴早，还用了「双反」，企业最终仍衰落。政策最多降低一些财务和市场风险，不能替企业长出竞争优势；做不到，保护会变成寻租。这个逻辑不能构成反对所有产业政策的理由。就新能源而言，补贴了不见得成功，没有补贴这个行业就不可能存在。</p>
+        <p>重复建设被作者写成市场经济的常态，在中国又被「看得见的需求」、优惠赶工期、追随中央方向三个因素加剧。要害不是重复建设，而是保持竞争。赛维 2016 年资产 137 亿元、负债 516 亿元，重整由地方主导；无锡尚德和上海超日被写成更市场化的对照。产业政策要有退出：补贴递减，以及低效企业走得了破产。</p>
+        <p><span class="origin quote">作者原话</span></p>
+        <blockquote><p>就新能源产业而言，补贴了虽然不见得会成功，但没有补贴这个行业就不可能存在，也就谈不上在发展过程中逐渐摆脱对补贴的依赖了。</p></blockquote>
+        <span class="locator">第二节　光伏发展与政府补贴 · OEBPS/Text/part0029.xhtml</span>
+      </div>
+    </section>
+    <section id="quotes">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>五处短引</h2>
+            <p>只核「能不能当证据」，不收藏成功学句子。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <div class="excerpt-grid">
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>先挡住空谈。</p>
+            <blockquote><p>因此，讨论和分析政府干预和产业政策，不能脱离具体行业细节，否则易流于空泛。</p></blockquote>
+            <p class="cannot">不能推出：任何行业细节都等于政策已经有效。</p>
+            <span class="locator">第四章开篇 · part0027.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>成功对失败的争论没有尽头。</p>
+            <blockquote><p>产业政策有成功有失败，市场决策也有成功有失败，用一种成功去质疑另一种失败，或者用一种失败去推崇另一种成功，争论没有尽头。</p></blockquote>
+            <p class="cannot">不能推出：因此不必再看案例。</p>
+            <span class="locator">第四章开篇 · part0027.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>光伏节把因果写断。</p>
+            <blockquote><p>从光伏产业的发展来看，政府的支持和补贴与企业成功不存在必然的因果关系。</p></blockquote>
+            <p class="cannot">不能推出：有补贴就无效，或无补贴才有效。</p>
+            <span class="locator">经济启示 · part0029.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>要害是竞争，不是有没有重复。</p>
+            <blockquote><p>所以不管有没有政府扶持，要害都不是“重复建设”，而是“保持竞争”。</p></blockquote>
+            <p class="cannot">不能推出：重复建设没有代价。作者写了赛维重整和西部弃光。</p>
+            <span class="locator">地方政府竞争与重复建设 · part0029.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>收束：没有放之四海的答案。</p>
+            <blockquote><p>大到经济发展模式、小到具体产业政策，不存在脱离了具体场景、放之四海而皆准的答案，必须具体问题具体分析，并根据现实变化不断调整。</p></blockquote>
+            <p class="cannot">不能推出：因此两个案例已经给出总评。</p>
+            <span class="locator">第四章结语 · part0031.xhtml</span>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>先复述两节各自能证明什么，再挡外推。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box strength">
+            <h3>两节能站住的</h3>
+            <ul>
+              <li>京东方一节说明：在国内市场足够大、国际供给被操纵时，政府股权和城投增发可以改变新企业的融资约束。</li>
+              <li>光伏一节说明：补贴能把没有成本优势的行业送进市场；洗牌后的全球份额，不能回溯成「一开始补贴就对了」。</li>
+              <li>两节合在一起，足够反对「产业政策总有效」和「产业政策总失败」两句口号。</li>
+            </ul>
+          </article>
+          <article class="audit-box limit">
+            <h3>需要挡住的</h3>
+            <ul>
+              <li>不能把京东方写成凡高世代产线必由城投做成，也不能把合肥 GDP 写成政策效果的证明。</li>
+              <li>不能把光伏后来的八成产能，写成对 2012 年寒冬的否定，或写成对所有新能源补贴的许可证。</li>
+              <li>韩国 1973 年战略行业是对照，不是中国面板或光伏的第三条证据。</li>
+              <li>第三节基金只是章导语里的第三种工具。本页不审它是否有效。</li>
+              <li>书里的价格、份额和 2020 年股价，是作者 2021 年材料，不是对此后面板或光伏周期的判决。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="source">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>回到原文</h2>
+            <p>读完对照和两节启示就可以停。</p>
+          </div>
+          <span class="time">约 50–70 分钟回读</span>
+        </div>
+        <ol class="route">
+          <li><strong>章导语：为何必须看行业</strong><span>核「争论没有尽头」和「本章重点是具体案例」。第三节基金只读到被点名为第三种工具。</span><code>OEBPS/Text/part0027.xhtml</code></li>
+          <li><strong>京东方故事：5 代线到合肥 6 代线</strong><span>核上市失败、银团展期、定向增发和夏普搅局。不要把城投增发读成第三章重做。</span><code>OEBPS/Text/part0028.xhtml</code></li>
+          <li><strong>京东方经济启示与地方竞争</strong><span>核国内市场规模那一刀，以及产能过剩只是担忧不是定律。</span><code>OEBPS/Text/part0028.xhtml</code></li>
+          <li><strong>光伏故事到 531</strong><span>核出口依赖、标杆电价、双反和国内转向。不要停在「活靶子」或「名片」其中一句。</span><code>OEBPS/Text/part0029.xhtml</code></li>
+          <li><strong>光伏启示、竞争与退出</strong><span>核没有必然因果、没有补贴就没有行业、赛维对照。读结语前两段即停，不要跟进下篇预告。</span><code>OEBPS/Text/part0029.xhtml；part0031.xhtml</code></li>
+        </ol>
+        <div class="decision-grid" style="margin-top:16px;">
+          <article class="decision recommended">
+            <strong>默认：停在「没有放之四海的答案」</strong>
+            <p>两节已经够用来挡住口号。单企业深挖本轮不写。基金运作另页。</p>
+          </article>
+          <article class="decision">
+            <strong>不要在本页继续的</strong>
+            <p>产业基金募投管退；名股实债；见地不见人；房价和部门债务；芯片或新能源的 2021 年后战报。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向和核证，不替读者读完原书，也不把 2021 年材料写成对当下产业政策的现成答案。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../reading.html">返回主地图</a></p>
+    </div>
+  </footer>
+</body>
+</html>

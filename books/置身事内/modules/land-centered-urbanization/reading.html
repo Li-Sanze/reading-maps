@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》深挖：城市化为什么会见地不见人？土地、住房、户籍和公共服务怎样连在一起。不写房价专节和地票细则。">
+  <title>城市化为什么会见地不见人｜置身事内深挖</title>
+<style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.05rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0.4em 0 1em; padding-left: 1.2em; }
+    li { margin-bottom: 0.4em; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { max-width: 860px; margin: 0; color: #eef6f0; }
+
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .source-box p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+    .model-figure {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+    .reading-card .guide { margin-bottom: 0.55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: #7a3030;
+      border-top: 1px dashed #e5c2c2;
+      font-size: 0.87rem;
+    }
+
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    details {
+      margin-bottom: 10px;
+      overflow: clip;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--moss); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    .table-scroll { max-width: 100%; overflow-x: auto; padding-bottom: 8px; scrollbar-color: #c3b9ac transparent; }
+    table { width: 100%; min-width: 640px; border-collapse: collapse; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 750; }
+    .table-hint { margin: 8px 0 0; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.76rem; }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .audit-box, .decision, .source-box, .reading-card, .model-figure, .route li, details { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; }
+      details > * { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html">← 返回《置身事内》主阅读地图</a>
+      <p class="eyebrow">Deep dive · 按需深挖 · 约 70 分钟</p>
+      <h1>城市化为什么会见地不见人</h1>
+      <p class="lead">土地财政和土地金融能把城建起来，为什么超过两亿常住人口没有当地户口、不能完全享受按户籍规划的公共服务？本页只把这几样连在一起。房价专节、地票数字和落户分档本轮不写。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第五章开篇、第二节前半、结语</span>
+        <span class="fact">part0034 · part0036 · part0038</span>
+        <span class="fact">核心约 70 分钟</span>
+        <span class="fact">回原文 45–65 分钟</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="一句话模型">
+        <small>一句话模型 · 报告综合</small>
+        <strong>地价靠房价，房价靠人的收入；公共服务却按户籍规划。</strong>
+        <p>作者把上篇模式的第一特点写成「重土地、轻人」。土地融资让地方依赖房地产；支撑地价的是买房者收入。常住城镇化快于户籍，超过两亿人进了城却不能按常住人口拿到教育等服务。人被卡住，地区收入差就压在人均上。十八大以后，重心开始逐步从土地转向人，不是已经转完。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <nav class="shell" aria-label="本页章节">
+      <a href="#question">问题</a>
+      <a href="#land">土地与人</a>
+      <a href="#hukou">人被卡住</a>
+      <a href="#stages">三阶段</a>
+      <a href="#quotes">原文</a>
+      <a href="#audit">批判</a>
+      <a href="#source">回原文</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="question">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这个问题管到哪里</h2>
+            <p>连线，不是房价专论，也不是债务下一站。</p>
+          </div>
+          <span class="time">约 7 分钟</span>
+        </div>
+        <p><span class="origin synthesis">报告综合</span>下篇开篇把上篇模式的第一个特点写成：城市化「重土地、轻人」，优点是城建快，缺点是公共服务不足，并推高房价、居民债务和地区差距。本页只问这几样怎样连在一起，不重做第二章时间线，也不打开第五章第一节的房价与居民债务专论。</p>
+        <p>「支撑房价和地价的，是人的收入」写在第五章开篇第三段。本页停在那里，不跟进第一节的房价与居民债务专论。</p>
+        <p class="muted">土地财政与抵押换词见<a href="../land-fiscal-vs-financial/reading.html">土地财政和土地金融</a>。十年债务路径见<a href="../china-debt-path-and-resolution/reading.html">中国债务路径</a>，那是下一章，不是本页下一站。地票、三块地、2019 年落户分档和 2020 年《意见》细则，本页不写。</p>
+      </div>
+    </section>
+    <section id="land">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>地价靠的是人的收入</h2>
+            <p>土地能融资，不等于城市化已经服务于人。</p>
+          </div>
+          <span class="time">约 14 分钟</span>
+        </div>
+        <p><span class="origin author">作者主张</span>年轻人的困境被写成：有心仪工作的城市房价太高，房价合适的城市没有心仪工作。城市化要大量资金建基础设施，土地财政和土地金融是有效融资手段。城市土地国有，让政府垄断一级市场，把隐匿财富变成启动资本，也让地方财源高度依赖土地价值和房价。</p>
+        <p>作者把链条写成：房价连着地价，地价连着财政，财政连着基础设施投资，于是经济增长、地方财政、银行、房地产一荣俱荣、一损俱损。以土地为中心的城市化忽视了真正核心：人。地价要靠房价拉动，房价由老百姓买单，按揭靠买房者收入来还。土地的资本化，实质是个人收入的资本化。支撑房价和地价的，是人的收入。忽略了人，忽略了城市化本该服务于人、本该创造更好环境和更高收入，城市化就入了歧途。</p>
+        <p>1980 年城镇常住人口占比不足两成，2019 年超过六成，短短 40 年超过 5 亿人进城。按户籍论，2019 年城镇户籍人口只占总人口 44%，比常住占比少 16 个百分点：超过 2 亿人常住城镇，没有当地户口，不能完全享受按户籍人数规划的公共服务。作者把留守儿童、留守妇女、留守老人写成巨大社会问题。近年改革是为了扭转，让城市化以人为本。这是方向，不是本页要写成已经完成。</p>
+        <p><span class="origin quote">作者原话</span></p>
+        <blockquote><p>所以土地的资本化，实质是个人收入的资本化。支撑房价和地价的，是人的收入。</p></blockquote>
+        <span class="locator">第五章开篇 · OEBPS/Text/part0034.xhtml</span>
+      </div>
+    </section>
+    <section id="hukou">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>人为什么被卡住</h2>
+            <p>土地不能跟着人走，公共服务按户籍规划。</p>
+          </div>
+          <span class="time">约 16 分钟</span>
+        </div>
+        <p><span class="origin author">作者主张</span>2018 年城镇人均可支配收入是农村的 2.7 倍，北京和上海是贵州、甘肃、西藏等地的 3.5 倍。两项差距都与人口流动受限有关。低收入者提高收入，最直接的是到发达城市打工。人口被限制在农村或落后地区，人与人、地区和城乡的收入差都会拉大。</p>
+        <p>以地方投资为主的城市化是限制之一：重土地轻人，民生和公共服务不足，外来人口难以安家；长期倚重投资，分配偏向资本，压低劳动收入占比。作者拿美国各州对照：经济规模差很大，人均差很小。中国多数省份是人多经济小，或人少经济大。要平衡的是人均，不是把每个城市做成上海。关键是劳动力自由流动。城镇常住人口六成、农村四成人口只分农业产出一成，收入自然偏低。大城市分工细，低技能工作收入也可以更高；只想要高技能人才的城市，服务业变贵，生活质量下降。</p>
+        <p>担心住房、教育、医疗被挤占，作者写：任何城市都不可能无限扩张；拥挤代价超过收益，自会有人离开。公共服务应增加供给，而不是只限制需求。2019 年末上海 60 岁以上户籍人口 512 万，占 35%；没有新移民，社保和养老谁来做。若孩子上学难、看病报销难，留守问题还会持续。</p>
+        <p>「土地流转与户籍改革」第一段把住房写得比学校医院更难：增加城市中的学校和医院数量，可能还相对容易些；大城市土地有限，建设用地指标又受管制。假如指标跟着人口走，流出地减少、流入地增多，才可能缓解供需。要让指标流转，首先让农村集体用地参与流转。北京市域内集体建设用地占建设用地总量五成，容积率平均只有 0.3–0.4；上海占三成，开发强度也低于国有土地。本页读到这里停。地票均价、三块地试点、2019 年落户分档和 2020 年文件细则，本轮不写。</p>
+        <span class="locator">第二节前半至「土地流转与户籍改革」第一段 · OEBPS/Text/part0036.xhtml</span>
+      </div>
+    </section>
+    <section id="stages">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>三个阶段，第三段还在开始</h2>
+            <p>「开始逐步」不是已经转成以人为本。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="table-scroll" tabindex="0">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>作者怎么写</th><th>不能写成</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1994 年之前</td>
+                <td>乡镇企业崛起，农民离土不离乡，城市化不快。</td>
+                <td>那时已经有大规模土地融资推动的进城潮。</td>
+              </tr>
+              <tr>
+                <td>分税制之后</td>
+                <td>乡镇企业式微，农民工进城。土地城市化远快于人的城市化：土地撬动资金支撑城建，多数新移民没有应有的公共服务。</td>
+                <td>进城本身等于已经获得户籍和公共服务。</td>
+              </tr>
+              <tr>
+                <td>十八大以后</td>
+                <td>一系列改革陆续推行，城市化重心开始逐步从土地转向人。工业化仍在集聚沿海和中心城市；农二代更希望定居城市，需要住房、教育、医疗。</td>
+                <td>转型已经完成，或土地模式已经退出。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-hint">表可在框内左右滑动。页本身不横向溢出。</p>
+        <p>共同动力之一是工业化：从乡镇企业满足本地，到出口和入世后向沿海集聚，再到升级仍靠沿海和中心城市的生产销售网络。新一代移民已经适应城市生活。所以作者写：城市化需要转型，以人为本。结语下一段接到地方债、房价和去杠杆，那是第六章，本页不写。</p>
+        <span class="locator">第五章结语 · OEBPS/Text/part0038.xhtml</span>
+      </div>
+    </section>
+    <section id="quotes">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>四处短引</h2>
+            <p>只核连线，不收藏改革清单。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="excerpt-grid">
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>土地融资怎样缠上房价。</p>
+            <blockquote><p>房价连着地价，地价连着财政，财政连着基础设施投资，于是经济增长、地方财政、银行、房地产之间就形成了“一荣俱荣，一损俱损”的复杂关系。</p></blockquote>
+            <p class="cannot">不能推出：因此房价下跌必然立刻变成金融危机。那是第一节和第六章的问题。</p>
+            <span class="locator">第五章开篇 · part0034.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>地价连着人的收入。</p>
+            <blockquote><p>所以土地的资本化，实质是个人收入的资本化。支撑房价和地价的，是人的收入。</p></blockquote>
+            <p class="cannot">不能推出：提高地价就是提高收入。</p>
+            <span class="locator">第五章开篇 · part0034.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>常住和户籍差出两亿人。</p>
+            <blockquote><p>也就是说有超过2亿人虽然常住城镇，却没有当地户口，不能完全享受到应有的公共服务（如教育），因为这些服务的供给是按户籍人数来规划的。</p></blockquote>
+            <p class="cannot">不能推出：进了城就等于已经城市化完成。</p>
+            <span class="locator">第五章开篇 · part0034.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>第三阶段是开始转向。</p>
+            <blockquote><p>第三个阶段是党的十八大以后，随着一系列改革的陆续推行，城市化的重心开始逐步从“土地”向“人”转移。</p></blockquote>
+            <p class="cannot">不能推出：土地模式已经结束，以人为本已经完成。</p>
+            <span class="locator">第五章结语 · part0038.xhtml</span>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>先复述连线，再挡「土地必然导致一切」。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box strength">
+            <h3>连得上的</h3>
+            <ul>
+              <li>土地融资依赖房价，房价依赖买房者收入：见地不见人不是修辞，是同一条筹资链上的缺口。</li>
+              <li>公共服务按户籍规划，解释了常住六成、户籍四成四的缺口。地区收入差，作者另写人口流动受限是重要因素之一。</li>
+              <li>第三阶段写成「开始逐步」，和开篇「近年来改革为了扭转」一致，没有把方向写成完成。</li>
+            </ul>
+          </article>
+          <article class="audit-box limit">
+            <h3>需要挡住的</h3>
+            <ul>
+              <li>不能画成土地必然导致房价、户籍和贫富差距的单箭头。作者写的是互相缠绕，还有工业化集聚和人口自愿流向。</li>
+              <li>不能打开第一节去用欧美房贷或国内按揭证明本页问句。</li>
+              <li>不能把地票、三块地、2019 年落户分档写成已经解决了见地不见人。</li>
+              <li>不能把结语接到第六章的债务段，写成城市化问题的结论。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="source">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>回到原文</h2>
+            <p>读完开篇连线和人被卡住的机制就可以停。</p>
+          </div>
+          <span class="time">约 45–65 分钟回读</span>
+        </div>
+        <ol class="route">
+          <li><strong>下篇开篇：三个特点里的第一条</strong><span>只取「重土地、轻人」。后两个特点是规模扩张和重生产，不在本页展开。</span><code>OEBPS/Text/part0033.xhtml</code></li>
+          <li><strong>第五章开篇到常住／户籍缺口</strong><span>核房价—地价—财政链，以及土地资本化是个人收入资本化。不要打开第一节房价与居民债务。</span><code>OEBPS/Text/part0034.xhtml</code></li>
+          <li><strong>第二节：人口流动与人均平衡</strong><span>核 2.7 倍、3.5 倍、美国对照，以及只留高技能会事与愿违。</span><code>OEBPS/Text/part0036.xhtml</code></li>
+          <li><strong>「土地流转与户籍改革」只读第一段</strong><span>核指标应跟人走、集体建设用地占比。地票和落户分档不要往下翻。</span><code>OEBPS/Text/part0036.xhtml</code></li>
+          <li><strong>结语前两段</strong><span>核三个阶段和「开始逐步」。不要读接到去杠杆的末段。</span><code>OEBPS/Text/part0038.xhtml</code></li>
+        </ol>
+        <div class="decision-grid" style="margin-top:16px;">
+          <article class="decision recommended">
+            <strong>默认：停在「开始逐步转向人」</strong>
+            <p>连线已经够用。房价专节、要素改革细则、贫富差距第三节，本轮不写。</p>
+          </article>
+          <article class="decision">
+            <strong>不要在本页继续的</strong>
+            <p>欧美房贷教训；按揭占 GDP；地票均价；2019 年落户分档；贫富差距库兹涅茨曲线；第六章去杠杆。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向和核证，不替读者读完原书，也不把 2021 年材料写成对当下户籍和房价的现成答案。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../reading.html">返回主地图</a></p>
+    </div>
+  </footer>
+</body>
+</html>

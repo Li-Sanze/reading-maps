@@ -1,0 +1,523 @@
+{
+  "schema_version": "read-book.v1",
+  "artifact_kind": "rapid-reading-map",
+  "generated_date": "2026-09-11",
+  "language": "zh-CN",
+  "book": {
+    "title_zh": "置身事内：中国政府与经济发展",
+    "author": "兰小欢",
+    "publisher": "上海人民出版社",
+    "year": 2021,
+    "isbn": "978-7-208-17133-6",
+    "classification": "面向大众读者的中国政经讲义",
+    "one_sentence_model": "作者把中国经济写成地方政府深度参与生产的过程：1994 年分税制先收紧预算内资源，21 世纪初土地财政和土地金融才大规模补上工业化和城市化的资金；下篇用这套微观基础解释人、债和外部失衡，其中债务一章另外写了风险如何在部门之间传导。",
+    "model_status": "作者讲义和跨章压缩，不是对 2021 年以后经济的预测。"
+  },
+  "source": {
+    "display_name": "置身事内：中国政府与经济发展.epub",
+    "format": "EPUB",
+    "sha256": "20b854d3fcc088a16c01d6f1998325056b8ea78734e83be46c559ed27a0a070a",
+    "bytes": 2191400,
+    "metadata": {
+      "title_on_copyright_page": "置身事内：中国政府与经济发展",
+      "creator": "兰小欢",
+      "publisher": "上海人民出版社",
+      "producer": "北京世纪文景文化传播有限责任公司",
+      "isbn": "978-7-208-17133-6",
+      "cip": "中国版本图书馆CIP数据核字（2021）第095010号",
+      "language": "zh",
+      "opf_title_contains_marketing_copy": true
+    },
+    "archive_validation": {
+      "zip_entries": 98,
+      "spine_documents": 62,
+      "toc_entries": 59,
+      "body_xhtml_files": 60,
+      "epub_open": "passed"
+    },
+    "metadata_limitations": [
+      "版权页未给出印次。",
+      "OPF 标题含推荐语，书名以版权页为准。",
+      "OPF identifier 为 232201086，不能代替 ISBN。",
+      "本轮未打开 2023 精装纪念版，不补新序或后改正文。"
+    ]
+  },
+  "scope": {
+    "included": "前言、上篇四章正文及各章结语、下篇四章正文及各章结语、结束语。",
+    "included_files": {
+      "preface": "OEBPS/Text/part0005.xhtml",
+      "upper_intro": "OEBPS/Text/part0006.xhtml",
+      "chapters": "OEBPS/Text/part0007.xhtml 至 part0031.xhtml 中的正文与结语，不含扩展阅读",
+      "lower_intro": "OEBPS/Text/part0033.xhtml",
+      "lower_chapters": "OEBPS/Text/part0034.xhtml 至 part0057.xhtml 中的正文与结语，不含扩展阅读",
+      "closing": "OEBPS/Text/part0059.xhtml"
+    },
+    "excluded": [
+      {
+        "scope": "封面与 OPF 标题中的推荐语、宣传语",
+        "reason": "包装文字，不是作者论证。"
+      },
+      {
+        "scope": "各章“扩展阅读”",
+        "reason": "作者标明供深究的书外读物，不进入作者主张。"
+      },
+      {
+        "scope": "书末参考文献",
+        "reason": "引用清单，不是正文论证。"
+      },
+      {
+        "scope": "书名页、版权页、目录页、题辞页",
+        "reason": "用于版本核验，不作为经济主张来源。"
+      }
+    ],
+    "pollution_scan": {
+      "download_or_library_ads_in_body": 0,
+      "notes": "公开记录使用版权页书名，不保留来源文件上的第三方书库标记；正文版权页为上海人民出版社与世纪文景信息，不判定为正文广告。"
+    }
+  },
+  "reading_contract": {
+    "target_main_minutes": 40,
+    "full_session_budget_minutes": 150,
+    "window": "主地图约 30–45 分钟；五处原文约 90–120 分钟，可拆成 2–3 个业余时间单元。",
+    "units": [
+      {
+        "id": "boundary",
+        "minutes": 5,
+        "goal": "确认 2021 版范围，并把扩展阅读、参考文献和后出版本挡在作者主张之外"
+      },
+      {
+        "id": "model",
+        "minutes": 12,
+        "goal": "看清上篇机制如何被作者用来解释下篇现象"
+      },
+      {
+        "id": "claims",
+        "minutes": 12,
+        "goal": "分开原话、主张和跨章归纳"
+      },
+      {
+        "id": "decision",
+        "minutes": 11,
+        "goal": "带着五处原文入口决定选读、通读或停止"
+      }
+    ],
+    "progressive_depth": [
+      {"level": 0, "artifact": "首屏判断", "minutes": "2–3"},
+      {"level": 1, "artifact": "reading.html 主地图", "minutes": "30–45"},
+      {"level": 2, "artifact": "五处原文锚点", "minutes": "90–120"},
+      {"level": 3, "artifact": "按真实问题生成的单个深挖模块", "minutes": "45–90"},
+      {"level": 4, "artifact": "回到完整原书与更新材料", "minutes": "不限"}
+    ],
+    "completion_definition": [
+      "能说出作者为什么主张不能脱离政府谈中国经济。",
+      "能区分土地财政与土地金融，并说明下篇既解释宏观现象，也单独写了债务风险传导和政府角色转向。",
+      "能把 2021 年的机制说明和 2021 年以后的变化分开。",
+      "能决定回读、通读、深挖或停止。"
+    ]
+  },
+  "claims": [
+    {
+      "id": "c01-cake",
+      "type": "author_position",
+      "statement": "在中国，政府不但影响分配，也参与生产，因此不能脱离政府谈经济。",
+      "short_quote": "在我国，政府不但影响“蛋糕”的分配，也参与“蛋糕”的生产，所以我们不可能脱离政府谈经济。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0005.xhtml", "section": "前言　从了解现状开始"}
+      ]
+    },
+    {
+      "id": "c02-what-and-why",
+      "type": "author_position",
+      "statement": "本书侧重描述“是什么”和“为什么”；涉及“怎么办”时，侧重解释正在实施的政策和改革，而不是作者自己认为应该怎么办。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0005.xhtml", "section": "前言　从了解现状开始"}
+      ]
+    },
+    {
+      "id": "c03-tax-sharing",
+      "type": "author_position",
+      "statement": "1994 年分税制扭转了“两个比重”下滑，也压缩了地方预算内资源；预算支出长期高于预算收入，缺口靠转移支付，发展所需额外支出要另找资金。作者没有把大规模土地财政写成 1994 年当年就已成型。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0016.xhtml", "section": "第一节　分税制改革"},
+        {"epub_path": "OEBPS/Text/part0017.xhtml", "section": "第二节　土地财政"}
+      ]
+    },
+    {
+      "id": "c04-land-finance",
+      "type": "author_position",
+      "statement": "大规模土地财政被作者放在 21 世纪初：1998 年住房货币化和土地管理法修订之后，土地出让收入才明显起来；2001 年所得税再集权后，地方才“工业化与城市化”两手抓——工业用地继续便宜招商，商住用地限供以收取垄断收益。作者称土地财政的实质是房地产财政。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0017.xhtml", "section": "第二节　土地财政"}
+      ]
+    },
+    {
+      "id": "c05-land-financialization",
+      "type": "author_position",
+      "statement": "土地出让收入仍不够推动高速工业化和城市化；土地真正的力量在于抵押后撬动的信贷，土地财政加上杠杆成为土地金融。",
+      "short_quote": "所以土地真正的力量还不在“土地财政”，而在以土地为抵押而撬动的银行信贷与其他各路资金。“土地财政”一旦嫁接了资本市场，加上了杠杆，就成了“土地金融”，能像滚雪球般越滚越大，推动经济飞速扩张，也造就了地方政府越滚越多的债务，引发了一系列宏观经济问题。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0019.xhtml", "section": "第二章结语"}
+      ]
+    },
+    {
+      "id": "c06-debt-role",
+      "type": "author_position",
+      "statement": "各省无论财政收入多寡债务都在扩张，因此债务根源不在收入不够，而在支出太多、政府承担了发展经济的角色。",
+      "short_quote": "可见政府债务问题根源不在收入不够，而在支出太多，因为承担了发展经济的任务，要扮演的角色太多。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0025.xhtml", "section": "第三章结语"}
+      ]
+    },
+    {
+      "id": "c07-no-binary",
+      "type": "author_position",
+      "statement": "政府和市场没有黑白分界；产业政策必须落到具体行业，不能用一种成功去否定另一种失败。",
+      "short_quote": "政府和市场间没有黑白分明的界限，几乎所有的重要现象，都是这两种组织和资源互动的结果。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0031.xhtml", "section": "第四章结语"}
+      ]
+    },
+    {
+      "id": "c08-land-not-people",
+      "type": "author_position",
+      "statement": "以土地为中心的城市化能快速建设，但忽略人；常住城镇化高于户籍城镇化，公共服务按户籍规划，造成新移民难以安身。",
+      "short_quote": "这种以土地为中心的城市化忽视了城市化的真正核心：人。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0034.xhtml", "section": "第五章　城市化与不平衡"},
+        {"epub_path": "OEBPS/Text/part0038.xhtml", "section": "第五章结语"}
+      ]
+    },
+    {
+      "id": "c09-three-features",
+      "type": "author_position",
+      "statement": "地方发展模式有三个特点：城市化重土地轻人，招商重规模重扩张，结构上重投资重生产轻消费。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0033.xhtml", "section": "下篇　宏观现象"},
+        {"epub_path": "OEBPS/Text/part0051.xhtml", "section": "第七章结语"}
+      ]
+    },
+    {
+      "id": "c10-official-plus-market",
+      "type": "author_position",
+      "statement": "“官场 + 市场”指官员晋升的政治激励和地区经济表现挂钩，但经济建设或 GDP 目标在升迁中的具体机制尚有争议；另外两点是企业仍受更大市场竞争约束、地方表现给官员即时反馈。它与市场竞争的差别是缺少淘汰、升迁零和、任期催生短视。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0054.xhtml", "section": "第一节　地区间竞争"}
+      ]
+    },
+    {
+      "id": "c11-process-vs-goal",
+      "type": "author_position",
+      "statement": "发展过程不同于发展目标：发达国家现状解决不了发展中的问题，过去的成功经验也不一定适用于未来。",
+      "short_quote": "本书一直强调发展过程与发展目标不同。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0056.xhtml", "section": "第三节　发展目标与发展过程"}
+      ]
+    },
+    {
+      "id": "c12-debt-system-risk",
+      "type": "author_position",
+      "statement": "开篇写明：第一、二节解释一般经济学原理，欧美写得多一点。第一节说，债务过重时，任何部门出问题都可能传导到其他部门。负债缺乏弹性，收入或支出一变就少有腾挪。来得快的第一点是债务太重、不够还本甚至还息，就只能变卖资产，抛售的人多了，资产价格才会跳水；第二点才是资产价格下跌引起信贷收缩。银行、企业、居民和政府可能互相拖累。温州炒房团、美国次贷和煤企写在第一节。第二节写欧美债台为何高筑。",
+      "short_quote": "任何部门出问题都可能传导到其他部门，一石激起千层浪，形成系统风险。",
+      "cannot_infer": [
+        "每场危机都重复同一比例",
+        "第二节是系统风险的第三条起因",
+        "一般传导可以直接推出中国 2008–2018 年路径"
+      ],
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0040.xhtml", "section": "第六章　债务与风险"},
+        {"epub_path": "OEBPS/Text/part0041.xhtml", "section": "第一节　债务与经济衰退"},
+        {"epub_path": "OEBPS/Text/part0042.xhtml", "section": "第二节　债台为何高筑：欧美的教训"}
+      ]
+    },
+    {
+      "id": "c12b-china-debt-separate",
+      "type": "author_position",
+      "statement": "开篇写明第三节分析我国债务的成因、风险、后果，第四节讨论偿还已有债务和遏制新增。第三节写：债务基本都是以人民币计价的内债，所以不太可能出现国际上常见的外债危机。迅速上涨的直接起因被写成 2008 年全球金融危机和随后的欧债危机；应对冲击的刺激稳定了经济，也加剧了债务负担和产能过剩。重点落到企业债务和银行（土地抵押、影子银行）。结语把根源写成发展模式和结构，不是单纯的货币金融问题。第四节写还旧账和改环境。",
+      "short_quote": "债务问题不是简单的货币和金融问题，其根源在于我国经济发展的模式和结构，所以在降债务的过程中伴随着一系列深层次的结构性改革。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0043.xhtml", "section": "第三节　中国的债务与风险"},
+        {"epub_path": "OEBPS/Text/part0044.xhtml", "section": "第四节　化解债务风险"},
+        {"epub_path": "OEBPS/Text/part0045.xhtml", "section": "第六章结语"}
+      ]
+    },
+    {
+      "id": "c13-service-government",
+      "type": "author_position",
+      "statement": "市场与政府能力共同发展，不是此消彼长。经济发展到一定阶段后，旧有土地财政和土地金融难以持续；生产投资型政府应逐步转向服务型政府，把更多资源投向教育、医疗、住房等民生，也就是投向人。这是作者写的方向和条件，不是已经完成的转型，也不是对 2021 年以后政策的判断。",
+      "short_quote": "市场化改革要想更进一步，“生产型政府”就需要逐步向“服务型政府”转型。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0055.xhtml", "section": "第二节　政府的发展与转型"}
+      ]
+    },
+    {
+      "id": "s01-micro-explains-macro",
+      "type": "report_synthesis",
+      "statement": "上篇的事权、分税、土地财政、土地金融和产业案例，被作者当作下篇理解房价、债务和内外失衡的微观基础。下篇并不只是把同一条链再套一遍：第五章写人被土地城市化抛下；第六章按节分开写一般传导、欧美债台条件、中国 2008 年后路径和化解，不能读成一条土地金融后果；第七章写产能外溢；第八章才收束竞争模式、政府角色转向和方法限度。这是全书编排给出的解释关系，不能写成每座城市、每个行业都必然走完同一条链。",
+      "cannot_infer": [
+        "2021 年以后的土地、地方债和外贸变化已被本书写定",
+        "京东方或光伏的结果可外推为普遍产业政策定律",
+        "第六章只是第三章政府债务角色的重复标签"
+      ],
+      "derived_from": [
+        "c03-tax-sharing",
+        "c05-land-financialization",
+        "c06-debt-role",
+        "c08-land-not-people",
+        "c12-debt-system-risk",
+        "c12b-china-debt-separate",
+        "c09-three-features",
+        "c13-service-government"
+      ],
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0006.xhtml", "section": "上篇　微观机制"},
+        {"epub_path": "OEBPS/Text/part0031.xhtml", "section": "第四章结语"},
+        {"epub_path": "OEBPS/Text/part0033.xhtml", "section": "下篇　宏观现象"},
+        {"epub_path": "OEBPS/Text/part0040.xhtml", "section": "第六章　债务与风险"},
+        {"epub_path": "OEBPS/Text/part0045.xhtml", "section": "第六章结语"}
+      ]
+    },
+    {
+      "id": "a01-time-bound",
+      "type": "critical_audit",
+      "statement": "书中数据和分析大量停在 2018–2020 前后。把这些机制直接写成对 2026 年土地、地方债或外贸的现成答案，超出作者自己的材料边界。",
+      "derived_from": ["c04-land-finance", "c06-debt-role", "c12-debt-system-risk", "c12b-china-debt-separate", "c09-three-features"]
+    },
+    {
+      "id": "a02-cases-not-laws",
+      "type": "critical_audit",
+      "statement": "宽窄巷子、苏州园区、华夏幸福、液晶和光伏被作者用来展示机制和多面性；作者已声明具体场景之外没有放之四海的答案。地图若把案例写成普遍规律，是在加强作者没有主张的确定性。",
+      "locators": [
+        {"epub_path": "OEBPS/Text/part0027.xhtml", "section": "第四章　工业化中的政府角色"},
+        {"epub_path": "OEBPS/Text/part0031.xhtml", "section": "第四章结语"}
+      ]
+    },
+    {
+      "id": "e01-2023-hardcover",
+      "type": "external_background",
+      "statement": "公开书目记载 2023 年 10 月上海人民出版社精装纪念版，ISBN 978-7-208-18406-0，并称增收精装版序言。本轮未打开该版，差异只作版本边界。",
+      "sources": ["ext-fudan-studio", "ext-douban-2023"]
+    }
+  ],
+  "core_route": [
+    {
+      "order": 1,
+      "title": "前言、上篇导语、结束语",
+      "minutes": "20–25",
+      "epub_paths": [
+        "OEBPS/Text/part0005.xhtml",
+        "OEBPS/Text/part0006.xhtml",
+        "OEBPS/Text/part0059.xhtml"
+      ],
+      "why": "看清作者声明的问题、上下篇分工，以及他不提供预测和宏大框架。"
+    },
+    {
+      "order": 2,
+      "title": "分税制与土地财政",
+      "minutes": "20–25",
+      "epub_paths": [
+        "OEBPS/Text/part0016.xhtml",
+        "OEBPS/Text/part0017.xhtml",
+        "OEBPS/Text/part0019.xhtml"
+      ],
+      "why": "这是上篇不可删的筹资转折。"
+    },
+    {
+      "order": 3,
+      "title": "债务：从政府角色到系统风险",
+      "minutes": "20–25",
+      "epub_paths": [
+        "OEBPS/Text/part0025.xhtml",
+        "OEBPS/Text/part0040.xhtml",
+        "OEBPS/Text/part0045.xhtml"
+      ],
+      "why": "第三章结语看债务被写成政府角色；第六章开篇与结语看风险如何在部门间传导，并区分一般机制、欧美教训和中国路径。城投操作细节仍在第三章第一节，第一轮可不先读。"
+    },
+    {
+      "order": 4,
+      "title": "城市化：见地不见人",
+      "minutes": "15–20",
+      "epub_paths": [
+        "OEBPS/Text/part0034.xhtml",
+        "OEBPS/Text/part0038.xhtml"
+      ],
+      "why": "开篇只把问题落到“人”；作者自己的三阶段划分只在第五章结语。"
+    },
+    {
+      "order": 5,
+      "title": "三个特点、政府转型与过程/目标",
+      "minutes": "18–22",
+      "epub_paths": [
+        "OEBPS/Text/part0051.xhtml",
+        "OEBPS/Text/part0054.xhtml",
+        "OEBPS/Text/part0055.xhtml",
+        "OEBPS/Text/part0056.xhtml"
+      ],
+      "why": "第七章收束三个特点；第八章看官场+市场、生产型政府应转向服务型政府，以及过程不同于目标。转型是作者写下的方向，不是已经完成的事实。"
+    }
+  ],
+  "critical_audit": {
+    "strengths": [
+      "把政府参与生产写成理解中国经济的出发点，而不是先用有限政府框架斥责现实。",
+      "分税制、土地财政、土地金融按顺序展开，读者能看到筹资方式如何一层层加杠杆。",
+      "案例用来展示约束和多面性，作者自己反对脱离场景的产业政策口号。",
+      "结束语和下篇都承认材料有限，并区分发展过程与发展目标。"
+    ],
+    "limits": [
+      "经验材料大体停在 2021 年前，不能单独回答此后的土地、地方债和外贸变化。",
+      "行业案例无法外推成普遍产业政策评价。",
+      "“官场 + 市场”是综合标签；晋升与经济表现的具体机制，书中写明仍有争议。",
+      "作者有意少谈自己认为应该怎么办，规范判断需要另找材料。"
+    ],
+    "usable_today": "把它读成 2021 年的机制说明书：先看地方政府如何筹资、投资和招商，再决定哪些观察还要核对新材料。",
+    "time_boundary": "地图不把 2021 年后的变化写成原书结论。"
+  },
+  "external_sources": [
+    {
+      "id": "ext-fudan-studio",
+      "type": "bibliographic_background",
+      "title": "复旦大学当代中国经济与社会工作室 — 置身事内书讯",
+      "url": "https://flcds.fudan.edu.cn/info/1043/2093.htm",
+      "supports": [
+        "2023 精装纪念版的公开介绍",
+        "宣称增收精装版序言"
+      ]
+    },
+    {
+      "id": "ext-douban-2023",
+      "type": "bibliographic_background",
+      "title": "豆瓣书目 — 置身事内（精装本）",
+      "url": "https://book.douban.com/subject/36601306/",
+      "supports": [
+        "ISBN 978-7-208-18406-0",
+        "出版年 2023-10"
+      ]
+    }
+  ],
+  "module_policy": {
+    "generation": "on_demand_only",
+    "root": "modules/",
+    "artifact_name": "深挖模块",
+    "not_original_chapter_note": "模块围绕读者问题生成，不是兰小欢原书新增章节。",
+    "candidates": [
+      {
+        "id": "tax-sharing-reform",
+        "title": "分税制改革改变了什么",
+        "status": "not_generated",
+        "question": "1985–1994 年包干和两个比重怎样走到分税制，改革后又收紧了什么？"
+      },
+      {
+        "id": "transfer-payment-gaps",
+        "title": "转移支付总数能补上，为何仍补不齐",
+        "status": "not_generated",
+        "question": "全国总数够填地方收支缺口时，为什么基层和地区之间仍然补不齐？"
+      },
+      {
+        "id": "official-plus-market",
+        "title": "官场竞争如何约束、又如何扭曲市场",
+        "status": "not_generated",
+        "question": "作者写的三个优点和三个代价，分别落在哪些例证上，哪些仍标成争议？"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "id": "land-fiscal-vs-financial",
+      "title": "土地财政和土地金融差在哪",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/land-fiscal-vs-financial/reading.html",
+      "data": "modules/land-fiscal-vs-financial/reading.json",
+      "core_minutes": 65,
+      "optional_source_return_minutes": "40–55",
+      "scope": ["第二章第二节与结语换词句"],
+      "question": "土地财政和土地金融差在哪？1994、1998、2001 各改变了什么，出让收入为何仍不够？",
+      "generated_date": "2026-09-11"
+    },
+    {
+      "id": "chengtou-boundary",
+      "title": "城投的政企边界",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/chengtou-boundary/reading.html",
+      "data": "modules/chengtou-boundary/reading.json",
+      "core_minutes": 60,
+      "optional_source_return_minutes": "40–60",
+      "scope": ["第三章第一节 城投公司与土地金融"],
+      "question": "城投同时像政府和像企业，边界在哪？",
+      "generated_date": "2026-09-11"
+    },
+    {
+      "id": "industrial-policy-evidence",
+      "title": "两个案例能否证明产业政策有效",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/industrial-policy-evidence/reading.html",
+      "data": "modules/industrial-policy-evidence/reading.json",
+      "core_minutes": 75,
+      "optional_source_return_minutes": "50–70",
+      "scope": ["第四章开篇、第一二节、结语收束"],
+      "question": "京东方和光伏这两个案例，能否证明产业政策有效？",
+      "generated_date": "2026-09-11"
+    },
+    {
+      "id": "land-centered-urbanization",
+      "title": "城市化为什么会见地不见人",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/land-centered-urbanization/reading.html",
+      "data": "modules/land-centered-urbanization/reading.json",
+      "core_minutes": 70,
+      "optional_source_return_minutes": "45–65",
+      "scope": ["第五章开篇、第二节前半、结语前两段"],
+      "question": "城市化为什么会「见地不见人」，土地、住房、户籍和公共服务怎样连在一起？",
+      "generated_date": "2026-09-11"
+    },
+    {
+      "id": "how-debt-becomes-systemic",
+      "title": "债务怎样变成系统风险",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/how-debt-becomes-systemic/reading.html",
+      "data": "modules/how-debt-becomes-systemic/reading.json",
+      "core_minutes": 60,
+      "optional_source_return_minutes": "45–65",
+      "scope": ["第六章开篇、第一节、第二节"],
+      "question": "债务如何从个人或企业问题变成系统风险？",
+      "generated_date": "2026-09-11"
+    },
+    {
+      "id": "china-debt-path-and-resolution",
+      "title": "2008–2018 年的债务路径",
+      "status": "generated",
+      "artifact_kind": "progressive-deep-dive",
+      "href": "modules/china-debt-path-and-resolution/reading.html",
+      "data": "modules/china-debt-path-and-resolution/reading.json",
+      "core_minutes": 70,
+      "optional_source_return_minutes": "50–70",
+      "scope": ["第六章第三节、第四节、结语"],
+      "question": "2008–2018 年中国债务为何积累，又为什么不能只靠金融手段化解？",
+      "generated_date": "2026-09-11"
+    }
+  ],
+  "verdict": {
+    "recommendation": "选择性深读",
+    "summary": "先按五处原文把地方筹资和投资链读顺；下篇现象是作者的解释对象。2021 年以后的变化另找材料。",
+    "decision": {
+      "full_read_if": "你要核案例、图表和各章扩展阅读的出处。",
+      "selective_read_if": "你要理解地方政府如何深度参与工业化和城市化；这是推荐路径。",
+      "deep_dive_if": "你要追问土地财政和土地金融之别，城投的政企边界，京东方和光伏能否证明产业政策有效，城市化何以见地不见人，债务如何从个人或企业问题变成系统风险，或 2008–2018 年债务为何积累、为何不能只靠金融化解（六节均已生成）；分税制全过程、转移支付补不齐，或“官场 + 市场”仍要等具体问题。",
+      "stop_after_map_if": "你只想知道这本书在讲什么，以及材料停在哪一年。"
+    }
+  },
+  "generation_audit": {
+    "mode": "main_map",
+    "material_grade": "full_source",
+    "whole_book_identity": "这是一部课程讲义改写的大众政经书。字面上跟着中国地方政府如何深度参与工业化和城市化。从政府事权和招商引资起，经分税制、土地财政、土地金融与产业案例，接到城市化不平衡、债务风险传导和内外失衡，停在“官场 + 市场”、生产型政府应转向服务型政府，以及发展过程不同于发展目标。不可省主线是：不能脱离政府谈中国经济；分税制改变筹资方式；土地财政加杠杆变成土地金融；下篇既用这套微观基础解释宏观现象，也单独写了债务如何在部门间传导，以及政府角色为何不能停在生产投资型。它们同属一本讲义，不是八章互不相关的文章。",
+    "continuity_check": "删除分税制到土地金融，下篇失去作者给出的微观基础。删除第六章，债务只剩上篇的角色标签，部门传导和中外路径区分会断。删除第八章第二节，生产型政府转向只留在后台句子里。删除下篇，全书只剩机制说明书，作者在上篇末和下篇首声明的连接会断。对调上下篇会损坏“先机制后现象”的编排。京东方、光伏、宽窄巷子可删其一而不失去全书身份；三个特点是作者自己的收束，不另造第三条平行主线。本轮不把案例写成定律，不把 2021 数据写成 2026 结论，不把扩展阅读并入主张。已按点名生成土地财政／土地金融之别、产业政策证据边界、见地不见人与三节债务相关深挖；分税制全过程、转移支付补不齐与其余候选仍不预生成。",
+    "source_read": true,
+    "source_boundary_checked": true,
+    "archive_validated": true,
+    "key_claims_sampled_against_source": true,
+    "schema_validation": "passed"
+  }
+}

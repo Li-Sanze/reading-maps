@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》深挖：土地财政和土地金融差在哪？1994、1998、2001 各改变了什么，出让收入为何仍不够。不写城投操作。">
+  <title>土地财政和土地金融差在哪｜置身事内深挖</title>
+<style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.05rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0.4em 0 1em; padding-left: 1.2em; }
+    li { margin-bottom: 0.4em; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { max-width: 860px; margin: 0; color: #eef6f0; }
+
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .source-box p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+    .model-figure {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+    .reading-card .guide { margin-bottom: 0.55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: #7a3030;
+      border-top: 1px dashed #e5c2c2;
+      font-size: 0.87rem;
+    }
+
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    details {
+      margin-bottom: 10px;
+      overflow: clip;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--moss); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    .table-scroll { max-width: 100%; overflow-x: auto; padding-bottom: 8px; scrollbar-color: #c3b9ac transparent; }
+    table { width: 100%; min-width: 640px; border-collapse: collapse; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 750; }
+    .table-hint { margin: 8px 0 0; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.76rem; }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .audit-box, .decision, .source-box, .reading-card, .model-figure, .route li, details { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; }
+      details > * { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html">← 返回《置身事内》主阅读地图</a>
+      <p class="eyebrow">Deep dive · 按需深挖 · 约 65 分钟</p>
+      <h1>土地财政和土地金融差在哪</h1>
+      <p class="lead">地方怎样把土地变成现金流，又为什么出让金仍不够？主地图已经能区分这一对词。本页补时间线和两手抓，停在抵押那一句，不写城投外壳。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第二章第二节与结语</span>
+        <span class="fact">part0017 · part0019 第二段</span>
+        <span class="fact">核心约 65 分钟</span>
+        <span class="fact">回原文 40–55 分钟</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="一句话模型">
+        <small>一句话模型 · 报告综合</small>
+        <strong>出让收入是土地财政；抵押信贷才换成土地金融。</strong>
+        <p>1994 年把土地转让权和收益留给地方，当时卖地很少。1998 年房改和土地管理法让土地价值显现。2001 年所得税再集权之后，地方变成工业化与城市化两手抓。2018 年出让金一项入不敷出。真正的力量，作者写在抵押那一句，操作交给下一章。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <nav class="shell" aria-label="本页章节">
+      <a href="#question">问题</a>
+      <a href="#timeline">时间</a>
+      <a href="#cash">两手抓</a>
+      <a href="#gap">出让不够</a>
+      <a href="#quotes">原文</a>
+      <a href="#audit">批判</a>
+      <a href="#source">回原文</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="question">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这个问题管到哪里</h2>
+            <p>筹资概念，不是城投页，也不是十年债务路径。</p>
+          </div>
+          <span class="time">约 6 分钟</span>
+        </div>
+        <p><span class="origin synthesis">报告综合</span>主地图已经写过：分税制后预算内更紧，大规模土地财政放在 21 世纪初，土地财政加上杠杆才变成土地金融。本页只补作者在第二节「初探土地财政」里展开的时间线和两手抓，以及结语里财政与金融那一刀。</p>
+        <p>前情只用第二节开篇：转移支付和税收返还可以填预算内缺口，招商和土地开发等额外支出要另筹。2001 年所得税再集权，是两手抓的直接前情，不在本页重做包干和两个比重。</p>
+        <p class="muted">公司外壳、一级开发见已生成的<a href="../chengtou-boundary/reading.html">城投政企边界</a>。2008–2018 年债务积累见<a href="../china-debt-path-and-resolution/reading.html">中国债务路径</a>。分税制全过程、转移支付不平衡，本页不写。</p>
+      </div>
+    </section>
+    <section id="timeline">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>1994、1998、2001，不是同一件事</h2>
+            <p>表比流程图清楚。1994 不是大规模土地财政的起点。</p>
+          </div>
+          <span class="time">约 14 分钟</span>
+        </div>
+        <div class="table-scroll" tabindex="0">
+          <table>
+            <thead>
+              <tr><th>时点</th><th>作者写的变化</th><th>不能写成</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1994</td>
+                <td>国有土地转让的决定权和收益留给地方。当时这部分收益很少：乡镇企业用的是集体建设用地；城市土地使用权虽可有偿转让，各地为招商把地价压得很低。</td>
+                <td>大规模土地财政从分税制当年开始。</td>
+              </tr>
+              <tr>
+                <td>1998</td>
+                <td>两件大事让城市土地价值显现：单位停止福利分房，住房分配货币化；修订后的土地管理法基本上锁死农村集体土地的非农建设通道，农地须征地后变成国有土地。</td>
+                <td>招拍挂已经普遍实行。作者写 1999–2000 年出让收入仍不高，因为尚未普遍招拍挂。</td>
+              </tr>
+              <tr>
+                <td>2001–2002</td>
+                <td>2001 年国务院提出大力推行招标拍卖；2002 年国土部明确四类经营用地采用招拍挂。出让收入从 2001 年开始激增。大规模土地财政收入始于 21 世纪初。</td>
+                <td>把 2001 写成招拍挂完成年，或把所得税再集权写成卖地制度本身。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-hint">表可在框内左右滑动。页本身不横向溢出。</p>
+        <p><span class="origin author">作者主张</span>2001 年所得税改革后，中央拿走企业所得税六成。从那以后，地方发展经济的方式从「工业化」变成「工业化与城市化」两手抓。这是时间线的下一截，也是现金流怎么来的机制，下一节展开。</p>
+        <span class="locator">第二节　土地财政 · OEBPS/Text/part0017.xhtml</span>
+      </div>
+    </section>
+    <section id="cash">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>两手抓：工业地便宜，商住地限供</h2>
+            <p>土地财政的实质被写成房地产财政。</p>
+          </div>
+          <span class="time">约 14 分钟</span>
+        </div>
+        <p><span class="origin author">作者主张</span>一面继续低价供应大量工业用地招商；一面限制商住用地供给，从攀升的地价里收垄断收益。这些年出让的城市土地里，工业用地面积约占一半，价格极低：2000 年每平方米 444 元，2018 年 820 元，只涨了 85%。商业用地涨 4.6 倍，住宅用地涨 7.4 倍。商住用地面积约占一半，却贡献了几乎所有土地使用权转让收入。</p>
+        <p>因此作者写：「土地财政」的实质是「房地产财政」。工业地补贴推动制造业；新增人口涌入经济发达地区，住宅用地却不足，房价带地价。同一节后半只点一句限度：用地指标不能跨省。地票、人地挂钩、官员短视和空园区不在本页。</p>
+        <p><span class="origin quote">作者原话</span></p>
+        <blockquote><p>所以商住用地虽然面积上只占出让土地的一半，但贡献了几乎所有的土地使用权转让收入。因此“土地财政”的实质是“房地产财政”。</p></blockquote>
+        <span class="locator">第二节　土地财政 · OEBPS/Text/part0017.xhtml</span>
+      </div>
+    </section>
+    <section id="gap">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>出让金可观，仍不够</h2>
+            <p>差在哪：收入项是财政；撬动信贷才换成金融。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <p><span class="origin author">作者主张</span>所谓土地财政，不只是转让收入，还包括与土地使用和开发有关的税收。2018 年，直接与土地相关的四税 15 081 亿元，占地方公共预算收入 15%；与房地产和建筑企业有关、归属地方的增值税和所得税占 9%。把这些税收和转让收入加在一起，作者写成相当于地方公共预算收入的 89%，是「第二财政」。</p>
+        <p>转让能带来收入，地方也要负担征地拆迁补偿和七通一平。近几年相关支出总体与收入相当，有时更高。2018 年，国有土地使用权出让金收入 62 910 亿元，支出 68 167 亿元。光看这一项，入不敷出。作者写：地方本来也不是靠卖地赚钱，真正要的是土地开发之后吸引来的工商业活动。</p>
+        <p>结语把这一刀写清楚：每年五六万亿的转让收入仍不足以撬动飞速的工业化和城市化。土地真正的力量不在土地财政，而在以土地为抵押撬动的银行信贷和其他资金。同一段接着把「财政加上杠杆」称作土地金融。本页取到换词为止。土地金融怎么运作、政府如何投融资、地方债是怎么回事，作者标明是下一章。</p>
+        <p><span class="origin quote">作者原话</span></p>
+        <blockquote><p>所以土地真正的力量还不在“土地财政”，而在以土地为抵押而撬动的银行信贷与其他各路资金。</p></blockquote>
+        <span class="locator">第二章结语 · OEBPS/Text/part0019.xhtml</span>
+      </div>
+    </section>
+    <section id="quotes">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>四处短引</h2>
+            <p>只核时间线、两手抓和财政／金融之别。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="excerpt-grid">
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>额外支出要另筹，不是预算内缺口没人补。</p>
+            <blockquote><p>虽然中央转移支付和税收返还可以填补预算内收支缺口，但发展经济所需的诸多额外支出，比如招商引资和土地开发等，就需要另筹资金了。</p></blockquote>
+            <p class="cannot">不能推出：分税制让地方连运转都补不上，所以只好卖地。</p>
+            <span class="locator">第二节开篇 · part0017.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>1994 年留下了权，没有留下大规模卖地。</p>
+            <blockquote><p>1994年分税制改革时，国有土地转让的决定权和收益都留给了地方。当时这部分收益很少。</p></blockquote>
+            <p class="cannot">不能推出：1994 年就是土地财政元年。</p>
+            <span class="locator">初探土地财政 · part0017.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>1998 年两件大事让价值显现。</p>
+            <blockquote><p>1998年发生了两件大事，城市土地的真正价值才开始显现。</p></blockquote>
+            <p class="cannot">不能推出：1998 年招拍挂已经铺开。</p>
+            <span class="locator">初探土地财政 · part0017.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p class="guide"><span class="origin quote">作者原话</span>2018 年出让金一项入不敷出。</p>
+            <blockquote><p>2018年，国有土地使用权出让金收入为62 910亿元，支出则为68 167亿元。光看这一项，地方政府还入不敷出。</p></blockquote>
+            <p class="cannot">不能推出：地方靠卖地赚差价过日子。</p>
+            <span class="locator">初探土地财政 · part0017.xhtml</span>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>先复述时间线和两手抓，再挡滑移。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box strength">
+            <h3>站得住的</h3>
+            <ul>
+              <li>1994、1998、2001–2002 在原文里是不同变化，不能并成「分税制等于土地财政」。</li>
+              <li>两手抓解释了出让金主要来自商住地，也解释了「实质是房地产财政」。</li>
+              <li>2018 年收支数字说明：可观的转让收入仍可能入不敷出；抵押句才换词。</li>
+            </ul>
+          </article>
+          <article class="audit-box limit">
+            <h3>需要挡住的</h3>
+            <ul>
+              <li>不能把 2001 年所得税再集权写成招拍挂完成。招拍挂：2001 年提出大力推行，2002 年明确四类经营用地。</li>
+              <li>不能把抵押一句写成城投操作或 2008–2018 年路径。作者写「这些是下一章」。</li>
+              <li>用地指标不能跨省只点一句限度。人地挂钩、地票、三块地不在本页。</li>
+              <li>书里引用的 2020 年文件是作者 2021 年材料，不是对 2021 年后土地财政的判决。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="source">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>回到原文</h2>
+            <p>读完时间线和两手抓就可以停。</p>
+          </div>
+          <span class="time">约 40–55 分钟回读</span>
+        </div>
+        <ol class="route">
+          <li><strong>第二节开篇：额外支出要另筹</strong><span>只取预算内可补、招商和土地开发要另筹。不要顺着「招商引资与税收」重做分税制或两个比重。</span><code>OEBPS/Text/part0017.xhtml</code></li>
+          <li><strong>「初探土地财政」：1994 与 1998</strong><span>核收益很少、两件大事、1999–2000 年尚未普遍招拍挂。</span><code>OEBPS/Text/part0017.xhtml</code></li>
+          <li><strong>同一小节：2001–2002 与第二财政</strong><span>核招拍挂两年写法、89% 的算法、2018 年出让金收支。</span><code>OEBPS/Text/part0017.xhtml</code></li>
+          <li><strong>两手抓到「房地产财政」</strong><span>核工业地与商住地的面积、价格和收入贡献。下一小节「税收、地租与地方政府竞争」不进本页主张。</span><code>OEBPS/Text/part0017.xhtml</code></li>
+          <li><strong>结语第二段，读到抵押句即停</strong><span>不要把同段比喻展开成投融资操作。城投与地方债另页。</span><code>OEBPS/Text/part0019.xhtml</code></li>
+        </ol>
+        <div class="decision-grid" style="margin-top:16px;">
+          <article class="decision recommended">
+            <strong>默认：停在抵押句</strong>
+            <p>概念和时间线已经够用。公司外壳去城投页；十年积累去债务路径页。</p>
+          </article>
+          <article class="decision">
+            <strong>不要在本页继续的</strong>
+            <p>包干和两个比重；转移支付补不齐；城投债和四万亿；房价与居民部门危机。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向和核证，不替读者读完原书，也不把 2021 年材料写成对当下土地财政的现成答案。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../reading.html">返回主地图</a></p>
+    </div>
+  </footer>
+</body>
+</html>

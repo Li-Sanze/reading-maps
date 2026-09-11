@@ -18,6 +18,7 @@
 - **《毛泽东选集》** — [打开主地图与深挖](https://li-sanze.github.io/reading-maps/books/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86/reading.html)：时期、问题、方法与按需生成的深挖模块。
 - **《乌合之众》** — [打开主地图](https://li-sanze.github.io/reading-maps/books/%E4%B9%8C%E5%90%88%E4%B9%8B%E4%BC%97/reading.html)：群体形成、信念传播、领袖说服与现代批判校正。
 - **《月亮与六便士》** — [打开分层剧透地图](https://li-sanze.github.io/reading-maps/books/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/reading.html)：分层剧透、五段叙事、叙述证据与艺术/责任审计。
+- **《置身事内》** — [打开主地图](https://li-sanze.github.io/reading-maps/books/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85/reading.html)：2021 年上海人民出版社；地方政府的财税、土地与投融资，以及作者怎样把这些机制接到城市化、债务和内外失衡。
 
 ## 地图怎么用
 
