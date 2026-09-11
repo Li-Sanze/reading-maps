@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》阅读地图：看清兰小欢怎样用地方政府的财税、土地和投融资解释工业化和城市化，以及这些机制连到哪些宏观现象。">
+  <title>《置身事内》阅读地图</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 5.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.15rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.45rem; }
+    .verdict p { max-width: 820px; margin: 0; color: #eef6f0; }
+
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .claim-grid, .audit-grid, .decision-grid, .module-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .claim-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card, .claim, .audit-box, .decision, .module, .source-box {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .claim p:last-child, .audit-box p:last-child, .decision p:last-child, .module p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+
+    .model-figure {
+      margin: 0;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+    .part { border-top: 4px solid var(--moss); }
+    .part small { color: var(--moss); font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+
+    .claim h3 { font-size: 1.02rem; }
+    .claim p { color: var(--muted); font-size: 0.95rem; }
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    .correction {
+      margin-top: 12px;
+      padding: 18px;
+      background: var(--clay-soft);
+      border: 1px solid #e0c89a;
+      border-radius: var(--radius);
+    }
+    .correction p:last-child { margin-bottom: 0; }
+    .source-list { margin: 10px 0 0; padding-left: 1.15rem; }
+    .source-list li { margin-bottom: 6px; }
+
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+    .module { position: relative; padding-top: 46px; }
+    .module::before {
+      content: "候选 · 未生成";
+      position: absolute;
+      top: 14px;
+      left: 17px;
+      padding: 2px 8px;
+      color: var(--plum);
+      background: var(--plum-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+    }
+    .module.ready::before {
+      content: "已生成";
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+    }
+    .module a.made {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-top: 8px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 760;
+    }
+    .module p { color: var(--muted); font-size: 0.9rem; }
+    .module-note { margin-top: 12px; color: var(--muted); font-size: 0.86rem; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .claim-grid, .audit-grid, .decision-grid, .module-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .claim, .audit-box, .decision, .module, .model-figure, .source-box, .route li { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../index.html">← 返回书架</a>
+      <p class="eyebrow">Reading Map · 政经讲义 · 约 40 分钟</p>
+      <h1>置身事内</h1>
+      <p class="lead">兰小欢要读者先看清政府怎样办事和筹钱，再判断中国经济。主角不是价格机制或周期理论，而是地方政府如何深度参与工业化和城市化。</p>
+      <div class="facts">
+        <span class="fact">兰小欢</span>
+        <span class="fact">上海人民出版社 · 2021</span>
+        <span class="fact">ISBN 978-7-208-17133-6</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="阅读结论">
+        <small>阅读结论</small>
+        <strong>选择性深读</strong>
+        <p>先读清作者怎样把分税制、土地和投融资连成一套地方发展做法；下篇的房价、债务和贸易冲突，是他用这套做法做的解释，不是已经证明的定律。地图不能代替原书。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav">
+    <nav aria-label="页面目录">
+      <a href="#boundary">版本</a>
+      <a href="#model">全书模型</a>
+      <a href="#claims">核心观点</a>
+      <a href="#route">原文路线</a>
+      <a href="#critical">批判审计</a>
+      <a href="#decision">阅读决策</a>
+      <a href="#modules">深挖</a>
+    </nav>
+  </div>
+
+  <main id="main" class="shell">
+    <section id="boundary" aria-labelledby="boundary-title">
+      <div class="section-head">
+        <div>
+          <h2 id="boundary-title">先确认你在读哪一版</h2>
+          <p>书名、年份和范围以版权页为准，不以 EPUB 包装标题为准。</p>
+        </div>
+        <span class="time">5 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="source-box">
+          <span class="origin author">书内事实</span>
+          <h3>2021 年上海人民出版社</h3>
+          <p class="muted">版权页题名《置身事内：中国政府与经济发展》，作者兰小欢，ISBN 978-7-208-17133-6。出品人为姚映然，版权页同时出现世纪文景。前言写明：这本书讲“是什么”和“为什么”，谈到“怎么办”时，侧重政府正在做的政策和改革，而不是作者自己的药方。</p>
+          <span class="locator">OEBPS/Text/part0001.xhtml；OEBPS/Text/part0005.xhtml</span>
+        </article>
+        <article class="source-box">
+          <span class="origin audit">版本审计</span>
+          <h3>本轮不补后来的本子</h3>
+          <p class="muted">EPUB 元数据标题带有推荐语，不采用为书名。各章“扩展阅读”和书末参考文献只作书外入口。公开书目另记有 2023 年精装纪念版；本轮未打开该版，不把新序或任何后补正文写进作者主张。</p>
+          <span class="locator">content.opf 的 dc:title；toc.ncx 的扩展阅读与参考文献节点</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="model" aria-labelledby="model-title">
+      <div class="section-head">
+        <div>
+          <h2 id="model-title">上篇机制怎样接到下篇现象</h2>
+          <p>实线是作者在上篇里的展开顺序；虚线是他拿这套做法去解释宏观现象。</p>
+        </div>
+        <span class="time">12 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <p class="model-hint">手机端可在图内横向滚动；页面本身不会跟着横移。</p>
+        <div class="model-scroll">
+          <svg class="model-canvas" viewBox="0 0 900 360" role="img" aria-labelledby="model-svg-title model-svg-desc">
+            <title id="model-svg-title">置身事内全书结构</title>
+            <desc id="model-svg-desc">上篇从地方政府事权与招商，经分税制和土地财政，到土地金融、城投和产业案例；作者再用这套机制解释下篇的城市化不平衡、债务风险和内外失衡。实线表示叙述展开，虚线表示解释关系，不是已验证定律。</desc>
+            <defs>
+              <marker id="arrow-seq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f5d4c"/></marker>
+              <marker id="arrow-exp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8a5724"/></marker>
+            </defs>
+            <g font-family="ui-sans-serif, system-ui, 'PingFang SC', sans-serif">
+              <text x="24" y="28" font-size="13" font-weight="800" fill="#3f5d4c">上篇 · 微观机制</text>
+              <rect x="24" y="40" width="196" height="78" rx="14" fill="#fffdf8" stroke="#cfc7ba"/>
+              <text x="122" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#24352f">事权与招商</text>
+              <text x="122" y="96" text-anchor="middle" font-size="13" fill="#5e6b64">激励 · 属地 · 引资</text>
+
+              <rect x="268" y="40" width="210" height="78" rx="14" fill="#e4eee7" stroke="#9bb3a4"/>
+              <text x="373" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#24352f">分税与土地财政</text>
+              <text x="373" y="96" text-anchor="middle" font-size="13" fill="#5e6b64">1994 筹资变紧 · 土地后补</text>
+
+              <rect x="526" y="40" width="350" height="78" rx="14" fill="#e7f0f4" stroke="#9ebcca"/>
+              <text x="701" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#24352f">土地金融、城投、行业案例</text>
+              <text x="701" y="96" text-anchor="middle" font-size="13" fill="#5e6b64">抵押未来收入 · 政府下场难抽身</text>
+
+              <path d="M220 79 H268" fill="none" stroke="#3f5d4c" stroke-width="3" marker-end="url(#arrow-seq)"/>
+              <path d="M478 79 H526" fill="none" stroke="#3f5d4c" stroke-width="3" marker-end="url(#arrow-seq)"/>
+
+              <text x="24" y="134" font-size="13" font-weight="800" fill="#8a5724">下篇 · 作者解释的宏观现象</text>
+              <rect x="24" y="188" width="248" height="78" rx="14" fill="#f7ecd9" stroke="#d8ba8d"/>
+              <text x="148" y="220" text-anchor="middle" font-size="16" font-weight="700" fill="#24352f">重土地、轻人</text>
+              <text x="148" y="244" text-anchor="middle" font-size="13" fill="#5e6b64">房价 · 户籍 · 地区差距</text>
+
+              <rect x="326" y="188" width="248" height="78" rx="14" fill="#f7ecd9" stroke="#d8ba8d"/>
+              <text x="450" y="220" text-anchor="middle" font-size="16" font-weight="700" fill="#24352f">债务与风险</text>
+              <text x="450" y="244" text-anchor="middle" font-size="13" fill="#5e6b64">政府 · 企业 · 居民</text>
+
+              <rect x="628" y="188" width="248" height="78" rx="14" fill="#f7ecd9" stroke="#d8ba8d"/>
+              <text x="752" y="220" text-anchor="middle" font-size="16" font-weight="700" fill="#24352f">重投资、轻消费</text>
+              <text x="752" y="244" text-anchor="middle" font-size="13" fill="#5e6b64">产能外溢 · 贸易冲突</text>
+
+              <path d="M580 118 C400 150 240 158 148 188" fill="none" stroke="#8a5724" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrow-exp)"/>
+              <path d="M701 118 C701 152 450 152 450 188" fill="none" stroke="#8a5724" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrow-exp)"/>
+              <path d="M822 118 C822 152 752 152 752 188" fill="none" stroke="#8a5724" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrow-exp)"/>
+
+              <rect x="24" y="292" width="18" height="10" fill="#3f5d4c"/>
+              <text x="50" y="302" font-size="13" fill="#24352f">实线：上篇按作者叙述展开</text>
+              <rect x="268" y="292" width="18" height="10" fill="#8a5724"/>
+              <text x="294" y="302" font-size="13" fill="#24352f">虚线：作者用来解释下篇，不是已验证定律</text>
+              <text x="24" y="336" font-size="13" fill="#5e6b64">第八章收成“官场 + 市场”，写下生产型政府应转向服务型政府，并区分发展过程与目标。</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><span class="origin synthesis">报告综合</span> 这张图压缩作者自己的上下篇声明，不是单独的因果证明。京东方、光伏、宽窄巷子是用来看机制的例子，删掉其中一例，全书仍可辨认；删掉分税制到土地金融这一段，下篇就失去作者给出的微观基础。</figcaption>
+      </figure>
+
+      <div class="grid-3" style="margin-top:12px">
+        <article class="card part">
+          <small>上篇第一至二章</small>
+          <h3>地方政府要办哪些事，钱从哪来</h3>
+          <p class="muted">事权相对稳定。1994 年分税制先收紧预算内资源；大规模土地财政被作者放在 21 世纪初，用来补发展所需的额外资金。招商竞争在分税制前已经存在。</p>
+        </article>
+        <article class="card part">
+          <small>上篇第三至四章</small>
+          <h3>土地怎样变成投资，政府怎样进实业</h3>
+          <p class="muted">城投把未来土地收入提前用掉；液晶、光伏和产业基金用来说明政企缠在一起，不是给出万能产业政策。</p>
+        </article>
+        <article class="card part">
+          <small>下篇第五至八章</small>
+          <h3>这套做法碰到人、债和外部市场</h3>
+          <p class="muted">作者归纳三个特点：重土地轻人、重规模扩张、重投资轻消费。第六章另外写债务风险如何在部门间传导。结尾写下生产型政府应转向服务型政府，并把发展过程和发展目标分开看。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="claims" aria-labelledby="claims-title">
+      <div class="section-head">
+        <div>
+          <h2 id="claims-title">先分清谁在说话</h2>
+          <p>蓝色是作者主张，绿色是原话，紫色是跨章归纳。</p>
+        </div>
+        <span class="time">12 分钟</span>
+      </div>
+      <div class="claim-grid">
+        <article class="claim">
+          <span class="origin quote">作者原话</span>
+          <h3>政府不只分蛋糕，也做蛋糕</h3>
+          <blockquote>
+            <p>在我国，政府不但影响“蛋糕”的分配，也参与“蛋糕”的生产，所以我们不可能脱离政府谈经济。</p>
+          </blockquote>
+          <span class="locator">前言 · OEBPS/Text/part0005.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>分税制先收紧筹资，土地财政后起</h3>
+          <p>1994 年分税制提高了“两个比重”，也让地方预算内更紧，发展所需额外支出要另找资金。作者把大规模土地财政放在 21 世纪初：1998 年房改和土地管理法修订之后，土地收益才明显起来；2001 年所得税再集权后，地方才变成“工业化与城市化”两手抓——工业用地继续便宜，商住用地收垄断收益。他说土地财政的实质是房地产财政。</p>
+          <span class="locator">第二章第一节、第二节 · part0016.xhtml；part0017.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin quote">作者原话</span>
+          <h3>土地财政加上杠杆，才变成土地金融</h3>
+          <blockquote>
+            <p>所以土地真正的力量还不在“土地财政”，而在以土地为抵押而撬动的银行信贷与其他各路资金。“土地财政”一旦嫁接了资本市场，加上了杠杆，就成了“土地金融”，能像滚雪球般越滚越大，推动经济飞速扩张，也造就了地方政府越滚越多的债务，引发了一系列宏观经济问题。</p>
+          </blockquote>
+          <span class="locator">第二章结语 · OEBPS/Text/part0019.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin quote">作者原话</span>
+          <h3>债务首先来自政府扮演的角色</h3>
+          <blockquote>
+            <p>可见政府债务问题根源不在收入不够，而在支出太多，因为承担了发展经济的任务，要扮演的角色太多。</p>
+          </blockquote>
+          <span class="locator">第三章结语 · OEBPS/Text/part0025.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>市场和政府没有干净的分界</h3>
+          <p>第四章用液晶、光伏和产业引导基金说明：改革从计划经济出发，政府手里有土地、金融和国企，下场之后不容易退出。作者明确说，产业政策有成有败，不能用一个成功否定另一种失败。</p>
+          <span class="locator">第四章开篇与结语 · part0027.xhtml；part0031.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin quote">作者原话</span>
+          <h3>以土地为中心的城市化忽略了人</h3>
+          <blockquote>
+            <p>这种以土地为中心的城市化忽视了城市化的真正核心：人。</p>
+          </blockquote>
+          <span class="locator">第五章开篇 · OEBPS/Text/part0034.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>地方发展做法有三个特点</h3>
+          <p>第七章结语把全书收成三句：城市化“重土地、轻人”；招商“重规模、重扩张”；结构上“重投资、重生产、轻消费”。作者把贸易冲突写成国内消化不了的产能向外走，再加中国体量大，冲击也大。</p>
+          <span class="locator">下篇导语与第七章结语 · part0033.xhtml；part0051.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin synthesis">报告综合</span>
+          <h3>下篇是解释，不是把上篇再套一遍</h3>
+          <p>上篇给出地方筹资和投资的微观基础。下篇并不只是同一条链的简单应用：第五章写人被土地城市化抛下；第六章按节分开写一般传导、欧美债台条件、中国 2008 年后路径和化解，不能读成一条土地金融后果；第七章写产能外溢。不能推出每座城市都按同一比例走完这条链，也不能推出 2021 年以后已经被本书写定。</p>
+          <span class="locator">上篇导语、下篇导语、第六章开篇与结语 · part0006.xhtml；part0033.xhtml；part0040.xhtml；part0045.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>官场竞争加上市场竞争</h3>
+          <p>第八章把地方竞争写成“官场 + 市场”：官员晋升的政治激励和地区经济表现挂钩。作者立刻补了一句：经济建设或 GDP 目标在升迁中的具体机制尚有争议，但经济发展仍是地方主官的工作重点。另外两点是：企业最终要在更大市场里接受检验；地方表现给官员即时反馈。它和市场竞争的差别是：缺少真正淘汰、升迁是零和、任期会催出短视投资。</p>
+          <span class="locator">第八章第一节 · OEBPS/Text/part0054.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>债务风险可能在部门之间传导</h3>
+          <p>开篇写明：第一、二节解释一般经济学原理，欧美写得多一点。第一节说，任何部门出问题都可能传导到其他部门。负债缺乏弹性，收入或支出一变就少有腾挪。来得快的第一点是债务太重、不够还本甚至还息，就只能变卖资产，抛售的人多了，资产价格才会跳水；第二点才是资产价格下跌引起信贷收缩。银行、企业、居民和政府可能互相拖累。温州、美国次贷和煤企写在第一节。第二节写欧美债台为何高筑。</p>
+          <span class="locator">第六章开篇、第一节、第二节 · part0040.xhtml；part0041.xhtml；part0042.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>中国路径和化解，另是两节</h3>
+          <p>开篇写明第三节分析我国债务的成因、风险、后果，第四节讨论偿还已有债务和遏制新增。第三节写：债务基本都是以人民币计价的内债，所以不太可能出现国际上常见的外债危机。迅速上涨的直接起因被写成 2008 年全球金融危机和随后的欧债危机；应对冲击的刺激稳定了经济，也加剧了债务负担和产能过剩。重点落到企业债务和银行（土地抵押、影子银行）。结语把根源写成发展模式和结构，不是单纯的货币金融问题。第四节写还旧账和改环境。</p>
+          <span class="locator">第六章第三节、第四节、结语 · part0043.xhtml；part0044.xhtml；part0045.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin author">作者主张</span>
+          <h3>生产型政府应转向服务型政府</h3>
+          <p>第八章第二节写：市场与政府能力共同发展，不是此消彼长。经济发展到一定阶段后，旧有土地财政和土地金融难以持续；生产投资型政府应逐步转向服务型政府，把更多资源投向教育、医疗、住房等民生，也就是投向人。这是作者写下的方向和条件，不是已经完成的转型，也不是对 2021 年以后政策的判断。</p>
+          <span class="locator">第八章第二节 · OEBPS/Text/part0055.xhtml</span>
+        </article>
+        <article class="claim">
+          <span class="origin quote">作者原话</span>
+          <h3>发展过程不等于发展目标</h3>
+          <blockquote>
+            <p>本书一直强调发展过程与发展目标不同。</p>
+          </blockquote>
+          <p class="muted">他要读者既不要把发达国家现状当成起步处方，也不要把过去有效的动员方式当成永远有效。</p>
+          <span class="locator">第八章第三节 · OEBPS/Text/part0056.xhtml</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="route" aria-labelledby="route-title">
+      <div class="section-head">
+        <div>
+          <h2 id="route-title">第一轮只回读五处</h2>
+          <p>大约 90–120 分钟，可拆成两三个晚上。</p>
+        </div>
+        <span class="time">回原文</span>
+      </div>
+      <ol class="route">
+        <li>
+          <strong>前言、上篇导语、结束语 · 20–25 分钟</strong>
+          <span>看作者声明自己在写什么、不写什么，以及上下篇如何分工。</span>
+          <code>part0005.xhtml；part0006.xhtml；part0059.xhtml</code>
+        </li>
+        <li>
+          <strong>分税制之后，土地财政何时起来 · 20–25 分钟</strong>
+          <span>读第二章第一节后半与第二节，对照结语里“土地财政 / 土地金融”的区分。</span>
+          <code>part0016.xhtml；part0017.xhtml；part0019.xhtml</code>
+        </li>
+        <li>
+          <strong>债务：从政府角色到系统风险 · 20–25 分钟</strong>
+          <span>第三章结语看债务被写成政府角色；第六章开篇与结语看风险如何在部门间传导，并区分一般机制、欧美教训和中国路径。城投操作细节仍在第三章第一节，第一轮可不先读。</span>
+          <code>part0025.xhtml；part0040.xhtml；part0045.xhtml</code>
+        </li>
+        <li>
+          <strong>城市化为何会“见地不见人” · 15–20 分钟</strong>
+          <span>开篇只把问题落到“忽视了城市化的真正核心：人”；三个阶段只在第五章结语。</span>
+          <code>part0034.xhtml；part0038.xhtml</code>
+        </li>
+        <li>
+          <strong>三个特点、政府转型与过程/目标 · 18–22 分钟</strong>
+          <span>第七章结语收束三个特点；第八章第一、二、三节看“官场 + 市场”、生产型政府应转向服务型政府，以及过程不同于目标。转型是作者写下的方向，不是已经完成的事实。</span>
+          <code>part0051.xhtml；part0054.xhtml；part0055.xhtml；part0056.xhtml</code>
+        </li>
+      </ol>
+    </section>
+
+    <section id="critical" aria-labelledby="critical-title">
+      <div class="section-head">
+        <div>
+          <h2 id="critical-title">批判审计：先复述，再划线</h2>
+          <p>材料停在 2021。后来的变化不能写成书已经回答的问题。</p>
+        </div>
+        <span class="time">8 分钟</span>
+      </div>
+      <div class="audit-grid">
+        <article class="audit-box strength">
+          <span class="origin audit">仍值得用</span>
+          <h3>作者真正卡住的问题</h3>
+          <ul>
+            <li>谈中国经济时，先看政府办什么事、花什么钱，而不是先套“有限政府”。</li>
+            <li>把土地出让、抵押融资和招商竞争写成同一套地方做法，而不是三个孤立名词。</li>
+            <li>承认产业政策、城投项目和基础设施都要算“大账”，也承认这笔账没有公认算法。</li>
+            <li>自己写下限度：案例不是定律，过程不是目标，过去有效的办法不必永远有效。</li>
+          </ul>
+        </article>
+        <article class="audit-box limit">
+          <span class="origin audit">不能外推过头</span>
+          <h3>书里已经露出的缝</h3>
+          <ul>
+            <li>数据和分析停在 2018–2020 前后。土地、地方债、外贸在 2021 年后如何变化，书没有写完。</li>
+            <li>液晶、光伏、宽窄巷子、苏州园区说明机制，不能代替对所有行业的检验。</li>
+            <li>“官场 + 市场”是作者的综合标签；晋升与 GDP 的具体机制，书中也写了仍有争议。</li>
+            <li>作者明确偏重描述政府认为该怎么办，读者若要规范判断，必须另找材料。</li>
+          </ul>
+        </article>
+      </div>
+      <div class="correction">
+        <span class="origin external">外部背景</span>
+        <h3>2023 精装只作为版本边界</h3>
+        <p>复旦大学当代中国经济与社会工作室的书讯，以及公开书目，记载上海人民出版社 2023 年 10 月精装纪念版（ISBN 978-7-208-18406-0），并称增收作者新序。这不能证明眼前 2021 EPUB 的章节已被改写。本轮未核对该版正文，也不把新序补进地图。</p>
+        <ul class="source-list">
+          <li><a href="https://flcds.fudan.edu.cn/info/1043/2093.htm">复旦大学当代中国经济与社会工作室书讯</a></li>
+          <li><a href="https://book.douban.com/subject/36601306/">豆瓣书目：2023 精装本</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="decision" aria-labelledby="decision-title">
+      <div class="section-head">
+        <div>
+          <h2 id="decision-title">读到这里，选一条路</h2>
+          <p>默认走中间：回读五处，再决定要不要通读。</p>
+        </div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="decision-grid">
+        <article class="decision recommended">
+          <strong>推荐：选择性深读</strong>
+          <p>按五处原文把机制读顺。若你要判断当下土地或地方债，把书当 2021 年的机制说明书，另找更新材料，不要让地图替你下结论。</p>
+        </article>
+        <article class="decision">
+          <strong>全书通读</strong>
+          <p>适合要核案例、图表和各章扩展阅读出处的人。扩展阅读不是作者正文，通读时仍要分开。</p>
+        </article>
+        <article class="decision">
+          <strong>进入深挖</strong>
+          <p>土地财政与土地金融之别、城投政企边界、两个产业案例能否证明政策有效、城市化何以见地不见人、债务怎样变成系统风险、2008–2018 年债务路径，已各有一节。分税制全过程、转移支付补不齐，或“官场 + 市场”的争议，仍要等具体问题再写。</p>
+        </article>
+        <article class="decision">
+          <strong>现在停止</strong>
+          <p>若你只要知道这本书在讲地方政府如何筹资和投资，主地图已经够用。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="modules" aria-labelledby="modules-title">
+      <div class="section-head">
+        <div>
+          <h2 id="modules-title">深挖：六节已生成</h2>
+          <p>模块不是原书新增章节。未点名的问题仍不预写。</p>
+        </div>
+        <span class="time">按需</span>
+      </div>
+      <div class="module-grid">
+        <article class="module ready">
+          <h3>土地财政和土地金融差在哪</h3>
+          <p>1994、1998、2001 各改变了什么，出让收入为何仍不够？只读第二章第二节与结语换词句，停在抵押，不写城投。</p>
+          <a class="made" href="modules/land-fiscal-vs-financial/reading.html">进入深挖 · 核心约 65 分钟</a>
+        </article>
+        <article class="module ready">
+          <h3>城投的政企边界</h3>
+          <p>城投同时像政府和像企业，边界在哪？只读第三章第一节：公司外壳、一级开发和隐性担保怎样同时成立。</p>
+          <a class="made" href="modules/chengtou-boundary/reading.html">进入深挖 · 核心约 60 分钟</a>
+        </article>
+        <article class="module ready">
+          <h3>两个案例能否证明产业政策有效</h3>
+          <p>京东方和光伏各能证明什么？只读第四章开篇、前两节和结语收束，不把产业基金写成第三条证据。</p>
+          <a class="made" href="modules/industrial-policy-evidence/reading.html">进入深挖 · 核心约 75 分钟</a>
+        </article>
+        <article class="module ready">
+          <h3>城市化为什么会见地不见人</h3>
+          <p>土地、住房、户籍和公共服务怎样连在一起？只读第五章开篇、第二节前半和结语前两段，不写房价专节和地票细则。</p>
+          <a class="made" href="modules/land-centered-urbanization/reading.html">进入深挖 · 核心约 70 分钟</a>
+        </article>
+        <article class="module ready">
+          <h3>债务怎样变成系统风险</h3>
+          <p>个人或企业出问题，如何传到银行、消费和别人头上？只读第六章开篇与第一、二节。</p>
+          <a class="made" href="modules/how-debt-becomes-systemic/reading.html">进入深挖 · 核心约 60 分钟</a>
+        </article>
+        <article class="module ready">
+          <h3>2008–2018 年的债务路径</h3>
+          <p>2008–2018 年中国债务为何积累，又为什么不能只靠金融手段化解？只读第六章第三、四节和结语。</p>
+          <a class="made" href="modules/china-debt-path-and-resolution/reading.html">进入深挖 · 核心约 70 分钟</a>
+        </article>
+        <article class="module">
+          <h3>分税制改革改变了什么</h3>
+          <p>适合追问：1985–1994 年包干和两个比重怎样走到分税制，改革后又收紧了什么？</p>
+        </article>
+        <article class="module">
+          <h3>转移支付总数能补上，为何仍补不齐</h3>
+          <p>适合追问：全国总数够填地方收支缺口时，为什么基层和地区之间仍然补不齐？</p>
+        </article>
+        <article class="module">
+          <h3>官场竞争如何约束、又如何扭曲市场</h3>
+          <p>适合追问：作者写的三个优点和三个代价，分别落在书里哪些例证上，哪些仍标成争议？</p>
+        </article>
+      </div>
+      <p class="module-note">六节都按真实问题写成。其余条目仍是候选，不预挂未写模块。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <p>来源：用户提供的 2021 年上海人民出版社 EPUB。原书保持私有。本仓库只保存原创结构、评论、必要短引和定位。</p>
+      <p>内容已标为作者原话、作者主张、报告综合、批判审计和外部背景。地图用来回原书，不代替阅读。</p>
+    </div>
+  </footer>
+</body>
+</html>

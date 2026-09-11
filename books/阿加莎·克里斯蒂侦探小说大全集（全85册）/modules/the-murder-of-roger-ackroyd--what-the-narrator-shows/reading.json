@@ -1,0 +1,240 @@
+{
+  "schema_version": "read-book.progressive-deep-dive.v1",
+  "artifact_kind": "progressive-article-deep-dive",
+  "generated_date": "2026-09-11",
+  "language": "zh-CN",
+  "spoiler_policy": {
+    "default": "spoiler_free",
+    "level": "high",
+    "scope": "默认区只复原叙述位置与当时可见句子；叙述身份、隐瞒解释与后文收束只在读者展开的区域",
+    "page_description_and_nav": "no_solutions_no_culprits_no_identity_reversals",
+    "nav_omits_final_chapter_titles": true
+  },
+  "module": {
+    "id": "the-murder-of-roger-ackroyd--what-the-narrator-shows",
+    "title": "读者当时能从谢泼德医生那里知道多少",
+    "subtitle": "先看他怎么写，再决定要不要展开后文收束",
+    "status": "generated",
+    "work_id": "w04",
+    "parent_module_id": null,
+    "parent_book_html": "../../reading.html#modules",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "读者跟着谢泼德的眼睛走，不等于当时已经得到他知道的全部事情。",
+    "model_boundary": "默认区不进入叙述身份与后文收束；广为人知不能当成读者已经读完。"
+  },
+  "reading_contract": {
+    "core_minutes": 60,
+    "target_minutes": "50-70",
+    "progressive_depth": [
+      "先核版权页、献词与叙述者公开身份",
+      "再数第一次往下读时已经写出的句子",
+      "只有读者主动展开后，才进入空白解释与后文收束"
+    ],
+    "completion_definition": [
+      "能说明谢泼德是第一人称写手，不是全知旁白",
+      "能分开对姐姐留一手、当时可见的时间句，以及默认区不解释的空白",
+      "知道后文收束只在折叠区，且第一次读应先回原文"
+    ],
+    "optional_source_return_minutes": "自定；未读完者不要打开展开区"
+  },
+  "source_work": {
+    "work_id": "w04",
+    "title_zh": "罗杰疑案",
+    "original_title": "The Murder of Roger Ackroyd",
+    "credited_author": "【英】阿加莎·克里斯蒂",
+    "translator": "常禾",
+    "volume_publisher": "新星出版社",
+    "volume_pub_date": "2013-03-01",
+    "isbn": "9787513311236",
+    "series": "poirot",
+    "form": "novel",
+    "copyright_xhtml": "OEBPS/Text/part0081.xhtml",
+    "volume_toc_xhtml": "OEBPS/Text/part0082.xhtml",
+    "dedication_xhtml": "OEBPS/Text/part0083.xhtml",
+    "start_xhtml": "OEBPS/Text/part0080.xhtml",
+    "end_xhtml_inclusive": "OEBPS/Text/part0110.xhtml",
+    "open_zone_xhtml": [
+      "OEBPS/Text/part0081.xhtml",
+      "OEBPS/Text/part0083.xhtml",
+      "OEBPS/Text/part0084.xhtml",
+      "OEBPS/Text/part0086.xhtml",
+      "OEBPS/Text/part0090.xhtml",
+      "OEBPS/Text/part0106.xhtml"
+    ],
+    "spoiler_zone_xhtml": [
+      "OEBPS/Text/part0087.xhtml",
+      "OEBPS/Text/part0088.xhtml",
+      "OEBPS/Text/part0091.xhtml",
+      "OEBPS/Text/part0108.xhtml",
+      "OEBPS/Text/part0109.xhtml",
+      "OEBPS/Text/part0110.xhtml"
+    ]
+  },
+  "narrative_structure": {
+    "question": "乡村医生作为叙述者，读者当时能知道多少？",
+    "open_zone": [
+      "谢泼德是金斯艾伯特医生，对姐姐卡洛琳习惯留一手。",
+      "邻居先以波罗特先生出现，第七章才被当众称为波洛。",
+      "第二十三章才写出他按黑斯廷斯的路子写手稿并交给波洛。",
+      "当时读者看得到时间句和“有所保留”，看不到后文收束。"
+    ],
+    "spoiler_zone": [
+      "书房里的十分钟和出门后到大门的时间是两段，不要并成一段。",
+      "车站打到家里的是同一通电话：确有来电，后文才说讲话的只有他自己。",
+      "“小事”当时紧跟着不碰尸体和短剑；后文另指还做了当时没写的事。"
+    ],
+    "missing_or_uncertain": [
+      "句子为真不等于当时已经可解。",
+      "本卷不能证明所有第一人称侦探小说都这样写。",
+      "没有平行英文本时，不评价译名或语气优劣。"
+    ]
+  },
+  "claims": [
+    {
+      "id": "c03-copyright",
+      "type": "出版副文本",
+      "text": "本卷版权页记书名《罗杰疑案》，译者常禾，新星出版社，2013-03-01，ISBN 9787513311236。",
+      "locator": "OEBPS/Text/part0081.xhtml"
+    },
+    {
+      "id": "c03-dedication",
+      "type": "出版副文本",
+      "text": "献词献给喜欢传统侦探故事的潘吉，并写有谋杀、侦查、嫌疑依次落在每个人头上。这不是正文里的医生在说话。",
+      "locator": "OEBPS/Text/part0083.xhtml"
+    },
+    {
+      "id": "c03-withhold",
+      "type": "作品文本",
+      "text": "谢泼德承认自己习惯任何消息都对姐姐留一手。",
+      "locator": "OEBPS/Text/part0084.xhtml"
+    },
+    {
+      "id": "c03-porrot",
+      "type": "作品文本",
+      "text": "第三章邻居先被叫做波罗特先生；第七章弗洛拉当众说出他是赫尔克里·波洛。",
+      "locator": "OEBPS/Text/part0086.xhtml；OEBPS/Text/part0090.xhtml"
+    },
+    {
+      "id": "c03-everyone-hides",
+      "type": "作品文本",
+      "text": "波洛说卷入案件的每个人都有所隐瞒，并认为谢泼德也有所保留。",
+      "locator": "OEBPS/Text/part0090.xhtml"
+    },
+    {
+      "id": "c03-manuscript-restraint",
+      "type": "作品文本",
+      "text": "波洛读手稿后说，谢泼德如实记录案情，但很少提及自己发挥的作用。",
+      "locator": "OEBPS/Text/part0106.xhtml"
+    },
+    {
+      "id": "c03-then-visible",
+      "type": "报告综合",
+      "text": "第一次往下读的人能看见医生身份、留一手、时间句、人人隐瞒和手稿克制；不能因此等于已经得到后文收束。",
+      "locator": "OEBPS/Text/part0084.xhtml–part0106.xhtml"
+    },
+    {
+      "id": "c03-fame-not-knowledge",
+      "type": "批判审计",
+      "text": "广为人知不能当成读者已知结局；谢泼德的句子也不是作者本人的论证。",
+      "locator": null
+    },
+    {
+      "id": "c03-gap-true-not-solved",
+      "type": "批判审计",
+      "text": "书房八点四十到五十，与八点五十分离开、九点出大门、大门到房子最多五分钟，是两段时间；“小事”当时有紧随的动作句，后文另有所指。句子为真和当时已经可解不是同一件事。",
+      "locator": "OEBPS/Text/part0087.xhtml；part0088.xhtml；part0091.xhtml；part0109.xhtml；part0110.xhtml",
+      "spoiler": true
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-c03-foresee",
+      "zone": "open",
+      "epub_path": "OEBPS/Text/part0084.xhtml",
+      "title": "事后口吻",
+      "excerpt": "虽然当时我不可能预见到接下来几周的风波——我绝对不会那么做——但直觉却告诉我接下来的日子会麻烦重重。",
+      "plain_guide": "叙述者动笔时已经知道后文有风波；读者此时并不因此知道收束。",
+      "cannot_infer": "开篇的事后口吻等于已经交代叙述身份。"
+    },
+    {
+      "id": "src-c03-withhold",
+      "zone": "open",
+      "epub_path": "OEBPS/Text/part0084.xhtml",
+      "title": "对姐姐留一手",
+      "excerpt": "出于一名医生的职业操守，我自然务求谨慎，所以久而久之就养成了一个习惯：任何消息都对姐姐留一手。",
+      "plain_guide": "留一手先是对卡洛琳的习惯。",
+      "cannot_infer": "对姐姐隐瞒等于已经说明全部空白。"
+    },
+    {
+      "id": "src-c03-hides",
+      "zone": "open",
+      "epub_path": "OEBPS/Text/part0090.xhtml",
+      "title": "人人有所隐瞒",
+      "excerpt": "卷入案件的每个人都有所隐瞒。",
+      "plain_guide": "这是波洛对这卷案子的判断，随后也落到谢泼德身上。",
+      "cannot_infer": "这句话当时已经点名。"
+    },
+    {
+      "id": "src-c03-restraint",
+      "zone": "open",
+      "epub_path": "OEBPS/Text/part0106.xhtml",
+      "title": "手稿很少写自己",
+      "excerpt": "你将案情的来龙去脉如实记录下来，不过很少提及你自己在其中发挥的作用。",
+      "plain_guide": "当时可以读成谦逊，也可以读成克制。本页默认区不选定。",
+      "cannot_infer": "称赞精确等于已经接受后文收束。"
+    },
+    {
+      "id": "src-c03-ten-minutes",
+      "zone": "spoiler",
+      "epub_path": "OEBPS/Text/part0087.xhtml",
+      "title": "离开书房的十分钟",
+      "excerpt": "信是八点四十分送进来的。而当我八点五十分离开他的时候，那封信仍然没读完。我的手搭在门把上，彷徨不定，回头望了望，寻思着是否还有什么事情没处理。",
+      "plain_guide": "这是书房里的十分钟，不要和出门后到大门的时间并成一段。",
+      "cannot_infer": "读者第一次读到这两句，就已经知道后文收束。"
+    },
+    {
+      "id": "src-c03-five-minutes",
+      "zone": "spoiler",
+      "epub_path": "OEBPS/Text/part0091.xhtml",
+      "title": "大门到房子的路程",
+      "excerpt": "最多不超过五分钟。如果他走车道右边那条小径，直接绕过来，只需两三分钟而已。",
+      "plain_guide": "第八章已经写出大门到窗子最多五分钟；这是后来对“九点出大门”的对照句。",
+      "cannot_infer": "这五分钟就是书房里八点四十到五十那十分钟。"
+    },
+    {
+      "id": "src-c03-little-thing",
+      "zone": "spoiler",
+      "epub_path": "OEBPS/Text/part0088.xhtml",
+      "title": "非做不可的小事",
+      "excerpt": "我做了点非做不可的小事。我小心翼翼地不去挪动尸体的位置，也丝毫没碰那柄短剑。",
+      "plain_guide": "当时页上有紧随的动作句；后文另指还做了当时没写的事，并没有收回这两句。",
+      "cannot_infer": "截去后两句，就能把当时页写成纯空白。"
+    },
+    {
+      "id": "src-c03-ellipsis",
+      "zone": "spoiler",
+      "epub_path": "OEBPS/Text/part0110.xhtml",
+      "title": "他自己点破省略号",
+      "excerpt": "看见没有，全是实话。但如果我在第一句话后面加上一个省略号呢？有人怀疑过那十分钟空白时间里发生了什么吗？",
+      "plain_guide": "后文承认先前句子为真，空白在于没写。",
+      "cannot_infer": "所有第一人称侦探小说都用同一手法。"
+    }
+  ],
+  "critical_audit": {
+    "holds": [
+      "第一人称手稿限制了当时可见范围。",
+      "对姐姐留一手与后文空白可以分开核。",
+      "献词是副文本，默认区不应倒推后文。"
+    ],
+    "limits": [
+      "句子为真不等于当时已经可解。",
+      "本卷不能写成所有不可靠叙述者的模板。",
+      "没有平行英文本时，不评价译文语气。"
+    ]
+  },
+  "generation_audit": {
+    "material_grade": "full_source",
+    "material_grade_note": "已核版权页、献词、第一、三、四、五、七、二十三章及末三章相关段落；不表示已精读全部二十七章每一句。",
+    "continuity_check": "删去“当时可见 / 后文收束”这层区分，模块会塌成谜底页或空谈叙述者；末三章目录题名不进入导航。"
+  }
+}

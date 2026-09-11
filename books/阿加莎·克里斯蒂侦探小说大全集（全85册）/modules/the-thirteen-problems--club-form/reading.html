@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《死亡草》合集父模块：核清十三章是两场讲述加一篇不同形态，不是一部长篇，也不是十三场同一俱乐部例会。本页不写各篇谜底。">
+  <title>《死亡草》是十三场讲述，还是一部长篇</title>
+  <style>
+    :root {
+      --paper: #f4f0e7;
+      --surface: #fffdf8;
+      --ink: #1f2b2a;
+      --muted: #626e6b;
+      --line: #d8d4ca;
+      --teal: #285c58;
+      --teal-deep: #17413f;
+      --teal-soft: #e2efec;
+      --amber: #8a571d;
+      --amber-soft: #f8ecd9;
+      --blue: #315f78;
+      --blue-soft: #e8f0f4;
+      --purple: #67528b;
+      --purple-soft: #efebf7;
+      --red: #8a4037;
+      --red-soft: #f5e5df;
+      --content: 1080px;
+      --text: 740px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(43, 51, 48, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(40, 92, 88, 0.1), transparent 26rem),
+        var(--paper);
+      font-family: ui-serif, "Songti SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--teal-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible, .table-scroll:focus-visible {
+      outline: 3px solid #d99b3b;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(1.85rem, 6vw, 3.1rem);
+      letter-spacing: -0.04em;
+    }
+    h2 { margin: 0; font-size: clamp(1.45rem, 3.8vw, 2rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    code {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      overflow-wrap: anywhere;
+    }
+    .skip-link {
+      position: fixed; z-index: 20; top: 10px; left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px; color: white; background: var(--teal-deep); border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+    .prose { max-width: var(--text); }
+    .hero { padding: 48px 0 30px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex; min-height: 44px; align-items: center;
+      margin-bottom: 16px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem; font-weight: 760; text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px; color: var(--teal);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.77rem; font-weight: 850; letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px; margin: 16px 0 0; color: var(--muted);
+      font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .fact {
+      display: inline-flex; min-height: 40px; align-items: center;
+      padding: 7px 12px; color: var(--teal-deep);
+      background: rgba(255, 253, 248, 0.88);
+      border: 1px solid var(--line); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 750;
+    }
+    .verdict {
+      display: grid; gap: 7px; max-width: 880px; margin-top: 22px; padding: 20px;
+      color: white; background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .verdict small {
+      color: #c9e4df; font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800;
+    }
+    .verdict strong { font-size: 1.18rem; }
+    .verdict p { margin: 0; color: #f0faf8; }
+    .section-nav {
+      position: sticky; z-index: 8; top: 0;
+      background: rgba(244, 240, 231, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex; width: min(100%, var(--content)); min-height: 52px;
+      margin-inline: auto; padding-inline: 10px;
+      overflow-x: auto; scrollbar-width: thin;
+    }
+    .section-nav a {
+      display: inline-flex; flex: 0 0 auto; min-height: 48px; align-items: center;
+      padding: 8px 10px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem; font-weight: 760; text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--teal-deep); }
+    .nav-hint {
+      display: none;
+      margin: 0;
+      padding: 4px 20px 0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+    }
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 50px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 14px; margin-bottom: 18px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto; padding: 5px 10px; color: var(--teal-deep);
+      background: var(--teal-soft); border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem; font-weight: 800;
+    }
+    .grid-2, .audit-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .reading-card {
+      min-width: 0; padding: 18px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(43, 51, 48, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex; min-height: 26px; align-items: center;
+      margin: 0 0 9px; padding: 2px 8px; border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.68rem; font-weight: 850; letter-spacing: 0.03em;
+    }
+    .paratext { color: var(--blue); background: var(--blue-soft); }
+    .synthesis { color: var(--purple); background: var(--purple-soft); }
+    .audit { color: var(--amber); background: var(--amber-soft); }
+    .worktext { color: var(--teal-deep); background: var(--teal-soft); }
+    .locator {
+      display: block; margin-top: 8px; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.74rem;
+      overflow-wrap: anywhere;
+    }
+    blockquote {
+      margin: 12px 0 1em; padding: 14px 16px; background: #fffbef;
+      border-left: 3px solid var(--amber); border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; }
+    .route { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: route; }
+    .route li {
+      position: relative; min-height: 88px; padding: 16px 16px 16px 58px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route); position: absolute; top: 17px; left: 17px;
+      display: grid; width: 28px; height: 28px; place-items: center;
+      color: white; background: var(--teal); border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; font-weight: 900;
+    }
+    .cannot {
+      margin-top: 10px; padding-top: 10px; color: var(--red);
+      border-top: 1px dashed #e5c2c2; font-size: 0.9rem;
+    }
+    .table-scroll {
+      max-width: 100%; overflow-x: auto; padding: 0 0 8px;
+      scrollbar-color: #c3b9ac transparent;
+    }
+    table {
+      width: 100%; min-width: 640px; border-collapse: collapse;
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.86rem;
+    }
+    th, td {
+      padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 750; }
+    .table-hint {
+      margin: 8px 0 0; color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.76rem;
+    }
+    .audit-box ul { margin: 0; padding-left: 1.1em; }
+    footer {
+      padding: 28px 0 40px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.92rem;
+    }
+    footer p { margin: 0 0 7px; }
+    @media (max-width: 660px) {
+      .nav-hint { display: block; }
+      body { font-size: 16px; }
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 9px; }
+      .grid-2, .audit-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      .section-nav, .site-back, .nav-hint { display: none; }
+      body { background: white; overflow-x: visible; }
+      .shell { width: 100%; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html#modules">← 返回合订本总地图</a>
+      <p class="eyebrow">Deep dive · 合集父模块 · 默认无剧透</p>
+      <h1>《死亡草》是十三场讲述，还是一部长篇</h1>
+      <p class="lead">先核容器：十三章是十三篇独立故事，分两场讲述，最后一篇形态不同。书名也是第十一章的篇名。本页不写各篇谜底。</p>
+      <div class="facts">
+        <span class="fact">w41《死亡草》</span>
+        <span class="fact">译者六翼天使</span>
+        <span class="fact">ISBN 978-7-5133-3105-0</span>
+        <span class="fact">13 篇</span>
+        <span class="fact">约 45–60 分钟</span>
+      </div>
+      <div class="verdict">
+        <small>先记住这一句 · 报告综合</small>
+        <strong>不是一部长篇，也不是十三场同一俱乐部的例会。</strong>
+        <p>前六篇在马普尔家的星期二晚间俱乐部；接着六篇换到班特里家的聚会；第十三篇改成跟着亨利爵士过的一篇，不再是当晚轮讲。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <p class="nav-hint">章节导航可左右滑动。</p>
+    <nav class="shell" aria-label="本页章节">
+      <a href="#question">问题</a>
+      <a href="#version">版本</a>
+      <a href="#form">形态</a>
+      <a href="#table">十三篇</a>
+      <a href="#quotes">原文</a>
+      <a href="#audit">批判</a>
+      <a href="#source">回原文</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="question">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>这个问题管到哪里</h2>
+            <p>合集父模块，不是十三篇解答页。</p>
+          </div>
+          <span class="time">约 4 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin synthesis">报告综合</span>总地图把本卷标为马普尔年表中的短篇/中篇合集，独立篇数 13。本页只问形态：它是十三场讲述，还是一部长篇。单篇谜底若以后要做，应另立扁平子模块，例如 <code>the-thirteen-problems--the-tuesday-night-club</code>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="version">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>先核这是哪一版</h2>
+            <p>书名和第十一章同名，不要并成一篇。</p>
+          </div>
+          <span class="time">约 5 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <p><span class="origin paratext">出版副文本</span>本卷版权页：书名《死亡草》，作者【英】阿加莎·克里斯蒂，译者六翼天使，新星出版社，2018-07-01，ISBN 978-7-5133-3105-0。</p>
+            <span class="locator">OEBPS/Text/part1167.xhtml</span>
+          </article>
+          <article class="card">
+            <p><span class="origin paratext">出版副文本</span>献词页写：“献给伦纳德和凯瑟琳·沃利”。页下长注是译者/编者说明，不是故事正文，本页不拿它扩写成传记。</p>
+            <span class="locator">OEBPS/Text/part1169.xhtml</span>
+          </article>
+        </div>
+        <div class="prose" style="margin-top:16px;">
+          <p>起点文件 <code>part1166</code> 是卷首插图页，无正文。卷内目录十三章，第十一章篇名也是《死亡草》。卷名管整本合集，篇名只管那一篇。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>两场讲述，一篇换形态</h2>
+            <p>先复原场合，再数篇目。</p>
+          </div>
+          <span class="time">约 12 分钟</span>
+        </div>
+        <div class="prose">
+          <p><span class="origin worktext">作品文本</span>第一章在马普尔小姐家里。在座六人：作家外甥雷蒙德·韦斯特，艺术家乔伊斯·雷蒙皮埃尔，退休的苏格兰场总监亨利·克利瑟林爵士，教区牧师彭德博士，律师帕特里克先生，以及马普尔小姐本人。乔伊斯提议成立俱乐部，当天是星期二，便叫“星期二晚间俱乐部”。约定每个成员轮流讲一个自己亲身经历的谜题，并且要有谜底。</p>
+          <p>前六章都停在这场聚会里轮讲。第七章换了地方：亨利爵士住在圣玛丽·米德附近的班特里家，帮女主人点当晚六人晚宴的客人，并提起去年那五六个人的讲述。晚宴上的人换成班特里夫妇、亨利爵士、马普尔小姐、劳埃德大夫和女演员珍妮·赫利尔。第七到第十二章是这场新聚会上的讲述。</p>
+          <p>第十三章开头是星期六上午的早餐，亨利爵士在班特里家撞见女主人不安。它不再用“轮到谁讲”开场，而是跟着亨利爵士经历村里的一件事，马普尔小姐的判断出现在篇末。十三篇都是独立故事，但最后一篇不是同一套轮讲格式。</p>
+          <p>乔伊斯在正文里被写成“艺术家”，她自己也说“我还是位艺术家”。不要改写成画家。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="table">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>十三篇只标场合和讲述者</h2>
+            <p>表里没有谜底。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="table-scroll" tabindex="0">
+          <table>
+            <thead>
+              <tr><th>章</th><th>篇名</th><th>场合</th><th>讲述者</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>星期二晚间俱乐部</td><td>马普尔家俱乐部</td><td>亨利爵士</td></tr>
+              <tr><td>2</td><td>阿施塔特的神舍</td><td>同上</td><td>彭德博士</td></tr>
+              <tr><td>3</td><td>金锭</td><td>同上</td><td>雷蒙德·韦斯特</td></tr>
+              <tr><td>4</td><td>血染的石板路</td><td>同上</td><td>乔伊斯·雷蒙皮埃尔</td></tr>
+              <tr><td>5</td><td>动机与机会</td><td>同上</td><td>帕特里克先生</td></tr>
+              <tr><td>6</td><td>圣彼得的拇指印</td><td>同上</td><td>马普尔小姐</td></tr>
+              <tr><td>7</td><td>蓝色的天竺葵</td><td>班特里家晚宴</td><td>班特里上校</td></tr>
+              <tr><td>8</td><td>陪伴</td><td>班特里家聚会</td><td>劳埃德大夫</td></tr>
+              <tr><td>9</td><td>四个嫌疑人</td><td>同上</td><td>亨利爵士</td></tr>
+              <tr><td>10</td><td>圣诞节的悲剧</td><td>同上</td><td>马普尔小姐</td></tr>
+              <tr><td>11</td><td>死亡草</td><td>同上</td><td>班特里太太</td></tr>
+              <tr><td>12</td><td>小木屋事件</td><td>同上</td><td>珍妮·赫利尔</td></tr>
+              <tr><td>13</td><td>沉溺而亡</td><td>班特里家后续，非轮讲</td><td>叙述跟着亨利爵士</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-hint">表格可在框内左右滑动；页面本身不横向溢出。讲述者只标明谁开口，不标明谁做对。</p>
+      </div>
+    </section>
+
+    <section id="quotes">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>四处短引，只核形态</h2>
+            <p>不进入各篇解答。</p>
+          </div>
+          <span class="time">约 10 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>乔伊斯的身份是艺术家。</p>
+            <blockquote>
+              <p>然后落在乔伊斯·雷蒙皮埃尔身上，她是位艺术家，有一头剪得短短的黑发和一双奇特的淡绿褐色的眼睛</p>
+            </blockquote>
+            <span class="locator">第一章《星期二晚间俱乐部》· OEBPS/Text/part1170.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>俱乐部当场起名，并约定轮讲。</p>
+            <blockquote>
+              <p>我们成立一个俱乐部怎么样？今天星期几？星期二？那我们就叫它‘星期二晚间俱乐部’好了。每个星期聚会一次，每个成员轮流讲一个谜题，自己亲身经历的谜题，当然还要有谜底。</p>
+            </blockquote>
+            <span class="locator">第一章《星期二晚间俱乐部》· OEBPS/Text/part1170.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>第七章自己说明：这是后来的另一次，并且在回顾去年那五六个人。</p>
+            <blockquote>
+              <p>去年我到这儿来的时候，我们闲暇里讨论了一些未解决的谜案。我们一共五六个人。</p>
+            </blockquote>
+            <span class="locator">第七章《蓝色的天竺葵》· OEBPS/Text/part1176.xhtml</span>
+          </article>
+          <article class="reading-card">
+            <p><span class="origin worktext">作品文本</span>第十三章换了写法。</p>
+            <blockquote>
+              <p>星期六上午，在客人的最佳用餐时间十点一刻，他下楼来用早餐，却在餐厅门口差点儿与女主人班特里太太撞了个满怀。</p>
+            </blockquote>
+            <p class="muted">开篇跟着亨利爵士，不再是“轮到谁讲”。</p>
+            <span class="locator">第十三章《沉溺而亡》· OEBPS/Text/part1182.xhtml</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>批判审计</h2>
+            <p>先复原形态，再挡滑移。</p>
+          </div>
+          <span class="time">约 8 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box">
+            <h3>站得住的</h3>
+            <ul>
+              <li>十三章都能对上独立篇目；前十二篇能指认场合和开口的人。</li>
+              <li>书名与第十一章同名，分开后才不会把合集读成一篇园圃故事。</li>
+              <li>乔伊斯作艺术家，有叙述者介绍和她自己的话两处可核。</li>
+            </ul>
+          </article>
+          <article class="audit-box">
+            <h3>需要挡住的滑移</h3>
+            <ul>
+              <li>不能把“每个星期聚会一次”写成这本中文合集已经排出十三场星期二例会。正文只把前六篇写在那场俱乐部里。</li>
+              <li>不能用章节数冒充故事数的反面：这里章节数碰巧等于篇数，仍要按场合核，不能因此说第十三篇也是轮讲。</li>
+              <li>本页不检验十三篇公平性，也不把马普尔的乡村观察写成全书方法。</li>
+            </ul>
+          </article>
+        </div>
+        <p class="cannot"><strong>不能推出：</strong>乔伊斯是画家；《死亡草》是一部长篇；第十三篇与前十二篇同一套轮讲格式。</p>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>回到原文</h2>
+            <p>先读框架，再决定要不要单篇深挖。</p>
+          </div>
+          <span class="time">约 30–40 分钟回读框架</span>
+        </div>
+        <ol class="route">
+          <li>
+            <h3>版权页、目录、献词</h3>
+            <p>核译者、ISBN，并看见第十一章也叫《死亡草》。</p>
+            <span class="locator">OEBPS/Text/part1167.xhtml–part1169.xhtml</span>
+          </li>
+          <li>
+            <h3>第一章开场到起名</h3>
+            <p>核六名成员、艺术家、俱乐部约定。亨利爵士开讲之后，可自行决定是否读完这一篇。</p>
+            <span class="locator">OEBPS/Text/part1170.xhtml</span>
+          </li>
+          <li>
+            <h3>第七章换场</h3>
+            <p>核班特里家、去年五六个人、当晚六人晚宴。</p>
+            <span class="locator">OEBPS/Text/part1176.xhtml</span>
+          </li>
+          <li>
+            <h3>第十三章开头即停框架</h3>
+            <p>核它不是轮讲开场。各篇谜底不在本页。</p>
+            <span class="locator">OEBPS/Text/part1182.xhtml</span>
+          </li>
+        </ol>
+        <div class="decision" style="margin-top:16px;">
+          <h3>下一步</h3>
+          <p>默认：自己选一篇读完。指定单篇深挖之前，不要把本页扩成十三份解答。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>阅读地图负责定向、核证和引导回原文，不替读者读完作品，也不把侦探小说做成谜底百科。</p>
+      <p>生成日期：2026-09-11 · <a href="reading.json">查看可核验结构数据</a> · <a href="../../reading.html">返回总地图</a></p>
+    </div>
+  </footer>
+</body>
+</html>

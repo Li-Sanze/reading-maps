@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》深挖：城投同时像政府和像企业，边界在哪？只读第三章第一节。">
+  <title>城投的政企边界｜置身事内深挖</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.05rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0.4em 0 1em; padding-left: 1.2em; }
+    li { margin-bottom: 0.4em; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 760;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { max-width: 860px; margin: 0; color: #eef6f0; }
+
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .source-box p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+    .model-figure {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+    .reading-card .guide { margin-bottom: 0.55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: #7a3030;
+      border-top: 1px dashed #e5c2c2;
+      font-size: 0.87rem;
+    }
+
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    details {
+      margin-bottom: 10px;
+      overflow: clip;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--moss); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .audit-box, .decision, .source-box, .reading-card, .model-figure, .route li, details { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      details > * { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html">← 返回《置身事内》主阅读地图</a>
+      <p class="eyebrow">Deep dive · 按需深挖 · 约 60 分钟</p>
+      <h1>城投的政企边界</h1>
+      <p class="lead">城投同时像政府和像企业，边界在哪？主地图只把它放进土地金融。这一节要看的是：公司外壳、一级开发和隐性担保怎样同时成立。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第三章第一节</span>
+        <span class="fact">只读 part0022</span>
+        <span class="fact">核心约 60 分钟</span>
+        <span class="fact">回原文 40–60 分钟</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="一句话模型">
+        <small>一句话模型 · 报告综合</small>
+        <strong>纸面上名称分开，业务上是混合体和合约。</strong>
+        <p>地方政府不能贷款，2015 年前也不能发债，政府也不能为平台担保。城投用公司去接土地、补贴和市场预期中的隐性担保，去做一级开发；民企也可以被写成招商职能的承包方。作者没有画出一条固定边界。这不是债务总量判断，也不是 2021 年以后的平台风险结论。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-nav">
+    <nav aria-label="页面目录">
+      <a href="#route">路线</a>
+      <a href="#scope">范围</a>
+      <a href="#shell">公司外壳</a>
+      <a href="#cases">职能换手</a>
+      <a href="#excerpts">短引</a>
+      <a href="#cannot">不能推出</a>
+      <a href="#critical">批判</a>
+      <a href="#source">回原文</a>
+      <a href="#decision">下一步</a>
+    </nav>
+  </div>
+
+  <main id="main" class="shell">
+    <section id="route" aria-labelledby="route-title">
+      <div class="section-head">
+        <div>
+          <h2 id="route-title">先走核心 60 分钟</h2>
+          <p>只回答一个问题。第二节的债务数字、第三章结语的角色判断，都不在本页。</p>
+        </div>
+        <span class="time">约 60 分钟</span>
+      </div>
+      <ol class="route">
+        <li>
+          <strong>认范围</strong>
+          <span>5 分钟 · 确认只读第一节，不把城投做成债市百科。</span>
+        </li>
+        <li>
+          <strong>看公司外壳</strong>
+          <span>12 分钟 · 法律为什么逼出公司，城投的三个典型特征是什么。</span>
+        </li>
+        <li>
+          <strong>看职能怎样换手</strong>
+          <span>13 分钟 · 一级开发一般由谁做，二级开发在例子里含什么，哪些地方会整包。</span>
+        </li>
+        <li>
+          <strong>核四段短引</strong>
+          <span>15 分钟 · 分开原话、主张和本页综合。</span>
+        </li>
+        <li>
+          <strong>写下不能推出什么</strong>
+          <span>15 分钟 · 再决定要不要回读 <code>OEBPS/Text/part0022.xhtml</code>。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="scope" aria-labelledby="scope-title">
+      <div class="section-head">
+        <div>
+          <h2 id="scope-title">这个问题落在哪一节</h2>
+          <p>模块不是原书新增章节。它只打开一节，把主地图没展开的边界问清楚。</p>
+        </div>
+        <span class="time">5 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="source-box">
+          <span class="origin author">纳入</span>
+          <h3>第三章第一节</h3>
+          <p class="muted">目录题名《城投公司与土地金融》。作者从实业投资难退出说起，用宽窄巷子说明融资平台的典型特征，再用苏州工业园区和华夏幸福对照：同一套土地开发，既可以留在国企，也可以整包给民企。</p>
+          <span class="locator">OEBPS/Text/part0022.xhtml · 纯文本块 1–24</span>
+        </article>
+        <article class="source-box">
+          <span class="origin audit">排除</span>
+          <h3>不读进隔壁节</h3>
+          <p class="muted">第二节《地方政府债务》、第三章结语“根源不在收入不够”，以及第六章 2008 年后的债务路径，都不进入本页作者主张。作者提到第二章土地财政和“运营商场”时，只当作回指，本页不重做分税制。</p>
+          <span class="locator">不打开 part0023、part0025、part0043–part0045</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="shell" aria-labelledby="shell-title">
+      <div class="section-head">
+        <div>
+          <h2 id="shell-title">先有公司，才有后面的混合</h2>
+          <p>城投像企业，是因为法律不允许政府直接借；像政府，是因为资产、补贴和市场预期仍从政府来。</p>
+        </div>
+        <span class="time">12 分钟</span>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <span class="origin quote">作者原话</span>
+          <h3>借钱要成立专门的公司</h3>
+          <blockquote>
+            <p>法律规定，地方政府不能从银行贷款，2015年之前也不允许发行债券，所以政府要想借钱投资，需要成立专门的公司。</p>
+          </blockquote>
+          <span class="locator">块 5 · part0022.xhtml</span>
+        </article>
+        <article class="card">
+          <span class="origin author">作者主张</span>
+          <h3>两个名字，同一类公司</h3>
+          <p class="muted">“地方政府融资平台”是经济学家和财经媒体的叫法，突出融资和负债。这些公司的正式名称多带“建设投资”或“投资开发”，也常被统称为城投。作者举的是芜湖建设投资有限公司、上海城市建设投资开发总公司（上海城投集团）、成都文化旅游发展集团这类国资委或市政府的全资公司。</p>
+          <span class="locator">块 5 · part0022.xhtml</span>
+        </article>
+      </div>
+      <div class="grid-3" style="margin-top:12px">
+        <article class="card">
+          <span class="origin author">特征一</span>
+          <h3>土地可以撬动贷款</h3>
+          <p class="muted">成都文旅持有从政府取得的土地使用权。资产、运营收入和补贴一起，被作者写成可以撬动银行贷款和其他资金。2007 年注册资本 5 亿元，主业是开发宽窄巷子；2018 年注册资本 31 亿元，资产 204 亿元。</p>
+          <span class="locator">块 8 · part0022.xhtml</span>
+        </article>
+        <article class="card">
+          <span class="origin author">特征二</span>
+          <h3>盈利常靠补贴</h3>
+          <p class="muted">2015–2016 年，文旅净利润 6600 多万元，各类补贴超过 2 亿元。补贴包括税收返还和公共预算专项；政府也可以先有偿转让土地使用权，再把转让费原数返还。2015 年新《预算法》要求清理补贴后，2017–2018 年净利润近 1.4 亿元，补贴降到不足 4000 万元。</p>
+          <span class="locator">块 9 · part0022.xhtml</span>
+        </article>
+        <article class="card">
+          <span class="origin author">特征三</span>
+          <h3>市场认隐性担保</h3>
+          <p class="muted">银行授信 176 亿元，债券评级 AA+。作者说该公司是否该有这么高信用，见仁见智；市场一般认为平台背后有政府隐性担保。所谓隐性，是因为《担保法》不许政府为平台担保，但政府不断注入资产，市场便认为这些公司不会破产。</p>
+          <span class="locator">块 11 · part0022.xhtml</span>
+        </article>
+      </div>
+      <article class="card" style="margin-top:12px">
+        <span class="origin author">作者主张</span>
+        <h3>依赖补贴，不等于已经判了没效率</h3>
+        <p class="muted">平台项目多有基础设施属性，项目本身盈利能力不强，否则也就无需政府来做。回报要算带动的经济和社会效益。作者马上限定：这些“大账”怎么算，争议很大；福利分析作为推理有些用处，估出的具体数字并不可靠。宽窄巷子后来游客很多，即使项目本身没有净利，对政府和居民来说，周边商业和客流也可能更重要。这是作者的限定，不是本页替他算完一笔账。</p>
+        <span class="locator">块 10 · part0022.xhtml</span>
+      </article>
+    </section>
+
+    <section id="cases" aria-labelledby="cases-title">
+      <div class="section-head">
+        <div>
+          <h2 id="cases-title">同一套开发，谁来做并不固定</h2>
+          <p>四个例子只说明职能可以换手。作者没有把“谁做哪一段”画成一条固定边界。</p>
+        </div>
+        <span class="time">13 分钟</span>
+      </div>
+      <figure class="model-figure">
+        <p class="model-hint">手机端可在图内横向滚动；页面本身不会跟着横移。</p>
+        <div class="model-scroll">
+          <svg class="model-canvas" viewBox="0 0 900 320" role="img" aria-labelledby="boundary-svg-title boundary-svg-desc">
+            <title id="boundary-svg-title">纸面约束和业务现象对不上</title>
+            <desc id="boundary-svg-desc">纸面上政府和企业名称分开：政府不能从银行贷款，2015年前不能发债，不能为平台担保，也不能直接分税。业务上城投是混合体，用公司外壳接土地和补贴，市场另有隐性担保预期。一级开发一般由平台做；二级开发是建设与运营，苏州例子里也包括招商。有些地方把园区和招商整包给民企，分成写成服务费。</desc>
+            <g font-family="ui-sans-serif, system-ui, 'PingFang SC', sans-serif">
+              <text x="24" y="26" font-size="13" font-weight="800" fill="#3f5d4c">纸面分开，业务对不上</text>
+              <rect x="548" y="10" width="18" height="12" rx="3" fill="#fffdf8" stroke="#3f5d4c"/>
+              <text x="572" y="20" font-size="11" fill="#5e6b64">实线框＝纸面约束或公司形式</text>
+              <rect x="548" y="28" width="18" height="12" rx="3" fill="#fffbef" stroke="#8a5724" stroke-dasharray="4 3"/>
+              <text x="572" y="38" font-size="11" fill="#5e6b64">虚线框＝市场预期或合约写法</text>
+
+              <rect x="24" y="52" width="268" height="100" rx="14" fill="#fffdf8" stroke="#3f5d4c"/>
+              <text x="158" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#3f5d4c">纸面 · 政府</text>
+              <text x="158" y="98" text-anchor="middle" font-size="13" fill="#24352f">不能从银行贷款</text>
+              <text x="158" y="118" text-anchor="middle" font-size="13" fill="#24352f">2015年前不能发债</text>
+              <text x="158" y="138" text-anchor="middle" font-size="12" fill="#5e6b64">不能担保 · 不能直接分税</text>
+
+              <text x="450" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#5e6b64">名称分开</text>
+              <text x="450" y="118" text-anchor="middle" font-size="12" fill="#5e6b64">不是业务边界</text>
+
+              <rect x="608" y="52" width="268" height="100" rx="14" fill="#fffdf8" stroke="#3f5d4c"/>
+              <text x="742" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="#35586a">纸面 · 企业</text>
+              <text x="742" y="114" text-anchor="middle" font-size="13" fill="#24352f">公司外壳</text>
+              <text x="742" y="134" text-anchor="middle" font-size="12" fill="#5e6b64">可以贷款、发债</text>
+
+              <rect x="24" y="172" width="416" height="128" rx="14" fill="#e4eee7" stroke="#3f5d4c"/>
+              <text x="232" y="196" text-anchor="middle" font-size="14" font-weight="800" fill="#2a4035">城投是混合体</text>
+              <text x="232" y="218" text-anchor="middle" font-size="13" fill="#24352f">像企业：公司、贷款、发债</text>
+              <text x="232" y="238" text-anchor="middle" font-size="13" fill="#24352f">像政府：土地注入、补贴</text>
+              <rect x="48" y="252" width="368" height="36" rx="10" fill="#fffbef" stroke="#8a5724" stroke-dasharray="4 3"/>
+              <text x="232" y="275" text-anchor="middle" font-size="12" fill="#8a5724">市场认隐性担保，不是法律担保</text>
+
+              <rect x="460" y="172" width="416" height="128" rx="14" fill="#e7f0f4" stroke="#35586a"/>
+              <text x="668" y="196" text-anchor="middle" font-size="14" font-weight="800" fill="#35586a">职能可以换手</text>
+              <text x="668" y="218" text-anchor="middle" font-size="13" fill="#24352f">一级：一般由平台做</text>
+              <text x="668" y="238" text-anchor="middle" font-size="13" fill="#24352f">二级：建设与运营；苏州例子含招商</text>
+              <rect x="484" y="252" width="368" height="36" rx="10" fill="#fffbef" stroke="#8a5724" stroke-dasharray="4 3"/>
+              <text x="668" y="275" text-anchor="middle" font-size="12" fill="#8a5724">有些地方整包给民企，分成写成服务费</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>虚线只标市场预期和合约写法。四个例子说明职能可以换手，不证明每种地方都会走到同一格。</figcaption>
+      </figure>
+      <div class="grid-2">
+        <article class="card">
+          <span class="origin author">宽窄巷子</span>
+          <h3>全程留给市属国企</h3>
+          <p class="muted">历史文化保护、拆迁修缮、投资大、周期长、盈利前景不明，民营企业难以处理。2003 年启动，2007 年前成都城投做，之后成都文旅接手；2008 年开放，2019 年 6 月首期才完成，共 16 年。从文旅接手算，投入约 6.5 亿元，来源包括贷款、自有收入和政府补贴。作者后来说这个项目比较特殊。</p>
+          <span class="locator">块 6；“比较特殊”在块 12 · part0022.xhtml</span>
+        </article>
+        <article class="card">
+          <span class="origin author">万达 / 新天地</span>
+          <h3>平台只做一级</h3>
+          <p class="muted">大多数城市休闲项目没有这么复杂的历史建筑保护。万达广场和上海新天地（以及武汉天地、重庆天地）是政府一次性出让土地使用权，由万达、瑞安开发和运营。当地融资平台一般只参与前期拆迁和土地整理。</p>
+          <span class="locator">块 12 · part0022.xhtml</span>
+        </article>
+        <article class="card">
+          <span class="origin author">苏州工业园区</span>
+          <h3>国企分段，政府仍招商</h3>
+          <p class="muted">兆润由园区管委会全资持有，做一级开发和基础设施建设，主业被作者称为典型土地金融：土地注入、抵押贷款或质押未来土地出让受益权，管委会回购后再招拍挂。中新做建设、招商、运营。作者写：工业园区更像基础设施，投资大、盈利低，大都由平台类国企主导，之后交给政府招商；苏州这类地方招商重点是优中选优。</p>
+          <span class="locator">块 15–17 · part0022.xhtml</span>
+        </article>
+        <article class="card">
+          <span class="origin author">华夏幸福</span>
+          <h3>民企整包，赚钱靠卖房</h3>
+          <p class="muted">很多中西部市县招商更困难，政府除了土地没什么家底。作者写的是其中有些地方会划出一片地，把园区开发和招商一并委托给民企。华夏幸福同时拿工业用地和商住用地；固安项目签约土地超过 170 平方公里。工业园区很难盈利，所以“产”是旗帜，“城”是重点，用卖房快钱养园区。法律不许直接分享税收，于是写成产业发展服务费。作者还写：政府可以把整套“运营商场”式招商外包给这类民企。</p>
+          <span class="locator">块 18–21、23 · part0022.xhtml</span>
+        </article>
+      </div>
+      <details>
+        <summary>PPP 在本节里只用来说明什么</summary>
+        <div class="detail-body">
+          <p class="muted">政府付费使用私营企业开发的基础设施，作者称为 PPP，源于海外，不是中国发明。若说中国特色，可能有二：项目多、规模大；落地项目里的“社会资本”大都不是民企，而是融资平台或其他国企。截至 2020 年 5 月，入库 PPP 9575 个、总额近 15 万亿元，真正开工建设的只有四成。截至 2019 年末，落地项目中民企参与率不过三成，大都只做垃圾或污水处理这类独立项目。华夏幸福的固安项目被写成国家级 PPP 示范；传统房企跟进产城融合，作者写效果如何尚待观察。这些数字停在书里标明的时点，不改写成现在的市场结论。</p>
+        </div>
+      </details>
+    </section>
+
+    <section id="excerpts" aria-labelledby="excerpts-title">
+      <div class="section-head">
+        <div>
+          <h2 id="excerpts-title">核四段短引</h2>
+          <p>短引只用来卡住论证。导读是报告的话，不要和原话混读。</p>
+        </div>
+        <span class="time">15 分钟</span>
+      </div>
+      <div class="excerpt-grid">
+        <article class="reading-card">
+          <span class="origin quote">短引 1</span>
+          <p class="guide muted">先看法律为什么逼出公司，再看“融资平台”和“城投”是不是两类东西。</p>
+          <blockquote>
+            <p>法律规定，地方政府不能从银行贷款，2015年之前也不允许发行债券，所以政府要想借钱投资，需要成立专门的公司。</p>
+          </blockquote>
+          <p class="cannot">不能从这句推出 2015 年后政府已经不能再通过公司借钱，也不能推出本节已经写完地方政府债务。</p>
+          <span class="locator">块 5 · 搜：法律规定，地方政府不能从银行贷款</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 2</span>
+          <p class="guide muted">隐性担保是市场看法，前提是法律不许政府担保。</p>
+          <blockquote>
+            <p>所谓“隐性”，是因为《担保法》规定政府不能为融资平台提供担保。但其实政府不断为融资平台注入各类资产，市场自然认为这些公司不会破产，政府不会“见死不救”，所以风险很低。</p>
+          </blockquote>
+          <p class="cannot">不能把“市场认为不会破产”写成作者担保这些公司不会出险，也不能写成 2021 年以后的违约已经被本书写定。</p>
+          <span class="locator">块 11 · 搜：所谓“隐性”，是因为《担保法》</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 3</span>
+          <p class="guide muted">一级开发解释城投为什么常常不像普通开发商。</p>
+          <blockquote>
+            <p>“一级开发”投入大、利润低，且涉及拆迁等复杂问题，一般由政府融资平台公司完成。</p>
+          </blockquote>
+          <p class="cannot">“一般”不是“全部”。宽窄巷子全程国企，华夏幸福连一级带二级都做，作者都写了。</p>
+          <span class="locator">块 12 · 搜：“一级开发”投入大、利润低</span>
+        </article>
+        <article class="reading-card">
+          <span class="origin quote">短引 4</span>
+          <p class="guide muted">作者对“边界在哪”的收束，不是另画一条分界线。</p>
+          <blockquote>
+            <p>从纸面定义看，各种实体似乎泾渭分明，但从实际业务和行为模式来看，融资平台类公司就是企业和政府的混合体，而民营企业如华夏幸福，又承担着政府的招商职能。</p>
+          </blockquote>
+          <p class="cannot">下一句是“现实世界中没有定义，只有现象，只有环环相扣的权责关系。”不要把科斯、张五常的引用读成作者证明了一条新的企业理论。</p>
+          <span class="locator">块 24 · 搜：融资平台类公司就是企业和政府的混合体</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="cannot" aria-labelledby="cannot-title">
+      <div class="section-head">
+        <div>
+          <h2 id="cannot-title">本页综合，以及推不出去的东西</h2>
+          <p>综合是阅读顺序，不是作者列出的公式。</p>
+        </div>
+        <span class="time">8 分钟</span>
+      </div>
+      <article class="card" style="margin-bottom:12px">
+        <span class="origin synthesis">报告综合</span>
+        <h3>先看法条，再看分段，最后看合约</h3>
+        <p class="muted">一条够用的阅读线索是：法律不允许政府直接贷款、2015 年前也不允许发债，才出现公司外壳；公司外壳接上土地、补贴和市场预期中的隐性担保，城投才同时像企业和像政府；一级/二级分段解释职能为什么常常留在平台；四个例子说明同一套职能也可以整包给民企，税收分成则写成产业发展服务费。作者停在“没有定义，只有现象和合约”，并说简单的政府—市场二元观没什么用。</p>
+      </article>
+      <div class="grid-2">
+        <article class="audit-box limit">
+          <span class="origin audit">不能推出</span>
+          <ul>
+            <li>全国城投债务规模、扩张速度，或“根源不是收入不够”。</li>
+            <li>凡保护项目必归国企、凡中西部必外包、凡园区必靠卖房。</li>
+            <li>隐性担保等于法律担保，或政府永远救助。</li>
+            <li>依赖补贴就是没效率；作者说不能一概而论，大账数字不可靠。</li>
+            <li>华夏幸福后来是否出险，或传统房企跟进产城融合的效果。</li>
+            <li>当下某家平台会不会被救，或现在该怎样化债。</li>
+          </ul>
+        </article>
+        <article class="audit-box strength">
+          <span class="origin author">本节能站住的</span>
+          <ul>
+            <li>城投首先是政府要借钱投资时成立的专门公司。</li>
+            <li>土地、补贴和隐性担保是作者给出的三个典型特征。</li>
+            <li>一级开发解释它为什么不像普通房企。</li>
+            <li>民企也可以承担政府招商，纸面名称不能决定职能归属。</li>
+            <li>作者要读者去看约束和合约，而不是套政府/市场标签。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="critical" aria-labelledby="critical-title">
+      <div class="section-head">
+        <div>
+          <h2 id="critical-title">批判审计</h2>
+          <p>先复述作者说了什么，再标出例子、预期和时间的限度。</p>
+        </div>
+        <span class="time">7 分钟</span>
+      </div>
+      <div class="audit-grid">
+        <article class="audit-box strength">
+          <span class="origin audit">站得住</span>
+          <h3>名称和业务被分开了</h3>
+          <p class="muted">“融资平台”和“城投”、法律不能担保和市场认担保、不能直接分税和服务费分成，作者都成对写出。读者不容易再把公司执照当成边界本身。</p>
+        </article>
+        <article class="audit-box limit">
+          <span class="origin audit">例子不是定律</span>
+          <h3>四个项目是对照，不是样本</h3>
+          <p class="muted">宽窄巷子被作者标成特殊；苏州园区被写成最成功的之一；华夏幸福被写成代表，并依赖《财新周刊》的报道。不能用它们证明所有城市都会走到同一格。</p>
+        </article>
+        <article class="audit-box limit">
+          <span class="origin audit">预期不是结局</span>
+          <h3>隐性担保停在市场看法</h3>
+          <p class="muted">作者写“见仁见智”，也写市场认为风险很低。本页不把后来个别平台的违约、重组或救助写成这本书的后记。</p>
+        </article>
+        <article class="audit-box">
+          <span class="origin external">外部背景</span>
+          <h3>2021 年以后不补进主张</h3>
+          <p class="muted">2023 精装纪念版未打开。华夏幸福及平台公司在 2021 年以后的经营结果，只用来提醒不要后见，不进入作者主张。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="source" aria-labelledby="source-title">
+      <div class="section-head">
+        <div>
+          <h2 id="source-title">回原文路线</h2>
+          <p>地图不能代替这一节。若要核例子和数字，回到 EPUB 内部路径。</p>
+        </div>
+        <span class="time">可选 40–60 分钟</span>
+      </div>
+      <ol class="route">
+        <li>
+          <strong>为何必须成立公司</strong>
+          <span>约 10 分钟 · 块 4–5 · 法律约束和两种名称。</span>
+          <code>OEBPS/Text/part0022.xhtml</code>
+        </li>
+        <li>
+          <strong>三特征和一级开发</strong>
+          <span>约 15 分钟 · 块 6–12 · 宽窄巷子由谁一手包办，以及土地、补贴、隐性担保和生地变熟地。</span>
+        </li>
+        <li>
+          <strong>苏州园区与华夏幸福</strong>
+          <span>约 15 分钟 · 块 13–21 · 同一套开发怎样换手，税收为什么写成服务费。</span>
+        </li>
+        <li>
+          <strong>PPP 与收束</strong>
+          <span>约 10 分钟 · 块 22–24 · 社会资本多为国企，以及“没有定义，只有合约”。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="decision" aria-labelledby="decision-title">
+      <div class="section-head">
+        <div>
+          <h2 id="decision-title">读完这一问之后</h2>
+          <p>能分开纸面约束和业务现象、一级和二级、市场预期和法律担保，这一问就可以停。债务为什么在 2008 年后膨胀，是另一个问题。</p>
+        </div>
+        <span class="time">3 分钟</span>
+      </div>
+      <div class="decision-grid">
+        <article class="decision recommended">
+          <strong>推荐：回读这一节</strong>
+          <p>按四段路线把例子和限定语读一遍。若问题已经变成当代某家平台会不会被救，本页答不了，另找更新材料。</p>
+        </article>
+        <article class="decision">
+          <strong>现在停止</strong>
+          <p>若你已经能说出城投为什么必须是公司、一级开发为什么常留给它、隐性担保为什么是市场看法，主地图加本页就够用。</p>
+        </article>
+        <article class="decision">
+          <strong>不要在本页继续的</strong>
+          <p>不要从这里直接跳去全国债务数字，也不要让本页回答“能不能只靠金融手段化解”。那是另一节的问题，见债务路径模块。</p>
+        </article>
+        <article class="decision">
+          <strong>另见：债务路径</strong>
+          <p>2008–2018 年中国债务为何积累、为什么不能只靠金融化解，见已生成的 <a href="../china-debt-path-and-resolution/reading.html">债务路径</a>。本页不重做那三节。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <p>来源：用户提供的 2021 年上海人民出版社 EPUB。原书保持私有。本仓库只保存原创结构、评论、必要短引和定位。</p>
+      <p>内容已标为作者原话、作者主张、报告综合、批判审计和外部背景。模块用来回第三章第一节，不代替阅读，也不回答债务总量。</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="《置身事内》深挖：债务如何从个人或企业问题变成系统风险？只读第六章开篇与第一、二节。">
+  <title>债务怎样变成系统风险｜置身事内深挖</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --surface: #fffdf8;
+      --ink: #24352f;
+      --muted: #5e6b64;
+      --line: #d7d1c4;
+      --moss: #3f5d4c;
+      --moss-deep: #2a4035;
+      --moss-soft: #e4eee7;
+      --clay: #8a5724;
+      --clay-soft: #f7ecd9;
+      --slate: #35586a;
+      --slate-soft: #e7f0f4;
+      --plum: #67528b;
+      --plum-soft: #efebf7;
+      --content: 1080px;
+      --radius: 18px;
+      --shadow: 0 8px 26px rgba(36, 53, 47, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(63, 93, 76, 0.1), transparent 24rem),
+        var(--paper);
+      font-family: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--moss-deep); text-underline-offset: 0.2em; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #d4a24a;
+      outline-offset: 3px;
+      border-radius: 7px;
+    }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+    h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.05rem); }
+    h3 { margin: 0 0 8px; font-size: 1.06rem; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0.4em 0 1em; padding-left: 1.2em; }
+    li { margin-bottom: 0.4em; }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 11px 15px;
+      color: white;
+      background: var(--moss-deep);
+      border-radius: 10px;
+    }
+    .skip-link:focus { transform: none; }
+    .shell { width: min(100% - 40px, var(--content)); margin-inline: auto; }
+    .hero { padding: 54px 0 34px; border-bottom: 1px solid var(--line); }
+    .site-back {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--moss);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .fact {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      max-width: 100%;
+      padding: 7px 12px;
+      color: var(--moss-deep);
+      background: rgba(255, 253, 248, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .verdict {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--moss-deep), var(--moss));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .verdict small { color: #d7e6dc; font-weight: 800; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .verdict strong { font-size: 1.28rem; }
+    .verdict p { max-width: 860px; margin: 0; color: #eef6f0; }
+    .section-nav {
+      position: sticky;
+      z-index: 8;
+      top: 0;
+      background: rgba(244, 241, 232, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-nav nav {
+      display: flex;
+      width: min(100%, var(--content));
+      min-height: 52px;
+      margin-inline: auto;
+      padding-inline: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-nav nav::-webkit-scrollbar { display: none; }
+    .section-nav a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      min-height: 48px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .section-nav a:hover { color: var(--moss-deep); }
+    main { padding-block: 34px 76px; }
+    section { margin-bottom: 52px; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head p { margin: 5px 0 0; color: var(--muted); }
+    .time {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      color: var(--moss-deep);
+      background: var(--moss-soft);
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { display: grid; gap: 12px; }
+    .grid-2, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card, .audit-box, .decision, .source-box, .reading-card {
+      min-width: 0;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(36, 53, 47, 0.035);
+    }
+    .card p:last-child, .audit-box p:last-child, .decision p:last-child, .source-box p:last-child, .reading-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .origin {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      margin: 0 0 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.03em;
+    }
+    .author { color: var(--slate); background: var(--slate-soft); }
+    .quote { color: var(--moss-deep); background: var(--moss-soft); }
+    .synthesis { color: var(--plum); background: var(--plum-soft); }
+    .audit { color: var(--clay); background: var(--clay-soft); }
+    .external { color: var(--moss); background: var(--moss-soft); }
+    .locator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+    .model-figure {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .model-hint { margin: 0; padding: 10px 14px 0; color: var(--muted); font-size: 0.76rem; }
+    .model-scroll { min-width: 0; max-width: 100%; overflow-x: auto; padding: 12px; scrollbar-color: #c3b9ac transparent; }
+    .model-canvas { display: block; width: 900px; max-width: none; height: auto; margin-inline: auto; }
+    .model-figure figcaption { padding: 11px 14px 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
+    blockquote {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      background: #fffbef;
+      border-left: 3px solid var(--clay);
+      border-radius: 4px 12px 12px 4px;
+    }
+    blockquote p { margin: 0; color: var(--ink); font-size: 1rem; }
+    .reading-card .guide { margin-bottom: 0.55em; }
+    .reading-card .cannot {
+      margin-top: 10px;
+      padding-top: 10px;
+      color: #7a3030;
+      border-top: 1px dashed #e5c2c2;
+      font-size: 0.87rem;
+    }
+    .route { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
+    .route li {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 16px 58px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      counter-increment: route;
+    }
+    .route li::before {
+      content: counter(route);
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: white;
+      background: var(--moss);
+      border-radius: 50%;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .route strong { display: block; }
+    .route span { display: block; color: var(--muted); font-size: 0.88rem; }
+    .route code {
+      color: var(--moss-deep);
+      font-family: inherit;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+    .strength { border-top: 4px solid var(--moss); }
+    .limit { border-top: 4px solid var(--clay); }
+    .audit-box ul { margin: 0; padding-left: 1.15rem; }
+    .audit-box li { margin-bottom: 8px; }
+    details {
+      margin-bottom: 10px;
+      overflow: clip;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--moss); font-size: 1.25rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+    .detail-body > :first-child { margin-top: 14px; }
+    .decision.recommended { border: 2px solid var(--moss); }
+    .decision strong { display: block; margin-bottom: 7px; }
+    .decision p { color: var(--muted); font-size: 0.92rem; }
+    footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 7px; }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, var(--content)); }
+      .hero { padding-top: 38px; }
+      .section-head { display: block; }
+      .time { display: inline-flex; margin-top: 10px; }
+      .grid-2, .grid-3, .audit-grid, .decision-grid, .excerpt-grid { grid-template-columns: 1fr; }
+      .model-canvas { width: 820px; }
+      .facts { flex-direction: column; align-items: stretch; }
+      .fact { display: flex; width: 100%; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+    @media print {
+      body { background: white; }
+      .section-nav, .skip-link { display: none; }
+      .shell { width: 100%; }
+      .card, .audit-box, .decision, .source-box, .reading-card, .model-figure, .route li, details { box-shadow: none; break-inside: avoid; }
+      .grid-2 { break-inside: avoid; }
+      .model-scroll { overflow: visible; }
+      .model-canvas { width: 100%; }
+      details > * { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="hero">
+    <div class="shell">
+      <a class="site-back" href="../../reading.html">← 返回《置身事内》主阅读地图</a>
+      <p class="eyebrow">Deep dive · 按需深挖 · 约 60 分钟</p>
+      <h1>债务怎样变成系统风险</h1>
+      <p class="lead">个人或企业还不上钱，怎样传到银行、消费和别人头上？主地图只留下传导的句子。这一节要看开篇三类风险、部门互拖，以及欧美债台高筑的条件。</p>
+      <div class="facts" aria-label="模块信息">
+        <span class="fact">第六章开篇与第一、二节</span>
+        <span class="fact">只读 part0040–part0042</span>
+        <span class="fact">核心约 60 分钟</span>
+        <span class="fact">回原文 45–65 分钟</span>
+        <span class="fact">材料停在 2021</span>
+      </div>
+      <div class="verdict" aria-label="一句话模型">
+        <small>一句话模型 · 报告综合</small>
+        <strong>债把各部门拴在一起；一个部门出问题，可能传到其他部门。</strong>
+        <p>房价不跌，重债家庭也缺腾挪。各部门负债都高时，违约、收贷和裁员会互拖；负债太重时，抛售和抵押物缩水还会让危机来得更快。欧美例子是前车可鉴，不是中国十年路径。</p>
+      </div>
+    </div>
+  </header>
+  <div class="section-nav">
+    <nav aria-label="页面目录">
+      <a href="#route">路线</a>
+      <a href="#scope">范围</a>
+      <a href="#risks">三类风险</a>
+      <a href="#loop">部门互拖</a>
+      <a href="#why">债台条件</a>
+      <a href="#excerpts">短引</a>
+      <a href="#cannot">不能推出</a>
+      <a href="#critical">批判</a>
+      <a href="#source">回原文</a>
+      <a href="#decision">读完之后</a>
+    </nav>
+  </div>
+  <main id="main">
+    <section id="route" aria-labelledby="route-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="route-title">这一问怎么读</h2>
+            <p>先看家庭故事里的三类风险，再分开看部门互拖和危机为何来得快。第二节只作前车，不要做成摘要，也不要读成中国十年路径。</p>
+          </div>
+          <span class="time">5 分钟</span>
+        </div>
+        <ol class="route">
+          <li>
+            <strong>先分开两问</strong>
+            <span>本页只问一般传导。中国十年为何积累，见已生成的 <a href="../china-debt-path-and-resolution/reading.html">债务路径</a>。</span>
+          </li>
+          <li>
+            <strong>房价不跌也脆</strong>
+            <span>开篇情侣故事：收入从 5 万落到 2 万，按揭 3 万不动。作者写的是三类风险，不是 2018 年才开始有债。</span>
+          </li>
+          <li>
+            <strong>一个人拖住一圈人</strong>
+            <span>先看违约、收贷、裁员；再看抛售和抵押物为何让危机来得快。美国、温州、爱尔兰只作对照。</span>
+          </li>
+          <li>
+            <strong>再看钱为什么借得出去</strong>
+            <span>第二节只核住房需求和资金供给打开。人性不是全部原因，银行四点点到为止。</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="scope" aria-labelledby="scope-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="scope-title">范围：只读开篇和一般原理</h2>
+            <p>作者自己把第一、二节标成一般经济学原理，欧美写得多一点，前车可鉴。第三节中国路径、第四节化解，不在本页。</p>
+          </div>
+          <span class="time">4 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>纳入</h3>
+            <p>开篇家庭故事与三类风险；债务占 GDP 数字的限度；部门互拖、抛售与信贷收缩、消费和通缩；欧美债台高筑的资金供给与分配条件。</p>
+            <span class="locator">OEBPS/Text/part0040.xhtml 至 part0042.xhtml</span>
+          </article>
+          <article class="card">
+            <span class="origin audit">排除</span>
+            <h3>不在本页重做</h3>
+            <p>2008–2018 年中国债务路径与化解框架，见 <a href="../china-debt-path-and-resolution/reading.html">债务路径</a>。城投怎样同时像政府和企业，见 <a href="../chengtou-boundary/reading.html">城投边界</a>。第五章居民债务专论不重写。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="risks" aria-labelledby="risks-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="risks-title">房价不跌，重债家庭也缺腾挪</h2>
+            <p>开篇用一对上海金融从业者说明：乐观时借得过多，风险一来腾挪很少。</p>
+          </div>
+          <span class="time">12 分钟</span>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>债务缺乏弹性</h3>
+            <p>发了财，债务不会跟着涨；倒了霉，债务一分不少。故事里按揭每月 3 万，收入从 5 万落到 2 万，还款不变。</p>
+            <span class="locator">part0040.xhtml · 块 2–4</span>
+          </article>
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>收入很容易变</h3>
+            <p>宏观、行业、公司、个人都能改收入。就算不失业、不降薪，增长放缓对高负债家庭已是风险：既要还本又要付息。</p>
+            <span class="locator">part0040.xhtml · 块 4</span>
+          </article>
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>支出也会变</h3>
+            <p>急事、老人看病、养孩子都会突然要钱。作者写：就算房价不下跌，也至少有这三大风险。</p>
+            <span class="locator">part0040.xhtml · 块 4</span>
+          </article>
+        </div>
+        <article class="card" style="margin-top:12px">
+          <span class="origin author">作者主张 · 数字有限度</span>
+          <h3>258% 是本章背景，不是本页已经写完的中国路径</h3>
+          <p>2018 年末中国债务总量占 GDP 258%，与美国 257% 持平，十年债务增加 5.5 倍、GDP 增加 2.8 倍、比重翻了一番。作者写明：此处债务仅包括银行贷款和债券。他立刻又写：债务占 GDP 能否衡量真实负担，目前尚有争议；利率为零甚至为负时，只要名义 GDP（内含物价）保持上涨，对政府公共债务来说，这个比重可能不是大问题，可以不断借新还旧。对居民和企业，总量快速上升依然风险很大。这些数字只说明为何要谈风险。十年如何走，在第三节。</p>
+          <span class="locator">part0040.xhtml · 块 5、7–9</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="loop" aria-labelledby="loop-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="loop-title">一个人还不上，怎样变成一圈人的紧缩</h2>
+            <p>正常运行离不开债务。系统风险来自部门互为资产负债，不是来自“借钱本身不该存在”。</p>
+          </div>
+          <span class="time">16 分钟</span>
+        </div>
+        <figure class="model-figure" aria-labelledby="loop-svg-title" aria-describedby="loop-svg-desc">
+          <p class="model-hint">窄屏可左右滑动看图，整页不应跟着横移。</p>
+          <div class="model-scroll">
+            <svg class="model-canvas" viewBox="0 0 900 420" role="img" aria-labelledby="loop-svg-title" aria-describedby="loop-svg-desc">
+              <title id="loop-svg-title">个人或企业出问题，怎样变成系统风险</title>
+              <desc id="loop-svg-desc">上排实线是作者先写的部门互拖：不还房贷、银行收贷、减产裁员、更多人还不上，可能形成系统风险。下排两条是作者另起的“来得快”的原因：抛售跳价，以及抵押物缩水后再收贷。虚线框标明例子是对照，不是中国复写。下排不是第三层起因，也不是中国十年路径。</desc>
+              <text x="450" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#2a4035">实线＝部门互拖，可能传导</text>
+              <rect x="28" y="44" width="196" height="70" rx="12" fill="#e7f0f4" stroke="#35586a" stroke-width="1.6"/>
+              <text x="126" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#24352f">有人不还房贷</text>
+              <text x="126" y="96" text-anchor="middle" font-size="12" fill="#5e6b64">个人或企业出问题</text>
+              <line x1="224" y1="79" x2="248" y2="79" stroke="#2a4035" stroke-width="2"/>
+              <polygon points="248,75 262,79 248,83" fill="#2a4035"/>
+              <rect x="262" y="44" width="196" height="70" rx="12" fill="#e4eee7" stroke="#3f5d4c" stroke-width="1.6"/>
+              <text x="360" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#24352f">银行坏账、收贷</text>
+              <text x="360" y="96" text-anchor="middle" font-size="12" fill="#5e6b64">压缩新增贷款</text>
+              <line x1="458" y1="79" x2="482" y2="79" stroke="#2a4035" stroke-width="2"/>
+              <polygon points="482,75 496,79 482,83" fill="#2a4035"/>
+              <rect x="496" y="44" width="180" height="70" rx="12" fill="#e4eee7" stroke="#3f5d4c" stroke-width="1.6"/>
+              <text x="586" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#24352f">企业减产裁员</text>
+              <text x="586" y="96" text-anchor="middle" font-size="12" fill="#5e6b64">更多人失去工作</text>
+              <line x1="676" y1="79" x2="700" y2="79" stroke="#2a4035" stroke-width="2"/>
+              <polygon points="700,75 714,79 700,83" fill="#2a4035"/>
+              <rect x="714" y="44" width="166" height="70" rx="12" fill="#efebf7" stroke="#67528b" stroke-width="1.6"/>
+              <text x="797" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#24352f">更多人还不上</text>
+              <text x="797" y="96" text-anchor="middle" font-size="12" fill="#5e6b64">坏账再增加</text>
+              <text x="450" y="148" text-anchor="middle" font-size="15" font-weight="700" fill="#8a5724">另起：来得快的两个原因，不是第三条起因</text>
+              <rect x="28" y="164" width="410" height="78" rx="12" fill="#f7ecd9" stroke="#8a5724" stroke-width="1.6"/>
+              <text x="233" y="196" text-anchor="middle" font-size="15" font-weight="700" fill="#24352f">一、抛售让价格跳水</text>
+              <text x="233" y="220" text-anchor="middle" font-size="13" fill="#5e6b64">不够还本甚至还息，就只能卖资产</text>
+              <rect x="462" y="164" width="418" height="78" rx="12" fill="#f7ecd9" stroke="#8a5724" stroke-width="1.6"/>
+              <text x="671" y="196" text-anchor="middle" font-size="15" font-weight="700" fill="#24352f">二、抵押物缩水后再收贷</text>
+              <text x="671" y="220" text-anchor="middle" font-size="13" fill="#5e6b64">也会殃及债务水平健康的部门</text>
+              <rect x="28" y="268" width="852" height="58" rx="12" fill="#fffdf8" stroke="#8a5724" stroke-width="1.6" stroke-dasharray="6 5"/>
+              <text x="454" y="294" text-anchor="middle" font-size="14" font-weight="700" fill="#8a5724">虚线框＝例子对照，不是同一跌幅</text>
+              <text x="454" y="314" text-anchor="middle" font-size="13" fill="#5e6b64">美国次贷、温州、爱尔兰、西班牙说明机制；前车可鉴指欧美，不是中国复写</text>
+              <rect x="28" y="342" width="852" height="58" rx="12" fill="#fffdf8" stroke="#5e6b64" stroke-width="1.4"/>
+              <text x="454" y="368" text-anchor="middle" font-size="14" font-weight="700" fill="#24352f">通缩会让欠的钱更值钱，实际负担更重</text>
+              <text x="454" y="388" text-anchor="middle" font-size="13" fill="#5e6b64">这是去杠杆过程里的加重，不是图上第三条起因</text>
+            </svg>
+          </div>
+          <figcaption>上排是作者先写的互拖，用「可能」。下排是另起的两个原因，说明为何来得快。虚线框只标例子对照。不要把下排读成第三层起因，也不要读成中国十年路径。</figcaption>
+        </figure>
+        <div class="grid-2">
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>部门怎样互拖</h3>
+            <p>银行既贷给个人也贷给企业。有人不还房贷，银行出现坏账、压缩贷款；企业减产裁员；更多人失去工作、还不上房贷。各部门负债都高时，风吹草动就可能变成危机。这是「可能」，不是一个人还不上就必然衰退。</p>
+            <span class="locator">part0041.xhtml · 块 2–3</span>
+          </article>
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>来得快，另有两个原因</h3>
+            <p>第一，负债太重、不够还本甚至还息就只能卖资产，人多了价格跳水。第二，抵押物缩水后银行缩减或中止新贷，资金链断裂，也会拖住本来健康的部门。这两条说明为何来势汹汹，不是把跌价画进上排互拖的必经节。</p>
+            <span class="locator">part0041.xhtml · 块 3–5</span>
+          </article>
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>通缩让欠的钱更重</h3>
+            <p>一个部门的负债对应着另一个部门的资产。去杠杆就是往来减少。物价和工资下跌时，欠的钱更值钱，实际负担更重。美国消费约占 GDP 七成。2008 年危机中，美国是危机之前房价越高的州，消费下降也越多；欧洲是 2008 年之前房价涨幅越大的国家，消费下降也越多。</p>
+            <span class="locator">part0041.xhtml · 块 6–7</span>
+          </article>
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>法律先保护债主，穷人先扛损失</h3>
+            <p>债务危机对穷人和富人的打击不对称。房价下跌时，高负债的穷人先承担损失，直到破产才转到银行及其股东。西班牙的例子被写成：破产后按揭本金仍在。这是对照，不是中国复写。</p>
+            <span class="locator">part0041.xhtml · 块 8</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" aria-labelledby="why-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="why-title">债台高筑：只作前车，不做成第二节摘要</h2>
+            <p>第二节标题是欧美的教训。它回答的是钱为什么借得出去，不是系统风险的第三条起因，也不是中国十年路径。</p>
+          </div>
+          <span class="time">10 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>人性不够，还要资金供给打开</h3>
+            <p>人性总想尽早满足欲望、对未来盲目乐观。20 世纪 80 年代以来，欧美环境刺激了居民对房子的需求。只增加借钱需求、不增加资金供给，利息会涨，债务总量不一定上升。资金供给的增加源于金融管制的放松。全球金融自由化浪潮始于 20 世纪 70 年代布雷顿森林体系的解体，此后银行危机变频繁。</p>
+            <span class="locator">part0042.xhtml · 块 2–7</span>
+          </article>
+          <article class="card">
+            <span class="origin author">作者主张</span>
+            <h3>银行为何爱把钱送到房子上</h3>
+            <p>银行要抵押物，土地和房子最合适，所以信贷常和房地产一起起落：繁荣时放贷，衰退时收贷。欧美主要国家银行信贷中将近六成都是按揭或不动产行业贷款。美国可贷资金还来自外国借款和国内富人花不完的钱，财富越集中，储蓄和负债可以同时升高。银行四点、投资占比和 2019 年官员讲话，只用来说明前车，不在本页展开。</p>
+            <span class="locator">part0042.xhtml · 块 10、14–16、19</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="excerpts" aria-labelledby="excerpts-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="excerpts-title">五句短引</h2>
+            <p>一句弹性、一句系统风险、一句通缩、一句前车、一句人性。</p>
+          </div>
+          <span class="time">8 分钟</span>
+        </div>
+        <div class="excerpt-grid">
+          <article class="reading-card">
+            <span class="origin quote">作者原话</span>
+            <p class="guide">开篇三类风险里的第一类。2018 是故事里收入下降的年份，不是债务起点。</p>
+            <blockquote><p>一是债务缺乏弹性。若顺风顺水发了财，债务不会跟着水涨船高；可一旦倒了霉，债务也一分不会少。</p></blockquote>
+            <span class="locator">part0040.xhtml · 块 4</span>
+          </article>
+          <article class="reading-card">
+            <span class="origin quote">作者原话</span>
+            <p class="guide">系统风险来自部门互拖。作者写的是「可能传导」，不是一个人还不上就必然衰退。</p>
+            <blockquote><p>债务关系让经济各部门之间的联系变得更加紧密，任何部门出问题都可能传导到其他部门，一石激起千层浪，形成系统风险。</p></blockquote>
+            <span class="locator">part0041.xhtml · 块 3</span>
+          </article>
+          <article class="reading-card">
+            <span class="origin quote">作者原话</span>
+            <p class="guide">物价下跌会加重实际债务。不要只记名义本金。</p>
+            <blockquote><p>这个过程中物价和工资会下跌（通货紧缩），而欠的钱会因为物价下跌变得更值钱了，实际债务负担就更重了。</p></blockquote>
+            <span class="locator">part0041.xhtml · 块 6</span>
+          </article>
+          <article class="reading-card">
+            <span class="origin quote">作者原话</span>
+            <p class="guide">第一、二节为何多写欧美：相似之处可鉴，不是同一场危机。</p>
+            <blockquote><p>这部分介绍欧美情况多一点，希望读者明白我国债务问题虽有诸多特色，但与欧美也有不少相似之处，前车可鉴。</p></blockquote>
+            <span class="locator">part0040.xhtml · 块 9</span>
+          </article>
+          <article class="reading-card">
+            <span class="origin quote">作者原话</span>
+            <p class="guide">人性解释借钱冲动。80 年代写的是住房需求；资金供给打开是另一句。</p>
+            <blockquote><p>债务源于人性：总想尽早满足欲望，又对未来盲目乐观，借钱时总觉得将来能还上。</p></blockquote>
+            <span class="locator">part0042.xhtml · 块 2</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cannot" aria-labelledby="cannot-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="cannot-title">不能从这三节推出什么</h2>
+            <p>报告综合只压缩阅读顺序，不把例子写成定律。</p>
+          </div>
+          <span class="time">6 分钟</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <span class="origin synthesis">报告综合</span>
+            <h3>阅读顺序</h3>
+            <p>先从家庭故事看到重债本身就脆，再分开看部门互拖和危机为何来得快，最后把欧美债台条件当成前车。个人三类风险还不是系统风险。这条顺序是报告加的，不是作者公式。</p>
+          </article>
+          <article class="card">
+            <span class="origin audit">不能推出</span>
+            <h3>八条停住</h3>
+            <ul>
+              <li>2018 年才开始有债务风险。</li>
+              <li>开篇三类风险已经等于系统风险。</li>
+              <li>「可能传导」等于一个人还不上就变成衰退。</li>
+              <li>258% 等开篇数字已经写完中国十年路径；也不要略去「仅包括银行贷款和债券」。</li>
+              <li>债务占 GDP 就是没有争议的真实负担尺度。</li>
+              <li>美国、温州、爱尔兰或西班牙的跌幅会按同一比例在中国重复。</li>
+              <li>欧美金融自由化是系统风险的第三层起因，或中国 2008 年后债务的直接起因。</li>
+              <li>2019 年官员讲话是作者给现在的化债方案。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="critical" aria-labelledby="critical-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="critical-title">批判审计</h2>
+            <p>先复述作者说了什么，再标出例子、数字和时间的限度。</p>
+          </div>
+          <span class="time">7 分钟</span>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-box strength">
+            <span class="origin audit">站得住</span>
+            <h3>把“还不上”写成反馈，而不是道德故事</h3>
+            <p class="muted">作者没有停在“不该借钱”。他写出弹性、互为资产负债、抛售和收贷。读者不容易再把系统风险理解成一个人的品行问题。</p>
+          </article>
+          <article class="audit-box limit">
+            <span class="origin audit">例子不是定律</span>
+            <h3>跌幅和制度都是对照</h3>
+            <p class="muted">美国房价不到一年跌两成、温州一年内近三成、爱尔兰信贷增速收到 1.3%、西班牙本金消不掉，都是作者用来说明机制。不能按同一比例写成中国复写。</p>
+          </article>
+          <article class="audit-box limit">
+            <span class="origin audit">可能 ≠ 会</span>
+            <h3>个人脆弱还不是系统风险</h3>
+            <p class="muted">开篇三类风险说明重债家庭缺腾挪。系统风险要等部门互拖，而且作者写的是「可能传导」。第二节的资金供给是债台条件，不是图上第三层起因。</p>
+          </article>
+          <article class="audit-box limit">
+            <span class="origin audit">数字不是路径</span>
+            <h3>开篇 258% 停在背景</h3>
+            <p class="muted">此处债务仅包括银行贷款和债券。作者自己说比重能否衡量负担尚有争议，并预告第三节才写中国成因。本页不把这些数字读成已经写完的十年过程。</p>
+          </article>
+          <article class="audit-box">
+            <span class="origin external">外部背景</span>
+            <h3>2021 年以后不补进主张</h3>
+            <p class="muted">开篇故事写到新冠肺炎疫情。后来的房价、地方债或银行风险，只用来提醒不要后见。2023 精装纪念版未打开。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="source" aria-labelledby="source-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="source-title">回原文路线</h2>
+            <p>地图不能代替这三节。若要核例子和数字，回到 EPUB 内部路径。</p>
+          </div>
+          <span class="time">可选 45–65 分钟</span>
+        </div>
+        <ol class="route">
+          <li>
+            <strong>开篇三类风险</strong>
+            <span>约 12 分钟 · 块 2–4、8–9 · 房价不跌也脆，以及第一、二节被标成一般原理。</span>
+            <code>OEBPS/Text/part0040.xhtml</code>
+          </li>
+          <li>
+            <strong>部门互拖</strong>
+            <span>约 15 分钟 · 块 2–6 · 违约、收贷和裁员怎样互拖，以及抛售和信贷收缩为何来得快。</span>
+            <code>OEBPS/Text/part0041.xhtml</code>
+          </li>
+          <li>
+            <strong>消费与不对称</strong>
+            <span>约 8 分钟 · 块 7–8 · 消费渠道和穷人先承担损失。</span>
+            <code>OEBPS/Text/part0041.xhtml</code>
+          </li>
+          <li>
+            <strong>欧美何以债台高筑</strong>
+            <span>约 10 分钟 · 块 2–7、10、14–16、19 · 只核住房需求、资金供给和房地产信贷。银行四点与 2019 年回指点到为止。</span>
+            <code>OEBPS/Text/part0042.xhtml</code>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="decision" aria-labelledby="decision-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 id="decision-title">读完这一问之后</h2>
+            <p>能分开三类风险、部门互拖和欧美条件，这一问就可以停。中国十年为何积累，是另一个问题。</p>
+          </div>
+          <span class="time">3 分钟</span>
+        </div>
+        <div class="decision-grid">
+          <article class="decision recommended">
+            <strong>推荐：回读这三节</strong>
+            <p>按四段路线把限定语和例子读一遍。若问题已经变成现在该怎样化债，本页答不了。</p>
+          </article>
+          <article class="decision">
+            <strong>现在停止</strong>
+            <p>若你已经能说出房价不跌为何也脆、各部门负债都高时问题为何可能传到其他部门，主地图加本页就够用。</p>
+          </article>
+          <article class="decision">
+            <strong>不要在本页继续的</strong>
+            <p>不要从这里直接跳去城投操作，也不要用本页回答“能不能只靠金融手段化解”。</p>
+          </article>
+          <article class="decision">
+            <strong>另见：中国路径</strong>
+            <p>2008–2018 年为何积累、为什么不能只靠金融化解，见已生成的 <a href="../china-debt-path-and-resolution/reading.html">债务路径</a>。本页不重做第三、四节和结语。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <p>来源：用户提供的 2021 年上海人民出版社 EPUB。原书保持私有。本仓库只保存原创结构、评论、必要短引和定位。</p>
+      <p>本页不是原书新增章节。能分开一般传导和中国路径，就可以停。</p>
+    </div>
+  </footer>
+</body>
+</html>

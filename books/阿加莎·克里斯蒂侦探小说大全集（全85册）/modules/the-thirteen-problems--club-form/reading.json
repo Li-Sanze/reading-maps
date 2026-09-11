@@ -1,0 +1,196 @@
+{
+  "schema_version": "read-book.progressive-deep-dive.v1",
+  "artifact_kind": "progressive-article-deep-dive",
+  "generated_date": "2026-09-11",
+  "language": "zh-CN",
+  "spoiler_policy": {
+    "default": "spoiler_free",
+    "level": "low",
+    "scope": "只核合集形态、场合与讲述者；不写十三篇谜底",
+    "page_description_and_nav": "no_solutions_no_culprits_no_identity_reversals"
+  },
+  "module": {
+    "id": "the-thirteen-problems--club-form",
+    "title": "《死亡草》是十三场讲述，还是一部长篇",
+    "subtitle": "两场讲述，一篇换形态；书名也是第十一章篇名",
+    "status": "generated",
+    "work_id": "w41",
+    "parent_module_id": null,
+    "parent_book_html": "../../reading.html#modules",
+    "parent_book_json": "../../reading.json",
+    "one_sentence_model": "不是一部长篇，也不是十三场同一俱乐部的例会：前六篇在马普尔家，接着六篇在班特里家，第十三篇换了写法。",
+    "model_boundary": "合集父模块。单篇谜底另立子模块；乔伊斯是艺术家，不是画家。"
+  },
+  "reading_contract": {
+    "core_minutes": 50,
+    "target_minutes": "45-60",
+    "progressive_depth": [
+      "先核版权页、目录和书名与第十一章同名",
+      "再分开星期二俱乐部与班特里家聚会",
+      "第十三篇只核形态，不进入各篇解答"
+    ],
+    "completion_definition": [
+      "能说明十三章是十三篇独立故事，不是一部长篇",
+      "能指出前六篇和后六篇不在同一场例会",
+      "知道第十三篇不是当晚轮讲，第十一章篇名不等于卷名"
+    ],
+    "optional_source_return_minutes": "30-40"
+  },
+  "source_work": {
+    "work_id": "w41",
+    "title_zh": "死亡草",
+    "original_title": "The Thirteen Problems",
+    "credited_author": "【英】阿加莎·克里斯蒂",
+    "translator": "六翼天使",
+    "volume_publisher": "新星出版社",
+    "volume_pub_date": "2018-07-01",
+    "isbn": "978-7-5133-3105-0",
+    "series": "marple",
+    "form": "short_story_or_novella_collection",
+    "story_count": 13,
+    "copyright_xhtml": "OEBPS/Text/part1167.xhtml",
+    "volume_toc_xhtml": "OEBPS/Text/part1168.xhtml",
+    "dedication_xhtml": "OEBPS/Text/part1169.xhtml",
+    "start_xhtml": "OEBPS/Text/part1166.xhtml",
+    "end_xhtml_inclusive": "OEBPS/Text/part1182.xhtml"
+  },
+  "narrative_structure": {
+    "question": "《死亡草》是十三场讲述，还是一部长篇？",
+    "gatherings": [
+      {
+        "id": "tuesday-night-club",
+        "place": "马普尔家",
+        "chapters": [1, 2, 3, 4, 5, 6],
+        "members": ["雷蒙德·韦斯特", "乔伊斯·雷蒙皮埃尔", "亨利·克利瑟林爵士", "彭德博士", "帕特里克先生", "马普尔小姐"]
+      },
+      {
+        "id": "bantry-dinner",
+        "place": "班特里家",
+        "chapters": [7, 8, 9, 10, 11, 12],
+        "members": ["班特里上校", "班特里太太", "亨利·克利瑟林爵士", "马普尔小姐", "劳埃德大夫", "珍妮·赫利尔"]
+      },
+      {
+        "id": "drowned",
+        "place": "班特里家后续",
+        "chapters": [13],
+        "form": "非轮讲；叙述跟着亨利爵士"
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "c05-copyright",
+      "type": "出版副文本",
+      "text": "本卷版权页记书名《死亡草》，译者六翼天使，新星出版社，2018-07-01，ISBN 978-7-5133-3105-0。",
+      "locator": "OEBPS/Text/part1167.xhtml"
+    },
+    {
+      "id": "c05-title-overlap",
+      "type": "出版副文本",
+      "text": "卷内目录第十一章篇名也是《死亡草》。卷名管合集，篇名只管该篇。",
+      "locator": "OEBPS/Text/part1168.xhtml"
+    },
+    {
+      "id": "c05-joyce-artist",
+      "type": "作品文本",
+      "text": "乔伊斯·雷蒙皮埃尔被写成艺术家，她自己也说“我还是位艺术家”。",
+      "locator": "OEBPS/Text/part1170.xhtml"
+    },
+    {
+      "id": "c05-club-rule",
+      "type": "作品文本",
+      "text": "乔伊斯提议成立星期二晚间俱乐部：每个成员轮流讲亲身经历的谜题，并且要有谜底。",
+      "locator": "OEBPS/Text/part1170.xhtml"
+    },
+    {
+      "id": "c05-second-gathering",
+      "type": "作品文本",
+      "text": "第七章亨利爵士在班特里家回顾去年五六个人的讲述，并参加当晚另一场六人晚宴。",
+      "locator": "OEBPS/Text/part1176.xhtml"
+    },
+    {
+      "id": "c05-ch13-form",
+      "type": "作品文本",
+      "text": "第十三章以星期六上午早餐开篇，跟着亨利爵士，不是“轮到谁讲”。",
+      "locator": "OEBPS/Text/part1182.xhtml"
+    },
+    {
+      "id": "c05-not-thirteen-tuesdays",
+      "type": "报告综合",
+      "text": "十三章等于十三篇独立故事，但不等于十三场星期二例会，也不等于一部长篇。",
+      "locator": "OEBPS/Text/part1168.xhtml；part1170.xhtml；part1176.xhtml；part1182.xhtml"
+    },
+    {
+      "id": "c05-not-painter",
+      "type": "批判审计",
+      "text": "不能把艺术家改写成画家；也不能把“每个星期聚会一次”扩成这本合集已经写出十三场例会。",
+      "locator": "OEBPS/Text/part1170.xhtml"
+    }
+  ],
+  "original_reading_selections": [
+    {
+      "id": "src-c05-artist",
+      "epub_path": "OEBPS/Text/part1170.xhtml",
+      "title": "乔伊斯是艺术家",
+      "excerpt": "然后落在乔伊斯·雷蒙皮埃尔身上，她是位艺术家，有一头剪得短短的黑发和一双奇特的淡绿褐色的眼睛",
+      "plain_guide": "叙述介绍用的是艺术家，不是画家。",
+      "cannot_infer": "艺术家可以改写成画家。"
+    },
+    {
+      "id": "src-c05-club",
+      "epub_path": "OEBPS/Text/part1170.xhtml",
+      "title": "当场起名并约定轮讲",
+      "excerpt": "我们成立一个俱乐部怎么样？今天星期几？星期二？那我们就叫它‘星期二晚间俱乐部’好了。每个星期聚会一次，每个成员轮流讲一个谜题，自己亲身经历的谜题，当然还要有谜底。",
+      "plain_guide": "这是当场约定，不是全书目录的已完成场次表。",
+      "cannot_infer": "这本中文合集已经排出十三场星期二例会。"
+    },
+    {
+      "id": "src-c05-later",
+      "epub_path": "OEBPS/Text/part1176.xhtml",
+      "title": "后来另有一场",
+      "excerpt": "去年我到这儿来的时候，我们闲暇里讨论了一些未解决的谜案。我们一共五六个人。",
+      "plain_guide": "第七章自己把前一场说成去年的事。",
+      "cannot_infer": "后六篇仍是同一场星期二例会。"
+    },
+    {
+      "id": "src-c05-ch13",
+      "epub_path": "OEBPS/Text/part1182.xhtml",
+      "title": "第十三篇换形态",
+      "excerpt": "星期六上午，在客人的最佳用餐时间十点一刻，他下楼来用早餐，却在餐厅门口差点儿与女主人班特里太太撞了个满怀。",
+      "plain_guide": "开篇跟着亨利爵士，不再是轮讲。",
+      "cannot_infer": "第十三篇与前十二篇同一套轮讲格式。"
+    }
+  ],
+  "stories": [
+    {"chapter": 1, "title_zh": "星期二晚间俱乐部", "gathering": "tuesday-night-club", "teller": "亨利·克利瑟林爵士", "start_xhtml": "OEBPS/Text/part1170.xhtml"},
+    {"chapter": 2, "title_zh": "阿施塔特的神舍", "gathering": "tuesday-night-club", "teller": "彭德博士", "start_xhtml": "OEBPS/Text/part1171.xhtml"},
+    {"chapter": 3, "title_zh": "金锭", "gathering": "tuesday-night-club", "teller": "雷蒙德·韦斯特", "start_xhtml": "OEBPS/Text/part1172.xhtml"},
+    {"chapter": 4, "title_zh": "血染的石板路", "gathering": "tuesday-night-club", "teller": "乔伊斯·雷蒙皮埃尔", "start_xhtml": "OEBPS/Text/part1173.xhtml"},
+    {"chapter": 5, "title_zh": "动机与机会", "gathering": "tuesday-night-club", "teller": "帕特里克先生", "start_xhtml": "OEBPS/Text/part1174.xhtml"},
+    {"chapter": 6, "title_zh": "圣彼得的拇指印", "gathering": "tuesday-night-club", "teller": "马普尔小姐", "start_xhtml": "OEBPS/Text/part1175.xhtml"},
+    {"chapter": 7, "title_zh": "蓝色的天竺葵", "gathering": "bantry-dinner", "teller": "班特里上校", "start_xhtml": "OEBPS/Text/part1176.xhtml"},
+    {"chapter": 8, "title_zh": "陪伴", "gathering": "bantry-dinner", "teller": "劳埃德大夫", "start_xhtml": "OEBPS/Text/part1177.xhtml"},
+    {"chapter": 9, "title_zh": "四个嫌疑人", "gathering": "bantry-dinner", "teller": "亨利·克利瑟林爵士", "start_xhtml": "OEBPS/Text/part1178.xhtml"},
+    {"chapter": 10, "title_zh": "圣诞节的悲剧", "gathering": "bantry-dinner", "teller": "马普尔小姐", "start_xhtml": "OEBPS/Text/part1179.xhtml"},
+    {"chapter": 11, "title_zh": "死亡草", "gathering": "bantry-dinner", "teller": "班特里太太", "start_xhtml": "OEBPS/Text/part1180.xhtml"},
+    {"chapter": 12, "title_zh": "小木屋事件", "gathering": "bantry-dinner", "teller": "珍妮·赫利尔", "start_xhtml": "OEBPS/Text/part1181.xhtml"},
+    {"chapter": 13, "title_zh": "沉溺而亡", "gathering": "drowned", "teller": null, "narration_follows": "亨利·克利瑟林爵士", "start_xhtml": "OEBPS/Text/part1182.xhtml"}
+  ],
+  "critical_audit": {
+    "holds": [
+      "十三章对得上十三篇；前十二篇能指认场合和开口的人。",
+      "书名与第十一章同名必须分开。",
+      "乔伊斯的身份在正文里是艺术家。"
+    ],
+    "limits": [
+      "“每个星期聚会一次”是当场约定，不是已写出的十三场例会表。",
+      "本页不覆盖十三篇谜底或公平性。",
+      "献词页下长注不扩写成传记。"
+    ]
+  },
+  "generation_audit": {
+    "material_grade": "full_source",
+    "material_grade_note": "已核版权页、目录、献词，以及十三篇开场以确认场合与讲述者；不表示已精读各篇解答。",
+    "continuity_check": "删去“两场加一篇换形态”，会塌成十三场例会或一部长篇；删去书名/篇名区分，会把第十一章当成全书。"
+  }
+}
