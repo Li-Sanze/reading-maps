@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | 主地图、深挖、最小修订、课程 | `.agents/skills/read-book/SKILL.md` | 遵守其来源审计、内容标型和产物契约 |
 | 机制图 | `.agents/skills/fireworks-tech-graph/SKILL.md` | 可选能力；只有确实降低理解成本才使用；使用前运行 `python3 -c "import cairosvg"` 自检，不可用时只输出内嵌 SVG，并在回执中注明 |
-| 全书一图 | `.agents/skills/doc-to-sketch/SKILL.md` | 每本最多一张；无人值守规则以该 Skill 的 Unattended mode 为准 |
+| 全书一图 | `.agents/skills/doc-to-sketch/SKILL.md` | 每本最多一张，可选。Cloud Agent 等无人值守任务：环境未设置 `DOC_TO_SKETCH_UNATTENDED` 时只交付 Path C 提示词，不得使用宿主原生生图；已设置时按该 Skill 的 Unattended mode 执行（只走 Path B） |
 
 Skill 真源是 `.agents/skills/`。`skills/read-book` 是兼容旧命令的链接；`.claude/skills/` 链接到同一份 Skill。宿主发现路径：[Cursor](https://cursor.com/docs/skills)、[Codex](https://developers.openai.com/codex/skills)、[Claude Code](https://code.claude.com/docs/en/skills)。Cursor 也读取 `.claude/skills/`，可能重复显示同名 Skill；任务中明确使用上述真源路径。
 
@@ -26,6 +26,7 @@ Skill 真源是 `.agents/skills/`。`skills/read-book` 是兼容旧命令的链�
 - 只有目录、样章、节选或旧笔记等局部来源：不生成全书主地图或课程。
 - 版本、译本或材料冲突会改变理解：暂停并列出冲突，不自行选定版本。
 - 无人值守全书一图任务若当前固定版本未提供可执行的 Unattended mode：暂停该图，报告限制。
+- 不截取原书插图放上公开页面；机制图、数据图用 fireworks 重绘为内嵌 SVG，并注明“据原书图 X-X 重绘”和数据来源。
 
 ## 必跑校验
 
