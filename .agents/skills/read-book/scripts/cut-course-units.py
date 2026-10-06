@@ -3,11 +3,14 @@
 
 navigation[0] locates the chapter in spine order. The excerpt starts at
 start_hint and stops at the end of end_hint. When that hint begins a block,
-or the block is itself a heading, include the opening run back to the
-navigation anchor, in document order: the immediately preceding headings,
-plus image blocks and their figure captions sitting between those headings
-and the start. Stop at the first body-text paragraph; that paragraph is not
-included, and nothing before it is included. A hint inside a paragraph
+or the block is itself a heading, walk back over contiguous headings, images,
+and figure captions, stopping at the navigation anchor or at the first
+body-text paragraph; that paragraph and everything before it stay out. The
+opening run starts at the earliest heading in that walked-back span. Images
+and captions stay only when they sit between that heading and the start; an
+image or caption before the earliest heading is dropped. If the span has no
+heading and the start block is not a heading, the excerpt starts at
+start_hint and pulls in no image or caption. A hint inside a paragraph
 starts at the hint and includes no heading, image, or caption. Word counts
 are non-whitespace characters. A mismatch fails; nothing here adjusts the count.
 """
@@ -513,8 +516,13 @@ def heading_run_before(indexed: list[Block], start_at: tuple[int, int]) -> int:
     block = indexed[position]
     if block.kind != "heading" and visible_count(block.text[:start_index]) > 0:
         return position
-    while position > 0 and indexed[position - 1].kind in {"heading", "image", "caption"}:
-        position -= 1
+    lead = position
+    while lead > 0 and indexed[lead - 1].kind in {"heading", "image", "caption"}:
+        lead -= 1
+    limit = position + 1 if block.kind == "heading" else position
+    for index in range(lead, limit):
+        if indexed[index].kind == "heading":
+            return index
     return position
 
 
