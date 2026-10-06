@@ -34,7 +34,7 @@
     a { color: inherit; }
 
     a:focus-visible {
-      outline: 3px solid #8aa89d;
+      outline: 3px solid var(--accent);
       outline-offset: 4px;
       border-radius: 8px;
     }
@@ -94,6 +94,18 @@
       font-size: clamp(1.05rem, 2vw, 1.28rem);
       overflow-wrap: anywhere;
     }
+
+    .issue {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 2px solid var(--accent);
+    }
+
+    .issue h2 { font-size: clamp(1.45rem, 2.5vw, 1.9rem); }
+    .issue p { margin: 8px 0 0; color: var(--muted); }
+    .issue-edition { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.88rem; }
+    .issue-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .issue-actions .book-link { margin-top: 0; }
 
     .cover {
       width: min(100%, 330px);
@@ -196,9 +208,9 @@
     footer a { color: var(--accent); }
 
     @media (max-width: 720px) {
-      header { padding-top: 56px; }
+      header { padding-top: 32px; }
       .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .cover { width: min(100%, 260px); max-width: calc(100vw - 64px); margin-inline: auto; justify-self: center; transform: rotate(0.8deg); }
+      .cover { width: min(100%, 160px); max-width: calc(100vw - 64px); margin-inline: auto; justify-self: center; transform: rotate(0.8deg); }
       .section-head { display: block; }
       .section-note { margin-top: 8px; }
       .books, .method { grid-template-columns: 1fr; }
@@ -222,6 +234,15 @@
         <p class="eyebrow">Reading Maps</p>
         <h1>渐进式读书地图</h1>
         <p class="lead">用 AI 帮你更快回到原文，而不是替你读书。先建立全书结构，再按真实问题深挖。</p>
+        <section class="issue" aria-labelledby="issue-title">
+          <h2 id="issue-title">本期 · 置身事内</h2>
+          <p class="issue-edition">上海人民出版社 2021 年版 · 每单元原文约 15–30 分钟</p>
+          <p>先读原文 → 自己复述和质疑 → 再在学伴里看点评</p>
+          <div class="issue-actions">
+            <a class="book-link" href="books/置身事内/course/index.html" aria-label="课程目录：《置身事内》">课程目录</a>
+            <a class="book-link" href="books/置身事内/reading.html" aria-label="全书地图：《置身事内》">全书地图</a>
+          </div>
+        </section>
       </div>
       <figure class="cover">
         <img src="assets/reading-maps-cover.jpg" width="719" height="1200" fetchpriority="high" decoding="async" alt="一条蓝色折纸同时形成打开的书页和往返路线">
@@ -233,7 +254,7 @@
     <section aria-labelledby="books-title">
       <div class="section-head">
         <h2 id="books-title">当前书架</h2>
-        <p class="section-note">六本主地图，深挖只随真实问题增加。</p>
+        <p class="section-note">六份阅读地图，深挖只随真实问题增加。</p>
       </div>
 
       <div class="books">
@@ -241,42 +262,42 @@
           <p class="meta">阅读方法 · 主地图约 40 分钟</p>
           <h3>如何阅读一本书</h3>
           <p>用四层阅读和四个主动问题，决定一本书值得略读、分析阅读、主题阅读，还是及时停止。</p>
-          <a class="book-link" href="books/如何阅读一本书/reading.html">打开主地图 →</a>
+          <a class="book-link" href="books/如何阅读一本书/reading.html" aria-label="打开主地图 →《如何阅读一本书》">打开主地图 →</a>
         </article>
 
         <article class="book">
           <p class="meta">思想与历史 · 主地图约 45 分钟</p>
           <h3>毛泽东选集</h3>
           <p>沿时期、问题和方法理解第一至第五卷，再进入已生成的主题或单篇深挖，最后回到原卷原篇。</p>
-          <a class="book-link" href="books/毛泽东选集/reading.html">打开主地图与深挖 →</a>
+          <a class="book-link" href="books/毛泽东选集/reading.html" aria-label="打开主地图与深挖 →《毛泽东选集》">打开主地图与深挖 →</a>
         </article>
 
         <article class="book">
           <p class="meta">群体心理 · 主地图约 35 分钟</p>
           <h3>乌合之众</h3>
           <p>看懂群体形成、信念传播与领袖说服模型，再用版本审计和现代社会认同研究校正。</p>
-          <a class="book-link" href="books/乌合之众/reading.html">打开主地图 →</a>
+          <a class="book-link" href="books/乌合之众/reading.html" aria-label="打开主地图 →《乌合之众》">打开主地图 →</a>
         </article>
 
         <article class="book">
           <p class="meta">文学小说 · 无剧透 10 分钟 / 全图约 35 分钟</p>
           <h3>月亮与六便士</h3>
           <p>先看叙述者、艺术与责任的张力；愿意后再展开含结局的五段故事模型。</p>
-          <a class="book-link" href="books/月亮与六便士/reading.html">打开分层剧透地图 →</a>
+          <a class="book-link" href="books/月亮与六便士/reading.html" aria-label="打开分层剧透地图 →《月亮与六便士》">打开分层剧透地图 →</a>
         </article>
 
         <article class="book">
           <p class="meta">政经讲义 · 主地图约 40 分钟 · 材料停在 2021</p>
           <h3>置身事内</h3>
           <p>看兰小欢怎样用地方政府的财税、土地和投融资解释工业化和城市化，以及这套机制接到哪些宏观现象。依据 2021 年上海人民出版社。</p>
-          <a class="book-link" href="books/置身事内/reading.html">打开主地图 →</a>
+          <a class="book-link" href="books/置身事内/reading.html" aria-label="打开主地图 →《置身事内》">打开主地图 →</a>
         </article>
 
         <article class="book">
-          <p class="meta">侦探小说合订本 · 主地图约 30–45 分钟 · 默认无剧透</p>
+          <p class="meta">侦探小说合订本 · 85 个作品条目总览 · 默认无剧透</p>
           <h3>阿加莎·克里斯蒂侦探小说大全集（全85册）</h3>
           <p>核清新星出版社合订本的 85 个作品级条目：长篇、合集、戏剧小说化、续写与自传并不等同。先看构成与入口，再按问题回原文。</p>
-          <a class="book-link" href="books/阿加莎·克里斯蒂侦探小说大全集（全85册）/reading.html">打开主地图 →</a>
+          <a class="book-link" href="books/阿加莎·克里斯蒂侦探小说大全集（全85册）/reading.html" aria-label="打开主地图 →《阿加莎·克里斯蒂侦探小说大全集（全85册）》">打开主地图 →</a>
         </article>
       </div>
     </section>
