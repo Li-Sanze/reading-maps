@@ -30,6 +30,8 @@ Skill 真源是 `.agents/skills/`。`skills/read-book` 是兼容旧命令的链�
 
 ## 必跑校验
 
+- `course.json` 改动后，必须运行 `python3 scripts/build-course-toc.py` 重新生成课程目录页。
+
 ```sh
 bash scripts/check-no-sources.sh
 git submodule status
