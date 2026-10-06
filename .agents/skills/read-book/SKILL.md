@@ -28,6 +28,7 @@ description: 为中文书籍生成、审计和渐进修订可回原文的阅读�
 不要为主地图和深挖拆分另一套 Skill。它们共享来源审计、观点标型、产物结构和验证规则。
 
 课程先核对原书与主地图的 SHA-256、版本和范围，再按论证边界与时间预算切课；批判优先复用 `critical_audit` 和已审计深挖模块。只增量补齐任务指定单元，不改写其他章节；完成后用 `scripts/validate-course.py <course.json> --source <仓库外原书>` 校验。
+已有 course.json 时，用 `scripts/cut-course-units.py --source <仓库外原书> --course <course.json> --out <仓库外目录> --units <单元 id>` 按 locate.navigation 与起止提示切出仓库外的自包含 HTML；`--out` 不得位于任何 git 工作树内。
 
 ## 执行流程
 
