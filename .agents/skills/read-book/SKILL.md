@@ -1,6 +1,6 @@
 ---
 name: read-book
-description: 为中文书籍生成、审计和渐进修订可回原文的阅读地图。适用于本地 TXT、Markdown、EPUB 的全书速读地图、主题或篇章深挖、人物与思想关系梳理，以及现有 reading.html/reading.json 的最小修订；也匹配 Chinese book reading map、deep dive、critical reading audit。不要用于只概括一小段文字、替代原书、分发原书或未经授权发布内容。
+description: 为中文书籍生成、审计和渐进修订可回原文的阅读地图。适用于本地 TXT、Markdown、EPUB 的全书速读地图、主题或篇章深挖、人物与思想关系梳理、已有主地图的每日阅读课程，以及现有 reading.html/reading.json 的最小修订；也匹配 Chinese book reading map、deep dive、critical reading audit。不要用于只概括一小段文字、替代原书、分发原书或未经授权发布内容。
 ---
 
 # Read Book
@@ -23,8 +23,11 @@ description: 为中文书籍生成、审计和渐进修订可回原文的阅读�
 1. **主地图**：书目录下没有 `reading.json`，或用户明确要求建立全书模型。
 2. **深挖模块**：已有主地图，用户对具体篇章、主题、人物、概念或历史问题提出进一步兴趣。
 3. **最小修订**：用户要求审计、精简或修正现有地图。保留有效结构，只改真实问题。
+4. **课程**：已有完整来源的主地图，用户要求切分每日阅读单元、备课或增量补齐课程；按[课程契约](references/course-contract.md)写入 `books/<中文书名>/course/course.json`。
 
 不要为主地图和深挖拆分另一套 Skill。它们共享来源审计、观点标型、产物结构和验证规则。
+
+课程先核对原书与主地图的 SHA-256、版本和范围，再按论证边界与时间预算切课；批判优先复用 `critical_audit` 和已审计深挖模块。只增量补齐任务指定单元，不改写其他章节；完成后用 `scripts/validate-course.py <course.json> --source <仓库外原书>` 校验。
 
 ## 执行流程
 
@@ -93,8 +96,10 @@ description: 为中文书籍生成、审计和渐进修订可回原文的阅读�
 
 ```bash
 python3 "<SKILL_DIR>/scripts/validate-reading-map.py" \
-  "<OUTPUT_ROOT>/books/<中文书名>"
+  "<OUTPUT_ROOT>/books/<中文书名>" --source "<仓库外原书>"
 ```
+
+新书另加 `--strict-sections` 检查七项覆盖；旧地图缺项只作 WARNING。兼容字段、引文与定位规则见[来源字段映射](references/source-field-map.md)。缺少原书时可省略 `--source`，但须标记来源与引文未核对。
 
 然后执行两阶段复审：
 

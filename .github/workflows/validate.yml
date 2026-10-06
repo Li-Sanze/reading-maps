@@ -1,0 +1,37 @@
+name: Validate reading maps
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Block original-book files
+        run: bash scripts/check-no-sources.sh
+      - name: Validate every reading map
+        run: |
+          for book in books/*/; do
+            [ -d "$book" ] || continue
+            python3 .agents/skills/read-book/scripts/validate-reading-map.py "$book"
+          done
+      - name: Run read-book tests when present
+        run: |
+          if [ -d .agents/skills/read-book/tests ]; then
+            python3 -m unittest discover -s .agents/skills/read-book/tests
+          fi
+      - name: Validate every existing reading course
+        run: |
+          for course in books/*/course/course.json; do
+            [ -f "$course" ] || continue
+            python3 .agents/skills/read-book/scripts/validate-course.py "$course"
+          done

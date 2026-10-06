@@ -1,0 +1,182 @@
+{
+  "book": {
+    "title_zh": "小城花园观察记",
+    "author": "测试作者"
+  },
+  "source": {
+    "display_name": "source.md",
+    "format": "Markdown",
+    "sha256": "7fb9c89cb58a0bd31b79268d3b757a88d82123ba095d1a3e0f364ca3bfe4ff43",
+    "credible_range": {
+      "start_line": 1,
+      "end_line": 6
+    },
+    "scope": "全部六行，自写虚构文本"
+  },
+  "edition_check": "pending",
+  "budget": {
+    "min_minutes": 1,
+    "target_minutes": 1,
+    "max_minutes": 2
+  },
+  "units": [
+    {
+      "id": "rain",
+      "order": 1,
+      "status": "full",
+      "locate": {
+        "chapter": "小城的雨水",
+        "start_hint": "小城把空地改成了一座花园。",
+        "end_hint": "并在记录里写下当时的天气。",
+        "word_count": 99,
+        "estimated_minutes": 1,
+        "source_refs": [
+          {
+            "start_line": 2,
+            "end_line": 3
+          }
+        ]
+      },
+      "position": "先通过观察形成判断，再讨论如何共同维护。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这一节承接了前面的什么问题？"
+        },
+        {
+          "kind": "argument",
+          "question": "观察记录能支持多大的结论？"
+        },
+        {
+          "kind": "self",
+          "question": "你会怎样检查自己的判断？"
+        }
+      ],
+      "watch": {
+        "concept": "观察",
+        "why": "把发生的事与解释分开。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "先记录条件，再判断结果。"
+        ],
+        "author_claim": "结论要有与它相称的观察范围。",
+        "reasons": [
+          "短期观察可能受天气影响。"
+        ],
+        "evidence": [
+          "居民安排雨季复查。"
+        ],
+        "common_misreadings": [
+          "三天有效不等于全年有效。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "一个花园的短期记录不能直接推广到其他地区。",
+          "sources": [
+            {
+              "title": "自写测试文本",
+              "locator": "source.md#L2-L3"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": [
+        {
+          "concept": "有条件的结论",
+          "definition": "结论应明确适用的时间和环境。",
+          "unit_ids": [
+            "rain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "care",
+      "order": 2,
+      "status": "full",
+      "locate": {
+        "chapter": "共同维护",
+        "start_hint": "志愿者轮流清理浅沟。",
+        "end_hint": "再比较雨前雨后的变化。",
+        "word_count": 82,
+        "estimated_minutes": 1,
+        "source_refs": [
+          {
+            "start_line": 5,
+            "end_line": 6
+          }
+        ]
+      },
+      "position": "先通过观察形成判断，再讨论如何共同维护。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这一节承接了前面的什么问题？"
+        },
+        {
+          "kind": "argument",
+          "question": "观察记录能支持多大的结论？"
+        },
+        {
+          "kind": "self",
+          "question": "你会怎样检查自己的判断？"
+        }
+      ],
+      "watch": {
+        "concept": "观察",
+        "why": "把发生的事与解释分开。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "先记录条件，再判断结果。"
+        ],
+        "author_claim": "结论要有与它相称的观察范围。",
+        "reasons": [
+          "短期观察可能受天气影响。"
+        ],
+        "evidence": [
+          "居民安排雨季复查。"
+        ],
+        "common_misreadings": [
+          "三天有效不等于全年有效。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "一个花园的短期记录不能直接推广到其他地区。",
+          "sources": [
+            {
+              "title": "自写测试文本",
+              "locator": "source.md#L2-L3"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "rain"
+          ],
+          "question": "为什么三天没有积水还不够？",
+          "answer_key": [
+            "短期情况不能覆盖其他季节。"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "concept": "有条件的结论",
+          "definition": "结论应明确适用的时间和环境。",
+          "unit_ids": [
+            "care"
+          ]
+        }
+      ]
+    }
+  ]
+}
