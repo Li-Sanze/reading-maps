@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Cut course units from an EPUB into self-contained HTML outside any git worktree.
 
-Location uses heading text in spine order, not EPUB internal paths. Word counts
-are non-whitespace characters. A mismatch fails; nothing here adjusts the count.
+navigation[0] locates the chapter in spine order. The cut then starts at
+start_hint and stops at the end of end_hint. Word counts are non-whitespace
+characters. A mismatch fails; nothing here adjusts the count.
 """
 
 from __future__ import annotations
@@ -500,70 +501,89 @@ def read_spine(archive: zipfile.ZipFile) -> tuple[list[Block], dict[str, str]]:
     return blocks, media_types
 
 
-def locate_unit(blocks: list[Block], titles: list[str], start_hint: str, end_hint: str, labels: set[str]):
-    first = normalize(titles[0])
-    candidates = [index for index, block in enumerate(blocks) if block.kind == "heading" and normalize(block.text) == first]
-    if not candidates:
-        raise CutError(f"找不到导航标题：{titles[0]}", rank=1)
-    best = None
-    for start in candidates:
-        try:
-            return span_from(blocks, start, titles, start_hint, end_hint, labels)
-        except CutError as exc:
-            if best is None or exc.rank >= best.rank:
-                best = exc
-    raise best
-
-
-def span_from(blocks, start, titles, start_hint, end_hint, labels):
-    segments = []
-    headings = []
-    start_seen = False
-    ended = False
-    skipping = None
-    for offset, block in enumerate(blocks[start:]):
-        if skipping is not None:
-            if block.kind == "heading" and block.level <= skipping:
-                skipping = None
-            else:
-                continue
-        is_origin = offset == 0
-        if not is_origin and block.kind == "heading" and normalize(block.text) in labels:
-            skipping = block.level
-            continue
-        text = block.text
-        start_span = None
-        if not start_seen and block.kind != "image":
-            start_span = hint_span(text, start_hint)
-            if start_span:
-                start_seen = True
-        end_span = None
-        if start_seen and block.kind != "image":
-            end_span = hint_span(text, end_hint)
-            if end_span and start_span and end_span[0] < start_span[0]:
-                end_span = None
-        if end_span:
-            text = text[:end_span[1]]
-            ended = True
-        segments.append((block, text))
-        if block.kind == "heading":
-            headings.append(block.text if end_span is None else text)
-        if ended:
-            break
-    if not start_seen:
-        raise CutError(f"找不到起始提示：{start_hint}", rank=2)
-    if not ended:
-        raise CutError(f"找不到结束提示：{end_hint}", rank=3)
-    seen = [normalize(title) for title in headings]
+def navigation_order(headings: list[str], titles: list[str]) -> None:
+    """Headings from the chapter anchor through end_hint must follow navigation."""
+    seen = [normalize(heading) for heading in headings]
     position = 0
     for title in titles:
         wanted = normalize(title)
         while position < len(seen) and seen[position] != wanted:
             position += 1
         if position >= len(seen):
-            raise CutError(f"找不到导航标题：{title}", rank=4)
+            raise CutError(f"范围内标题与导航顺序不一致：{title}", rank=4)
         position += 1
-    return segments, headings
+
+
+def locate_unit(blocks: list[Block], titles: list[str], start_hint: str, end_hint: str, labels: set[str]):
+    first = normalize(titles[0])
+    candidates = [index for index, block in enumerate(blocks) if block.kind == "heading" and normalize(block.text) == first]
+    if not candidates:
+        raise CutError(f"找不到导航标题：{titles[0]}", rank=1)
+    best = None
+    for anchor in candidates:
+        try:
+            return cut_after_anchor(blocks, anchor, titles, start_hint, end_hint, labels)
+        except CutError as exc:
+            if best is None or exc.rank >= best.rank:
+                best = exc
+    raise best
+
+
+def cut_after_anchor(blocks, anchor, titles, start_hint, end_hint, labels):
+    indexed = []
+    window_headings = []
+    start_at = None
+    end_at = None
+    skipping = None
+    for offset, block in enumerate(blocks[anchor:]):
+        if skipping is not None:
+            if block.kind == "heading" and block.level <= skipping:
+                skipping = None
+            else:
+                continue
+        if offset != 0 and block.kind == "heading" and normalize(block.text) in labels:
+            skipping = block.level
+            continue
+        position = len(indexed)
+        indexed.append(block)
+        if block.kind == "heading":
+            window_headings.append(block.text)
+        if block.kind == "image":
+            continue
+        if start_at is None:
+            span = hint_span(block.text, start_hint)
+            if span:
+                start_at = (position, span[0])
+        if start_at is not None:
+            espan = hint_span(block.text, end_hint)
+            if espan and not (start_at[0] == position and espan[0] < start_at[1]):
+                end_at = (position, espan[1])
+                break
+    if start_at is None:
+        raise CutError(f"找不到起始提示：{start_hint}", rank=2)
+    if end_at is None:
+        raise CutError(f"找不到结束提示：{end_hint}", rank=3)
+    navigation_order(window_headings, titles)
+    segments = []
+    output_headings = []
+    for position in range(start_at[0], end_at[0] + 1):
+        block = indexed[position]
+        if position == start_at[0] and position == end_at[0]:
+            text = block.text[start_at[1]:end_at[1]]
+        elif position == start_at[0]:
+            text = block.text[start_at[1]:]
+        elif position == end_at[0]:
+            text = block.text[:end_at[1]]
+        else:
+            text = block.text
+        if block.kind != "image" and visible_count(text) == 0:
+            continue
+        segments.append((block, text))
+        if block.kind == "heading":
+            output_headings.append(text)
+    if not segments:
+        raise CutError(f"找不到起始提示：{start_hint}", rank=2)
+    return segments, output_headings
 
 
 def count_segments(segments) -> int:

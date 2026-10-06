@@ -26,7 +26,6 @@ COURSE_COUNTING_METHOD = (
     "blocks 从正文第一个非空 h1–h6 或 p 文本块起按1编号，不计 head/title。"
 )
 INCLUDED = [
-    "甲节标题",
     "起点在这一句里出现。",
     "中段补上几句 占位说明①。",
     "图题是一朵纸上的云。",
@@ -34,6 +33,7 @@ INCLUDED = [
     "结束就停在这一句。",
 ]
 EXCLUDED_SENTENCES = [
+    "甲节标题",
     "标题之前的导语不该进入单元。",
     "导航文件里的句子不该进入单元。",
     "自定义排除段不该出现。",
@@ -186,7 +186,7 @@ class CutCourseUnitsTests(unittest.TestCase):
             command.extend(extra)
         return subprocess.run(command, capture_output=True, text=True, cwd=cwd)
 
-    def test_cuts_across_files_includes_title_skips_excluded_sections_and_embeds_image(self):
+    def test_cuts_across_files_starts_at_hint_skips_excluded_sections_and_embeds_image(self):
         course = self.write_course()
         out = self.root / "out"
         result = self.run_cut(course, out)
@@ -314,7 +314,9 @@ class CutCourseUnitsTests(unittest.TestCase):
         manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["counting_method"], "去空白后的字符数")
         self.assertEqual(manifest["units"][0]["word_count"], self.expected_count)
-        self.assertNotEqual(self.expected_count, visible_count(INCLUDED) + INCLUDED[2].count(" "))
+        raw = "".join(INCLUDED)
+        self.assertIn(" ", raw)
+        self.assertLess(self.expected_count, len(raw))
 
     def test_course_counting_method_text_is_accepted(self):
         course = self.write_course(counting_method=COURSE_COUNTING_METHOD)
@@ -372,6 +374,161 @@ class CutCourseUnitsTests(unittest.TestCase):
         self.assertNotEqual(bad.returncode, 0)
         self.assertIn("字数不符", bad.stdout)
         self.assertFalse(rejected.exists())
+
+
+def package_chapters(path: Path, bodies: list[str]) -> None:
+    manifest = []
+    spine = []
+    for index, _body in enumerate(bodies):
+        manifest.append(
+            f'<item id="c{index}" href="c{index}.xhtml" media-type="application/xhtml+xml"/>'
+        )
+        spine.append(f'<itemref idref="c{index}"/>')
+    container = """<?xml version="1.0"?>
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+  <rootfiles>
+    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>
+  </rootfiles>
+</container>
+"""
+    opf = f"""<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title>占位笔记</dc:title>
+    <dc:language>zh-CN</dc:language>
+  </metadata>
+  <manifest>
+    {"".join(manifest)}
+  </manifest>
+  <spine>
+    {"".join(spine)}
+  </spine>
+</package>
+"""
+    with zipfile.ZipFile(path, "w") as archive:
+        archive.writestr("mimetype", "application/epub+zip")
+        archive.writestr("META-INF/container.xml", container)
+        archive.writestr("OEBPS/content.opf", opf)
+        for index, body in enumerate(bodies):
+            archive.writestr("OEBPS/" + f"c{index}.xhtml", xhtml(body))
+
+
+def unit_course(sha256: str, word_count: int, navigation, start_hint, end_hint, chapter):
+    return {
+        "book": {"title_zh": "占位笔记"},
+        "source": {"sha256": sha256, "format": "EPUB"},
+        "reading_notes": {"counting_method": "去空白后的字符数"},
+        "units": [
+            {
+                "id": "mid-u",
+                "order": 1,
+                "locate": {
+                    "navigation": navigation,
+                    "chapter": chapter,
+                    "start_hint": start_hint,
+                    "end_hint": end_hint,
+                    "word_count": word_count,
+                    "estimated_minutes": 8,
+                },
+                "pre_questions": [
+                    {"kind": "structure", "question": "从哪一句进入？"},
+                    {"kind": "argument", "question": "前一句为什么留下？"},
+                    {"kind": "self", "question": "你会把起点标在哪里？"},
+                ],
+                "watch": {"concept": "切分起点", "why": "用来核对没有把起点前的文字切进来。"},
+            }
+        ],
+    }
+
+
+class StartHintCutTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory(dir="/tmp")
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+
+    def cut(self, bodies, navigation, start_hint, end_hint, included, chapter):
+        epub = self.root / "mid.epub"
+        package_chapters(epub, bodies)
+        sha = hashlib.sha256(epub.read_bytes()).hexdigest()
+        course = self.root / "mid-course.json"
+        course.write_text(json.dumps(
+            unit_course(sha, visible_count(included), navigation, start_hint, end_hint, chapter),
+            ensure_ascii=False,
+        ), encoding="utf-8")
+        out = self.root / "mid-out"
+        result = subprocess.run(
+            [sys.executable, str(CUTTER), "--source", str(epub), "--course", str(course),
+             "--out", str(out), "--units", "mid-u"],
+            capture_output=True, text=True,
+        )
+        return result, out
+
+    def test_unit_can_start_at_a_mid_chapter_heading(self):
+        included = ["小节起点", "从小节标题后的第一句开始。", "结束停在小节末句。"]
+        result, out = self.cut(
+            ["<h1>甲章占位</h1><p>章首这段不该进入后一单元。</p>"
+             "<h2>小节起点</h2><p>从小节标题后的第一句开始。</p>"
+             "<p>结束停在小节末句。后面这句不要。</p>"],
+            ["甲章占位", "小节起点"],
+            "小节起点",
+            "结束停在小节末句。",
+            included,
+            "甲章",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("<h2>小节起点</h2>", page)
+        for part in included:
+            self.assertIn(part, page)
+        self.assertNotIn("甲章占位", page)
+        self.assertNotIn("章首这段不该进入后一单元。", page)
+        self.assertNotIn("后面这句不要。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_start_hint_in_the_middle_of_a_paragraph_drops_the_prefix(self):
+        included = ["中段这句才是起点。收在结束这句。"]
+        result, out = self.cut(
+            ["<h1>乙章占位</h1>"
+             "<p>段前半句不该进入。中段这句才是起点。收在结束这句。后面不要。</p>"],
+            ["乙章占位"],
+            "中段这句才是起点。",
+            "收在结束这句。",
+            included,
+            "乙章",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("中段这句才是起点。收在结束这句。", page)
+        self.assertNotIn("段前半句不该进入。", page)
+        self.assertNotIn("后面不要。", page)
+        self.assertNotIn("乙章占位", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_start_hint_before_navigation_anchor_fails_without_output(self):
+        epub = self.root / "early.epub"
+        package_chapters(epub, [
+            "<h1>前章占位</h1><p>错放的起点句在前一章。</p>",
+            "<h1>目标章占位</h1><p>这一章里没有起点句。</p><p>结束句写在目标章。</p>",
+        ])
+        sha = hashlib.sha256(epub.read_bytes()).hexdigest()
+        course = self.root / "early-course.json"
+        course.write_text(json.dumps(unit_course(
+            sha, 1, ["目标章占位"], "错放的起点句在前一章。", "结束句写在目标章。", "目标章",
+        ), ensure_ascii=False), encoding="utf-8")
+        out = self.root / "early-out"
+        result = subprocess.run(
+            [sys.executable, str(CUTTER), "--source", str(epub), "--course", str(course),
+             "--out", str(out), "--units", "mid-u"],
+            capture_output=True, text=True,
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("找不到起始提示", result.stdout)
+        self.assertIn("错放的起点句在前一章。", result.stdout)
+        self.assertNotIn("字数不符", result.stdout)
+        self.assertFalse(out.exists())
 
 
 if __name__ == "__main__":
