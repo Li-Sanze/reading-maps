@@ -1,0 +1,6 @@
+[submodule ".agents/skills/fireworks-tech-graph"]
+	path = .agents/skills/fireworks-tech-graph
+	url = https://github.com/yizhiyanhua-ai/fireworks-tech-graph.git
+[submodule ".agents/skills/doc-to-sketch"]
+	path = .agents/skills/doc-to-sketch
+	url = https://github.com/statefulai/doc-to-sketch.git

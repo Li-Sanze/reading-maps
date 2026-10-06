@@ -5,13 +5,15 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from dataclasses import dataclass
 from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
 import sys
 from urllib.parse import unquote, urlsplit
+
+from source_validation import Issue, SourceDocument, SourceError, inspect_source, nonempty
+from source_validation import inspect_private_paths as inspect_shared_private_paths
 
 
 PRIVATE_SOURCE_SUFFIXES = {
@@ -41,16 +43,6 @@ V1_REQUIRED_FIELDS = {
 }
 REMOTE_SCHEMES = {"http", "https"}
 SAFE_LINK_SCHEMES = REMOTE_SCHEMES | {"mailto", "tel", "data"}
-PRIVATE_ABSOLUTE_PATH = re.compile(
-    r"^(?:file://|/(?:Users|home|private|Volumes)/|[A-Za-z]:[\\/])"
-)
-
-
-@dataclass(frozen=True)
-class Issue:
-    level: str
-    location: str
-    message: str
 
 
 class ArtifactHTMLParser(HTMLParser):
@@ -143,21 +135,8 @@ def local_reference_issue(
     return None
 
 
-def iter_strings(value: object, location: str = "$"):
-    if isinstance(value, dict):
-        for key, child in value.items():
-            yield from iter_strings(child, f"{location}.{key}")
-    elif isinstance(value, list):
-        for index, child in enumerate(value):
-            yield from iter_strings(child, f"{location}[{index}]")
-    elif isinstance(value, str):
-        yield location, value
-
-
 def inspect_private_paths(data: object, path: Path, issues: list[Issue]) -> None:
-    for location, value in iter_strings(data):
-        if PRIVATE_ABSOLUTE_PATH.match(value):
-            issues.append(Issue("ERROR", str(path), f"{location} 含绝对私有路径或 file:// 链接"))
+    inspect_shared_private_paths(data, f"{path}:$", issues)
 
 
 def inspect_record_ids(
@@ -244,7 +223,40 @@ def module_records(data: dict[str, object]) -> list[dict[str, object]]:
     return records
 
 
-def inspect_book(book_dir: Path) -> list[Issue]:
+def has_field(data: object, path: str) -> bool:
+    if isinstance(data, list):
+        return any(has_field(item, path) for item in data)
+    if not isinstance(data, dict):
+        return False
+    head, _, tail = path.partition(".")
+    value = data.get(head)
+    return has_field(value, tail) if tail else nonempty(value)
+
+
+def inspect_sections(data: dict, path: Path, issues: list[Issue], strict: bool):
+    def any_field(*names):
+        return any(has_field(data, name) for name in names)
+
+    coverage = [
+        ("书籍身份、版本与材料边界", any_field("book") and any_field("source")
+         and any_field("scope", "source.credible_range", "source.metadata_limitations", "version_boundary")),
+        ("全书问题与展开结构", any_field("book.one_sentence_model", "whole_book_model.question", "central_question")
+         and any_field("whole_book_model", "coverage", "volumes", "works", "core_route", "generation_audit.whole_book_identity")),
+        ("主要观点与论证依据", any_field("claims.statement", "claims.text")
+         and any_field("claims.locators", "claims.locator", "claims.source_excerpt_ids", "claims.derived_from", "claims.supports")),
+        ("人物、力量、概念或阶段的关键关系", any_field("relationships", "characters", "conceptual_roles", "themes", "concepts", "whole_book_model.stages", "works.series")),
+        ("作者、综合、批判和外部背景的标型", any_field("claims.type", "claims.kind", "claims.label")),
+        ("首轮回原文路线与理由", any_field("core_route", "deep_read_list", "source_return_route", "reading_route", "original_reading_route")),
+        ("全读、选读、深挖或停止的阅读决策", any_field("verdict", "reading_decision", "read_decision", "next_steps")),
+    ]
+    for number, (label, present) in enumerate(coverage, 1):
+        if not present:
+            issues.append(Issue("ERROR" if strict else "WARNING", f"{path}:$", f"主页面第 {number} 项缺少已知字段覆盖：{label}"))
+
+
+def inspect_book(book_dir: Path, source_path: Path | None = None,
+                 strict_sections: bool = False, audit: dict | None = None) -> list[Issue]:
+    book_dir = book_dir.resolve()
     issues: list[Issue] = []
     if not book_dir.is_dir():
         return [Issue("ERROR", str(book_dir), "书籍目录不存在")]
@@ -262,8 +274,10 @@ def inspect_book(book_dir: Path) -> list[Issue]:
     data = load_json(main_json, issues)
     inspect_html(book_dir / "reading.html", issues, output_root)
     if not isinstance(data, dict):
+        issues.append(Issue("ERROR", str(main_json), "reading.json 必须是对象"))
         return issues
     inspect_private_paths(data, main_json, issues)
+    inspect_sections(data, main_json, issues, strict_sections)
 
     schema_version = data.get("schema_version")
     if "schema_version" in data and schema_version not in ACCEPTED_SCHEMA_VERSIONS:
@@ -348,17 +362,49 @@ def inspect_book(book_dir: Path) -> list[Issue]:
                 kind = module_data.get("artifact_kind")
                 if not isinstance(kind, str) or "deep-dive" not in kind:
                     issues.append(Issue("ERROR", str(json_path), "模块 artifact_kind 必须包含 deep-dive"))
+            else:
+                issues.append(Issue("ERROR", str(json_path), "模块 reading.json 必须是对象"))
 
+    if source_path is not None:
+        source = None
+        audit = audit if audit is not None else {}
+        try:
+            source = SourceDocument(source_path)
+            inherited = data.get("source") if isinstance(data.get("source"), dict) else {}
+            audit.update(sha256=source.sha256, expected_sha256=inherited.get("sha256"), documents=[])
+            inspect_source(data, main_json, source, {}, issues, audit)
+            # A wrong main-source hash is a stop condition for all modules.
+            if str(inherited.get("sha256", "")).lower() == source.sha256:
+                for json_path in sorted(modules_root.rglob("reading.json")):
+                    module_data = load_json(json_path, issues)
+                    if isinstance(module_data, dict):
+                        inspect_source(module_data, json_path, source, inherited, issues, audit)
+        except SourceError as exc:
+            issues.append(Issue("ERROR", "--source", str(exc)))
+        finally:
+            if source is not None:
+                source.close()
     return issues
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="验证渐进式读书地图目录")
     parser.add_argument("book_dir", type=Path, help="books/<中文书名> 目录")
+    parser.add_argument("--source", type=Path, help="仓库外的 TXT、Markdown 或 EPUB 原书")
+    parser.add_argument("--strict-sections", action="store_true", help="新书：七项字段覆盖缺失视为 ERROR")
     args = parser.parse_args()
 
     book_dir = args.book_dir.expanduser().resolve()
-    issues = inspect_book(book_dir)
+    audit = {}
+    issues = inspect_book(book_dir, args.source.expanduser() if args.source else None,
+                          args.strict_sections, audit)
+    if audit:
+        documents = audit.get("documents", [])
+        checked = sum(item["quotes_checked"] for item in documents)
+        matched = sum(item["quotes_matched"] for item in documents)
+        hints = sum(item["hints_checked"] for item in documents)
+        hash_match = str(audit.get("expected_sha256", "")).lower() == audit["sha256"]
+        print(f"SOURCE: sha256={audit['sha256']}; match={hash_match}; quotes_checked={checked}; quotes_matched={matched}; hints_checked={hints}")
     for issue in issues:
         print(f"{issue.level}: {issue.location}: {issue.message}")
 

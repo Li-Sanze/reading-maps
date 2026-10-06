@@ -31,7 +31,7 @@
 
 ## 生成与审计
 
-仓库内置 [`read-book`](skills/read-book/SKILL.md) Skill，支持从中文 TXT、Markdown 和 EPUB 建立全书主地图、按真实问题深挖，以及最小修订现有地图。
+仓库内置 [`read-book`](.agents/skills/read-book/SKILL.md) Skill，支持从中文 TXT、Markdown 和 EPUB 建立全书主地图、按真实问题深挖，以及最小修订现有地图。
 
 ## 内容边界
 

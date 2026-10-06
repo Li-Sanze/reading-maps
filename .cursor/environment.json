@@ -1,0 +1,4 @@
+{
+  "name": "reading-maps",
+  "install": "git submodule update --init --depth 1 && (python3 -m pip install --user --break-system-packages pillow || python3 -m pip install --user pillow) && ((sudo -n apt-get update && sudo -n apt-get install -y libcairo2) || echo 'WARNING: cairosvg unavailable; fireworks PNG export disabled') && ((python3 -m pip install --user --break-system-packages cairosvg || python3 -m pip install --user cairosvg) && python3 -c 'import cairosvg' || echo 'WARNING: cairosvg unavailable; fireworks PNG export disabled')"
+}
