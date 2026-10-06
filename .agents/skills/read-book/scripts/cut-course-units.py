@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Cut course units from an EPUB into self-contained HTML outside any git worktree.
 
-navigation[0] locates the chapter in spine order. The cut then starts at
-start_hint and stops at the end of end_hint. Word counts are non-whitespace
+navigation[0] locates the chapter in spine order. The excerpt starts at
+start_hint. When that hint begins a block, or is itself a heading, the
+contiguous headings immediately before it are included, back through the
+anchor when nothing but headings lies between them. A hint inside a paragraph
+drops the earlier text of that paragraph and does not pull headings. The
+excerpt stops at the end of end_hint. Word counts are non-whitespace
 characters. A mismatch fails; nothing here adjusts the count.
 """
 
@@ -501,6 +505,17 @@ def read_spine(archive: zipfile.ZipFile) -> tuple[list[Block], dict[str, str]]:
     return blocks, media_types
 
 
+def heading_run_before(indexed: list[Block], start_at: tuple[int, int]) -> int:
+    """Include headings that touch the start block, stopping at the anchor."""
+    position, start_index = start_at
+    block = indexed[position]
+    if block.kind != "heading" and visible_count(block.text[:start_index]) > 0:
+        return position
+    while position > 0 and indexed[position - 1].kind == "heading":
+        position -= 1
+    return position
+
+
 def navigation_order(headings: list[str], titles: list[str]) -> None:
     """Headings from the chapter anchor through end_hint must follow navigation."""
     seen = [normalize(heading) for heading in headings]
@@ -564,9 +579,10 @@ def cut_after_anchor(blocks, anchor, titles, start_hint, end_hint, labels):
     if end_at is None:
         raise CutError(f"找不到结束提示：{end_hint}", rank=3)
     navigation_order(window_headings, titles)
+    lead = heading_run_before(indexed, start_at)
     segments = []
     output_headings = []
-    for position in range(start_at[0], end_at[0] + 1):
+    for position in range(lead, end_at[0] + 1):
         block = indexed[position]
         if position == start_at[0] and position == end_at[0]:
             text = block.text[start_at[1]:end_at[1]]

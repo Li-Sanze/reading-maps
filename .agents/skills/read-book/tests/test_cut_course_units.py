@@ -26,6 +26,7 @@ COURSE_COUNTING_METHOD = (
     "blocks 从正文第一个非空 h1–h6 或 p 文本块起按1编号，不计 head/title。"
 )
 INCLUDED = [
+    "甲节标题",
     "起点在这一句里出现。",
     "中段补上几句 占位说明①。",
     "图题是一朵纸上的云。",
@@ -33,7 +34,6 @@ INCLUDED = [
     "结束就停在这一句。",
 ]
 EXCLUDED_SENTENCES = [
-    "甲节标题",
     "标题之前的导语不该进入单元。",
     "导航文件里的句子不该进入单元。",
     "自定义排除段不该出现。",
@@ -447,13 +447,14 @@ class StartHintCutTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
 
-    def cut(self, bodies, navigation, start_hint, end_hint, included, chapter):
+    def cut(self, bodies, navigation, start_hint, end_hint, included, chapter, word_count=None):
         epub = self.root / "mid.epub"
         package_chapters(epub, bodies)
         sha = hashlib.sha256(epub.read_bytes()).hexdigest()
+        count = visible_count(included) if word_count is None else word_count
         course = self.root / "mid-course.json"
         course.write_text(json.dumps(
-            unit_course(sha, visible_count(included), navigation, start_hint, end_hint, chapter),
+            unit_course(sha, count, navigation, start_hint, end_hint, chapter),
             ensure_ascii=False,
         ), encoding="utf-8")
         out = self.root / "mid-out"
@@ -506,6 +507,90 @@ class StartHintCutTests(unittest.TestCase):
         self.assertNotIn("乙章占位", page)
         manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_first_sentence_after_subheading_includes_that_heading(self):
+        included = ["小标题甲", "第一句就在这里。", "结束句在后面。"]
+        result, out = self.cut(
+            ["<h1>别章占位</h1><p>别章正文不该进来。</p>"
+             "<h2>小标题甲</h2><p>第一句就在这里。</p><p>结束句在后面。</p>"],
+            ["小标题甲"],
+            "第一句就在这里。",
+            "结束句在后面。",
+            included,
+            "小标题",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("<h2>小标题甲</h2>", page)
+        self.assertLess(page.index("<h2>小标题甲</h2>"), page.index("第一句就在这里。"))
+        for part in included:
+            self.assertIn(part, page)
+        self.assertNotIn("别章占位", page)
+        self.assertNotIn("别章正文不该进来。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_consecutive_chapter_and_section_headings_are_both_included(self):
+        included = ["章标题占位", "节标题占位", "首句从这里开始。", "结束就在这句。"]
+        result, out = self.cut(
+            ["<p>书前导语不该进入。</p>"
+             "<h1>章标题占位</h1><h2>节标题占位</h2>"
+             "<p>首句从这里开始。</p><p>结束就在这句。尾巴不要。</p>"],
+            ["章标题占位", "节标题占位"],
+            "首句从这里开始。",
+            "结束就在这句。",
+            included,
+            "章",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("<h1>章标题占位</h1>", page)
+        self.assertIn("<h2>节标题占位</h2>", page)
+        self.assertLess(page.index("<h1>章标题占位</h1>"), page.index("<h2>节标题占位</h2>"))
+        self.assertLess(page.index("<h2>节标题占位</h2>"), page.index("首句从这里开始。"))
+        for part in included:
+            self.assertIn(part, page)
+        self.assertNotIn("书前导语不该进入。", page)
+        self.assertNotIn("尾巴不要。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_heading_separated_by_a_paragraph_is_not_included(self):
+        included = ["首句才是起点。结束在这句。"]
+        result, out = self.cut(
+            ["<h1>章标题占位</h1><p>中间隔着一段正文。</p>"
+             "<p>首句才是起点。结束在这句。</p>"],
+            ["章标题占位"],
+            "首句才是起点。",
+            "结束在这句。",
+            included,
+            "章",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("首句才是起点。结束在这句。", page)
+        self.assertNotIn("章标题占位", page)
+        self.assertNotIn("中间隔着一段正文。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_word_count_without_the_leading_heading_is_rejected(self):
+        with_heading = ["小标题甲", "第一句就在这里。", "结束句在后面。"]
+        prose_only = ["第一句就在这里。", "结束句在后面。"]
+        result, out = self.cut(
+            ["<h2>小标题甲</h2><p>第一句就在这里。</p><p>结束句在后面。</p>"],
+            ["小标题甲"],
+            "第一句就在这里。",
+            "结束句在后面。",
+            with_heading,
+            "小标题",
+            word_count=visible_count(prose_only),
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("字数不符", result.stdout)
+        self.assertIn(f"actual={visible_count(with_heading)}", result.stdout)
+        self.assertIn(f"expected={visible_count(prose_only)}", result.stdout)
+        self.assertFalse(out.exists())
 
     def test_start_hint_before_navigation_anchor_fails_without_output(self):
         epub = self.root / "early.epub"
