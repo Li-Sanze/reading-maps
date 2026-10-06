@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1024" width="1280" height="1024" data-quality-profile="showcase">
+  <title>zs-u02 读前导读：外部性与规模经济</title>
+  <desc>置身事内第一章第二节的读前概念框架：外部性（正/负）、规模经济，以及它们与地方政府事务分工和边界的提问关系。不是本节结论，也不摘录原文。</desc>
+  <style>
+    text { font-family: 'WenQuanYi Micro Hei', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <rect data-graph-role="background" x="0" y="0" width="1280" height="1024" fill="#ffffff"/>
+  <g font-family="WenQuanYi Micro Hei, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Helvetica Neue, Helvetica, Arial, sans-serif">
+  <text x="640" y="42" fill="#111827" font-size="20" font-weight="600" text-anchor="middle">读前导读：外部性与规模经济</text>
+  <text x="640" y="68" fill="#6b7280" font-size="13" font-weight="400" text-anchor="middle">《置身事内》第一章第二节 · 带着问题进入阅读</text>
+  <rect id="c-ext" data-graph-role="container" x="40" y="96" width="568" height="312" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="64" y="124" fill="#111827" font-size="16" font-weight="600">外部性</text>
+  <text x="64" y="146" fill="#6b7280" font-size="12" font-weight="400">行为影响了他人，但这份影响没有完全进入价格</text>
+  <rect id="c-scale" data-graph-role="container" x="672" y="96" width="568" height="312" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="696" y="124" fill="#111827" font-size="16" font-weight="600">规模经济</text>
+  <text x="696" y="146" fill="#6b7280" font-size="12" font-weight="400">在一定范围内，规模变大，平均成本有可能下降</text>
+  <rect id="c-questions" data-graph-role="container" x="40" y="480" width="1200" height="408" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="64" y="508" fill="#111827" font-size="16" font-weight="600">事务分工与边界</text>
+  <text x="64" y="530" fill="#6b7280" font-size="12" font-weight="400">三格都是读前问题，不是本节结论</text>
+  <path id="e-spill" data-graph-role="edge" data-edge-id="e-spill" data-source="c-ext" data-target="q-spill" d="M 324,408 L 324,556" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path id="e-scale" data-graph-role="edge" data-edge-id="e-scale" data-source="c-scale" data-target="q-scale" d="M 956,408 L 956,556" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path id="e-spill-boundary" data-graph-role="edge" data-edge-id="e-spill-boundary" data-source="q-spill" data-target="q-boundary" d="M 324,684 L 324,748" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path id="e-scale-boundary" data-graph-role="edge" data-edge-id="e-scale-boundary" data-source="q-scale" data-target="q-boundary" d="M 956,684 L 956,748" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="336" y="448" fill="#2563eb" font-size="12" font-weight="400" data-graph-role="label" data-owner="e-spill">影响是否出界</text>
+  <text x="944" y="448" fill="#16a34a" font-size="12" font-weight="400" text-anchor="end" data-graph-role="label" data-owner="e-scale">规模是否匹配</text>
+  <text x="336" y="720" fill="#2563eb" font-size="12" font-weight="400" data-graph-role="label" data-owner="e-spill-boundary">再问边界</text>
+  <text x="944" y="720" fill="#16a34a" font-size="12" font-weight="400" text-anchor="end" data-graph-role="label" data-owner="e-scale-boundary">再问边界</text>
+  <rect id="pos" data-graph-role="node" data-node-id="pos" x="64" y="168" width="240" height="176" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <circle data-graph-role="decoration" cx="184" cy="204" r="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="184" y="210" fill="#15803d" font-size="16" font-weight="700" text-anchor="middle">+</text>
+  <text x="184" y="240" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">正外部性</text>
+  <text x="184" y="268" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">他人得到好处</text>
+  <text x="184" y="290" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">这份好处未必被计价</text>
+  <rect id="neg" data-graph-role="node" data-node-id="neg" x="344" y="168" width="240" height="176" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <circle data-graph-role="decoration" cx="464" cy="204" r="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="464" y="210" fill="#b91c1c" font-size="16" font-weight="700" text-anchor="middle">−</text>
+  <text x="464" y="240" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">负外部性</text>
+  <text x="464" y="268" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">他人承担代价</text>
+  <text x="464" y="290" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">这份代价未必被计价</text>
+  <text x="324" y="376" fill="#6b7280" font-size="12" font-weight="400" text-anchor="middle">读时先分清：是好处，还是代价</text>
+  <rect id="scale-cost" data-graph-role="node" data-node-id="scale-cost" x="696" y="168" width="240" height="176" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <g data-graph-role="decoration">
+    <rect x="800" y="202" width="8" height="10" rx="1" fill="#7c3aed"/>
+    <rect x="812" y="196" width="8" height="16" rx="1" fill="#7c3aed"/>
+    <rect x="824" y="190" width="8" height="22" rx="1" fill="#6d28d9"/>
+  </g>
+  <text x="816" y="240" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">成本随规模</text>
+  <text x="816" y="268" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">规模变大时</text>
+  <text x="816" y="290" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">单位成本可能下降</text>
+  <rect id="scale-scope" data-graph-role="node" data-node-id="scale-scope" x="976" y="168" width="240" height="176" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <circle data-graph-role="decoration" cx="1096" cy="204" r="14" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <circle data-graph-role="decoration" cx="1096" cy="204" r="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="1096" y="240" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">服务范围</text>
+  <text x="1096" y="268" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">覆盖更大的人群或区域</text>
+  <text x="1096" y="290" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">固定投入是否摊得开</text>
+  <text x="956" y="376" fill="#6b7280" font-size="12" font-weight="400" text-anchor="middle">读时先问：做大是否更省</text>
+  <rect id="q-spill" data-graph-role="node" data-node-id="q-spill" x="84" y="556" width="480" height="128" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="104" y="588" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+  <text x="324" y="616" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">影响是否越出边界？</text>
+  <text x="324" y="648" fill="#374151" font-size="14" font-weight="400" text-anchor="middle">收益或成本，有没有溢到做事范围之外？</text>
+  <rect id="q-scale" data-graph-role="node" data-node-id="q-scale" x="716" y="556" width="480" height="128" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="736" y="588" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+  <text x="956" y="616" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">合适的规模在哪一层？</text>
+  <text x="956" y="648" fill="#374151" font-size="14" font-weight="400" text-anchor="middle">做大是否更省，做近是否更准？</text>
+  <rect id="q-boundary" data-graph-role="node" data-node-id="q-boundary" x="280" y="748" width="720" height="112" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="300" y="772" fill="#1d4ed8" font-size="12" font-weight="600">读前问题</text>
+  <text x="640" y="800" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">事务归谁，边界划在哪里？</text>
+  <text x="640" y="828" fill="#374151" font-size="14" font-weight="400" text-anchor="middle">对照上面两问；答案留在原文里，不在这张图上</text>
+  <g id="legend" data-graph-role="legend">
+    <rect x="40" y="920" width="1200" height="64" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="64" y1="942" x2="100" y2="942" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <text x="112" y="946" fill="#6b7280" font-size="12" font-weight="400">蓝线 · 外部性一侧：影响落在哪里，有没有出界</text>
+    <line x1="64" y1="966" x2="100" y2="966" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="112" y="970" fill="#6b7280" font-size="12" font-weight="400">绿线 · 规模经济一侧：规模与范围是否匹配层级</text>
+  <text x="1208" y="958" fill="#6b7280" font-size="12" font-weight="400" text-anchor="end">公开概念 · 不预告结论 · 无原文</text>
+  </g>
+  </g>
+</svg>
