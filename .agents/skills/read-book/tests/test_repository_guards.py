@@ -54,9 +54,12 @@ class SourceGuardTests(unittest.TestCase):
         self.check_candidate(".agents/skills/x/SKILL.md", blocked=False, ignored=False)
 
     def test_other_documentation_markdown_is_allowed(self):
-        for candidate in (".sopify/plan/plan.md", "notes/a.markdown"):
+        for candidate in ("docs/plan.md", "notes/a.markdown"):
             with self.subTest(candidate=candidate):
                 self.check_candidate(candidate, blocked=False, ignored=False)
+
+    def test_local_sopify_plans_are_ignored_but_not_blocked(self):
+        self.check_candidate(".sopify/plan/plan.md", blocked=False, ignored=True)
 
     def test_original_extension_and_sources_rules_remain(self):
         for candidate in ("a.EPUB", "a.PDF", "a.MOBI", "a.AZW3", "a.DJVU", "a.TXT", "nested/sources/data.json"):
