@@ -26,6 +26,7 @@ COURSE_COUNTING_METHOD = (
     "blocks 从正文第一个非空 h1–h6 或 p 文本块起按1编号，不计 head/title。"
 )
 INCLUDED = [
+    "甲节标题",
     "起点在这一句里出现。",
     "中段补上几句 占位说明①。",
     "图题是一朵纸上的云。",
@@ -33,7 +34,6 @@ INCLUDED = [
     "结束就停在这一句。",
 ]
 EXCLUDED_SENTENCES = [
-    "甲节标题",
     "标题之前的导语不该进入单元。",
     "导航文件里的句子不该进入单元。",
     "自定义排除段不该出现。",
@@ -376,7 +376,8 @@ class CutCourseUnitsTests(unittest.TestCase):
         self.assertFalse(rejected.exists())
 
 
-def package_chapters(path: Path, bodies: list[str]) -> None:
+def package_chapters(path: Path, bodies: list[str], images: dict[str, bytes] | None = None) -> None:
+    images = images or {}
     manifest = []
     spine = []
     for index, _body in enumerate(bodies):
@@ -384,6 +385,10 @@ def package_chapters(path: Path, bodies: list[str]) -> None:
             f'<item id="c{index}" href="c{index}.xhtml" media-type="application/xhtml+xml"/>'
         )
         spine.append(f'<itemref idref="c{index}"/>')
+    for name in images:
+        manifest.append(
+            f'<item id="img-{Path(name).stem}" href="images/{name}" media-type="image/png"/>'
+        )
     container = """<?xml version="1.0"?>
 <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
   <rootfiles>
@@ -411,6 +416,8 @@ def package_chapters(path: Path, bodies: list[str]) -> None:
         archive.writestr("OEBPS/content.opf", opf)
         for index, body in enumerate(bodies):
             archive.writestr("OEBPS/" + f"c{index}.xhtml", xhtml(body))
+        for name, payload in images.items():
+            archive.writestr(f"OEBPS/images/{name}", payload)
 
 
 def unit_course(sha256: str, word_count: int, navigation, start_hint, end_hint, chapter):
@@ -447,13 +454,14 @@ class StartHintCutTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
 
-    def cut(self, bodies, navigation, start_hint, end_hint, included, chapter):
+    def cut(self, bodies, navigation, start_hint, end_hint, included, chapter, word_count=None, images=None):
         epub = self.root / "mid.epub"
-        package_chapters(epub, bodies)
+        package_chapters(epub, bodies, images)
         sha = hashlib.sha256(epub.read_bytes()).hexdigest()
+        count = visible_count(included) if word_count is None else word_count
         course = self.root / "mid-course.json"
         course.write_text(json.dumps(
-            unit_course(sha, visible_count(included), navigation, start_hint, end_hint, chapter),
+            unit_course(sha, count, navigation, start_hint, end_hint, chapter),
             ensure_ascii=False,
         ), encoding="utf-8")
         out = self.root / "mid-out"
@@ -506,6 +514,250 @@ class StartHintCutTests(unittest.TestCase):
         self.assertNotIn("乙章占位", page)
         manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_first_sentence_after_subheading_includes_that_heading(self):
+        included = ["小标题甲", "第一句就在这里。", "结束句在后面。"]
+        result, out = self.cut(
+            ["<h1>别章占位</h1><p>别章正文不该进来。</p>"
+             "<h2>小标题甲</h2><p>第一句就在这里。</p><p>结束句在后面。</p>"],
+            ["小标题甲"],
+            "第一句就在这里。",
+            "结束句在后面。",
+            included,
+            "小标题",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("<h2>小标题甲</h2>", page)
+        self.assertLess(page.index("<h2>小标题甲</h2>"), page.index("第一句就在这里。"))
+        for part in included:
+            self.assertIn(part, page)
+        self.assertNotIn("别章占位", page)
+        self.assertNotIn("别章正文不该进来。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_consecutive_chapter_and_section_headings_are_both_included(self):
+        included = ["章标题占位", "节标题占位", "首句从这里开始。", "结束就在这句。"]
+        result, out = self.cut(
+            ["<p>书前导语不该进入。</p>"
+             "<h1>章标题占位</h1><h2>节标题占位</h2>"
+             "<p>首句从这里开始。</p><p>结束就在这句。尾巴不要。</p>"],
+            ["章标题占位", "节标题占位"],
+            "首句从这里开始。",
+            "结束就在这句。",
+            included,
+            "章",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("<h1>章标题占位</h1>", page)
+        self.assertIn("<h2>节标题占位</h2>", page)
+        self.assertLess(page.index("<h1>章标题占位</h1>"), page.index("<h2>节标题占位</h2>"))
+        self.assertLess(page.index("<h2>节标题占位</h2>"), page.index("首句从这里开始。"))
+        for part in included:
+            self.assertIn(part, page)
+        self.assertNotIn("书前导语不该进入。", page)
+        self.assertNotIn("尾巴不要。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_image_and_caption_between_heading_and_first_sentence_stay_in_order(self):
+        included = ["图前标题", "图题写在标题和首句之间。", "首句从这里开始。", "结束就在这句。"]
+        result, out = self.cut(
+            ["<h1>图前标题</h1>"
+             '<figure><img src="images/dot.png" alt="占位小图"/>'
+             "<figcaption>图题写在标题和首句之间。</figcaption></figure>"
+             "<p>首句从这里开始。</p><p>结束就在这句。</p>"],
+            ["图前标题"],
+            "首句从这里开始。",
+            "结束就在这句。",
+            included,
+            "图前",
+            images={"dot.png": PNG},
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        encoded = base64.standard_b64encode(PNG).decode("ascii")
+        data_uri = f"data:image/png;base64,{encoded}"
+        heading_at = page.index("<h1>图前标题</h1>")
+        image_at = page.index(data_uri)
+        caption_at = page.index("<figcaption>图题写在标题和首句之间。</figcaption>")
+        sentence_at = page.index("首句从这里开始。")
+        self.assertLess(heading_at, image_at)
+        self.assertLess(image_at, caption_at)
+        self.assertLess(caption_at, sentence_at)
+        self.assertIn('alt="占位小图"', page)
+        self.assertNotIn('src="images/', page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+        self.assertNotIn("占位小图", re.sub(r"\s+", "", "".join(included)))
+
+    def test_image_after_a_body_paragraph_is_not_pulled_before_the_first_sentence(self):
+        included = ["首句才是起点。", "结束就在这句。"]
+        result, out = self.cut(
+            ["<h1>章锚点标题</h1><p>锚点后的正文隔开了。</p>"
+             '<figure><img src="images/dot.png" alt="占位小图"/>'
+             "<figcaption>图题不该进入。</figcaption></figure>"
+             "<p>首句才是起点。</p><p>结束就在这句。</p>"],
+            ["章锚点标题"],
+            "首句才是起点。",
+            "结束就在这句。",
+            included,
+            "占位章",
+            images={"dot.png": PNG},
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        article = page.split("<article>", 1)[1]
+        self.assertTrue(article.lstrip().startswith("<p>首句才是起点。</p>"))
+        self.assertIn("结束就在这句。", article)
+        self.assertNotIn("章锚点标题", page)
+        self.assertNotIn("锚点后的正文隔开了。", page)
+        self.assertNotIn("图题不该进入。", page)
+        self.assertNotIn("data:image/", page)
+        self.assertNotIn("占位小图", page)
+        self.assertNotIn("<h1", article)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_image_before_the_unit_heading_is_dropped(self):
+        included = ["单元小标题", "首句从这里开始。", "结束就在这句。"]
+        result, out = self.cut(
+            ["<h1>章锚点标题</h1><p>锚点后的正文隔开了。</p>"
+             '<figure><img src="images/dot.png" alt="占位小图"/>'
+             "<figcaption>图题不该进入。</figcaption></figure>"
+             "<h2>单元小标题</h2><p>首句从这里开始。</p><p>结束就在这句。</p>"],
+            ["章锚点标题", "单元小标题"],
+            "首句从这里开始。",
+            "结束就在这句。",
+            included,
+            "占位章",
+            images={"dot.png": PNG},
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        article = page.split("<article>", 1)[1]
+        self.assertTrue(article.lstrip().startswith("<h2>单元小标题</h2>"))
+        self.assertLess(article.index("<h2>单元小标题</h2>"), article.index("首句从这里开始。"))
+        self.assertIn("结束就在这句。", article)
+        self.assertNotIn("章锚点标题", page)
+        self.assertNotIn("锚点后的正文隔开了。", page)
+        self.assertNotIn("图题不该进入。", page)
+        self.assertNotIn("data:image/", page)
+        self.assertNotIn("占位小图", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_body_paragraph_stops_the_run_before_heading_image_and_caption(self):
+        included = ["首句才是起点。结束在这句。"]
+        result, out = self.cut(
+            ["<h1>图前标题</h1>"
+             '<figure><img src="images/dot.png" alt="占位小图"/>'
+             "<figcaption>图题不该进入。</figcaption></figure>"
+             "<p>中间隔着一段正文。</p>"
+             "<p>首句才是起点。结束在这句。</p>"],
+            ["图前标题"],
+            "首句才是起点。",
+            "结束在这句。",
+            included,
+            "图前",
+            images={"dot.png": PNG},
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("首句才是起点。结束在这句。", page)
+        self.assertNotIn("图前标题", page)
+        self.assertNotIn("图题不该进入。", page)
+        self.assertNotIn("中间隔着一段正文。", page)
+        self.assertNotIn("data:image/png;base64,", page)
+        self.assertNotIn("占位小图", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_mid_paragraph_hint_does_not_pull_heading_image_or_caption(self):
+        included = ["中段这句才是起点。收在结束这句。"]
+        result, out = self.cut(
+            ["<h1>乙章占位</h1>"
+             '<figure><img src="images/dot.png" alt="占位小图"/>'
+             "<figcaption>图题不该进入。</figcaption></figure>"
+             "<p>段前半句不该进入。中段这句才是起点。收在结束这句。</p>"],
+            ["乙章占位"],
+            "中段这句才是起点。",
+            "收在结束这句。",
+            included,
+            "乙章",
+            images={"dot.png": PNG},
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("中段这句才是起点。收在结束这句。", page)
+        self.assertNotIn("段前半句不该进入。", page)
+        self.assertNotIn("乙章占位", page)
+        self.assertNotIn("图题不该进入。", page)
+        self.assertNotIn("data:image/png;base64,", page)
+        self.assertNotIn("占位小图", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_word_count_omitting_included_heading_and_caption_is_rejected(self):
+        counted = ["图前标题", "图题写在标题和首句之间。", "首句从这里开始。", "结束就在这句。"]
+        prose_only = ["首句从这里开始。", "结束就在这句。"]
+        result, out = self.cut(
+            ["<h2>图前标题</h2>"
+             '<figure><img src="images/dot.png" alt="占位小图"/>'
+             "<figcaption>图题写在标题和首句之间。</figcaption></figure>"
+             "<p>首句从这里开始。</p><p>结束就在这句。</p>"],
+            ["图前标题"],
+            "首句从这里开始。",
+            "结束就在这句。",
+            counted,
+            "图前",
+            word_count=visible_count(prose_only),
+            images={"dot.png": PNG},
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("字数不符", result.stdout)
+        self.assertIn(f"actual={visible_count(counted)}", result.stdout)
+        self.assertIn(f"expected={visible_count(prose_only)}", result.stdout)
+        self.assertFalse(out.exists())
+
+    def test_heading_separated_by_a_paragraph_is_not_included(self):
+        included = ["首句才是起点。结束在这句。"]
+        result, out = self.cut(
+            ["<h1>章标题占位</h1><p>中间隔着一段正文。</p>"
+             "<p>首句才是起点。结束在这句。</p>"],
+            ["章标题占位"],
+            "首句才是起点。",
+            "结束在这句。",
+            included,
+            "章",
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        page = (out / "mid-u.html").read_text(encoding="utf-8")
+        self.assertIn("首句才是起点。结束在这句。", page)
+        self.assertNotIn("章标题占位", page)
+        self.assertNotIn("中间隔着一段正文。", page)
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["units"][0]["word_count"], visible_count(included))
+
+    def test_word_count_without_the_leading_heading_is_rejected(self):
+        with_heading = ["小标题甲", "第一句就在这里。", "结束句在后面。"]
+        prose_only = ["第一句就在这里。", "结束句在后面。"]
+        result, out = self.cut(
+            ["<h2>小标题甲</h2><p>第一句就在这里。</p><p>结束句在后面。</p>"],
+            ["小标题甲"],
+            "第一句就在这里。",
+            "结束句在后面。",
+            with_heading,
+            "小标题",
+            word_count=visible_count(prose_only),
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("字数不符", result.stdout)
+        self.assertIn(f"actual={visible_count(with_heading)}", result.stdout)
+        self.assertIn(f"expected={visible_count(prose_only)}", result.stdout)
+        self.assertFalse(out.exists())
 
     def test_start_hint_before_navigation_anchor_fails_without_output(self):
         epub = self.root / "early.epub"
