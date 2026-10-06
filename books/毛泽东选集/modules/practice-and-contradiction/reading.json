@@ -216,10 +216,10 @@
   ],
   "excerpts": [
     {"article": "实践论", "quote": "真理的标准只能是社会的实践。", "search_text": "真理的标准只能是社会的实践", "blocks": "8"},
-    {"article": "实践论", "quote": "感觉只解决现象问题，理论才解决本质问题。", "search_text": "感觉只解决现象问题，理论才解决本质问题", "blocks": "11"},
-    {"article": "实践论", "quote": "实践、认识、再实践、再认识。", "search_text": "实践、认识、再实践、再认识", "blocks": "29"},
+    {"article": "实践论", "quote": "感觉只解决现象问题，理论才解决本质问题。", "search_text": "感觉只解决现象问题，理论才解决本质问题", "blocks": "12"},
+    {"article": "实践论", "quote": "实践、认识、再实践、再认识", "search_text": "实践、认识、再实践、再认识", "blocks": "29"},
     {"article": "矛盾论", "quote": "对于具体的事物作具体的分析。", "search_text": "对于具体的事物作具体的分析", "blocks": "52"},
-    {"article": "矛盾论", "quote": "不能把过程中所有的矛盾平均看待。", "search_text": "不能把过程中所有的矛盾平均看待", "blocks": "71"},
+    {"article": "矛盾论", "quote": "不能把过程中所有的矛盾平均看待", "search_text": "不能把过程中所有的矛盾平均看待", "blocks": "71"},
     {"article": "矛盾论", "quote": "对抗是矛盾斗争的一种形式，而不是矛盾斗争的一切形式。", "search_text": "对抗是矛盾斗争的一种形式，而不是矛盾斗争的一切形式", "blocks": "111"}
   ],
   "original_reading_selections": [
