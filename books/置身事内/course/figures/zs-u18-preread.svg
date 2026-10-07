@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1160" width="1280" height="1160" data-quality-profile="showcase">
+  <title>zs-u18 读前导读：资金两侧与总流量、净流量</title>
+  <desc>置身事内第六章第二节的读前概念框架：银行、居民、企业、国际资金分开；资金供给与投资需求、总流量与净流量两组留白。资金箭头阅读后补。读前问题，不是本节结论，也不摘录原文。</desc>
+  <style>
+    text { font-family: 'WenQuanYi Micro Hei, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Helvetica Neue, Helvetica, Arial, sans-serif'; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect data-graph-role="background" x="0" y="0" width="1280" height="1160" fill="#ffffff"/>
+  <g font-family="WenQuanYi Micro Hei, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="640" y="46" fill="#111827" font-size="20" font-weight="600" text-anchor="middle">读前导读：资金两侧与总流量、净流量</text>
+    <text x="640" y="74" fill="#6b7280" font-size="13" font-weight="400" text-anchor="middle">《置身事内》第六章第二节 · 债台为何高筑：欧美的教训</text>
+    <text x="640" y="98" fill="#c2410c" font-size="13" font-weight="600" text-anchor="middle">读前问题 / 不是本节结论</text>
+    <rect id="c-roles" data-graph-role="container" x="40" y="128" width="1200" height="240" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="64" y="160" fill="#111827" font-size="16" font-weight="600">涉及的主体</text>
+    <text x="64" y="180" fill="#6b7280" font-size="12" font-weight="400">四格互不连线。资金箭头阅读后补，先不连接各主体</text>
+    <rect id="role-bank" data-graph-role="node" data-node-id="role-bank" x="64" y="204" width="256" height="136" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <rect x="178" y="226" width="28" height="3" rx="1" fill="#2563eb"/>
+      <rect x="182" y="230" width="4" height="12" rx="1" fill="#2563eb"/>
+      <rect x="190" y="230" width="4" height="12" rx="1" fill="#2563eb"/>
+      <rect x="198" y="230" width="4" height="12" rx="1" fill="#2563eb"/>
+    </g>
+    <text x="192" y="274" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">银行</text>
+    <text x="192" y="304" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">一个风险点先选出来</text>
+    <rect id="role-household" data-graph-role="node" data-node-id="role-household" x="360" y="204" width="256" height="136" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <circle cx="488" cy="228" r="5" fill="#7c3aed"/>
+      <path d="M 478 244 Q 488 233 498 244" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+    </g>
+    <text x="488" y="274" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">居民</text>
+    <text x="488" y="304" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">先标出这一格</text>
+    <rect id="role-firm" data-graph-role="node" data-node-id="role-firm" x="656" y="204" width="256" height="136" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <rect x="772" y="232" width="24" height="12" rx="2" fill="#0f766e"/>
+      <rect x="780" y="224" width="8" height="8" rx="1" fill="#0f766e"/>
+    </g>
+    <text x="784" y="274" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">企业</text>
+    <text x="784" y="304" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">先标出这一格</text>
+    <rect id="role-global" data-graph-role="node" data-node-id="role-global" x="952" y="204" width="256" height="136" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <circle cx="1080" cy="234" r="10" fill="none" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <circle cx="1080" cy="234" r="3" fill="#c2410c"/>
+    </g>
+    <text x="1080" y="274" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">国际资金</text>
+    <text x="1080" y="304" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">跨境往来先分开看</text>
+    <rect id="c-sides" data-graph-role="container" x="40" y="404" width="576" height="612" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="64" y="436" fill="#111827" font-size="16" font-weight="600">资金供给与投资需求</text>
+    <text x="64" y="456" fill="#6b7280" font-size="12" font-weight="400">债务扩张的哪一侧？箭头先不画</text>
+    <rect id="c-sides-chip-0" data-graph-role="node" data-node-id="c-sides-chip-0" x="60" y="484" width="248" height="100" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="184" y="526" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">资金供给</text>
+    <text x="184" y="554" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">从哪里来</text>
+    <rect id="c-sides-chip-1" data-graph-role="node" data-node-id="c-sides-chip-1" x="348" y="484" width="248" height="100" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="472" y="526" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">投资需求</text>
+    <text x="472" y="554" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">流向哪里</text>
+    <rect id="c-sides-blank" data-graph-role="node" data-node-id="c-sides-blank" x="60" y="624" width="536" height="168" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="80" y="652" fill="#64748b" font-size="12" font-weight="600">来源与去向</text>
+    <text x="328" y="684" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">从哪里来，先留空</text>
+    <text x="328" y="710" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">流向哪里，先留空</text>
+    <text x="328" y="736" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">两侧都先记下</text>
+    <rect id="c-sides-q" data-graph-role="node" data-node-id="c-sides-q" x="60" y="832" width="536" height="160" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="76" y="858" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+    <text x="580" y="858" fill="#9a3412" font-size="12" font-weight="400" text-anchor="end">不是本节结论</text>
+    <text x="328" y="888" fill="#111827" font-size="13" font-weight="600" text-anchor="middle">银行管制、国际资金、国内分配、实体投资需求</text>
+    <text x="328" y="912" fill="#111827" font-size="13" font-weight="400" text-anchor="middle">各讲债务扩张的哪一侧？</text>
+    <text x="328" y="936" fill="#111827" font-size="13" font-weight="400" text-anchor="middle">借钱意愿之外，总量为何还会上升？</text>
+    <text x="328" y="960" fill="#9a3412" font-size="13" font-weight="400" text-anchor="middle">银行的一个风险点，与谁相连？留空</text>
+    <rect id="c-flows" data-graph-role="container" x="664" y="404" width="576" height="612" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="688" y="436" fill="#111827" font-size="16" font-weight="600">总流量与净流量</text>
+    <text x="688" y="456" fill="#6b7280" font-size="12" font-weight="400">留意概念：风险不能只看净额</text>
+    <rect id="c-flows-chip-0" data-graph-role="node" data-node-id="c-flows-chip-0" x="684" y="484" width="248" height="100" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+    <text x="808" y="526" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">总流量</text>
+    <text x="808" y="554" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">双向往来的合计</text>
+    <rect id="c-flows-chip-1" data-graph-role="node" data-node-id="c-flows-chip-1" x="972" y="484" width="248" height="100" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+    <text x="1096" y="526" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">净流量</text>
+    <text x="1096" y="554" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">相抵之后的差额</text>
+    <rect id="c-flows-blank" data-graph-role="node" data-node-id="c-flows-blank" x="684" y="624" width="536" height="168" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="704" y="652" fill="#64748b" font-size="12" font-weight="600">读时核对</text>
+    <text x="952" y="684" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">净额是否可能很小？</text>
+    <text x="952" y="710" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">负债和资产是否仍很大？</text>
+    <text x="952" y="736" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">风险能否只看净额？</text>
+    <rect id="c-flows-q" data-graph-role="node" data-node-id="c-flows-q" x="684" y="832" width="536" height="160" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="700" y="858" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+    <text x="1204" y="858" fill="#9a3412" font-size="12" font-weight="400" text-anchor="end">不是本节结论</text>
+    <text x="952" y="888" fill="#111827" font-size="13" font-weight="600" text-anchor="middle">看到跨境资本净流量不大</text>
+    <text x="952" y="912" fill="#111827" font-size="13" font-weight="400" text-anchor="middle">或利率很低</text>
+    <text x="952" y="936" fill="#111827" font-size="13" font-weight="400" text-anchor="middle">还要再查哪些信息，才判断融资扩张与风险？</text>
+    <text x="952" y="960" fill="#9a3412" font-size="13" font-weight="400" text-anchor="middle">答案留在原文，不在这张图上</text>
+    <g id="legend" data-graph-role="legend">
+      <rect x="40" y="1044" width="1200" height="64" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+      <rect data-graph-role="decoration" x="64" y="1068" width="14" height="14" rx="3" fill="#93c5fd"/>
+    <text x="86" y="1080" fill="#6b7280" font-size="12" font-weight="400">主体与资金两侧</text>
+      <rect data-graph-role="decoration" x="198" y="1068" width="14" height="14" rx="3" fill="#86efac"/>
+    <text x="220" y="1080" fill="#6b7280" font-size="12" font-weight="400">总流量与净流量</text>
+      <rect data-graph-role="decoration" x="332" y="1068" width="14" height="14" rx="3" fill="#94a3b8"/>
+    <text x="354" y="1080" fill="#6b7280" font-size="12" font-weight="400">箭头留待阅读后补</text>
+    <text x="1208" y="1080" fill="#6b7280" font-size="12" font-weight="400" text-anchor="end">读前问题 / 不是本节结论</text>
+    </g>
+  </g>
+</svg>
