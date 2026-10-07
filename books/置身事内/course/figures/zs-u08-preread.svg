@@ -2,7 +2,7 @@
   <title>zs-u08 读前导读：融资平台与开发项目</title>
   <desc>置身事内第三章第一节的读前概念框架：把政府、融资平台、企业和开发项目分开，资产、资金、职责三格留空。读前问题，不是本节结论，也不摘录原文。</desc>
   <style>
-    text { font-family: 'WenQuanYi Micro Hei, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Helvetica Neue, Helvetica, Arial, sans-serif'; }
+    text { font-family: 'WenQuanYi Micro Hei', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   </style>
   <defs>
     <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">

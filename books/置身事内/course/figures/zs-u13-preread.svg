@@ -2,7 +2,7 @@
   <title>zs-u13 读前导读：补贴、需求与退出</title>
   <desc>置身事内第四章第二节的读前概念框架：市场变化、补贴与成本、竞争与退出三组并列留白。读前问题，不是本节结论；各组之间没有连线，也不摘录原文。</desc>
   <style>
-    text { font-family: 'WenQuanYi Micro Hei, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Helvetica Neue, Helvetica, Arial, sans-serif'; }
+    text { font-family: 'WenQuanYi Micro Hei', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   </style>
   <defs>
     <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -64,18 +64,17 @@
     <text x="640" y="826" fill="#9a3412" font-size="13" font-weight="400" text-anchor="middle">不在这张图上</text>
     <rect id="c-exit" data-graph-role="container" x="872" y="124" width="368" height="820" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
     <text x="896" y="156" fill="#111827" font-size="16" font-weight="600">竞争与退出</text>
-    <text x="896" y="176" fill="#6b7280" font-size="12" font-weight="400">留意概念：退出机制，分两层来问</text>
+    <text x="896" y="176" fill="#6b7280" font-size="12" font-weight="400">留意概念：退出机制</text>
     <rect id="c-exit-chip-0" data-graph-role="node" data-node-id="c-exit-chip-0" x="892" y="208" width="144" height="100" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
     <text x="964" y="252" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">竞争</text>
     <text x="964" y="278" fill="#374151" font-size="12" font-weight="400" text-anchor="middle">展开方式留白</text>
     <rect id="c-exit-chip-1" data-graph-role="node" data-node-id="c-exit-chip-1" x="1076" y="208" width="144" height="100" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
     <text x="1148" y="252" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">退出机制</text>
-    <text x="1148" y="278" fill="#374151" font-size="12" font-weight="400" text-anchor="middle">分两层来问</text>
+    <text x="1148" y="278" fill="#374151" font-size="12" font-weight="400" text-anchor="middle">待原文补全</text>
     <rect id="c-exit-blank" data-graph-role="node" data-node-id="c-exit-blank" x="892" y="348" width="328" height="248" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
     <text x="908" y="376" fill="#64748b" font-size="12" font-weight="600">读中留白</text>
-    <text x="1056" y="412" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">补贴本身怎样退出？</text>
-    <text x="1056" y="440" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">低效企业怎样退出？</text>
-    <text x="1056" y="468" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">是否还留有试错和淘汰？</text>
+    <text x="1056" y="412" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">退出涉及哪些安排？</text>
+    <text x="1056" y="440" fill="#111827" font-size="14" font-weight="400" text-anchor="middle">请用原文证据补全。</text>
     <text x="1056" y="520" fill="#94a3b8" font-size="12" font-weight="400" text-anchor="middle">读时写在这里</text>
     <line data-graph-role="decoration" x1="920" y1="544" x2="1192" y2="544" stroke="#e2e8f0" stroke-width="1.5"/>
     <line data-graph-role="decoration" x1="920" y1="568" x2="1192" y2="568" stroke="#e2e8f0" stroke-width="1.5"/>
