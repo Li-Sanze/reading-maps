@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1080" width="1280" height="1080" data-quality-profile="showcase">
+  <title>zs-u08 读前导读：融资平台与开发项目</title>
+  <desc>置身事内第三章第一节的读前概念框架：把政府、融资平台、企业和开发项目分开，资产、资金、职责三格留空。读前问题，不是本节结论，也不摘录原文。</desc>
+  <style>
+    text { font-family: 'WenQuanYi Micro Hei', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect data-graph-role="background" x="0" y="0" width="1280" height="1080" fill="#ffffff"/>
+  <g font-family="WenQuanYi Micro Hei, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="640" y="46" fill="#111827" font-size="20" font-weight="600" text-anchor="middle">读前导读：融资平台与开发项目</text>
+    <text x="640" y="74" fill="#6b7280" font-size="13" font-weight="400" text-anchor="middle">《置身事内》第三章第一节 · 城投公司与土地金融</text>
+    <text x="640" y="98" fill="#c2410c" font-size="13" font-weight="600" text-anchor="middle">读前问题 / 不是本节结论</text>
+    <rect id="c-roles" data-graph-role="container" x="40" y="124" width="1200" height="300" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="64" y="156" fill="#111827" font-size="16" font-weight="600">先把角色分开</text>
+    <text x="64" y="176" fill="#6b7280" font-size="12" font-weight="400">只放名称。融资平台要把名称放回具体业务：承接资产、筹钱、开发</text>
+    <rect id="role-gov" data-graph-role="node" data-node-id="role-gov" x="64" y="204" width="256" height="176" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <rect x="178" y="234" width="28" height="3" rx="1" fill="#2563eb"/>
+      <rect x="182" y="238" width="4" height="12" rx="1" fill="#2563eb"/>
+      <rect x="190" y="238" width="4" height="12" rx="1" fill="#2563eb"/>
+      <rect x="198" y="238" width="4" height="12" rx="1" fill="#2563eb"/>
+    </g>
+    <text x="192" y="286" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">政府</text>
+    <text x="192" y="316" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">它是否在场</text>
+    <text x="192" y="340" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">职责记到下格</text>
+    <rect id="role-platform" data-graph-role="node" data-node-id="role-platform" x="360" y="204" width="256" height="176" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <rect x="479" y="230" width="18" height="24" rx="2" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+      <line x1="484" y1="238" x2="492" y2="238" stroke="#16a34a" stroke-width="1.5"/>
+      <line x1="484" y1="244" x2="492" y2="244" stroke="#16a34a" stroke-width="1.5"/>
+    </g>
+    <text x="488" y="286" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">融资平台</text>
+    <text x="488" y="316" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">留意概念</text>
+    <text x="488" y="340" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">名称背后是哪项业务</text>
+    <rect id="role-firm" data-graph-role="node" data-node-id="role-firm" x="656" y="204" width="256" height="176" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <rect x="772" y="240" width="24" height="12" rx="2" fill="#7c3aed"/>
+      <rect x="780" y="232" width="8" height="8" rx="1" fill="#7c3aed"/>
+    </g>
+    <text x="784" y="286" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">企业</text>
+    <text x="784" y="316" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">参与者先列名</text>
+    <text x="784" y="340" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">职责记到下格</text>
+    <rect id="role-project" data-graph-role="node" data-node-id="role-project" x="952" y="204" width="256" height="176" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5"/>
+    <g data-graph-role="decoration">
+      <rect x="1068" y="232" width="18" height="10" rx="2" fill="#ffffff" stroke="#0f766e" stroke-width="1.5"/>
+      <rect x="1074" y="244" width="18" height="10" rx="2" fill="#ffffff" stroke="#0f766e" stroke-width="1.5"/>
+    </g>
+    <text x="1080" y="286" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">开发项目</text>
+    <text x="1080" y="316" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">景区、园区或改造</text>
+    <text x="1080" y="340" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">项目阶段先留白</text>
+    <rect id="c-blanks" data-graph-role="container" x="40" y="460" width="1200" height="212" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="64" y="492" fill="#111827" font-size="16" font-weight="600">待填关系 · 未命名</text>
+    <text x="64" y="512" fill="#6b7280" font-size="12" font-weight="400">三格留空。关系由阅读时再记，先不连线</text>
+    <rect id="blank-asset" data-graph-role="node" data-node-id="blank-asset" x="64" y="536" width="352" height="112" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="84" y="564" fill="#64748b" font-size="12" font-weight="600">待填</text>
+    <text x="240" y="596" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">资产</text>
+    <text x="240" y="624" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">谁在承接？留空</text>
+    <rect id="blank-fund" data-graph-role="node" data-node-id="blank-fund" x="456" y="536" width="352" height="112" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="476" y="564" fill="#64748b" font-size="12" font-weight="600">待填</text>
+    <text x="632" y="596" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">资金</text>
+    <text x="632" y="624" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">往来先记账，先不连线</text>
+    <rect id="blank-duty" data-graph-role="node" data-node-id="blank-duty" x="848" y="536" width="352" height="112" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="868" y="564" fill="#64748b" font-size="12" font-weight="600">待填</text>
+    <text x="1024" y="596" fill="#111827" font-size="16" font-weight="600" text-anchor="middle">职责</text>
+    <text x="1024" y="624" fill="#374151" font-size="13" font-weight="400" text-anchor="middle">参与者各做什么？留空</text>
+    <rect id="c-questions" data-graph-role="container" x="40" y="748" width="1200" height="192" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <path id="e-asset" data-graph-role="edge" data-edge-id="e-asset" data-source="blank-asset" data-target="q-structure" d="M 240,648 L 240,776" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+    <text x="252" y="716" fill="#2563eb" font-size="12" font-weight="400" data-graph-role="label" data-owner="e-asset">读前追问</text>
+    <path id="e-fund" data-graph-role="edge" data-edge-id="e-fund" data-source="blank-fund" data-target="q-argument" d="M 632,648 L 632,776" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+    <text x="644" y="716" fill="#2563eb" font-size="12" font-weight="400" data-graph-role="label" data-owner="e-fund">读前追问</text>
+    <path id="e-duty" data-graph-role="edge" data-edge-id="e-duty" data-source="blank-duty" data-target="q-self" d="M 1024,648 L 1024,776" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+    <text x="1036" y="716" fill="#2563eb" font-size="12" font-weight="400" data-graph-role="label" data-owner="e-duty">读前追问</text>
+    <rect id="q-structure" data-graph-role="node" data-node-id="q-structure" x="64" y="776" width="352" height="136" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="80" y="804" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+    <text x="400" y="804" fill="#9a3412" font-size="12" font-weight="400" text-anchor="end">不是本节结论</text>
+    <text x="240" y="838" fill="#111827" font-size="14" font-weight="600" text-anchor="middle">从土地价值到公司，再到景区与园区</text>
+    <text x="240" y="866" fill="#374151" font-size="14" font-weight="400" text-anchor="middle">这些案例要解决什么问题？</text>
+    <rect id="q-argument" data-graph-role="node" data-node-id="q-argument" x="456" y="776" width="352" height="136" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="472" y="804" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+    <text x="792" y="804" fill="#9a3412" font-size="12" font-weight="400" text-anchor="end">不是本节结论</text>
+    <text x="632" y="838" fill="#111827" font-size="14" font-weight="600" text-anchor="middle">对照宽窄巷子、苏州工业园区、华夏幸福</text>
+    <text x="632" y="866" fill="#374151" font-size="14" font-weight="400" text-anchor="middle">阶段、收益方式和职责有何不同？</text>
+    <rect id="q-self" data-graph-role="node" data-node-id="q-self" x="848" y="776" width="352" height="136" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="864" y="804" fill="#c2410c" font-size="12" font-weight="600">读前问题</text>
+    <text x="1184" y="804" fill="#9a3412" font-size="12" font-weight="400" text-anchor="end">不是本节结论</text>
+    <text x="1024" y="838" fill="#111827" font-size="14" font-weight="600" text-anchor="middle">选一项园区或改造项目</text>
+    <text x="1024" y="866" fill="#374151" font-size="14" font-weight="400" text-anchor="middle">追踪哪些主体、合同和资金往来？</text>
+    <g id="legend" data-graph-role="legend">
+      <rect x="40" y="964" width="1200" height="64" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+      <line x1="64" y1="988" x2="100" y2="988" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+    <text x="112" y="992" fill="#6b7280" font-size="12" font-weight="400">蓝线只通向读前问题，不表示资金往来</text>
+    <text x="1208" y="1000" fill="#6b7280" font-size="12" font-weight="400" text-anchor="end">公开概念 · 不预告结论 · 无原文</text>
+    </g>
+  </g>
+</svg>
