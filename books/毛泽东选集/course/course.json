@@ -1,0 +1,3567 @@
+{
+  "schema_version": "1.0",
+  "artifact_kind": "reading_course",
+  "language": "zh-CN",
+  "status_note": "full：52 单元含三问、答案、批判；读后 SVG 3 张。",
+  "book": {
+    "title_zh": "毛泽东选集（第一至第五卷）",
+    "author": "毛泽东",
+    "classification": "按历史时期编排的政治、军事、哲学与治理文献选集",
+    "one_sentence_model": "报告将五卷综合为一条可核查的问题链：调查现实，识别矛盾与力量，形成阶段战略，组织群众与政治联盟，再转入建国和治理中的关系调整。",
+    "model_status": "报告综合，不是作者在单一篇章中提出的线性公式，也不意味着各时期观点没有变化。"
+  },
+  "source": {
+    "display_name": "毛泽东选集.epub",
+    "sha256": "ccffc821c7b52f6c26e30a5e16406d09432e2ed707246d1ec8f798f350f82f26",
+    "bytes": 2918518,
+    "format": "EPUB",
+    "metadata": {
+      "title": "毛泽东选集",
+      "creator": "毛泽东",
+      "language": "zh-CN",
+      "modified": "2016-05-31",
+      "identifier": "urn:uuid:65f72ef6-1b0e-4d14-95f4-9f5a31fc40ef"
+    },
+    "metadata_limitations": [
+      "EPUB 包装层未提供出版社、ISBN、印次或纸本版次，报告不补造这些信息。",
+      "第一至四卷目录结构与 1991 年第二版的 159 篇结构相符，但本次未与权威纸本逐字校勘。",
+      "第五卷是 1977 年出版的身后编辑选本，需与第一至四卷的作者审定边界分开理解。"
+    ],
+    "archive_validation": {
+      "zip_entries": 428,
+      "xhtml_files": 416,
+      "toc_entries": 410,
+      "epub_open": "passed"
+    }
+  },
+  "scope": {
+    "included": "所选18篇的论证正文：标题、日期、节题、正文、引文和注号。原书注释不在本文件的 source_refs 里。",
+    "articles": [
+      {
+        "volume": 1,
+        "title": "中国社会各阶级的分析",
+        "date": "1925-12-01",
+        "epub_path": "OEBPS/Text/Section0101.xhtml"
+      },
+      {
+        "volume": 1,
+        "title": "湖南农民运动考察报告",
+        "date": "1927-03",
+        "epub_path": "OEBPS/Text/Section0102.xhtml"
+      },
+      {
+        "volume": 1,
+        "title": "星星之火，可以燎原",
+        "date": "1930-01-05",
+        "epub_path": "OEBPS/Text/Section0204.xhtml"
+      },
+      {
+        "volume": 1,
+        "title": "反对本本主义",
+        "date": "1930-05",
+        "epub_path": "OEBPS/Text/Section0205.xhtml"
+      },
+      {
+        "volume": 1,
+        "title": "实践论",
+        "date": "1937-07",
+        "epub_path": "OEBPS/Text/Section0215.xhtml"
+      },
+      {
+        "volume": 1,
+        "title": "矛盾论",
+        "date": "1937-08",
+        "epub_path": "OEBPS/Text/Section0216.xhtml"
+      },
+      {
+        "volume": 2,
+        "title": "论持久战",
+        "date": "1938-05",
+        "epub_path": "OEBPS/Text/Section0309.xhtml"
+      },
+      {
+        "volume": 2,
+        "title": "新民主主义论",
+        "date": "1940-01",
+        "epub_path": "OEBPS/Text/Section0326.xhtml"
+      },
+      {
+        "volume": 3,
+        "title": "改造我们的学习",
+        "date": "1941-05-19",
+        "epub_path": "OEBPS/Text/Section0402.xhtml"
+      },
+      {
+        "volume": 3,
+        "title": "整顿党的作风",
+        "date": "1942-02-01",
+        "epub_path": "OEBPS/Text/Section0406.xhtml"
+      },
+      {
+        "volume": 3,
+        "title": "反对党八股",
+        "date": "1942-02-08",
+        "epub_path": "OEBPS/Text/Section0407.xhtml"
+      },
+      {
+        "volume": 3,
+        "title": "关于领导方法的若干问题",
+        "date": "1943-06-01",
+        "epub_path": "OEBPS/Text/Section0413.xhtml"
+      },
+      {
+        "volume": 3,
+        "title": "为人民服务",
+        "date": "1944-09-08",
+        "epub_path": "OEBPS/Text/Section0420.xhtml"
+      },
+      {
+        "volume": 3,
+        "title": "愚公移山",
+        "date": "1945-06-11",
+        "epub_path": "OEBPS/Text/Section0427.xhtml"
+      },
+      {
+        "volume": 4,
+        "title": "党委会的工作方法",
+        "date": "1949-03-13",
+        "epub_path": "OEBPS/Text/Section0559.xhtml"
+      },
+      {
+        "volume": 4,
+        "title": "论人民民主专政",
+        "date": "1949-06-30",
+        "epub_path": "OEBPS/Text/Section0565.xhtml"
+      },
+      {
+        "volume": 5,
+        "title": "论十大关系",
+        "date": "1956-04-25",
+        "epub_path": "OEBPS/Text/Section0651.xhtml"
+      },
+      {
+        "volume": 5,
+        "title": "关于正确处理人民内部矛盾的问题",
+        "date": "1957-02-27",
+        "epub_path": "OEBPS/Text/Section0658.xhtml"
+      }
+    ],
+    "excluded": [
+      {
+        "scope": "第六卷与第七卷",
+        "reason": "与主地图排除范围相同。"
+      },
+      {
+        "scope": "静火个人编纂材料",
+        "reason": "与主地图排除范围相同。"
+      },
+      {
+        "scope": "本课程未点名的篇目",
+        "reason": "选读只跳篇，不把中间文章带入。"
+      }
+    ]
+  },
+  "edition_check": "pending",
+  "budget": {
+    "min_minutes": 4,
+    "target_minutes": 25,
+    "max_minutes": 35
+  },
+  "reading_notes": {
+    "counting_method": "去空白后的字符数。word_count 计非空白字符，含标题、段落、图题、图注、标点、数字与注号，不含图片内文字、扩展阅读、参考文献。只统计 locate.source_refs 里的正文块。原书注释不计入 word_count。",
+    "note_method": "原书注释按正文里的〔n〕或篇题中的 * 首次出现归入一个单元；仍核不到的归该篇最后一单元。各篇“注释”标签也归最后一单元。只标原书注释，不根据 HTML class 判断作者注或编者注。映射写在私有 notes-map，不写入 locate.source_refs。",
+    "timing_method": "正文按精读：哲学 220 字/分钟，战争与国家论述 240 字/分钟，调查与整风 280 字/分钟，短篇演说和工作方法 300 字/分钟，向上取整。必要原注按 400 字/分钟另加，不垫高短篇正文。回复约 5 分钟另计，不写入 estimated_minutes。",
+    "public_base": "ac0301965d19a56154301d3209da66592ce5ab4f"
+  },
+  "units": [
+    {
+      "id": "mx-u01",
+      "order": 1,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "中国社会各阶级的分析",
+        "section": "中国社会各阶级的分析",
+        "navigation": [
+          "中国社会各阶级的分析*"
+        ],
+        "start_hint": "中国社会各阶级的分析*",
+        "end_hint": "常提防他们，不要让他们扰乱了我们的阵线。",
+        "word_count": 3792,
+        "estimated_minutes": 21,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0101.xhtml",
+            "blocks": "1-11"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "第一卷开篇。1925年12月，一篇文章回答谁是敌、谁是友。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "作者把社会力量分成哪几组来回答敌友问题？请按原文的组来说，先不要判断这些组对不对。"
+        },
+        {
+          "kind": "argument",
+          "question": "作者为什么说中产阶级以本阶级为主体的“独立”革命只是幻想？哪些句子是他引用的别人的话，哪些是他自己的推论？"
+        },
+        {
+          "kind": "self",
+          "question": "这篇自称为大概的分析。若只凭这一篇，你还缺什么，才愿意接受或拒绝它开出的敌友名单？"
+        }
+      ],
+      "watch": {
+        "concept": "经济地位",
+        "why": "作者用经济地位解释对革命的态度。读的时候把他所断定的地位，和他由此推出的态度分开。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "开篇把分辨敌友写成革命的首要问题，方法是看经济地位和对革命的态度。",
+          "敌人被写成勾结帝国主义的军阀、官僚、买办阶级、大地主阶级，以及附属于他们的一部分反动知识界。",
+          "工业无产阶级被写成领导力量；半无产阶级和小资产阶级被写成最接近的朋友。",
+          "中产阶级的右翼可能是敌人，左翼可能是朋友，但作者要求提防他们扰乱阵线。"
+        ],
+        "author_claim": "1925年12月的这篇分析认为，不先分清敌友，革命就会领错路。",
+        "reasons": [
+          "地主和买办被说成依附帝国主义，代表最落后的生产关系。",
+          "民族资产阶级被说成既可能赞成反帝反军阀，又害怕革命发展到威胁自己成为大资产阶级。",
+          "小资产阶级被分成有余钱、大致自给、生活下降三部分，并说革命高涨时右翼也会附和。",
+          "工业无产阶级人数被说成不多，但因集中和经济地位低下而能战斗。"
+        ],
+        "evidence": [
+          "小资产阶级到革命潮流高涨、可以看得见胜利的曙光时会参加，作者举的是1925年五卅运动和各地农民运动的经验。平时则说三部分态度各不相同。",
+          "无产阶级的重要性，作者举的是海员、铁路、煤矿、沙面和五卅后上海香港罢工。",
+          "现代工业无产阶级约二百万人，是文中的约数，这篇没有给出统计表。"
+        ],
+        "common_misreadings": [
+          "北京《晨报》上那位自称为戴季陶真实信徒的两句话，是作者引用的别人的话，不是作者自己的口号。",
+          "“大概的分析”不是已经完成的全面调查。",
+          "中产阶级没有独立余地，是从两大势力作最后斗争这一判断推出来的，不是这篇里已经列出的后续事实。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "文末的敌友名单同时是行动指令：提防中产阶级扰乱阵线。它说明作者要如何结成队伍，不能单独证明每个阶级的态度都已被测量。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0101.xhtml 正文末段"
+            },
+            {
+              "locator": "OEBPS/Text/Section0101.xhtml",
+              "ref": "books/毛泽东选集/reading.json critical_audit.limits"
+            }
+          ]
+        },
+        {
+          "type": "批判审计",
+          "text": "民族资产阶级不能走独立道路，依赖作者对当时世界局面的断言。本篇写的是两大势力作最后斗争的局面，并没有写成世界已经分成两个营垒。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0101.xhtml 中产阶级段与篇首日期"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u02",
+      "order": 2,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "湖南农民运动考察报告",
+        "section": "湖南农民运动考察报告",
+        "navigation": [
+          "湖南农民运动考察报告*"
+        ],
+        "start_hint": "湖南农民运动考察报告*",
+        "end_hint": "长土豪劣绅的气势。这一点是非常要注意的。",
+        "word_count": 6005,
+        "estimated_minutes": 26,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0102.xhtml",
+            "blocks": "1-24"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1927年3月考察报告前半：判断农运，并回应“糟得很”“过分”和“痞子”。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "从“农民问题的严重性”到“革命先锋”，作者依次回应了哪几种对农会的说法？"
+        },
+        {
+          "kind": "argument",
+          "question": "他根据哪五县、哪一段时间的考察，把贫农说成乡村里一向苦战的主要力量？"
+        },
+        {
+          "kind": "self",
+          "question": "“好得很”是作者的判断。若把这篇读成已经量过湖南全省，你会在哪一句上停下来？"
+        }
+      ],
+      "watch": {
+        "concept": "贫农",
+        "why": "作者用考察见闻把贫农和中农的态度分开，不要先把“农民”读成一块。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "考察范围是湘潭、湘乡、衡山、醴陵、长沙五县，时间从一月四日到二月五日的叙述在开篇。",
+          "作者把“糟得很”“过分”“痞子运动”写成城里或右派的说法，并逐一反驳。",
+          "中农被写成游移，贫农被写成从秘密时期到公开时期都在奋斗的主要力量。"
+        ],
+        "author_claim": "1927年3月的这篇考察认为，湖南农会的兴起是革命，贫农是先锋。",
+        "common_misreadings": [
+          "“糟得很”“过分”“痞子运动”是作者转述的指责，不是他的结论。",
+          "五县见闻不是全省普查。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "作者写明考察了五县。把文中的判断直接换成湖南每一个县的统计，超出了这篇自己标出的范围。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0102.xhtml"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u03",
+      "order": 3,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "湖南农民运动考察报告",
+        "section": "十四件大事",
+        "navigation": [
+          "十四件大事"
+        ],
+        "start_hint": "十四件大事",
+        "end_hint": "也不敢再敲诈。他们看见农民的梭镖就发抖。",
+        "word_count": 5075,
+        "estimated_minutes": 20,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0102.xhtml",
+            "blocks": "25-58"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "十四件大事的前六件：组织、打击地主、都团、武装和县政。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "前六件大事里，作者把哪些做法归到政治，哪些归到经济，哪些归到政权和武装？请按他的件数说，不要先评价。"
+        },
+        {
+          "kind": "argument",
+          "question": "作者怎样从“清算”“罚款”一直写到“枪毙”？他把哪一件说成经济上的打击？"
+        },
+        {
+          "kind": "self",
+          "question": "这些做法里，哪些是他记录的农会行为，哪些是他加上的革命评价？"
+        }
+      ],
+      "watch": {
+        "concept": "十四件大事",
+        "why": "这一组是现象清单加作者的分类，读时先分开做了什么和算不算革命。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "前六件覆盖组织农会、政治上打击地主、经济上打击地主、打倒都团、建立农民武装、改县政。",
+          "政治打击里列举了清算、罚款、捐款、质问、示威、戴高帽、监狱、驱逐和枪毙。",
+          "经济打击写的是禁谷米出境、减租减押、不准退佃和减息。"
+        ],
+        "author_claim": "作者把这些行动写成农会兴起后的大事，而不是一串无关的新闻。",
+        "common_misreadings": [
+          "农会里的答话，如“谁要你的臭钱”，是作者记录的对话，不是他的口号。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "枪毙等事被写成农民和各界共同所为，并举了具体人名。这是考察中的事例，不是一份案件卷宗。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0102.xhtml"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u02"
+          ],
+          "question": "上一单元把贫农说成先锋。这一单元的前六件，主要是在打击谁的权力？",
+          "answer_key": "主要打击土豪劣绅、地主的政治经济权力、都团、地主武装和县衙差役。"
+        }
+      ],
+      "cards": []
+    },
+    {
+      "id": "mx-u04",
+      "order": 4,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "湖南农民运动考察报告",
+        "section": "十四件大事",
+        "navigation": [
+          "十四件大事"
+        ],
+        "start_hint": "第七件推翻祠堂族长的族权和城隍土地菩萨的",
+        "end_hint": "以拒绝某些工业品入乡为经济自卫的方法了。",
+        "word_count": 4382,
+        "estimated_minutes": 17,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0102.xhtml",
+            "blocks": "59-87"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "第七至九件：族权、神权、夫权、政治宣传和乡下禁令。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "第七到第九件里，族权、神权、夫权和诸禁各占什么位置？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者说男子受三种系统权力支配。他把破除迷信的那段话放在什么位置，是论证还是他在乡里的宣传？"
+        },
+        {
+          "kind": "self",
+          "question": "诸禁里有妇女反对禁喂鸡鸭。你会把所有禁令都读成农民一致赞成吗？"
+        }
+      ],
+      "watch": {
+        "concept": "族权",
+        "why": "作者把祠堂、神明和丈夫的权力连成一套，再落到乡下的禁令。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "第七件把族权、神权和夫权连在一起写。",
+          "破除迷信的话是作者说自己在乡里对农民讲的，农民笑了起来。",
+          "第九件把牌、赌、鸦片和大量日用限制分开，并写妇女反对禁喂鸡鸭。",
+          "作者把禁令收成两层：对于社会恶习之反抗，以及对于城市商人剥削之自卫。"
+        ],
+        "author_claim": "权力被打倒之后，作者接着写宗族、神明、性别和日常禁令。",
+        "common_misreadings": [
+          "孙中山遗嘱里的“自由”“平等”是作者说农民从遗嘱里取出的词，不是本篇新下的定义。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "诸禁有的是农会命令，有的是作者听到的地方议决。不能把每一条禁令都读成他已经核定的全省法令。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0102.xhtml"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u05",
+      "order": 5,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "湖南农民运动考察报告",
+        "section": "十四件大事",
+        "navigation": [
+          "十四件大事"
+        ],
+        "start_hint": "第十件清匪",
+        "end_hint": "得要死，这和叶公好龙〔27〕有什么两样！",
+        "word_count": 2018,
+        "estimated_minutes": 10,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0102.xhtml",
+            "blocks": "88-99"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "第十至十四件和考察报告的收束。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "第十到第十四件从清匪、苛捐转到文化、合作社和修路。作者最后用哪句话收束十四件？"
+        },
+        {
+          "kind": "argument",
+          "question": "他说地主的文化是农民造成的。这个判断靠的是哪一层道理，而不是哪一张文化统计？"
+        },
+        {
+          "kind": "self",
+          "question": "废苛捐一段承认全国未统一、军费仍重。这和前面“一切权力归农会”怎样同时成立？"
+        }
+      ],
+      "watch": {
+        "concept": "十四件大事",
+        "why": "末段把破坏和建设放在同一篇考察里，不要只记住打土豪。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "清匪、废苛捐、文化、合作社、修路修塘是后五件。",
+          "废苛捐写明全国未统一，帝国主义和军阀势力还在，军费负担仍重。",
+          "合作社被写成农民需要的消费、贩卖和信用三种，不是已经办成的全国体系。",
+          "收束以反问“哪一件不好”肯定十四件，并以叶公好龙讽刺怕民众起来的人。"
+        ],
+        "author_claim": "作者用后五件说明农会不只是破坏，最后仍把基本精神收回到革命意义。",
+        "common_misreadings": [
+          "“从禹汤文武起”比较哪一朝统治者，是作者的加重说法，不是朝代史考证。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u06",
+      "order": 6,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "星星之火，可以燎原",
+        "section": "星星之火，可以燎原",
+        "navigation": [
+          "星星之火，可以燎原*"
+        ],
+        "start_hint": "星星之火，可以燎原*",
+        "end_hint": "它是躁动于母腹中的快要成熟了的一个婴儿。",
+        "word_count": 6309,
+        "estimated_minutes": 28,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0204.xhtml",
+            "blocks": "1-20"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1930年1月5日的一整封信。篇幅落在一次精读里，不再拆开。收录文本；原书题注说明改题并有删改。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这篇1930年1月5日的收录文本已改题并有删改。它先纠正哪一种估量，后半又承认哪一句说得太死？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者怎样同时说革命力量弱、又说不宜只看现象？后半对那句说得太死的话，留下了哪半句？"
+        },
+        {
+          "kind": "self",
+          "question": "那句说得太死的话被收回后，他仍坚持高潮会来。若只凭这篇收录文本，你要把哪一句当成可被后来事实推翻的判断，哪一句只是方向？"
+        }
+      ],
+      "watch": {
+        "concept": "快要",
+        "why": "篇末专门解释革命高潮“快要”到来并不是算死日期。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "开篇先纠正不相信高潮会迅速到来、只赞成流动游击的悲观估量；随后指出把主观力量看大或看小都是不切当的估量，并要求不只看表面现象。",
+          "后半引用前委四月信，讨论分兵和战术，并说中央二月来信的精神不好。",
+          "争取江西被保留，但“一年为期”被作者说成不对。",
+          "高潮“快要”到来被写成方向，不是算命。"
+        ],
+        "author_claim": "作者认为反动统治的强大里有脆弱，但具体时限不能说死。",
+        "common_misreadings": [
+          "引号里的前委复信和中央来信，是作者引用的通信，不是这封信的全部新写句子。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "作者自己收回了“一年争取江西”的期限。不能把信里的方向判断读成他已保证的日历。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0204.xhtml"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u07",
+      "order": 7,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "反对本本主义",
+        "section": "反对本本主义",
+        "navigation": [
+          "反对本本主义*"
+        ],
+        "start_hint": "反对本本主义*",
+        "end_hint": "，把调查的结果记下来。假手于人是不行的。",
+        "word_count": 4279,
+        "estimated_minutes": 18,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0205.xhtml",
+            "blocks": "1-60"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1930年5月全文七节。整篇一次读完。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "七个小题从“没有调查”写到调查技术。哪几节在讲态度，哪一节在讲开会的办法？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者为什么说本本主义可能走到反革命？他给出的纠正办法是哪一句？"
+        },
+        {
+          "kind": "self",
+          "question": "“要不得”“反对瞎说”这种短句，你把它读成论证，还是读成会场上的口号？"
+        }
+      ],
+      "watch": {
+        "concept": "调查",
+        "why": "全文把调查从权限写成解决问题的办法，技术节才落到人数、纲目和记录。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "没有调查就没有对那个问题的发言权，被写成第一节。",
+          "调查被比成十月怀胎，解决问题比成一朝分娩。",
+          "离开调查去做阶级估量，被说成会走向机会主义或盲动主义。",
+          "第七节列出调查会、到会的人、人数、纲目、亲身出马、深入和自己做记录。"
+        ],
+        "author_claim": "1930年5月这篇把中国革命的办法收成了解中国情况，而不是背本本。",
+        "common_misreadings": [
+          "“我们说马克思主义是对的，决不是因为马克思这个人是什么“先哲””里的“先哲”是作者要否定的叫法。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "社会经济调查列出的阶级名单是工作清单。它不能代替一次已经做完的调查结果。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0205.xhtml"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u08",
+      "order": 8,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "实践论",
+        "section": "实践论",
+        "navigation": [
+          "实践论*"
+        ],
+        "start_hint": "实践论*",
+        "end_hint": "对于一个社会或一个革命的认识）也是如此。",
+        "word_count": 6083,
+        "estimated_minutes": 31,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0215.xhtml",
+            "blocks": "1-21"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1937年7月《实践论》前半：从实践走到理性认识。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "从生产实践到理性认识，作者把认识分成哪两步？中间用了哪三类例子？"
+        },
+        {
+          "kind": "argument",
+          "question": "为什么他说只有社会实践才是真理的标准？感性认识为什么还不够？"
+        },
+        {
+          "kind": "self",
+          "question": "“没有把握”被他解释成缺少经验。你同意这是唯一原因吗？这篇给了别的原因没有？"
+        }
+      ],
+      "watch": {
+        "concept": "实践",
+        "why": "篇署是一九三七年七月，副题是论认识和实践的关系。先看认识从哪里来。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "生产活动被写成最基本的实践，此外还有阶级斗争、政治生活、科学和艺术。",
+          "认识从现象、片面和外部联系，反复后走到本质和全体。",
+          "例子包括无产阶级对资本主义、中国人对帝国主义，以及没有经验的战争领导者。",
+          "结尾把理性依赖感性、感性有待发展到理性，收成认识论。"
+        ],
+        "author_claim": "收录文本认为，认识从实践中来，并要从感性走到理性。",
+        "common_misreadings": [
+          "马克思以前的唯物论怎样失败，是作者的哲学史判断，这篇没有展开那些原书。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u09",
+      "order": 9,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "实践论",
+        "section": "实践论",
+        "navigation": [
+          "实践论*"
+        ],
+        "start_hint": "然而认识运动至此还没有完结。辩证唯物论的",
+        "end_hint": "部认识论，这就是辩证唯物论的知行统一观。",
+        "word_count": 3285,
+        "estimated_minutes": 16,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0215.xhtml",
+            "blocks": "22-29"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "《实践论》后半：认识回到实践，并指出两种分裂。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "后半从哪一句开始说认识运动还没有完结？它怎样同时反对落后于实际和超过阶段？"
+        },
+        {
+          "kind": "argument",
+          "question": "“完成了，又没有完成”分别对哪一种过程而言？"
+        },
+        {
+          "kind": "self",
+          "question": "后半说认识回到实践就能证实和发展真理。若一次行动成功了，这篇是否允许你因此断定原先的理论只有一种正确解释？你的界限在哪里？"
+        }
+      ],
+      "watch": {
+        "concept": "认识运动",
+        "why": "这一半的重点是回到实践，以及过程变了认识还要变。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "理性认识之后还要回到变革现实的实践。",
+          "对某一过程可以完成，对过程的推移则没有完成。",
+          "思想落后于实际，和把幻想当作真理的“左”翼空谈，都被反对。",
+          "两种错误被收成主观和客观分裂、认识和实践脱离。"
+        ],
+        "author_claim": "收录文本认为真理要在实践里发现、证实和发展，认识因此是循环而不是一次结束。",
+        "common_misreadings": [
+          "最后一段是作者的概括，不是马克思或列宁的原句。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "已审的实践论×矛盾论模块指出：实践结果能约束和修正理论，但不能仅凭一次成功就唯一确定理论为真，因为结果可以由多种假设、条件和原因共同产生。后半的循环句要求回到实践，并没有消除这种多因。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0215.xhtml",
+              "ref": "books/毛泽东选集/modules/practice-and-contradiction/reading.json a01-practice-limit"
+            },
+            {
+              "url": "https://plato.stanford.edu/entries/scientific-underdetermination/",
+              "ref": "ext-underdetermination"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u08"
+          ],
+          "question": "前半把认识走到理性当作深化。后半为什么说走到理性仍没有完结？",
+          "answer_key": "因为理性还要回到实践去证实，而且过程向前推移之后，原来的认识又要修改。"
+        }
+      ],
+      "cards": []
+    },
+    {
+      "id": "mx-u10",
+      "order": 10,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "矛盾论",
+        "navigation": [
+          "矛盾论*"
+        ],
+        "start_hint": "矛盾论*",
+        "end_hint": "物矛盾这一个法则，对于我们是非常重要的。",
+        "word_count": 3091,
+        "estimated_minutes": 17,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "1-11"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1937年8月开篇：两种宇宙观。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "篇署一九三七年八月。这一单元用哪两种宇宙观把全文的问题立起来？"
+        },
+        {
+          "kind": "argument",
+          "question": "前一种宇宙观被写成怎样的看法？后一种被要求从哪里看变化？"
+        },
+        {
+          "kind": "self",
+          "question": "若一件事明显是被外部力量打断的，本单元的框架还够不够用？"
+        }
+      ],
+      "watch": {
+        "concept": "宇宙观",
+        "why": "这一节是方法入口。后面的普遍、特殊都从这里的分歧出发。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "矛盾法则被写成唯物辩证法最根本的法则。",
+          "两种见解是形而上学和辩证法。",
+          "辩证法被要求从事物内部、从一事物与他事物的关系看发展。",
+          "古代辩证法被说成自发、朴素，和后来的唯物辩证法不同。"
+        ],
+        "author_claim": "收录文本用两种宇宙观说明，为什么要分析矛盾的运动。",
+        "common_misreadings": [
+          "开篇引列宁的话，并提到苏联哲学界批判德波林学派。那些是引述和背景，不是这一节的全部论证。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "原书注释写明，这篇在收入本书第一版时作者作过部分补充、删节和修改。篇署日期不能被读成当前每句都是一九三七年八月讲演原稿。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0216.xhtml",
+              "ref": "原书注释（署名未核）"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u11",
+      "order": 11,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "二 矛盾的普遍性",
+        "navigation": [
+          "二矛盾的普遍性"
+        ],
+        "start_hint": "二矛盾的普遍性",
+        "end_hint": "中国革命的历史和现状，并推断革命的将来。",
+        "word_count": 2380,
+        "estimated_minutes": 13,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "12-34"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "矛盾的普遍性。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "矛盾的普遍性被写成哪两个方面？作者为什么先讲普遍、后讲特殊？"
+        },
+        {
+          "kind": "argument",
+          "question": "恩格斯、列宁的数学、力学、物理、化学和社会科学例子，在文中是谁的话？"
+        },
+        {
+          "kind": "self",
+          "question": "德波林学派被说成把矛盾看成中途才出现。若你同意矛盾一开始就有，本单元哪一句足以支持你，哪一句只是引用别人的科学例子？"
+        }
+      ],
+      "watch": {
+        "concept": "普遍性",
+        "why": "读时先分清普遍性的两个方面，再看哪些例子是引用别人的。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "普遍性的两义是：矛盾在一切事物的发展过程中，并贯串过程的始终。",
+          "战争的攻守、党内思想斗争，被写成矛盾普遍性的作者自己的例子。",
+          "德波林学派被批评为把矛盾看成过程中途才出现。",
+          "结尾要求中国共产党人用这个方法分析中国革命的历史、现状和将来。"
+        ],
+        "author_claim": "收录文本把矛盾的普遍性当成绝对的，并要求用它看中国革命。",
+        "common_misreadings": [
+          "数学、力学等排比多数标明是恩格斯或列宁的话，不能署成作者原话。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u12",
+      "order": 12,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "三 矛盾的特殊性",
+        "navigation": [
+          "三矛盾的特殊性"
+        ],
+        "start_hint": "三矛盾的特殊性",
+        "end_hint": "八股调，在我们党内造成了一种极坏的作风。",
+        "word_count": 2584,
+        "estimated_minutes": 13,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "35-44"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "矛盾特殊性的前半：不同运动形式要用不同方法。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "特殊性这一半先依次研究哪几层？请按原文的顺序说，不要只抽一层。"
+        },
+        {
+          "kind": "argument",
+          "question": "“不同质的矛盾，只有用不同质的方法才能解决”靠什么例子，而不是靠下一单元的国共史？"
+        },
+        {
+          "kind": "self",
+          "question": "科学研究按对象的特殊矛盾来划分。你能否举出本单元里的一个反面，就是用一种方法套所有矛盾？"
+        }
+      ],
+      "watch": {
+        "concept": "特殊性",
+        "why": "这一半还没有写到忌带主观性。先看特殊矛盾为什么要求不同方法。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "各种物质运动形式的矛盾都被写成有特殊性。",
+          "认识秩序被写成从个别、特殊走到一般。",
+          "不同质的矛盾要用不同质的方法，例子包括不同阶级之间的矛盾。",
+          "一个大过程里有许多矛盾，中国资产阶级民主革命被当作这类过程。"
+        ],
+        "author_claim": "收录文本认为，不知道矛盾的特殊点，就无法决定方法。",
+        "common_misreadings": [
+          "这一单元的“中国资产阶级民主革命”还是略写，详细阶段在下一单元。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u11"
+          ],
+          "question": "上一单元说矛盾无所不在。这一单元为什么仍要研究特殊？",
+          "answer_key": "普遍只说明矛盾存在。要决定方法，还得看出这一运动形式、这一过程的特殊矛盾。"
+        }
+      ],
+      "cards": []
+    },
+    {
+      "id": "mx-u13",
+      "order": 13,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "三 矛盾的特殊性",
+        "navigation": [
+          "三矛盾的特殊性"
+        ],
+        "start_hint": "研究问题，忌带主观性、片面性和表面性。所",
+        "end_hint": "题的精髓，不懂得它，就等于抛弃了辩证法。",
+        "word_count": 4881,
+        "estimated_minutes": 25,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "45-60"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "矛盾特殊性的后半：反对表面化，写阶段，收到共性与个性。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这一单元从哪三种看问题的毛病写起，最后收在哪一对概念上？中国革命的若干阶段在中间起什么例子的作用？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者为什么说不注意阶段性就不能处理矛盾？资本主义变为帝国主义，和辛亥革命以后的中国革命，各自被用来说明哪一步？"
+        },
+        {
+          "kind": "self",
+          "question": "作者把《水浒》三打祝家庄称作唯物辩证法的好例子。你把它当成方法示范，还是只当成比喻？你的界限放在哪里？"
+        }
+      ],
+      "watch": {
+        "concept": "具体的分析",
+        "why": "作者把认识矛盾特性的要求收在这五个字上。读的时候看他要分析的是过程、阶段，还是阶段中的各个方面。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "主观性被说成不用唯物观点看问题；片面性是不了解矛盾各方；表面性是不深入研究就动手。",
+          "根本矛盾不到过程完结不会消灭，但长过程会因矛盾激化、缓和或新出现而显出阶段。",
+          "资本主义到帝国主义、辛亥革命后的民主革命，都被用来说明本质未变而阶段已变。",
+          "国共两党被分成若干阶段，用来说明不看各方面特点就不懂联合、破裂和再联合。",
+          "结尾把普遍性说成共性、绝对，把个性说成有条件的、暂时的、相对的，并称这是精髓。"
+        ],
+        "author_claim": "矛盾的特性不能凭主观随意性认识，必须具体分析；共性即在个性之中。",
+        "reasons": [
+          "只看一方就找不到处理矛盾的方法。",
+          "同一根本矛盾在不同阶段采取不同形式，所以方法也不能一直不变。",
+          "普遍性存在于特殊性之中，抽掉一切个性就没有共性。"
+        ],
+        "evidence": [
+          "资本主义诸矛盾的变化，以及辛亥革命到抗日战争的阶段列举，是作者用来展示阶段性的叙述。",
+          "马克思、恩格斯、列宁、斯大林被作者称作分析的模范，那些引文不是作者自己的话。"
+        ],
+        "common_misreadings": [
+          "孙子、魏徵、列宁关于全面性的话，以及“对于具体的事物作具体的分析”，在文中都标明是别人的话。",
+          "三打祝家庄是作者选用的小说情节，不是史料证明。",
+          "“精髓”一句收的是前面的共性与个性，不能单独拿来代替那些层次。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "按本书收录文本解读。篇署日期是一九三七年八月。同篇原书注释写明，收入本书第一版时作者作了部分的补充、删节和修改，因此不能把现在这些句子称作那天讲演的逐字原稿。国共两党若干阶段的叙述，是收录文本里用来示范阶段性的政治过程纲要，本单元没有并列写出对方的自我解释。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0216.xhtml",
+              "ref": "原书注释（署名未核）：收入本书第一版时作者作了部分的补充、删节和修改"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u12"
+          ],
+          "question": "上一单元要求不同的矛盾用不同的方法。这一单元又说离开具体分析就不能认识矛盾的特性。具体分析是在为“不同的方法”补哪一步？",
+          "answer_key": "上一单元先要求方法跟着矛盾的性质改变。这一单元补的是：不先看出过程、阶段和各方面的特点，就还不知道面前是哪一种矛盾，换方法也会变成主观套用。"
+        }
+      ],
+      "cards": [
+        {
+          "concept": "不同质的方法",
+          "definition": "上一单元的说法是：矛盾的性质不同，处理的方法也要不同。作者举的方向包括不同阶级之间的矛盾不能共用一套办法。",
+          "unit_ids": [
+            "mx-u12"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mx-u14",
+      "order": 14,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "四 主要的矛盾和主要的矛盾方面",
+        "navigation": [
+          "四主要的矛盾和主要的矛盾方面"
+        ],
+        "start_hint": "四主要的矛盾和主要的矛盾方面",
+        "end_hint": "要方法之一，是一切共产党人都应当注意的。",
+        "word_count": 4190,
+        "estimated_minutes": 22,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "61-81"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "主要的矛盾和主要的矛盾方面。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "主要矛盾和主要的矛盾方面，在这一节里是哪两件不同的事？"
+        },
+        {
+          "kind": "argument",
+          "question": "半殖民地中国的主要矛盾，作者说会在侵略战争、政治经济压迫和国内革命战争之间怎样换位？"
+        },
+        {
+          "kind": "self",
+          "question": "“不能把过程中所有的矛盾平均看待”之后，他又说主次会转化。你准备怎样避免把今天的主要矛盾说成永远不变？"
+        }
+      ],
+      "watch": {
+        "concept": "主要矛盾",
+        "why": "读时留意他怎样区分两个层次，不要合成一件事。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "许多矛盾里有一种起领导、决定作用，这是主要矛盾。",
+          "中国被写成主要矛盾会随帝国主义的战争、政治经济手段和国内革命的形势而变化。",
+          "矛盾的主要方面也会转化，事物的性质跟着变。",
+          "这些例子用来反驳主要方面固定不变的机械唯物论：一定条件下，生产关系、理论和上层建筑也会转为主要。"
+        ],
+        "author_claim": "收录文本要求捉住主要矛盾和主要方面，同时承认它们会转化。",
+        "common_misreadings": [
+          "半殖民地中国的几段是作者的政治分析，不是中立的外交史。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u15",
+      "order": 15,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "五 矛盾诸方面的同一性和斗争性",
+        "navigation": [
+          "五矛盾诸方面的同一性和斗争性"
+        ],
+        "start_hint": "五矛盾诸方面的同一性和斗争性",
+        "end_hint": "相对的东西里面有着绝对的东西”〔35〕。",
+        "word_count": 4262,
+        "estimated_minutes": 23,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "82-109"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "矛盾诸方面的同一性和斗争性。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这一节先把同一性讲到哪里，才开始问斗争性？请按原文顺序分开这两段，不要提前用后文的词概括。"
+        },
+        {
+          "kind": "argument",
+          "question": "鸡蛋和石头、战争与和平，各自说明同一性要求什么条件？"
+        },
+        {
+          "kind": "self",
+          "question": "鸡蛋能变成鸡、石头不能。把这个例子用到一次没有发生的转变上，你会先写哪个条件？如果写不出来，这个例子还能否支持你的判断？"
+        }
+      ],
+      "watch": {
+        "concept": "同一性",
+        "why": "没有一定条件就没有作者所说的转化。读例子时先找条件。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "矛盾双方互为存在条件，所以能共处。",
+          "在另外的条件下，双方会互相转化，如统治和被统治、战争与和平。",
+          "石头不能变成鸡，因为缺少作者所说的转化条件。",
+          "同一性被说成有条件、相对，斗争性被说成无条件、绝对，两者结合成矛盾运动。"
+        ],
+        "author_claim": "收录文本用条件约束同一性，并把斗争性写成贯穿其中的绝对性。",
+        "common_misreadings": [
+          "“相反相成”被作者解释为自己的用法，并注明出处。不要把注释里的说明当成正文的论证。",
+          "列宁的两段定义是引文。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u16",
+      "order": 16,
+      "status": "full",
+      "locate": {
+        "part": "第1卷",
+        "chapter": "矛盾论",
+        "section": "六 对抗在矛盾中的地位",
+        "navigation": [
+          "六对抗在矛盾中的地位"
+        ],
+        "start_hint": "六对抗在矛盾中的地位",
+        "end_hint": "，就是我们研究矛盾法则的一些简单的结论。",
+        "word_count": 1900,
+        "estimated_minutes": 10,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0216.xhtml",
+            "blocks": "110-120"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "对抗在矛盾中的地位，以及全文结论。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "对抗被放在斗争性里面的什么位置？结论一节回到了哪一条法则？"
+        },
+        {
+          "kind": "argument",
+          "question": "为什么作者说不能把阶级社会里的对抗公式套到一切事物？他用党内思想和城乡关系做了什么对照？"
+        },
+        {
+          "kind": "self",
+          "question": "作者既说阶级社会里革命战争不可避免，又说这个公式不能套到一切事物。党内思想矛盾被放在哪一边？只凭本单元，这个界限够不够判断一场具体争论？"
+        }
+      ],
+      "watch": {
+        "concept": "对抗",
+        "why": "读时留意对抗在斗争性里放在什么位置，不要先把它读成全文的结论。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "对抗被定义成矛盾斗争的一种形式，不是一切形式。",
+          "阶级社会里的革命和革命战争被写成不可避免，但作者马上说这个公式不能乱套。",
+          "党内思想矛盾、城市和乡村的矛盾，被写成可以不取对抗形式。",
+          "结论回到对立统一是自然和社会的根本法则，并重申要具体分析。"
+        ],
+        "author_claim": "收录文本把对抗从斗争性里划分出来，并要求按具体矛盾决定是否对抗。",
+        "common_misreadings": [
+          "炸弹比喻是作者的说明，不是物理证明。",
+          "列宁关于社会主义下对抗和矛盾的话是引文。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "已审模块写明：两文服务于具体的政治、阶级和革命任务，不能直接当成对所有领域都充分、价值中立的方法论。本单元把阶级社会中的革命和革命战争写成不可避免，同时又说对抗公式不能套到一切事物。界限留在文本里，但没有给出可公开复核的分类程序。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0216.xhtml",
+              "ref": "books/毛泽东选集/modules/practice-and-contradiction/reading.json critical_audit.limits"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u17",
+      "order": 17,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "论持久战",
+        "navigation": [
+          "论持久战*"
+        ],
+        "start_hint": "论持久战*",
+        "end_hint": "考察战争，才能使战争问题得出正确的结论。",
+        "word_count": 5150,
+        "estimated_minutes": 25,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "1-28"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1938年5月开头：用问答摆出亡国、速胜和如何胜利。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "“问题的提起”先摆出哪两种观点？1936年的问答和1937年8月的决定各占什么位置？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者用抗战十个月的经验证明什么，又把错误观点的根源说成什么？"
+        },
+        {
+          "kind": "self",
+          "question": "开篇用十个月经验对那两种观点作了什么判断？若这十个月里既有败仗也有坚持，你认为它已经决定了哪一种，又留了哪一种还没被这十个月决定？"
+        }
+      ],
+      "watch": {
+        "concept": "问题的提起",
+        "why": "这一节先把问题立起来。根据和阶段划分在后面。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "十个月经验被用来拒绝中国必亡和中国速胜。",
+          "1936年7月16日的问答被整段引用，讨论条件、时间和战略方针。",
+          "1937年8月25日的决定被用来说明卢沟桥之后要变成全面抗战。",
+          "错误观点被归到战争问题里的唯心论和机械论。"
+        ],
+        "author_claim": "1938年5月的开篇认为，十个月已经否定了亡国论和速胜论，但还要说明根据。",
+        "common_misreadings": [
+          "1936年问答里的问句不是作者在1938年新提出的反驳，引文要留在问答里。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u18",
+      "order": 18,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "问题的根据",
+        "navigation": [
+          "问题的根据"
+        ],
+        "start_hint": "问题的根据",
+        "end_hint": "必不会和历史上的解放运动同归失败的理由。",
+        "word_count": 4530,
+        "estimated_minutes": 20,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "29-43"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "持久战的根据，以及驳亡国论。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "“问题的根据”怎样对比日本和中国？“驳亡国论”补上了哪一个时代条件？"
+        },
+        {
+          "kind": "argument",
+          "question": "阿比西尼亚的例子被用来说明什么不能从“弱”直接推出“亡”？"
+        },
+        {
+          "kind": "self",
+          "question": "若有人只用日本强、中国大来复述根据，你会接受吗？本单元里哪一项被丢掉之后，亡国或速胜会重新变得说得通？"
+        }
+      ],
+      "watch": {
+        "concept": "问题的根据",
+        "why": "对比要成套看，不能单抽一项。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "日本被写成强，但战争退步、野蛮、失道寡助，又是小国。",
+          "中国被写成弱，但是大国，战争进步，多助。",
+          "驳亡国论强调二十世纪三十年代和中国已经不同于过去。",
+          "阿比西尼亚被用来对照：又弱又小，不能代替中国的条件。"
+        ],
+        "author_claim": "作者认为最后胜利的根据在全部敌我特点，而不在强弱一项。",
+        "common_misreadings": [
+          "这些特点是1938年5月的政治军事判断，不是事后统计表。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u19",
+      "order": 19,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "妥协还是抗战？腐败还是进步？",
+        "navigation": [
+          "妥协还是抗战？腐败还是进步？"
+        ],
+        "start_hint": "妥协还是抗战？腐败还是进步？",
+        "end_hint": "战争的过程，而排斥贪便宜尚空谈的速胜论。",
+        "word_count": 3234,
+        "estimated_minutes": 15,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "44-55"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "妥协还是抗战、腐败还是进步，并拒绝速胜论。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这一单元怎样把妥协的危险和速胜论分开？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者承认哪两个可能仍然摆在中国面前，又为什么仍说亡国论和速胜论都不对？"
+        },
+        {
+          "kind": "self",
+          "question": "“谁也赞成明天一个早上就把“鬼子”赶出去”是让步还是他的结论？"
+        }
+      ],
+      "watch": {
+        "concept": "妥协",
+        "why": "读时留意他怎样把两种判断分开，不要合成一句。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "妥协有社会根源，所以危险还在，但作者从日本、中国、国际三方面说明可以克服；共产党只是中国方面三个因素之一。",
+          "国内政治改进被写成和坚持抗战分不开。",
+          "速胜论被说成只记住进步和多助，忘记强弱。",
+          "解放和亡国两个可能都被承认，努力被写成选择解放的条件。"
+        ],
+        "author_claim": "收录文本拒绝亡国论和速胜论，同时不否认亡国危险。",
+        "common_misreadings": [
+          "“鬼子”是作者用来表现速胜愿望的口语，不是新的战略概念。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u20",
+      "order": 20,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "为什么是持久战？",
+        "navigation": [
+          "为什么是持久战？"
+        ],
+        "start_hint": "为什么是持久战？",
+        "end_hint": "争的时间，此外不能有任何取巧图便的法门。",
+        "word_count": 7200,
+        "estimated_minutes": 31,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "56-78"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "为什么是持久战，以及防御、相持、反攻三个阶段。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "作者把持久战分成哪三个阶段？每个阶段里，他写的主要作战形式有什么不同？"
+        },
+        {
+          "kind": "argument",
+          "question": "为什么单说敌强我弱还得不出持久战？三阶段的轮廓，和他所说的具体情况不能预断，是怎样放在一起的？"
+        },
+        {
+          "kind": "self",
+          "question": "广州、武汉、兰州和若干兵力、时间、经费数字出现在敌之企图和部署里。你准备把它们当成预测、动员，还是等待事实校正的假设？你的校正标准是什么？"
+        }
+      ],
+      "watch": {
+        "concept": "轮廓",
+        "why": "作者说三阶段是战略指导需要的轮廓，不是一本流年。读数字和阶段时，先看他自己留出的校正口。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "持久战被说成全部敌我因素互相作用的结果，不是单独由强弱、大小、进步或多助推出来的。",
+          "当时强弱悬殊太大，所以优点缺点还不能互相抵消，出现的是不平衡，而不是立刻的平衡。",
+          "三个阶段是敌之战略进攻、战略保守、战略退却，对应我之战略防御、准备反攻、战略反攻。",
+          "主要作战形式被写成：第一阶段运动战为主，第二阶段游击战为主，第三阶段仍以运动战为主，但阵地攻击变得重要。",
+          "作者写明具体情况不能预断，轮廓会被事实校正；同时用这个轮廓来拒绝亡国和速胜。"
+        ],
+        "author_claim": "1938年5月，抗日战争不会亡国，也不能速胜，要经过三个阶段，最后胜利属于中国。",
+        "reasons": [
+          "敌强我弱是相对的，坚持抗战和统一战线会继续改变优劣。",
+          "敌人的人力物力、退步性和国际孤立还没有发展到足以停止其进攻，所以不能速胜。",
+          "只比较武器会被作者称为唯武器论；他另外列入人力、人心，以及将来可能公开加入的别国力量。"
+        ],
+        "evidence": [
+          "十个月抗战被用来说明中国有进步，但还不足以阻止进攻和准备反攻。",
+          "广州、武汉、兰州、约五十个师团、约一百五十万人、一年半至两年、一百万万日元以上，写的是敌人的企图和应付这一企图的部署，不是已经实现的结算。",
+          "山西的游击战争被当作第二阶段作战形式的眼前例子。"
+        ],
+        "common_misreadings": [
+          "三阶段不是作者已经排定的日历。他自己写了不能预断，也不能造一本流年。",
+          "“决定的因素是人不是物”前面还有“武器是战争的重要的因素”。不能把后半句摘成武器无关。",
+          "亡国论者、妥协论者和速胜论者的反驳，是作者设来回答的意见，不是作者自己的主张。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "作者把三阶段同时写成战略指导所需要的轮廓，又写成会被事实校正、不能预断的设想。因此，后来的胜负不能直接证明1938年5月的每一个阶段划分都已经命中，也不能把轮廓读成当时已经完成的事实。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0309.xhtml 持久战的三个阶段开段"
+            },
+            {
+              "locator": "OEBPS/Text/Section0309.xhtml",
+              "ref": "books/毛泽东选集/modules/protracted-war/reading.json"
+            }
+          ]
+        },
+        {
+          "type": "外部背景",
+          "text": "已审《论持久战》深挖的 historical_check 写明：阶段一的方向对应较强，阶段二大体对应但各战场、各主体不同步，1944年一号作战还显示战线会倒退。武汉撤退的同时代外交记录用美国国务院 FRUS；日军前期推进仍未迫使中国投降，以及1944年一号作战说明阶段并非单向整齐推进，用 Cambridge History 的中国战场章节。这些后来的记录用来检验轮廓，不能代替1938年5月的原文。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0309.xhtml",
+              "ref": "books/毛泽东选集/modules/protracted-war/reading.json historical_check / pw06-historical-direction"
+            },
+            {
+              "url": "https://history.state.gov/historicaldocuments/frus1938v03/d330",
+              "ref": "ext-state-wuhan"
+            },
+            {
+              "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-the-second-world-war/campaigns-in-china-19371945/132227290BE59E8B96BD0910B9037D45",
+              "ref": "ext-cambridge-campaigns"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u13"
+          ],
+          "question": "矛盾论后半把片面说成不了解矛盾的各方。这里批评唯武器论时也用了片面。只看武器，漏掉了原文里的哪一方？",
+          "answer_key": "漏掉的是人力和人心，以及军力、经济力要由人掌握。不能答成武器不重要；原文说武器仍是重要因素，但不是决定因素。"
+        }
+      ],
+      "cards": [
+        {
+          "concept": "片面",
+          "definition": "矛盾论后半把片面解释为不了解矛盾各方的特点，只看见局部，看不见全体。",
+          "unit_ids": [
+            "mx-u13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mx-u21",
+      "order": 21,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "犬牙交错的战争",
+        "navigation": [
+          "犬牙交错的战争"
+        ],
+        "start_hint": "犬牙交错的战争",
+        "end_hint": "规律的战略战术，就是战争大海中的游泳术。",
+        "word_count": 4760,
+        "estimated_minutes": 21,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "79-93"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "犬牙交错的战争、为永久和平而战、能动性。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "“犬牙交错”一节用哪几组成对的位置来描写这场战争？后两节又把战争的目标和人的努力接到哪里？"
+        },
+        {
+          "kind": "argument",
+          "question": "“为永久和平而战”怎样把战争分成正义和非正义？能动性一节又怎样限制主观努力？"
+        },
+        {
+          "kind": "self",
+          "question": "作者说指导战争不能超越客观条件。这和“必须在客观条件的限度之内，能动地争取战争的胜利”是否互相取消？"
+        }
+      ],
+      "watch": {
+        "concept": "犬牙交错",
+        "why": "整个战争处于内线，不等于每一块战场都没有外线。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "抗日战争被写成内线和外线、有后方和无后方、包围和反包围同时存在。",
+          "正义的战争被说成进步的战争，并和争取永久和平连在一起。",
+          "能动性被定义为符合客观事实的自觉活动，而不是空想。",
+          "指导者不能超越客观条件，但必须在条件许可的限度内争取胜利。"
+        ],
+        "author_claim": "作者用空间上的交错和主观努力的限度，补充持久战不是一条直线。",
+        "common_misreadings": [
+          "“永久和平”是作者的政治目标，不是这一节已经证明的战后安排。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u22",
+      "order": 22,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "战争和政治",
+        "navigation": [
+          "战争和政治"
+        ],
+        "start_hint": "战争和政治",
+        "end_hint": "主观的努力。这时候，主观作用是决定的了。",
+        "word_count": 5150,
+        "estimated_minutes": 23,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "94-112"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "战争与政治、政治动员、战争目的，以及防御中的进攻。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "战争和政治、政治动员、战争目的、防御中的进攻，这四节各自回答什么？"
+        },
+        {
+          "kind": "argument",
+          "question": "“战争是政治的继续”之后，作者为什么又说战争不等于一般政治？"
+        },
+        {
+          "kind": "self",
+          "question": "保存自己和提倡牺牲被说成不矛盾。请用一场你知道的撤退来试：按本文，哪一种撤退仍算保存自己，哪一种算放弃战争目的？"
+        }
+      ],
+      "watch": {
+        "concept": "保存自己",
+        "why": "战争目的在这里是军事上的保存自己、消灭敌人，和政治目的“驱逐日本帝国主义”不是同一句。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "战争被写成政治的继续，又被写成政治的特殊手段。",
+          "政治动员首先是把战争的政治目的告诉军队和人民。",
+          "战场方针被收成外线的速决的进攻战，用来在战役上改变敌强我弱。",
+          "战略上仍是内线的持久的防御。"
+        ],
+        "author_claim": "作者把政治动员和战役上的速决进攻，写成实现持久战略的办法。",
+        "common_misreadings": [
+          "两句引号内都是引用的成说；作者自己的展开是“战争有其特殊性”，并说战争“不即等于一般的政治”。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u23",
+      "order": 23,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "主动性，灵活性，计划性",
+        "navigation": [
+          "主动性，灵活性，计划性"
+        ],
+        "start_hint": "主动性，灵活性，计划性",
+        "end_hint": "就表现于战略上的内线的持久的防御战之中。",
+        "word_count": 6353,
+        "estimated_minutes": 30,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "113-126"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "主动性、灵活性、计划性。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "主动性、灵活性、计划性在这一节里怎样依次定义？"
+        },
+        {
+          "kind": "argument",
+          "question": "为什么主动被说成离不开力量的优势，又说主观指导可以改变优劣？"
+        },
+        {
+          "kind": "self",
+          "question": "有人因战争多变就取消计划。作者仍给计划留下一种固定。你认为这种固定在什么情况下会变成主观规定，本单元有没有写出那条边界？"
+        }
+      ],
+      "watch": {
+        "concept": "主动性",
+        "why": "主动不是愿望。先看它和优势、错觉、灵活性、计划怎样连在一起。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "主动被写成军队的自由权，和优势相连，被动和劣势相连。",
+          "主观指导被写成可以影响优劣和主动被动。",
+          "有计划地造成敌人的错觉和不意，被写成争取主动的办法。",
+          "灵活性是把主动用到具体作战；计划性在不确定的战争里仍有相对的固定。"
+        ],
+        "author_claim": "收录文本认为，战役上的主动、灵活和计划，用来改变战略上的劣势。",
+        "common_misreadings": [
+          "“运用之妙，存乎一心”被作者重新叫做灵活性，原话是古人的话。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u24",
+      "order": 24,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "运动战，游击战，阵地战",
+        "navigation": [
+          "运动战，游击战，阵地战"
+        ],
+        "start_hint": "运动战，游击战，阵地战",
+        "end_hint": "却颇有高明之处，这一点我们应该向他学习。",
+        "word_count": 5863,
+        "estimated_minutes": 26,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "127-144"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "运动战、游击战、阵地战，消耗战、歼灭战，以及乘敌之隙。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "运动战、游击战、阵地战在全战争和在各个阶段里的位置有什么不同？"
+        },
+        {
+          "kind": "argument",
+          "question": "消耗战和歼灭战为什么被说成可以同时成立？十个月的经验纠正了哪一种设想？"
+        },
+        {
+          "kind": "self",
+          "question": "“有进无退的拚命主义”被反对。这是否等于作者赞成任意后退？"
+        }
+      ],
+      "watch": {
+        "concept": "运动战",
+        "why": "形式服务于保存自己、消灭敌人，不是三种形式并列的清单而已。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "运动战被写成要求大踏步前进和后退，但反对有进无退的拚命主义。",
+          "整个战争中运动战为主、游击战为辅的说法，和各阶段的主辅会被后文细调。",
+          "抗日战争被同时写成消耗战和歼灭战。",
+          "十个月里许多运动战实际上打成了消耗战，作者把这写成事实而不是原计划。"
+        ],
+        "author_claim": "作者按技术和兵员的差距安排作战形式，并承认实践已经修改了部分设想。",
+        "common_misreadings": [
+          "“自古无不犯错误的将军”是在说敌人也会犯错，不是说错误本身可取。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u25",
+      "order": 25,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "抗日战争中的决战问题",
+        "navigation": [
+          "抗日战争中的决战问题"
+        ],
+        "start_hint": "抗日战争中的决战问题",
+        "end_hint": "胜利论者，不是赌汉们那样的孤注一掷论者。",
+        "word_count": 1836,
+        "estimated_minutes": 9,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "145-150"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "抗日战争中的决战问题。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "决战被分成哪三类？哪几类被要求避免？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者怎样回答“这些英勇战斗者的血，不是白流了吗？”和“不怕人家骂“不抵抗”吗？”？"
+        },
+        {
+          "kind": "self",
+          "question": "战略反攻阶段的决战，他是否说就可以不讲有利条件？"
+        }
+      ],
+      "watch": {
+        "concept": "决战",
+        "why": "读时留意三类各按什么标准划分。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "一切有把握的战役和战斗应决战。无把握的战役和战斗应避免决战。赌国家命运的战略决战应根本避免。",
+          "根本不战、与敌妥协被写成不抵抗，和避免无把握的决战不是一事。",
+          "英勇战斗之后放弃土地，被说成不自相矛盾。",
+          "战略反攻时仍要讲有利条件。"
+        ],
+        "author_claim": "作者用决战的分类拒绝两种相反的骂法：无条件硬打，和把避战都叫不抵抗。",
+        "common_misreadings": [
+          "这一节的“不抵抗”是作者要驳回的指责，不是他主张不抵抗。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u26",
+      "order": 26,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "论持久战",
+        "section": "兵民是胜利之本",
+        "navigation": [
+          "兵民是胜利之本"
+        ],
+        "start_hint": "兵民是胜利之本",
+        "end_hint": "概论，希望诸位研究讨论，给以指正和补充。",
+        "word_count": 3608,
+        "estimated_minutes": 17,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0309.xhtml",
+            "blocks": "151-162"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "兵民是胜利之本，以及全篇结论。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "“兵民是胜利之本”把胜利条件主要放在哪一件事上？结论怎样收回开篇的问话？"
+        },
+        {
+          "kind": "argument",
+          "question": "现代化和技术条件被放在什么位置？它能否代替政治动员？"
+        },
+        {
+          "kind": "self",
+          "question": "保卫武汉在文中是紧急任务。你能否同时看见作者并不把胜利写成守住每一座城？"
+        }
+      ],
+      "watch": {
+        "concept": "兵民",
+        "why": "读时留意技术、军队和民众各被放在什么位置。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "制胜日本的主要条件被写成全国团结和各方面较之过去有十百倍的进步。",
+          "军制现代化被说成必要，没有技术就不能把敌人赶过鸭绿江。",
+          "战争伟力的根源被放在民众之中，官兵关系被说成首先是态度。",
+          "结论回到三个条件：中国的抗日统一战线得以完成，国际的抗日统一战线得以完成，日本国内人民以及日本殖民地的人民起来做革命运动。"
+        ],
+        "author_claim": "全篇收束认为，持久战的胜利取决于军民动员和技术、政治条件一起增长。",
+        "common_misreadings": [
+          "结论里复述的三条件来自开篇引用的1936年问答，这里是作者再次使用。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u27",
+      "order": 27,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "新民主主义论",
+        "section": "新民主主义论",
+        "navigation": [
+          "新民主主义论*"
+        ],
+        "start_hint": "新民主主义论*",
+        "end_hint": "，这就是现时中国革命的生动的具体的内容。",
+        "word_count": 6002,
+        "estimated_minutes": 28,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0326.xhtml",
+            "blocks": "1-42"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1940年1月前四节：中国向何处去、历史特点、世界革命的一部分。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "前四节怎样从“中国向何处去”写到“中国革命是世界革命的一部分”？"
+        },
+        {
+          "kind": "argument",
+          "question": "文化、政治、经济三者的关系，作者用哪一句定下来？两步革命从哪一年被他划成新的范畴？"
+        },
+        {
+          "kind": "self",
+          "question": "第四节把中国革命归入新的世界革命，并引用斯大林。若拿掉那两段引文，本单元还剩下哪几句是作者自己的历史划分？那些句子够不够独立成立？"
+        }
+      ],
+      "watch": {
+        "concept": "历史特点",
+        "why": "新民主不是旧民主的别名。先看1919年以前和以后被怎样划分。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "一定的文化被写成一定政治、经济的反映，又反作用于它们。",
+          "当前革命被分成民主主义一步和社会主义一步，第一步已不是一般的旧民主。",
+          "1914年大战和1917年十月革命之后，中国的民主革命被划进新的世界革命。",
+          "这个命题被作者说成根据斯大林的理论，并引用了斯大林的话。"
+        ],
+        "author_claim": "1940年1月的收录文本认为，当时要建立的是新民主主义，而不是旧式资产阶级共和国。",
+        "common_misreadings": [
+          "“中国革命是世界革命的一部分”在文中被说成1924至1927年已经提出，这里是重申并改写其含义。",
+          "斯大林的引文不是作者原话。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u28",
+      "order": 28,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "新民主主义论",
+        "section": "五 新民主主义的政治",
+        "navigation": [
+          "五新民主主义的政治"
+        ],
+        "start_hint": "五新民主主义的政治",
+        "end_hint": "治，就是这种新民主主义经济的集中的表现。",
+        "word_count": 4144,
+        "estimated_minutes": 19,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0326.xhtml",
+            "blocks": "43-69"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "新民主主义的政治和经济。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "新民主主义的政治和经济各被收成哪两句？国体和政体怎样区分？"
+        },
+        {
+          "kind": "argument",
+          "question": "民族资产阶级的两面性在这一单元里支持了什么，又限制了什么？"
+        },
+        {
+          "kind": "self",
+          "question": "民族资产阶级被放进政治安排里，又被写成会妥协。你认为这种安排还要不要给它否决权？本单元有没有回答？"
+        }
+      ],
+      "watch": {
+        "concept": "国体",
+        "why": "读时把政治上的说法和经济上的说法分开，先不要合并成答案。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "五四以后的政治指导者被写成无产阶级，民族资产阶级仍有参加革命和妥协两面。",
+          "国家形式被分成旧民主、社会主义和殖民地半殖民地的过渡形式。",
+          "国体是各革命阶级联合专政，政体是民主集中制。",
+          "经济上大银行、大工业、大商业归国家，土地分给农民，走节制资本和平均地权。"
+        ],
+        "author_claim": "收录文本把新民主主义写成政治上的联合专政和经济上的节制资本、平均地权。",
+        "common_misreadings": [
+          "民权制度一段引自1924年国民党第一次全国代表大会宣言，用来说明国体。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u29",
+      "order": 29,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "新民主主义论",
+        "section": "七 驳资产阶级专政",
+        "navigation": [
+          "七驳资产阶级专政"
+        ],
+        "start_hint": "七驳资产阶级专政",
+        "end_hint": "不是资产阶级的专制主义，就是毫无常识了。",
+        "word_count": 6041,
+        "estimated_minutes": 30,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0326.xhtml",
+            "blocks": "70-95"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "驳资产阶级专政、驳“左”倾空谈主义、驳顽固派。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这一单元先后挡回了哪几条被提出来的路？每条路被挡回时，作者用的是国际环境、阶段，还是纲领？"
+        },
+        {
+          "kind": "argument",
+          "question": "“一次革命论”被分成恶意和迷惑两种。作者用最低纲领和最高纲领回答了什么？"
+        },
+        {
+          "kind": "self",
+          "question": "“有饭大家吃”是论证还是比喻？它证明了国际环境走不通，还是只在劝说？"
+        }
+      ],
+      "watch": {
+        "concept": "两个阶段",
+        "why": "不走资产阶级专政，也不等于现在就走无产阶级专政。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "资产阶级专政被说成国际国内都走不通。",
+          "社会主义是第二步，现在混淆两步被叫成一次革命论。",
+          "共产主义被分成思想体系和社会制度，并有现在的纲领和将来的纲领。",
+          "三民主义和共产主义被写成既有相同的民主革命政纲，也有不同部分。"
+        ],
+        "author_claim": "作者拒绝用资产阶级专政或立即的社会主义专政代替他所说的现阶段。",
+        "common_misreadings": [
+          "顽固派的问话是作者设的对手，不是作者的主张。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u30",
+      "order": 30,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "新民主主义论",
+        "section": "一〇 旧三民主义和新三民主义",
+        "navigation": [
+          "一〇旧三民主义和新三民主义"
+        ],
+        "start_hint": "一〇旧三民主义和新三民主义",
+        "end_hint": "的反共分子外，我们是决不抛弃任何友人的。",
+        "word_count": 3478,
+        "estimated_minutes": 16,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0326.xhtml",
+            "blocks": "96-110"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "旧三民主义和新三民主义的对照。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "旧三民主义和新三民主义以哪一篇宣言、哪三大政策来划分？"
+        },
+        {
+          "kind": "argument",
+          "question": "为什么作者说离开那三大政策就没有前途？"
+        },
+        {
+          "kind": "self",
+          "question": "“三民主义为抗日民族统一战线的政治基础”是他承认的政策语句。你能否不把它改写成共产主义已经等于三民主义？"
+        }
+      ],
+      "watch": {
+        "concept": "新三民主义",
+        "why": "新与旧的差别被放在时代和三大政策上，不是两个名词的替换。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "共产党人承认三民主义是抗日统一战线的政治基础。",
+          "一九二四年以后的三民主义被写成联俄、联共、扶助农工的新三民主义。",
+          "旧三民主义被写成旧时期的产物，那时没有这些政策。",
+          "反帝反封建没有基本完成以前，新三民主义被说成仍有前途。"
+        ],
+        "author_claim": "收录文本用三大政策区分作者愿意合作的三民主义和他拒绝退回的旧三民主义。",
+        "common_misreadings": [
+          "这一节的“真三民主义”是作者的划分，不是孙中山原文的自我命名。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u31",
+      "order": 31,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "新民主主义论",
+        "section": "一一 新民主主义的文化",
+        "navigation": [
+          "一一新民主主义的文化"
+        ],
+        "start_hint": "一一新民主主义的文化",
+        "end_hint": "此，在整个东方也是如此，在世界也是如此。",
+        "word_count": 5776,
+        "estimated_minutes": 27,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0326.xhtml",
+            "blocks": "111-137"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "新民主主义的文化、文化革命的历史特点和四个时期。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "新文化被定义成什么的反映？五四以前和以后，领导者和文化性质各有什么变化？"
+        },
+        {
+          "kind": "argument",
+          "question": "四个时期以哪些事件为界？第四个时期作者要打击的是什么思想？"
+        },
+        {
+          "kind": "self",
+          "question": "五四以前的新文化，作者把领导归给哪一方？你看到本单元里有没有对方文化的原始文献？"
+        }
+      ],
+      "watch": {
+        "concept": "四个时期",
+        "why": "读时留意文化革命被写成什么的反映，时期又跟着什么变化走。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "新文化是新政治、新经济在观念形态上的反映。",
+          "五四以前被写成资产阶级领导的旧民主主义文化，五四以后被写成无产阶级领导的新民主主义文化。",
+          "二十年被分成四个时期：五四到建党、建党到北伐、1927到1937、抗日战争。",
+          "第四时期的任务被写成克服反抗战、反团结、反进步的思想。"
+        ],
+        "author_claim": "作者用四个时期说明新文化的统一战线有过破裂和再形成。",
+        "common_misreadings": [
+          "四个时期是作者的分期，不是这一单元里的编年史料汇编。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u32",
+      "order": 32,
+      "status": "full",
+      "locate": {
+        "part": "第2卷",
+        "chapter": "新民主主义论",
+        "section": "一四 文化性质问题上的偏向",
+        "navigation": [
+          "一四文化性质问题上的偏向"
+        ],
+        "start_hint": "一四文化性质问题上的偏向",
+        "end_hint": "举起你的双手吧，新中国是我们的。",
+        "word_count": 3150,
+        "estimated_minutes": 15,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0326.xhtml",
+            "blocks": "138-153"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "文化性质上的偏向，以及民族的科学的大众的文化。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "文化性质上的偏向一节，怎样把共产主义的指导和现阶段的国民文化分开？"
+        },
+        {
+          "kind": "argument",
+          "question": "“民族的科学的大众的”各自反对什么？"
+        },
+        {
+          "kind": "self",
+          "question": "末尾“举起你的双手吧”是论证的结尾还是号召？它新增了哪一条文化定义？"
+        }
+      ],
+      "watch": {
+        "concept": "民族的科学的大众的",
+        "why": "三句话是文化方针的收束，不要和前面的政治、经济方案拆开。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "共产主义思想被写成指导地位，但现阶段的国民文化不被写成纯粹的社会主义文化。",
+          "应当扩大共产主义宣传，同时说当前内容不是资产阶级文化专制，也不是单纯的社会主义文化。",
+          "新文化被定义为民族的科学的大众的，也就是人民大众反帝反封建的文化。",
+          "篇末把政治、经济、文化合在一起，称为新民主主义共和国。"
+        ],
+        "author_claim": "全文收束认为，新中国的文化方针是民族的科学的大众的文化。",
+        "common_misreadings": [
+          "末尾的欢迎词是号召，不再增加新的制度条款。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u33",
+      "order": 33,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "改造我们的学习",
+        "section": "改造我们的学习",
+        "navigation": [
+          "改造我们的学习*"
+        ],
+        "start_hint": "改造我们的学习*",
+        "end_hint": "题上的这一改造，我相信一定会有好的结果。",
+        "word_count": 4504,
+        "estimated_minutes": 19,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0402.xhtml",
+            "blocks": "1-32"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1941年5月19日全文。整篇一次读完。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "四个部分怎样从成绩、缺点、两种态度写到三项提议？"
+        },
+        {
+          "kind": "argument",
+          "question": "主观主义的态度和马克思列宁主义的态度，对照的是研究环境、历史和理论的哪三个方面？"
+        },
+        {
+          "kind": "self",
+          "question": "对子被用来给主观主义画像。若一个人背熟了这副对子，按本文他是否就已经完成了三项提议里的任何一项？"
+        }
+      ],
+      "watch": {
+        "concept": "研究现状",
+        "why": "读时先找作者自己的小结句，再拿它去对照后面的两种态度和三项提议。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "二十年成绩被写成马克思列宁主义和中国革命实践日益结合。",
+          "缺点是不研究现状、不研究历史、不注重应用。",
+          "主观主义被说成单凭热情、生吞活剥；对子是替这种人画像的。",
+          "提议是研究环境、合作研究近百年史、以中国革命实际问题为中心来教育干部。"
+        ],
+        "author_claim": "1941年5月19日的讲话要求把学习和中国革命的实际问题接上。",
+        "common_misreadings": [
+          "墙上芦苇、山间竹笋是作者引用的对子，不是他撰写的定义。",
+          "作者说这是极坏的典型，不是说全党普遍如此。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u34",
+      "order": 34,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "整顿党的作风",
+        "section": "整顿党的作风",
+        "navigation": [
+          "整顿党的作风*"
+        ],
+        "start_hint": "整顿党的作风*",
+        "end_hint": "整顿全党的学风的问题，今天讲的就是这些。",
+        "word_count": 6013,
+        "estimated_minutes": 24,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0406.xhtml",
+            "blocks": "1-31"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1942年2月1日讲话前半：反对主观主义以整顿学风。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "学风、党风、文风各自要反对什么？这一半实际展开的是哪一种？"
+        },
+        {
+          "kind": "argument",
+          "question": "什么是知识被分成哪两门？教条主义和经验主义哪一个被说成当时更危险？"
+        },
+        {
+          "kind": "self",
+          "question": "有人会说，照这个定义马克思也不算知识分子。你若站在作者一边，要补上哪一个条件，才不会把参加实际说成所有书本知识都无用？"
+        }
+      ],
+      "watch": {
+        "concept": "理论和实际",
+        "why": "读时先分清三种风气各反什么，再看这一半展开的是哪一种。另一种在下一单元。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "总路线被说成没有问题，问题在学风、党风、文风还不正。",
+          "知识被分成生产斗争知识和阶级斗争知识。",
+          "只有书本的人和只有局部经验的人都被说成知识不完全。",
+          "两种主观主义是教条主义和经验主义，当时教条主义被说成更危险。"
+        ],
+        "author_claim": "1942年2月1日讲话的前半，要用应用马克思列宁主义来整顿学风。",
+        "common_misreadings": [
+          "“马克思也算不得知识分子”是作者模拟的反驳，不是他的结论。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u35",
+      "order": 35,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "整顿党的作风",
+        "section": "整顿党的作风",
+        "navigation": [
+          "整顿党的作风*"
+        ],
+        "start_hint": "现在我来讲一讲宗派主义的问题。",
+        "end_hint": "多话，希望同志们加以考虑。（热烈的鼓掌）",
+        "word_count": 4785,
+        "estimated_minutes": 19,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0406.xhtml",
+            "blocks": "32-47"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "讲话后半：宗派主义残余，并说明党八股另一次再讲。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "宗派主义残余被分成哪些关系？党八股为什么这一天不讲？"
+        },
+        {
+          "kind": "argument",
+          "question": "局部和全体、个人和党，怎样被说成闹独立性的根？"
+        },
+        {
+          "kind": "self",
+          "question": "两条宗旨“惩前毖后”和另一条，是方法还是这一单元新加的理论？"
+        }
+      ],
+      "watch": {
+        "concept": "宗派主义",
+        "why": "作者说党内已没有占统治地位的宗派主义，但仍有残余。不要读成宗派已经不存在。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "残余包括闹独立性、外来和本地、军队和地方、军队之间、部门之间、老干部和新干部。",
+          "个人第一被写成常和闹独立性连在一起。",
+          "党外关系上的宗派主义也被要求消灭，因为单是党员打不赢敌人。",
+          "党八股被留下次会议讲。两条宗旨是惩前毖后和治病救人。"
+        ],
+        "author_claim": "讲话后半把宗派主义残余当成主观主义在组织关系上的表现。",
+        "common_misreadings": [
+          "“热烈的鼓掌”是记录，不是论证。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u34"
+          ],
+          "question": "前半说主观主义有教条和经验两种。后半为什么说宗派主义也是主观主义？",
+          "answer_key": "因为只看见局部、看不见全体，和革命的实际需要不合，所以组织上的残余被归到同一种主观主义。"
+        }
+      ],
+      "cards": []
+    },
+    {
+      "id": "mx-u36",
+      "order": 36,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "反对党八股",
+        "section": "反对党八股",
+        "navigation": [
+          "反对党八股*"
+        ],
+        "start_hint": "反对党八股*",
+        "end_hint": "上面这八条，就是我们申讨党八股的檄文。",
+        "word_count": 6895,
+        "estimated_minutes": 27,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0407.xhtml",
+            "blocks": "1-19"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1942年2月8日讲话前半：党八股的来历和八条罪状。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "八条罪状里，哪几条在讲文章本身，哪两条被说成意义自明？"
+        },
+        {
+          "kind": "argument",
+          "question": "党八股怎样被说成五四运动的反动，又怎样被说成洋八股？"
+        },
+        {
+          "kind": "self",
+          "question": "“我们也仿照八股文章的笔法来一个“八股””是自嘲还是他赞成八股形式？"
+        }
+      ],
+      "watch": {
+        "concept": "党八股",
+        "why": "八条是申讨清单。正面替代在下一单元的《宣传指南》。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "党八股被写成主观主义和宗派主义的表现形式，也叫洋八股。",
+          "它被放进土地革命时期的历史，并被说成对五四运动的反动。",
+          "八条从空话、吓人、不看对象、语言无味、开中药铺、不负责任，到流毒全党、祸国殃民。",
+          "作者把这八条称为申讨的檄文。"
+        ],
+        "author_claim": "1942年2月8日讲话的前半用八条罪状说明党八股为什么要不得。",
+        "common_misreadings": [
+          "鲁迅反对洋八股是作者加注的历史指认，鲁迅的原信在下一单元才摘。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u37",
+      "order": 37,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "反对党八股",
+        "section": "反对党八股",
+        "navigation": [
+          "反对党八股*"
+        ],
+        "start_hint": "党八股这个形式，不但不便于表现革命精神，",
+        "end_hint": "的同志们商量一下，把自己的毛病切实改掉。",
+        "word_count": 2817,
+        "estimated_minutes": 13,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0407.xhtml",
+            "blocks": "20-47"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "讲话后半：《宣传指南》和六届六中全会的宣传要求。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "《宣传指南》四篇分别来自哪里？作者要读者学的是哪一种做法？"
+        },
+        {
+          "kind": "argument",
+          "question": "“化”被解释成彻头彻尾。这怎样接到民族化、科学化、大众化？"
+        },
+        {
+          "kind": "self",
+          "question": "《宣传指南》里的信和报告都是别人写的。作者要学员照做的是调查和删改，还是把那些句子再抄一遍？你用哪一句区分这两件事？"
+        }
+      ],
+      "watch": {
+        "concept": "宣传指南",
+        "why": "这一半用别人的文字做药方。引文和作者的催促要分开。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "党八股被说成使革命精神窒息，开会也可以有党八股。",
+          "小册子四篇来自联共党史摘录、季米特洛夫报告、鲁迅的信和六届六中全会。",
+          "作者用这些材料要求调查、说群众懂的话、写完要删、不生造形容词。",
+          "结尾催促按中央决定抛弃党八股和教条主义。"
+        ],
+        "author_claim": "讲话后半用《宣传指南》把前半的罪状换成可执行的写法。",
+        "common_misreadings": [
+          "《苏联共产党（布）历史简要读本》、季米特洛夫、鲁迅的引文，以及作者自引的六中全会说法，都不能署成这次讲话的新句。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u36"
+          ],
+          "question": "前半的第一条罪状是空话连篇。后半用列宁写传单的例子要求补上什么？",
+          "answer_key": "要先熟悉情况、和了解情况的人商量，再写给群众看的东西。"
+        }
+      ],
+      "cards": []
+    },
+    {
+      "id": "mx-u38",
+      "order": 38,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "关于领导方法的若干问题",
+        "section": "关于领导方法的若干问题",
+        "navigation": [
+          "关于领导方法的若干问题*"
+        ],
+        "start_hint": "关于领导方法的若干问题*",
+        "end_hint": "地深入地提倡马克思主义的科学的领导方法。",
+        "word_count": 3322,
+        "estimated_minutes": 13,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0413.xhtml",
+            "blocks": "1-11"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1943年6月1日全文。短篇不拆。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "九条里，一般和个别、领导和群众、中心工作各是哪一条？"
+        },
+        {
+          "kind": "argument",
+          "question": "1942年整风怎样被用来证明领导骨干和广大群众都要有？"
+        },
+        {
+          "kind": "self",
+          "question": "“从群众中来，到群众中去”后面还有集中和坚持。若只做了收集意见、没有再拿回去让群众执行，按本文这还算不算正确的领导？"
+        }
+      ],
+      "watch": {
+        "concept": "从群众中来",
+        "why": "正确的领导被写成集中群众意见，再到群众中坚持下去。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "两个必须采用的方法是一般和个别相结合、领导和群众相结合。",
+          "只有一般号召、没有个别指导，被说成不能检验号召是否正确。",
+          "从群众中来、到群众中去被写成集中又坚持下去。",
+          "一个时期只能有一个中心工作，不能许多中心并列。"
+        ],
+        "author_claim": "1943年6月1日的决定把领导方法收成一般与个别、领导与群众。",
+        "common_misreadings": [
+          "第九条说细节不在这里一一讲，所以这篇不是工作手册的全部。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u39",
+      "order": 39,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "为人民服务",
+        "section": "为人民服务",
+        "navigation": [
+          "为人民服务*"
+        ],
+        "start_hint": "为人民服务*",
+        "end_hint": "法，寄托我们的哀思，使整个人民团结起来。",
+        "word_count": 794,
+        "estimated_minutes": 4,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0420.xhtml",
+            "blocks": "1-7"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1944年9月8日追悼会上的短讲话。保持实长，不垫时。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "这篇短讲话围绕张思德的追悼，依次讲了哪几层？请按原文的顺序说。"
+        },
+        {
+          "kind": "argument",
+          "question": "司马迁的话在文中起什么作用？作者自己的对比是哪一句？"
+        },
+        {
+          "kind": "self",
+          "question": "这篇对死的意义作了区分。若一个人的工作对队伍有益、但目标并不是文中的革命目标，本文的标准还能否直接用上？"
+        }
+      ],
+      "watch": {
+        "concept": "为人民服务",
+        "why": "保持这篇的实长。死的意义被放在为人民服务，而不是放进所有的死。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "队伍被写成完全为着解放人民，彻底为人民的利益工作。",
+          "司马迁的话被引用后，作者把死分成替人民利益和替法西斯效力。",
+          "因为是为人民服务，所以不怕批评，不管批评来自谁。",
+          "共同目标把来自五湖四海的人连在一起，并写到死后的追悼会。"
+        ],
+        "author_claim": "1944年9月8日的讲话把这个队伍的标准说成为人民服务。",
+        "common_misreadings": [
+          "“人固有一死，或重于泰山，或轻于鸿毛”是文中标明的司马迁的话。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u40",
+      "order": 40,
+      "status": "full",
+      "locate": {
+        "part": "第3卷",
+        "chapter": "愚公移山",
+        "section": "愚公移山",
+        "navigation": [
+          "愚公移山*"
+        ],
+        "start_hint": "愚公移山*",
+        "end_hint": "的胜利，而国民党的反革命路线必然要失败。",
+        "word_count": 1659,
+        "estimated_minutes": 8,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0427.xhtml",
+            "blocks": "1-9"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1945年6月11日七大闭幕词。与《为人民服务》在书中不相邻，中间有未选篇。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "闭幕词里，七大做了哪三件事？愚公故事被用来说服谁建立什么信心？"
+        },
+        {
+          "kind": "argument",
+          "question": "两个大会的对照，作者要说明的是路线还是人数？"
+        },
+        {
+          "kind": "self",
+          "question": "作者把寓言里的哪些人和事接到了现实？你认为这个比喻能支持什么，又有哪些判断需要寓言以外的证据？"
+        }
+      ],
+      "watch": {
+        "concept": "信心",
+        "why": "读时留意寓言前后两句信心各对着谁、内容是什么。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "七大被写成决定了放手发动群众、壮大人民力量、打败侵略者、建设新中国的路线，并通过了章程、选出了领导。",
+          "愚公故事被用来说明子子孙孙挖下去，上帝就是人民大众。",
+          "帝国主义和封建主义被比成两座山。",
+          "国民党六大和共产党七大被对照，作者站在七大一边。"
+        ],
+        "author_claim": "1945年6月11日的闭幕词要求代表去宣传大会路线，使全党和全国人民相信革命一定要胜利。",
+        "common_misreadings": [
+          "不要把愚公挖山读成已经证明两座山一定被移走。故事的作用是让代表去宣传大会路线，使全党和全国人民相信革命一定要胜利，上帝在后文被说成人民大众；作者在现实一侧写的是人民“一齐起来和我们一道挖”，这是比喻上的转换，不是施工步骤。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "愚公故事把坚持挖和最后由外力背山连在一起，作者再把上帝解释成人民大众。它完成的是闭幕时的动员，不是一套已经检验过的办法。两座山被直接命名为帝国主义和封建主义，这个对应是比喻。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0427.xhtml"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u41",
+      "order": 41,
+      "status": "full",
+      "locate": {
+        "part": "第4卷",
+        "chapter": "党委会的工作方法",
+        "section": "党委会的工作方法",
+        "navigation": [
+          "党委会的工作方法*"
+        ],
+        "start_hint": "党委会的工作方法*",
+        "end_hint": "讲究工作方法，把党委的领导工作提高一步。",
+        "word_count": 2791,
+        "estimated_minutes": 11,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0559.xhtml",
+            "blocks": "1-15"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "第四卷，1949年3月13日。十二条工作方法，整篇不拆。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "十二条方法里，哪几条在讲党委内部怎样开会，哪几条在讲数量、界限和团结？"
+        },
+        {
+          "kind": "argument",
+          "question": "“弹钢琴”反对的是只按一个指头，还是十个指头同时按下去？"
+        },
+        {
+          "kind": "self",
+          "question": "延安和西安被用来划什么界限？这是1949年3月的比喻，能否直接换成后来的地名？"
+        }
+      ],
+      "watch": {
+        "concept": "班长",
+        "why": "十二条是党委工作的方法清单，不是国家制度的定义。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "书记被比成班长，要让一班人动作起来。",
+          "问题要摆到桌面，委员之间要互通情报，不懂的要问下级。",
+          "弹钢琴是既要十个指头又要有节奏，抓紧是对主要工作抓住不放。",
+          "胸中有数、安民告示、精兵简政、团结不同意见、力戒骄傲、划清革命和反革命，是后几条。"
+        ],
+        "author_claim": "1949年3月13日的讲话把党委方法收成这十二条。",
+        "common_misreadings": [
+          "延安和西安是当时划界限的比喻，文中有注。不要把地名换成后出的政治口号。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u42",
+      "order": 42,
+      "status": "full",
+      "locate": {
+        "part": "第4卷",
+        "chapter": "论人民民主专政",
+        "section": "论人民民主专政",
+        "navigation": [
+          "论人民民主专政"
+        ],
+        "start_hint": "论人民民主专政",
+        "end_hint": "是剥夺反动派的发言权，只让人民有发言权。",
+        "word_count": 4578,
+        "estimated_minutes": 23,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0565.xhtml",
+            "blocks": "1-19"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1949年6月30日前半：从学西方失败写到“你们独裁”。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "从鸦片战争写到“你们独裁”，作者安排了哪几句责难？"
+        },
+        {
+          "kind": "argument",
+          "question": "为什么“先生老是侵略学生”被用来结束学西方的路？一边倒的经验被说成谁的经验？"
+        },
+        {
+          "kind": "self",
+          "question": "“你们独裁”是责难。作者回答“正是这样”时，独裁的对象在这一半有没有定义完？"
+        }
+      ],
+      "watch": {
+        "concept": "一边倒",
+        "why": "这一半是在说曾经试过的路失败了。人民的范围在下一单元。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "二十八年被写成不是和平走过的。",
+          "学西方的方案被说成在先生侵略学生之后破产。",
+          "马克思主义被写成经过俄国人介绍，然后有了共产党。",
+          "一边倒、太刺激、做生意、不要国际援助、需要英美政府援助、独裁，是逐句回答的责难。"
+        ],
+        "author_claim": "1949年6月30日文章的前半认为，经验要求站到社会主义一边，并准备实行人民的独裁。",
+        "common_misreadings": [
+          "引号里的短句是作者模拟的责难或转述，不全是他的主张；他的回答在引号外面。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u43",
+      "order": 43,
+      "status": "full",
+      "locate": {
+        "part": "第4卷",
+        "chapter": "论人民民主专政",
+        "section": "论人民民主专政",
+        "navigation": [
+          "论人民民主专政"
+        ],
+        "start_hint": "人民是什么？在中国，在现阶段，是工人阶级",
+        "end_hint": "了反动派以外的一切人，稳步地走到目的地。",
+        "word_count": 3747,
+        "estimated_minutes": 17,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0565.xhtml",
+            "blocks": "20-40"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "后半：人民的范围、民主与专政、联盟和二十八年的经验。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "“人民是什么”列出了哪四个阶级？专政的对象和方法与人民内部的方法怎样分开？"
+        },
+        {
+          "kind": "argument",
+          "question": "消灭国家权力为什么被说成现在还不能要？教育农民被放在什么问题的位置？"
+        },
+        {
+          "kind": "self",
+          "question": "人民被列出四个阶级，选举权只给人民。若分类出错，本单元有没有写出谁来复核、怎样改正？没有的话，你还能否只根据“民主”二字接受这个定义？"
+        }
+      ],
+      "watch": {
+        "concept": "人民",
+        "why": "人民的范围、领导阶级和专政对象要同时看，不能只留最后一句口号。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "现阶段的人民被写成工人阶级、农民阶级、城市小资产阶级和民族资产阶级。",
+          "对反动派是专政，对人民内部是民主的说服；人民犯罪也要处罚。",
+          "国家权力被说成现在还不能消灭，因为帝国主义和国内反动派还在。",
+          "基础是工人和农民的联盟，领导是工人阶级；经验被收成人民民主专政。"
+        ],
+        "author_claim": "文章后半把国家定义成工人阶级领导的、以工农联盟为基础的人民民主专政。",
+        "common_misreadings": [
+          "朱熹的话是引文；作者借它说明对反动派实行专政是以其人之道，还治其人之身，不能读成闲笔。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "已审的新民主主义与国家构想模块指出：1949年文本对“人民”和“反动派”作政治分类，并公开肯定国家机器的强制性；不能只摘民主而省略专政边界。选举权只给人民、不给反动派。本单元没有写明分类出错时由谁复核、怎样改正。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0565.xhtml",
+              "ref": "books/毛泽东选集/modules/new-democracy-and-state/reading.json critical_audit.minimum_verdicts"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u42"
+          ],
+          "question": "前半回答“你们独裁”。后半把独裁用在谁身上，又把哪些阶级算进人民？",
+          "answer_key": "独裁对着反动派。人民在现阶段是工人阶级、农民、城市小资产阶级和民族资产阶级。"
+        }
+      ],
+      "cards": []
+    },
+    {
+      "id": "mx-u44",
+      "order": 44,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "论十大关系",
+        "section": "论十大关系",
+        "navigation": [
+          "论十大关系*"
+        ],
+        "start_hint": "论十大关系*",
+        "end_hint": "，必须在全党和全国人民中间反复进行教育。",
+        "word_count": 4536,
+        "estimated_minutes": 20,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0651.xhtml",
+            "blocks": "1-34"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1956年4月25日讲话的前四对经济关系。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "前四对关系围绕哪一个基本方针？重工业和农业、沿海和内地、国防和经济、国家与个人，各自要避免什么极端？"
+        },
+        {
+          "kind": "argument",
+          "question": "“你对发展重工业究竟是真想还是假想”在推论什么？"
+        },
+        {
+          "kind": "self",
+          "question": "苏联义务交售制被写成把农民挖得很苦。这是比较还是已经证明的统计？"
+        }
+      ],
+      "watch": {
+        "concept": "兼顾",
+        "why": "读时先找全文的总方针，再看前四对怎样各自兼顾。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "基本方针是调动国内外一切积极因素。国内基本力量是工人和农民。",
+          "重工业是重点，但要更多地发展农业和轻工业，才能更好地发展重工业。",
+          "沿海老底子要利用，新工业大部分摆在内地。",
+          "国防不可没有，但要用经济发展来加强国防；国家和个人、国家和农民都要兼顾。"
+        ],
+        "author_claim": "1956年4月25日讲话的前半，用兼顾来处理四对经济关系。",
+        "common_misreadings": [
+          "篇署日期下的文本是收录稿。讲话开头说的是听了三十四个部门汇报之后提出的问题。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "“苏联的办法把农民挖得很苦”是作者的比较判断。本单元用它支持兼顾国家和农民，没有给出义务交售的数量或账目。兼顾也不是取消重工业这个重点。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0651.xhtml",
+              "ref": "books/毛泽东选集/modules/governance-relations/reading.json gr03-balance-is-directed"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u45",
+      "order": 45,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "论十大关系",
+        "section": "五 中央和地方的关系",
+        "navigation": [
+          "五中央和地方的关系"
+        ],
+        "start_hint": "五中央和地方的关系",
+        "end_hint": "政造成多么严重的危险，这是大家都清楚的。",
+        "word_count": 4746,
+        "estimated_minutes": 20,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0651.xhtml",
+            "blocks": "35-70"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "中央和地方、民族、党和非党、革命和反革命。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "中央和地方、汉族和少数民族、党和非党、革命和反革命，各自被写成什么样的矛盾？"
+        },
+        {
+          "kind": "argument",
+          "question": "镇反的四点里，哪些是作者要肯定的，哪些是以后要少捉少杀的？"
+        },
+        {
+          "kind": "self",
+          "question": "“恐怕是几个党好”之后，他又说无产阶级专政非加强不可。两句怎样同时放在这一单元？"
+        }
+      ],
+      "watch": {
+        "concept": "中央和地方",
+        "why": "统一领导和地方权力被写成要兼顾，不是取消中央。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "中央统一领导下要扩大地方权力，并同地方商量。",
+          "汉族被提醒不要搞大汉族主义，要帮助少数民族发展经济文化。",
+          "被说成恐怕是几个党好，民主党派被保留；同时说无产阶级专政现在非有不可。",
+          "镇反被分成杀、关、管、放，并说今后社会上要少捉少杀，机关里一个不杀是内部政策。"
+        ],
+        "author_claim": "收录文本把这四对关系都放进调动积极因素，包括怎样对待反革命。",
+        "common_misreadings": [
+          "胡风、潘汉年、饶漱石等名字出现在“什么样的人不杀”的政策说明里，不是这一节的人物传。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u46",
+      "order": 46,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "论十大关系",
+        "section": "九 是非关系",
+        "navigation": [
+          "九是非关系"
+        ],
+        "start_hint": "九是非关系",
+        "end_hint": "，把我国建设成为一个强大的社会主义国家。",
+        "word_count": 3223,
+        "estimated_minutes": 15,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0651.xhtml",
+            "blocks": "71-91"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "是非关系、中国和外国的关系。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "是非关系和中国与外国的关系，各自处理犯错误的人和学习外国的哪一个问题？"
+        },
+        {
+          "kind": "argument",
+          "question": "向外国学习为什么被说成要批判地学？“穷”和“白”怎样被同时说成缺点和优点？"
+        },
+        {
+          "kind": "self",
+          "question": "向外国学习被要求批判地学，又说自然科学特别要学。你用什么标准区分该学的技术和要抵制的制度？本单元给了标准，还是只给了态度？"
+        }
+      ],
+      "watch": {
+        "concept": "是非",
+        "why": "读时分清两节各处理什么人、什么事。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "党内党外都要分清是非，对犯错误的人要看还要帮助改。",
+          "惩前毖后、治病救人被再次写成团结全党的方针。",
+          "一切国家的长处都要学，但要批判地学，抵制腐败制度和思想作风。",
+          "穷和白被说成缺点也是优点，十条关系最后被收成矛盾。"
+        ],
+        "author_claim": "讲话末段认为十条关系都是矛盾，任务是调动积极因素把中国建设好。",
+        "common_misreadings": [
+          "斯大林被捧高或贬低，是作者描述的现象，不是他要求跟随的做法。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "已审模块把十对关系看成阅读中的政策议题，而不是十个地位对等、可以自动推出后文敌我划分的变量。国内力量被分为基本力量（工农）、可争取的中间势力和作为消极因素的反动势力（见 u44）。这是政治分类，本单元没有把它写成已经测量过的社会学结果。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0651.xhtml",
+              "ref": "books/毛泽东选集/modules/governance-relations/reading.json gr02-not-deduction"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u47",
+      "order": 47,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "关于正确处理人民内部矛盾的问题",
+        "section": "关于正确处理人民内部矛盾的问题",
+        "navigation": [
+          "关于正确处理人民内部矛盾的问题*"
+        ],
+        "start_hint": "关于正确处理人民内部矛盾的问题*",
+        "end_hint": "政策中规定了必须分清敌我，错了就要平反。",
+        "word_count": 5588,
+        "estimated_minutes": 25,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0658.xhtml",
+            "blocks": "1-17"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "1957年文本前部：两类矛盾的性质和民主方法。当前文本不是2月27日的逐字讲话稿。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "总题目之下，第一节怎样划分敌我矛盾和人民内部矛盾？解决方法各是什么？"
+        },
+        {
+          "kind": "argument",
+          "question": "民族资产阶级的矛盾为什么被放进人民内部？匈牙利事件在这里被用来警告什么？"
+        },
+        {
+          "kind": "self",
+          "question": "“团结——批评——团结”是1942年的公式。它是否被说成1942年才第一次有民主方法？"
+        }
+      ],
+      "watch": {
+        "concept": "两类矛盾",
+        "why": "先分性质，再分方法。不要把人民内部的批评读成专政。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "敌我矛盾被写成对抗性的，用专政解决；人民内部用民主、讨论和批评。",
+          "工人阶级和民族资产阶级的矛盾被放进人民内部，因为资产阶级有剥削和接受改造两面。",
+          "自由是有领导的自由，民主是集中指导下的民主。",
+          "处理不当，人民内部矛盾也可能发生对抗。许多人被说成容易把两类矛盾混淆。"
+        ],
+        "author_claim": "收录文本的第一节要求用不同方法处理两类不同性质的矛盾。",
+        "common_misreadings": [
+          "篇署日期是一九五七年二月二十七日。原书注释说明后来整理并作了补充，当前文本不是那天的逐字讲话稿。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "篇首日期只标一九五七年二月二十七日。原书注释写明作者后来根据记录整理并作了补充，一九五七年六月十九日发表。解读以收录文本为准，不把每句当成二月二十七日的现场原话。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0658.xhtml",
+              "ref": "原书注释（署名未核）"
+            }
+          ]
+        }
+      ],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u48",
+      "order": 48,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "关于正确处理人民内部矛盾的问题",
+        "section": "一 两类不同性质的矛盾",
+        "navigation": [
+          "一两类不同性质的矛盾"
+        ],
+        "start_hint": "马克思主义的哲学认为，对立统一规律是宇宙",
+        "end_hint": "错误的。如果接受这种估计，结果也会搞乱。",
+        "word_count": 4198,
+        "estimated_minutes": 18,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0658.xhtml",
+            "blocks": "18-30"
+          }
+        ],
+        "reading_range": "后半"
+      },
+      "position": "对立统一、社会主义社会的基本矛盾，以及肃反问题。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "从对立统一写到社会主义社会的基本矛盾之后，肃反为什么被单独说成敌我问题？"
+        },
+        {
+          "kind": "argument",
+          "question": "“革命时期的大规模的急风暴雨式的群众阶级斗争基本结束”后面还有哪半句？"
+        },
+        {
+          "kind": "self",
+          "question": "肃反被说成成绩是主要的，但也有过火和漏掉。若只承认前半句，会漏掉本文哪一条处理错误的方针？你是否因此就认为错误已经查清？"
+        }
+      ],
+      "watch": {
+        "concept": "基本矛盾",
+        "why": "社会主义社会仍有生产关系和生产力的矛盾；肃反则被明确写成敌我斗争。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "对立统一被写成宇宙的根本规律，社会主义社会的基本矛盾仍是生产关系和生产力、上层建筑和经济基础。",
+          "大规模急风暴雨式的群众阶级斗争被说成基本结束，但阶级斗争还没有完全结束。",
+          "肃反被写成敌我矛盾。方针是有反必肃，有错必纠。",
+          "当前情况被收成：还有反革命，但是不多了。"
+        ],
+        "author_claim": "收录文本认为社会主义制度下矛盾还在，肃反仍是敌我问题，但范围已经缩小。",
+        "common_misreadings": [
+          "匈牙利事件在这里被用来估计肃反的影响，不是匈牙利史本身。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u49",
+      "order": 49,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "关于正确处理人民内部矛盾的问题",
+        "section": "三 农业合作化问题",
+        "navigation": [
+          "三农业合作化问题"
+        ],
+        "start_hint": "三农业合作化问题",
+        "end_hint": "业者中大多数人的意见，只是少数人的意见。",
+        "word_count": 2969,
+        "estimated_minutes": 13,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0658.xhtml",
+            "blocks": "31-43"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "农业合作化问题和工商业者问题。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "农业合作化的矛盾主要被放在国家、合作社和农民的哪几种关系上？"
+        },
+        {
+          "kind": "argument",
+          "question": "工商业者的两面性被作者怎样重新肯定？他说谁的意见不符合大多数工商业者的愿望？"
+        },
+        {
+          "kind": "self",
+          "question": "作者把“农民苦”分成一方面对、一方面不对。后一方面反驳的是哪一种说法？它和合作社是否还在巩固，是不是同一句话？"
+        }
+      ],
+      "watch": {
+        "concept": "合作化",
+        "why": "合作社被写成还在巩固，不是没有矛盾的完成式。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "五亿多农业人口的状况被写成关系经济和政权。",
+          "拥护合作社的被说成是绝大多数贫农和下中农。",
+          "国家和合作社、生产和分配上的矛盾被要求经常处理。",
+          "资产阶级被说成仍有两面性，私营工商业已经改为公私合营并不等于只剩一面。"
+        ],
+        "author_claim": "收录文本把合作化和工商业改造写成还要处理的人民内部问题。",
+        "common_misreadings": [
+          "百分之七十以上是文中的判断，这一单元没有附表。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u50",
+      "order": 50,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "关于正确处理人民内部矛盾的问题",
+        "section": "五 知识分子问题",
+        "navigation": [
+          "五知识分子问题"
+        ],
+        "start_hint": "五知识分子问题",
+        "end_hint": "，我们应当指导社会团体和各地群众这样做。",
+        "word_count": 2505,
+        "estimated_minutes": 11,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0658.xhtml",
+            "blocks": "44-53"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "知识分子、少数民族、统筹兼顾。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "知识分子、少数民族、统筹兼顾三节，各自要求顾及谁？"
+        },
+        {
+          "kind": "argument",
+          "question": "知识分子的进步被肯定之后，为什么又说思想政治工作减弱了？"
+        },
+        {
+          "kind": "self",
+          "question": "少数民族“三千多万人”，“只占全国总人口的百分之六”。你是否把它读成已经解决了关系？"
+        }
+      ],
+      "watch": {
+        "concept": "统筹兼顾",
+        "why": "计划被要求从六亿人口出发，而不是只从某一部分人出发。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "大多数知识分子被说成七年里有显著进步，但仍要继续改造，思想政治工作近来减弱了。",
+          "少数民族人口少、地区大，关系仍然要处理。",
+          "统筹兼顾被定义成对六亿人口统筹，作计划要从这个人口出发。"
+        ],
+        "author_claim": "这三节把知识分子、少数民族和全体人口都放进人民内部的安排。",
+        "common_misreadings": [
+          "数字是收录文本里的概数，不是这一课新做的人口普查说明。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u51",
+      "order": 51,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "关于正确处理人民内部矛盾的问题",
+        "section": "八 关于百花齐放、百家争鸣、 长期共存、互相监督",
+        "navigation": [
+          "八关于百花齐放、百家争鸣、长期共存、互相监督"
+        ],
+        "start_hint": "八关于百花齐放、百家争鸣、长期共存、互相",
+        "end_hint": "长期共存，互相监督，以适应新社会的需要。",
+        "word_count": 4449,
+        "estimated_minutes": 20,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0658.xhtml",
+            "blocks": "54-64"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "百花齐放、百家争鸣、长期共存、互相监督。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "百花齐放、百家争鸣和长期共存、互相监督，各自被说成从什么历史条件里提出？"
+        },
+        {
+          "kind": "argument",
+          "question": "马克思主义可以被批评吗？作者把明显的反革命分子放在这个方针的哪一边？"
+        },
+        {
+          "kind": "self",
+          "question": "两个口号被说成字面上没有阶级性，随即又说两个阶级都可以利用。你认为这是在开放讨论，还是在保留谁可以利用的界限？读完后文再回头检验你的判断。"
+        }
+      ],
+      "watch": {
+        "concept": "百家争鸣",
+        "why": "方针不是取消是非。反革命破坏和人民内部的思想问题被分开。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "口号被说成根据中国的具体历史条件提出。",
+          "意识形态上谁胜谁负被写成还要经过相当长的时间。",
+          "明显的反革命分子不在百家争鸣的保护里；人民内部的错误意见要用讨论和批评。",
+          "长期共存、互相监督也被说成具体历史条件的产物，不是突然出现的。"
+        ],
+        "author_claim": "收录文本把双百和互相监督写成处理思想问题和党派关系的方针，同时保留对反革命的界限。",
+        "common_misreadings": [
+          "“马克思主义在开始的时候受过种种打击，被认为是毒草”是作者叙述它的历史遭遇，不是要求今天把它当成毒草。"
+        ]
+      },
+      "critique": [],
+      "review_questions": [],
+      "cards": []
+    },
+    {
+      "id": "mx-u52",
+      "order": 52,
+      "status": "full",
+      "locate": {
+        "part": "第5卷",
+        "chapter": "关于正确处理人民内部矛盾的问题",
+        "section": "九 关于少数人闹事问题",
+        "navigation": [
+          "九关于少数人闹事问题"
+        ],
+        "start_hint": "九关于少数人闹事问题",
+        "end_hint": "是决不可以对他们怀抱一些不切实际的想法。",
+        "word_count": 4196,
+        "estimated_minutes": 19,
+        "source_refs": [
+          {
+            "epub_path": "OEBPS/Text/Section0658.xhtml",
+            "blocks": "65-85"
+          }
+        ],
+        "reading_range": "自本节标题起"
+      },
+      "position": "少数人闹事、坏事能否变成好事、节约、工业化道路。",
+      "pre_questions": [
+        {
+          "kind": "structure",
+          "question": "闹事、坏事能否变成好事、节约、工业化道路，末段怎样回到重工业和农业？"
+        },
+        {
+          "kind": "argument",
+          "question": "作者不赞成闹事，又说闹事可以变成教训。条件和“一定条件下互相转化”在哪一节？"
+        },
+        {
+          "kind": "self",
+          "question": "闹事被说成坏事，又可在一定条件下变成教训。若官僚主义还在、条件没有变，本文是否允许你把下一次闹事预先叫成好事？"
+        }
+      ],
+      "watch": {
+        "concept": "转化",
+        "why": "坏事变成好事要有条件。没有条件的转化不是这一节的主张。"
+      },
+      "answer_key": {
+        "retelling_points": [
+          "1956年个别地方的罢工罢课被写成闹事；直接原因是一些物质要求没有得到满足，更重要的因素才是领导上的官僚主义。",
+          "作者不赞成闹事，但说发生了就要变成改进工作的教训。",
+          "节约被放在国家还穷、要大规模建设的条件下。",
+          "工业化道路主要被说成重工业、轻工业和农业的关系，并要求发展工业时同时发展农业。"
+        ],
+        "author_claim": "末单元把人民内部的具体问题收回到有条件的转化，以及工农业同时并进。",
+        "common_misreadings": [
+          "匈牙利事件和第三次世界大战在“坏事能否变成好事”里是举例，不是这一节的战史研究。"
+        ]
+      },
+      "critique": [
+        {
+          "type": "批判审计",
+          "text": "工业化道路一节写明经济建设才进行七年，缺乏经验。不能把这里的重、轻、农关系读成已经完成的工业化结果。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0658.xhtml"
+            }
+          ]
+        },
+        {
+          "type": "批判审计",
+          "text": "已审的治理模块指出：处理方法取决于先把人、言论或行动归入哪一类，分类权本身因此是政治权力问题。民主方法同时保留有领导的自由、维护秩序的行政命令和类别转化，不能简化成无条件的自由讨论。本单元允许闹事在一定条件下变成教训，但没有把条件未变写成可以复查的程序。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0658.xhtml",
+              "ref": "books/毛泽东选集/modules/governance-relations/reading.json gr04-classification-power"
+            }
+          ]
+        },
+        {
+          "type": "外部背景",
+          "text": "同一模块的既有核查写明：同卷1957年5月至7月的文本从“事情正在起变化”转到组织反击。时间顺序说明分类和处理的语境在数月内收紧，本身不是完整因果解释，也不能倒推2月讲话的每一句已经包含后来的结果。",
+          "sources": [
+            {
+              "locator": "OEBPS/Text/Section0658.xhtml",
+              "ref": "books/毛泽东选集/modules/governance-relations/reading.json gr08-pressure-test"
+            },
+            {
+              "url": "https://theory.people.com.cn/n/2014/0603/c385524-25097447.html",
+              "ref": "ext-cpc-rectification"
+            },
+            {
+              "url": "https://history.state.gov/historicaldocuments/frus1955-57v03/d274",
+              "ref": "ext-frus-july"
+            }
+          ]
+        }
+      ],
+      "review_questions": [
+        {
+          "unit_ids": [
+            "mx-u44"
+          ],
+          "question": "《论十大关系》前半也讲重工业和农业。这一节自己怎样限定它讲的工业化道路？",
+          "answer_key": "它说这里讲的主要就是重、轻、农的发展关系，并且说经济建设才七年，还要积累经验。不能把两篇收成同一段讲话。"
+        }
+      ],
+      "cards": []
+    }
+  ]
+}
